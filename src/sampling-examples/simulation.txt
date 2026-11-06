@@ -1,0 +1,16 @@
+Exponential support durations: population mean=12 min; SD=12 min.
+One LLN path (not guaranteed to improve at every step):
+n=   10: running mean=10.708339
+n=  100: running mean=13.595736
+n= 1000: running mean=11.969014
+n=10000: running mean=11.771726
+
+Repeated independent samples: R=30000 per n; each row is one sample.
+ n    simulated mean   simulated SE   theoretical SE   skewness  P(|mean-12|<2)
+  1        12.045784      11.913781        12.000000     1.9007   0.123533
+  5        12.046164       5.366876         5.366563     0.8707   0.289533
+ 30        12.009144       2.190905         2.190890     0.3627   0.641133
+100        11.997016       1.210059         1.200000     0.1908   0.902967
+More repetitions smooth the estimated law; larger n reduces its true SE.
+Normality is approximate here, not a universal rule at n=30 or n=35.
+Wrote lln.svg and clt.svg in the requested output directory.

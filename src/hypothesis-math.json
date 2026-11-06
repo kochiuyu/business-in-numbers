@@ -1,0 +1,194 @@
+{
+  "hypotheses": {
+    "tex": "H_0:\\theta=\\theta_0,\\qquad H_1:\\theta>\\theta_0\\quad\\text{or}\\quad\\theta<\\theta_0\\quad\\text{or}\\quad\\theta\\ne\\theta_0",
+    "text": "The null sets the parameter equal to a benchmark. The alternative specifies greater than, less than, or different from that benchmark.",
+    "title": "Three research questions",
+    "display": true
+  },
+  "errors": {
+    "tex": "\\alpha=P_{H_0}(\\text{reject }H_0),\\qquad \\beta(\\theta)=P_\\theta(\\text{do not reject }H_0),\\qquad \\operatorname{Power}(\\theta)=1-\\beta(\\theta)",
+    "text": "Alpha is the false-rejection probability under the null. At a specified alternative theta, beta is the probability of not rejecting, and power is one minus beta.",
+    "title": "Two errors, different conditions",
+    "display": true
+  },
+  "power": {
+    "tex": "c=\\mu_0+z_{1-\\alpha}\\frac{\\sigma}{\\sqrt n},\\qquad \\operatorname{Power}(\\mu_1)=1-\\Phi\\!\\left(z_{1-\\alpha}-\\frac{(\\mu_1-\\mu_0)\\sqrt n}{\\sigma}\\right)",
+    "text": "For a right-sided known-SD mean test, reject above benchmark plus critical z times SE. Power at a specific alternative mean is one minus the normal CDF at critical z minus the standardized effect.",
+    "title": "Power for a right-sided z test",
+    "display": true
+  },
+  "tails": {
+    "tex": "\\begin{array}{c|c|c}H_1&\\text{Rejection rule}&p\\text{-value}\\\\ \\theta>\\theta_0&q\\ge G^{-1}(1-\\alpha)&1-G(q)\\\\\\theta<\\theta_0&q\\le G^{-1}(\\alpha)&G(q)\\\\\\theta\\ne\\theta_0&|q|\\ge G^{-1}(1-\\alpha/2)&2[1-G(|q|)]\\end{array}",
+    "text": "For a symmetric standard normal or t reference distribution with CDF G: right tail uses q above the 1-alpha quantile and p=1-G(q); left tail uses q below the alpha quantile and p=G(q); two tails use absolute q and twice the upper tail.",
+    "title": "One rulebook for symmetric z and t tests",
+    "display": true
+  },
+  "z": {
+    "tex": "\\overline X\\sim N\\!\\left(\\mu,\\frac{\\sigma^2}{n}\\right),\\qquad Z=\\frac{\\overline X-\\mu_0}{\\sigma/\\sqrt n}\\overset{H_0}{\\sim}N(0,1)",
+    "text": "For independent normal observations and known population variance, the mean has variance sigma squared over n. Under the null the standardized mean is exactly standard normal.",
+    "title": "Known population variance: z test",
+    "display": true
+  },
+  "t": {
+    "tex": "S^2=\\frac{\\sum_{i=1}^n(X_i-\\overline X)^2}{n-1},\\qquad T=\\frac{\\overline X-\\mu_0}{S/\\sqrt n}\\overset{H_0}{\\sim}t_{n-1}",
+    "text": "The sample variance divides squared residuals by n minus one. Under independent normal sampling and the null, substituting sample SD gives a t statistic with n minus one degrees of freedom.",
+    "title": "Unknown population variance: t test",
+    "display": true
+  },
+  "t-proof": {
+    "tex": "Z=\\frac{\\overline X-\\mu_0}{\\sigma/\\sqrt n}\\sim N(0,1),\\quad U=\\frac{(n-1)S^2}{\\sigma^2}\\sim\\chi^2_{n-1},\\quad Z\\perp U,\\quad T=\\frac Z{\\sqrt{U/(n-1)}}",
+    "text": "Under the normal null model the standardized mean is normal, the scaled sample variance is chi-square, and these are independent. Their ratio defines Student t.",
+    "title": "Why estimating SD changes the reference distribution",
+    "display": true
+  },
+  "wald": {
+    "tex": "\\frac{\\sqrt n(\\overline X-\\mu)}{\\sigma}\\xrightarrow{d}N(0,1),\\quad S\\xrightarrow{p}\\sigma\\quad\\Longrightarrow\\quad\\frac{\\overline X-\\mu}{S/\\sqrt n}\\xrightarrow{d}N(0,1)",
+    "text": "For IID data with positive finite variance, the CLT plus consistency of sample SD gives an asymptotically normal studentized mean by Slutsky’s theorem.",
+    "title": "Large-sample Wald justification",
+    "display": true
+  },
+  "ci": {
+    "tex": "\\left|\\frac{\\widehat\\theta-\\theta_0}{\\operatorname{SE}}\\right|<c_{1-\\alpha/2}\\quad\\Longleftrightarrow\\quad \\widehat\\theta-c_{1-\\alpha/2}\\operatorname{SE}<\\theta_0<\\widehat\\theta+c_{1-\\alpha/2}\\operatorname{SE}",
+    "text": "Not rejecting a two-sided test is equivalent to the null value lying between the matching confidence limits, up to the stated boundary convention, when the statistic uses the same standard error.",
+    "title": "Invert a test to obtain an interval",
+    "display": true
+  },
+  "onebound": {
+    "tex": "L=\\overline x-c_{1-\\alpha}\\operatorname{SE},\\qquad U=\\overline x+c_{1-\\alpha}\\operatorname{SE}",
+    "text": "A one-sided lower confidence bound is mean minus the 1-alpha critical value times SE; an upper bound is mean plus that margin.",
+    "title": "Matching one-sided confidence bounds",
+    "display": true
+  },
+  "proportion": {
+    "tex": "K\\sim\\operatorname{Bin}(n,\\pi),\\quad \\widehat p=K/n,\\quad Z=\\frac{\\widehat p-\\pi_0}{\\sqrt{\\pi_0(1-\\pi_0)/n}}\\overset{H_0}{\\approx}N(0,1)",
+    "text": "With independent Bernoulli trials, successes are binomial. Test the null probability using its own binomial variance in the denominator and a large-sample normal approximation.",
+    "title": "One proportion: null-based standard error",
+    "display": true
+  },
+  "prop-proof": {
+    "tex": "E(\\widehat p)=\\pi,\\qquad \\operatorname{Var}(\\widehat p)=\\frac1{n^2}\\sum_{i=1}^n\\operatorname{Var}(X_i)=\\frac{\\pi(1-\\pi)}n",
+    "text": "A sample proportion is the average of independent binary indicators. Its mean is pi and its variance is pi times one minus pi divided by n.",
+    "title": "A proportion is a mean of zeros and ones",
+    "display": true
+  },
+  "groups": {
+    "tex": "\\overline X_j=\\frac1{n_j}\\sum_iX_{ji},\\quad S_j^2=\\frac{\\sum_i(X_{ji}-\\overline X_j)^2}{n_j-1},\\quad E(\\overline X_j)=\\mu_j,\\quad E(S_j^2)=\\sigma_j^2",
+    "text": "For each group j, define its own sample mean and unbiased sample variance. Their expectations are the corresponding population mean and variance.",
+    "title": "Keep group summaries separate",
+    "display": true
+  },
+  "difference": {
+    "tex": "\\overline X_1-\\overline X_2\\sim N\\!\\left(\\mu_1-\\mu_2,\\frac{\\sigma_1^2}{n_1}+\\frac{\\sigma_2^2}{n_2}\\right)",
+    "text": "Independent normal samples give a normally distributed difference of sample means. Its variance is the sum of the two mean variances.",
+    "title": "Independent differences add variances",
+    "display": true
+  },
+  "pooled": {
+    "tex": "S_p^2=\\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}=\\frac{\\sum_i(X_{1i}-\\overline X_1)^2+\\sum_i(X_{2i}-\\overline X_2)^2}{n_1+n_2-2}",
+    "text": "Pool the within-group residual sums of squares, weighting the group variances by their degrees of freedom and dividing by total degrees of freedom.",
+    "title": "A pooled estimate of one common variance",
+    "display": true
+  },
+  "pooled-test": {
+    "tex": "T=\\frac{(\\overline X_1-\\overline X_2)-\\Delta_0}{S_p\\sqrt{1/n_1+1/n_2}}\\overset{H_0}{\\sim}t_\\nu,\\quad\\nu=n_1+n_2-2",
+    "text": "Under independent normal sampling, equal population variances, and null mean difference delta zero, the pooled t statistic has n1 plus n2 minus two degrees of freedom.",
+    "title": "Pooled two-sample t test",
+    "display": true
+  },
+  "pooled-ci": {
+    "tex": "(\\overline x_1-\\overline x_2)\\ \\pm\\ t_{\\nu,1-\\alpha/2}S_p\\sqrt{1/n_1+1/n_2}",
+    "text": "The pooled confidence interval is the observed mean difference plus or minus the t critical value times the pooled standard error.",
+    "title": "Confidence interval for the mean difference",
+    "display": true
+  },
+  "pooled-proof": {
+    "tex": "Z=\\frac{(\\overline X_1-\\overline X_2)-\\Delta_0}{\\sigma\\sqrt{1/n_1+1/n_2}}\\sim N(0,1),\\quad U=\\frac{\\nu S_p^2}{\\sigma^2}\\sim\\chi^2_\\nu,\\quad T=\\frac Z{\\sqrt{U/\\nu}}",
+    "text": "With a common population SD sigma, standardize the mean difference by sigma times the square root of the sum of reciprocal sample sizes. The pooled scaled variance is independent chi-square, giving the t ratio.",
+    "title": "Derive the pooled t distribution",
+    "display": true
+  },
+  "welch": {
+    "tex": "T_W=\\frac{(\\overline X_1-\\overline X_2)-\\Delta_0}{\\sqrt{S_1^2/n_1+S_2^2/n_2}}\\overset{H_0}{\\approx}t_\\nu,\\quad\\nu=\\frac{(S_1^2/n_1+S_2^2/n_2)^2}{(S_1^2/n_1)^2/(n_1-1)+(S_2^2/n_2)^2/(n_2-1)}",
+    "text": "Welch’s statistic divides the mean difference minus the null difference by the unpooled standard error. Its approximate t degrees of freedom are the squared sum of variance contributions divided by the sum of squared contributions over their group degrees of freedom.",
+    "title": "Welch–Satterthwaite approximation",
+    "display": true
+  },
+  "welch-ci": {
+    "tex": "(\\overline x_1-\\overline x_2)\\ \\pm\\ t_{\\nu,1-\\alpha/2}\\sqrt{S_1^2/n_1+S_2^2/n_2}",
+    "text": "Welch’s approximate confidence interval uses the unpooled standard error and its fractional degrees of freedom.",
+    "title": "Welch confidence interval",
+    "display": true
+  },
+  "welch-proof": {
+    "tex": "V=\\frac{S_1^2}{n_1}+\\frac{S_2^2}{n_2},\\quad A=\\frac{\\sigma_1^2}{n_1}+\\frac{\\sigma_2^2}{n_2},\\quad E(V)=A,\\quad\\operatorname{Var}(V)=2\\sum_{j=1}^2\\frac{(\\sigma_j^2/n_j)^2}{n_j-1}",
+    "text": "Under normal samples the estimated variance V has mean A and variance twice the sum of squared true variance contributions divided by group degrees of freedom.",
+    "title": "Moment matching behind Welch’s degrees of freedom",
+    "display": true
+  },
+  "welch-match": {
+    "tex": "V\\approx\\frac A\\nu\\chi^2_\\nu,\\qquad \\nu=\\frac{A^2}{\\sum_{j=1}^2(\\sigma_j^2/n_j)^2/(n_j-1)}",
+    "text": "Match V to a scaled chi-square with the same mean and variance; equating variances gives the effective degrees of freedom. Replace population variances by sample variances in practice.",
+    "title": "Approximate the variance estimate, then form a t ratio",
+    "display": true
+  },
+  "paired": {
+    "tex": "D_i=X_{1i}-X_{2i},\\quad\\overline D=\\overline X_1-\\overline X_2,\\quad S_D^2=\\frac{\\sum_i(D_i-\\overline D)^2}{n-1},\\quad T=\\frac{\\overline D-\\Delta_0}{S_D/\\sqrt n}\\overset{H_0}{\\sim}t_{n-1}",
+    "text": "For n matched pairs compute one difference per pair, its mean and sample variance. A one-sample t test on independent normal differences has n minus one degrees of freedom.",
+    "title": "Paired data become one sample of differences",
+    "display": true
+  },
+  "paired-ci": {
+    "tex": "\\overline d\\ \\pm\\ t_{n-1,1-\\alpha/2}\\frac{S_D}{\\sqrt n},\\qquad \\operatorname{Var}(D)=\\sigma_1^2+\\sigma_2^2-2\\operatorname{Cov}(X_1,X_2)",
+    "text": "The paired confidence interval uses the SD of differences. Difference variance equals the two variances minus twice their covariance.",
+    "title": "Pairing retains within-unit covariance",
+    "display": true
+  },
+  "twoprop": {
+    "tex": "\\widehat p_j=\\frac{k_j}{n_j},\\quad\\widehat p_{\\rm pool}=\\frac{k_1+k_2}{n_1+n_2},\\quad Z=\\frac{\\widehat p_1-\\widehat p_2}{\\sqrt{\\widehat p_{\\rm pool}(1-\\widehat p_{\\rm pool})(1/n_1+1/n_2)}}\\overset{H_0}{\\approx}N(0,1)",
+    "text": "Under the null of equal population proportions, estimate the common probability by total successes over total trials. Standardize the observed difference using the pooled null standard error.",
+    "title": "Compare two independent conversion rates",
+    "display": true
+  },
+  "twoprop-var": {
+    "tex": "\\operatorname{Var}(\\widehat p_1-\\widehat p_2)=\\frac{\\pi_1(1-\\pi_1)}{n_1}+\\frac{\\pi_2(1-\\pi_2)}{n_2}\\overset{H_0}{=}\\pi(1-\\pi)(1/n_1+1/n_2)",
+    "text": "Independent proportion estimates add variances. Under equal population proportions, the population variance simplifies to a common pi factor.",
+    "title": "Why the null permits pooling",
+    "display": true
+  },
+  "twoprop-ci": {
+    "tex": "(\\widehat p_1-\\widehat p_2)\\ \\pm\\ z_{1-\\alpha/2}\\sqrt{\\frac{\\widehat p_1(1-\\widehat p_1)}{n_1}+\\frac{\\widehat p_2(1-\\widehat p_2)}{n_2}}",
+    "text": "The basic large-sample confidence interval for a proportion difference uses separate observed proportions in an unpooled standard error.",
+    "title": "Unpooled Wald interval for the difference",
+    "display": true
+  },
+  "f-test": {
+    "tex": "F=\\frac{S_1^2/S_2^2}{r_0}\\overset{H_0}{\\sim}F_{\\nu_1,\\nu_2},\\qquad H_0:\\frac{\\sigma_1^2}{\\sigma_2^2}=r_0,\\quad\\nu_j=n_j-1",
+    "text": "For independent normal populations, the sample variance ratio divided by its hypothesized population ratio has an F distribution. Equal variances uses r0 equal to one.",
+    "title": "The variance-ratio F test",
+    "display": true
+  },
+  "f-tails": {
+    "tex": "\\begin{array}{c|c|c}H_1&\\text{Rejection rule}&p\\text{-value}\\\\r>r_0&f\\ge Q_F(1-\\alpha)&1-G_F(f)\\\\r<r_0&f\\le Q_F(\\alpha)&G_F(f)\\\\r\\ne r_0&f\\le Q_F(\\alpha/2)\\ \\text{or}\\ f\\ge Q_F(1-\\alpha/2)&\\min\\{1,2\\min[G_F(f),1-G_F(f)]\\}\\end{array}",
+    "text": "F tests use their nonsymmetric CDF and quantile function: right and left tail probabilities for one-sided tests; twice the smaller tail, capped at one, for the equal-tail two-sided test.",
+    "title": "F tails are not symmetric",
+    "display": true
+  },
+  "f-proof": {
+    "tex": "U_j=\\frac{(n_j-1)S_j^2}{\\sigma_j^2}\\sim\\chi^2_{\\nu_j},\\quad U_1\\perp U_2,\\qquad\\frac{U_1/\\nu_1}{U_2/\\nu_2}=\\frac{S_1^2/S_2^2}{\\sigma_1^2/\\sigma_2^2}\\sim F_{\\nu_1,\\nu_2}",
+    "text": "Scaled sample variances from independent normal samples are independent chi-square variables. The ratio of each divided by its degrees of freedom defines the F distribution.",
+    "title": "Derive F from two chi-square variables",
+    "display": true
+  },
+  "f-reciprocal": {
+    "tex": "F\\sim F_{a,b}\\Longrightarrow 1/F\\sim F_{b,a},\\qquad Q_{a,b}(p)=\\frac1{Q_{b,a}(1-p)}",
+    "text": "Taking an F reciprocal swaps numerator and denominator degrees of freedom. A p quantile is the reciprocal of the one-minus-p quantile with swapped degrees of freedom.",
+    "title": "Swapping groups swaps the degrees of freedom",
+    "display": true
+  },
+  "f-ci": {
+    "tex": "\\left[\\frac{s_1^2/s_2^2}{Q_{\\nu_1,\\nu_2}(1-\\alpha/2)},\\ \\frac{s_1^2/s_2^2}{Q_{\\nu_1,\\nu_2}(\\alpha/2)}\\right]",
+    "text": "A confidence interval for the population variance ratio divides the sample variance ratio by the upper and lower F quantiles in reverse order.",
+    "title": "Confidence interval for a variance ratio",
+    "display": true
+  }
+}

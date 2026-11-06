@@ -1,0 +1,10 @@
+Synthetic expected counts per 10,000
+                    Positive  Negative
+Condition present         90        10
+Condition absent         495      9405
+P(condition | positive) = 90/585 = 0.153846
+P(condition | negative) = 10/9415 = 0.001062
+Sequential example: prior 0.4, sensitivity 0.8, false-positive rate 0.4
+After first positive: 4/7 = 0.571429
+After second positive: 8/11 = 0.727273
+Second update assumes conditional independence in both groups.

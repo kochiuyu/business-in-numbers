@@ -1,0 +1,6 @@
+Created chisquare.svg (501 density points per curve)
+Created studentt.svg (501 density points per curve)
+Created fdistribution.svg (501 density points per curve)
+Chi-square df=9: upper 5% cutoff = 16.918978
+P(|Z| > 2) = 0.045500; P(|t(3)| > 2) = 0.139326
+F(5,10): upper 5% cutoff = 3.325835

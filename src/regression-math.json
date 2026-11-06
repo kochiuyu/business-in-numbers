@@ -1,0 +1,152 @@
+{
+  "line": {
+    "title": "Population model and fitted line",
+    "tex": "y_i=\\alpha+\\beta x_i+\\varepsilon_i,\\qquad \\widehat y_i=a+bx_i",
+    "text": "The population response equals intercept alpha plus slope beta times x plus error. The fitted value uses sample estimates a and b.",
+    "display": true
+  },
+  "objective": {
+    "title": "Least-squares objective",
+    "tex": "e_i=y_i-\\widehat y_i,\\qquad D(a,b)=\\sum_{i=1}^n(y_i-a-bx_i)^2,\\qquad (a,b)=\\operatorname*{arg\\,min}_{u,v}D(u,v)",
+    "text": "Residuals are observed y minus fitted y. Choose the intercept and slope that minimize the sum of squared vertical residuals.",
+    "display": true
+  },
+  "centered-sums": {
+    "title": "Centered sums and least-squares coefficients",
+    "tex": "\\begin{aligned}S_{xx}&=\\sum_i(x_i-\\bar x)^2,& S_{xy}&=\\sum_i(x_i-\\bar x)(y_i-\\bar y),\\\\ b&=\\frac{S_{xy}}{S_{xx}},&a&=\\bar y-b\\bar x.\\end{aligned}",
+    "text": "Sxx is the sum of squared centered predictors, Sxy is the sum of cross-products. Slope is Sxy divided by Sxx; intercept is y mean minus slope times x mean.",
+    "display": true
+  },
+  "normal-equations": {
+    "title": "Normal equations and uniqueness",
+    "tex": "\\frac{\\partial D}{\\partial a}=-2\\sum_i e_i=0,\\qquad \\frac{\\partial D}{\\partial b}=-2\\sum_i x_i e_i=0",
+    "text": "Differentiate the squared-error objective. At the minimum, residuals sum to zero and their cross-product with x is zero.",
+    "display": true
+  },
+  "coefficient-proof": {
+    "title": "Deriving the slope",
+    "tex": "\\begin{aligned}\\sum_i e_i=0&\\Longrightarrow a=\\bar y-b\\bar x,\\\\ \\sum_i x_i(y_i-\\bar y)&=b\\sum_i x_i(x_i-\\bar x),\\\\ \\sum_i x_i(x_i-\\bar x)&=S_{xx},\\quad\\sum_i x_i(y_i-\\bar y)=S_{xy}.\\end{aligned}",
+    "text": "Substitute the intercept expression into the second normal equation. Centered sums are zero, leaving b times Sxx equal to Sxy.",
+    "display": true
+  },
+  "slope-covariance": {
+    "title": "Slope, covariance and correlation",
+    "tex": "b=\\frac{s_{xy}}{s_x^2}=r\\frac{s_y}{s_x}\\quad(s_x>0,\\ s_y>0)",
+    "text": "Using consistent covariance and variance denominators, slope equals covariance divided by x variance. When both standard deviations are positive it also equals correlation times sy over sx.",
+    "display": true
+  },
+  "transforms": {
+    "title": "Effects of centering and changing units",
+    "tex": "\\begin{array}{c|cc}\\text{New data}&\\text{New slope}&\\text{New intercept}\\\\\\hline x_i^*=c x_i\\;(c\\ne0)&b/c&a\\\\y_i^*=y_i+d&b&a+d\\\\x_i^*=x_i-h&b&a+bh\\\\(x_i^*,y_i^*)=(x_i-\\bar x,y_i-\\bar y)&b&0\\end{array}",
+    "text": "Multiplying x by c divides slope by c. Adding d to y shifts the intercept by d. Centering x changes only the intercept; centering both variables gives intercept zero.",
+    "display": true
+  },
+  "assumptions": {
+    "title": "Conditional Gauss–Markov assumptions",
+    "tex": "\\begin{gathered}E(Y_i\\mid X)=\\alpha+\\beta x_i,\\quad E(\\varepsilon_i\\mid X)=0,\\\\\\operatorname{Var}(\\varepsilon_i\\mid X)=\\sigma^2,\\quad\\operatorname{Cov}(\\varepsilon_i,\\varepsilon_j\\mid X)=0\\;(i\\ne j),\\quad S_{xx}>0.\\end{gathered}",
+    "text": "Conditional on the predictor values, the mean is linear, errors have mean zero and common variance, errors are mutually uncorrelated, and the predictor varies.",
+    "display": true
+  },
+  "mean-y": {
+    "title": "Correct mean and variance of the response",
+    "tex": "E(Y_i\\mid X)=\\alpha+\\beta x_i,\\qquad\\operatorname{Var}(Y_i\\mid X)=\\sigma^2,\\qquad Y_i\\mid X\\sim N(\\alpha+\\beta x_i,\\sigma^2)",
+    "text": "The response mean is alpha plus beta x, not zero. Its conditional variance is sigma squared; under normal errors the response has that normal distribution.",
+    "display": true
+  },
+  "error-residual": {
+    "title": "Error, residual and residual standard error",
+    "tex": "\\varepsilon_i=y_i-\\alpha-\\beta x_i,\\qquad e_i=y_i-a-bx_i,\\qquad s^2=\\frac{SSE}{n-2},\\quad s=\\sqrt{\\frac{\\sum_i e_i^2}{n-2}}",
+    "text": "A population error uses the true coefficients. A sample residual uses estimated coefficients. Divide residual sum of squares by n minus two to estimate error variance.",
+    "display": true
+  },
+  "residual-proof": {
+    "title": "Residual degrees of freedom and leverage",
+    "tex": "\\begin{gathered}h_{ii}=\\frac1n+\\frac{(x_i-\\bar x)^2}{S_{xx}},\\qquad \\sum_i h_{ii}=2,\\\\ E(SSE\\mid X)=\\sum_i\\sigma^2(1-h_{ii})=(n-2)\\sigma^2,\\\\\\operatorname{Var}(e_i\\mid X)=\\sigma^2(1-h_{ii}).\\end{gathered}",
+    "text": "Leverage is one over n plus squared predictor distance from the mean divided by Sxx. Leverages sum to two, leaving n minus two residual degrees of freedom.",
+    "display": true
+  },
+  "coefficient-variance": {
+    "title": "Coefficient variances and covariance",
+    "tex": "\\begin{aligned}\\operatorname{Var}(b\\mid X)&=\\frac{\\sigma^2}{S_{xx}},&\\operatorname{Var}(a\\mid X)&=\\sigma^2\\left(\\frac1n+\\frac{\\bar x^2}{S_{xx}}\\right),\\\\\\operatorname{Cov}(a,b\\mid X)&=-\\frac{\\bar x\\sigma^2}{S_{xx}}.\\end{aligned}",
+    "text": "Slope variance is sigma squared over Sxx. Intercept variance is sigma squared times one over n plus x mean squared over Sxx. Their covariance is negative x mean times sigma squared over Sxx.",
+    "display": true
+  },
+  "coefficient-se": {
+    "title": "Estimated coefficient standard errors",
+    "tex": "s_b=\\frac{s}{\\sqrt{S_{xx}}},\\qquad s_a=s\\sqrt{\\frac1n+\\frac{\\bar x^2}{S_{xx}}}=\\frac{s}{\\sqrt n}\\sqrt{\\frac{\\sum_i x_i^2}{S_{xx}}}",
+    "text": "Replace sigma with residual standard error s. These standard errors quantify coefficient estimation uncertainty.",
+    "display": true
+  },
+  "coefficient-tests": {
+    "title": "General coefficient t tests and intervals",
+    "tex": "\\begin{gathered}t_b=\\frac{b-\\beta_0}{s_b},\\qquad t_a=\\frac{a-\\alpha_0}{s_a},\\qquad T\\mid H_0\\sim t_{n-2},\\\\p_{\\mathrm{two}}=2P(T_{n-2}\\ge |t_{\\mathrm{obs}}|),\\\\b\\pm t_{n-2,\\,1-\\alpha_{\\rm sig}/2}s_b,\\qquad a\\pm t_{n-2,\\,1-\\alpha_{\\rm sig}/2}s_a.\\end{gathered}",
+    "text": "Subtract the null coefficient, divide by its standard error, and compare with t having n minus two degrees of freedom under the null. Two-sided p doubles the upper tail beyond the absolute statistic. Confidence intervals use the positive lower-tail quantile at one minus significance over two.",
+    "display": true
+  },
+  "linear-weights": {
+    "title": "Linear estimator weights and covariance derivation",
+    "tex": "\\begin{gathered}b=\\sum_i w_iY_i,\\quad w_i=\\frac{x_i-\\bar x}{S_{xx}},\\qquad a=\\sum_i v_iY_i,\\quad v_i=\\frac1n-\\bar xw_i,\\\\\\sum_iw_i=0,\\quad\\sum_iw_i^2=\\frac1{S_{xx}},\\quad\\sum_i v_i^2=\\frac1n+\\frac{\\bar x^2}{S_{xx}},\\\\\\sum_i v_iw_i=-\\frac{\\bar x}{S_{xx}}.\\end{gathered}",
+    "text": "Both estimates are weighted sums of responses. Uncorrelated common-variance errors turn sums of squared weights into variances and sums of weight products into covariance.",
+    "display": true
+  },
+  "decomposition": {
+    "title": "Regression sum-of-squares decomposition",
+    "tex": "\\begin{gathered}SST=\\sum_i(y_i-\\bar y)^2,\\quad SSR=\\sum_i(\\widehat y_i-\\bar y)^2,\\quad SSE=\\sum_i(y_i-\\widehat y_i)^2,\\\\SST=SSR+SSE,\\qquad SSR=b^2S_{xx}=\\frac{S_{xy}^2}{S_{xx}}.\\end{gathered}",
+    "text": "Total variation around the response mean splits into fitted-line variation and residual variation. This is the ordinary least-squares decomposition with an intercept.",
+    "display": true
+  },
+  "decomp-proof": {
+    "title": "Orthogonality proof of decomposition",
+    "tex": "\\begin{aligned}y_i-\\bar y&=e_i+(\\widehat y_i-\\bar y),\\\\\\sum_i e_i(\\widehat y_i-\\bar y)&=(a-\\bar y)\\sum_i e_i+b\\sum_i x_i e_i=0.\\end{aligned}",
+    "text": "Expand the squared total deviation. The cross term is zero because the normal equations make residuals orthogonal to the intercept and predictor.",
+    "display": true
+  },
+  "r2": {
+    "title": "Coefficient of determination",
+    "tex": "R^2=\\frac{SSR}{SST}=1-\\frac{SSE}{SST}=r^2\\qquad(SST>0)",
+    "text": "For simple linear OLS with an intercept and nonconstant response, R squared is the fraction of observed centered response variation explained by the fitted line, equal to squared correlation.",
+    "display": true
+  },
+  "reg-f": {
+    "title": "Regression ANOVA and F test",
+    "tex": "\\begin{gathered}MSR=\\frac{SSR}{1},\\qquad MSE=\\frac{SSE}{n-2}=s^2,\\\\F=\\frac{MSR}{MSE}\\ \\overset{H_0:\\,\\beta=0}{\\sim}\\ F_{1,n-2},\\qquad p=P(F_{1,n-2}\\ge F_{\\rm obs}).\\end{gathered}",
+    "text": "Divide regression sum of squares by one and residual sum of squares by n minus two. Their ratio has an F distribution under the zero-slope null and classical normal assumptions.",
+    "display": true
+  },
+  "f-t-proof": {
+    "title": "Why F equals t squared",
+    "tex": "F=\\frac{b^2S_{xx}}{s^2}=\\left(\\frac{b}{s/\\sqrt{S_{xx}}}\\right)^2=t_b^2\\qquad(\\beta_0=0)",
+    "text": "Regression F equals squared slope t for the zero-slope null in the same simple model. The F upper tail corresponds to both t tails.",
+    "display": true
+  },
+  "f-distribution": {
+    "title": "Independent chi-squares and expected mean squares",
+    "tex": "\\begin{gathered}\\frac{SSR}{\\sigma^2}\\mid H_0\\sim\\chi^2_1,\\qquad\\frac{SSE}{\\sigma^2}\\sim\\chi^2_{n-2},\\quad\\text{independent},\\\\ E(MSR\\mid X)=\\sigma^2+\\beta^2S_{xx},\\qquad E(MSE\\mid X)=\\sigma^2.\\end{gathered}",
+    "text": "Under the zero-slope null, regression and error sums of squares divided by sigma squared are independent chi-squares. MSR estimates the same error variance under the null but increases in expectation with a nonzero slope.",
+    "display": true
+  },
+  "mean-prediction": {
+    "title": "Mean-response standard error and confidence interval",
+    "tex": "\\begin{gathered}\\widehat\\mu_0=a+bx_0,\\qquad h_0=\\frac1n+\\frac{(x_0-\\bar x)^2}{S_{xx}},\\\\ SE(\\widehat\\mu_0)=s\\sqrt{h_0},\\qquad \\widehat\\mu_0\\pm t_{n-2,\\,1-\\alpha_{\\rm sig}/2}\\,s\\sqrt{h_0}.\\end{gathered}",
+    "text": "At predictor x0, estimate the population mean by a plus b x0. The confidence interval uses the standard error of that estimated mean.",
+    "display": true
+  },
+  "mean-variance": {
+    "title": "Variance of estimated mean response",
+    "tex": "\\begin{aligned}\\operatorname{Var}(a+bx_0\\mid X)&=\\operatorname{Var}(a)+x_0^2\\operatorname{Var}(b)+2x_0\\operatorname{Cov}(a,b)\\\\&=\\sigma^2\\left(\\frac1n+\\frac{(x_0-\\bar x)^2}{S_{xx}}\\right).\\end{aligned}",
+    "text": "The intercept and slope estimates are correlated. Include their covariance to obtain uncertainty around the predictor mean, not around zero.",
+    "display": true
+  },
+  "individual-prediction": {
+    "title": "Individual prediction and independent future error",
+    "tex": "\\begin{gathered}Y_0=\\alpha+\\beta x_0+\\varepsilon_0,\\qquad\\widehat Y_0=a+bx_0,\\\\\\operatorname{Var}(Y_0-\\widehat Y_0\\mid X,x_0)=\\sigma^2(1+h_0),\\\\\\widehat Y_0\\pm t_{n-2,\\,1-\\alpha_{\\rm sig}/2}\\,s\\sqrt{1+h_0}.\\end{gathered}",
+    "text": "A new individual response includes an independent future error. The prediction interval adds one times the error variance to the uncertainty in the estimated mean.",
+    "display": true
+  },
+  "prediction-proof": {
+    "title": "Prediction-error variance derivation",
+    "tex": "\\begin{aligned}E(Y_0-\\widehat Y_0\\mid X,x_0)&=0,\\\\\\operatorname{Cov}(Y_0,\\widehat Y_0\\mid X,x_0)&=0,\\\\\\operatorname{Var}(Y_0-\\widehat Y_0\\mid X,x_0)&=\\sigma^2+\\sigma^2h_0.\\end{aligned}",
+    "text": "Independence of the new error and fitting data removes the covariance term. Add the new observation variance and fitted-mean variance.",
+    "display": true
+  }
+}

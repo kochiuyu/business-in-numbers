@@ -1,0 +1,4 @@
+Population skew: 0.0000
+Corrected sample skew: 0.0000
+Population excess: -1.3000
+Corrected sample excess: -1.2000

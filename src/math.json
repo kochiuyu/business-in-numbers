@@ -1,0 +1,128 @@
+{
+  "count": {
+    "tex": "n",
+    "text": "n, the number of observations",
+    "display": false,
+    "title": "Count"
+  },
+  "observations": {
+    "tex": "x_1,\\ldots,x_n",
+    "text": "x subscript one through x subscript n",
+    "display": false,
+    "title": "Observations"
+  },
+  "summation": {
+    "tex": "\\sum_{i=1}^{n}x_i",
+    "text": "sum of x subscript i, for i from one to n",
+    "display": false,
+    "title": "Summation"
+  },
+  "negative-infinity": {
+    "tex": "-\\infty",
+    "text": "negative infinity",
+    "display": false,
+    "title": "Negative infinity"
+  },
+  "positive-infinity": {
+    "tex": "+\\infty",
+    "text": "positive infinity",
+    "display": false,
+    "title": "Positive infinity"
+  },
+  "mean": {
+    "tex": "\\bar{x}=\\frac{1}{n}\\sum_{i=1}^{n}x_i",
+    "text": "The arithmetic mean is the sum of all n observations divided by n.",
+    "display": true,
+    "title": "Arithmetic mean"
+  },
+  "mode": {
+    "tex": "\\operatorname{Mode}=\\operatorname*{arg\\,max}_{x} f(x)",
+    "text": "The mode is the value or values x at which the frequency f of x is largest.",
+    "display": true,
+    "title": "Mode"
+  },
+  "weighted-mean": {
+    "tex": "\\frac{\\sum_{i=1}^{n}w_i x_i}{\\sum_{i=1}^{n}w_i}",
+    "text": "Sum of weight times value, divided by the sum of weights",
+    "display": false,
+    "title": "Weighted mean"
+  },
+  "geometric-mean": {
+    "tex": "\\left(\\prod_{i=1}^{n}x_i\\right)^{1/n}",
+    "text": "The nth root of the product of the n positive observations",
+    "display": false,
+    "title": "Geometric mean"
+  },
+  "harmonic-mean": {
+    "tex": "\\frac{n}{\\sum_{i=1}^{n}(1/x_i)}",
+    "text": "n divided by the sum of the reciprocals of the observations",
+    "display": false,
+    "title": "Harmonic mean"
+  },
+  "balance": {
+    "tex": "\\sum_{i=1}^{n}(x_i-\\bar{x})=0",
+    "text": "The sum of deviations from the sample mean is zero",
+    "display": false,
+    "title": "Balance"
+  },
+  "variance-example": {
+    "tex": "\\begin{aligned}\\text{Population variance}&=\\frac{10}{5}=2\\\\\\text{Population SD}&=\\sqrt{2}\\approx1.4142\\\\\\text{Sample variance}&=\\frac{10}{4}=2.5\\\\\\text{Sample SD}&=\\sqrt{2.5}\\approx1.5811\\end{aligned}",
+    "text": "For 1, 2, 3, 4, 5: population variance is 10 divided by 5, or 2; population standard deviation is the square root of 2, about 1.4142. Sample variance is 10 divided by 4, or 2.5; sample standard deviation is the square root of 2.5, about 1.5811.",
+    "display": true,
+    "title": "Variance and standard deviation"
+  },
+  "interpolation": {
+    "tex": "x_k+\\alpha(x_{k+1}-x_k)",
+    "text": "x subscript k plus alpha times the difference between x subscript k plus one and x subscript k",
+    "display": false,
+    "title": "Interpolation"
+  },
+  "population-variance": {
+    "tex": "\\frac{1}{n}\\sum_{i=1}^{n}(x_i-\\bar{x})^2",
+    "text": "Sum of squared deviations from the mean, divided by n",
+    "display": false,
+    "title": "Population variance"
+  },
+  "sample-variance": {
+    "tex": "s^2=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})^2",
+    "text": "Sample variance s squared equals the sum of squared deviations from the sample mean divided by n minus one",
+    "display": false,
+    "title": "Sample variance"
+  },
+  "moments": {
+    "tex": "\\begin{aligned}m_k&=\\frac{1}{n}\\sum_{i=1}^{n}(x_i-\\bar{x})^k\\\\g_1&=\\frac{m_3}{m_2^{3/2}}\\\\g_2&=\\frac{m_4}{m_2^2}-3\\end{aligned}",
+    "text": "The kth central moment m subscript k is the average of the kth powers of deviations from the mean. Skewness g subscript one equals the third moment divided by the second moment to the power three halves. Excess kurtosis g subscript two equals the fourth moment divided by the square of the second moment, minus three.",
+    "display": true,
+    "title": "Standardized moments"
+  },
+  "corrected-moments": {
+    "tex": "\\begin{aligned}G_1&=\\frac{\\sqrt{n(n-1)}}{n-2}\\,g_1\\\\G_2&=\\frac{n-1}{(n-2)(n-3)}\\\\&\\quad\\times\\bigl[(n+1)g_2+6\\bigr]\\end{aligned}",
+    "text": "Corrected sample skewness G subscript one equals the square root of n times n minus one, divided by n minus two, times g subscript one. Corrected sample excess kurtosis G subscript two equals n minus one divided by the product of n minus two and n minus three, multiplied by the quantity n plus one times g subscript two plus six.",
+    "display": true,
+    "title": "Corrected sample shape measures"
+  },
+  "shape-domains": {
+    "tex": "n\\ge3\\text{ and }n\\ge4",
+    "text": "n at least three and n at least four",
+    "display": false,
+    "title": "Shape domains"
+  },
+  "log-transform": {
+    "tex": "\\log(x)\\text{ at }\\lambda=0",
+    "text": "log of x when lambda equals zero",
+    "display": false,
+    "title": "Log transform"
+  },
+  "covariance-example": {
+    "tex": "\\begin{aligned}\\text{Population covariance}&=\\frac{7}{5}=1.4\\\\\\text{Sample covariance}&=\\frac{7}{4}=1.75\\\\r&=\\frac{7}{\\sqrt{10\\times18}}\\approx0.5217\\end{aligned}",
+    "text": "For the paired example: population covariance equals 7 divided by 5, or 1.4. Sample covariance equals 7 divided by 4, or 1.75. Correlation r equals 7 divided by the square root of 10 times 18, approximately 0.5217.",
+    "display": true,
+    "title": "Covariance and correlation"
+  },
+  "portfolio": {
+    "tex": "\\begin{aligned}\\sigma_p^2&=w_1^2\\sigma_1^2+w_2^2\\sigma_2^2\\\\&\\quad+2w_1w_2\\operatorname{Cov}(X,Y).\\end{aligned}",
+    "text": "Portfolio variance is weight one squared times variance one, plus weight two squared times variance two, plus twice weight one times weight two times the covariance of X and Y.",
+    "display": true,
+    "title": "Two-asset portfolio variance"
+  }
+}

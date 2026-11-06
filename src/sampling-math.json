@@ -1,0 +1,170 @@
+{
+  "iid": {
+    "title": "IID sampling properties",
+    "tex": "X_1,\\ldots,X_n\\overset{\\mathrm{iid}}{\\sim} F,\\qquad E[X_i]=\\mu,\\quad \\operatorname{Var}(X_i)=\\sigma^2,\\quad \\operatorname{Cov}(X_i,X_j)=0\\ (i\\ne j)",
+    "text": "The observations are independent and follow the same distribution. With finite variance, each has mean mu and variance sigma squared, and different observations have zero covariance.",
+    "display": true
+  },
+  "finite-population": {
+    "title": "Variance without replacement",
+    "tex": "\\operatorname{Var}(\\bar X)=\\frac{\\sigma_N^2}{n}\\frac{N-n}{N-1},\\qquad \\sigma_N^2=\\frac1N\\sum_{j=1}^N(x_j-\\mu)^2,\\quad N>1",
+    "text": "For a simple random sample without replacement from N fixed values, multiply population variance divided by n by (N minus n) divided by (N minus one). Here population variance uses divisor N.",
+    "display": true
+  },
+  "sample-mean": {
+    "title": "Sample mean",
+    "tex": "\\bar X=\\frac1n\\sum_{i=1}^nX_i",
+    "text": "The sample mean is the sum of all n observations divided by n.",
+    "display": true
+  },
+  "mean-properties": {
+    "title": "Mean and variance of the sample mean",
+    "tex": "E[\\bar X]=\\mu,\\qquad \\operatorname{Var}(\\bar X)=\\frac{\\sigma^2}{n},\\qquad \\operatorname{SE}(\\bar X)=\\frac{\\sigma}{\\sqrt n}",
+    "text": "The sample mean has expected value mu. Under IID sampling its variance is sigma squared divided by n, and its standard error is sigma divided by the square root of n.",
+    "display": true
+  },
+  "mean-proof": {
+    "title": "Expectation proof",
+    "tex": "\\begin{aligned}E[\\bar X]&=E\\left[\\frac1n\\sum_{i=1}^nX_i\\right]=\\frac1n\\sum_{i=1}^nE[X_i]\\\\&=\\frac{n\\mu}{n}=\\mu.\\end{aligned}",
+    "text": "Linearity moves the constant and sum outside expectation. Each expected value is mu, leaving n times mu divided by n.",
+    "display": true
+  },
+  "variance-proof": {
+    "title": "General and IID variance proof",
+    "tex": "\\begin{aligned}\\operatorname{Var}(\\bar X)&=\\frac1{n^2}\\left[\\sum_{i=1}^n\\operatorname{Var}(X_i)+2\\sum_{i<j}\\operatorname{Cov}(X_i,X_j)\\right]\\\\&=\\frac{n\\sigma^2}{n^2}=\\frac{\\sigma^2}{n}\\quad\\text{under IID sampling}.\\end{aligned}",
+    "text": "The variance of the average is the sum of individual variances plus twice every pair covariance, all divided by n squared. IID sampling makes the covariance terms zero.",
+    "display": true
+  },
+  "se-scaling": {
+    "title": "Sample-size scaling",
+    "tex": "\\frac{\\operatorname{SE}_{n_2}}{\\operatorname{SE}_{n_1}}=\\sqrt{\\frac{n_1}{n_2}},\\qquad n_2=4n_1\\ \\Longrightarrow\\ \\operatorname{SE}_{n_2}=\\frac12\\operatorname{SE}_{n_1}",
+    "text": "To cut standard error in half, multiply the sample size by four, holding population SD and the sampling model fixed.",
+    "display": true
+  },
+  "lln": {
+    "title": "Weak law of large numbers",
+    "tex": "\\forall\\,\\varepsilon>0,\\qquad \\lim_{n\\to\\infty}P\\left(|\\bar X_n-\\mu|<\\varepsilon\\right)=1",
+    "text": "For any fixed positive tolerance epsilon, the probability that the sample mean is within epsilon of the population mean tends to one as n increases.",
+    "display": true
+  },
+  "markov": {
+    "title": "Markov inequality and proof",
+    "tex": "Y\\ge0,\\ a>0:\\quad Y\\ge a\\,\\mathbf1_{\\{Y\\ge a\\}}\\ \\Longrightarrow\\ E[Y]\\ge aP(Y\\ge a)\\ \\Longrightarrow\\ P(Y\\ge a)\\le\\frac{E[Y]}a",
+    "text": "A nonnegative variable is at least a times the indicator of being at least a. Taking expectations gives Markov’s upper bound.",
+    "display": true
+  },
+  "chebyshev": {
+    "title": "Chebyshev inequality and proof",
+    "tex": "\\begin{aligned}Y&=(X-E[X])^2,\\quad t>0;\\\\P(|X-E[X]|\\ge t)&=P(Y\\ge t^2)\\le\\frac{E[Y]}{t^2}=\\frac{\\operatorname{Var}(X)}{t^2}.\\end{aligned}",
+    "text": "Apply Markov to Y equal to squared deviation. Absolute deviation at least t is equivalent to Y at least t squared, giving an upper bound by variance over t squared.",
+    "display": true
+  },
+  "lln-proof": {
+    "title": "Chebyshev bound for the mean",
+    "tex": "P(|\\bar X_n-\\mu|\\ge\\varepsilon)\\le\\min\\left(1,\\frac{\\sigma^2}{n\\varepsilon^2}\\right)\\longrightarrow0",
+    "text": "Under IID sampling with finite variance, Chebyshev bounds the probability of an error at least epsilon by sigma squared over n epsilon squared, capped at one. This tends to zero.",
+    "display": true
+  },
+  "clt": {
+    "title": "Central limit theorem",
+    "tex": "X_i\\overset{\\mathrm{iid}}{\\sim}F,\\quad0<\\sigma^2<\\infty:\\qquad \\frac{\\sqrt n(\\bar X_n-\\mu)}{\\sigma}\\xrightarrow{d}N(0,1)",
+    "text": "For IID observations with finite positive variance, the standardized sample mean converges in distribution to a standard normal.",
+    "display": true
+  },
+  "clt-approx": {
+    "title": "Finite-sample CLT approximation",
+    "tex": "\\bar X\\ \\overset{\\mathrm{approx}}{\\sim}\\ N\\left(\\mu,\\frac{\\sigma^2}{n}\\right)",
+    "text": "For an adequately large sample, the sample mean is approximately normal with mean mu and variance sigma squared over n. The second normal parameter here is variance.",
+    "display": true
+  },
+  "z-mean": {
+    "title": "Standardize the sample mean",
+    "tex": "P(\\bar X\\le c)\\approx\\Phi\\left(\\frac{c-\\mu}{\\sigma/\\sqrt n}\\right),\\qquad \\frac{37-40}{12/\\sqrt{36}}=-1.5",
+    "text": "Subtract the population mean from the cutoff and divide by the standard error, not by the SD of individual deliveries. In the example the result is minus 1.5.",
+    "display": true
+  },
+  "binary-moments": {
+    "title": "Bernoulli moments",
+    "tex": "E[X_i]=\\pi,\\qquad E[X_i^2]=\\pi,\\qquad \\operatorname{Var}(X_i)=\\pi-\\pi^2=\\pi(1-\\pi)",
+    "text": "A zero-one variable equals its own square. Its mean and second moment are pi, so its variance is pi times one minus pi.",
+    "display": true
+  },
+  "proportion-def": {
+    "title": "Count versus proportion",
+    "tex": "K=\\sum_{i=1}^nX_i\\sim\\operatorname{Binomial}(n,\\pi),\\qquad \\hat p=\\frac Kn=\\bar X",
+    "text": "The conversion count K is binomial under independent common-probability trials. The sample proportion p-hat is K divided by n.",
+    "display": true
+  },
+  "proportion-moments": {
+    "title": "Sampling moments of a proportion",
+    "tex": "E[\\hat p]=\\pi,\\qquad\\operatorname{Var}(\\hat p)=\\frac{\\pi(1-\\pi)}n,\\qquad\\operatorname{SE}(\\hat p)=\\sqrt{\\frac{\\pi(1-\\pi)}n}",
+    "text": "The expected sample proportion is the population proportion. Its variance is pi times one minus pi divided by n, and standard error is the square root.",
+    "display": true
+  },
+  "binary-clt": {
+    "title": "Proportion and count normal approximations",
+    "tex": "\\begin{aligned}\\hat p&\\overset{\\mathrm{approx}}{\\sim}N\\left(\\pi,\\frac{\\pi(1-\\pi)}n\\right),\\\\K=n\\hat p&\\overset{\\mathrm{approx}}{\\sim}N\\left(n\\pi,n\\pi(1-\\pi)\\right),\\\\Z&=\\frac{\\hat p-\\pi}{\\sqrt{\\pi(1-\\pi)/n}}\\quad(0<\\pi<1).\\end{aligned}",
+    "text": "The proportion is approximately normal with mean pi and variance pi times one minus pi divided by n. Multiplying by n gives count mean n pi and variance n pi times one minus pi.",
+    "display": true
+  },
+  "continuity": {
+    "title": "Continuity-corrected binomial probability",
+    "tex": "\\begin{aligned}P(K<20)&=P(K\\le19)\\\\&\\approx\\Phi\\left(\\frac{19.5-80(.30)}{\\sqrt{80(.30)(.70)}}\\right)\\approx0.136127.\\end{aligned}",
+    "text": "For fewer than twenty conversions, sum the integer masses through nineteen. The normal approximation uses boundary nineteen and a half, giving about 0.136127.",
+    "display": true
+  },
+  "integer-events": {
+    "title": "Strict and non-strict proportion events",
+    "tex": "\\{\\hat p<a\\}=\\{K\\le\\lceil na\\rceil-1\\},\\qquad\\{\\hat p\\le a\\}=\\{K\\le\\lfloor na\\rfloor\\}",
+    "text": "A strict proportion threshold a becomes count at most ceiling of n a minus one. A non-strict threshold becomes count at most floor of n a.",
+    "display": true
+  },
+  "sample-variance": {
+    "title": "Sample variance and estimated SE",
+    "tex": "S^2=\\frac1{n-1}\\sum_{i=1}^n(X_i-\\bar X)^2,\\qquad\\widehat{\\operatorname{SE}}(\\bar X)=\\frac S{\\sqrt n},\\qquad n\\ge2",
+    "text": "Sample variance divides the sum of squared deviations by n minus one. Estimated standard error of the mean is sample SD divided by square root of n.",
+    "display": true
+  },
+  "normal-sample": {
+    "title": "Normal sample mean",
+    "tex": "X_i\\overset{\\mathrm{iid}}{\\sim}N(\\mu,\\sigma^2),\\quad\\sigma^2>0\\quad\\Longrightarrow\\quad\\bar X\\sim N\\left(\\mu,\\frac{\\sigma^2}n\\right)",
+    "text": "For independent normal observations with positive variance, the sample mean is exactly normal at every sample size.",
+    "display": true
+  },
+  "t-pivot": {
+    "title": "Student t statistic",
+    "tex": "T=\\frac{\\bar X-\\mu}{S/\\sqrt n}\\sim t_{n-1}",
+    "text": "Under IID normal sampling, subtract the true mean and divide by the estimated standard error to obtain a Student t variable with n minus one degrees of freedom.",
+    "display": true
+  },
+  "chi-square-sample": {
+    "title": "Normal-sample variance and independence",
+    "tex": "U=\\frac{(n-1)S^2}{\\sigma^2}\\sim\\chi^2_{n-1},\\qquad \\bar X\\perp S^2",
+    "text": "For an IID normal sample, n minus one times sample variance divided by population variance is chi-square with n minus one degrees of freedom. The sample mean and variance are independent.",
+    "display": true
+  },
+  "t-proof": {
+    "title": "Derive the Student t pivot",
+    "tex": "\\begin{aligned}Z&=\\frac{\\bar X-\\mu}{\\sigma/\\sqrt n}\\sim N(0,1),\\qquad Z\\perp U,\\\\\\frac Z{\\sqrt{U/(n-1)}}&=\\frac{(\\bar X-\\mu)/(\\sigma/\\sqrt n)}{\\sqrt{S^2/\\sigma^2}}=\\frac{\\bar X-\\mu}{S/\\sqrt n}\\sim t_{n-1}.\\end{aligned}",
+    "text": "The normal standardized mean Z is independent of the chi-square variable U. Dividing Z by the square root of U over its degrees of freedom gives Student t.",
+    "display": true
+  },
+  "t-tail": {
+    "title": "An observed statistic and its null tail",
+    "tex": "\\begin{aligned}t_{\\mathrm{obs}}&=\\frac{47-50}{8/\\sqrt{16}}=-1.5,\\quad\\nu=15,\\\\P_{\\mu=50}(T\\le-1.5)&\\approx0.077183,\\\\P_{\\mu=50}(|T|\\ge1.5)&\\approx0.154367.\\end{aligned}",
+    "text": "The observed t-statistic is minus 1.5 with fifteen degrees of freedom. Under the benchmark mean of fifty and the normal sampling assumptions, its lower-tail probability is about 0.077183 and its two-sided probability is about 0.154367.",
+    "display": true
+  },
+  "t-critical": {
+    "title": "Two-tail critical values",
+    "tex": "c=t_{\\nu,1-\\alpha/2},\\qquad P(T_\\nu<-c)=\\frac\\alpha2,\\qquad P(|T_\\nu|>c)=\\alpha",
+    "text": "Take the one minus alpha over two quantile for a central one minus alpha interval. Each tail has probability alpha over two, and the combined tails have probability alpha.",
+    "display": true
+  },
+  "jb": {
+    "title": "Jarque–Bera statistic",
+    "tex": "\\mathrm{JB}=\\frac n6\\left[g_1^2+\\frac{(g_2-3)^2}{4}\\right]\\overset{\\mathrm{approx}}{\\sim}\\chi^2_2\\quad\\text{under IID normality}",
+    "text": "Jarque–Bera uses moment-based skewness g1 and ordinary kurtosis g2. Its chi-square reference with two degrees of freedom is asymptotic under normality.",
+    "display": true
+  }
+}

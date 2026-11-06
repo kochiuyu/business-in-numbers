@@ -1,0 +1,19 @@
+Synthetic datasets, separate from the observed mean=47, SD=8 case.
+
+Normal, n=16: mean=50.340361; s(ddof=1)=4.816470; estimated SE=1.204117
+skewness=-0.234736; raw kurtosis=2.412214; excess kurtosis=-0.587786
+JB=0.377264; asymptotic p=0.828091093
+
+Exponential, n=16: mean=8.888727; s(ddof=1)=8.107658; estimated SE=2.026915
+skewness=1.594967; raw kurtosis=5.469012; excess kurtosis=2.469012
+JB=10.847797; asymptotic p=0.0044099209
+
+Exponential, n=500: mean=10.753129; s(ddof=1)=10.713041; estimated SE=0.479102
+skewness=1.802692; raw kurtosis=7.019115; excess kurtosis=4.019115
+JB=607.335080; asymptotic p=1.31480997e-132
+
+Normal population targets: skewness=0; raw kurtosis=3; excess kurtosis=0.
+JB uses an asymptotic chi-square(2) reference; small-sample calibration can be poor.
+At n=16 a test has little power: failure to reject does not establish normality.
+Inspect Q-Q curvature, tail outliers, and how the data were sampled; tests do not check independence.
+Wrote qq.svg in the requested output directory.

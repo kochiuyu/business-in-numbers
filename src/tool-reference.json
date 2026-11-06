@@ -1,0 +1,68 @@
+[
+  [
+    "Count / total",
+    "=COUNT(A2:A6) / =SUM(A2:A6)",
+    "len(x), sum(x)",
+    "5 / 15"
+  ],
+  [
+    "Mean / median",
+    "=AVERAGE(A2:A6) / =MEDIAN(A2:A6)",
+    "st.mean(x), st.median(x)",
+    "3 / 3"
+  ],
+  [
+    "Mode",
+    "=MODE.SNGL(A2:A6)",
+    "st.multimode(x) if len(set(x)) < len(x) else []",
+    "No repeated mode: Excel #N/A; Python []"
+  ],
+  [
+    "Geometric / harmonic mean",
+    "=GEOMEAN(A2:A6) / =HARMEAN(A2:A6)",
+    "st.geometric_mean(x), st.harmonic_mean(x)",
+    "2.6052 / 2.1898"
+  ],
+  [
+    "Range",
+    "=MAX(A2:A6)-MIN(A2:A6)",
+    "max(x) - min(x)",
+    "4"
+  ],
+  [
+    "Exclusive quartiles",
+    "=QUARTILE.EXC(A2:A6,1) / =QUARTILE.EXC(A2:A6,3)",
+    "st.quantiles(x, n=4, method=\"exclusive\")[::2]",
+    "Q₁ = 1.5; Q₃ = 4.5; IQR = 3"
+  ],
+  [
+    "Inclusive quartiles",
+    "=QUARTILE.INC(A2:A6,1) / =QUARTILE.INC(A2:A6,3)",
+    "st.quantiles(x, n=4, method=\"inclusive\")[::2]",
+    "Q₁ = 2; Q₃ = 4; IQR = 2"
+  ],
+  [
+    "Population / sample variance",
+    "=VAR.P(A2:A6) / =VAR.S(A2:A6)",
+    "st.pvariance(x), st.variance(x)",
+    "2 / 2.5"
+  ],
+  [
+    "Population / sample SD",
+    "=STDEV.P(A2:A6) / =STDEV.S(A2:A6)",
+    "st.pstdev(x), st.stdev(x)",
+    "1.4142 / 1.5811"
+  ],
+  [
+    "Population / sample skewness",
+    "=SKEW.P(A2:A6) / =SKEW(A2:A6)",
+    "shape(x)[:2]",
+    "0 / 0"
+  ],
+  [
+    "Sample excess kurtosis",
+    "=KURT(A2:A6)",
+    "shape(x)[3]",
+    "−1.2"
+  ]
+]

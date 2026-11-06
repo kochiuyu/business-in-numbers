@@ -1,0 +1,33 @@
+
+Processing minutes: one-way ANOVA
+Grand mean: 23.666666666666668
+between {'ss': 98.66666666666667, 'df': 2, 'ms': 49.333333333333336, 'F': 18.500000000000004, 'p': 0.000648158244993773, 'crit': 4.256494729093747, 'reject': True}
+within {'ss': 24, 'df': 9, 'ms': 2.6666666666666665}
+total {'ss': 122.66666666666667, 'df': 11, 'ms': 11.151515151515152}
+eta squared: 0.8043478260869565 omega squared: 0.7446808510638298
+
+Campaign spend dollars: two-way ANOVA
+Grand mean: 27
+A {'ss': 192, 'df': 1, 'ms': 192.0, 'F': 48.0, 'p': 0.00012104020555530014, 'crit': 5.317655071578713, 'reject': True}
+B {'ss': 300, 'df': 1, 'ms': 300.0, 'F': 75.0, 'p': 2.456840776151987e-05, 'crit': 5.317655071578713, 'reject': True}
+AB {'ss': 48, 'df': 1, 'ms': 48.0, 'F': 12.0, 'p': 0.00851626337090128, 'crit': 5.317655071578713, 'reject': True}
+error {'ss': 32, 'df': 8, 'ms': 4.0}
+total {'ss': 572, 'df': 11, 'ms': 52.0}
+
+Parallel cell means
+Grand mean: 25
+A {'ss': 48, 'df': 1, 'ms': 48.0, 'F': 12.0, 'p': 0.00851626337090128, 'crit': 5.317655071578713, 'reject': True}
+B {'ss': 108, 'df': 1, 'ms': 108.0, 'F': 27.0, 'p': 0.0008262751659886821, 'crit': 5.317655071578713, 'reject': True}
+AB {'ss': 0, 'df': 1, 'ms': 0.0, 'F': 0.0, 'p': 1.0, 'crit': 5.317655071578713, 'reject': False}
+error {'ss': 32, 'df': 8, 'ms': 4.0}
+total {'ss': 188, 'df': 11, 'ms': 17.09090909090909}
+
+Crossover cell means
+Grand mean: 26
+A {'ss': 0, 'df': 1, 'ms': 0.0, 'F': 0.0, 'p': 1.0, 'crit': 5.317655071578713, 'reject': False}
+B {'ss': 0, 'df': 1, 'ms': 0.0, 'F': 0.0, 'p': 1.0, 'crit': 5.317655071578713, 'reject': False}
+AB {'ss': 432, 'df': 1, 'ms': 432.0, 'F': 108.0, 'p': 6.364036898110826e-06, 'crit': 5.317655071578713, 'reject': True}
+error {'ss': 32, 'df': 8, 'ms': 4.0}
+total {'ss': 464, 'df': 11, 'ms': 42.18181818181818}
+
+An omnibus rejection does not identify every differing pair. Non-rejection does not prove equality.

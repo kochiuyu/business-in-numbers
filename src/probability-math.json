@@ -1,0 +1,140 @@
+{
+  "classical": {
+    "title": "Equally likely outcomes",
+    "tex": "P(A)=\\frac{|A|}{|S|}",
+    "text": "For a finite sample space with equally likely outcomes, probability of A is the number of outcomes in A divided by the total number of outcomes.",
+    "display": true
+  },
+  "axioms": {
+    "title": "Probability axioms",
+    "tex": "P(A)\\geq0,\\qquad P(S)=1,\\qquad P\\!\\left(\\bigcup_{i=1}^{\\infty}A_i\\right)=\\sum_{i=1}^{\\infty}P(A_i)",
+    "text": "Probabilities are nonnegative. The whole sample space has probability one. The probability of a countable union of pairwise disjoint events is the sum of their probabilities.",
+    "display": true
+  },
+  "complement": {
+    "title": "Complement rule",
+    "tex": "P(A^c)=1-P(A),\\qquad P(\\varnothing)=0",
+    "text": "The probability of not A is one minus the probability of A. The empty event has probability zero.",
+    "display": true
+  },
+  "addition": {
+    "title": "Addition rule",
+    "tex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
+    "text": "The probability of A or B is probability A plus probability B minus their overlap. Or is inclusive.",
+    "display": true
+  },
+  "bounds": {
+    "title": "Feasible intersection",
+    "tex": "\\max\\{0,P(A)+P(B)-1\\}\\leq P(A\\cap B)\\leq\\min\\{P(A),P(B)\\}",
+    "text": "The overlap cannot be negative or larger than either event, and it must be large enough that their union is at most one.",
+    "display": true
+  },
+  "conditional": {
+    "title": "Conditional probability",
+    "tex": "P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)},\\qquad P(B)>0",
+    "text": "The probability of A given B is the probability of the overlap divided by the probability of B, provided B has positive probability.",
+    "display": true
+  },
+  "multiply": {
+    "title": "Multiplication rule",
+    "tex": "P(A\\cap B)=P(A\\mid B)P(B)=P(B\\mid A)P(A)",
+    "text": "A joint probability is a conditional probability multiplied by its conditioning probability. The relevant conditioning events must have positive probability.",
+    "display": true
+  },
+  "chain": {
+    "title": "Chain rule",
+    "tex": "P(A\\cap B\\cap C)=P(A)P(B\\mid A)P(C\\mid A\\cap B)",
+    "text": "For three events, multiply probability A, probability B given A, and probability C given both A and B, assuming the conditioning probabilities are defined.",
+    "display": true
+  },
+  "total": {
+    "title": "Total probability",
+    "tex": "P(B)=\\sum_{i=1}^{k}P(B\\mid H_i)P(H_i)",
+    "text": "When H one through H k form a partition, total probability of B is the sum of each scenario probability times the probability of B in that scenario. Terms with zero prior probability contribute zero.",
+    "display": true
+  },
+  "bags": {
+    "title": "Two-bag calculation",
+    "tex": "P(G)=\\frac56\\cdot\\frac12+\\frac36\\cdot\\frac12=\\frac23,\\qquad P(A\\mid G)=\\frac{5/12}{2/3}=\\frac58",
+    "text": "Green has probability two thirds. Given green, the probability of bag A is five eighths.",
+    "display": true
+  },
+  "independent": {
+    "title": "Independence",
+    "tex": "P(A\\cap B)=P(A)P(B)",
+    "text": "Two events are independent exactly when their joint probability equals the product of their probabilities.",
+    "display": true
+  },
+  "bayes": {
+    "title": "Bayes rule",
+    "tex": "P(H\\mid +)=\\frac{P(+\\mid H)P(H)}{P(+\\mid H)P(H)+P(+\\mid H^c)P(H^c)}",
+    "text": "The probability of the hypothesis given a positive signal equals true-positive probability divided by total positive probability, when the total is nonzero.",
+    "display": true
+  },
+  "bayes-numbers": {
+    "title": "The alert example",
+    "tex": "P(H\\mid +)=\\frac{0.90\\times0.01}{0.90\\times0.01+0.05\\times0.99}=\\frac{90}{585}\\approx0.1538",
+    "text": "With a one percent base rate, ninety percent sensitivity, and five percent false-positive rate, a positive alert has about a fifteen point three eight percent chance of being a real issue.",
+    "display": true
+  },
+  "general-bayes": {
+    "title": "General Bayes rule",
+    "tex": "P(H_i\\mid B)=\\frac{P(B\\mid H_i)P(H_i)}{\\sum_{j=1}^{k}P(B\\mid H_j)P(H_j)}",
+    "text": "For a partition of hypotheses, divide a hypothesis weighted likelihood by the sum of all weighted likelihoods. The denominator must be positive.",
+    "display": true
+  },
+  "odds": {
+    "title": "Odds and probability",
+    "tex": "o=\\frac{p}{1-p},\\qquad p=\\frac{o}{1+o}",
+    "text": "Odds in favor are probability divided by one minus probability. Probability is odds divided by one plus odds. The first formula requires probability below one.",
+    "display": true
+  },
+  "odds-bayes": {
+    "title": "Bayes in odds form",
+    "tex": "\\frac{P(H\\mid B)}{P(H^c\\mid B)}=\\frac{P(H)}{P(H^c)}\\times\\frac{P(B\\mid H)}{P(B\\mid H^c)}",
+    "text": "Posterior odds equal prior odds times the likelihood ratio, when the denominators are positive.",
+    "display": true
+  },
+  "two-tests": {
+    "title": "Two positive results",
+    "tex": "P(H\\mid +,+)=\\frac{0.4(0.8)^2}{0.4(0.8)^2+0.6(0.4)^2}=\\frac{8}{11}\\approx0.7273",
+    "text": "Assuming results are independent conditional on the true state, two positive results give probability eight elevenths, or about seventy-two point seven three percent.",
+    "display": true
+  },
+  "second-marginal": {
+    "title": "Updated marginal probability",
+    "tex": "P(+_2\\mid +_1)=0.8\\cdot\\frac47+0.4\\cdot\\frac37=\\frac{22}{35}",
+    "text": "After one positive, the next positive has probability twenty-two thirty-fifths. It is not the original marginal probability of zero point five six.",
+    "display": true
+  },
+  "repeated": {
+    "title": "Repeated independent evidence",
+    "tex": "P(H\\mid +^m,-^n)=\\frac{\\pi s^m(1-s)^n}{\\pi s^m(1-s)^n+(1-\\pi)f^m(1-f)^n}",
+    "text": "For conditionally independent results with constant sensitivity s and false-positive rate f, multiply the prior by the likelihood of m positives and n negatives in each state, then normalize.",
+    "display": true
+  },
+  "product-count": {
+    "title": "Counting principle",
+    "tex": "N=n_1n_2\\cdots n_k",
+    "text": "Multiply the number of options at each stage when each partial choice has the stated number of continuations.",
+    "display": true
+  },
+  "permutation": {
+    "title": "Ordered selection without replacement",
+    "tex": "{}_nP_r=\\frac{n!}{(n-r)!}",
+    "text": "The number of ordered selections of r distinct objects from n is n factorial divided by n minus r factorial.",
+    "display": true
+  },
+  "combination": {
+    "title": "Unordered selection without replacement",
+    "tex": "\\binom nr=\\frac{n!}{r!(n-r)!}=\\frac{{}_nP_r}{r!}",
+    "text": "The number of unordered selections divides ordered selections by r factorial, removing the orders of the same selected objects.",
+    "display": true
+  },
+  "coin-count": {
+    "title": "Exactly two tails",
+    "tex": "P(\\text{two tails in four fair tosses})=\\frac{\\binom42}{2^4}=\\frac6{16}=\\frac38",
+    "text": "For four independent fair coin tosses, choose which two positions contain tails: six equally likely sequences out of sixteen.",
+    "display": true
+  }
+}

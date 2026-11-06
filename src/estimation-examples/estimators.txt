@@ -1,0 +1,21 @@
+Observed sample: [46, 52, 48, 54, 50]
+Sample mean = 50.000000
+Variance with ddof=0 (divide by n) = 8.000000
+Sample variance with ddof=1 (divide by n-1) = 10.000000
+Estimated standard error of mean, s/sqrt(n) = 1.414214
+ddof=1 makes sample variance unbiased for population variance; it does not make s unbiased.
+
+Binary sample: 48/200, p-hat = 0.240000
+Plug-in Bernoulli observation variance, p-hat(1-p-hat) = 0.182400
+Unbiased Bernoulli observation variance, n/(n-1) times plug-in = 0.183317
+Plug-in variance of p-hat, p-hat(1-p-hat)/n = 0.000912
+Unbiased estimate of variance of p-hat, p-hat(1-p-hat)/(n-1) = 0.000917
+Plug-in SE of p-hat = 0.030199
+
+Analytic comparison: independent observations, population mean 50, variance 100, n=5.
+Bias = E[estimator] - target; MSE = variance + squared bias.
+Sample mean: bias=0.00, variance=20.00, MSE=20.00
+First observation: bias=0.00, variance=100.00, MSE=100.00
+Sample mean + 2: bias=2.00, variance=20.00, MSE=24.00
+Averaging reduces variance; adding 2 leaves variance unchanged but increases MSE by 4.
+Bias is a repeated-sampling property, not the error in a single observed estimate.

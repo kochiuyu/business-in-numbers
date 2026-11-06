@@ -1,0 +1,11 @@
+Synthetic orders (80 total)
+          On time  Late
+Express        15    25
+Standard       20    20
+P(express) = 40/80 = 0.500000
+P(on time) = 35/80 = 0.437500
+P(express and on time) = 15/80 = 0.187500
+P(express or on time) = (40 + 35 - 15)/80 = 0.750000
+P(on time | express) = 15/40 = 0.375000
+P(express | on time) = 15/35 = 0.428571
+The conditioning event determines the denominator.

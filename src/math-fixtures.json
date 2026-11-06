@@ -1,0 +1,50 @@
+{
+  "conditional-probability": {
+    "tex": "P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)},\\qquad P(B)>0",
+    "text": "The probability of A given B equals the probability of the intersection of A and B divided by the probability of B, provided the probability of B is positive.",
+    "display": true,
+    "title": "Conditional probability"
+  },
+  "bayes-rule": {
+    "tex": "\\begin{aligned}P(A_j\\mid B)&=\\frac{P(B\\mid A_j)P(A_j)}{\\sum_{i=1}^{m}P(B\\mid A_i)P(A_i)}\\end{aligned}",
+    "text": "For a partition into events A one through A m and positive probability of B: the probability of A j given B is P of B given A j times P of A j, divided by the sum over i of P of B given A i times P of A i.",
+    "display": true,
+    "title": "Bayes rule"
+  },
+  "counting-and-binomial": {
+    "tex": "\\binom{n}{k}=\\frac{n!}{k!(n-k)!},\\qquad 0\\le k\\le n",
+    "text": "n choose k equals n factorial divided by k factorial times n minus k factorial, for integer n and k with zero at most k at most n.",
+    "display": true,
+    "title": "Counting and binomial"
+  },
+  "probability-mass-function": {
+    "tex": "P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}",
+    "text": "For a binomial random variable, the probability of k successes equals n choose k times p to the k times one minus p to the n minus k.",
+    "display": true,
+    "title": "Probability mass function"
+  },
+  "piecewise-function": {
+    "tex": "F(x)=\\begin{cases}0,&x<0\\\\x,&0\\le x\\le1\\\\1,&x>1\\end{cases}",
+    "text": "F of x is zero below zero, x between zero and one inclusive, and one above one.",
+    "display": true,
+    "title": "Piecewise function"
+  },
+  "integral-and-infinity": {
+    "tex": "\\int_{-\\infty}^{\\infty}\\frac{1}{\\sqrt{2\\pi}}e^{-x^2/2}\\,\\mathrm{d}x=1",
+    "text": "The integral from negative infinity to infinity of the standard normal density equals one.",
+    "display": true,
+    "title": "Integral and infinity"
+  },
+  "matrix-and-greek": {
+    "tex": "\\Sigma=\\begin{pmatrix}\\sigma_1^2&\\rho\\sigma_1\\sigma_2\\\\\\rho\\sigma_1\\sigma_2&\\sigma_2^2\\end{pmatrix}",
+    "text": "A two by two covariance matrix Sigma with variances sigma one squared and sigma two squared on the diagonal and covariance rho times sigma one times sigma two off the diagonal.",
+    "display": true,
+    "title": "Matrix and greek"
+  },
+  "aligned-derivation": {
+    "tex": "\\begin{aligned}\\sum_{i=1}^{n}(x_i-a)^2&=\\sum_{i=1}^{n}\\bigl[(x_i-\\bar{x})+(\\bar{x}-a)\\bigr]^2\\\\&=\\sum_{i=1}^{n}(x_i-\\bar{x})^2+n(\\bar{x}-a)^2\\end{aligned}",
+    "text": "The sum of squared deviations about a equals the sum of squared deviations about the mean plus n times the squared difference between the mean and a.",
+    "display": true,
+    "title": "Aligned derivation"
+  }
+}

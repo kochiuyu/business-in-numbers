@@ -1,0 +1,45 @@
+Synthetic advertising spend / weekly orders: simple OLS with intercept
+X in $100 units; Y in tens of orders. alpha=0.05 for the default run.
+Classical inference assumes independent normal errors with common variance.
+n: 8
+xbar: 4.5
+ybar: 17.5
+Sxx: 42
+Sxy: 81
+slope: 1.928571429
+intercept: 8.821428571
+fitted: [10.75, 12.67857143, 14.60714286, 16.53571429, 18.46428571, 20.39285714, 22.32142857, 24.25]
+residuals: [0.25, -0.6785714286, 1.392857143, -1.535714286, 0.5357142857, -0.3928571429, 0.6785714286, -0.25]
+SST: 162
+SSR: 156.2142857
+SSE: 5.785714286
+regression_df: 1
+error_df: 6
+total_df: 7
+MSR: 156.2142857
+MSE: 0.9642857143
+s: 0.9819805061
+F: 162
+p_F: 1.443044997e-05
+R2: 0.9642857143
+adjusted_R2: 0.9583333333
+se_slope: 0.1515228817
+se_intercept: 0.7651530459
+t_slope: 12.72792206
+t_intercept: 11.52897269
+p_slope: 1.443044997e-05
+p_intercept: 2.559754327e-05
+slope_CI: [1.557808294, 2.299334563]
+intercept_CI: [6.949166515, 10.69369063]
+x0: 4.5
+prediction: 17.5
+se_mean: 0.3471825374
+se_prediction: 1.041547612
+mean_CI: [16.65047493, 18.34952507]
+individual_PI: [14.9514248, 20.0485752]
+alpha: 0.05
+t_critical: 2.446911851
+inference_available: True
+The slope describes association, not a demonstrated causal effect.
+The intercept is at x=0, outside the observed x range [1, 8].
+A mean confidence interval is not an individual prediction interval.

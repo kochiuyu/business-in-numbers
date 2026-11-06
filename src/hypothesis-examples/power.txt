@@ -1,0 +1,5 @@
+n=36: reject if sample mean >= 503.289707
+Type I error=0.050000; power at true mean 504=0.638760; beta=0.361240
+n=100: reject if sample mean >= 501.973824
+Type I error=0.050000; power at true mean 504=0.954340; beta=0.045660
+Power also depends on effect size, variability, design and the chosen test, not only n.

@@ -1,0 +1,7 @@
+One-sample z, known sigma: statistic=2.000000, alternative=greater, p=0.022750; reject H0 at alpha=0.05
+One-sample t, df=15: statistic=-2.000000, alternative=less, p=0.031973; reject H0 at alpha=0.05
+Independent pooled t, df=43: statistic=2.437120, alternative=two-sided, p=0.019017; reject H0 at alpha=0.05
+Welch df=40.855492956 (keep fractional degrees of freedom)
+Independent Welch t: statistic=2.561578, alternative=two-sided, p=0.014208; reject H0 at alpha=0.05
+Extension: independent known-variance z: statistic=2.561578, alternative=two-sided, p=0.010420; reject H0 at alpha=0.05
+Do not choose pooled versus Welch by first testing sample variances.

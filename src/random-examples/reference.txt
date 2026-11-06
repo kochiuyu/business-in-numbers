@@ -1,0 +1,21 @@
+Standard normal
+  PDF(1.96) = 0.058441 (density, not probability)
+  CDF(1.96) = 0.975002; SF(1.96) = 0.024998
+  Left-tail .95 cutoff = 1.644854
+  Right-tail .05 cutoff = 1.644854
+Chi-square df=9
+  PDF(12) = 0.056375 (density, not probability)
+  CDF(12) = 0.786691; SF(12) = 0.213309
+  Left-tail .95 cutoff = 16.918978
+  Right-tail .05 cutoff = 16.918978
+Student t df=9
+  PDF(2) = 0.061712 (density, not probability)
+  CDF(2) = 0.961724; SF(2) = 0.038276
+  Left-tail .95 cutoff = 1.833113
+  Right-tail .05 cutoff = 1.833113
+F df1=5 df2=10
+  PDF(2) = 0.162006 (density, not probability)
+  CDF(2) = 0.835805; SF(2) = 0.164195
+  Left-tail .95 cutoff = 3.325835
+  Right-tail .05 cutoff = 3.325835
+Two-sided t critical value, total alpha=.05, df=9: 2.262157

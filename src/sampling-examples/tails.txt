@@ -1,0 +1,10 @@
+Delivery mean: SE=2.000000; z=-1.500000; left tail=0.066807201
+Exact for independent normal deliveries; a CLT approximation otherwise.
+
+Conversion: n*pi=24; n*(1-pi)=56
+E[K]=24.000000; SD(K)=4.098780; E[p_hat]=0.300000; SE(p_hat)=0.051235
+Fewer than 20 means K<20, or K<=19, or p_hat<0.25.
+Exact Binomial P(K<=19) = 0.135223306
+Continuity-corrected normal at 19.5 = 0.136126791; absolute error=0.000903485
+Uncorrected normal at 20 = 0.164556993; absolute error=0.029333687
+Wrong event P(K<=20) = 0.197846577

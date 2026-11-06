@@ -1,0 +1,5 @@
+Histogram counts: [4, 13, 2, 1]
+Quartiles: 24.25 31.0 41.0
+Whiskers: 18 46
+Flagged values: [200]
+Saved class1-charts.png

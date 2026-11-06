@@ -1,0 +1,11 @@
+Paired times: D=before-after, H0: mean D=0; H1: mean D>0
+Differences: 3, 2, -1, 4, 2, 1, 5, 2
+mean D=2.250000, SD(D)=1.832251, t=3.473302, df=7, p=0.005180
+Decision: reject H0 at alpha=.05
+
+Independent variance ratio: F=2.250000, df=(17,21), two-tail p=0.079758
+Rejection region: F <= 0.384618 or F >= 2.483283
+Swapping samples AND degrees of freedom preserves p=0.079758
+
+Extension: one normal variance, chi-square=29.687500, df=19, two-tail p=0.111825
+Two-sided F/chi-square convention: twice the smaller tail, capped at 1.

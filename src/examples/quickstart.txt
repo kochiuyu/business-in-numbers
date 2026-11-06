@@ -1,0 +1,10 @@
+Count: 5
+Total: 15
+Mean: 3
+Median: 3
+Population variance: 2
+Sample variance: 2.5
+Population SD: 1.4142
+Sample SD: 1.5811
+Exclusive Q1, Q3, IQR: 1.5 4.5 3.0
+Inclusive Q1, Q3, IQR: 2.0 4.0 2.0

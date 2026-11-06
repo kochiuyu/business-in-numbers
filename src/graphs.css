@@ -1,0 +1,33 @@
+/* Class 1 graphical representation: scoped, responsive and offline. */
+.graphs-section{border-top:1px solid var(--line)}
+.graphs-section .graph-intro{max-width:850px;font-size:15px;color:var(--muted)}
+.graph-chooser{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:25px 0 18px}
+.graph-chooser button{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:16px 12px;text-align:left;min-height:94px}
+.graph-chooser b,.graph-chooser span{display:block}.graph-chooser b{font-size:13px}.graph-chooser span{font-size:11px;color:var(--muted);margin-top:7px}
+.graph-chooser button[aria-pressed=true]{border-color:var(--green);box-shadow:inset 0 3px var(--green);background:#e9eee2}
+.graph-panel{padding:28px;background:var(--white);border:1px solid var(--line);border-radius:5px;margin-bottom:18px}
+.graph-panel[hidden]{display:none!important}.graph-panel h3{font:400 25px/1.25 Georgia,serif;margin:0 0 12px}.graph-panel h4{font-size:14px;margin:20px 0 6px}
+.graph-panel p,.graph-panel li{font-size:13px;line-height:1.65}
+.graph-example{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:30px;align-items:start}
+.graph-example>*{min-width:0}.graph-example figure{margin:15px 0 0}.graph-example figcaption{font-size:11px;color:var(--muted);padding:8px 0}
+.graph-picture{overflow-x:auto;max-width:100%;overscroll-behavior-x:contain;padding:5px 0}
+.graph-picture svg{display:block;width:100%;min-width:380px;height:auto}
+.graph-picture:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.graph-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin:18px 0;font-size:12px}
+.graph-controls label{display:flex;align-items:center;gap:9px}.graph-controls select{font-size:12px;min-height:44px}.graph-controls input{width:18px;height:18px;accent-color:var(--green)}
+.graph-readout{background:#edf2e8;border-left:3px solid var(--green);padding:13px 16px;font-size:13px;line-height:1.7}
+.graph-panel details,.graph-tools{padding:9px 16px;background:#f1f0e7;border-radius:4px;margin:18px 0}
+.graph-panel details p{margin:6px 0 14px}.graph-panel .table-scroll{margin:10px 0}
+.graph-key{font-size:11px;color:var(--muted)}
+.graph-rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:26px 0}
+.graph-rules article{border-top:2px solid #acbdac;padding:14px 5px}.graph-rules h3{font-size:14px;margin:0 0 7px}.graph-rules p{font-size:13px;margin:0;color:var(--muted)}
+.graph-tools>summary{font-size:15px}.graph-tools p,.graph-tools li{font-size:13px}.graph-tools .tool-reference table{min-width:620px;table-layout:auto}
+.graph-tools .tool-reference th:nth-child(n){width:auto}.graph-tools .tool-reference td,.graph-tools .tool-reference th{font-size:12px}
+.graph-check{border:1px solid var(--line);border-radius:4px;padding:22px;background:#eee8d8;margin-top:24px}.graph-check h3{font-size:16px;margin:0 0 10px}.graph-check p{font-size:13px}
+.graph-check-buttons{display:flex;gap:10px;flex-wrap:wrap}.graph-check button{min-height:44px;padding:10px 15px;border:1px solid #9cac9e;border-radius:4px;background:var(--white);font-size:13px}.graph-check button[aria-pressed=true]{background:var(--green);color:var(--white)}
+.graph-print-note{font-size:11px;color:var(--muted)}
+@media(max-width:900px){.graph-chooser{grid-template-columns:repeat(3,minmax(0,1fr))}.graph-example{grid-template-columns:minmax(0,1fr)}.graph-example figure{max-width:620px}.graph-panel{padding:24px}.graph-rules{gap:14px}}
+@media(max-width:700px){.graph-chooser{grid-template-columns:repeat(2,minmax(0,1fr))}.graph-chooser button{min-height:90px}.graph-panel{padding:19px}.graph-panel h3{font-size:23px}.graph-example{gap:8px}.graph-rules{grid-template-columns:1fr;gap:4px}.graph-controls label{flex-wrap:wrap}.graphs-section .graph-intro{font-size:13px}.graph-check{padding:18px}.graph-tools{padding:9px 13px}}
+@media print{.graph-chooser,.graph-controls,.graph-check-buttons{display:none!important}.graph-panel[hidden]{display:block!important}.graph-panel{padding:12pt;margin:12pt 0;break-inside:avoid}.graph-example{display:block}.graph-example figure{max-width:400pt}.graph-picture{overflow:visible}.graph-picture svg{min-width:0;max-width:400pt}.graph-rules{display:block}.graph-rules article{margin:10pt 0}.graph-tools .tool-reference table{min-width:0}.graph-tools .tool-reference td,.graph-tools .tool-reference th{font-size:8pt}.graph-panel .graph-controls+figure{margin-top:0}}
+
+@media(max-width:700px){.top{flex-wrap:wrap}.top nav{width:100%;gap:8px;justify-content:space-between}}

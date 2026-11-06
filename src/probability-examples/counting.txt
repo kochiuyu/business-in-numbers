@@ -1,0 +1,8 @@
+Arrange all 5 distinct items: 5! = 120
+Choose and order 3 of 5: P(5, 3) = 60
+Choose 3 of 5, ignoring order: C(5, 3) = 10
+Meal choices: 2 mains x 3 sides x 3 drinks = 18
+3 breads, 2 distinct fillings from 6, order matters: 3 x P(6, 2) = 90
+3 breads, 2 distinct fillings from 6, order ignored: 3 x C(6, 2) = 45
+Exactly 2 tails in 4 fair independent flips: C(4, 2)/2^4 = 0.375000
+Counting ratios require equally likely elementary outcomes.

@@ -1,0 +1,12 @@
+Binomial: 12 independent leads, conversion probability .25
+P(X = 3) = 0.258104
+P(X <= 3) = 0.648779
+P(X >= 4) = 0.351221
+E[X] = 3.000000; Var(X) = 2.250000
+Smallest k with P(X <= k) >= .95: 6
+Poisson: mean 4 calls per hour
+P(X = 3) = 0.195367; P(X >= 6) = 0.214870
+P(no calls in half an hour) = 0.135335
+Hypergeometric: 6 items without replacement, 8 defective among 40
+P(X = 2) = 0.262319; P(X >= 1) = 0.763913
+E[X] = 1.200000; Var(X) = 0.836923

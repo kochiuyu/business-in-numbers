@@ -1,0 +1,15 @@
+95% normal critical value = 1.959963985
+Order value: mean=72, known sigma=18, n=81
+SE=2.000000; margin=3.919928; z interval=[68.080072, 75.919928]
+
+Repair time: mean=47, sample s=8, n=16, df=15
+95% t critical value = 2.131449546
+SE=2.000000; margin=4.262899; t interval=[42.737101, 51.262899]
+
+Conversion: 48/200, p-hat=0.240000
+Wald interval=[0.180810, 0.299190]
+Wilson interval=[0.186066, 0.303733]
+Zero-success case, 0/200: Wald=[0, 0], Wilson=[0.000000, 0.018845]
+Zero observed successes do not imply zero uncertainty; prefer Wilson over Wald near boundaries.
+95% confidence describes long-run coverage of this interval procedure, not a 95% probability
+assigned to the fixed parameter after observing this particular interval.

@@ -1,0 +1,4 @@
+Mean: 45.00
+Median: 31.00
+Population SD: 47.40
+Sample SD: 49.51

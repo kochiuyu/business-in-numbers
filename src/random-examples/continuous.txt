@@ -1,0 +1,12 @@
+Uniform wait from 2 to 8 minutes
+P(3 <= X <= 5) = 0.333333
+E[X] = 5.000000; Var(X) = 3.000000
+Density at 4 = 0.166667 per minute; P(X = 4) = 0
+Exponential wait: rate .1 per minute, mean 10 minutes
+P(X <= 5) = 0.393469; P(X > 15) = 0.223130
+95th percentile = 29.957323 minutes
+Normal fill: mean 500 mL, standard deviation 4 mL
+P(496 <= X <= 504) = 0.682689
+P(X > 504) = 0.158655
+95th percentile = 506.579415 mL
+Z scores at bounds: -1, 1

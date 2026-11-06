@@ -1,0 +1,12 @@
+Seed=20261106; repetitions=20000; n=16; normal mu=50, sigma=12
+Nominal confidence=0.95; z critical=1.959963985; t critical(df=15)=2.131449546
+Known-sigma z: covered=18988/20000; coverage=0.949400; MC SE=0.001550
+  Approximate 95% Monte Carlo uncertainty interval=[0.946362, 0.952438]
+  Average interval width=11.759784
+Unknown-sigma t: covered=19018/20000; coverage=0.950900; MC SE=0.001528
+  Approximate 95% Monte Carlo uncertainty interval=[0.947905, 0.953895]
+  Average interval width=12.574384
+MC SE = sqrt(observed coverage * (1-observed coverage) / repetitions).
+These uncertainty intervals concern simulated coverage, not the population mean.
+Theoretical coverage is 0.95 here; finite simulation results need not equal 0.95.
+Repetitions are independent; z and t results within each repetition are paired.

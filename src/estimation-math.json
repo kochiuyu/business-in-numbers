@@ -1,0 +1,152 @@
+{
+  "estimate": {
+    "tex": "\\widehat\\theta_n=T(X_1,\\ldots,X_n),\\qquad \\widehat\\theta_n^{\\,\\mathrm{obs}}=T(x_1,\\ldots,x_n)",
+    "text": "An estimator is a function T of the random sample; its estimate applies the same function to the observed sample.",
+    "title": "Estimator and realized estimate",
+    "display": true
+  },
+  "bias": {
+    "tex": "\\operatorname{Bias}(\\widehat\\theta_n)=E(\\widehat\\theta_n)-\\theta,\\qquad E(\\widehat\\theta_n)=\\theta\\ \\text{means unbiased}",
+    "text": "Bias is the expected estimator minus the true parameter. An unbiased estimator has zero bias.",
+    "title": "Bias and unbiasedness",
+    "display": true
+  },
+  "mse": {
+    "tex": "E[(\\widehat\\theta_n-\\theta)^2]=\\operatorname{Var}(\\widehat\\theta_n)+\\operatorname{Bias}(\\widehat\\theta_n)^2",
+    "text": "Mean squared error equals estimator variance plus squared bias.",
+    "title": "Bias–variance decomposition",
+    "display": true
+  },
+  "consistency": {
+    "tex": "\\widehat\\theta_n\\xrightarrow{p}\\theta\\quad\\Longleftrightarrow\\quad\\forall\\varepsilon>0,\\ \\lim_{n\\to\\infty}P(|\\widehat\\theta_n-\\theta|>\\varepsilon)=0",
+    "text": "Consistency means that for every fixed positive tolerance, the probability of missing the parameter by more than that tolerance tends to zero as sample size increases.",
+    "title": "Consistency in probability",
+    "display": true
+  },
+  "consistency-sufficient": {
+    "tex": "P(|\\widehat\\theta_n-\\theta|>\\varepsilon)\\leq\\frac{E[(\\widehat\\theta_n-\\theta)^2]}{\\varepsilon^2}=\\frac{\\operatorname{Var}(\\widehat\\theta_n)+\\operatorname{Bias}(\\widehat\\theta_n)^2}{\\varepsilon^2}",
+    "text": "By Markov applied to squared error, the error probability is at most variance plus squared bias divided by tolerance squared. If both variance and bias tend to zero, consistency follows.",
+    "title": "A sufficient condition for consistency",
+    "display": true
+  },
+  "sample-mean": {
+    "tex": "\\overline X=\\frac1n\\sum_{i=1}^{n}X_i,\\qquad E(\\overline X)=\\mu,\\qquad \\operatorname{Var}(\\overline X)=\\frac{\\sigma^2}{n}",
+    "text": "For IID observations with mean mu and finite variance sigma squared, the sample mean is unbiased and its variance is sigma squared over n.",
+    "title": "Properties of the sample mean",
+    "display": true
+  },
+  "weighted-mean": {
+    "tex": "\\operatorname{Var}\\!\\left(\\sum_{i=1}^n w_iX_i\\right)=\\sigma^2\\sum_{i=1}^n w_i^2\\ \\geq\\ \\frac{\\sigma^2}{n}=\\operatorname{Var}(\\overline X)",
+    "text": "The variance of a fixed weighted mean is sigma squared times the sum of squared weights, at least sigma squared over n.",
+    "title": "Equal weights minimize variance in this class",
+    "display": true
+  },
+  "cauchy": {
+    "tex": "1=\\left(\\sum_{i=1}^n w_i\\cdot1\\right)^2\\leq\\left(\\sum_{i=1}^n w_i^2\\right)\\left(\\sum_{i=1}^n1^2\\right)=n\\sum_{i=1}^n w_i^2",
+    "text": "Cauchy–Schwarz implies the sum of squared weights is at least one over n, with equality for equal weights.",
+    "title": "Cauchy–Schwarz proof",
+    "display": true
+  },
+  "sample-variance": {
+    "tex": "S^2=\\frac{1}{n-1}\\sum_{i=1}^n(X_i-\\overline X)^2,\\qquad n\\geq2,\\qquad E(S^2)=\\sigma^2",
+    "text": "Sample variance uses the sum of squared deviations from the sample mean divided by n minus one. It is unbiased under IID finite-variance sampling.",
+    "title": "Unbiased sample variance",
+    "display": true
+  },
+  "variance-identity": {
+    "tex": "\\sum_{i=1}^n(X_i-\\overline X)^2=\\sum_{i=1}^n(X_i-\\mu)^2-n(\\overline X-\\mu)^2",
+    "text": "The residual sum of squares equals the squared deviations from the true mean minus n times the squared estimation error of the sample mean.",
+    "title": "Residual sum-of-squares identity",
+    "display": true
+  },
+  "variance-proof": {
+    "tex": "\\begin{aligned}E\\!\\left[\\sum_{i=1}^n(X_i-\\overline X)^2\\right]&=n\\sigma^2-nE[(\\overline X-\\mu)^2]\\\\&=n\\sigma^2-n\\frac{\\sigma^2}{n}=(n-1)\\sigma^2.\\end{aligned}",
+    "text": "Taking expectations of the identity gives n sigma squared minus sigma squared, or n minus one times sigma squared. Dividing by n minus one proves unbiasedness.",
+    "title": "Proof of the n minus one correction",
+    "display": true
+  },
+  "second-moment": {
+    "tex": "E(X_i^2)=\\sigma^2+\\mu^2,\\quad E(\\overline X^2)=\\frac{\\sigma^2}{n}+\\mu^2,\\quad E(S^2)=\\frac{n}{n-1}[E(X_i^2)-E(\\overline X^2)]=\\sigma^2",
+    "text": "Equivalently, subtract the second moment of the sample mean from the second moment of an observation and multiply by n over n minus one.",
+    "title": "Equivalent second-moment derivation",
+    "display": true
+  },
+  "estimated-se": {
+    "tex": "\\operatorname{SE}(\\overline X)=\\frac{\\sigma}{\\sqrt n},\\qquad \\widehat{\\operatorname{SE}}(\\overline X)=\\frac{S}{\\sqrt n}",
+    "text": "The true standard error uses population sigma; its usual estimate substitutes sample standard deviation S.",
+    "title": "Estimating the standard error",
+    "display": true
+  },
+  "binary-mean": {
+    "tex": "p=\\frac{K}{n}=\\frac1n\\sum_{i=1}^nX_i,\\quad E(p)=\\pi,\\quad \\operatorname{Var}(X_i)=\\pi(1-\\pi),\\quad \\operatorname{Var}(p)=\\frac{\\pi(1-\\pi)}n",
+    "text": "Sample proportion p is K over n, is unbiased for pi, and has variance pi times one minus pi over n.",
+    "title": "Bernoulli estimation",
+    "display": true
+  },
+  "binary-variance": {
+    "tex": "\\widehat\\sigma_{\\mathrm{plug}}^2=p(1-p),\\quad S^2=\\frac{n}{n-1}p(1-p),\\quad E[p(1-p)]=\\frac{n-1}{n}\\pi(1-\\pi)",
+    "text": "The plug-in variance p times one minus p is biased downward; multiply it by n over n minus one to obtain the unbiased sample variance.",
+    "title": "Plug-in versus unbiased binary variance",
+    "display": true
+  },
+  "binary-se": {
+    "tex": "\\widehat{\\operatorname{SE}}_{\\mathrm{plug}}(p)=\\sqrt{\\frac{p(1-p)}n},\\qquad \\widehat{\\operatorname{Var}}_{\\mathrm{unbiased}}(p)=\\frac{p(1-p)}{n-1}",
+    "text": "The usual plug-in SE is the square root of p times one minus p over n. An unbiased estimator of the variance of p uses n minus one instead.",
+    "title": "Two different variance estimators",
+    "display": true
+  },
+  "z-pivot": {
+    "tex": "Z=\\frac{\\overline X-\\mu}{\\sigma/\\sqrt n}\\sim N(0,1),\\qquad P(Z>z_{\\alpha/2})=\\frac\\alpha2",
+    "text": "Under IID normal sampling with known sigma, the standardized sample mean is standard normal. z sub alpha over two is the positive upper-tail critical value.",
+    "title": "Normal pivot and tail convention",
+    "display": true
+  },
+  "z-ci": {
+    "tex": "\\overline X\\pm z_{\\alpha/2}\\frac{\\sigma}{\\sqrt n},\\qquad ME=z_{\\alpha/2}\\frac{\\sigma}{\\sqrt n},\\qquad w=2ME",
+    "text": "The known-sigma interval is sample mean plus or minus the normal critical value times sigma over square root n. Its width is twice the margin of error.",
+    "title": "Known-variance confidence interval",
+    "display": true
+  },
+  "z-proof": {
+    "tex": "\\begin{aligned}P\\!\\left(-z_{\\alpha/2}\\leq\\frac{\\overline X-\\mu}{\\sigma/\\sqrt n}\\leq z_{\\alpha/2}\\right)&=1-\\alpha\\\\P\\!\\left(\\overline X-z_{\\alpha/2}\\frac{\\sigma}{\\sqrt n}\\leq\\mu\\leq\\overline X+z_{\\alpha/2}\\frac{\\sigma}{\\sqrt n}\\right)&=1-\\alpha.\\end{aligned}",
+    "text": "Start with the central probability of the standard normal pivot. Multiply by sigma over square root n and rearrange to isolate mu between random endpoints.",
+    "title": "Deriving the confidence interval",
+    "display": true
+  },
+  "t-pivot": {
+    "tex": "T=\\frac{\\overline X-\\mu}{S/\\sqrt n}\\sim t_{n-1},\\qquad \\overline X\\pm t_{n-1,\\alpha/2}\\frac{S}{\\sqrt n}",
+    "text": "For IID normal data, the studentized mean has a Student t distribution with n minus one degrees of freedom. Use its upper-tail alpha-over-two critical value times estimated SE.",
+    "title": "Unknown-variance t interval",
+    "display": true
+  },
+  "wald": {
+    "tex": "p\\pm z_{\\alpha/2}\\sqrt{\\frac{p(1-p)}{n}}",
+    "text": "The Wald interval for a population proportion uses the observed proportion plus or minus a normal critical value times the plug-in standard error.",
+    "title": "Large-sample Wald interval",
+    "display": true
+  },
+  "wilson": {
+    "tex": "\\frac{p+\\frac{z^2}{2n}}{1+\\frac{z^2}{n}}\\ \\pm\\ \\frac{z}{1+\\frac{z^2}{n}}\\sqrt{\\frac{p(1-p)}{n}+\\frac{z^2}{4n^2}},\\qquad z=z_{\\alpha/2}",
+    "text": "Wilson interval has adjusted center p plus z squared over two n divided by one plus z squared over n, and the displayed adjusted half-width.",
+    "title": "Wilson score interval",
+    "display": true
+  },
+  "plan-mean": {
+    "tex": "ME=z_{\\alpha/2}\\frac{\\sigma}{\\sqrt n}\\leq e\\quad\\Longrightarrow\\quad n\\geq\\frac{z_{\\alpha/2}^{\\,2}\\sigma^2}{e^2},\\qquad n_{\\min}=\\left\\lceil\\frac{z_{\\alpha/2}^{\\,2}\\sigma^2}{e^2}\\right\\rceil",
+    "text": "To make the known-sigma margin at most e, use the ceiling of z squared times sigma squared divided by e squared.",
+    "title": "Planning a mean sample size",
+    "display": true
+  },
+  "plan-proportion": {
+    "tex": "n_{\\min}=\\left\\lceil\\frac{z_{\\alpha/2}^{\\,2}p_0(1-p_0)}{e^2}\\right\\rceil,\\qquad p_0(1-p_0)=\\frac14-\\left(p_0-\\frac12\\right)^2\\leq\\frac14",
+    "text": "Use a planning proportion p zero in the normal-approximation sample-size formula. Its variance is maximized at one half.",
+    "title": "Planning a proportion sample size",
+    "display": true
+  },
+  "precision-tradeoff": {
+    "tex": "n\\propto\\frac1{e^2},\\qquad n\\approx\\frac{0.9604}{e^2}\\quad\\text{at 95\\% and }p_0=.5",
+    "text": "Sample size is inversely proportional to squared margin. At 95 percent with planning proportion one half, the rounded-z formula is about 0.9604 over margin squared.",
+    "title": "Precision has a square-law cost",
+    "display": true
+  }
+}

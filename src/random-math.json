@@ -1,0 +1,260 @@
+{
+  "pmf-cdf": {
+    "tex": "p_X(x)=P(X=x),\\qquad F_X(t)=P(X\\le t)=\\sum_{x\\le t}p_X(x)",
+    "text": "The PMF gives the probability at a value. The CDF sums probabilities at all values up to a threshold.",
+    "title": "The PMF gives the probability at a value. The CDF sums probabilities at all values up to a threshold.",
+    "display": true
+  },
+  "cdf-interval": {
+    "tex": "P(a<X\\le b)=F(b)-F(a),\\qquad P(X>b)=1-F(b)",
+    "text": "For any distribution, probability a < X \u2264 b equals F(b) minus F(a); probability X > b is one minus F(b).",
+    "title": "For any distribution, probability a < X \u2264 b equals F(b) minus F(a); probability X > b is one minus F(b).",
+    "display": true
+  },
+  "pmf-valid": {
+    "tex": "p_X(x)\\ge0,\\quad\\sum_xp_X(x)=1;\\qquad 0\\le F(t)\\le1,\\quad F(-\\infty)=0,\\ F(\\infty)=1",
+    "text": "Masses are nonnegative and sum to one. The CDF stays between zero and one and has limits zero and one.",
+    "title": "Masses are nonnegative and sum to one. The CDF stays between zero and one and has limits zero and one.",
+    "display": true
+  },
+  "expected": {
+    "tex": "\\mu=E[X]=\\sum_x xp_X(x),\\qquad \\operatorname{Var}(X)=\\sum_x(x-\\mu)^2p_X(x),\\qquad \\sigma=\\sqrt{\\operatorname{Var}(X)}",
+    "text": "Expectation is the probability-weighted mean. Variance is the probability-weighted squared distance from the mean. Standard deviation is its square root.",
+    "title": "Expectation is the probability-weighted mean. Variance is the probability-weighted squared distance from the mean. Standard deviation is its square root.",
+    "display": true
+  },
+  "affine": {
+    "tex": "E[aX+b]=aE[X]+b,\\quad\\operatorname{Var}(aX+b)=a^2\\operatorname{Var}(X),\\quad\\operatorname{SD}(aX+b)=|a|\\sigma",
+    "text": "A linear transformation changes the mean by a times the mean plus b, variance by a squared, and standard deviation by absolute a.",
+    "title": "A linear transformation changes the mean by a times the mean plus b, variance by a squared, and standard deviation by absolute a.",
+    "display": true
+  },
+  "second": {
+    "tex": "\\operatorname{Var}(X)=E[X^2]-(E[X])^2=3.7-1.7^2=.81",
+    "text": "Variance equals the second raw moment minus the square of the mean.",
+    "title": "Variance equals the second raw moment minus the square of the mean.",
+    "display": true
+  },
+  "moment-proof": {
+    "tex": "\\begin{aligned}E[aX+b]&=a\\sum_xxp_X(x)+b\\sum_xp_X(x)=a\\mu+b,\\\\E[(X-\\mu)^2]&=E[X^2]-2\\mu E[X]+\\mu^2=E[X^2]-\\mu^2,\\\\\\operatorname{Var}(aX+b)&=E[(aX+b-a\\mu-b)^2]=a^2\\operatorname{Var}(X).\\end{aligned}",
+    "text": "Expand the weighted sum for linearity. Expand the squared deviation for the second-moment identity. Fixed shifts cancel from deviations.",
+    "title": "Expand the weighted sum for linearity. Expand the squared deviation for the second-moment identity. Fixed shifts cancel from deviations.",
+    "display": true
+  },
+  "joint-formulas": {
+    "tex": "p_{X,Y}(x,y)=P(X=x,Y=y),\\quad p_X(x)=\\sum_y p_{X,Y}(x,y),\\quad F_{X,Y}(a,b)=\\sum_{x\\le a}\\sum_{y\\le b}p_{X,Y}(x,y)",
+    "text": "The joint PMF gives pair probabilities. Marginalize by summing over the other variable; the joint CDF sums the lower-left rectangle.",
+    "title": "The joint PMF gives pair probabilities. Marginalize by summing over the other variable; the joint CDF sums the lower-left rectangle.",
+    "display": true
+  },
+  "covariance": {
+    "tex": "\\begin{aligned}\\operatorname{Cov}(X,Y)&=E[(X-\\mu_X)(Y-\\mu_Y)]=E[XY]-\\mu_X\\mu_Y,\\\\E[aX+bY]&=aE[X]+bE[Y],\\\\\\operatorname{Var}(aX+bY)&=a^2\\operatorname{Var}(X)+b^2\\operatorname{Var}(Y)+2ab\\operatorname{Cov}(X,Y).\\end{aligned}",
+    "text": "Covariance is the expected product of centered variables. Means add without independence; the variance of a weighted sum includes twice the weighted covariance.",
+    "title": "Covariance is the expected product of centered variables. Means add without independence; the variance of a weighted sum includes twice the weighted covariance.",
+    "display": true
+  },
+  "sum-proof": {
+    "tex": "\\begin{aligned}\\operatorname{Var}(X+Y)&=E[((X-\\mu_X)+(Y-\\mu_Y))^2]\\\\&=\\operatorname{Var}(X)+\\operatorname{Var}(Y)+2E[(X-\\mu_X)(Y-\\mu_Y)].\\end{aligned}",
+    "text": "Expand the square of the centered sum to obtain two variances and twice the covariance.",
+    "title": "Expand the square of the centered sum to obtain two variances and twice the covariance.",
+    "display": true
+  },
+  "discrete-uniform": {
+    "tex": "P(X=x_i)=\\frac1m,\\quad E[X]=\\frac1m\\sum_{i=1}^m x_i,\\quad\\operatorname{Var}(X)=\\frac1m\\sum_{i=1}^m(x_i-\\mu)^2",
+    "text": "For a uniform finite set, each value has probability one over the number of values; moments average over the set.",
+    "title": "For a uniform finite set, each value has probability one over the number of values; moments average over the set.",
+    "display": true
+  },
+  "bernoulli": {
+    "tex": "P(X=1)=p,\\quad P(X=0)=1-p,\\quad E[X]=p,\\quad\\operatorname{Var}(X)=p(1-p)",
+    "text": "Bernoulli has two possible values with mean p and variance p times one minus p.",
+    "title": "Bernoulli has two possible values with mean p and variance p times one minus p.",
+    "display": true
+  },
+  "binomial": {
+    "tex": "P(X=x)=\\binom nx p^x(1-p)^{n-x},\\quad x=0,\\ldots,n;\\qquad E[X]=np,\\quad\\operatorname{Var}(X)=np(1-p)",
+    "text": "The binomial PMF counts the arrangements of x successes in n independent trials with a common p.",
+    "title": "The binomial PMF counts the arrangements of x successes in n independent trials with a common p.",
+    "display": true
+  },
+  "poisson": {
+    "tex": "P(X=x)=e^{-\\lambda}\\frac{\\lambda^x}{x!},\\quad x=0,1,2,\\ldots;\\qquad E[X]=\\operatorname{Var}(X)=\\lambda",
+    "text": "Poisson counts nonnegative integers, with a mean and variance equal to lambda.",
+    "title": "Poisson counts nonnegative integers, with a mean and variance equal to lambda.",
+    "display": true
+  },
+  "hypergeom": {
+    "tex": "P(X=x)=\\frac{\\binom Kx\\binom{N-K}{n-x}}{\\binom Nn},\\qquad \\max(0,n-(N-K))\\le x\\le\\min(n,K)",
+    "text": "Hypergeometric probability chooses x tagged and n\u2212x untagged items from a finite population, within its feasible integer support.",
+    "title": "Hypergeometric probability chooses x tagged and n\u2212x untagged items from a finite population, within its feasible integer support.",
+    "display": true
+  },
+  "hypergeom-moments": {
+    "tex": "E[X]=n\\frac KN,\\qquad\\operatorname{Var}(X)=n\\frac KN\\left(1-\\frac KN\\right)\\frac{N-n}{N-1}",
+    "text": "Hypergeometric variance is the binomial-like variance times the finite-population correction, for N greater than one.",
+    "title": "Hypergeometric variance is the binomial-like variance times the finite-population correction, for N greater than one.",
+    "display": true
+  },
+  "binomial-proof": {
+    "tex": "\\begin{aligned}x\\binom nx&=n\\binom{n-1}{x-1},\\\\E[X]&=np\\sum_{y=0}^{n-1}\\binom{n-1}{y}p^y(1-p)^{n-1-y}=np,\\\\E[X(X-1)]&=n(n-1)p^2,\\\\E[X^2]&=n(n-1)p^2+np,\\\\\\operatorname{Var}(X)&=n(n-1)p^2+np-(np)^2=np(1-p).\\end{aligned}",
+    "text": "The combinatorial identity reduces the binomial first moment. The second factorial moment yields the variance.",
+    "title": "The combinatorial identity reduces the binomial first moment. The second factorial moment yields the variance.",
+    "display": true
+  },
+  "poisson-limit": {
+    "tex": "\\lim_{n\\to\\infty}\\binom nx\\left(\\frac\\lambda n\\right)^x\\left(1-\\frac\\lambda n\\right)^{n-x}=\\frac{\\lambda^x e^{-\\lambda}}{x!}\\quad(\\lambda\\text{ and }x\\text{ fixed})",
+    "text": "Let the number of trials grow with success probability lambda divided by n. For fixed lambda and count, the binomial PMF converges to Poisson.",
+    "title": "Let the number of trials grow with success probability lambda divided by n. For fixed lambda and count, the binomial PMF converges to Poisson.",
+    "display": true
+  },
+  "poisson-proof": {
+    "tex": "\\begin{aligned}E[X]&=e^{-\\lambda}\\lambda\\sum_{y=0}^\\infty\\frac{\\lambda^y}{y!}=\\lambda,\\\\E[X(X-1)]&=\\lambda^2,\\quad E[X^2]=\\lambda^2+\\lambda,\\\\\\operatorname{Var}(X)&=\\lambda^2+\\lambda-\\lambda^2=\\lambda.\\end{aligned}",
+    "text": "Use the exponential series and shift the count index to obtain the Poisson moments.",
+    "title": "Use the exponential series and shift the count index to obtain the Poisson moments.",
+    "display": true
+  },
+  "hypergeom-proof": {
+    "tex": "\\begin{aligned}E[X]&=\\frac{nK}{N},\\\\E[X(X-1)]&=\\frac{n(n-1)K(K-1)}{N(N-1)},\\\\\\operatorname{Var}(X)&=\\frac{n(n-1)K(K-1)}{N(N-1)}+\\frac{nK}{N}-\\left(\\frac{nK}{N}\\right)^2.\\end{aligned}",
+    "text": "The hypergeometric factorial moment counts ordered pairs of sampled successes; subtracting the squared mean gives the variance.",
+    "title": "The hypergeometric factorial moment counts ordered pairs of sampled successes; subtracting the squared mean gives the variance.",
+    "display": true
+  },
+  "density-def": {
+    "tex": "f(x)\\ge0,\\quad\\int_{-\\infty}^{\\infty}f(x)\\,dx=1,\\quad F(t)=\\int_{-\\infty}^t f(x)\\,dx,\\quad P(a<X<b)=F(b)-F(a)",
+    "text": "A density is nonnegative with unit area. Integrate to obtain the CDF; subtract CDF values for interval probabilities.",
+    "title": "A density is nonnegative with unit area. Integrate to obtain the CDF; subtract CDF values for interval probabilities.",
+    "display": true
+  },
+  "quantile": {
+    "tex": "q_p=F^{-1}(p),\\qquad P(X\\le q_p)=p\\quad\\text{for a continuous strictly increasing CDF}",
+    "text": "A quantile turns a target cumulative probability into a threshold value.",
+    "title": "A quantile turns a target cumulative probability into a threshold value.",
+    "display": true
+  },
+  "density-derivative": {
+    "tex": "P(x<X\\le x+\\Delta)\\approx f(x)\\Delta,\\qquad f(x)=F^{\\prime}(x)\\quad\\text{where the derivative exists}",
+    "text": "A narrow interval has probability approximately density times width. The density is the derivative of the CDF where defined.",
+    "title": "A narrow interval has probability approximately density times width. The density is the derivative of the CDF where defined.",
+    "display": true
+  },
+  "continuous-moments": {
+    "tex": "E[X]=\\int_{-\\infty}^{\\infty}x f(x)\\,dx,\\qquad\\operatorname{Var}(X)=\\int_{-\\infty}^{\\infty}(x-\\mu)^2f(x)\\,dx",
+    "text": "Continuous moments are weighted integrals rather than weighted sums, when the moments exist.",
+    "title": "Continuous moments are weighted integrals rather than weighted sums, when the moments exist.",
+    "display": true
+  },
+  "uniform-pdf-cdf": {
+    "tex": "f(x)=\\begin{cases}\\frac1{b-a}&a\\le x\\le b\\\\0&\\text{otherwise}\\end{cases},\\qquad F(x)=\\begin{cases}0&x<a\\\\\\frac{x-a}{b-a}&a\\le x\\le b\\\\1&x>b\\end{cases}",
+    "text": "The uniform density is constant between a and b, zero outside. Its CDF is zero below a, linear within, and one above b.",
+    "title": "The uniform density is constant between a and b, zero outside. Its CDF is zero below a, linear within, and one above b.",
+    "display": true
+  },
+  "uniform-moments": {
+    "tex": "E[X]=\\frac{a+b}{2},\\quad E[X^2]=\\frac{a^2+ab+b^2}{3},\\quad\\operatorname{Var}(X)=\\frac{(b-a)^2}{12},\\quad q_p=a+p(b-a)",
+    "text": "Uniform mean, second moment, variance and quantile follow directly from its constant density.",
+    "title": "Uniform mean, second moment, variance and quantile follow directly from its constant density.",
+    "display": true
+  },
+  "exponential": {
+    "tex": "f(t)=re^{-rt},\\quad F(t)=1-e^{-rt},\\quad E[T]=\\frac1r,\\quad\\operatorname{Var}(T)=\\frac1{r^2}\\quad(t\\ge0,\\ r>0)",
+    "text": "The exponential model uses rate r, with mean one over r and variance one over r squared. Density and CDF are zero for negative time.",
+    "title": "The exponential model uses rate r, with mean one over r and variance one over r squared. Density and CDF are zero for negative time.",
+    "display": true
+  },
+  "memoryless": {
+    "tex": "P(T>s+t\\mid T>s)=\\frac{e^{-r(s+t)}}{e^{-rs}}=e^{-rt}=P(T>t)",
+    "text": "Exponential waiting is memoryless: the probability of waiting t more time after s is the same as the original survival probability for t.",
+    "title": "Exponential waiting is memoryless: the probability of waiting t more time after s is the same as the original survival probability for t.",
+    "display": true
+  },
+  "uniform-proof": {
+    "tex": "E[X]=\\frac1{b-a}\\left[\\frac{x^2}{2}\\right]_a^b=\\frac{a+b}{2},\\qquad E[X^2]=\\frac1{b-a}\\left[\\frac{x^3}{3}\\right]_a^b=\\frac{a^2+ab+b^2}{3}",
+    "text": "Integrate x and x squared against a constant density to get uniform moments.",
+    "title": "Integrate x and x squared against a constant density to get uniform moments.",
+    "display": true
+  },
+  "exp-proof": {
+    "tex": "\\begin{aligned}P(T>t)&=P(N(t)=0)=e^{-rt},\\\\E[T]&=[-te^{-rt}]_0^\\infty+\\int_0^\\infty e^{-rt}\\,dt=\\frac1r,\\\\E[T^2]&=[-t^2e^{-rt}]_0^\\infty+2\\int_0^\\infty te^{-rt}\\,dt=\\frac2{r^2},\\\\\\operatorname{Var}(T)&=\\frac2{r^2}-\\frac1{r^2}=\\frac1{r^2},\\qquad q_p=-\\frac{\\log(1-p)}r.\\end{aligned}",
+    "text": "No arrivals by time t gives exponential survival. Integration by parts yields the first two moments and inverse CDF gives the quantile.",
+    "title": "No arrivals by time t gives exponential survival. Integration by parts yields the first two moments and inverse CDF gives the quantile.",
+    "display": true
+  },
+  "normal-pdf": {
+    "tex": "f(x)=\\frac1{\\sigma\\sqrt{2\\pi}}\\exp\\!\\left[-\\frac12\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right],\\quad X\\sim N(\\mu,\\sigma^2),\\quad Z=\\frac{X-\\mu}{\\sigma}\\sim N(0,1)",
+    "text": "The normal density is centered at mu and scaled by positive sigma. Subtract the mean and divide by the standard deviation to standardize.",
+    "title": "The normal density is centered at mu and scaled by positive sigma. Subtract the mean and divide by the standard deviation to standardize.",
+    "display": true
+  },
+  "normal-tails": {
+    "tex": "\\begin{aligned}P(a<X<b)&=\\Phi\\!\\left(\\frac{b-\\mu}{\\sigma}\\right)-\\Phi\\!\\left(\\frac{a-\\mu}{\\sigma}\\right),\\\\q_p&=\\mu+\\sigma\\Phi^{-1}(p),\\qquad z_\\alpha=\\Phi^{-1}(1-\\alpha).\\end{aligned}",
+    "text": "Standardize each bound before subtracting standard-normal CDF values. Quantiles reverse the process. A right-tail critical value uses one minus alpha.",
+    "title": "Standardize each bound before subtracting standard-normal CDF values. Quantiles reverse the process. A right-tail critical value uses one minus alpha.",
+    "display": true
+  },
+  "normal-linear": {
+    "tex": "aX+b\\sim N(a\\mu+b,a^2\\sigma^2)\\quad(a\\ne0);\\qquad X\\pm Y\\sim N(\\mu_X\\pm\\mu_Y,\\sigma_X^2+\\sigma_Y^2)\\quad\\text{if independent normal}",
+    "text": "An affine transform of a normal remains normal when its multiplier is nonzero. Independent normal sums and differences add variances.",
+    "title": "An affine transform of a normal remains normal when its multiplier is nonzero. Independent normal sums and differences add variances.",
+    "display": true
+  },
+  "gaussian": {
+    "tex": "\\begin{aligned}I&=\\int_{-\\infty}^{\\infty}e^{-x^2}\\,dx>0,\\\\I^2&=\\int_0^{2\\pi}\\int_0^\\infty e^{-r^2}r\\,dr\\,d\\theta=\\pi,\\qquad I=\\sqrt\\pi.\\end{aligned}",
+    "text": "Square the integral, change to polar coordinates with Jacobian r, and evaluate to pi. Taking the positive square root normalizes the Gaussian.",
+    "title": "Square the integral, change to polar coordinates with Jacobian r, and evaluate to pi. Taking the positive square root normalizes the Gaussian.",
+    "display": true
+  },
+  "radial": {
+    "tex": "q(s+t)=q(s)q(t),\\qquad q(s)=e^{cs},\\qquad h(x)=h(0)e^{cx^2},\\quad c<0",
+    "text": "Continuity and positivity turn the multiplicative functional equation into an exponential. Integrability forces a negative coefficient, giving a Gaussian.",
+    "title": "Continuity and positivity turn the multiplicative functional equation into an exponential. Integrability forces a negative coefficient, giving a Gaussian.",
+    "display": true
+  },
+  "normal-moments": {
+    "tex": "\\begin{aligned}\\phi^{\\prime}(z)&=-z\\phi(z),\\qquad E[Z]=0,\\\\E[Z^2]&=[-z\\phi(z)]_{-\\infty}^{\\infty}+\\int_{-\\infty}^{\\infty}\\phi(z)\\,dz=1,\\\\E[X]&=\\mu,\\qquad \\operatorname{Var}(X)=\\sigma^2.\\end{aligned}",
+    "text": "Odd symmetry gives standard-normal mean zero. Integration by parts gives second moment one. Location and scale then produce mu and sigma squared.",
+    "title": "Odd symmetry gives standard-normal mean zero. Integration by parts gives second moment one. Location and scale then produce mu and sigma squared.",
+    "display": true
+  },
+  "normal-shape": {
+    "tex": "f(\\mu+d)=f(\\mu-d),\\quad\\frac{E[(X-\\mu)^3]}{\\sigma^3}=0,\\quad\\frac{E[(X-\\mu)^4]}{\\sigma^4}=3,\\quad\\text{excess kurtosis}=0",
+    "text": "A normal is symmetric about its mean. Standardized skewness is zero and kurtosis is three, so excess kurtosis is zero.",
+    "title": "A normal is symmetric about its mean. Standardized skewness is zero and kurtosis is three, so excess kurtosis is zero.",
+    "display": true
+  },
+  "chi-square": {
+    "tex": "Z_1,\\ldots,Z_\\nu\\overset{\\mathrm{iid}}\\sim N(0,1)\\quad\\Longrightarrow\\quad Q=\\sum_{i=1}^\\nu Z_i^2\\sim\\chi^2_\\nu",
+    "text": "Sum the squares of independent standard normals to obtain a chi-square distribution with the number of terms as degrees of freedom.",
+    "title": "Sum the squares of independent standard normals to obtain a chi-square distribution with the number of terms as degrees of freedom.",
+    "display": true
+  },
+  "student-t": {
+    "tex": "Z\\sim N(0,1),\\ Q\\sim\\chi^2_\\nu,\\ Z\\perp Q\\quad\\Longrightarrow\\quad T=\\frac{Z}{\\sqrt{Q/\\nu}}\\sim t_\\nu",
+    "text": "A standard normal divided by the square root of an independent chi-square divided by its degrees of freedom has a Student t distribution.",
+    "title": "A standard normal divided by the square root of an independent chi-square divided by its degrees of freedom has a Student t distribution.",
+    "display": true
+  },
+  "f-family": {
+    "tex": "U\\sim\\chi^2_m,\\ V\\sim\\chi^2_n,\\ U\\perp V\\quad\\Longrightarrow\\quad\\frac{U/m}{V/n}\\sim F_{m,n}",
+    "text": "Divide two independent chi-square variables by their respective degrees of freedom, then form their ratio to obtain F.",
+    "title": "Divide two independent chi-square variables by their respective degrees of freedom, then form their ratio to obtain F.",
+    "display": true
+  },
+  "chi-density": {
+    "tex": "f_{\\chi^2_\\nu}(x)=\\frac{x^{\\nu/2-1}e^{-x/2}}{2^{\\nu/2}\\Gamma(\\nu/2)}\\quad(x>0)",
+    "text": "The chi-square density uses the gamma function and has support on positive values.",
+    "title": "The chi-square density uses the gamma function and has support on positive values.",
+    "display": true
+  },
+  "t-density": {
+    "tex": "f_{t_\\nu}(t)=\\frac{\\Gamma((\\nu+1)/2)}{\\sqrt{\\nu\\pi}\\Gamma(\\nu/2)}\\left(1+\\frac{t^2}{\\nu}\\right)^{-(\\nu+1)/2}",
+    "text": "Student t density is symmetric and depends on degrees of freedom through gamma normalization and a power tail.",
+    "title": "Student t density is symmetric and depends on degrees of freedom through gamma normalization and a power tail.",
+    "display": true
+  },
+  "f-density": {
+    "tex": "f_{F_{m,n}}(x)=\\frac{(m/n)^{m/2}x^{m/2-1}}{B(m/2,n/2)}\\left(1+\\frac mn x\\right)^{-(m+n)/2}\\quad(x>0)",
+    "text": "The F density is a positive-support ratio density with beta-function normalization.",
+    "title": "The F density is a positive-support ratio density with beta-function normalization.",
+    "display": true
+  }
+}

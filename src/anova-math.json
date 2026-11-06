@@ -1,0 +1,158 @@
+{
+  "group-index": {
+    "tex": "x_{ij},\\quad i=1,\\ldots,c,\\quad j=1,\\ldots,n_i,\\qquad n=\\sum_{i=1}^{c}n_i",
+    "text": "x sub i j is observation j in group i. There are c groups, n_i observations per group and n observations in total.",
+    "title": "Group Index",
+    "display": true
+  },
+  "one-model": {
+    "tex": "X_{ij}=\\mu_i+\\varepsilon_{ij},\\qquad \\varepsilon_{ij}\\overset{\\mathrm{ind}}{\\sim}N(0,\\sigma^2)",
+    "text": "An observation equals its group population mean plus an independent normal error with mean zero and common variance sigma squared.",
+    "title": "One Model",
+    "display": true
+  },
+  "one-means": {
+    "tex": "\\bar x_i=\\frac{1}{n_i}\\sum_jx_{ij},\\qquad \\bar x=\\frac{1}{n}\\sum_i\\sum_jx_{ij}=\\frac{\\sum_i n_i\\bar x_i}{n}",
+    "text": "The group mean averages that group. The overall sample mean weights each group mean by its sample size.",
+    "title": "One Means",
+    "display": true
+  },
+  "equal-target": {
+    "tex": "\\mu_{\\mathrm{eq}}=\\frac1c\\sum_i\\mu_i,\\quad \\alpha_i=\\mu_i-\\mu_{\\mathrm{eq}},\\quad \\sum_i\\alpha_i=0,\\qquad \\widehat\\mu_{\\mathrm{eq}}=\\frac1c\\sum_i\\bar x_i",
+    "text": "An equal-level population average gives each group equal weight; its effects sum to zero. Average the group sample means equally to estimate it.",
+    "title": "Equal Target",
+    "display": true
+  },
+  "weighted-target": {
+    "tex": "\\mu_w=\\sum_i\\frac{n_i}{n}\\mu_i,\\quad E(\\bar X)=\\mu_w,\\quad E(\\bar X_i-\\bar X)=\\mu_i-\\mu_w",
+    "text": "With fixed group sample sizes, the grand sample mean estimates the sample-size-weighted population mean, not generally the equal-level mean.",
+    "title": "Weighted Target",
+    "display": true
+  },
+  "one-ss": {
+    "tex": "\\begin{aligned}\\mathrm{SST}&=\\sum_i\\sum_j(x_{ij}-\\bar x)^2\\\\\\mathrm{SSG}&=\\sum_i n_i(\\bar x_i-\\bar x)^2\\\\\\mathrm{SSW}&=\\sum_i\\sum_j(x_{ij}-\\bar x_i)^2\\\\\\mathrm{SST}&=\\mathrm{SSG}+\\mathrm{SSW}\\end{aligned}",
+    "text": "Total squared deviations from the grand mean equal between-group squared deviations plus within-group squared deviations.",
+    "title": "One Ss",
+    "display": true
+  },
+  "one-proof": {
+    "tex": "\\begin{aligned}x_{ij}-\\bar x&=(x_{ij}-\\bar x_i)+(\\bar x_i-\\bar x),\\\\\\sum_j(x_{ij}-\\bar x_i)&=0,\\\\\\sum_i\\sum_j2(x_{ij}-\\bar x_i)(\\bar x_i-\\bar x)&=0.\\end{aligned}",
+    "text": "Decompose each deviation into a within-group residual and a group-mean deviation. The cross-product sums to zero because residuals within each group sum to zero.",
+    "title": "One Proof",
+    "display": true
+  },
+  "one-null": {
+    "tex": "H_0:\\mu_1=\\cdots=\\mu_c,\\qquad H_1:\\text{not all population means are equal}",
+    "text": "The null says all group population means are equal. The alternative says at least one differs, not that all differ.",
+    "title": "One Null",
+    "display": true
+  },
+  "one-f": {
+    "tex": "\\mathrm{MSG}=\\frac{\\mathrm{SSG}}{c-1},\\quad \\mathrm{MSW}=\\frac{\\mathrm{SSW}}{n-c},\\quad F=\\frac{\\mathrm{MSG}}{\\mathrm{MSW}}\\overset{H_0}{\\sim}F_{c-1,n-c}",
+    "text": "Divide between and within sums of squares by their degrees of freedom. Under the null and classical assumptions, their ratio follows an F distribution.",
+    "title": "One F",
+    "display": true
+  },
+  "one-p": {
+    "tex": "p=P(F_{c-1,n-c}\\ge F_{\\mathrm{obs}}),\\qquad \\text{reject if }p\\le\\alpha\\;\\text{ or }\\;F_{\\mathrm{obs}}\\ge F_{c-1,n-c;1-\\alpha}",
+    "text": "The p-value is the upper-tail probability beyond the observed F statistic. Compare it with alpha, or compare observed F with the lower-tail 1 minus alpha quantile.",
+    "title": "One P",
+    "display": true
+  },
+  "chisquares": {
+    "tex": "\\frac{\\mathrm{SSW}}{\\sigma^2}\\sim\\chi^2_{n-c},\\qquad \\frac{\\mathrm{SSG}}{\\sigma^2}\\overset{H_0}{\\sim}\\chi^2_{c-1},\\qquad \\mathrm{SSG}\\perp\\mathrm{SSW}",
+    "text": "Within-group sum of squares divided by the error variance has n minus c chi-square degrees of freedom. Under the equal-means null, the between-group version has c minus 1 degrees of freedom. They are independent.",
+    "title": "Chisquares",
+    "display": true
+  },
+  "expected-ms": {
+    "tex": "E(\\mathrm{MSW})=\\sigma^2,\\qquad E(\\mathrm{MSG})=\\sigma^2+\\frac{\\sum_i n_i(\\mu_i-\\mu_w)^2}{c-1}",
+    "text": "Within-group mean square estimates the common error variance under both hypotheses. Between-group mean square adds a nonnegative population mean-separation term.",
+    "title": "Expected Ms",
+    "display": true
+  },
+  "f-t": {
+    "tex": "\\mathrm{SSG}=\\frac{n_1n_2}{n_1+n_2}(\\bar x_1-\\bar x_2)^2,\\quad \\mathrm{MSW}=s_p^2,\\quad F=\\frac{(\\bar x_1-\\bar x_2)^2}{s_p^2(1/n_1+1/n_2)}=t^2",
+    "text": "With two groups, between-group sum of squares reduces to the squared difference scaled by group sizes, and ANOVA F equals the squared pooled t statistic.",
+    "title": "F T",
+    "display": true
+  },
+  "effect-size": {
+    "tex": "\\eta^2=\\frac{\\mathrm{SSG}}{\\mathrm{SST}},\\qquad \\omega^2=\\frac{\\mathrm{SSG}-(c-1)\\mathrm{MSW}}{\\mathrm{SST}+\\mathrm{MSW}}",
+    "text": "Eta squared is the sample fraction of total variation explained by groups. Omega squared subtracts a degrees-of-freedom correction and uses an adjusted denominator.",
+    "title": "Effect Size",
+    "display": true
+  },
+  "two-index": {
+    "tex": "x_{ijk},\\quad i=1,\\ldots,c,\\quad j=1,\\ldots,r,\\quad k=1,\\ldots,m,\\qquad n=crm",
+    "text": "An observation has factor A level i, factor B level j and replicate k. Balanced replication means m observations in every one of c times r cells.",
+    "title": "Two Index",
+    "display": true
+  },
+  "two-model": {
+    "tex": "X_{ijk}=\\mu+\\alpha_i+\\beta_j+\\tau_{ij}+\\varepsilon_{ijk},\\qquad \\varepsilon_{ijk}\\overset{\\mathrm{ind}}{\\sim}N(0,\\sigma^2)",
+    "text": "Each observation equals a grand mean, factor A effect, factor B effect, interaction effect and independent normal error with common variance.",
+    "title": "Two Model",
+    "display": true
+  },
+  "two-pop-means": {
+    "tex": "\\mu=\\frac1{cr}\\sum_i\\sum_j\\mu_{ij},\\qquad \\mu_{i\\cdot}=\\frac1r\\sum_j\\mu_{ij},\\qquad \\mu_{\\cdot j}=\\frac1c\\sum_i\\mu_{ij}",
+    "text": "The grand mean is the equal average of all cell population means. The A marginal mean averages across B levels; the B marginal mean averages across A levels.",
+    "title": "Two Pop Means",
+    "display": true
+  },
+  "two-effects": {
+    "tex": "\\alpha_i=\\mu_{i\\cdot}-\\mu,\\qquad \\beta_j=\\mu_{\\cdot j}-\\mu,\\qquad \\tau_{ij}=\\mu_{ij}-\\mu_{i\\cdot}-\\mu_{\\cdot j}+\\mu",
+    "text": "Main effects are marginal means minus the grand mean. The interaction is the cell mean minus both marginal means plus the grand mean.",
+    "title": "Two Effects",
+    "display": true
+  },
+  "two-constraints": {
+    "tex": "\\sum_i\\alpha_i=0,\\quad \\sum_j\\beta_j=0,\\quad \\sum_i\\tau_{ij}=0\\ \\text{for every }j,\\quad \\sum_j\\tau_{ij}=0\\ \\text{for every }i",
+    "text": "Main effects sum to zero. Interaction effects sum to zero down each column and across each row, not merely across the entire table.",
+    "title": "Two Constraints",
+    "display": true
+  },
+  "two-sample-means": {
+    "tex": "\\begin{aligned}\\bar x&=\\frac1{crm}\\sum_i\\sum_j\\sum_kx_{ijk},&\\bar x_{ij}&=\\frac1m\\sum_kx_{ijk},\\\\\\bar x_{i\\cdot}&=\\frac1{rm}\\sum_j\\sum_kx_{ijk},&\\bar x_{\\cdot j}&=\\frac1{cm}\\sum_i\\sum_kx_{ijk}.\\end{aligned}",
+    "text": "The sample grand mean averages all observations; a cell mean averages its m replicates; each marginal mean averages all observations at that factor level.",
+    "title": "Two Sample Means",
+    "display": true
+  },
+  "two-estimates": {
+    "tex": "\\hat\\mu=\\bar x,\\quad \\hat\\alpha_i=\\bar x_{i\\cdot}-\\bar x,\\quad \\hat\\beta_j=\\bar x_{\\cdot j}-\\bar x,\\quad \\hat\\tau_{ij}=\\bar x_{ij}-\\bar x_{i\\cdot}-\\bar x_{\\cdot j}+\\bar x",
+    "text": "Estimate the grand mean and effects by replacing population means with their sample counterparts.",
+    "title": "Two Estimates",
+    "display": true
+  },
+  "two-expectations": {
+    "tex": "\\begin{aligned}E(\\bar X)&=\\mu,&E(\\bar X_{i\\cdot})&=\\mu+\\alpha_i,\\\\E(\\bar X_{\\cdot j})&=\\mu+\\beta_j,&E(\\bar X_{ij})&=\\mu+\\alpha_i+\\beta_j+\\tau_{ij}.\\end{aligned}",
+    "text": "Expectations of the sample means equal the corresponding grand, marginal and cell population means.",
+    "title": "Two Expectations",
+    "display": true
+  },
+  "two-ss": {
+    "tex": "\\begin{aligned}\\mathrm{SSA}&=rm\\sum_i(\\bar x_{i\\cdot}-\\bar x)^2\\\\\\mathrm{SSB}&=cm\\sum_j(\\bar x_{\\cdot j}-\\bar x)^2\\\\\\mathrm{SSAB}&=m\\sum_i\\sum_j(\\bar x_{ij}-\\bar x_{i\\cdot}-\\bar x_{\\cdot j}+\\bar x)^2\\\\\\mathrm{SSE}&=\\sum_i\\sum_j\\sum_k(x_{ijk}-\\bar x_{ij})^2\\\\\\mathrm{SST}&=\\mathrm{SSA}+\\mathrm{SSB}+\\mathrm{SSAB}+\\mathrm{SSE}.\\end{aligned}",
+    "text": "Balanced two-way total variation splits into A marginal variation, B marginal variation, interaction variation and residual variation within cells.",
+    "title": "Two Ss",
+    "display": true
+  },
+  "two-deviation": {
+    "tex": "x_{ijk}-\\bar x=(\\bar x_{i\\cdot}-\\bar x)+(\\bar x_{\\cdot j}-\\bar x)+(\\bar x_{ij}-\\bar x_{i\\cdot}-\\bar x_{\\cdot j}+\\bar x)+(x_{ijk}-\\bar x_{ij})",
+    "text": "A total deviation splits into an A effect, B effect, interaction and within-cell residual.",
+    "title": "Two Deviation",
+    "display": true
+  },
+  "two-tests": {
+    "tex": "\\begin{array}{c|c|c}\\text{Null hypothesis}&\\text{Statistic}&\\text{Null reference}\\\\\\alpha_1=\\cdots=\\alpha_c=0&F_A=\\mathrm{MSA}/\\mathrm{MSE}&F_{c-1,\\,cr(m-1)}\\\\\\beta_1=\\cdots=\\beta_r=0&F_B=\\mathrm{MSB}/\\mathrm{MSE}&F_{r-1,\\,cr(m-1)}\\\\\\tau_{ij}=0\\ \\forall i,j&F_{AB}=\\mathrm{MSAB}/\\mathrm{MSE}&F_{(c-1)(r-1),\\,cr(m-1)}\\end{array}",
+    "text": "Test whether all A effects are zero, all B effects are zero, or all interactions are zero. Each divides its mean square by the common within-cell error mean square.",
+    "title": "Two Tests",
+    "display": true
+  },
+  "two-ems": {
+    "tex": "\\begin{aligned}E(\\mathrm{MSE})&=\\sigma^2,\\\\E(\\mathrm{MSA})&=\\sigma^2+\\frac{rm\\sum_i\\alpha_i^2}{c-1},\\\\E(\\mathrm{MSB})&=\\sigma^2+\\frac{cm\\sum_j\\beta_j^2}{r-1},\\\\E(\\mathrm{MSAB})&=\\sigma^2+\\frac{m\\sum_i\\sum_j\\tau_{ij}^2}{(c-1)(r-1)}.\\end{aligned}",
+    "text": "For a balanced fixed-effects model, each effect mean square contains error variance plus its squared population effect contribution; the error mean square contains only the error variance.",
+    "title": "Two Ems",
+    "display": true
+  }
+}
