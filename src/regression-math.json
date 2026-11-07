@@ -190,5 +190,17 @@
     "tex": "\\begin{aligned}&D(a_*+u,b_*+v)-D(a_*,b_*)\\\\&\\quad=\\sum_i(u+vx_i)^2\\\\&\\quad=n(u+v\\bar x)^2+v^2S_{xx}.\\end{aligned}",
     "text": "Let a star and b star be the fitted coefficients. Changing them by u and v increases the squared-error total by the sum of squared quantities u plus v x. This is n times the square of u plus v x mean, plus v squared times Sxx. When Sxx is positive, the increase is positive unless u and v are both zero.",
     "display": true
+  },
+  "depth-intercept-weight-square": {
+    "title": "Expand the squared intercept weights",
+    "tex": "\\begin{aligned}\\sum_i v_i^2&=\\sum_i\\left(\\frac1n-\\bar xw_i\\right)^2\\\\&=\\frac{n}{n^2}-\\frac{2\\bar x}{n}\\sum_iw_i+\\bar x^2\\sum_iw_i^2\\\\&=\\frac1n-0+\\frac{\\bar x^2}{S_{xx}}.\\end{aligned}",
+    "text": "The sum of squared intercept weights equals the sum of the squared quantities one over n minus x mean times w i. Expanding gives n over n squared, minus twice x mean over n times the sum of w i, plus x mean squared times the sum of squared w i. The middle term is zero. The result is one over n plus x mean squared over Sxx.",
+    "display": true
+  },
+  "depth-intercept-weight-product": {
+    "title": "Expand the intercept and slope weight products",
+    "tex": "\\begin{aligned}\\sum_i v_iw_i&=\\sum_i\\left(\\frac1n-\\bar xw_i\\right)w_i\\\\&=\\frac1n\\sum_iw_i-\\bar x\\sum_iw_i^2\\\\&=0-\\frac{\\bar x}{S_{xx}}.\\end{aligned}",
+    "text": "The sum of intercept weight times slope weight equals the sum of one over n minus x mean times w i, all multiplied by w i. This is one over n times the sum of w i, minus x mean times the sum of squared w i. The first term is zero. The result is negative x mean over Sxx.",
+    "display": true
   }
 }

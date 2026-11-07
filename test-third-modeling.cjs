@@ -4,7 +4,7 @@ let checks = 0;
 const ok = (v, m) => { checks++; assert.ok(v, m); };
 const near = (a, b) => ok(Math.abs(a - b) < 1e-9, `${a} != ${b}`);
 function topics(s) {
-  s=s.replace(/<!-- normal-depth:start -->[\s\S]*?<!-- normal-depth:end -->/,'');
+  s=s.replace(/<!-- normal-depth:start -->[\s\S]*?<!-- normal-depth:end -->/,'').replace(/<!-- coefficient-weights-depth:start -->[\s\S]*?<!-- coefficient-weights-depth:end -->/,'');
 
   const out = [], re = /<\/?details\b[^>]*>/g;
   let m, depth = 0, start = -1;

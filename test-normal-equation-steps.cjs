@@ -12,11 +12,12 @@ const start='<!-- normal-depth:start -->',end='<!-- normal-depth:end -->';
 const i=source.indexOf(start),j=source.indexOf(end,i)+end.length;
 ok(i>=0&&j>i,'bounded explanation exists');ok(source.indexOf(start,i+1)===-1&&source.indexOf(end,j)===-1,'unique boundaries');
 const block=source.slice(i,j);
-ok(hash(source.replace(block,''))==='0ec3f181618b9b32eeb68a115b1a7a1fc2243648cd20fb7fb7f2fe72d76a15a7','all earlier HTML, explanations and activities remain byte-identical');
+ok(hash(source.replace(block,'').replace(/<!-- coefficient-weights-depth:start -->[\s\S]*?<!-- coefficient-weights-depth:end -->/,''))==='0ec3f181618b9b32eeb68a115b1a7a1fc2243648cd20fb7fb7f2fe72d76a15a7','all earlier HTML, explanations and activities remain byte-identical');
 ok(i>source.indexOf('Technical depth · The minimizing equations')&&j<source.indexOf('id="regression-step-5"'),'inside original technical proof');
 ok(block.includes('aria-labelledby="depth-regression-normal-title"')&&block.includes('id="depth-regression-normal-title"'),'accessible heading');
 ok(block.includes('<details><summary>Check:')&&!/<script|<button|\bhidden\b|<details[^>]+\bopen\b/.test(block),'native reasoning disclosure, no script dependency');
 const newIds=['depth-normal-balance','depth-normal-centering','depth-normal-numbers','depth-normal-minimum'],originalMath={...math};
+for(const id of ['depth-intercept-weight-square','depth-intercept-weight-product'])delete originalMath[id];
 for(const id of newIds){
  const item=math[id];ok(item&&item.display===true&&item.title&&item.text.length>80,'full formula and fallback');ok(block.includes(`{{math:${id}}}`),'formula belongs here');
  const rendered=renderMath(id,item);ok(rendered.includes('<math xmlns=')&&rendered.includes('class="katex-html" aria-hidden="true"'),'MathML, hidden visual duplicate');

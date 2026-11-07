@@ -20,7 +20,7 @@ for(const [name,expected] of Object.entries(baseline)){
  const source=fs.readFileSync(`src/${name}.html`,'utf8');
  const equations=JSON.parse(fs.readFileSync(`src/${name}-math.json`,'utf8'));
  let original=source;
- if(name==='regression')original=original.replace(/<!-- normal-depth:start -->[\s\S]*?<!-- normal-depth:end -->/,'');
+ if(name==='regression')original=original.replace(/<!-- normal-depth:start -->[\s\S]*?<!-- normal-depth:end -->/,'').replace(/<!-- coefficient-weights-depth:start -->[\s\S]*?<!-- coefficient-weights-depth:end -->/,'');
  for(const [label,step] of expected.blocks){
   const start=`<!-- depth48:${label}:start -->`,end=`<!-- depth48:${label}:end -->`;
   const i=source.indexOf(start),j=source.indexOf(end,i)+end.length;
@@ -35,7 +35,7 @@ for(const [name,expected] of Object.entries(baseline)){
  }
  ok(digest(original)===expected.html,`${name}: every pre-existing lesson, exercise, technical block and activity remains byte-identical`);
  const oldEquations={...equations};
- if(name==='regression')for(const id of ['depth-normal-balance','depth-normal-centering','depth-normal-numbers','depth-normal-minimum'])delete oldEquations[id];
+ if(name==='regression')for(const id of ['depth-normal-balance','depth-normal-centering','depth-normal-numbers','depth-normal-minimum','depth-intercept-weight-square','depth-intercept-weight-product'])delete oldEquations[id];
  for(const id of expected.formulas){
   ok(equations[id]&&equations[id].display===true&&equations[id].text.length>40,'formula has full text alternative');
   const rendered=renderMath(id,equations[id]);

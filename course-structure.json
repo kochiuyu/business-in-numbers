@@ -1406,6 +1406,8 @@
       "coefficient-variance",
       "decomp-proof",
       "decomposition",
+      "depth-intercept-weight-product",
+      "depth-intercept-weight-square",
       "depth-mean-covariance",
       "depth-normal-balance",
       "depth-normal-centering",
