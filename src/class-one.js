@@ -3,7 +3,7 @@
  const body=document.body;
  if(!body.classList.contains('class-one-case'))return;
  const parts=[...document.querySelectorAll('.case-part')];
- if(parts.length!==6)return;
+ if(parts.length!==8)return;
  const controls=document.querySelector('.visual-path-controls');
  const all=document.getElementById('visual-show-all'),motion=document.getElementById('visual-motion');
  const progress=document.getElementById('visual-progress');
@@ -16,11 +16,11 @@
  reduce.addEventListener?.('change',()=>{motion.checked=!reduce.matches;setMotion();});setMotion();
  function display(){
   parts.forEach((p,i)=>p.hidden=!showAll&&i!==current);
-  tail.forEach(p=>p.hidden=!showAll&&current!==5);
+  tail.forEach(p=>p.hidden=!showAll&&current!==parts.length-1);
   document.querySelectorAll('.case-route a').forEach((a,i)=>{if(i===current)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
   const title=parts[current].querySelector('h2').textContent.trim();
-  progress.textContent=showAll?`All six steps · selected: ${title}`:`Step ${current+1} of 6 · ${title}`;
-  all.setAttribute('aria-pressed',String(showAll));all.textContent=showAll?'Return to one step':'Show all six steps';
+  progress.textContent=showAll?`All eight steps · selected: ${title}`:`Step ${current+1} of ${parts.length} · ${title}`;
+  all.setAttribute('aria-pressed',String(showAll));all.textContent=showAll?'Return to one step':'Show all eight steps';
  }
  function reveal(focus=false){
   let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
@@ -30,10 +30,10 @@
   const target=id&&document.getElementById(id);if(!target)return;
   const part=target.closest('.case-part');
   if(part)current=parts.indexOf(part);
-  else if(tail.some(p=>p===target||p.contains(target)))current=5;
+  else if(tail.some(p=>p===target||p.contains(target)))current=parts.length-1;
   display();
   for(let p=target;p;p=p.parentElement){if(p.tagName==='DETAILS')p.open=true;if(p.classList.contains('technical')){body.classList.add('depth-on');document.getElementById('depth').checked=true;}}
-  if(focus){const heading=target.matches('.case-part')?target.querySelector('h2'):target;heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});target.scrollIntoView({behavior:reduce.matches||!motion.checked?'instant':'smooth',block:'start'});}
+  if(focus){const heading=target.matches('.case-part')?target.querySelector('h2'):target.classList.contains('step-anchor')?part.querySelector('h2'):target;heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});target.scrollIntoView({behavior:reduce.matches||!motion.checked?'instant':'smooth',block:'start'});}
  }
  all.addEventListener('click',()=>{showAll=!showAll;display();});
  window.addEventListener('hashchange',()=>reveal(true));

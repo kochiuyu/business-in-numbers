@@ -24,6 +24,8 @@ The full suite uses NumPy, SciPy, and Matplotlib to reproduce examples and indep
 
 The shared header in `scripts/navigation.cjs` separates the eight-class course menu from in-page lesson shortcuts. It marks the current class and follows the section being read. All menu links and the native disclosure work without JavaScript; JavaScript adds Escape/outside-click dismissal, keyboard focus handling, and section highlighting.
 
+Class 1 follows eight teaching steps: records, center, quartiles and boxplots, variance and standard deviation, skewness, kurtosis, relationships, and a manager briefing. The core calculation or action stays visible in every step; complete explanations remain available below it. Sequential links use `#class1-step-1` through `#class1-step-8`. The original `#case-part-*` links retain their subject destinations, so their numeric suffixes no longer describe the reading order.
+
 Run `npm run test:navigation` after building for navigation structure and interaction regression checks. Browser QA should also check narrow phone layouts, keyboard focus, Back/Forward, and the no-JavaScript fallback.
 
 ## GitHub Pages

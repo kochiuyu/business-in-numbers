@@ -1,0 +1,787 @@
+{
+  "base_commit": "8dbdc910092526454a34d943c3176f59d03be293",
+  "baseline_sha256": "b310dc5ec5e87b53559a55c382c2c11e396b2518f4bfd261f2e3c4bebceb74c8",
+  "reviewed_sha256": "fd4843563e45bb45cf9f6e2dd02310750f51d2d3a39057d18535f5e480f9e38c",
+  "patches": [
+    {
+      "token_start": 96,
+      "token_end": 97,
+      "before": "See the numbers before learning the formulas. Follow one retailer through six short, visual steps, at your own pace.",
+      "after": "See the numbers before learning the formulas. Follow one retailer through eight short teaching steps, at your own pace."
+    },
+    {
+      "token_start": 180,
+      "token_end": 181,
+      "before": "Six visual steps \u00b7 one business case",
+      "after": "Eight teaching steps \u00b7 one business case"
+    },
+    {
+      "token_start": 313,
+      "token_end": 314,
+      "before": "<nav aria-label=\"Six-part business case\">",
+      "after": "<nav aria-label=\"Eight-step business case\">"
+    },
+    {
+      "token_start": 315,
+      "token_end": 315,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 316,
+      "token_end": 317,
+      "before": "<a href=\"#case-part-1\">",
+      "after": "<a href=\"#class1-step-1\">"
+    },
+    {
+      "token_start": 321,
+      "token_end": 322,
+      "before": "What can these records tell us?",
+      "after": "Know the records"
+    },
+    {
+      "token_start": 324,
+      "token_end": 325,
+      "before": "Define rows, units and comparisons.",
+      "after": "Rows, units and comparisons."
+    },
+    {
+      "token_start": 328,
+      "token_end": 328,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 329,
+      "token_end": 330,
+      "before": "<a href=\"#case-part-2\">",
+      "after": "<a href=\"#class1-step-2\">"
+    },
+    {
+      "token_start": 334,
+      "token_end": 335,
+      "before": "Is $45 an ordinary purchase?",
+      "after": "Choose a center"
+    },
+    {
+      "token_start": 337,
+      "token_end": 338,
+      "before": "Separate the middle order from revenue.",
+      "after": "Mean, median and purpose."
+    },
+    {
+      "token_start": 341,
+      "token_end": 341,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 342,
+      "token_end": 343,
+      "before": "<a href=\"#case-part-3\">",
+      "after": "<a href=\"#class1-step-3\">"
+    },
+    {
+      "token_start": 347,
+      "token_end": 348,
+      "before": "Which supplier fits the target?",
+      "after": "Read the spread"
+    },
+    {
+      "token_start": 350,
+      "token_end": 351,
+      "before": "Compare spread and missed deadlines.",
+      "after": "Quartiles, IQR and boxplots."
+    },
+    {
+      "token_start": 354,
+      "token_end": 354,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 355,
+      "token_end": 356,
+      "before": "<a href=\"#case-part-4\">",
+      "after": "<a href=\"#class1-step-4\">"
+    },
+    {
+      "token_start": 360,
+      "token_end": 361,
+      "before": "What is the $200 order telling us?",
+      "after": "Build variance and standard deviation"
+    },
+    {
+      "token_start": 363,
+      "token_end": 364,
+      "before": "Investigate shape and unusual values.",
+      "after": "Square, average, square root."
+    },
+    {
+      "token_start": 367,
+      "token_end": 367,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 368,
+      "token_end": 369,
+      "before": "<a href=\"#case-part-5\">",
+      "after": "<a href=\"#class1-step-5\">"
+    },
+    {
+      "token_start": 373,
+      "token_end": 374,
+      "before": "Should advertising spend rise?",
+      "after": "Understand skewness"
+    },
+    {
+      "token_start": 376,
+      "token_end": 377,
+      "before": "Separate association from causal evidence.",
+      "after": "Signed cubes and asymmetry."
+    },
+    {
+      "token_start": 380,
+      "token_end": 380,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 381,
+      "token_end": 382,
+      "before": "<a href=\"#case-part-6\">",
+      "after": "<a href=\"#class1-step-6\">"
+    },
+    {
+      "token_start": 386,
+      "token_end": 387,
+      "before": "What can we recommend now?",
+      "after": "Understand kurtosis"
+    },
+    {
+      "token_start": 389,
+      "token_end": 390,
+      "before": "Reproduce the evidence and write the brief.",
+      "after": "Fourth powers and extremes."
+    },
+    {
+      "token_start": 393,
+      "token_end": 419,
+      "before": "\n",
+      "after": "<li><a href=\"#class1-step-7\"><span>07</span><b>Read relationships</b><small>Paired data, not causation.</small></a></li><li><a href=\"#class1-step-8\"><span>08</span><b>Brief the manager</b><small>Evidence, action and limits.</small></a></li>"
+    },
+    {
+      "token_start": 423,
+      "token_end": 424,
+      "before": "Start at 1. Each step has a picture, a pause question, and an optional full explanation. Open a labeled worked example when you want more detail; Technical depth adds formal material inside explanations. No coding is needed.",
+      "after": "Start at 1. Each step teaches one idea with a visible worked calculation or action and a check. Open a labeled worked example when you want more detail; Technical depth adds formal material inside explanations. No coding is needed."
+    },
+    {
+      "token_start": 436,
+      "token_end": 437,
+      "before": "One picture. One question. One next step.",
+      "after": "One idea. Work it through. Check it."
+    },
+    {
+      "token_start": 459,
+      "token_end": 460,
+      "before": "Step 1 of 6 \u00b7 What can these records tell us?",
+      "after": "Step 1 of 8 \u00b7 Know the records"
+    },
+    {
+      "token_start": 470,
+      "token_end": 471,
+      "before": "Show all six steps",
+      "after": "Show all eight steps"
+    },
+    {
+      "token_start": 475,
+      "token_end": 477,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-step-1\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 479,
+      "token_end": 480,
+      "before": "PART 1 OF 6 \u00b7 BUSINESS QUESTION",
+      "after": "STEP 1 OF 8"
+    },
+    {
+      "token_start": 482,
+      "token_end": 483,
+      "before": "What can these records tell us?",
+      "after": "Know the records"
+    },
+    {
+      "token_start": 489,
+      "token_end": 553,
+      "before": "",
+      "after": "<section class=\"case-worked\" id=\"case-record-check\"><h3>Apply that distinction to the three files.</h3><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Check the case records. Scroll horizontally if needed.\"><table><caption>One row, one meaning, one valid comparison</caption><thead><tr><th scope=\"col\">File</th><th scope=\"col\">One row and its measurements</th><th scope=\"col\">What we can compare</th></tr></thead><tbody><tr><th scope=\"row\">A \u00b7 Purchases</th><td>One order; value in dollars, recorded in currency increments.</td><td>Order values and total revenue. Twelve rows do not necessarily mean twelve customers.</td></tr><tr><th scope=\"row\">B \u00b7 Replenishment</th><td>One delivery; supplier name and elapsed days. Duration is a measurement, here recorded as whole days.</td><td>Days within and between suppliers, if products, routes and timing rules are comparable.</td></tr><tr><th scope=\"row\">C \u00b7 Marketing</th><td>One branch; advertising and sales in $ thousands for the same period.</td><td>Paired amounts across branches. Keep the two values from each branch together.</td></tr></tbody></table></div><p>The files have different rows, so lining up their first rows would invent a relationship. We can describe each file now; predicting future customers or deliveries would require a wider population and defensible sampling assumptions.</p></section>\n"
+    },
+    {
+      "token_start": 810,
+      "token_end": 810,
+      "before": "<section class=\"case-worked\" id=\"case-record-check\"><h3>Apply that distinction to the three files.</h3><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Check the case records. Scroll horizontally if needed.\"><table><caption>One row, one meaning, one valid comparison</caption><thead><tr><th scope=\"col\">File</th><th scope=\"col\">One row and its measurements</th><th scope=\"col\">What we can compare</th></tr></thead><tbody><tr><th scope=\"row\">A \u00b7 Purchases</th><td>One order; value in dollars, recorded in currency increments.</td><td>Order values and total revenue. Twelve rows do not necessarily mean twelve customers.</td></tr><tr><th scope=\"row\">B \u00b7 Replenishment</th><td>One delivery; supplier name and elapsed days. Duration is a measurement, here recorded as whole days.</td><td>Days within and between suppliers, if products, routes and timing rules are comparable.</td></tr><tr><th scope=\"row\">C \u00b7 Marketing</th><td>One branch; advertising and sales in $ thousands for the same period.</td><td>Paired amounts across branches. Keep the two values from each branch together.</td></tr></tbody></table></div><p>The files have different rows, so lining up their first rows would invent a relationship. We can describe each file now; predicting future customers or deliveries would require a wider population and defensible sampling assumptions.</p></section>",
+      "after": ""
+    },
+    {
+      "token_start": 920,
+      "token_end": 921,
+      "before": "You do not need to work through all five views now. Use the boxplot for Record A in Part 4 and the scatter plot for Record C in Part 5. The category, time-series and minute-based delivery examples are separate practice data. You can return here from the later parts.",
+      "after": "You do not need to work through all five views now. Use the boxplot for Record A in Step 3 and the scatter plot for Record C in Step 7. The category, time-series and minute-based delivery examples are separate practice data. You can return here from the later parts."
+    },
+    {
+      "token_start": 934,
+      "token_end": 935,
+      "before": "<aside class=\"case-answer\" aria-label=\"Part 1 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 1 answer\">"
+    },
+    {
+      "token_start": 953,
+      "token_end": 954,
+      "before": "<a href=\"#case-part-2\" class=\"button\">",
+      "after": "<a href=\"#class1-step-2\" class=\"button\">"
+    },
+    {
+      "token_start": 962,
+      "token_end": 964,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-step-2\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 966,
+      "token_end": 967,
+      "before": "PART 2 OF 6 \u00b7 BUSINESS QUESTION",
+      "after": "STEP 2 OF 8"
+    },
+    {
+      "token_start": 969,
+      "token_end": 970,
+      "before": "Is $45 an ordinary purchase?",
+      "after": "Choose a center"
+    },
+    {
+      "token_start": 976,
+      "token_end": 1020,
+      "before": "",
+      "after": "<section class=\"case-worked\" id=\"case-center-worked\"><h3>Work through the original order book.</h3><p class=\"case-data\">Sorted dollar values: 18, 22, 24, 25, 28, <b>30, 32</b>, 35, 38, 42, 46, 200.</p><ol class=\"case-calculation\"><li><b>Recover revenue per order.</b> The twelve values total $540. Redistribute that total equally: $540 \u00f7 12 = <b>$45</b>.</li><li><b>Locate the middle purchase.</b> With twelve values, the middle lies between positions 6 and 7. Their midpoint is ($30 + $32) \u00f7 2 = <b>$31</b>.</li><li><b>Check repetition.</b> Every value occurs once, so this record has no repeated mode.</li></ol><p>The $45 mean reconstructs revenue exactly when multiplied by twelve. The $31 median describes the middle of the ordered purchases. Neither calculation tells us which price would maximize future sales.</p></section>\n"
+    },
+    {
+      "token_start": 1088,
+      "token_end": 1088,
+      "before": "<section class=\"case-worked\" id=\"case-center-worked\"><h3>Work through the original order book.</h3><p class=\"case-data\">Sorted dollar values: 18, 22, 24, 25, 28, <b>30, 32</b>, 35, 38, 42, 46, 200.</p><ol class=\"case-calculation\"><li><b>Recover revenue per order.</b> The twelve values total $540. Redistribute that total equally: $540 \u00f7 12 = <b>$45</b>.</li><li><b>Locate the middle purchase.</b> With twelve values, the middle lies between positions 6 and 7. Their midpoint is ($30 + $32) \u00f7 2 = <b>$31</b>.</li><li><b>Check repetition.</b> Every value occurs once, so this record has no repeated mode.</li></ol><p>The $45 mean reconstructs revenue exactly when multiplied by twelve. The $31 median describes the middle of the ordered purchases. Neither calculation tells us which price would maximize future sales.</p></section>",
+      "after": ""
+    },
+    {
+      "token_start": 1332,
+      "token_end": 1333,
+      "before": "No. Investigate whether it is an error or a different type of customer. A real large order belongs in total revenue. Report mean and median with the reason they differ. Part 4 will turn \u201cunusual\u201d into an explicit check.",
+      "after": "No. Investigate whether it is an error or a different type of customer. A real large order belongs in total revenue. Report mean and median with the reason they differ. Step 3 will turn \u201cunusual\u201d into an explicit check."
+    },
+    {
+      "token_start": 1748,
+      "token_end": 1749,
+      "before": "<aside class=\"case-answer\" aria-label=\"Part 2 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 2 answer\">"
+    },
+    {
+      "token_start": 1759,
+      "token_end": 1760,
+      "before": "Next: see why even the right average can hide an operational problem.",
+      "after": "Next: read the middle half and extremes with quartiles and a boxplot."
+    },
+    {
+      "token_start": 1764,
+      "token_end": 1765,
+      "before": "<a href=\"#case-part-1\" class=\"visual-back\">",
+      "after": "<a href=\"#class1-step-1\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 1767,
+      "token_end": 1977,
+      "before": "<a href=\"#case-part-3\" class=\"button\">Next: Compare suppliers ",
+      "after": "<a href=\"#class1-step-3\" class=\"button\">Next: Read the spread <span aria-hidden=\"true\">\u2192</span></a></nav></section><section class=\"case-part\" id=\"case-part-4\" aria-labelledby=\"case-part-4-title\"><span class=\"step-anchor\" id=\"class1-step-3\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 3 OF 8</div><h2 id=\"case-part-4-title\">Read the spread</h2><p>Use quartiles and a boxplot to separate the middle half from unusual records.</p></div><section class=\"step-core\" id=\"quartiles-core\"><h3>Read the spread before choosing a formula.</h3><p>The <b>range</b> is the full observed width: $200 \u2212 $18 = <b>$182</b>. It uses only two extremes. <b>Quartiles</b> mark the quarter and three-quarter positions in sorted data. Their gap, the <b>interquartile range (IQR)</b>, describes the middle half instead.</p><p>Keep the same twelve purchases: <b>$18, $22, $24, $25, $28, $30, $32, $35, $38, $42, $46, $200</b>. A quartile convention specifies how to interpolate between positions. We use the exclusive convention here, then build the boxplot from those values.</p></section>{{visual:shape}}<section class=\"case-worked\" id=\"case-fence-worked\"><h3>Build the box and its review fences.</h3><p>A <b>boxplot</b> places the median inside a box from Q\u2081 to Q\u2083. For this plot, the whiskers end at the most extreme observed values within 1.5 \u00d7 IQR of the box; points beyond those fences appear separately.</p><ol class=\"case-calculation\"><li><b>Find the middle half.</b> On the original twelve ordered values, exclusive quartiles use ranks 0.25 \u00d7 13 = 3.25 and 0.75 \u00d7 13 = 9.75. A quarter of the way from $24 to $25 is <b>Q\u2081 = $24.25</b>; three quarters of the way from $38 to $42 is <b>Q\u2083 = $41</b>.</li><li><b>Measure its width.</b> IQR = $41 \u2212 $24.25 = <b>$16.75</b>.</li><li><b>Extend the review range.</b> 1.5 \u00d7 $16.75 = $25.125. The lower fence is $24.25 \u2212 $25.125 = <b>\u2212$0.875</b>; the upper fence is $41 + $25.125 = <b>$66.125</b>.</li><li><b>Check observations, not just endpoints.</b> $200 is above the upper fence; every other order is inside. The whiskers end at $18 and $46, the most extreme actual values inside the fences.</li></ol><p class=\"case-visual-link\"><a href=\"#graph-panel-box\">Inspect the original order boxplot and its flagged $200 purchase \u2192</a></p><p>In the chart, find the $31 median, the box, the $46 upper whisker and the separate $200 point. Switch the chart to inclusive quartiles if you wish: the box changes, but $200 is still flagged. Return here before interpreting the flag.</p></section><details class=\"visual-check\"><summary>Check: is $66.125 the upper whisker?</summary><p>No. It is the upper review fence. The upper whisker is the most extreme actual observation inside that fence: <b>$46</b>. The $200 order is drawn separately and flagged for investigation, not automatically removed.</p></details><details class=\"lesson\" id=\"quartile-reference\"><summary><span class=\"lesson-number\">03</span><span><b>Quartiles, boxplots and unusual records</b><small>Full explanation \u00b7 conventions and interpretation</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><section class=\"lesson-bridge\"><h3>Give \u201cunusual\u201d a rule you can inspect.</h3><p>We kept the $200 purchase in revenue. Now compare it with the middle half of the order book, use a boxplot to see where it sits, and decide what to investigate. A flag identifies a record to check; it cannot tell us whether the invoice is wrong.</p></section><section class=\"case-interpret\"><h3>Read the long right side before summarizing its shape.</h3><p>Eleven orders lie between $18 and $46 and one lies at $200. That long right side explains the original mean being above the median. A similar SD could come from a balanced cloud, two clusters or a few extremes, so inspect the distribution as well as its spread.</p><p>Check the invoice and order type. Correct a confirmed entry error; retain a genuine purchase, and consider describing order types separately if the distinction is meaningful. A review fence alone supplies no reason to delete valid revenue.</p></section><div class=\"technical\"><h4>Technical depth \u00b7 Quartiles and boxplots</h4><p>Sort the n observations. The exclusive convention interpolates at rank p(n + 1). The inclusive convention interpolates at rank 1 + p(n \u2212 1). With data 1, 2, 3, 4, 5, 6: exclusive Q\u2081 = 1.75 and Q\u2083 = 5.25; inclusive Q\u2081 = 2.25 and Q\u2083 = 4.75. The results differ by convention, not a calculation error.</p><p>For rank k + \u03b1, use {{math:interpolation}}. Exclusive percentiles are not defined when the requested rank lies outside the observed positions. This lab accepts at least four observations so its two exclusive quartiles exist.</p><p>A five-number summary is minimum, Q\u2081, median, Q\u2083, maximum. Some boxplots draw whiskers to min/max; a common alternative ends whiskers at the most extreme observed values within 1.5 \u00d7 IQR of the box and plots the remaining points separately. Always identify which version is used.</p></div></div></details><details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 3 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD \u00b7 03</span><h3>Flag the large purchase; do not erase valid revenue.</h3><p>The original order boxplot flags $200 under both quartile conventions. With exclusive quartiles, Q\u2081 = $24.25, Q\u2083 = $41 and the upper 1.5 \u00d7 IQR fence is $66.125. This is a review rule, not proof of error. Check the invoice and order type; if genuine, retain it and report the mean, median and distribution together.</p><p class=\"case-next\">Next: measure variation across every delivery with variance and standard deviation.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 3 navigation\"><a href=\"#class1-step-2\" class=\"visual-back\">\u2190 Previous step</a><a href=\"#class1-step-4\" class=\"button\">Next: Build variance and SD "
+    },
+    {
+      "token_start": 1984,
+      "token_end": 1986,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-step-4\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1988,
+      "token_end": 1989,
+      "before": "PART 3 OF 6 \u00b7 BUSINESS QUESTION",
+      "after": "STEP 4 OF 8"
+    },
+    {
+      "token_start": 1991,
+      "token_end": 1992,
+      "before": "Which supplier fits a six-day target?",
+      "after": "Build variance and standard deviation"
+    },
+    {
+      "token_start": 1997,
+      "token_end": 2079,
+      "before": "{{visual:spread}}\n\n",
+      "after": "{{visual:spread}}\n<section class=\"case-worked\" id=\"case-supplier-worked\"><h3>Measure how far each delivery is from five days.</h3><p><b>Standard deviation (SD)</b> summarizes spread using every record. Subtract the mean, square each deviation so positive and negative differences do not cancel, average those squares, then take the square root to return to days.</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Supplier standard deviation calculation. Scroll horizontally if needed.\"><table><caption>Describe these five recorded deliveries per supplier: divide by 5</caption><thead><tr><th scope=\"col\">Calculation</th><th scope=\"col\">Supplier A</th><th scope=\"col\">Supplier B</th></tr></thead><tbody><tr><th scope=\"row\">Days minus mean of 5</th><td>\u22121, 0, 0, 0, 1</td><td>\u22124, \u22123, 0, 3, 4</td></tr><tr><th scope=\"row\">Squared deviations</th><td>1, 0, 0, 0, 1; total 2</td><td>16, 9, 0, 9, 16; total 50</td></tr><tr><th scope=\"row\">Population-version variance</th><td>2 \u00f7 5 = 0.4 days\u00b2</td><td>50 \u00f7 5 = 10 days\u00b2</td></tr><tr><th scope=\"row\">Population-version SD</th><td>\u221a0.4 \u2248 0.63 days</td><td>\u221a10 \u2248 3.16 days</td></tr></tbody></table></div><p>This describes the observed records with denominator n. Estimating a wider population\u2019s variance from a sample uses n \u2212 1 under the usual assumptions; that is a different purpose. SD is not a maximum delay or a promise that all deliveries fall within one SD of the mean.</p></section>\n\n"
+    },
+    {
+      "token_start": 2402,
+      "token_end": 2403,
+      "before": "03",
+      "after": "04"
+    },
+    {
+      "token_start": 2422,
+      "token_end": 2423,
+      "before": "Part 2 showed how a center can hide a large value. Operations has the same problem: both suppliers average five days, but delivery times may cluster tightly or vary widely. First measure that variation; then count actual misses of the six-day target.",
+      "after": "Step 2 showed how a center can hide a large value. Operations has the same problem: both suppliers average five days, but delivery times may cluster tightly or vary widely. First measure that variation; then count actual misses of the six-day target."
+    },
+    {
+      "token_start": 2431,
+      "token_end": 2431,
+      "before": "<section class=\"case-worked\" id=\"case-supplier-worked\"><h3>Measure how far each delivery is from five days.</h3><p><b>Standard deviation (SD)</b> summarizes spread using every record. Subtract the mean, square each deviation so positive and negative differences do not cancel, average those squares, then take the square root to return to days.</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Supplier standard deviation calculation. Scroll horizontally if needed.\"><table><caption>Describe these five recorded deliveries per supplier: divide by 5</caption><thead><tr><th scope=\"col\">Calculation</th><th scope=\"col\">Supplier A</th><th scope=\"col\">Supplier B</th></tr></thead><tbody><tr><th scope=\"row\">Days minus mean of 5</th><td>\u22121, 0, 0, 0, 1</td><td>\u22124, \u22123, 0, 3, 4</td></tr><tr><th scope=\"row\">Squared deviations</th><td>1, 0, 0, 0, 1; total 2</td><td>16, 9, 0, 9, 16; total 50</td></tr><tr><th scope=\"row\">Population-version variance</th><td>2 \u00f7 5 = 0.4 days\u00b2</td><td>50 \u00f7 5 = 10 days\u00b2</td></tr><tr><th scope=\"row\">Population-version SD</th><td>\u221a0.4 \u2248 0.63 days</td><td>\u221a10 \u2248 3.16 days</td></tr></tbody></table></div><p>This describes the observed records with denominator n. Estimating a wider population\u2019s variance from a sample uses n \u2212 1 under the usual assumptions; that is a different purpose. SD is not a maximum delay or a promise that all deliveries fall within one SD of the mean.</p></section>",
+      "after": ""
+    },
+    {
+      "token_start": 2567,
+      "token_end": 2568,
+      "before": "current order values from Part 2",
+      "after": "current order values from Step 2"
+    },
+    {
+      "token_start": 2588,
+      "token_end": 2593,
+      "before": "A quartile cuts the sorted data near a quarter of the way through. Q\u2081 and Q\u2083 bound the middle half; their difference is the IQR. \u201cExclusive\u201d and \u201cinclusive\u201d are different interpolation rules, so they can give different quartiles on the same values. The technical panel below works through those ranks.",
+      "after": "A quartile cuts the sorted data near a quarter of the way through. Q\u2081 and Q\u2083 bound the middle half; their difference is the IQR. \u201cExclusive\u201d and \u201cinclusive\u201d are different interpolation rules, so they can give different quartiles on the same values. The technical panel in <a href=\"#quartile-reference\">Step 3</a> works through those ranks."
+    },
+    {
+      "token_start": 2624,
+      "token_end": 2625,
+      "before": "Technical depth \u00b7 Quartiles and boxplots",
+      "after": "Technical depth \u00b7 Variance and its denominator"
+    },
+    {
+      "token_start": 2626,
+      "token_end": 2626,
+      "before": "<p>Sort the n observations. The exclusive convention interpolates at rank p(n + 1). The inclusive convention interpolates at rank 1 + p(n \u2212 1). With data 1, 2, 3, 4, 5, 6: exclusive Q\u2081 = 1.75 and Q\u2083 = 5.25; inclusive Q\u2081 = 2.25 and Q\u2083 = 4.75. The results differ by convention, not a calculation error.</p><p>For rank k + \u03b1, use {{math:interpolation}}. Exclusive percentiles are not defined when the requested rank lies outside the observed positions. This lab accepts at least four observations so its two exclusive quartiles exist.</p><p>A five-number summary is minimum, Q\u2081, median, Q\u2083, maximum. Some boxplots draw whiskers to min/max; a common alternative ends whiskers at the most extreme observed values within 1.5 \u00d7 IQR of the box and plots the remaining points separately. Always identify which version is used.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 2652,
+      "token_end": 2653,
+      "before": "<aside class=\"case-answer\" aria-label=\"Part 3 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 4 answer\">"
+    },
+    {
+      "token_start": 2654,
+      "token_end": 2655,
+      "before": "ANSWER TO CARRY FORWARD \u00b7 03",
+      "after": "ANSWER TO CARRY FORWARD \u00b7 04"
+    },
+    {
+      "token_start": 2663,
+      "token_end": 2664,
+      "before": "Next: investigate the unusual observations rather than hiding them.",
+      "after": "Next: use standardized deviations to distinguish skewness from spread."
+    },
+    {
+      "token_start": 2667,
+      "token_end": 2669,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 3 navigation\"><a href=\"#case-part-2\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 4 navigation\"><a href=\"#class1-step-3\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 2671,
+      "token_end": 2673,
+      "before": "<a href=\"#case-part-4\" class=\"button\">Next: Investigate the large order ",
+      "after": "<a href=\"#class1-step-5\" class=\"button\">Next: Understand skewness "
+    },
+    {
+      "token_start": 2679,
+      "token_end": 2682,
+      "before": "<section class=\"case-part\" id=\"case-part-4\" aria-labelledby=\"case-part-4-title\">",
+      "after": "<section class=\"case-part\" id=\"case-skewness\" aria-labelledby=\"case-skewness-title\"><span class=\"step-anchor\" id=\"class1-step-5\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2684,
+      "token_end": 2685,
+      "before": "PART 4 OF 6 \u00b7 BUSINESS QUESTION",
+      "after": "STEP 5 OF 8"
+    },
+    {
+      "token_start": 2686,
+      "token_end": 2688,
+      "before": "<h2 id=\"case-part-4-title\">What is the $200 order telling us?",
+      "after": "<h2 id=\"case-skewness-title\">Understand skewness"
+    },
+    {
+      "token_start": 2690,
+      "token_end": 2691,
+      "before": "The large purchase matters to revenue. Decide whether it signals an error, a different order type, or a genuine tail of the distribution.",
+      "after": "Use signed cubes to describe one kind of asymmetry."
+    },
+    {
+      "token_start": 2693,
+      "token_end": 2807,
+      "before": "{{visual:shape}}\n<details class=\"lesson\">",
+      "after": "<section class=\"step-core moment-core\" id=\"skewness-core\" aria-labelledby=\"skewness-core-title\"><span class=\"visual-kicker\">ONE SMALL WORKED EXAMPLE \u00b7 SEPARATE SYNTHETIC SHOP</span><h3 id=\"skewness-core-title\">Give direction to the imbalance.</h3><p><b>Skewness</b> averages cubed standardized deviations. Cubes keep their sign: a large positive deviation contributes positively, while a large negative deviation contributes negatively. Inspect the plot too; one number does not describe the entire distribution.</p><p>Use five orders: <b>$10, $10, $10, $10, $30</b>. These are separate practice data, not replacements for the retailer\u2019s twelve orders. Describe this five-order book with denominator <b>n = 5</b>.</p><ol class=\"case-calculation\"><li><b>Center.</b> Mean = $70 \u00f7 5 = <b>$14</b>. Deviations are \u2212$4, \u2212$4, \u2212$4, \u2212$4 and +$16.</li><li><b>Find the scale.</b> Variance = [4 \u00d7 16 + 256] \u00f7 5 = <b>64 dollars\u00b2</b>. SD = <b>$8</b>.</li><li><b>Standardize.</b> Divide each deviation by the SD. The unit-free z values are <b>\u22120.5, \u22120.5, \u22120.5, \u22120.5, 2</b>.</li><li><b>Cube and average.</b> Four cubes are \u22120.125 each; the last is 8. Their total is \u22120.5 + 8 = 7.5. Population-moment skewness = <b>7.5 \u00f7 5 = 1.5</b>.</li></ol><div class=\"moment-core-result\"><span>Four low orders: 4 \u00d7 (\u22120.5)\u00b3 = <b>\u22120.5</b></span><span>One high order: 2\u00b3 = <b>+8</b></span></div><p>The large positive contribution dominates. Here the positive skewness matches one large order on the right. Zero skewness would mean the cube contributions cancel; it would <b>not prove symmetry</b>. If SD is zero, standardized skewness is undefined.</p><p><b>Try before revealing:</b> reflect the orders to $30, $30, $30, $30, $10. Will skewness change sign?</p><details class=\"visual-check\"><summary>Check the reflection</summary><p>Yes. The mean becomes $26 and SD stays $8. Every z changes sign: four +0.5 values and one \u22122. The cube total is 0.5 \u2212 8 = \u22127.5; skewness becomes <b>\u22121.5</b>. The direction reverses while the amount of standardized imbalance stays the same.</p></details><p class=\"case-next\">Carry these same five z values into the next step. We will change the power, not the records.</p></section><details class=\"lesson\" id=\"skewness-reference\">"
+    },
+    {
+      "token_start": 2809,
+      "token_end": 2810,
+      "before": "04",
+      "after": "05"
+    },
+    {
+      "token_start": 2813,
+      "token_end": 2814,
+      "before": "Notice shape and extremes",
+      "after": "Interpret skewness carefully"
+    },
+    {
+      "token_start": 2816,
+      "token_end": 2817,
+      "before": "A summary can hide an important tail.",
+      "after": "Further explanation \u00b7 conventions, symmetry and transformations"
+    },
+    {
+      "token_start": 2824,
+      "token_end": 2860,
+      "before": "<section class=\"lesson-bridge\">",
+      "after": "<p>The calculation above is descriptive population-moment skewness, often written g\u2081. Excel <code>SKEW.P</code> uses this convention. Corrected sample skewness is different: for these five records Excel <code>SKEW</code> gives about <b>2.2361</b>, not 1.5. It needs at least three observations and nonzero spread. A correction does not make five records representative.</p><p>Positive skewness often accompanies a longer right tail, but do not infer its value from mean versus median alone. <a href=\"#shape-zero-skew-heading\">Inspect a zero-skewness but asymmetric counterexample</a>. <a href=\"#shape-log-worked\">Work through transformations and their limits</a> after the next step.</p></div></details><details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 5 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD \u00b7 05</span>"
+    },
+    {
+      "token_start": 2861,
+      "token_end": 2862,
+      "before": "Give \u201cunusual\u201d a rule you can inspect.",
+      "after": "The cube keeps the direction."
+    },
+    {
+      "token_start": 2864,
+      "token_end": 2865,
+      "before": "We kept the $200 purchase in revenue. Now compare it with the middle half of the order book, use a boxplot to see where it sits, and decide what to investigate. A flag identifies a record to check; it cannot tell us whether the invoice is wrong.",
+      "after": "For the five practice orders, population-moment skewness is 1.5. Reflecting every deviation reverses the sign. Neither the sign nor a zero value identifies the entire distribution."
+    },
+    {
+      "token_start": 2866,
+      "token_end": 2882,
+      "before": "",
+      "after": "<p class=\"case-next\">Next: reuse the same standardized deviations to calculate kurtosis.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 5 navigation\"><a href=\"#class1-step-4\" class=\"visual-back\">\u2190 Previous step</a><a href=\"#class1-step-6\" class=\"button\">Next: Understand kurtosis <span aria-hidden=\"true\">\u2192</span></a></nav>"
+    },
+    {
+      "token_start": 2883,
+      "token_end": 2903,
+      "before": "<section class=\"case-worked\" id=\"case-fence-worked\"><h3>Build the box and its review fences.",
+      "after": "<section class=\"case-part\" id=\"case-kurtosis\" aria-labelledby=\"case-kurtosis-title\"><span class=\"step-anchor\" id=\"class1-step-6\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 6 OF 8</div><h2 id=\"case-kurtosis-title\">Understand kurtosis</h2><p>Reuse the same example to separate fourth-power distance from direction.</p></div><section class=\"step-core moment-core\" id=\"kurtosis-core\" aria-labelledby=\"kurtosis-core-title\"><span class=\"visual-kicker\">SAME FIVE ORDERS \u00b7 A DIFFERENT POWER</span><h3 id=\"kurtosis-core-title\">Count distance strongly, from either side."
+    },
+    {
+      "token_start": 2905,
+      "token_end": 2905,
+      "before": "A ",
+      "after": ""
+    },
+    {
+      "token_start": 2906,
+      "token_end": 2907,
+      "before": "boxplot",
+      "after": "Pearson kurtosis"
+    },
+    {
+      "token_start": 2908,
+      "token_end": 2932,
+      "before": " places the median inside a box from Q\u2081 to Q\u2083. For this plot, the whiskers end at the most extreme observed values within 1.5 \u00d7 IQR of the box; points beyond those fences appear separately.",
+      "after": " averages the fourth powers of standardized deviations. Even powers are nonnegative: \u22122 and +2 both give 16. Distant observations contribute strongly regardless of direction. Kurtosis is <b>not simply peak height</b> or a future extreme-event probability.</p><p>Reuse <b>$10, $10, $10, $10, $30</b>, mean <b>$14</b>, SD <b>$8</b>, and z values <b>\u22120.5, \u22120.5, \u22120.5, \u22120.5, 2</b>. This remains the separate five-order practice shop."
+    },
+    {
+      "token_start": 2936,
+      "token_end": 2937,
+      "before": "Find the middle half.",
+      "after": "Take fourth powers."
+    },
+    {
+      "token_start": 2938,
+      "token_end": 2939,
+      "before": " On the original twelve ordered values, exclusive quartiles use ranks 0.25 \u00d7 13 = 3.25 and 0.75 \u00d7 13 = 9.75. A quarter of the way from $24 to $25 is ",
+      "after": " (\u22120.5)\u2074 = "
+    },
+    {
+      "token_start": 2940,
+      "token_end": 2941,
+      "before": "Q\u2081 = $24.25",
+      "after": "0.0625"
+    },
+    {
+      "token_start": 2942,
+      "token_end": 2943,
+      "before": "; three quarters of the way from $38 to $42 is ",
+      "after": " for each low order; 2\u2074 = "
+    },
+    {
+      "token_start": 2944,
+      "token_end": 2965,
+      "before": "Q\u2083 = $41",
+      "after": "16</b> for the high order.</li><li><b>Count every order.</b> Total = 4 \u00d7 0.0625 + 16 = <b>16.25</b>. Divide by five observations, not two distinct amounts.</li><li><b>Average.</b> Pearson kurtosis = 16.25 \u00f7 5 = <b>3.25"
+    },
+    {
+      "token_start": 2970,
+      "token_end": 2971,
+      "before": "Measure its width.",
+      "after": "Name the convention."
+    },
+    {
+      "token_start": 2972,
+      "token_end": 2973,
+      "before": " IQR = $41 \u2212 $24.25 = ",
+      "after": " Excess kurtosis subtracts the normal-population benchmark of 3: "
+    },
+    {
+      "token_start": 2974,
+      "token_end": 2975,
+      "before": "$16.75",
+      "after": "3.25 \u2212 3 = 0.25"
+    },
+    {
+      "token_start": 2978,
+      "token_end": 2982,
+      "before": "<li>",
+      "after": "</ol><div class=\"moment-core-result\"><span>Four low orders: 4 \u00d7 (\u22120.5)\u2074 = "
+    },
+    {
+      "token_start": 2983,
+      "token_end": 2984,
+      "before": "Extend the review range.",
+      "after": "0.25"
+    },
+    {
+      "token_start": 2985,
+      "token_end": 2988,
+      "before": " 1.5 \u00d7 $16.75 = $25.125. The lower fence is $24.25 \u2212 $25.125 = ",
+      "after": "</span><span>One high order: 2\u2074 = "
+    },
+    {
+      "token_start": 2989,
+      "token_end": 2990,
+      "before": "\u2212$0.875",
+      "after": "16"
+    },
+    {
+      "token_start": 2991,
+      "token_end": 2995,
+      "before": "; the upper fence is $41 + $25.125 = ",
+      "after": "</span></div><p>The high order dominates this fourth-power total. Excess 0.25 is above the normal benchmark; it does not determine the tail or establish a risk level. "
+    },
+    {
+      "token_start": 2996,
+      "token_end": 2997,
+      "before": "$66.125",
+      "after": "Zero excess does not prove normality."
+    },
+    {
+      "token_start": 2998,
+      "token_end": 2999,
+      "before": ".</li><li><b>Check observations, not just endpoints.</b> $200 is above the upper fence; every other order is inside. The whiskers end at $18 and $46, the most extreme actual values inside the fences.</li></ol><p class=\"case-visual-link\"><a href=\"#graph-panel-box\">Inspect the original order boxplot and its flagged $200 purchase \u2192</a>",
+      "after": " Constant data gives undefined kurtosis because SD is zero."
+    },
+    {
+      "token_start": 3001,
+      "token_end": 3036,
+      "before": "In the chart, find the $31 median, the box, the $46 upper whisker and the separate $200 point. Switch the chart to inclusive quartiles if you wish: the box changes, but $200 is still flagged. Return here before interpreting the flag.",
+      "after": "<b>Try before revealing:</b> if the large deviation moves to the left, as in the previous step\u2019s reflection, what happens to kurtosis?</p><details class=\"visual-check\"><summary>Check the even power</summary><p>Every z changes sign, but every fourth power stays the same. Pearson kurtosis remains <b>3.25</b> and excess remains <b>0.25</b>, while skewness switches from +1.5 to \u22121.5. Kurtosis alone cannot tell which side contains the distant value.</p></details><p>The values above use denominator n. Excel <code>KURT</code> instead reports <b>corrected sample excess</b>: <b>5</b> for these records. It requires at least four observations and nonzero spread. The complete derivation and sample correction are below."
+    },
+    {
+      "token_start": 3038,
+      "token_end": 3056,
+      "before": "<section class=\"case-interpret\"><h3>Read the long right side before summarizing its shape.</h3><p>Eleven orders lie between $18 and $46 and one lies at $200. That long right side explains the original mean being above the median. A similar SD could come from a balanced cloud, two clusters or a few extremes, so inspect the distribution as well as its spread.</p><p>Check the invoice and order type. Correct a confirmed entry error; retain a genuine purchase, and consider describing order types separately if the distinction is meaningful. A review fence alone supplies no reason to delete valid revenue.</p></section>",
+      "after": "<details class=\"lesson\"><summary><span class=\"lesson-number\">06</span><span><b>Reconcile both shape measures</b><small>Full derivations \u00b7 contribution plots, sample corrections, counterexamples and transformations</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\">"
+    },
+    {
+      "token_start": 3089,
+      "token_end": 3090,
+      "before": ". These are not replacements for the twelve orders above. Treat these five as the entire order book being described, so every moment divides by ",
+      "after": ". These are not replacements for the twelve orders in Step 3. Treat these five as the entire order book being described, so every moment divides by "
+    },
+    {
+      "token_start": 3753,
+      "token_end": 3754,
+      "before": "current Part 2 lab values",
+      "after": "current Step 2 lab values"
+    },
+    {
+      "token_start": 3755,
+      "token_end": 3756,
+      "before": " and the population/sample choice in Part 3. They may differ from the fixed original boxplot above. Return to \u201cOne large order\u201d in the lab to compare that scenario. The formulas and corrections are in technical depth.",
+      "after": " and the population/sample choice in Step 4. They may differ from the fixed original boxplot in Step 3. Return to \u201cOne large order\u201d in the lab to compare that scenario. The formulas and corrections are in technical depth."
+    },
+    {
+      "token_start": 3919,
+      "token_end": 3920,
+      "before": " already introduced in Part 2: exponentiating an average of logs gives the twelfth root of the product of the twelve amounts. It is not the $45 arithmetic mean, so multiplying $34.92 by twelve would not recover the $540 revenue. Choose the scale for the question, and keep the original amounts for revenue reporting.",
+      "after": " already introduced in Step 2: exponentiating an average of logs gives the twelfth root of the product of the twelve amounts. It is not the $45 arithmetic mean, so multiplying $34.92 by twelve would not recover the $540 revenue. Choose the scale for the question, and keep the original amounts for revenue reporting."
+    },
+    {
+      "token_start": 4023,
+      "token_end": 4023,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 4027,
+      "token_end": 4028,
+      "before": "<aside class=\"case-answer\" aria-label=\"Part 4 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 6 answer\">"
+    },
+    {
+      "token_start": 4029,
+      "token_end": 4030,
+      "before": "ANSWER TO CARRY FORWARD \u00b7 04",
+      "after": "ANSWER TO CARRY FORWARD \u00b7 06"
+    },
+    {
+      "token_start": 4032,
+      "token_end": 4033,
+      "before": "Flag the large purchase; do not erase valid revenue.",
+      "after": "A fourth power measures neither direction nor dollars."
+    },
+    {
+      "token_start": 4035,
+      "token_end": 4036,
+      "before": "The original order boxplot flags $200 under both quartile conventions. With exclusive quartiles, Q\u2081 = $24.25, Q\u2083 = $41 and the upper 1.5 \u00d7 IQR fence is $66.125. This is a review rule, not proof of error. Check the invoice and order type; if genuine, retain it and report the mean, median and distribution together.",
+      "after": "For the five practice orders, Pearson kurtosis is 3.25 and excess is 0.25. Reversing signs changes neither. Read the convention and actual extreme records before interpreting a shape statistic."
+    },
+    {
+      "token_start": 4038,
+      "token_end": 4039,
+      "before": "Next: distinguish a pattern in the branch data from evidence that advertising caused sales.",
+      "after": "Next: keep branch pairs together when studying relationships."
+    },
+    {
+      "token_start": 4042,
+      "token_end": 4044,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 4 navigation\"><a href=\"#case-part-3\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 6 navigation\"><a href=\"#class1-step-5\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 4046,
+      "token_end": 4048,
+      "before": "<a href=\"#case-part-5\" class=\"button\">Next: Question the advertising claim ",
+      "after": "<a href=\"#class1-step-7\" class=\"button\">Next: Read relationships "
+    },
+    {
+      "token_start": 4055,
+      "token_end": 4057,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-step-7\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 4059,
+      "token_end": 4060,
+      "before": "PART 5 OF 6 \u00b7 BUSINESS QUESTION",
+      "after": "STEP 7 OF 8"
+    },
+    {
+      "token_start": 4062,
+      "token_end": 4063,
+      "before": "Should the advertising budget rise?",
+      "after": "Read relationships"
+    },
+    {
+      "token_start": 4069,
+      "token_end": 4069,
+      "before": "<details class=\"lesson\" id=\"relationship\"><summary><span class=\"lesson-number\">05</span><span><b>Read a relationship</b><small>Association is a clue, not a causal conclusion.</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><section class=\"lesson-bridge\"><h3>Keep the branch pairs intact.</h3><p>Each branch contributes two measurements for the same period: advertising and sales. First inspect those pairs, then measure their linear association. Only after that can we ask whether the pattern justifies a spending decision.</p></section>",
+      "after": ""
+    },
+    {
+      "token_start": 4205,
+      "token_end": 4232,
+      "before": "",
+      "after": "\n<details class=\"lesson\" id=\"relationship\"><summary><span class=\"lesson-number\">07</span><span><b>Read a relationship</b><small>Association is a clue, not a causal conclusion.</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><section class=\"lesson-bridge\"><h3>Keep the branch pairs intact.</h3><p>Each branch contributes two measurements for the same period: advertising and sales. First inspect those pairs, then measure their linear association. Only after that can we ask whether the pattern justifies a spending decision.</p></section>"
+    },
+    {
+      "token_start": 4319,
+      "token_end": 4320,
+      "before": "<aside class=\"case-answer\" aria-label=\"Part 5 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 7 answer\">"
+    },
+    {
+      "token_start": 4321,
+      "token_end": 4322,
+      "before": "ANSWER TO CARRY FORWARD \u00b7 05",
+      "after": "ANSWER TO CARRY FORWARD \u00b7 07"
+    },
+    {
+      "token_start": 4334,
+      "token_end": 4336,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 5 navigation\"><a href=\"#case-part-4\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 7 navigation\"><a href=\"#class1-step-6\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 4338,
+      "token_end": 4340,
+      "before": "<a href=\"#case-part-6\" class=\"button\">Next: Build your recommendation ",
+      "after": "<a href=\"#class1-step-8\" class=\"button\">Next: Brief the manager "
+    },
+    {
+      "token_start": 4347,
+      "token_end": 4349,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-step-8\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 4351,
+      "token_end": 4352,
+      "before": "PART 6 OF 6 \u00b7 BUSINESS QUESTION",
+      "after": "STEP 8 OF 8"
+    },
+    {
+      "token_start": 4354,
+      "token_end": 4355,
+      "before": "What can we recommend now?",
+      "after": "Brief the manager"
+    },
+    {
+      "token_start": 4361,
+      "token_end": 4393,
+      "before": "",
+      "after": "<section class=\"case-worked\" id=\"case-write-brief\"><h3>Turn each verified number into a bounded recommendation.</h3><p>For each request, write three sentences: what the records show, what the manager should do next, and what remains unknown. A correct number becomes useful when it changes a decision without overstating the evidence.</p><ol class=\"case-calculation\"><li><b>Purchases:</b> choose the summary for an ordinary purchase, retain revenue reporting, and say what you will check about the $200 invoice.</li><li><b>Suppliers:</b> use the spread and target counts together. State the conditions under which you would trial A and what you would monitor.</li><li><b>Advertising:</b> report the observed relationship, explain why it does not establish incremental sales, and propose a way to test the idea.</li></ol><p>Do this before opening the complete briefing. You do not need to run Python to make a defensible recommendation.</p></section>\n"
+    },
+    {
+      "token_start": 4396,
+      "token_end": 4397,
+      "before": "06",
+      "after": "08"
+    },
+    {
+      "token_start": 5087,
+      "token_end": 5087,
+      "before": "<section class=\"case-worked\" id=\"case-write-brief\"><h3>Turn each verified number into a bounded recommendation.</h3><p>For each request, write three sentences: what the records show, what the manager should do next, and what remains unknown. A correct number becomes useful when it changes a decision without overstating the evidence.</p><ol class=\"case-calculation\"><li><b>Purchases:</b> choose the summary for an ordinary purchase, retain revenue reporting, and say what you will check about the $200 invoice.</li><li><b>Suppliers:</b> use the spread and target counts together. State the conditions under which you would trial A and what you would monitor.</li><li><b>Advertising:</b> report the observed relationship, explain why it does not establish incremental sales, and propose a way to test the idea.</li></ol><p>Do this before opening the complete briefing. You do not need to run Python to make a defensible recommendation.</p></section>",
+      "after": ""
+    },
+    {
+      "token_start": 5094,
+      "token_end": 5095,
+      "before": "<aside class=\"case-answer\" aria-label=\"Part 6 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 8 answer\">"
+    },
+    {
+      "token_start": 5096,
+      "token_end": 5097,
+      "before": "ANSWER TO CARRY FORWARD \u00b7 06",
+      "after": "ANSWER TO CARRY FORWARD \u00b7 08"
+    },
+    {
+      "token_start": 5109,
+      "token_end": 5111,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 6 navigation\"><a href=\"#case-part-5\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 8 navigation\"><a href=\"#class1-step-7\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 5114,
+      "token_end": 5115,
+      "before": "Write your briefing ",
+      "after": "Next: Compare your briefing "
+    }
+  ]
+}

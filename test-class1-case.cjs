@@ -21,7 +21,7 @@ const app = read('src/app.js');
 const text = html => html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 
 // A small structural parser, deliberately dependency-free. It checks the actual
-// nesting of the new sections, not just the presence of six matching strings.
+// nesting of the new sections, not just the presence of eight matching strings.
 function tree(html) {
   html = html.replace(/(<script\b[^>]*>)[\s\S]*?(<\/script>)/g, '$1$2');
   const root = {tag: 'root', attrs: {}, children: [], start: 0, end: html.length};
@@ -50,14 +50,14 @@ function tree(html) {
 
 for (const [name, html] of [['source', source], ['built', built]]) {
   const t = tree(html), parts = t.nodes.filter(n => t.has(n, 'case-part'));
-  eq(parts.length, 6, name + ': six case parts');
-  eq(parts.map(n => n.attrs.id), [1,2,3,4,5,6].map(n => 'case-part-' + n), name + ': consecutive part order');
+  eq(parts.length, 8, name + ': eight case parts');
+  eq(parts.map(n => n.attrs.id), ['case-part-1','case-part-2','case-part-4','case-part-3','case-skewness','case-kurtosis','case-part-5','case-part-6'], name + ': consecutive part order');
   const lessons = t.nodes.filter(n => t.has(n, 'lesson'));
-  eq(lessons.length, 6, name + ': all six statistical topics retained');
+  eq(lessons.length, 8, name + ': eight statistical topics');
   const brief = t.byId('case-brief');
-  ok(t.byId('learning-start').start < parts[0].start && parts.at(-1).end <= brief.start, name + ': situation, six parts, final brief');
+  ok(t.byId('learning-start').start < parts[0].start && parts.at(-1).end <= brief.start, name + ': situation, eight parts, final brief');
   for (const [i, part] of parts.entries()) {
-    const title = t.byId(`case-part-${i+1}-title`);
+    const title = t.byId(part.attrs['aria-labelledby']);
     ok(t.within(title, part), name + ': each part owns its heading');
     eq(part.attrs['aria-labelledby'], title.attrs.id, name + ': part accessible name');
     const ownedLessons = lessons.filter(n => t.within(n, part));
@@ -98,7 +98,7 @@ for (const [name, html] of [['source', source], ['built', built]]) {
   for (const id of coreIds) {
     const n=required(id), parents=ancestors(n);
     ok(!parents.some(p=>t.has(p,'technical')), name + ': ' + id + ' does not require technical depth');
-    ok(!parents.some(p=>p.tag==='details'&&!t.has(p,'lesson')), name + ': ' + id + ' is not hidden inside an optional reference');
+    ok(!parents.some(p=>p.tag==='details'&&(!['case-weighted-prep','case-unit-prep'].includes(id)||!t.has(p,'lesson'))), name + ': ' + id + ' uses only its intended explanation depth');
   }
   for (const [before,after] of [['case-center-worked','lab'],['case-supplier-worked','sample'],['case-fence-worked','shape-values'],['case-pairs-worked','r-value'],['case-write-brief','case-brief']]) {
     ok(required(before).end <= required(after).start, name + ': ' + before + ' precedes ' + after);
@@ -107,7 +107,7 @@ for (const [name, html] of [['source', source], ['built', built]]) {
   const tutorial=t.nodes.find(n=>n.tag==='details'&&!t.has(n,'lesson')&&t.within(n,part6)&&/New to Excel or Python\?/.test(text(t.fragment(n.children.find(c=>c.tag==='summary')||n))));
   ok(tutorial, name + ': software tutorial remains an explicitly optional disclosure');
   ok(!initiallyOpen(tutorial), name + ': optional software tutorial starts collapsed');
-  ok(tutorial.end <= required('case-write-brief').start, name + ': software tutorial precedes the briefing composition task');
+  ok(required('case-write-brief').end <= tutorial.start, name + ': visible briefing composition precedes optional software tutorial');
   for (const partNumber of [2,5]) {
     const part=required('case-part-'+partNumber);
     const feedback=t.nodes.find(n=>n.tag==='details'&&t.has(n,'case-feedback')&&t.within(n,part));

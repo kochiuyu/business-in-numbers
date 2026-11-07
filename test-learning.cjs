@@ -7,7 +7,7 @@ for(const [file] of lessons){
  const match=(s,re)=>[...s.matchAll(re)].map(m=>m[1]).sort();
  eq(match(src,/\{\{math:([^}]+)\}\}/g),base.math,file+' preserved mathematics');
  for(const id of base.ids)ok(src.includes('id="'+id+'"'),file+' preserved '+id);
- eq((src.match(/class="lesson"/g)||[]).length,base.topics,file+' original topic coverage');
+ eq((src.match(/class="lesson"/g)||[]).length,base.topics+(file==='index.html'?2:0),file+' original topic coverage plus separately taught quartiles and skewness');
  const ids=match(html,/\bid="([^"]+)"/g);eq(ids.length,new Set(ids).size,file+' unique IDs');
  for(const [,ref] of html.matchAll(/(?:href|src)="([^"]+)"/g)){
   if(/^(?:[a-z]+:|\/\/)/i.test(ref))continue;

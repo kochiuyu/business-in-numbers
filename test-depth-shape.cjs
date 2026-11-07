@@ -27,17 +27,18 @@ for(const html of [source,built]){
 // The reconstructed original lesson must match its exact pre-revision SHA-256.
 // This protects every legacy activity, sentence, formula token and technical caveat.
 const crypto=require('node:crypto');
-const shapeStart=source.indexOf('<details class="lesson"><summary><span class="lesson-number">04</span>');
+const historicalSource=require('./scripts/class-one-preservation.cjs').restore(source);
+const shapeStart=historicalSource.indexOf('<details class="lesson"><summary><span class="lesson-number">04</span>');
 let shapeEnd=-1,depth=0;
-for(const match of source.slice(shapeStart).matchAll(/<\/?details\b[^>]*>/g)){
+for(const match of historicalSource.slice(shapeStart).matchAll(/<\/?details\b[^>]*>/g)){
  if(match[0].startsWith('</')){depth--;if(depth===0){shapeEnd=shapeStart+match.index+match[0].length;break;}}else depth++;
 }
 ok(shapeStart>=0&&shapeEnd>shapeStart,'shape lesson boundaries exist');
-const shapeLesson=source.slice(shapeStart,shapeEnd);
+const shapeLesson=historicalSource.slice(shapeStart,shapeEnd);
 const legacy=shapeLesson.replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'').replace(/<section class="second-foundation shape-depth-worked" id="shape-moment-worked"[\s\S]*?(?=<div class="warning"><b>Two tempting shortcuts to avoid<\/b>)/,'').replace(/(<h4>Technical depth · Standardized moments<\/h4>)<p>[\s\S]*?<\/p>(?=\{\{math:moments\}\})/,'$1');
 ok(crypto.createHash('sha256').update(legacy).digest('hex')==='8bb46b6f1a2cf6eeb73dc26bca80fcb5d6bd845fa9ba27ccb1bb66714ff58c9a','entire original shape lesson preserved exactly');
-for(const token of ['moments','corrected-moments','shape-domains','log-transform'])ok(shapeLesson.includes('{{math:'+token+'}}'),'retained formula '+token);
-for(const marker of ['id="case-fence-worked"','id="shape-values"','href="#graph-panel-box"','Box–Cox requires positive values','Zero excess kurtosis does not prove normality'])ok(shapeLesson.includes(marker),'retained legacy activity or caveat '+marker);
+for(const token of ['moments','corrected-moments','shape-domains','log-transform'])ok(source.includes('{{math:'+token+'}}'),'retained formula '+token);
+for(const marker of ['id="case-fence-worked"','id="shape-values"','href="#graph-panel-box"','Box–Cox requires positive values','Zero excess kurtosis does not prove normality'])ok(source.includes(marker),'retained legacy activity or caveat '+marker);
 const lab=source.slice(source.indexOf('<div class="foundation-lab shape-depth-lab"'),source.indexOf('<p><b>The normal benchmark'));
 const choices=[...lab.matchAll(/data-foundation-choice="([^"]+)"/g)].map(x=>x[1]);
 const panels=[...lab.matchAll(/data-foundation-panel="([^"]+)"/g)].map(x=>x[1]);assert.deepEqual(choices,['skew','kurt']);assert.deepEqual(panels,choices);checks+=2;
