@@ -19,14 +19,14 @@
   ],
   "other_pages": {
     "course-introduction.html": "452fc39f2c83f9e0db1664e1bbf94892378ec8d70b7037d1b63ef60705cdcc10",
-    "sampling-distributions.html": "848e2fd34f0c6cd4b182da021185a942c98ba86960da65696a1187fe53219f97",
+    "sampling-distributions.html": "8c783a3d746954d35023673aa62e441d4ea03690c3ea19ba1fc8b9dd34cebf51",
     "math-check.html": "a77fc56d9ed7991655bfcf2a22fd209a4afacd23c0c0bfdeacca39d3554be4bf",
     "random-variables.html": "0ae8a7f20c6c5acc7ec03ab946124ddc780f6ff217dd5d6ec822cce1f0f4314f",
     "hypothesis-testing.html": "9227e2aa3b0a7eb34de7ab9013cb4b1aeeeef0222c582d504c25f5effe7ac751",
     "probability.html": "f7e768fa947a4ac38794873e3209059fff3a9bf3eda7d4832a593d59855c9577",
     "index.html": "472e68b321e2bff1dcda8a83edde6128d0de7d5399c9a457166a443ad7b57f7e",
     "estimation.html": "32998212493f7bb95cd2a0799da370c5391afd7ec91105fe1707010d389c8698",
-    "anova.html": "eef0d2c2864aca6365a68f9c7d9eb26be2355bbeba51349b413ec1d8d0095fe9"
+    "anova.html": "1442f5267c4c9667bc8d09cdd29135be087dec8ec90936bd18025868cf170953"
   },
-  "other_pages_note": "Built-page snapshot refreshed for the 2026-11-07 fourth exposition review. Revised lesson text was independently checked; original technical-depth blocks and math placeholders are preserved."
+  "other_pages_note": "Built-page snapshots refreshed for the 2026-11-07 fifth decision-reasoning review. New clustered-sampling, ANOVA follow-up and causal-mechanism examples were independently checked. All preexisting topic bodies, technical-depth blocks and math placeholders are unchanged."
 }
