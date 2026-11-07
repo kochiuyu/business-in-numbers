@@ -9,12 +9,19 @@
   }
   function describe(values, sample = false, convention = 'exc') {
     const a = [...values].sort((x,y) => x-y), n=a.length;
-    const mean=a.reduce((s,x)=>s+x,0)/n;
-    const sums=[2,3,4].map(k=>a.reduce((s,x)=>s+(x-mean)**k,0));
-    const variance=sums[0]/(sample?n-1:n), sd=Math.sqrt(variance);
-    const popVariance=sums[0]/n;
-    const skew=popVariance ? (sums[1]/n)/(popVariance**1.5) : null;
-    const kurt=popVariance ? (sums[2]/n)/(popVariance**2) : null;
+    // Center and scale before taking powers: constant decimals stay constant,
+    // and standardized moments do not underflow merely because units are small.
+    const origin=a[0], scale=a[n-1]-origin;
+    const normalized=scale===0?a.map(()=>0):a.map(x=>(x-origin)/scale);
+    const center=normalized.reduce((sum,x)=>sum+x,0)/n;
+    const mean=scale===0?origin:origin+scale*center;
+    const moments=[2,3,4].map(k=>normalized.reduce((sum,x)=>sum+(x-center)**k,0)/n);
+    const sd=scale===0?0:scale*Math.sqrt(moments[0]*(sample?n/(n-1):1));
+    const variance=sd*sd;
+    if(scale!==0 && (!Number.isFinite(variance)||variance===0||(scale*Math.sqrt(moments[0]))**2===0))
+      throw new RangeError('The variance is outside the numerical range of this lab. Rescale your observations to larger or smaller units and try again.');
+    const skew=scale===0?null:moments[1]/moments[0]**1.5;
+    const kurt=scale===0?null:moments[2]/moments[0]**2;
     const freq = new Map(); a.forEach(x=>freq.set(x,(freq.get(x)||0)+1));
     const highest=Math.max(...freq.values());
     const q1=quantile(a,.25,convention),q3=quantile(a,.75,convention);

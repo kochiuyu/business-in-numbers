@@ -24,9 +24,9 @@
     "random-variables.html": "7e4b0ae211e28893a646d3f1f240018e0c0daf19d1c28e568a0252e9c7c7e4e2",
     "hypothesis-testing.html": "19caf4572054eef5b9896f2b1689594544d00ff7aaed76bb261af4205dfc423e",
     "probability.html": "8f16df76f802238ca7fb7daa417f7b69595d66e75f07b29cacebdef193305e5a",
-    "index.html": "3c1a9749cabf0b75839d92160962f8195e4ed287a08a842ad1f1055caf81601e",
+    "index.html": "e24f4d2f49eb7531ba77eb236fb9b50b68e95cde62dae17c0cc2437ce8e2097c",
     "estimation.html": "bd63f2a1200336d3c0a10e02d0c351b80a996db18fd0bfd917fb7cd52cf199e1",
-    "anova.html": "902b87dc250c45e01c6565c99bf7c9bff760282eae39d573e3042f2af6617b3a"
+    "anova.html": "615fc86f34fe90f5ea90b4f1689f9aba03cb4cd7014ea5fc29a5cd6e92b7684e"
   },
-  "other_pages_note": "Built-page snapshots refreshed after the paired-input and continuous-axis fixes. Generated HTML changes only the shared runtime asset fingerprints; all lesson text, formulas and default diagrams are unchanged."
+  "other_pages_note": "Built-page snapshots refreshed after centered/scaled arithmetic and malformed-fragment repairs. Lesson text and formulas are unchanged. Default ANOVA and regression SVG coordinates differ at floating-point roundoff; ANOVA endpoint rounding changes by 0.01 and one tail shading segment follows the corrected cutoff."
 }
