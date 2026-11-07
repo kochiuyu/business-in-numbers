@@ -39,4 +39,13 @@ review.handlers.click();location.hash='#inside';listeners.hashchange();eq(topics
 location.hash='#%bad';listeners.hashchange();ok(true,'malformed hash ignored');location.hash='#missing';listeners.hashchange();ok(true,'missing anchor ignored');
 vm.runInNewContext(fs.readFileSync('src/learning.js','utf8'),{document:{querySelectorAll:()=>[],querySelector:()=>null,getElementById:()=>null},location:{hash:''},window:{addEventListener(){}}});ok(true,'no lesson controls is safe');
 const css=fs.readFileSync('src/learning.css','utf8');ok(css.includes('prefers-reduced-motion'));ok(css.includes('@media print'));ok(css.includes('min-height:44px'));ok(css.includes('@media(max-width:700px)'));
+// Pilot extensions participate in the explanation controls without opening answers.
+const extension=new Node('DETAILS'),answer=new Node('DETAILS');extension.open=false;answer.open=false;
+const pilotTopics=[new Node('DETAILS'),extension],pilotRead=new Node('BUTTON'),pilotClose=new Node('BUTTON'),pilotStatus=new Node(),pilotToolbar=new Node();
+pilotRead.dataset.readingMode='read';pilotClose.dataset.readingMode='review';
+const pilotDocument={querySelectorAll:s=>s==='details.lesson'?[pilotTopics[0]]:s==='[data-reading-extension]'?[extension]:s==='[data-reading-mode]'?[pilotRead,pilotClose]:[],querySelector:()=>pilotToolbar,getElementById:()=>pilotStatus};
+vm.runInNewContext(fs.readFileSync('src/learning.js','utf8'),{document:pilotDocument,location:{hash:''},window:{addEventListener(){}}});
+pilotRead.handlers.click();eq(pilotTopics.map(x=>x.open),[true,true]);eq(answer.open,false,'check answers stay closed');ok(pilotStatus.textContent.includes('2 of 2 explanations and extensions'));
+pilotClose.handlers.click();eq(pilotTopics.map(x=>x.open),[false,false]);pilotRead.handlers.click();eq(pilotTopics.map(x=>x.open),[true,true]);
+
 console.log(`Passed ${checks} learning-path, preserved-content, all-page links/anchors, static accessibility and reading-mode assertions.`);

@@ -18,6 +18,12 @@ function enhance(html, file) {
   if(!html.includes('class="course-guide"'))throw Error('Missing lesson hero: '+file);
   if(!['index.html','probability.html','random-variables.html','sampling-distributions.html','estimation.html','hypothesis-testing.html','anova.html','regression.html'].includes(file)) html=html.replace(/<details class="lesson"(?![^>]*\bopen\b)/g,'<details class="lesson" open');
   if(['index.html','probability.html','random-variables.html','sampling-distributions.html','estimation.html','hypothesis-testing.html','anova.html','regression.html'].includes(file)) html=html.replace('Read in order opens the core explanations. Worked answers stay closed until you choose to reveal them.','Pictures come first. Open full explanations when you want the calculations or practice.').replace('>Read in order<','>Open all explanations<').replace('>Compact review<','>Close explanations<');
+  // The readability pilot distinguishes route length from explanation depth.
+  if (['probability.html','regression.html'].includes(file)) {
+    html=html.replace(`Lesson ${index+1} of 8`, `Class ${index+1} of 8`)
+      .replace('Pictures come first. Open full explanations when you want the calculations or practice.',
+        'First pass: follow the pictures, make a prediction, then check your reasoning. Open all explanations opens topic explanations and optional extensions; check answers stay closed. Show technical depth reveals extra mathematics inside explanations; Show all steps changes only the reading route.');
+  }
   html=html.replace('</head>','<link rel="stylesheet" href="learning.css"></head>');
   html=html.replace('</body>','<script src="learning.js"></script></body>');
   return require('./navigation.cjs').enhance(activities.enhance(html,file),file);

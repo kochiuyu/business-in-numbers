@@ -50,3 +50,12 @@
 .c2-depth-parts{display:grid;grid-template-columns:4fr 3fr;max-width:32rem;margin:1rem 0;border:1px solid #426d5b;border-radius:6px;overflow:hidden}.c2-depth-parts>div{display:flex;flex-direction:column;gap:.35rem;padding:1rem;background:#dae9dd}.c2-depth-parts>div+div{background:#fff;border-left:1px solid #426d5b}.c2-depth-parts b{font-size:1.25rem}.c2-depth-parts>p{grid-column:1/-1;margin:0;padding:.75rem 1rem;background:white;border-top:1px solid #426d5b}
 @media(max-width:420px){.c2-depth-worked{padding:.9rem}.c2-depth-parts>div{padding:.65rem}.c2-depth-parts span{font-size:.9rem}}
 @media print{.c2-depth-worked{background:white;break-inside:auto}.c2-depth-parts{break-inside:avoid}}
+
+/* Readability pilot: keep prose readable without narrowing figures or tables. */
+.class-two-case .reading-controls p,.class-two-case .lesson-body>p,.class-two-case .lesson-body>ul,.class-two-case .lesson-body>ol,.class-two-case .reading-extension p,.class-two-case .reading-extension ol,.class-two-case .reading-extension ul{max-width:72ch;line-height:1.7}
+.class-two-case .reading-prediction,.class-two-case .reading-core{max-width:68ch;font-size:16px;line-height:1.7}
+.class-two-case .reading-extension{min-width:0}
+.class-two-case .reading-extension>summary{line-height:1.6;overflow-wrap:anywhere}
+.class-two-case .reading-extension .c2-depth-worked{margin-top:12px}
+.class-two-case .c2-path-controls>div{min-width:0}
+.class-two-case .c2-path-controls b{line-height:1.6;overflow-wrap:anywhere}

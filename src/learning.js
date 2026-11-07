@@ -1,13 +1,14 @@
 'use strict';
 (() => {
-  const topics = [...document.querySelectorAll('details.lesson')];
+  const extensions = [...document.querySelectorAll('[data-reading-extension]')];
+  const topics = [...document.querySelectorAll('details.lesson'), ...extensions];
   const toolbar = document.querySelector('.reading-controls');
   const buttons = [...document.querySelectorAll('[data-reading-mode]')];
   const status = document.getElementById('reading-status');
   function update() {
     const count = topics.filter(topic => topic.open).length;
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.readingMode === 'read' ? count === topics.length : count === 0)));
-    if (status) status.textContent = `${count} of ${topics.length} topic explanations open. You can also open or close each topic separately.`;
+    if (status) status.textContent = `${count} of ${topics.length} ${extensions.length ? 'explanations and extensions' : 'topic explanations'} open. You can also open or close each ${extensions.length ? 'panel' : 'topic'} separately.`;
   }
   if (toolbar && topics.length) {
     toolbar.hidden = false;

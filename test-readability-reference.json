@@ -1,0 +1,466 @@
+{
+  "base_commit": "a75b474b76cfb682ac3031be2c25092f8e852498",
+  "purpose": "Exact inverse of the reviewed readability-only HTML changes. Historical source hashes remain unchanged; these deltas exclude no unreviewed edits.",
+  "pages": {
+    "probability": {
+      "baseline_sha256": "0822c4bb231d128855dc9f665b45ce7ccfa1c79083aeceb489a5bbf014810dc2",
+      "patches": [
+        {
+          "token_start": 282,
+          "token_end": 283,
+          "before": "Open the full explanation for formulas, worked examples and technical depth.",
+          "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
+        },
+        {
+          "token_start": 365,
+          "token_end": 366,
+          "before": "Open the full explanation for formulas, worked examples and technical depth.",
+          "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
+        },
+        {
+          "token_start": 610,
+          "token_end": 614,
+          "before": "",
+          "after": "<details class=\"c2-lab-details reading-extension\" data-reading-extension><summary>Worked example · Check all four overlap regions</summary>"
+        },
+        {
+          "token_start": 754,
+          "token_end": 755,
+          "before": " Nonnegative A-only and B-only shares require x ≤ P(A) and x ≤ P(B). A nonnegative neither share requires x ≥ P(A) + P(B) − 1. The overlap itself also requires x ≥ 0. Together these give the feasible-intersection formula above.",
+          "after": " Nonnegative A-only and B-only shares require x ≤ P(A) and x ≤ P(B). A nonnegative neither share requires x ≥ P(A) + P(B) − 1. The overlap itself also requires x ≥ 0. Together these give the feasible-intersection bounds: max(0, P(A) + P(B) − 1) ≤ x ≤ min(P(A), P(B))."
+        },
+        {
+          "token_start": 775,
+          "token_end": 776,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 796,
+          "token_end": 797,
+          "before": "Open the full explanation for formulas, worked examples and technical depth.",
+          "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
+        },
+        {
+          "token_start": 799,
+          "token_end": 803,
+          "before": "",
+          "after": "<details class=\"c2-lab-details reading-extension\" data-reading-extension><summary>Compare another case · Draw with or without replacement</summary>"
+        },
+        {
+          "token_start": 946,
+          "token_end": 947,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 1033,
+          "token_end": 1034,
+          "before": "Open the full explanation for formulas, worked examples and technical depth.",
+          "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
+        },
+        {
+          "token_start": 1166,
+          "token_end": 1170,
+          "before": "",
+          "after": "<details class=\"c2-lab-details reading-extension\" data-reading-extension><summary>Compare another case · Disjoint versus independent events</summary>"
+        },
+        {
+          "token_start": 1275,
+          "token_end": 1276,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 1357,
+          "token_end": 1358,
+          "before": "Keep the evidence. Change the denominator.",
+          "after": "When an alert arrives, how likely is a real issue?"
+        },
+        {
+          "token_start": 1365,
+          "token_end": 1366,
+          "before": "Start with “Multiply paths.” Then keep just the alert paths and divide. Only after that, change one model input.",
+          "after": "Keep the evidence. Change the denominator. Start with “Multiply paths.” Then keep just the alert paths and divide. Only after that, change one model input."
+        },
+        {
+          "token_start": 1368,
+          "token_end": 1371,
+          "before": "",
+          "after": "<p class=\"c2-fixed-note interactive-only\">The sliders change assumed rates, not observed records. After the default walkthrough, change one rate and compare the new share among alerts.</p>"
+        },
+        {
+          "token_start": 1611,
+          "token_end": 1620,
+          "before": "\n",
+          "after": "<p class=\"reading-prediction\"><b>Predict:</b> For “issue given alert,” should the denominator be all orders, all issue orders, or all alerted orders? For “issue given no alert,” which group remains?</p><p class=\"reading-core\">Keep only paths matching the observed evidence. The updated probability is the issue share of that group; the group must have positive probability.</p>"
+        },
+        {
+          "token_start": 1844,
+          "token_end": 1845,
+          "before": "Open the full explanation for formulas, worked examples and technical depth.",
+          "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
+        },
+        {
+          "token_start": 1846,
+          "token_end": 1850,
+          "before": "",
+          "after": "<details class=\"c2-lab-details reading-extension\" data-reading-extension><summary>Decision extension · When is an alert worth a review?</summary>"
+        },
+        {
+          "token_start": 1926,
+          "token_end": 1927,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 2050,
+          "token_end": 2054,
+          "before": "",
+          "after": "<details class=\"c2-lab-details reading-extension\" data-reading-extension><summary>Worked example · Unequal bags and weighted selection</summary>"
+        },
+        {
+          "token_start": 2064,
+          "token_end": 2065,
+          "before": "The original answer, 5/8, uses two assumptions together: the bags are equally likely to be selected, and each contains six balls. Check what happens when we change only the second assumption.",
+          "after": "Start with bag A containing 5 green and 1 red, and bag B containing 3 green and 3 red. Choose either bag with probability 1/2, then draw uniformly within it. Given green, the chance of A is 5/8. That answer uses equal bag-selection probabilities and equal bag sizes. Check what happens when we change only the second assumption."
+        },
+        {
+          "token_start": 2124,
+          "token_end": 2125,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 2145,
+          "token_end": 2146,
+          "before": "Open the full explanation for formulas, worked examples and technical depth.",
+          "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
+        },
+        {
+          "token_start": 2148,
+          "token_end": 2152,
+          "before": "",
+          "after": "<details class=\"c2-lab-details reading-extension\" data-reading-extension><summary>Worked example · Conditional independence versus overall independence</summary>"
+        },
+        {
+          "token_start": 2247,
+          "token_end": 2248,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 2323,
+          "token_end": 2327,
+          "before": "",
+          "after": "<details class=\"c2-lab-details reading-extension\" data-reading-extension><summary>Worked example · Convert odds back to probability</summary>"
+        },
+        {
+          "token_start": 2416,
+          "token_end": 2417,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 2437,
+          "token_end": 2438,
+          "before": "Open the full explanation for formulas, worked examples and technical depth.",
+          "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
+        },
+        {
+          "token_start": 2440,
+          "token_end": 2444,
+          "before": "",
+          "after": "<details class=\"c2-lab-details reading-extension\" data-reading-extension><summary>Compare another case · Count ordered dice pairs</summary>"
+        },
+        {
+          "token_start": 2897,
+          "token_end": 2898,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 3022,
+          "token_end": 3026,
+          "before": "",
+          "after": "<details class=\"c2-lab-details reading-extension\" data-reading-extension><summary>Worked example · Count a menu with restrictions</summary>"
+        },
+        {
+          "token_start": 3103,
+          "token_end": 3104,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 3124,
+          "token_end": 3125,
+          "before": "Open the full explanation for formulas, worked examples and technical depth.",
+          "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
+        }
+      ]
+    },
+    "regression": {
+      "baseline_sha256": "c9affbba5cbfa0185092204a8a5d9c4427584f557388bb57fe4947f077e52cca",
+      "patches": [
+        {
+          "token_start": 5,
+          "token_end": 6,
+          "before": "<meta name=\"description\" content=\"Week 8: simple linear regression, least squares, coefficient inference, ANOVA, mean and prediction intervals, Excel and Python.\">",
+          "after": "<meta name=\"description\" content=\"Class 8: simple linear regression, least squares, coefficient inference, ANOVA, mean and prediction intervals, Excel and Python.\">"
+        },
+        {
+          "token_start": 7,
+          "token_end": 8,
+          "before": "Week 8 · Regression · Business in Numbers",
+          "after": "Class 8 · Regression · Business in Numbers"
+        },
+        {
+          "token_start": 68,
+          "token_end": 69,
+          "before": "Week 8",
+          "after": "Class 8"
+        },
+        {
+          "token_start": 132,
+          "token_end": 133,
+          "before": "Week 8 · Regression",
+          "after": "Class 8 · Regression"
+        },
+        {
+          "token_start": 152,
+          "token_end": 153,
+          "before": "A retailer wants to plan advertising and order-handling capacity. Follow the same eight fictional market-weeks through a fitted line, its uncertainty and a forecast. First look at each picture. Change one thing. Explain what you see before opening the mathematics.",
+          "after": "A retailer wants to plan advertising and order-handling capacity. Follow the same eight fictional market-weeks through a fitted line, its uncertainty and a forecast. Start with the retailer’s question. Look at the picture, predict what one change will do, then compare and explain. Open the formulas or derivations when you want the next layer."
+        },
+        {
+          "token_start": 170,
+          "token_end": 171,
+          "before": ". Each of the fifteen short steps adds one idea. All original explanations, two editable labs and practice remain below their pictures.",
+          "after": ". Each of the fifteen short steps adds one idea. All original explanations, two editable labs and practice remain below their pictures. Essential assumptions stay on the main path; the longer derivations are optional."
+        },
+        {
+          "token_start": 367,
+          "token_end": 368,
+          "before": "A slope describes the relationship. Residuals reveal what the line misses. Open Technical depth for the assumptions and derivations behind each result.",
+          "after": "A slope describes the relationship. Residuals reveal what the line misses. Keep the visible assumptions with each result. Open the explanations for formulas and worked examples; Technical depth adds proofs."
+        },
+        {
+          "token_start": 421,
+          "token_end": 422,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 569,
+          "token_end": 570,
+          "before": "Next idea ",
+          "after": "Next: read the slope in business units "
+        },
+        {
+          "token_start": 588,
+          "token_end": 589,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 659,
+          "token_end": 660,
+          "before": "Next idea ",
+          "after": "Next: compare two prediction rules "
+        },
+        {
+          "token_start": 678,
+          "token_end": 679,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 742,
+          "token_end": 743,
+          "before": "Next idea ",
+          "after": "Next: find the center and the tilt "
+        },
+        {
+          "token_start": 761,
+          "token_end": 762,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 909,
+          "token_end": 910,
+          "before": "Next idea ",
+          "after": "Next: change units, not the forecast "
+        },
+        {
+          "token_start": 928,
+          "token_end": 929,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 981,
+          "token_end": 982,
+          "before": "Next idea ",
+          "after": "Next: separate fitting from inference "
+        },
+        {
+          "token_start": 999,
+          "token_end": 999,
+          "before": "<!-- depth48:weights:start -->\n<aside class=\"em-activity em-worked\" id=\"depth-regression-weights\" aria-labelledby=\"depth-regression-weights-title\">\n<h3 id=\"depth-regression-weights-title\">What does “linear and unbiased” mean for the slope?</h3>\n<p>“Linear” in the Gauss–Markov result describes <b>how the estimate uses the observed responses</b>. Hold the eight spending values fixed. Each observed demand value receives a known weight, and the slope is their weighted sum. The weights may be negative; this is a contrast, not an average of orders.</p>\n{{math:depth-slope-weights}}\n<ol class=\"em-worked-path\">\n<li><b>Read the weights.</b> Here x̄ = 4.5 and Sxx = 42. A response at x = 1 has weight −3.5/42 = −1/12, while x = 8 has weight +1/12. If only the last response rose by one unit (ten orders), the fitted slope would rise by 1/12 tens of orders per $100.</li>\n<li><b>Remove the baseline.</b> The weights sum to zero. Adding the same demand level to every week therefore cannot tilt the line. Their products with x sum to one, so a population slope is preserved rather than rescaled.</li>\n<li><b>Average over repeated samples.</b> Under the zero-conditional-mean assumption, the weighted errors average to zero. That makes the slope unbiased: its repeated-sample mean equals β. It does not make this particular fitted slope equal to β.</li>\n</ol>\n{{math:depth-slope-unbiased}}\n<p><b>Connect the same weights to precision.</b> If the errors are uncorrelated and share variance σ², the variance of their weighted sum is σ² times the sum of squared weights. Here that sum is 1/42, giving Var(b | X) = σ²/42. This is why the spread of spending values enters slope uncertainty. Correlated errors would add covariance terms; a correct least-squares calculation does not make those terms disappear.</p>\n<details><summary>Check: Does proving unbiasedness establish the whole “best linear unbiased” claim?</summary><p>No. Unbiasedness says where the estimate is centered across samples. “Best” also compares its variance with other estimators that are linear in the responses and unbiased under the same assumptions. It does not mean the fitted line is causal, every prediction is accurate, or no other kind of estimator can do better.</p></details>\n</aside>\n<!-- depth48:weights:end -->",
+          "after": ""
+        },
+        {
+          "token_start": 1000,
+          "token_end": 1001,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 1074,
+          "token_end": 1142,
+          "before": "",
+          "after": "<details class=\"c8-lab-details reading-extension\" id=\"c8-slope-derivation\" data-reading-extension><summary>Optional derivation · Why the slope is a weighted sum and unbiased</summary>\n<!-- depth48:weights:start -->\n<aside class=\"em-activity em-worked\" id=\"depth-regression-weights\" aria-labelledby=\"depth-regression-weights-title\">\n<h3 id=\"depth-regression-weights-title\">What does “linear and unbiased” mean for the slope?</h3>\n<p>“Linear” in the Gauss–Markov result describes <b>how the estimate uses the observed responses</b>. Hold the eight spending values fixed. Each observed demand value receives a known weight, and the slope is their weighted sum. The weights may be negative; this is a contrast, not an average of orders.</p>\n{{math:depth-slope-weights}}\n<ol class=\"em-worked-path\">\n<li><b>Read the weights.</b> Here x̄ = 4.5 and Sxx = 42. A response at x = 1 has weight −3.5/42 = −1/12, while x = 8 has weight +1/12. If only the last response rose by one unit (ten orders), the fitted slope would rise by 1/12 tens of orders per $100.</li>\n<li><b>Remove the baseline.</b> The weights sum to zero. Adding the same demand level to every week therefore cannot tilt the line. Their products with x sum to one, so a population slope is preserved rather than rescaled.</li>\n<li><b>Average over repeated samples.</b> Under the zero-conditional-mean assumption, the weighted errors average to zero. That makes the slope unbiased: its repeated-sample mean equals β. It does not make this particular fitted slope equal to β.</li>\n</ol>\n{{math:depth-slope-unbiased}}\n<p><b>Connect the same weights to precision.</b> If the errors are uncorrelated and share variance σ², the variance of their weighted sum is σ² times the sum of squared weights. Here that sum is 1/42, giving Var(b | X) = σ²/42. This is why the spread of spending values enters slope uncertainty. Correlated errors would add covariance terms; a correct least-squares calculation does not make those terms disappear.</p>\n<details><summary>Check: Does proving unbiasedness establish the whole “best linear unbiased” claim?</summary><p>No. Unbiasedness says where the estimate is centered across samples. “Best” also compares its variance with other estimators that are linear in the responses and unbiased under the same assumptions. It does not mean the fitted line is causal, every prediction is accurate, or no other kind of estimator can do better.</p></details>\n</aside>\n<!-- depth48:weights:end -->\n</details>\n"
+        },
+        {
+          "token_start": 1147,
+          "token_end": 1148,
+          "before": "Next idea ",
+          "after": "Next: read the misses, estimate the noise "
+        },
+        {
+          "token_start": 1306,
+          "token_end": 1307,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 1387,
+          "token_end": 1388,
+          "before": "Next idea ",
+          "after": "Next: give the slope an uncertainty range "
+        },
+        {
+          "token_start": 1405,
+          "token_end": 1428,
+          "before": "",
+          "after": "<p class=\"reading-core\"><b>Original eight-week data: keep the targets separate.</b> Residual SD: <b>9.82 orders</b> of week-to-week scatter around the line. Slope SE: <b>1.52 orders per $100</b> of uncertainty in the estimated rate of change. Mean-demand SE at $450: <b>3.47 orders</b> of uncertainty in an average. An SE is not a 95% margin of error; it still needs a critical-value multiplier and the model assumptions. Steps 12–13 distinguish an average from one future week.</p>\n<details class=\"c8-lab-details reading-extension\" data-reading-extension id=\"c8-uncertainty-worked\"><summary>Worked comparison · Three uncertainty targets and their calculations</summary>"
+        },
+        {
+          "token_start": 1482,
+          "token_end": 1483,
+          "before": "",
+          "after": "</details>"
+        },
+        {
+          "token_start": 1485,
+          "token_end": 1486,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 1616,
+          "token_end": 1617,
+          "before": "Next idea ",
+          "after": "Next: split total variation "
+        },
+        {
+          "token_start": 1635,
+          "token_end": 1636,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 1704,
+          "token_end": 1705,
+          "before": "Next idea ",
+          "after": "Next: read beyond the fit percentage "
+        },
+        {
+          "token_start": 1775,
+          "token_end": 1776,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 1830,
+          "token_end": 1831,
+          "before": "Next idea ",
+          "after": "Next: connect the two slope tests "
+        },
+        {
+          "token_start": 1849,
+          "token_end": 1850,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 1904,
+          "token_end": 1905,
+          "before": "Next idea ",
+          "after": "Next: estimate average demand "
+        },
+        {
+          "token_start": 1922,
+          "token_end": 1988,
+          "before": "",
+          "after": "<p class=\"c8-reference-note\">Open the explanation for formulas and worked examples. Keep the assumptions with the result.</p>\n<details class=\"lesson\" id=\"mean-response\"><summary><span class=\"lesson-number\">12</span><span><b>Estimate the average response at a chosen x</b><small>A confidence interval for a population mean, not a new observation</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><div class=\"lesson-bridge\"><h3>Choose the target before choosing the interval</h3><p>For long-run staffing, the retailer might want average orders across many comparable weeks at a fixed spend. That target is the population mean response, so we need uncertainty about the estimated line at that x. We are not trying to capture each week’s fluctuation yet. The next topic adds that second uncertainty for a single future week.</p></div>{{math:mean-prediction}}<p>At x₀=4.5, advertising is $450 and the fitted mean is <b>17.5 tens of orders</b>. The 95% confidence interval is <b>[16.650475,18.349525]</b>, or about 166.5–183.5 orders for the population mean.</p><p>The interval is narrowest at x̄ and widens away from the data’s center. It describes the mean under this linear model, not the spread of all observations. Across repeated samples, 95% of intervals made by this method cover the fixed target mean when the assumptions hold.</p><div class=\"technical\"><h4>Technical depth · Include coefficient covariance</h4>{{math:mean-variance}}<p>These are <b>pointwise</b> intervals for a specified x₀. Plotting them at many x values does not create a simultaneous 95% confidence band over the whole line.</p></div></div></details>\n<details class=\"c8-lab-details reading-extension\" id=\"c8-mean-derivation\" data-reading-extension><summary>Optional derivation · How coefficient covariance sets mean uncertainty</summary>\n"
+        },
+        {
+          "token_start": 2053,
+          "token_end": 2053,
+          "before": "<p class=\"c8-reference-note\">Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.</p>",
+          "after": ""
+        },
+        {
+          "token_start": 2054,
+          "token_end": 2054,
+          "before": "<details class=\"lesson\" id=\"mean-response\"><summary><span class=\"lesson-number\">12</span><span><b>Estimate the average response at a chosen x</b><small>A confidence interval for a population mean, not a new observation</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><div class=\"lesson-bridge\"><h3>Choose the target before choosing the interval</h3><p>For long-run staffing, the retailer might want average orders across many comparable weeks at a fixed spend. That target is the population mean response, so we need uncertainty about the estimated line at that x. We are not trying to capture each week’s fluctuation yet. The next topic adds that second uncertainty for a single future week.</p></div>{{math:mean-prediction}}<p>At x₀=4.5, advertising is $450 and the fitted mean is <b>17.5 tens of orders</b>. The 95% confidence interval is <b>[16.650475,18.349525]</b>, or about 166.5–183.5 orders for the population mean.</p><p>The interval is narrowest at x̄ and widens away from the data’s center. It describes the mean under this linear model, not the spread of all observations. Across repeated samples, 95% of intervals made by this method cover the fixed target mean when the assumptions hold.</p><div class=\"technical\"><h4>Technical depth · Include coefficient covariance</h4>{{math:mean-variance}}<p>These are <b>pointwise</b> intervals for a specified x₀. Plotting them at many x values does not create a simultaneous 95% confidence band over the whole line.</p></div></div>",
+          "after": ""
+        },
+        {
+          "token_start": 2061,
+          "token_end": 2062,
+          "before": "Next idea ",
+          "after": "Next: predict one new week "
+        },
+        {
+          "token_start": 2169,
+          "token_end": 2170,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 2246,
+          "token_end": 2247,
+          "before": "Next idea ",
+          "after": "Next: challenge the model’s reach "
+        },
+        {
+          "token_start": 2386,
+          "token_end": 2387,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 2441,
+          "token_end": 2442,
+          "before": "Next idea ",
+          "after": "Next: make a bounded recommendation "
+        },
+        {
+          "token_start": 2577,
+          "token_end": 2578,
+          "before": "Ready for the calculations? Open the original explanation below. Keep the assumptions with the result.",
+          "after": "Open the explanation for formulas and worked examples. Keep the assumptions with the result."
+        },
+        {
+          "token_start": 2749,
+          "token_end": 2750,
+          "before": "BUSINESS IN NUMBERS · WEEK 8",
+          "after": "BUSINESS IN NUMBERS · CLASS 8"
+        }
+      ]
+    }
+  }
+}

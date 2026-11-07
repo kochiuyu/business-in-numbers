@@ -10,7 +10,7 @@ const source=fs.readFileSync('src/regression.html','utf8'),math=JSON.parse(fs.re
 const start='<!-- coefficient-weights-depth:start -->',end='<!-- coefficient-weights-depth:end -->',i=source.indexOf(start),j=source.indexOf(end,i)+end.length;
 ok(i>=0&&j>i,'bounded addition');ok(source.indexOf(start,i+1)===-1&&source.indexOf(end,j)===-1,'unique markers');
 const block=source.slice(i,j);
-ok(hash(source.replace(block,''))==='da0c88944c74de59b29e53ec97cc4ba4a0ee3bda35b3d1912150d986da63c39a','every earlier explanation and activity preserved byte-for-byte');
+ok(hash(require('./scripts/readability-preservation.cjs').restore(source,'regression').replace(block,''))==='da0c88944c74de59b29e53ec97cc4ba4a0ee3bda35b3d1912150d986da63c39a','every earlier explanation and activity preserved byte-for-byte');
 ok(i>source.indexOf('Technical depth · Linear weights give the variances')&&j<source.indexOf('id="regression-step-9"'),'inside existing coefficient technical proof');
 ok(block.includes('aria-labelledby="depth-intercept-weights-title"')&&block.includes('id="depth-intercept-weights-title"'),'named block and heading');
 ok(!/<script|<button|\bhidden\b|<details/.test(block),'no new interaction or JavaScript dependency');

@@ -28,7 +28,7 @@ for (const file of files) {
   ok(html.includes('Spot the impossible input:') && html.includes('0.3 &gt; 0.2'), 'original technical example preserved');
 }
 const source = fs.readFileSync('src/probability.html', 'utf8');
-const restored = source.replace(/<section class="c2-depth-worked" id="c2-overlap-cells"[\s\S]*?<\/section>/, '');
+const restored = require('./scripts/readability-preservation.cjs').restore(source, 'probability').replace(/<section class="c2-depth-worked" id="c2-overlap-cells"[\s\S]*?<\/section>/, '');
 eq(require('node:crypto').createHash('sha256').update(restored).digest('hex'), 'a4225d5fe8037620a2cdbf4b5676c477506f2843f8a58dab1ce24a9e89c91fe3', 'all previous Class 2 content preserved byte for byte');
 // Exact integer arithmetic in tenths, independent of the displayed decimal work.
 const regions = (a, b, x) => [x, a - x, b - x, 10 - a - b + x];

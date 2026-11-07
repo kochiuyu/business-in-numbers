@@ -19,7 +19,7 @@ const baseline={
 for(const [name,expected] of Object.entries(baseline)){
  const source=fs.readFileSync(`src/${name}.html`,'utf8');
  const equations=JSON.parse(fs.readFileSync(`src/${name}-math.json`,'utf8'));
- let original=source;
+ let original=require('./scripts/readability-preservation.cjs').restore(source,name);
  if(name==='regression')original=original.replace(/<!-- normal-depth:start -->[\s\S]*?<!-- normal-depth:end -->/,'').replace(/<!-- coefficient-weights-depth:start -->[\s\S]*?<!-- coefficient-weights-depth:end -->/,'');
  for(const [label,step] of expected.blocks){
   const start=`<!-- depth48:${label}:start -->`,end=`<!-- depth48:${label}:end -->`;

@@ -19,16 +19,17 @@
   ],
   "other_pages": {
     "course-introduction.html": "e403cbd85d9497623fcc097ed5667713410ca5abf8d0f413bffc5c53112b2cbe",
-    "sampling-distributions.html": "7aac9addb0da48b35434954fcb559cc6be48fe960120ddf9aecdb22434068cbc",
+    "sampling-distributions.html": "6f993f7e4c9db9720321a5cce4e79a8f037b955205a21c0221e2144d2518d1c8",
     "math-check.html": "5dbebe5efb47da9529cb1d607511f22bbe51d0973f3238d8b5c80a120eb3b08b",
-    "random-variables.html": "95f4246956c9cddf347ef2318cdb7e87297e015143269b70d19ec5ba6c0f2160",
-    "hypothesis-testing.html": "3b9c86eb713e96f37c05785f48cc65bcfda58c8426ad298a571e288be4d636df",
-    "probability.html": "4d6120732eb2c835123334e1aaf8dbb566789f2e335672cad1c0e953fef597c1",
-    "index.html": "2be3b2bb74f3764411ba6c98a186adeeb5419be971f0c4d1d7fbd1952ad1d620",
-    "estimation.html": "a31e17630966abfe2340194acddf2016a424fad55c8b9855b8280bca9800698e",
-    "anova.html": "dc63b33fca27ff9d5a2218adc80eaf610c09ff3e0d01ed308e1cb74a459f17a6"
+    "random-variables.html": "9e0029488c14480ed3b85d019232940810e4c43decf8941ddfe328a3654af383",
+    "hypothesis-testing.html": "c4d42b5b8b5e0d4ee5be77d2e94bf3f4581ec48302560f14841cc19b6e383ded",
+    "probability.html": "de21450b96b4685d51220a88b3f59f31724c61a9438c26fea80d4fbe40b60e43",
+    "index.html": "71118d84925cc1c052efcad2bcb36b38554c28b4818398d1f1d9c4b4f32abfbf",
+    "estimation.html": "a7089bccdce141a3fd2bbacc39f7226efc157e1099b318096164e9a351216e85",
+    "anova.html": "ca2e7c724022a2cf626c9509bdd36e42a22619f51e0186af51c25cbcc1a9469f"
   },
   "other_pages_note": "Modeling chart-axis labels refreshed after verifying that lesson text and formulas outside SVGs and asset fingerprints are unchanged. Class 7 and 8 statistical calculations and plotted geometry remain unchanged.",
   "bridge_review_note": "First-three-class page hashes refreshed after independently audited additions to standardized shape/rate averaging, feasible overlaps and covariance. Previous Class1\u20133 text preserved except fourth-central-moment terminology. All other built files unchanged.",
-  "shape_visual_note": "Class 1 hash refreshed for two independently reviewed static contribution diagrams. Removing those two marked figures restores all previous source byte for byte; only Class 1 HTML and its stylesheet change."
+  "shape_visual_note": "Class 1 hash refreshed for two independently reviewed static contribution diagrams. Removing those two marked figures restores all previous source byte for byte; only Class 1 HTML and its stylesheet change.",
+  "readability_pilot_note": "Classes 2 and 8 reviewed readability pilot: native optional extensions and self-contained core route. Other HTML content unchanged; only shared learning.js asset fingerprint changes. Original topic hashes retained; exact inverse-delta checks preserve prior whole-page source hashes."
 }
