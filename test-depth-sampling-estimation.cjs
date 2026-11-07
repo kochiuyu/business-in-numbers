@@ -99,7 +99,7 @@ for(const config of configs){
   const start=`<!-- depth48:${id}:start -->`,end=`<!-- depth48:${id}:end -->`;
   equal(source.split(start).length,2,`${id} unique start`);equal(source.split(end).length,2,`${id} unique end`);
   const i=source.indexOf(start),j=source.indexOf(end)+end.length,block=source.slice(i,j);
-  ok(i>source.indexOf(`id="${config.step}-step-${step}"`)&&j<source.indexOf(`id="${config.step}-step-${step+1}"`),`${id} correct step`);
+  ok(i>source.indexOf(`id="${config.page==='estimation'&&step===2?'estimation-efficiency':config.step+'-step-'+step}"`)&&j<source.indexOf(`id="${config.page==='estimation'&&step===2?'estimation-consistency':config.step+'-step-'+(step+1)}"`),`${id} correct step`);
   ok(block.includes(`aria-labelledby="${id}-title"`)&&block.includes(`id="${id}-title"`),`${id} labelled`);
   ok(block.includes('<details><summary>'),`${id} native disclosure`);
   ok(!/class="lesson"| hidden|<script|<button/.test(block),`${id} no duplicate lesson or JS-only content`);

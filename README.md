@@ -32,6 +32,8 @@ Class 3 follows fifteen focused steps: mapping, PMF, CDF, expectation, variance,
 
 Class 4 follows thirteen focused steps: sampling design, exact sampling distributions, unbiasedness, variance and SE, LLN, CLT, known-SD probabilities, proportion moments, integer events and continuity correction, estimated scale, Student t, diagnostics, and a business decision. Essential arithmetic stays visible; complete explanations and proofs remain available. Sequential links use `#class4-step-1` through `#class4-step-13`; original `#sampling-step-*` and topic links retain their subjects.
 
+Class 5 follows fifteen focused steps: target, unbiasedness, efficiency, consistency, individual spread, mean SE, binary estimation, rate SE, mean interval, confidence interpretation, t interval, rate interval, mean planning, rate planning, and the business decision. Essential calculations stay visible; all original details and exercises remain. Sequential links use `#class5-step-1` through `#class5-step-15`; original `#estimation-step-*` and topic links retain their subjects.
+
 Run `npm run test:navigation` after building for navigation structure and interaction regression checks. Browser QA should also check narrow phone layouts, keyboard focus, Back/Forward, and the no-JavaScript fallback.
 
 ## GitHub Pages

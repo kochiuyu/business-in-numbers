@@ -1,0 +1,560 @@
+{
+  "base": "6027e298324713533919a7a9e0b38505d804c054",
+  "baseline_sha256": "21fd44e3b87eccf87d6e518937d912c51eef4587a6058f56ee30c4b98d93131c",
+  "reviewed_sha256": "a8376f41313a2406c231cfd5a7b49cc3e5b6200aeb99a337a3edd28e8da43315",
+  "patches": [
+    {
+      "token_start": 149,
+      "token_end": 150,
+      "before": "CLASS 5 \u00b7 TEN SMALL STEPS",
+      "after": "CLASS 5 \u00b7 FIFTEEN FOCUSED STEPS"
+    },
+    {
+      "token_start": 155,
+      "token_end": 156,
+      "before": "Begin with a picture and one question. Try the controls, pause to explain the result, then open the full lesson when you want the formulas or laboratory. Follow the steps in order on your first visit.",
+      "after": "Start with the retailer\u2019s unknown target, then separate the quality of an estimator from the uncertainty of an estimate. Each step keeps one calculation and a short check visible. Follow the steps in order; full explanations and laboratories remain available below."
+    },
+    {
+      "token_start": 157,
+      "token_end": 159,
+      "before": "<nav class=\"c5-route\" aria-label=\"Class 5 illustrated path\"><a href=\"#estimation-step-1\">",
+      "after": "<nav class=\"c5-route\" aria-label=\"Class 5 steps\"><a href=\"#class5-step-1\">"
+    },
+    {
+      "token_start": 166,
+      "token_end": 167,
+      "before": "<a href=\"#estimation-step-2\">",
+      "after": "<a href=\"#class5-step-2\">"
+    },
+    {
+      "token_start": 171,
+      "token_end": 172,
+      "before": "Compare the rules",
+      "after": "Check the average error"
+    },
+    {
+      "token_start": 174,
+      "token_end": 175,
+      "before": "<a href=\"#estimation-step-3\">",
+      "after": "<a href=\"#class5-step-3\">"
+    },
+    {
+      "token_start": 179,
+      "token_end": 180,
+      "before": "Estimate the spread",
+      "after": "Compare estimator precision"
+    },
+    {
+      "token_start": 182,
+      "token_end": 183,
+      "before": "<a href=\"#estimation-step-4\">",
+      "after": "<a href=\"#class5-step-4\">"
+    },
+    {
+      "token_start": 187,
+      "token_end": 188,
+      "before": "Count conversions",
+      "after": "Ask what more data fixes"
+    },
+    {
+      "token_start": 190,
+      "token_end": 191,
+      "before": "<a href=\"#estimation-step-5\">",
+      "after": "<a href=\"#class5-step-5\">"
+    },
+    {
+      "token_start": 195,
+      "token_end": 196,
+      "before": "Build an interval",
+      "after": "Estimate individual spread"
+    },
+    {
+      "token_start": 198,
+      "token_end": 199,
+      "before": "<a href=\"#estimation-step-6\">",
+      "after": "<a href=\"#class5-step-6\">"
+    },
+    {
+      "token_start": 201,
+      "token_end": 233,
+      "before": "",
+      "after": "</span><b>Estimate the mean\u2019s uncertainty</b></a><a href=\"#class5-step-7\"><span>07</span><b>Turn conversions into an estimate</b></a><a href=\"#class5-step-8\"><span>08</span><b>Estimate the rate\u2019s uncertainty</b></a><a href=\"#class5-step-9\"><span>09</span><b>Build a mean interval</b></a><a href=\"#class5-step-10\"><span>10"
+    },
+    {
+      "token_start": 238,
+      "token_end": 239,
+      "before": "<a href=\"#estimation-step-7\">",
+      "after": "<a href=\"#class5-step-11\">"
+    },
+    {
+      "token_start": 240,
+      "token_end": 241,
+      "before": "07",
+      "after": "11"
+    },
+    {
+      "token_start": 246,
+      "token_end": 247,
+      "before": "<a href=\"#estimation-step-8\">",
+      "after": "<a href=\"#class5-step-12\">"
+    },
+    {
+      "token_start": 248,
+      "token_end": 249,
+      "before": "08",
+      "after": "12"
+    },
+    {
+      "token_start": 254,
+      "token_end": 255,
+      "before": "<a href=\"#estimation-step-9\">",
+      "after": "<a href=\"#class5-step-13\">"
+    },
+    {
+      "token_start": 256,
+      "token_end": 257,
+      "before": "09",
+      "after": "13"
+    },
+    {
+      "token_start": 259,
+      "token_end": 260,
+      "before": "Plan the precision",
+      "after": "Plan a mean\u2019s precision"
+    },
+    {
+      "token_start": 262,
+      "token_end": 263,
+      "before": "<a href=\"#estimation-step-10\">",
+      "after": "<a href=\"#class5-step-14\">"
+    },
+    {
+      "token_start": 264,
+      "token_end": 273,
+      "before": "10",
+      "after": "14</span><b>Plan a rate\u2019s precision</b></a><a href=\"#class5-step-15\"><span>15"
+    },
+    {
+      "token_start": 282,
+      "token_end": 283,
+      "before": "Step 1 of 10",
+      "after": "Step 1 of 15"
+    },
+    {
+      "token_start": 293,
+      "token_end": 294,
+      "before": "Show all ten steps",
+      "after": "Show all fifteen steps"
+    },
+    {
+      "token_start": 327,
+      "token_end": 328,
+      "before": "Choose and evaluate a rule (1\u20133):",
+      "after": "Choose and evaluate a rule (steps 1\u20134):"
+    },
+    {
+      "token_start": 333,
+      "token_end": 334,
+      "before": "Estimate uncertainty (4\u20135):",
+      "after": "Estimate uncertainty (steps 5\u20138):"
+    },
+    {
+      "token_start": 339,
+      "token_end": 340,
+      "before": "Build and interpret a range (6\u20139):",
+      "after": "Build and interpret a range (steps 9\u201312):"
+    },
+    {
+      "token_start": 345,
+      "token_end": 346,
+      "before": "Plan and communicate (10\u201312):",
+      "after": "Plan and communicate (steps 13\u201315):"
+    },
+    {
+      "token_start": 409,
+      "token_end": 411,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-1\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 413,
+      "token_end": 414,
+      "before": "01 / 10 \u00b7 THE ESTIMATE",
+      "after": "STEP 01 OF 15"
+    },
+    {
+      "token_start": 421,
+      "token_end": 422,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 503,
+      "token_end": 505,
+      "before": "<a class=\"button\" href=\"#estimation-step-2\">Next \u00b7 Compare the rules <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class5-step-2\">Next \u00b7 Check the average error \u2192"
+    },
+    {
+      "token_start": 509,
+      "token_end": 511,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-2\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 513,
+      "token_end": 514,
+      "before": "02 / 10 \u00b7 THE ESTIMATE",
+      "after": "STEP 02 OF 15"
+    },
+    {
+      "token_start": 516,
+      "token_end": 517,
+      "before": "Compare the rules",
+      "after": "Check the average error"
+    },
+    {
+      "token_start": 519,
+      "token_end": 520,
+      "before": "{{estvisual:quality}}<!-- depth48:depth-estimation-equal-results:start --><details class=\"c5-lab-details reading-extension\" data-reading-extension><summary>Worked comparison \u00b7 Same estimate, different precision</summary><aside class=\"guided-try\" id=\"depth-estimation-equal-results\" aria-labelledby=\"depth-estimation-equal-results-title\"><h3 id=\"depth-estimation-equal-results-title\">The same estimate can come from different-quality rules</h3><p>Return to the five orders $46, $52, $48, $54 and $50. Compare two rules chosen <b>before seeing their values</b>: average all five orders, or average only the first and fourth. Both happen to give $50 today. Does that make the rules equally precise?</p><details><summary>Compare the sampling rules, not just today\u2019s answer</summary>{{math:depth-fixed-weight-comparison}}<p>Under IID sampling with a common finite variance \u03c3\u00b2, both rules are unbiased: their fixed weights sum to 1. But the two-order rule has <b>2.5 times the variance</b> of the five-order mean, because half of \u03c3\u00b2 is 2.5 times one fifth of \u03c3\u00b2. Its standard error is \u221a2.5 \u2248 <b>1.5811 times as large</b>.</p><p>The business paid to collect five orders; the second rule discards the information in three of them. Equality of today\u2019s answers does not remove that loss. Choosing which orders to include <em>after</em> looking at their values is a different, data-dependent rule and is not covered by this fixed-weight proof.</p><p>The full derivation below extends the comparison to any fixed weights summing to 1. Equal weights attain the smallest variance in that class under the stated common-variance, independence assumptions.</p></details></aside></details><!-- depth48:depth-estimation-equal-results:end -->",
+      "after": "{{estvisual:bias}}"
+    },
+    {
+      "token_start": 521,
+      "token_end": 522,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 676,
+      "token_end": 746,
+      "before": "",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 2 navigation\"><a class=\"c5-back\" href=\"#class5-step-1\">\u2190 Previous step</a><a class=\"button\" href=\"#class5-step-3\">Next \u00b7 Compare estimator precision \u2192</a></nav></section><section class=\"c5-part\" id=\"estimation-efficiency\" aria-labelledby=\"estimation-efficiency-title\"><span class=\"c5-step-anchor\" id=\"class5-step-3\" aria-hidden=\"true\"></span><header class=\"c5-part-heading\"><div class=\"eyebrow\">STEP 03 OF 15</div><h2 id=\"estimation-efficiency-title\">Compare estimator precision</h2></header>{{estvisual:efficiency}}<p class=\"c5-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><!-- depth48:depth-estimation-equal-results:start --><details class=\"c5-lab-details reading-extension\" data-reading-extension><summary>Worked comparison \u00b7 Same estimate, different precision</summary><aside class=\"guided-try\" id=\"depth-estimation-equal-results\" aria-labelledby=\"depth-estimation-equal-results-title\"><h3 id=\"depth-estimation-equal-results-title\">The same estimate can come from different-quality rules</h3><p>Return to the five orders $46, $52, $48, $54 and $50. Compare two rules chosen <b>before seeing their values</b>: average all five orders, or average only the first and fourth. Both happen to give $50 today. Does that make the rules equally precise?</p><details><summary>Compare the sampling rules, not just today\u2019s answer</summary>{{math:depth-fixed-weight-comparison}}<p>Under IID sampling with a common finite variance \u03c3\u00b2, both rules are unbiased: their fixed weights sum to 1. But the two-order rule has <b>2.5 times the variance</b> of the five-order mean, because half of \u03c3\u00b2 is 2.5 times one fifth of \u03c3\u00b2. Its standard error is \u221a2.5 \u2248 <b>1.5811 times as large</b>.</p><p>The business paid to collect five orders; the second rule discards the information in three of them. Equality of today\u2019s answers does not remove that loss. Choosing which orders to include <em>after</em> looking at their values is a different, data-dependent rule and is not covered by this fixed-weight proof.</p><p>The full derivation below extends the comparison to any fixed weights summing to 1. Equal weights attain the smallest variance in that class under the stated common-variance, independence assumptions.</p></details></aside></details><!-- depth48:depth-estimation-equal-results:end -->"
+    },
+    {
+      "token_start": 794,
+      "token_end": 797,
+      "before": "<nav class=\"c5-step-nav\" aria-label=\"Step 2 navigation\"><a class=\"c5-back\" href=\"#estimation-step-1\">\u2190 Name the target",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 3 navigation\"><a class=\"c5-back\" href=\"#class5-step-2\">\u2190 Previous step"
+    },
+    {
+      "token_start": 798,
+      "token_end": 805,
+      "before": "<a class=\"button\" href=\"#estimation-step-3\">Next \u00b7 Estimate the spread <span aria-hidden=\"true\">\u2192",
+      "after": "<a class=\"button\" href=\"#class5-step-4\">Next \u00b7 Ask what more data fixes \u2192</a></nav></section><section class=\"c5-part\" id=\"estimation-consistency\" aria-labelledby=\"estimation-consistency-title\"><span class=\"c5-step-anchor\" id=\"class5-step-4\" aria-hidden=\"true\">"
+    },
+    {
+      "token_start": 806,
+      "token_end": 824,
+      "before": "",
+      "after": "<header class=\"c5-part-heading\"><div class=\"eyebrow\">STEP 04 OF 15</div><h2 id=\"estimation-consistency-title\">Ask what more data fixes</h2></header>{{estvisual:quality}}<p class=\"c5-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><nav class=\"c5-step-nav\" aria-label=\"Step 4 navigation\"><a class=\"c5-back\" href=\"#class5-step-3\">\u2190 Previous step</a><a class=\"button\" href=\"#class5-step-5\">Next \u00b7 Estimate individual spread \u2192"
+    },
+    {
+      "token_start": 828,
+      "token_end": 830,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-5\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 832,
+      "token_end": 833,
+      "before": "03 / 10 \u00b7 THE ESTIMATE",
+      "after": "STEP 05 OF 15"
+    },
+    {
+      "token_start": 835,
+      "token_end": 836,
+      "before": "Estimate the spread",
+      "after": "Estimate individual spread"
+    },
+    {
+      "token_start": 839,
+      "token_end": 842,
+      "before": "",
+      "after": "<p class=\"c5-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 879,
+      "token_end": 879,
+      "before": "<p class=\"c5-reference-note\">Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 932,
+      "token_end": 935,
+      "before": "<nav class=\"c5-step-nav\" aria-label=\"Step 3 navigation\"><a class=\"c5-back\" href=\"#estimation-step-2\">\u2190 Compare the rules",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 5 navigation\"><a class=\"c5-back\" href=\"#class5-step-4\">\u2190 Previous step"
+    },
+    {
+      "token_start": 936,
+      "token_end": 943,
+      "before": "<a class=\"button\" href=\"#estimation-step-4\">Next \u00b7 Count conversions <span aria-hidden=\"true\">\u2192",
+      "after": "<a class=\"button\" href=\"#class5-step-6\">Next \u00b7 Estimate the mean\u2019s uncertainty \u2192</a></nav></section><section class=\"c5-part\" id=\"estimation-standard-error\" aria-labelledby=\"estimation-standard-error-title\"><span class=\"c5-step-anchor\" id=\"class5-step-6\" aria-hidden=\"true\">"
+    },
+    {
+      "token_start": 944,
+      "token_end": 962,
+      "before": "",
+      "after": "<header class=\"c5-part-heading\"><div class=\"eyebrow\">STEP 06 OF 15</div><h2 id=\"estimation-standard-error-title\">Estimate the mean\u2019s uncertainty</h2></header>{{estvisual:standarderror}}<p class=\"c5-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><nav class=\"c5-step-nav\" aria-label=\"Step 6 navigation\"><a class=\"c5-back\" href=\"#class5-step-5\">\u2190 Previous step</a><a class=\"button\" href=\"#class5-step-7\">Next \u00b7 Turn conversions into an estimate \u2192"
+    },
+    {
+      "token_start": 966,
+      "token_end": 968,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-7\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 970,
+      "token_end": 971,
+      "before": "04 / 10 \u00b7 THE ESTIMATE",
+      "after": "STEP 07 OF 15"
+    },
+    {
+      "token_start": 973,
+      "token_end": 974,
+      "before": "Count conversions",
+      "after": "Turn conversions into an estimate"
+    },
+    {
+      "token_start": 976,
+      "token_end": 980,
+      "before": "{{estvisual:binary}}",
+      "after": "{{estvisual:binaryvariance}}<p class=\"c5-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 1032,
+      "token_end": 1032,
+      "before": "<p class=\"c5-reference-note\">Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 1079,
+      "token_end": 1082,
+      "before": "<nav class=\"c5-step-nav\" aria-label=\"Step 4 navigation\"><a class=\"c5-back\" href=\"#estimation-step-3\">\u2190 Estimate the spread",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 7 navigation\"><a class=\"c5-back\" href=\"#class5-step-6\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1083,
+      "token_end": 1090,
+      "before": "<a class=\"button\" href=\"#estimation-step-5\">Next \u00b7 Build an interval <span aria-hidden=\"true\">\u2192",
+      "after": "<a class=\"button\" href=\"#class5-step-8\">Next \u00b7 Estimate the rate\u2019s uncertainty \u2192</a></nav></section><section class=\"c5-part\" id=\"estimation-rate-error\" aria-labelledby=\"estimation-rate-error-title\"><span class=\"c5-step-anchor\" id=\"class5-step-8\" aria-hidden=\"true\">"
+    },
+    {
+      "token_start": 1091,
+      "token_end": 1109,
+      "before": "",
+      "after": "<header class=\"c5-part-heading\"><div class=\"eyebrow\">STEP 08 OF 15</div><h2 id=\"estimation-rate-error-title\">Estimate the rate\u2019s uncertainty</h2></header>{{estvisual:binary}}<p class=\"c5-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><nav class=\"c5-step-nav\" aria-label=\"Step 8 navigation\"><a class=\"c5-back\" href=\"#class5-step-7\">\u2190 Previous step</a><a class=\"button\" href=\"#class5-step-9\">Next \u00b7 Build a mean interval \u2192"
+    },
+    {
+      "token_start": 1113,
+      "token_end": 1115,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-9\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1117,
+      "token_end": 1118,
+      "before": "05 / 10 \u00b7 THE UNCERTAINTY",
+      "after": "STEP 09 OF 15"
+    },
+    {
+      "token_start": 1120,
+      "token_end": 1121,
+      "before": "Build an interval",
+      "after": "Build a mean interval"
+    },
+    {
+      "token_start": 1124,
+      "token_end": 1127,
+      "before": "",
+      "after": "<p class=\"c5-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 1189,
+      "token_end": 1189,
+      "before": "<p class=\"c5-reference-note\">Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 1257,
+      "token_end": 1260,
+      "before": "<nav class=\"c5-step-nav\" aria-label=\"Step 5 navigation\"><a class=\"c5-back\" href=\"#estimation-step-4\">\u2190 Count conversions",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 9 navigation\"><a class=\"c5-back\" href=\"#class5-step-8\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1261,
+      "token_end": 1263,
+      "before": "<a class=\"button\" href=\"#estimation-step-6\">Next \u00b7 Read 95% correctly <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class5-step-10\">Next \u00b7 Read 95% correctly \u2192"
+    },
+    {
+      "token_start": 1267,
+      "token_end": 1269,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-10\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1271,
+      "token_end": 1272,
+      "before": "06 / 10 \u00b7 THE UNCERTAINTY",
+      "after": "STEP 10 OF 15"
+    },
+    {
+      "token_start": 1278,
+      "token_end": 1281,
+      "before": "",
+      "after": "<p class=\"c5-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 1322,
+      "token_end": 1322,
+      "before": "<p class=\"c5-reference-note\">Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 1481,
+      "token_end": 1484,
+      "before": "<nav class=\"c5-step-nav\" aria-label=\"Step 6 navigation\"><a class=\"c5-back\" href=\"#estimation-step-5\">\u2190 Build an interval",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 10 navigation\"><a class=\"c5-back\" href=\"#class5-step-9\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1485,
+      "token_end": 1487,
+      "before": "<a class=\"button\" href=\"#estimation-step-7\">Next \u00b7 Use an estimated SD <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class5-step-11\">Next \u00b7 Use an estimated SD \u2192"
+    },
+    {
+      "token_start": 1491,
+      "token_end": 1493,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-11\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1495,
+      "token_end": 1496,
+      "before": "07 / 10 \u00b7 THE UNCERTAINTY",
+      "after": "STEP 11 OF 15"
+    },
+    {
+      "token_start": 1503,
+      "token_end": 1504,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1664,
+      "token_end": 1667,
+      "before": "<nav class=\"c5-step-nav\" aria-label=\"Step 7 navigation\"><a class=\"c5-back\" href=\"#estimation-step-6\">\u2190 Read 95% correctly",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 11 navigation\"><a class=\"c5-back\" href=\"#class5-step-10\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1668,
+      "token_end": 1670,
+      "before": "<a class=\"button\" href=\"#estimation-step-8\">Next \u00b7 Check a rate interval <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class5-step-12\">Next \u00b7 Check a rate interval \u2192"
+    },
+    {
+      "token_start": 1674,
+      "token_end": 1676,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-12\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1678,
+      "token_end": 1679,
+      "before": "08 / 10 \u00b7 THE UNCERTAINTY",
+      "after": "STEP 12 OF 15"
+    },
+    {
+      "token_start": 1686,
+      "token_end": 1687,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1833,
+      "token_end": 1836,
+      "before": "<nav class=\"c5-step-nav\" aria-label=\"Step 8 navigation\"><a class=\"c5-back\" href=\"#estimation-step-7\">\u2190 Use an estimated SD",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 12 navigation\"><a class=\"c5-back\" href=\"#class5-step-11\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1837,
+      "token_end": 1839,
+      "before": "<a class=\"button\" href=\"#estimation-step-9\">Next \u00b7 Plan the precision <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class5-step-13\">Next \u00b7 Plan a mean\u2019s precision \u2192"
+    },
+    {
+      "token_start": 1843,
+      "token_end": 1845,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-13\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1847,
+      "token_end": 1848,
+      "before": "09 / 10 \u00b7 THE DECISION",
+      "after": "STEP 13 OF 15"
+    },
+    {
+      "token_start": 1850,
+      "token_end": 1851,
+      "before": "Plan the precision",
+      "after": "Plan a mean\u2019s precision"
+    },
+    {
+      "token_start": 1855,
+      "token_end": 1856,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1903,
+      "token_end": 1927,
+      "before": "",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 13 navigation\"><a class=\"c5-back\" href=\"#class5-step-12\">\u2190 Previous step</a><a class=\"button\" href=\"#class5-step-14\">Next \u00b7 Plan a rate\u2019s precision \u2192</a></nav></section><section class=\"c5-part\" id=\"estimation-rate-plan\" aria-labelledby=\"estimation-rate-plan-title\"><span class=\"c5-step-anchor\" id=\"class5-step-14\" aria-hidden=\"true\"></span><header class=\"c5-part-heading\"><div class=\"eyebrow\">STEP 14 OF 15</div><h2 id=\"estimation-rate-plan-title\">Plan a rate\u2019s precision</h2></header>{{estvisual:rateplanning}}<p class=\"c5-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 2098,
+      "token_end": 2101,
+      "before": "<nav class=\"c5-step-nav\" aria-label=\"Step 9 navigation\"><a class=\"c5-back\" href=\"#estimation-step-8\">\u2190 Check a rate interval",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 14 navigation\"><a class=\"c5-back\" href=\"#class5-step-13\">\u2190 Previous step"
+    },
+    {
+      "token_start": 2102,
+      "token_end": 2104,
+      "before": "<a class=\"button\" href=\"#estimation-step-10\">Next \u00b7 Make the decision <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class5-step-15\">Next \u00b7 Make the decision \u2192"
+    },
+    {
+      "token_start": 2108,
+      "token_end": 2110,
+      "before": "",
+      "after": "<span class=\"c5-step-anchor\" id=\"class5-step-15\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2112,
+      "token_end": 2113,
+      "before": "10 / 10 \u00b7 THE DECISION",
+      "after": "STEP 15 OF 15"
+    },
+    {
+      "token_start": 2120,
+      "token_end": 2121,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 2267,
+      "token_end": 2270,
+      "before": "<nav class=\"c5-step-nav\" aria-label=\"Step 10 navigation\"><a class=\"c5-back\" href=\"#estimation-step-9\">\u2190 Plan the precision",
+      "after": "<nav class=\"c5-step-nav\" aria-label=\"Step 15 navigation\"><a class=\"c5-back\" href=\"#class5-step-14\">\u2190 Previous step"
+    },
+    {
+      "token_start": 2272,
+      "token_end": 2273,
+      "before": "Class 6: test a claim \u2192",
+      "after": "Class 6 \u00b7 Hypothesis testing \u2192"
+    }
+  ],
+  "reviewed_dist_sha256": "219253272f909a9c6fcb51b694bebc34499f1ff93fb905b04f074c8de6d04e34"
+}
