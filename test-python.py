@@ -27,7 +27,7 @@ def close(actual, expected):
     else:
         check(math.isclose(actual, expected, abs_tol=1e-10, rel_tol=1e-10), (actual, expected))
 
-for name in ['quickstart', 'shape', 'paired', 'orders']:
+for name in ['quickstart', 'shape', 'paired', 'orders', 'case']:
     output = subprocess.check_output([sys.executable, str(root / f'src/examples/{name}.py')], text=True)
     check(output == (root / f'src/examples/{name}.txt').read_text(), f'{name}: stale checked output')
 with redirect_stdout(StringIO()):
@@ -76,7 +76,7 @@ class Blocks(HTMLParser):
             self.blocks.append((self.label,self.value)); self.capture=False
 for file in ['dist/index.html', 'class1-standalone.html']:
     html=(root/file).read_text(); parser=Blocks();parser.feed(html)
-    check(len(parser.blocks)==10, 'missing displayed code/output')
+    check(len(parser.blocks)==12, 'missing displayed code/output')
     check('{{python:' not in html and '{{output:' not in html and '{{tool-reference}}' not in html, 'unbuilt placeholder')
     for label, content in parser.blocks:
         name=label.split(': ')[1].split('.')[0]

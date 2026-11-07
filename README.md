@@ -20,6 +20,12 @@ Use Node.js 22.12 or newer. Reading and using the course needs only a browser; P
 
 The full suite uses NumPy, SciPy, and Matplotlib to reproduce examples and independently check numerical results. The build emits `dist/` plus an optional local, self-contained Class 1 file (`class1-standalone.html`, not committed). All runtime course assets, including math fonts, are bundled locally.
 
+## Navigation
+
+The shared header in `scripts/navigation.cjs` separates the eight-class course menu from in-page lesson shortcuts. It marks the current class and follows the section being read. All menu links and the native disclosure work without JavaScript; JavaScript adds Escape/outside-click dismissal, keyboard focus handling, and section highlighting.
+
+Run `npm run test:navigation` after building for navigation structure and interaction regression checks. Browser QA should also check narrow phone layouts, keyboard focus, Back/Forward, and the no-JavaScript fallback.
+
 ## GitHub Pages
 
 The workflow builds and tests pushes to `main`, then deploys `dist/` using GitHub Actions. Select **GitHub Actions** in the repository's Pages settings. Pull requests run the checks without deployment. Links are relative and tested under `/business-in-numbers/`; `index.html` remains Class 1, with Start Here links to the introduction.

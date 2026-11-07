@@ -4,7 +4,7 @@ module.exports = [
   {
     id: 'c1-measurements', file: 'index.html', afterTopic: 1,
     title: 'Match the variable to its meaning', kind: 'match',
-    prompt: 'A shop records four fields for each order. Match each field to its data type. A numerical label is not automatically a measurement.',
+    prompt: 'Transfer exercise with separate data. A shop records four fields for each order. Match each field to its data type. A numerical label is not automatically a measurement.',
     options: ['Continuous measurement', 'Nominal category', 'Discrete count', 'Ordinal category'],
     pairs: [
       {prompt: 'Payment code: 1 = cash, 2 = card, 3 = voucher', answer: 1},
@@ -17,7 +17,7 @@ module.exports = [
   {
     id: 'c1-weighted-orders', file: 'index.html', afterTopic: 2,
     title: 'Combine two branches fairly', kind: 'number',
-    prompt: 'Explore the order lab and notice that its mean divides total revenue by the number of orders. Now use this fixed scenario: Branch A has 8 orders averaging $30 each; Branch B has 2 orders averaging $80 each. What is the mean value across all 10 orders? Enter dollars per order.',
+    prompt: 'Transfer exercise with separate data. Explore the order lab and notice that its mean divides total revenue by the number of orders. Now use this fixed scenario: Branch A has 8 orders averaging $30 each; Branch B has 2 orders averaging $80 each. What is the mean value across all 10 orders? Enter dollars per order.',
     link: {href: '#lab', label: 'Explore the order lab'},
     answer: 40, tolerance: 0.01, unit: 'dollars per order',
     hint: 'Recover each branch’s total revenue first. Divide combined revenue by combined order count, not by two branches.',
@@ -26,7 +26,7 @@ module.exports = [
   {
     id: 'c1-change-units', file: 'index.html', afterTopic: 3,
     title: 'Separate a unit change from new variation', kind: 'choice',
-    prompt: 'The same parcel weights are recorded first in kilograms and then in grams. Their mean is 2 kg and their standard deviation is 0.3 kg. Which report is correct after the conversion?',
+    prompt: 'Transfer exercise with separate data. The same parcel weights are recorded first in kilograms and then in grams. Their mean is 2 kg and their standard deviation is 0.3 kg. Which report is correct after the conversion?',
     options: [
       {text: 'Mean 2,000 g; SD 300 g; coefficient of variation still 15%.', feedback: 'Correct. Both mean and SD scale by 1,000; their ratio stays 0.15.'},
       {text: 'Mean 2,000 g; SD 300,000 g; coefficient of variation is larger.', feedback: 'You applied the squared scale factor to SD. Variance scales by 1,000 squared; SD scales by 1,000.'},
@@ -37,7 +37,7 @@ module.exports = [
   {
     id: 'c1-preserve-pairs', file: 'index.html', afterTopic: 5,
     title: 'Protect the relationship before calculating', kind: 'choice',
-    prompt: 'Three stores have (advertising spend, sales) pairs (1, 9), (2, 3), (3, 6), in thousands of dollars. An analyst sorts each column separately, producing (1, 3), (2, 6), (3, 9). What should you do?',
+    prompt: 'Transfer exercise with separate data. Three stores have (advertising spend, sales) pairs (1, 9), (2, 3), (3, 6), in thousands of dollars. An analyst sorts each column separately, producing (1, 3), (2, 6), (3, 9). What should you do?',
     options: [
       {text: 'Use the sorted columns because both sets of individual values are unchanged.', feedback: 'The individual summaries are unchanged, but the links between stores have been destroyed. Correlation depends on those links.'},
       {text: 'Restore each store’s original pair before measuring association.', feedback: 'Correct. Sorting entire rows is safe; sorting the two columns independently invents new pairs.'},

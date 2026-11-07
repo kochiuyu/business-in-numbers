@@ -34,7 +34,7 @@ function build() {
   const fixtures=JSON.parse(read('math-fixtures.json'));
   const references=JSON.parse(read('tool-reference.json'));
   const toolTable='<div class="table-scroll tool-reference" tabindex="0" role="region" aria-label="Excel and Python reference. Scroll horizontally if needed."><table><caption>Same five numbers: 1, 2, 3, 4, 5</caption><thead><tr><th scope="col">Question</th><th scope="col">Excel · A2:A6</th><th scope="col">Python · x</th><th scope="col">Result / interpretation</th></tr></thead><tbody>'+references.map(([question,excel,python,result])=>`<tr><th scope="row">${esc(question)}</th><td>${excel.split(' / ').map(formula=>`<code>${esc(formula)}</code>`).join(' / ')}</td><td><code>${esc(python)}</code></td><td>${esc(result)}</td></tr>`).join('')+'</tbody></table></div>';
-  const template=read('index.html').replace('{{graphs-section}}',read('graphs-section.html')).replace(/\{\{graph:([a-z]+)\}\}/g,(_,name)=>graphs.render(name)).replace('{{tool-reference}}',toolTable).replace(/\{\{(python|output):([a-z]+)\}\}/g,(_,kind,name)=>{
+  const template=read('index.html').replace(/\{\{visual:([a-z]+)\}\}/g,(_,name)=>require('./class-one-visuals.cjs').render(name)).replace('{{graphs-section}}',read('graphs-section.html')).replace(/\{\{graph:([a-z]+)\}\}/g,(_,name)=>graphs.render(name)).replace('{{tool-reference}}',toolTable).replace(/\{\{(python|output):([a-z]+)\}\}/g,(_,kind,name)=>{
     const text=read(`examples/${name}.${kind==='python'?'py':'txt'}`);
     return `<pre class="code-block" tabindex="0" role="region" aria-label="${kind==='python'?'Python code':'Checked Python output'}: ${esc(name)}. Scroll horizontally if needed."><code>${esc(text)}</code></pre>`;
   });
@@ -52,17 +52,17 @@ function build() {
     return `url(data:${mime};base64,${fs.readFileSync(path.join(vendor,file)).toString('base64')})`;
   });
   const license=fs.readFileSync(path.join(vendor,'../LICENSE'),'utf8');
-  const standalone=html.replace('<head>','<head><!-- Bundled KaTeX license:\n'+license.replace(/--/g,'—')+'\n-->').replace('<link rel="stylesheet" href="vendor/katex/katex.min.css">',`<style>${inlineCss}</style>`).replace('<link rel="stylesheet" href="styles.css">',`<style>${css}</style>`).replace('<link rel="stylesheet" href="graphs.css">',`<style>${graphsCss}</style>`).replace('<link rel="stylesheet" href="learning.css">',`<style>${read('learning.css')}</style>`).replace('<link rel="stylesheet" href="activities.css">',`<style>${read('activities.css')}</style>`).replace(/<script src="(stats|app|math-ui|graphs-core|graphs|learning|activities)\.js"><\/script>/g,(_,name)=>`<script>${read(name+'.js').replace(/<\/script/gi,'<\\/script')}</script>`);
+  const standalone=html.replace('<head>','<head><!-- Bundled KaTeX license:\n'+license.replace(/--/g,'—')+'\n-->').replace('<link rel="stylesheet" href="vendor/katex/katex.min.css">',`<style>${inlineCss}</style>`).replace('<link rel="stylesheet" href="styles.css">',`<style>${css}</style>`).replace('<link rel="stylesheet" href="graphs.css">',`<style>${graphsCss}</style>`).replace('<link rel="stylesheet" href="class-one.css">',`<style>${read('class-one.css')}</style>`).replace('<link rel="stylesheet" href="learning.css">',`<style>${read('learning.css')}</style>`).replace('<link rel="stylesheet" href="activities.css">',`<style>${read('activities.css')}</style>`).replace('<link rel="stylesheet" href="navigation.css">',`<style>${read('navigation.css')}</style>`).replace(/<script src="(stats|app|math-ui|graphs-core|graphs|learning|activities|navigation|class-one)\.js"><\/script>/g,(_,name)=>`<script>${read(name+'.js').replace(/<\/script/gi,'<\\/script')}</script>`);
   fs.mkdirSync(path.join(dist,'vendor/katex'),{recursive:true});
   fs.cpSync(path.join(vendor,'fonts'),path.join(dist,'vendor/katex/fonts'),{recursive:true});
   fs.copyFileSync(path.join(vendor,'katex.min.css'),path.join(dist,'vendor/katex/katex.min.css'));
   fs.copyFileSync(path.join(vendor,'../LICENSE'),path.join(dist,'vendor/katex/LICENSE'));
   fs.writeFileSync(path.join(dist,'index.html'),html);
   fs.writeFileSync(path.join(dist,'math-check.html'),fixtureHtml);
-  for(const name of ['styles.css','stats.js','app.js','math-ui.js','graphs.css','graphs-core.js','graphs.js','learning.css','learning.js','activities.css','activities.js']) fs.copyFileSync(path.join(src,name),path.join(dist,name));
+  for(const name of ['styles.css','stats.js','app.js','math-ui.js','graphs.css','graphs-core.js','graphs.js','learning.css','learning.js','activities.css','activities.js','navigation.css','navigation.js','class-one.css','class-one.js']) fs.copyFileSync(path.join(src,name),path.join(dist,name));
   fs.writeFileSync(path.join(root,'class1-standalone.html'),standalone);
   fs.writeFileSync(path.join(dist,'MATH-NOTICE.txt'),`Mathematics pre-rendered using KaTeX ${katex.version}.\nKaTeX is Copyright (c) 2013-2020 Khan Academy and other contributors, under the MIT License.\nSee vendor/katex/LICENSE for the complete bundled license.\nNo external fonts, CDN, runtime renderer, analytics or network request is needed for the mathematics.\n`);
-  fs.writeFileSync(path.join(dist,'course-introduction.html'),require('./introduction.cjs').build());
+  fs.writeFileSync(path.join(dist,'course-introduction.html'),require('./navigation.cjs').enhance(require('./introduction.cjs').build(),'course-introduction.html'));
   buildProbability();
   buildRandom();
   buildSampling();
@@ -75,14 +75,14 @@ function build() {
 function buildProbability() {
   const read=name=>fs.readFileSync(path.join(src,name),'utf8');
   const equations=JSON.parse(read('probability-math.json'));
-  const template=read('probability.html').replace(/\{\{prob(python|output):([a-z]+)\}\}/g,(_,kind,name)=>{
+  const template=read('probability.html').replace(/\{\{probvisual:([a-z]+)\}\}/g,(_,name)=>require('./class-two-visuals.cjs').render(name)).replace(/\{\{prob(python|output):([a-z]+)\}\}/g,(_,kind,name)=>{
     const text=read(`probability-examples/${name}.${kind==='python'?'py':'txt'}`);
     return `<pre class="code-block" tabindex="0" role="region" aria-label="${kind==='python'?'Python code':'Checked Python output'}: ${esc(name)}. Scroll horizontally if needed."><code>${esc(text)}</code></pre>`;
   });
   const html=learning.enhance(compile(template,equations),'probability.html');
   if(/\{\{(?:math|probpython|proboutput):/.test(html))throw Error('Uncompiled probability placeholder');
   fs.writeFileSync(path.join(dist,'probability.html'),html);
-  for(const name of ['probability.css','probability-core.js','probability.js'])fs.copyFileSync(path.join(src,name),path.join(dist,name));
+  for(const name of ['probability.css','probability-core.js','probability.js','class-two.css','class-two.js'])fs.copyFileSync(path.join(src,name),path.join(dist,name));
   console.log(`Rendered ${Object.keys(equations).length} probability expressions.`);
 }
 function buildRandom() {

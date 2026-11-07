@@ -20,7 +20,7 @@ for(const [file] of lessons){
  ok(html.includes('guided-try'),file+' guided experiment');
  ok(html.includes('lesson-bridge'),file+' conceptual transitions');
  ok(html.includes('self-check')||html.includes('learning-summary'),file+' transfer check');
- for(const [topic] of html.matchAll(/<details class="lesson"[^>]*>/g))ok(/\bopen(?:\s|>)/.test(topic),file+' core topics readable without JS');
+ for(const [topic] of html.matchAll(/<details class="lesson"[^>]*>/g))ok(['index.html','probability.html'].includes(file) ? !/\bopen(?:\s|>)/.test(topic) : /\bopen(?:\s|>)/.test(topic),file+' core topics use intended native disclosure default');
  ok(!/\{\{[a-z][a-z:-]*\}\}|\{\{math:|katex-error/.test(html),file+' fully compiled');
  ok(html.includes('<link rel="stylesheet" href="learning.css">'));ok(html.includes('<script src="learning.js"></script>'));
 }

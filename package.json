@@ -5,8 +5,9 @@
   "description": "An interactive eight-class business statistics course",
   "scripts": {
     "build": "node scripts/build.cjs",
-    "test": "node test-stats.cjs && node test-math.cjs && python3 test-python.py && node test-probability.cjs && python3 test-probability-python.py && node test-graphs.cjs && python3 test-graphs-python.py && node test-random.cjs && python3 test-random-oracles.py && python3 test-random-python.py && node test-sampling.cjs && python3 test-sampling-oracles.py && python3 test-sampling-python.py && node test-estimation.cjs && python3 test-estimation-oracles.py && python3 test-estimation-python.py && node test-hypothesis.cjs && python3 test-hypothesis-oracles.py && python3 test-hypothesis-python.py && node test-anova.cjs && python3 test-anova-oracles.py && python3 test-anova-python.py && node test-anova-ui.cjs && node test-regression.cjs && python3 test-regression-oracles.py && python3 test-regression-python.py && node test-regression-ui.cjs && node test-learning.cjs && node test-activities.cjs && npm run test:paths",
-    "test:paths": "node test-pages-paths.cjs"
+    "test": "node test-stats.cjs && node test-math.cjs && python3 test-python.py && node test-probability.cjs && python3 test-probability-python.py && node test-graphs.cjs && python3 test-graphs-python.py && node test-random.cjs && python3 test-random-oracles.py && python3 test-random-python.py && node test-sampling.cjs && python3 test-sampling-oracles.py && python3 test-sampling-python.py && node test-estimation.cjs && python3 test-estimation-oracles.py && python3 test-estimation-python.py && node test-hypothesis.cjs && python3 test-hypothesis-oracles.py && python3 test-hypothesis-python.py && node test-anova.cjs && python3 test-anova-oracles.py && python3 test-anova-python.py && node test-anova-ui.cjs && node test-regression.cjs && python3 test-regression-oracles.py && python3 test-regression-python.py && node test-regression-ui.cjs && node test-learning.cjs && node test-activities.cjs && npm run test:paths && npm run test:navigation && node test-class1-case.cjs && node test-class1-visuals.cjs && node test-class2-visuals.cjs",
+    "test:paths": "node test-pages-paths.cjs",
+    "test:navigation": "node test-navigation.cjs"
   },
   "devDependencies": {
     "katex": "0.19.1"

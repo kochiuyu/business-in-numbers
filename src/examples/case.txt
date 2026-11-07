@@ -1,0 +1,5 @@
+Orders: n=12, total=$540, mean=$45.00, median=$31.00
+Supplier A: mean=5.00 days, observed SD=0.6325 days, later than six days=0/5 (0%)
+Supplier B: mean=5.00 days, observed SD=3.1623 days, later than six days=2/5 (40%)
+Branches: r=0.5217
+These summaries describe observed records, not future guarantees or causal effects.

@@ -16,9 +16,10 @@ function enhance(html, file) {
   const path = `<aside class="course-guide" aria-label="Study navigation"><p class="course-intro-link"><a href="course-introduction.html">Start here · The eight-class introduction →</a><br>See the connected story, refresh the basics, and choose your learning route.</p><details class="course-map"><summary><span>YOUR LEARNING PATH</span><b>Lesson ${index+1} of 8 · ${lessons[index][1]}</b></summary><p>Follow the sequence on a first pass. Each lesson answers a question the previous one leaves open.</p><nav aria-label="Eight-lesson course"><ol>${lessons.map((x,i)=>`<li><a href="${x[0]}#learning-start"${i===index?' aria-current="page"':''}><span class="course-step">${i+1}</span><span><b>${x[1]}</b><small>${x[2]}</small></span></a></li>`).join('')}</ol></nav></details><div class="reading-controls" hidden><div><b>How would you like to study?</b><p>Read in order opens the core explanations. Worked answers stay closed until you choose to reveal them.</p></div><div class="reading-actions" role="group" aria-label="Reading mode"><button type="button" data-reading-mode="read" aria-pressed="true">Read in order</button><button type="button" data-reading-mode="review" aria-pressed="false">Compact review</button></div><p id="reading-status" class="reading-status" role="status" aria-live="polite"></p></div></aside>`;
   html=html.replace(/(<section\b[^>]*class="[^"]*\bhero\b[^"]*"[^>]*>[\s\S]*?<\/section>)/, '$1'+path);
   if(!html.includes('class="course-guide"'))throw Error('Missing lesson hero: '+file);
-  html=html.replace(/<details class="lesson"(?![^>]*\bopen\b)/g,'<details class="lesson" open');
+  if(!['index.html','probability.html'].includes(file)) html=html.replace(/<details class="lesson"(?![^>]*\bopen\b)/g,'<details class="lesson" open');
+  if(['index.html','probability.html'].includes(file)) html=html.replace('Read in order opens the core explanations. Worked answers stay closed until you choose to reveal them.','Pictures come first. Open full explanations when you want the calculations or practice.').replace('>Read in order<','>Open all explanations<').replace('>Compact review<','>Close explanations<');
   html=html.replace('</head>','<link rel="stylesheet" href="learning.css"></head>');
   html=html.replace('</body>','<script src="learning.js"></script></body>');
-  return activities.enhance(html,file);
+  return require('./navigation.cjs').enhance(activities.enhance(html,file),file);
 }
 module.exports={lessons,enhance};
