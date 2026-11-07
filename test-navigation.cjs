@@ -27,9 +27,9 @@ for (const [file, shortcuts] of Object.entries(sections)) {
     ok(header.includes('<a href="#' + id + '">' + label + '</a>'), file + ': native shortcut ' + id);
     eq((html.match(new RegExp('\\bid="' + id + '"', 'g')) || []).length, 1, file + ': unique shortcut target ' + id);
   }
-  eq((html.match(/href="navigation.css"/g) || []).length, 1, file + ': navigation CSS');
-  eq((html.match(/src="navigation.js"/g) || []).length, 1, file + ': navigation JS');
-  ok(html.indexOf('src="navigation.js"') > html.indexOf('</main>'), file + ': script after content');
+  eq((html.match(/href="navigation\.[a-f0-9]{16}\.css"/g) || []).length, 1, file + ': navigation CSS');
+  eq((html.match(/src="navigation\.[a-f0-9]{16}\.js"/g) || []).length, 1, file + ': navigation JS');
+  ok(html.search(/src="navigation\.[a-f0-9]{16}\.js"/) > html.indexOf('</main>'), file + ': script after content');
 }
 for (const asset of ['navigation.js', 'navigation.css']) eq(fs.readFileSync('dist/' + asset, 'utf8'), fs.readFileSync('src/' + asset, 'utf8'), asset + ': build copies latest source');
 assert.throws(() => enhance('<html></html>', 'unknown.html'), /Unknown navigation page/); checks++;

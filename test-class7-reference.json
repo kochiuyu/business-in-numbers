@@ -1,4 +1,5 @@
 {
+  "base_commit": "0227e92e8f944315e680501edc5510c8434cabac",
   "topic_sha256": [
     "d83162538bf2919f82535c265cf1d085254a16db58cf06ac02c1ec3bd4131508",
     "f6823b1162acb73100924dd4ffa710ff9b8b4790604f52bf848779224e86b1da",
@@ -16,15 +17,15 @@
     "e0cd79e63736ef8f6979119069e398d80f34e1b17a42c96ac5ad98600f04cf6c"
   ],
   "other_pages": {
-    "regression.html": "fee16baccae4def421d6546e27531dadc1e9da4e7d6f1aa86f14cf593f10b21b",
-    "course-introduction.html": "02591596342aad021f7e5055a1fd6ee77690c48422243e8fc04dfbd6b2ae7dcf",
-    "sampling-distributions.html": "394f4d2fea2535735f0248e77071ff8cc3c0412f6266d5ef98563d95e94fca76",
-    "math-check.html": "e03e49b1aa2b603692db16e0a1a21ef7034d061668b003431dbbe1f22c0b7004",
-    "random-variables.html": "9aac4bc1983c5583cba6b80f6f72c0c0ed22dd847559220d1fca35b6f653efce",
-    "hypothesis-testing.html": "349270c89704aa3f274a84ee298be4a967964dbadbda5ec9a33133d654fd4e9e",
-    "probability.html": "d59fae0e54f45e41126d7bfe5ead8401073ac6d187a5ef5d633bd4d694b8b4de",
-    "index.html": "c871dd64811ffbf2b62f46448405060dfada91c597b9aef520e9e30b410cf4a1",
-    "estimation.html": "64c810e95053b5bc0a39c6b5dc8047f71ba3aa967101ffcef271207d503087cc"
+    "regression.html": "f7543f6373af381f633da183e1c2f90cff9620df0273d3fe8d6e6328f9e375a0",
+    "course-introduction.html": "452fc39f2c83f9e0db1664e1bbf94892378ec8d70b7037d1b63ef60705cdcc10",
+    "sampling-distributions.html": "c293e6bfec415597de7b58d45f10b37f9b1e1175e0b50a4b6a6872f155c32dac",
+    "math-check.html": "a77fc56d9ed7991655bfcf2a22fd209a4afacd23c0c0bfdeacca39d3554be4bf",
+    "random-variables.html": "857413bb75cb3d783f6d32b398af60f9bc87dccd0c2e1fb054354c85fe8974b8",
+    "hypothesis-testing.html": "97ee7dcae67d8427c5bcae3c6bc1a44bc1fbdf2e969e2d6a266af04878c8d524",
+    "probability.html": "ffc61be7ba97424ec0f699799c13e1b31fb9fb4cdcf48f2c39157b96cf25a925",
+    "index.html": "bd8f44e3f65c3e9e45b8f5b986ce11d6a5bc60ae22826e86fd5b0eb9329fbd7f",
+    "estimation.html": "5f1532ecdf4a22767a1d72d6cd1080da205f52293cd21909909cbc6fe6c1f811"
   },
-  "other_pages_note": "Built-page snapshot refreshed for the 2026-11-07 all-eight exposition pass. Original topic_sha256 preservation fixtures remain unchanged."
+  "other_pages_note": "Built-page snapshot refreshed for the 2026-11-07 second exposition review and deterministic runtime asset fingerprints. Original topic_sha256 preservation fixtures are unchanged."
 }

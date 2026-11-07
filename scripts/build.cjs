@@ -70,6 +70,7 @@ function build() {
   buildHypothesis();
   buildAnova();
   buildRegression();
+  require('./fingerprint-assets.cjs').fingerprintAssets(dist);
   console.log(`Rendered ${Object.keys(equations).length} lesson expressions and ${Object.keys(fixtures).length} QA expressions with KaTeX ${katex.version}.`);
 }
 function buildProbability() {

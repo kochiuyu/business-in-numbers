@@ -22,7 +22,7 @@ for(const [file] of lessons){
  ok(html.includes('self-check')||html.includes('learning-summary'),file+' transfer check');
  for(const [topic] of html.matchAll(/<details class="lesson"[^>]*>/g))ok(['index.html','probability.html','random-variables.html','sampling-distributions.html','estimation.html','hypothesis-testing.html','anova.html','regression.html'].includes(file) ? !/\bopen(?:\s|>)/.test(topic) : /\bopen(?:\s|>)/.test(topic),file+' core topics use intended native disclosure default');
  ok(!/\{\{[a-z][a-z:-]*\}\}|\{\{math:|katex-error/.test(html),file+' fully compiled');
- ok(html.includes('<link rel="stylesheet" href="learning.css">'));ok(html.includes('<script src="learning.js"></script>'));
+ ok(/href="learning\.[a-f0-9]{16}\.css"/.test(html));ok(/src="learning\.[a-f0-9]{16}\.js"/.test(html));
 }
 // Shared reading controls: repeated mode changes, custom state, malformed anchor,
 // deep linking into a closed panel, and absent toolbar all remain safe.

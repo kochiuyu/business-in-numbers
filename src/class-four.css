@@ -23,3 +23,7 @@
 
 /* Keep expanded reference material inside narrow phone layouts. */
 .class-four-case .c4-background .intro{min-width:0;max-width:100%;overflow-wrap:anywhere}.class-four-case .c4-background .intro>div,.class-four-case .question-grid{min-width:0}.class-four-case .lesson-body{min-width:0;overflow-x:auto}@media(max-width:700px){.class-four-case .c4-background .intro{padding-left:0;padding-right:0}.class-four-case .question-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Worked reasoning stays readable without JavaScript or motion. */
+.c4-reasoning-path{display:grid;gap:12px;margin:20px 0}.c4-reasoning-path>div{border-left:3px solid #43684b;padding:14px 18px;background:#edf2e6;min-width:0}.c4-reasoning-path b{font-size:16px}.c4-reasoning-path p{margin:8px 0 0;overflow-wrap:anywhere}
+.c4-extra summary:focus-visible{outline:3px solid #b45a25;outline-offset:3px}

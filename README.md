@@ -18,7 +18,7 @@ Use Node.js 22.12 or newer. Reading and using the course needs only a browser; P
 - Run all checks: install Python 3.11 and `python3 -m pip install -r requirements-test.txt`, then `npm test`
 - Check project-path compatibility only: `npm run test:paths`
 
-The full suite uses NumPy, SciPy, and Matplotlib to reproduce examples and independently check numerical results. The build emits `dist/` plus an optional local, self-contained Class 1 file (`class1-standalone.html`, not committed). All runtime course assets, including math fonts, are bundled locally.
+The full suite uses NumPy, SciPy, and Matplotlib to reproduce examples and independently check numerical results. The build emits `dist/` plus an optional local, self-contained Class 1 file (`class1-standalone.html`, not committed). All runtime course assets, including math fonts, are bundled locally. Every generated HTML page loads JavaScript and CSS through content-fingerprinted filenames, so a returning browser can keep its cache while fetching the new release’s exact assets. `dist/asset-manifest.json` records the full SHA-256 digests. Canonical filenames remain for legacy links; the standalone Class 1 file remains entirely self-contained. A browser still needs refreshed HTML to discover a new release.
 
 ## Navigation
 

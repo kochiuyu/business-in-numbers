@@ -35,3 +35,11 @@
 @media print{.foundation-chart::before{display:none}}
 
 .c2-figure svg .c2-y-tick{font-size:20px}
+
+/* Second review: static worked bridges; no motion or scripting required. */
+.second-foundation{margin:1.3rem 0;padding:clamp(1rem,3vw,1.8rem);border:1px solid #c9d8d0;border-radius:14px;background:#f5f8f5;color:#203e33;min-width:0}
+.second-foundation h3{margin:.35rem 0 .8rem}.second-foundation p,.second-foundation li{max-width:76ch;line-height:1.65}.second-foundation li+li{margin-top:.6rem}
+.second-foundation-kicker{font-size:.72rem;font-weight:750;letter-spacing:.09em}.second-foundation figure{margin:1rem 0}.second-foundation figcaption{font-size:.88rem;line-height:1.55;margin-top:.6rem;max-width:76ch}
+.second-foundation-chart{overflow-x:auto;border-radius:8px;background:#fff;max-width:100%}.second-foundation-chart svg{display:block;width:100%;min-width:580px;height:auto}.second-foundation-chart text{font:16px system-ui,sans-serif;fill:#203e33}.second-foundation-chart rect{fill:#e4eee7;stroke:#769581}.second-foundation-chart path{fill:none;stroke:#51745d;stroke-width:2}.second-foundation-chart .second-curve{stroke-width:3}.second-foundation-chart .second-target{stroke:#94602a;stroke-dasharray:6 5}.second-foundation-chart .second-open{fill:white;stroke:#315e44;stroke-width:2}.second-foundation-chart .second-filled{fill:#315e44}
+.second-foundation summary{cursor:pointer;padding:.65rem 0;min-height:44px;font-weight:650}.second-foundation-chart:focus-visible,.second-foundation summary:focus-visible{outline:3px solid #94602a;outline-offset:3px}
+@media print{.second-foundation-chart{overflow:visible}.second-foundation-chart svg{min-width:0}.second-foundation{break-inside:avoid}}

@@ -26,3 +26,7 @@
 .c6-extra .c6-extra-scroll-hint{display:none;font-size:13px;line-height:1.6}
 @media(max-width:700px){.c6-extra .c6-extra-scroll-hint{display:block}}
 @media print{.c6-extra-scroll{overflow:visible}.c6-extra .c6-extra-scroll svg{min-width:0;width:100%;max-width:100%}.c6-extra .c6-extra-scroll-hint{display:none}}
+
+/* Worked reasoning stays readable without JavaScript or motion. */
+.c6-reasoning-path{display:grid;gap:12px;margin:20px 0}.c6-reasoning-path>div{border-left:3px solid #43684b;padding:14px 18px;background:#edf2e6;min-width:0}.c6-reasoning-path b{font-size:16px}.c6-reasoning-path p{margin:8px 0 0;overflow-wrap:anywhere}
+.c6-extra summary:focus-visible{outline:3px solid #b45a25;outline-offset:3px}
