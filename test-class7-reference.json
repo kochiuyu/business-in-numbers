@@ -17,15 +17,15 @@
     "e0cd79e63736ef8f6979119069e398d80f34e1b17a42c96ac5ad98600f04cf6c"
   ],
   "other_pages": {
-    "regression.html": "1d2fa12d9ad9b8ba1a7c3b2d56f4a599ff056c2be2eba71dd11bf406558469fd",
+    "regression.html": "18da1846bd0fe850372b0461c94b0344dbf5c33bb0597d484044c1397b4bae0e",
     "course-introduction.html": "452fc39f2c83f9e0db1664e1bbf94892378ec8d70b7037d1b63ef60705cdcc10",
     "sampling-distributions.html": "848e2fd34f0c6cd4b182da021185a942c98ba86960da65696a1187fe53219f97",
     "math-check.html": "a77fc56d9ed7991655bfcf2a22fd209a4afacd23c0c0bfdeacca39d3554be4bf",
-    "random-variables.html": "675bc25c7068675be014736df55d28a299bce9314d0f198290bbb403f6b0c6e5",
-    "hypothesis-testing.html": "93aec7506524d8f67eec25a05c19abcd947749f3bf8209ee8890834a9d0ec3dc",
-    "probability.html": "465b86e3b76843973011f925ad9862057a29667db8f1b9d2bfdc4c53ba03513b",
+    "random-variables.html": "0ae8a7f20c6c5acc7ec03ab946124ddc780f6ff217dd5d6ec822cce1f0f4314f",
+    "hypothesis-testing.html": "9227e2aa3b0a7eb34de7ab9013cb4b1aeeeef0222c582d504c25f5effe7ac751",
+    "probability.html": "f7e768fa947a4ac38794873e3209059fff3a9bf3eda7d4832a593d59855c9577",
     "index.html": "472e68b321e2bff1dcda8a83edde6128d0de7d5399c9a457166a443ad7b57f7e",
     "estimation.html": "32998212493f7bb95cd2a0799da370c5391afd7ec91105fe1707010d389c8698"
   },
-  "other_pages_note": "Built-page snapshot refreshed for the 2026-11-07 second exposition review and deterministic runtime asset fingerprints. Original topic_sha256 preservation fixtures are unchanged."
+  "other_pages_note": "Built-page snapshot refreshed for the 2026-11-07 fourth exposition review. Revised lesson text was independently checked; original technical-depth blocks and math placeholders are preserved."
 }

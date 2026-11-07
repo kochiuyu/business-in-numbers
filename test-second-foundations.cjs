@@ -18,6 +18,7 @@ function lessons(source) {
   }
   return out;
 }
+// Fourth review refreshes only the reviewed total-probability and moments explanations.
 const baseline = {
   "index.html": [
     "b5f8d3050d25e4cce8119bf2732c5fbf721530ae54b2c9fc98a5906ba89f40c9",
@@ -32,7 +33,7 @@ const baseline = {
     "03cbf7fcbff551fa5b6a9d1a5c3603d1e7a71cf1db4f1a0c11b94ca2db99c3a6",
     "191003e0989185863b2bc00f013b9cff5724d4ee3b68f926740f928c7d28f64a",
     "9f202a47bedaf5b770cb9391c4437c4afa6b27a2038c042180ac1ca88e481a70",
-    "e1048d05593c33abdece63e1c6d459d2345dd71ce215e02f9b69053406484253",
+    "f71f4bade4a968d26f9af8cb1ff621a9c42d514ef046938c0379906a5d237ee8",
     "87314217636c1b5da8da6368c0485a98233ebf08f7cb77f7f46d62d1448cebf9",
     "257524515bd51a6b1d4a19030fbcbae1eca27aebc28dc8c28548e6933f7e6626",
     "0fda037654da3fbe7805518e4691991b253cb09c18a9a10d7a2395b785fbb470",
@@ -42,7 +43,7 @@ const baseline = {
   "random-variables.html": [
     "dff43bd3ce6e2c55069f7fab203bdfd03594e40dfa1d1f98b8021169dae7397d",
     "53d84a624babb518aca54ed8afd5b8422139c488156d0516c8943f5d3fe2212f",
-    "5c7a5592ff85af963d5eabf771e39731544f57286a26c98d2e0ae3681fc6323a",
+    "bfc0871790f606b283a7c891f3c46c34ffd6e6b64dee93d63aae8b2c37216dee",
     "ace3893d3c0fbd3d194eb0f098152daa6e5d72b0ff23bb6094adc7b2114bb028",
     "c1a1f984db636689ce0d605944766378a9a210e417fb35c1bf33ac177d2acbda",
     "367a158baab528536319759d09f4587a3aabe4e54485a458897bee80953009e5",
@@ -56,7 +57,7 @@ const baseline = {
 };
 for (const [i, file] of ['index.html', 'probability.html', 'random-variables.html'].entries()) {
   const source = fs.readFileSync('src/' + file, 'utf8');
-  assert.deepEqual(lessons(source).map(s => crypto.createHash('sha256').update(s).digest('hex')), baseline[file], 'All first-round lesson disclosures preserved byte-for-byte: ' + file); checks++;
+  assert.deepEqual(lessons(source).map(s => crypto.createHash('sha256').update(s).digest('hex')), baseline[file], 'Reviewed lesson disclosures match the protected baseline: ' + file); checks++;
   const blocks = source.match(/<section class="second-foundation"[\s\S]*?<\/section>/g) || [];
   ok(blocks.length === 1, 'One purposeful bridge per class');
   const block = blocks[0];
