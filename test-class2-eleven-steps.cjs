@@ -68,6 +68,26 @@ near(.01*.9+.99*.05,.0585);near(.009/.0585,2/13);near((.4*.8)/(.4*.8+.6*.4),4/7)
 const meals=[];for(let base=0;base<2;base++)for(let protein=0;protein<3;protein++)for(let sauce=0;sauce<3;sauce++)meals.push({base,protein,sauce});eq(meals.length,18);eq(meals.filter(m=>!(m.protein===2&&m.sauce===2)).length,16);
 const assignments=[],teams=new Set();for(let a=0;a<5;a++)for(let b=0;b<5;b++)for(let c=0;c<5;c++)if(new Set([a,b,c]).size===3){assignments.push([a,b,c]);teams.add([a,b,c].sort().join(','));}eq(assignments.length,60);eq(teams.size,10);
 
+// First-pass Step 8 must explain the new assumption before squaring rates.
+const repeatedCore=delivered.byId('c2-core-repeated'),repeatedHtml=delivered.fragment(repeatedCore);
+for(const claim of ['32 condition and 24 no-condition expected positives','learning the first result does not change the chance of the second result','80% among first positives with the condition','40% among first positives without it','Check these two groups separately','32 × 0.80 = 25.6','24 × 0.40 = 9.6','25.6/(25.6 + 9.6) = 25.6/35.2 = 8/11','not observed counts'])ok(repeatedHtml.includes(claim),'visible conditional-independence bridge: '+claim);
+ok(repeatedHtml.indexOf('learning the first result')<repeatedHtml.indexOf('0.80²'),'explain within-group rates before squared-rate shortcut');
+const freshCheck=delivered.nodes.find(n=>n.tag==='details'&&has(n,'c2-check')&&delivered.fragment(n).includes('Two different tests each have 80% sensitivity'));
+ok(freshCheck,'diagnostic check for different tests with matching marginal rates');
+ok(ancestors(freshCheck).some(n=>n.attrs.id==='prob-step-6'),'new check remains in Step 8');
+ok(!ancestors(freshCheck).some(n=>n.tag==='details'||has(n,'technical')),'new check reachable on first pass without optional explanations');
+for(const claim of ['second-test rates among first positives','Two systems can share errors','If they always agree','1/1 = 1','32/56 ≈ 57.14%','a fresh test alone does not'])ok(delivered.fragment(freshCheck).includes(claim),'check distinguishes duplicated from independent evidence: '+claim);
+// Two valid conditional joint models have the same single-test detection rates,
+// but different double-positive posteriors. Cells are ++, +−, −+, −−.
+const models=[{issue:[.64,.16,.16,.04],clear:[.16,.24,.24,.36],posterior:8/11},
+ {issue:[.8,0,0,.2],clear:[.4,0,0,.6],posterior:4/7}];
+for(const model of models){for(const [rates,target] of [[model.issue,.8],[model.clear,.4]]){
+ ok(rates.every(x=>x>=0),'conditional joint cells nonnegative');near(rates.reduce((a,b)=>a+b,0),1);
+ near(rates[0]+rates[1],target);near(rates[0]+rates[2],target);
+}near(.4*model.issue[0]/(.4*model.issue[0]+.6*model.clear[0]),model.posterior);}
+near(32*.8,25.6);near(24*.4,9.6);near(25.6/(25.6+9.6),8/11);
+near((models[1].issue[0]/.8)/(models[1].clear[0]/.4),1);
+
 const activities=require('./scripts/activities.cjs').data().filter(a=>a.file==='probability.html');
 eq(activities.map(a=>[a.id,a.afterTopic]),[['c2-language-events',2],['c2-mix-rates',6],['c2-negative-alert',7],['c2-distinct-roles',9]],'activities follow semantic topics after independence move');
 console.log(`Passed ${checks} Class 2 eleven-step route, legacy content, formulas, datasets and visible teaching assertions.`);

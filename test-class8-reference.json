@@ -23,7 +23,7 @@
     "math-check.html": "5dbebe5efb47da9529cb1d607511f22bbe51d0973f3238d8b5c80a120eb3b08b",
     "random-variables.html": "db14a28e68691ac088a218f4c854a0e9337d72d69459060419be3d9e1ed88c04",
     "hypothesis-testing.html": "ed19da1aa4289e928ecd0ea995ca9d3d31372d4e6ce6c91f75dc2a2fbbbb9c2b",
-    "probability.html": "25d20193e19cb32843103c04867bb82020876d38c102414255aef16c6048cddf",
+    "probability.html": "41171eef6d3a6a7e8d5cfeae4da5957d0095cd1551765c24ce23404568fe507a",
     "index.html": "b568309871ad72e5bc8c0decff24648334c446df2fccc13a4728f2e25ba40fc1",
     "estimation.html": "d9bba420ba3a3c4e020b470db5b263863120e937a289204b8788ddb94f0a3254",
     "anova.html": "cd8eba9efeea321cf7a770757e76b81ee174fdca6addb8ea061dc227dd2e592c"
@@ -32,5 +32,6 @@
   "bridge_review_note": "First-three-class page hashes refreshed after independently audited additions to standardized shape/rate averaging, feasible overlaps and covariance. Previous Class1\u20133 text preserved except fourth-central-moment terminology. All other built files unchanged.",
   "shape_visual_note": "Class 1 hash refreshed for two independently reviewed static contribution diagrams. Removing those two marked figures restores all previous source byte for byte; only Class 1 HTML and its stylesheet change.",
   "readability_pilot_note": "Classes 2 and 8 reviewed readability pilot: native optional extensions and self-contained core route. Other HTML content unchanged; only shared learning.js asset fingerprint changes. Original topic hashes retained; exact inverse-delta checks preserve prior whole-page source hashes.",
-  "readability_followup_note": "Only the introduction control guidance and two explicit explorer links in Classes 3/4 changed. All other pages and original topic-body hashes remain unchanged."
+  "readability_followup_note": "Only the introduction control guidance and two explicit explorer links in Classes 3/4 changed. All other pages and original topic-body hashes remain unchanged.",
+  "probability_first_pass_note": "Class 2 Step 8 reviewed addition: visible within-state survivor-rate explanation and a diagnostic check for dependent tests. Removing exactly those two additions restores the prior probability.html byte for byte. All original topic hashes and other page hashes retained."
 }
