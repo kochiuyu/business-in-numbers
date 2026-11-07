@@ -1,0 +1,523 @@
+{
+  "baseline_sha256": "de4510898a5762aa73a301d89e92a7f3192386e22b44a4e21d6618cb3960d2c0",
+  "reviewed_sha256": "443533eada88820024eedc95976adaac1c24db25159c5c9826ea48249a029a98",
+  "patches": [
+    {
+      "token_start": 91,
+      "token_end": 92,
+      "before": "Ten small steps. No rush to the formula.",
+      "after": "Thirteen focused steps. No rush to the formula."
+    },
+    {
+      "token_start": 177,
+      "token_end": 178,
+      "before": "<a href=\"#sampling-step-1\">",
+      "after": "<a href=\"#class4-step-1\">"
+    },
+    {
+      "token_start": 185,
+      "token_end": 186,
+      "before": "<a href=\"#sampling-step-2\">",
+      "after": "<a href=\"#class4-step-2\">"
+    },
+    {
+      "token_start": 193,
+      "token_end": 194,
+      "before": "<a href=\"#sampling-step-3\">",
+      "after": "<a href=\"#class4-step-3\">"
+    },
+    {
+      "token_start": 196,
+      "token_end": 204,
+      "before": "",
+      "after": "</span><b>Find the center of averages</b></a><a href=\"#class4-step-4\"><span>04"
+    },
+    {
+      "token_start": 209,
+      "token_end": 210,
+      "before": "<a href=\"#sampling-step-4\">",
+      "after": "<a href=\"#class4-step-5\">"
+    },
+    {
+      "token_start": 211,
+      "token_end": 212,
+      "before": "04",
+      "after": "05"
+    },
+    {
+      "token_start": 217,
+      "token_end": 218,
+      "before": "<a href=\"#sampling-step-5\">",
+      "after": "<a href=\"#class4-step-6\">"
+    },
+    {
+      "token_start": 219,
+      "token_end": 220,
+      "before": "05",
+      "after": "06"
+    },
+    {
+      "token_start": 225,
+      "token_end": 226,
+      "before": "<a href=\"#sampling-step-6\">",
+      "after": "<a href=\"#class4-step-7\">"
+    },
+    {
+      "token_start": 227,
+      "token_end": 228,
+      "before": "06",
+      "after": "07"
+    },
+    {
+      "token_start": 233,
+      "token_end": 234,
+      "before": "<a href=\"#sampling-step-7\">",
+      "after": "<a href=\"#class4-step-8\">"
+    },
+    {
+      "token_start": 235,
+      "token_end": 236,
+      "before": "07",
+      "after": "08"
+    },
+    {
+      "token_start": 238,
+      "token_end": 239,
+      "before": "Translate a percentage",
+      "after": "Build a sample proportion"
+    },
+    {
+      "token_start": 241,
+      "token_end": 242,
+      "before": "<a href=\"#sampling-step-8\">",
+      "after": "<a href=\"#class4-step-9\">"
+    },
+    {
+      "token_start": 243,
+      "token_end": 252,
+      "before": "08",
+      "after": "09</span><b>Translate the count event</b></a><a href=\"#class4-step-10\"><span>10"
+    },
+    {
+      "token_start": 257,
+      "token_end": 258,
+      "before": "<a href=\"#sampling-step-9\">",
+      "after": "<a href=\"#class4-step-11\">"
+    },
+    {
+      "token_start": 259,
+      "token_end": 268,
+      "before": "09",
+      "after": "11</span><b>Use the Student t reference</b></a><a href=\"#class4-step-12\"><span>12"
+    },
+    {
+      "token_start": 273,
+      "token_end": 274,
+      "before": "<a href=\"#sampling-step-10\">",
+      "after": "<a href=\"#class4-step-13\">"
+    },
+    {
+      "token_start": 275,
+      "token_end": 276,
+      "before": "10",
+      "after": "13"
+    },
+    {
+      "token_start": 285,
+      "token_end": 286,
+      "before": "Step 1 of 10",
+      "after": "Step 1 of 13"
+    },
+    {
+      "token_start": 296,
+      "token_end": 297,
+      "before": "Show all ten steps",
+      "after": "Show all thirteen steps"
+    },
+    {
+      "token_start": 336,
+      "token_end": 337,
+      "before": "Explain what averaging changes (3\u20135):",
+      "after": "Explain what averaging changes (3\u20136):"
+    },
+    {
+      "token_start": 342,
+      "token_end": 343,
+      "before": "Use that uncertainty (6\u201310):",
+      "after": "Use that uncertainty (7\u201311):"
+    },
+    {
+      "token_start": 348,
+      "token_end": 349,
+      "before": "Defend the result (11\u201312):",
+      "after": "Defend the result (12\u201313):"
+    },
+    {
+      "token_start": 354,
+      "token_end": 355,
+      "before": "Read the numbered lessons in order. Before each lab, predict the result in words; then change one input and explain what moved. Essential explanations and answer checks do not require Technical depth, which adds derivations.",
+      "after": "Follow the thirteen steps in order. Before each lab, predict the result in words; then change one input and explain what moved. Essential explanations and answer checks do not require Technical depth, which adds derivations."
+    },
+    {
+      "token_start": 412,
+      "token_end": 414,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-1\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 416,
+      "token_end": 417,
+      "before": "STEP 01 OF 10",
+      "after": "STEP 01 OF 13"
+    },
+    {
+      "token_start": 423,
+      "token_end": 426,
+      "before": "",
+      "after": "<p class=\"c4-reference-note\">The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 462,
+      "token_end": 462,
+      "before": "<p class=\"c4-reference-note\">Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 535,
+      "token_end": 535,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 653,
+      "token_end": 654,
+      "before": "\u2191 Learning path",
+      "after": "\u2190 Learning path"
+    },
+    {
+      "token_start": 655,
+      "token_end": 656,
+      "before": "<a class=\"button\" href=\"#sampling-step-2\">",
+      "after": "<a class=\"button\" href=\"#class4-step-2\">"
+    },
+    {
+      "token_start": 661,
+      "token_end": 663,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-2\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 665,
+      "token_end": 666,
+      "before": "STEP 02 OF 10",
+      "after": "STEP 02 OF 13"
+    },
+    {
+      "token_start": 672,
+      "token_end": 675,
+      "before": "",
+      "after": "<p class=\"c4-reference-note\">The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 739,
+      "token_end": 739,
+      "before": "<p class=\"c4-reference-note\">Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 885,
+      "token_end": 887,
+      "before": "<a class=\"c4-back\" href=\"#sampling-step-1\">\u2190 Choose the population",
+      "after": "<a class=\"c4-back\" href=\"#class4-step-1\">\u2190 Previous step"
+    },
+    {
+      "token_start": 888,
+      "token_end": 913,
+      "before": "<a class=\"button\" href=\"#sampling-step-3\">",
+      "after": "<a class=\"button\" href=\"#class4-step-3\">Next \u00b7 Find the center of averages \u2192</a></nav></section><section class=\"c4-part\" id=\"sampling-center\" aria-labelledby=\"sampling-center-title\"><span class=\"c4-step-anchor\" id=\"class4-step-3\" aria-hidden=\"true\"></span><div class=\"c4-part-heading\"><div class=\"eyebrow\">STEP 03 OF 13</div><h2 id=\"sampling-center-title\">Find the center of averages</h2></div>{{samvisual:center}}<p class=\"c4-reference-note\">The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><nav class=\"c4-step-nav\" aria-label=\"Step 3 navigation\"><a class=\"c4-back\" href=\"#class4-step-2\">\u2190 Previous step</a><a class=\"button\" href=\"#class4-step-4\">"
+    },
+    {
+      "token_start": 918,
+      "token_end": 920,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-4\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 922,
+      "token_end": 923,
+      "before": "STEP 03 OF 10",
+      "after": "STEP 04 OF 13"
+    },
+    {
+      "token_start": 929,
+      "token_end": 932,
+      "before": "",
+      "after": "<p class=\"c4-reference-note\">The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 976,
+      "token_end": 976,
+      "before": "<p class=\"c4-reference-note\">Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 1043,
+      "token_end": 1046,
+      "before": "<nav class=\"c4-step-nav\" aria-label=\"Step 3 navigation\"><a class=\"c4-back\" href=\"#sampling-step-2\">\u2190 Make the averages",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 4 navigation\"><a class=\"c4-back\" href=\"#class4-step-3\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1047,
+      "token_end": 1048,
+      "before": "<a class=\"button\" href=\"#sampling-step-4\">",
+      "after": "<a class=\"button\" href=\"#class4-step-5\">"
+    },
+    {
+      "token_start": 1053,
+      "token_end": 1055,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-5\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1057,
+      "token_end": 1058,
+      "before": "STEP 04 OF 10",
+      "after": "STEP 05 OF 13"
+    },
+    {
+      "token_start": 1064,
+      "token_end": 1067,
+      "before": "",
+      "after": "<p class=\"c4-reference-note\">The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 1122,
+      "token_end": 1122,
+      "before": "<p class=\"c4-reference-note\">Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 1185,
+      "token_end": 1188,
+      "before": "<nav class=\"c4-step-nav\" aria-label=\"Step 4 navigation\"><a class=\"c4-back\" href=\"#sampling-step-3\">\u2190 Separate SD from SE",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 5 navigation\"><a class=\"c4-back\" href=\"#class4-step-4\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1189,
+      "token_end": 1190,
+      "before": "<a class=\"button\" href=\"#sampling-step-5\">",
+      "after": "<a class=\"button\" href=\"#class4-step-6\">"
+    },
+    {
+      "token_start": 1195,
+      "token_end": 1197,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-6\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1199,
+      "token_end": 1200,
+      "before": "STEP 05 OF 10",
+      "after": "STEP 06 OF 13"
+    },
+    {
+      "token_start": 1207,
+      "token_end": 1208,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1368,
+      "token_end": 1371,
+      "before": "<nav class=\"c4-step-nav\" aria-label=\"Step 5 navigation\"><a class=\"c4-back\" href=\"#sampling-step-4\">\u2190 Follow one growing sample",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 6 navigation\"><a class=\"c4-back\" href=\"#class4-step-5\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1372,
+      "token_end": 1373,
+      "before": "<a class=\"button\" href=\"#sampling-step-6\">",
+      "after": "<a class=\"button\" href=\"#class4-step-7\">"
+    },
+    {
+      "token_start": 1378,
+      "token_end": 1380,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-7\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1382,
+      "token_end": 1383,
+      "before": "STEP 06 OF 10",
+      "after": "STEP 07 OF 13"
+    },
+    {
+      "token_start": 1390,
+      "token_end": 1391,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1520,
+      "token_end": 1523,
+      "before": "<nav class=\"c4-step-nav\" aria-label=\"Step 6 navigation\"><a class=\"c4-back\" href=\"#sampling-step-5\">\u2190 Compare many samples",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 7 navigation\"><a class=\"c4-back\" href=\"#class4-step-6\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1524,
+      "token_end": 1526,
+      "before": "<a class=\"button\" href=\"#sampling-step-7\">Next \u00b7 Translate a percentage \u2192",
+      "after": "<a class=\"button\" href=\"#class4-step-8\">Next \u00b7 Build a sample proportion \u2192"
+    },
+    {
+      "token_start": 1530,
+      "token_end": 1532,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-8\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1534,
+      "token_end": 1535,
+      "before": "STEP 07 OF 10",
+      "after": "STEP 08 OF 13"
+    },
+    {
+      "token_start": 1537,
+      "token_end": 1538,
+      "before": "Translate a percentage",
+      "after": "Build a sample proportion"
+    },
+    {
+      "token_start": 1540,
+      "token_end": 1541,
+      "before": "{{samvisual:proportion}}",
+      "after": "{{samvisual:binary}}"
+    },
+    {
+      "token_start": 1542,
+      "token_end": 1543,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1592,
+      "token_end": 1616,
+      "before": "",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 8 navigation\"><a class=\"c4-back\" href=\"#class4-step-7\">\u2190 Previous step</a><a class=\"button\" href=\"#class4-step-9\">Next \u00b7 Translate the count event \u2192</a></nav></section><section class=\"c4-part\" id=\"sampling-count-event\" aria-labelledby=\"sampling-count-event-title\"><span class=\"c4-step-anchor\" id=\"class4-step-9\" aria-hidden=\"true\"></span><div class=\"c4-part-heading\"><div class=\"eyebrow\">STEP 09 OF 13</div><h2 id=\"sampling-count-event-title\">Translate the count event</h2></div>{{samvisual:proportion}}<p class=\"c4-reference-note\">The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 1754,
+      "token_end": 1757,
+      "before": "<nav class=\"c4-step-nav\" aria-label=\"Step 7 navigation\"><a class=\"c4-back\" href=\"#sampling-step-6\">\u2190 Measure an unusual average",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 9 navigation\"><a class=\"c4-back\" href=\"#class4-step-8\">\u2190 Previous step"
+    },
+    {
+      "token_start": 1758,
+      "token_end": 1759,
+      "before": "<a class=\"button\" href=\"#sampling-step-8\">",
+      "after": "<a class=\"button\" href=\"#class4-step-10\">"
+    },
+    {
+      "token_start": 1764,
+      "token_end": 1766,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-10\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1768,
+      "token_end": 1769,
+      "before": "STEP 08 OF 10",
+      "after": "STEP 10 OF 13"
+    },
+    {
+      "token_start": 1774,
+      "token_end": 1775,
+      "before": "{{samvisual:student}}",
+      "after": "{{samvisual:scale}}"
+    },
+    {
+      "token_start": 1776,
+      "token_end": 1777,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1840,
+      "token_end": 1864,
+      "before": "",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 10 navigation\"><a class=\"c4-back\" href=\"#class4-step-9\">\u2190 Previous step</a><a class=\"button\" href=\"#class4-step-11\">Next \u00b7 Use the Student t reference \u2192</a></nav></section><section class=\"c4-part\" id=\"sampling-student\" aria-labelledby=\"sampling-student-title\"><span class=\"c4-step-anchor\" id=\"class4-step-11\" aria-hidden=\"true\"></span><div class=\"c4-part-heading\"><div class=\"eyebrow\">STEP 11 OF 13</div><h2 id=\"sampling-student-title\">Use the Student t reference</h2></div>{{samvisual:student}}<p class=\"c4-reference-note\">The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 2016,
+      "token_end": 2019,
+      "before": "<nav class=\"c4-step-nav\" aria-label=\"Step 8 navigation\"><a class=\"c4-back\" href=\"#sampling-step-7\">\u2190 Translate a percentage",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 11 navigation\"><a class=\"c4-back\" href=\"#class4-step-10\">\u2190 Previous step"
+    },
+    {
+      "token_start": 2020,
+      "token_end": 2021,
+      "before": "<a class=\"button\" href=\"#sampling-step-9\">",
+      "after": "<a class=\"button\" href=\"#class4-step-12\">"
+    },
+    {
+      "token_start": 2026,
+      "token_end": 2028,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-12\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2030,
+      "token_end": 2031,
+      "before": "STEP 09 OF 10",
+      "after": "STEP 12 OF 13"
+    },
+    {
+      "token_start": 2036,
+      "token_end": 2040,
+      "before": "{{samvisual:diagnosis}}\n",
+      "after": "{{samvisual:diagnosis}}<p class=\"c4-reference-note\">The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 2158,
+      "token_end": 2158,
+      "before": "\n<p class=\"c4-reference-note\">Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 2227,
+      "token_end": 2230,
+      "before": "<nav class=\"c4-step-nav\" aria-label=\"Step 9 navigation\"><a class=\"c4-back\" href=\"#sampling-step-8\">\u2190 Estimate the unknown spread",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 12 navigation\"><a class=\"c4-back\" href=\"#class4-step-11\">\u2190 Previous step"
+    },
+    {
+      "token_start": 2231,
+      "token_end": 2232,
+      "before": "<a class=\"button\" href=\"#sampling-step-10\">",
+      "after": "<a class=\"button\" href=\"#class4-step-13\">"
+    },
+    {
+      "token_start": 2237,
+      "token_end": 2239,
+      "before": "",
+      "after": "<span class=\"c4-step-anchor\" id=\"class4-step-13\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2241,
+      "token_end": 2242,
+      "before": "STEP 10 OF 10",
+      "after": "STEP 13 OF 13"
+    },
+    {
+      "token_start": 2249,
+      "token_end": 2250,
+      "before": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open an explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 2449,
+      "token_end": 2452,
+      "before": "<nav class=\"c4-step-nav\" aria-label=\"Step 10 navigation\"><a class=\"c4-back\" href=\"#sampling-step-9\">\u2190 Check the sampling design",
+      "after": "<nav class=\"c4-step-nav\" aria-label=\"Step 13 navigation\"><a class=\"c4-back\" href=\"#class4-step-12\">\u2190 Previous step"
+    }
+  ],
+  "reviewed_dist_sha256": "cdd0aeaeb72882975b3b06311ca93c42bbd3be6b2068e2d978543d890e070c51"
+}

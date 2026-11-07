@@ -3,6 +3,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const V=require('./src/class-four-visuals.js'),S=require('./src/sampling-core.js');let checks=0;
 const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m)},near=(a,b)=>ok(Math.abs(a-b)<1e-10);
 const source=fs.readFileSync('src/class-four.js','utf8'),html=fs.readFileSync('dist/sampling-distributions.html','utf8'),css=fs.readFileSync('src/class-four.css','utf8');
+const stepIds=["sampling-step-1", "sampling-step-2", "sampling-center", "sampling-step-3", "sampling-step-4", "sampling-step-5", "sampling-step-6", "sampling-step-7", "sampling-count-event", "sampling-step-8", "sampling-student", "sampling-step-9", "sampling-step-10"];
 function topics(s){const out=[];const re=/<\/?details\b[^>]*>/g;let m,depth=0,start=-1;while((m=re.exec(s))){if(m[0].startsWith('</')){depth--;if(depth===0&&start!==-1){out.push(s.slice(start,re.lastIndex));start=-1;}}else{if(depth===0&&m[0].includes('class="lesson"'))start=m.index;depth++;}}return out;}
 eq(topics(fs.readFileSync('src/sampling-distributions.html','utf8')).map(t=>crypto.createHash('sha256').update(t).digest('hex')),JSON.parse(fs.readFileSync('test-class4-reference.json','utf8')).topic_sha256,'all 12 original topics are unchanged');
 eq((html.match(/<math xmlns=/g)||[]).length,32);eq((html.match(/class="visual-practice"/g)||[]).length,4);
@@ -27,20 +28,21 @@ class Element{
 function dom(){const root=new Element('document'),stack=[root],voids=new Set(['META','LINK','BR','INPUT','HR','IMG','SOURCE','WBR']);let clean=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/<!--[\s\S]*?-->/g,'');for(const m of clean.matchAll(/<\/?([a-z][a-z\d-]*)\b([^>]*?)>/gi)){const closing=m[0].startsWith('</');if(closing){if(stack.at(-1).tagName===m[1].toUpperCase())stack.pop();continue;}const attrs={};for(const a of m[2].matchAll(/([a-z][\w:-]*)(?:="([^"]*)")?/gi))attrs[a[1]]=a[2]??'';const el=new Element(m[1],attrs);el.parentElement=stack.at(-1);el.parentElement.children.push(el);if(!voids.has(el.tagName)&&!m[0].endsWith('/>'))stack.push(el);}root.body=root.querySelector('body');root.getElementById=id=>root.querySelector('#'+id);for(const m of html.matchAll(/<h2 id="([^"]+)"[^>]*>([\s\S]*?)<\/h2>/g)){const el=root.getElementById(m[1]);if(el)el.textContent=m[2].replace(/<[^>]*>/g,'');}return root;}
 function run(reduced,hash=''){const d=dom(),events={},loc={hash},media={matches:reduced,addEventListener:(k,f)=>media[k]=f};const w={matchMedia:()=>media,addEventListener:(k,f)=>(events[k]||=[]).push(f)};vm.runInNewContext(source,{document:d,window:w,location:loc,ClassFourViews:V});return{d,events,loc,media};}
 
-const anchors=[['sampling',1],['statistics',2],['sampling-lab',2],['mean-and-se',3],['lln',4],['clt',5],['known-sigma',6],['proportions',7],['binomial-approximation',7],['unknown-sigma',8],['student-t',8],['diagnostics',9],['tools',10],['practice',10]];
+const anchors=[['sampling',1],['statistics',2],['sampling-lab',2],['mean-and-se',4],['lln',5],['clt',6],['known-sigma',7],['proportions',8],['binomial-approximation',9],['unknown-sigma',10],['student-t',11],['diagnostics',12],['tools',13],['practice',13]];
 for(const reduced of [false,true]){
  const{d,events,loc,media}=run(reduced),parts=d.querySelectorAll('.c4-part'),visible=()=>parts.map((p,i)=>!p.hidden?i+1:null).filter(Boolean),fire=k=>(events[k]||[]).forEach(fn=>fn());
  eq(visible(),[1]);eq(d.getElementById('c4-motion').checked,!reduced);eq(d.body.classList.contains('c4-no-motion'),reduced);
- for(let n=2;n<=10;n++){loc.hash='#sampling-step-'+n;fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c4-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
+ for(let n=2;n<=13;n++){loc.hash='#class4-step-'+n;fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c4-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
  for(const[id,n]of anchors){loc.hash='#'+id;fire('hashchange');eq(visible(),[n],id);for(let p=d.getElementById(id);p;p=p.parentElement)if(p.tagName==='DETAILS')ok(p.open,id+' open ancestor');}
- d.getElementById('c4-show-all').fire('click');eq(visible(),[1,2,3,4,5,6,7,8,9,10]);d.getElementById('c4-show-all').fire('click');eq(visible(),[10]);
+ d.getElementById('c4-show-all').fire('click');eq(visible(),Array.from({length:13},(_,i)=>i+1));d.getElementById('c4-show-all').fire('click');eq(visible(),[13]);
  for(const b of d.querySelectorAll('[data-c4-visual]')){b.fire('click');eq(b.getAttribute('aria-pressed'),'true');eq(d.querySelectorAll(`[data-c4-visual="${b.dataset.c4Visual}"]`).filter(x=>x.getAttribute('aria-pressed')==='true').length,1);ok(d.getElementById('c4-'+b.dataset.c4Visual+'-result').innerHTML.length>200);}
  const pick=(key,v)=>d.querySelector(`[data-c4-visual="${key}"][data-view="${v}"]`).fire('click');pick('decision','simulate');pick('pairs','10');fire('beforeprint');ok(d.getElementById('c4-decision-result').innerHTML.includes('1.2 min'));fire('afterprint');ok(d.getElementById('c4-decision-result').innerHTML.includes('2.4 min'));ok(d.getElementById('c4-pairs-result').innerHTML.includes('1 of 9'));
  d.getElementById('c4-motion').checked=false;d.getElementById('c4-motion').fire('change');ok(d.body.classList.contains('c4-no-motion'));media.matches=true;media.change();eq(d.getElementById('c4-motion').checked,false);
  loc.hash='#%bad';fire('hashchange');loc.hash='#missing';fire('hashchange');ok(true);
 }
-for(const[id,n]of anchors){const{d}=run(false,'#'+id);ok(!d.getElementById('sampling-step-'+n).hidden,id+' direct link');}
-const staticDOM=dom();eq(staticDOM.querySelectorAll('.c4-part').filter(p=>!p.hidden).length,10);eq(staticDOM.querySelectorAll('.c4-visual-controls').filter(p=>p.hidden).length,10);ok(staticDOM.querySelectorAll('.c4-part').every(p=>p.querySelector('.c4-scene')));
+for(const[id,n]of anchors){const{d}=run(false,'#'+id);ok(!d.getElementById(stepIds[n-1]).hidden,id+' direct link');}
+for(const reduced of [false,true])for(let n=1;n<=13;n++)for(const id of [stepIds[n-1],'class4-step-'+n]){const{d,events,loc}=run(reduced,'#'+id);eq(d.querySelectorAll('.c4-part').filter(p=>!p.hidden).map(p=>p.attrs.id),[stepIds[n-1]],id+' direct route');loc.hash='#'+id;for(const fn of events.hashchange||[])fn();ok(d.getElementById(stepIds[n-1]).querySelector('h2').focused,id+' heading focus');}
+const staticDOM=dom();eq(staticDOM.querySelectorAll('.c4-part').filter(p=>!p.hidden).length,13);eq(staticDOM.querySelectorAll('.c4-visual-controls').filter(p=>p.hidden).length,10);ok(staticDOM.querySelectorAll('.c4-part').every(p=>p.querySelector('.c4-scene')));
 // Browser history can return to the original URL without a fragment.
 for(const reduced of [false,true]){
  const {d,events,loc}=run(reduced),parts=d.querySelectorAll('.c4-part');

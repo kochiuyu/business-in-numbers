@@ -37,3 +37,6 @@
 .class-four-case .reading-extension>.guided-try,.class-four-case .reading-extension>.lesson-bridge{margin:12px 0}
 .class-four-case .c4-path-controls>div{min-width:0}
 .class-four-case .c4-path-controls b{line-height:1.6;overflow-wrap:anywhere}
+
+/* Focused steps retain legible arithmetic and original-unit comparisons. */
+.c4-step-anchor{display:block;scroll-margin-top:6rem}.c4-core-working{padding:1rem;background:#f2f5ed;border-left:3px solid #345e48;margin:1rem 0;overflow-wrap:anywhere}.c4-core-working p:last-child{margin-bottom:0}.c4-core-scroll{overflow-x:auto;margin:1rem 0}.c4-core-scroll:focus-visible{outline:3px solid #b75624;outline-offset:3px}.c4-core-scroll table{border-collapse:collapse;width:100%;min-width:390px;font-size:.9rem}.c4-core-scroll caption{text-align:left;font-weight:700;padding:.5rem 0}.c4-core-scroll th,.c4-core-scroll td{text-align:left;padding:.65rem;border-bottom:1px solid #cad4c3;vertical-align:top}.c4-core-scroll thead{background:#e8eddf}.c4-core-scroll th{font-weight:700}@media print{.c4-core-scroll{overflow:visible}.c4-core-scroll table{min-width:0;font-size:9pt}.c4-core-working{break-inside:avoid}}

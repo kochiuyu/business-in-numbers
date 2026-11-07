@@ -30,6 +30,8 @@ Class 2 follows eleven teaching steps: outcomes and events, event operations and
 
 Class 3 follows fifteen focused steps: mapping, PMF, CDF, expectation, variance, joint probabilities, covariance, trials and draws, arrivals, density, waits, normal probabilities, normal cutoffs, inference families, and a capacity decision. Essential calculations remain visible; full explanations, proofs and all eleven distribution families remain available. Sequential links use `#class3-step-1` through `#class3-step-15`; original `#rv-step-*` and topic links keep their subjects.
 
+Class 4 follows thirteen focused steps: sampling design, exact sampling distributions, unbiasedness, variance and SE, LLN, CLT, known-SD probabilities, proportion moments, integer events and continuity correction, estimated scale, Student t, diagnostics, and a business decision. Essential arithmetic stays visible; complete explanations and proofs remain available. Sequential links use `#class4-step-1` through `#class4-step-13`; original `#sampling-step-*` and topic links retain their subjects.
+
 Run `npm run test:navigation` after building for navigation structure and interaction regression checks. Browser QA should also check narrow phone layouts, keyboard focus, Back/Forward, and the no-JavaScript fallback.
 
 ## GitHub Pages
