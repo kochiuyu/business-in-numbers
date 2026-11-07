@@ -166,5 +166,29 @@
     "tex": "\\begin{aligned}\\widehat{\\operatorname{Var}}(a)&=\\frac{459}{784},&\\widehat{\\operatorname{Var}}(b)&=\\frac9{392},&\\widehat{\\operatorname{Cov}}(a,b)&=-\\frac{81}{784},\\\\\\widehat{\\operatorname{Var}}(a+4.5b)&=\\frac{459}{784}+4.5^2\\frac9{392}+2(4.5)\\!\\left(-\\frac{81}{784}\\right)\\\\&=\\frac{27}{224}\\approx0.120536,\\\\SE(a+4.5b)&=\\sqrt{\\frac{27}{224}}\\approx0.3472.\\end{aligned}",
     "text": "Estimated variance of the intercept is 459 over 784, slope variance is 9 over 392 and their covariance is negative 81 over 784. Variance of a plus 4.5 b includes both variance terms and twice 4.5 times the covariance. The result is 27 over 224, giving standard error about 0.3472 tens of orders.",
     "display": true
+  },
+  "depth-normal-balance": {
+    "title": "Expand the intercept balance",
+    "tex": "\\begin{aligned}0&=\\sum_i(y_i-a-bx_i)\\\\&=\\sum_i y_i-na-b\\sum_i x_i,\\\\0&=\\bar y-a-b\\bar x,\\\\a&=\\bar y-b\\bar x.\\end{aligned}",
+    "text": "The sum of residuals is the sum of y minus n times a minus b times the sum of x. Divide by n: zero equals y mean minus a minus b times x mean. Therefore a equals y mean minus b times x mean.",
+    "display": true
+  },
+  "depth-normal-centering": {
+    "title": "Show the cancellation that creates centered sums",
+    "tex": "\\begin{aligned}\\sum_i(x_i-\\bar x)&=0,&\\sum_i(y_i-\\bar y)&=0,\\\\\\sum_i x_i(y_i-\\bar y)&=S_{xy}+\\bar x\\sum_i(y_i-\\bar y)\\\\&=S_{xy},\\\\\\sum_i x_i(x_i-\\bar x)&=S_{xx}+\\bar x\\sum_i(x_i-\\bar x)\\\\&=S_{xx},\\\\0&=S_{xy}-bS_{xx},\\\\b&=\\frac{S_{xy}}{S_{xx}}\\quad(S_{xx}>0).\\end{aligned}",
+    "text": "Deviations from each mean sum to zero. The sum of x times centered y is Sxy plus x mean times the sum of centered y, so it equals Sxy. The sum of x times centered x similarly equals Sxx. The second balance becomes zero equals Sxy minus b times Sxx. If Sxx is positive, b equals Sxy divided by Sxx.",
+    "display": true
+  },
+  "depth-normal-numbers": {
+    "title": "Solve the two equations for the eight market-weeks",
+    "tex": "\\begin{aligned}8a+36b&=140,&36a+204b&=711,\\\\a&=17.5-4.5b,\\\\36(17.5-4.5b)+204b&=711,\\\\(204-162)b&=711-630,\\\\42b&=81,\\\\b&=\\frac{27}{14},&a&=\\frac{247}{28}.\\end{aligned}",
+    "text": "The data give 8 a plus 36 b equals 140 and 36 a plus 204 b equals 711. The first gives a equals 17.5 minus 4.5 b. Substituting into the second gives 42 b equals 81. Thus b is 27 over 14 and a is 247 over 28.",
+    "display": true
+  },
+  "depth-normal-minimum": {
+    "title": "Every other line has a larger squared-error total",
+    "tex": "\\begin{aligned}&D(a_*+u,b_*+v)-D(a_*,b_*)\\\\&\\quad=\\sum_i(u+vx_i)^2\\\\&\\quad=n(u+v\\bar x)^2+v^2S_{xx}.\\end{aligned}",
+    "text": "Let a star and b star be the fitted coefficients. Changing them by u and v increases the squared-error total by the sum of squared quantities u plus v x. This is n times the square of u plus v x mean, plus v squared times Sxx. When Sxx is positive, the increase is positive unless u and v are both zero.",
+    "display": true
   }
 }

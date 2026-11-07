@@ -4,9 +4,9 @@ const V=require('./src/class-eight-visuals.js'),R=require('./src/regression-core
 const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m)},near=(a,b)=>ok(Math.abs(a-b)<1e-9);
 const source=fs.readFileSync('src/class-eight.js','utf8'),html=fs.readFileSync('dist/regression.html','utf8'),css=fs.readFileSync('src/class-eight.css','utf8'),reference=JSON.parse(fs.readFileSync('test-class8-reference.json','utf8'));
 function topics(s){const out=[];const re=/<\/?details\b[^>]*>/g;let m,depth=0,start=-1;while((m=re.exec(s))){if(m[0].startsWith('</')){depth--;if(depth===0&&start!==-1){out.push(s.slice(start,re.lastIndex));start=-1;}}else{if(depth===0&&m[0].includes('class="lesson"'))start=m.index;depth++;}}return out;}
-eq(topics(fs.readFileSync('src/regression.html','utf8')).map(t=>crypto.createHash('sha256').update(t).digest('hex')),reference.topic_sha256,'all 15 original topic bodies unchanged');
+eq(topics(fs.readFileSync('src/regression.html','utf8').replace(/<!-- normal-depth:start -->[\s\S]*?<!-- normal-depth:end -->/,'')).map(t=>crypto.createHash('sha256').update(t).digest('hex')),reference.topic_sha256,'all 15 original topic bodies unchanged');
 for(const[f,hash]of Object.entries(reference.other_pages))eq(crypto.createHash('sha256').update(fs.readFileSync('dist/'+f)).digest('hex'),hash,'unchanged page '+f);
-eq((html.match(/<math xmlns=/g)||[]).length,28);eq((html.match(/class="visual-practice"/g)||[]).length,4);
+eq((html.match(/<math xmlns=/g)||[]).length,32);eq((html.match(/class="visual-practice"/g)||[]).length,4);
 const choices=Object.fromEntries(Object.entries(V.specs).map(([k,s])=>[k,s[4].map(b=>b[0])]));
 for(const[key,values]of Object.entries(choices)){ok(V.render(key).includes('Pause'));ok(V.render(key).includes('c8-scene'));for(const v of values){const out=V.views[key](v);ok(out.length>200);ok(!/NaN|undefined/.test(out),key+' '+v);for(const match of out.matchAll(/<svg[\s\S]*?<\/svg>/g)){ok(match[0].includes('role="img"'));ok(match[0].includes('<title'));ok(match[0].includes('<desc'));}}}
 const d=R.fit(R.DEFAULT_PAIRS,.05,4.5),noisy=R.fit(R.DEFAULT_PAIRS.map(([x,y],i)=>[x,d.fitted[i]+2*d.residuals[i]]),.05,4.5),units=R.fit(R.DEFAULT_PAIRS.map(([x,y])=>[2*x,y]),.05,9),negative=R.fit(R.DEFAULT_PAIRS.map(([x,y])=>[x,35-y]),.05,4.5),curve=R.fit(V.curved());
