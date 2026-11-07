@@ -26,6 +26,8 @@ The shared header in `scripts/navigation.cjs` separates the eight-class course m
 
 Class 1 follows eight teaching steps: records, center, quartiles and boxplots, variance and standard deviation, skewness, kurtosis, relationships, and a manager briefing. The core calculation or action stays visible in every step; complete explanations remain available below it. Sequential links use `#class1-step-1` through `#class1-step-8`. The original `#case-part-*` links retain their subject destinations, so their numeric suffixes no longer describe the reading order.
 
+Class 2 follows eleven teaching steps: outcomes and events, event operations and validity, conditioning, independence, weighted paths, Bayes, odds and a first update, repeated evidence, sequential choices, arrangements and selections, and a business decision. Each core calculation stays visible. Sequential links use `#class2-step-1` through `#class2-step-11`; original `#prob-step-*` links keep their subject destinations.
+
 Run `npm run test:navigation` after building for navigation structure and interaction regression checks. Browser QA should also check narrow phone layouts, keyboard focus, Back/Forward, and the no-JavaScript fallback.
 
 ## GitHub Pages

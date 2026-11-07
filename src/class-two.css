@@ -59,3 +59,13 @@
 .class-two-case .reading-extension .c2-depth-worked{margin-top:12px}
 .class-two-case .c2-path-controls>div{min-width:0}
 .class-two-case .c2-path-controls b{line-height:1.6;overflow-wrap:anywhere}
+
+/* Eleven-step route: readable arithmetic in the first pass. */
+.class-two-case .step-anchor{display:block;scroll-margin-top:20px}
+.c2-worked-core{margin:22px 0;padding:18px 20px;border:1px solid #b9cab1;border-radius:6px;background:#f0f4e9;max-width:76ch}
+.c2-worked-core h4{font-size:16px;margin:0 0 12px}.c2-worked-core p,.c2-worked-core li{font-size:16px;line-height:1.7}.c2-worked-core p:last-child{margin-bottom:0}.c2-worked-core ol{padding-left:22px}
+.c2-compare-cards,.c2-choice-stages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}
+.c2-compare-cards article,.c2-choice-stages article{padding:20px;background:#edf2e6;border:1px solid #bdceb4;border-radius:6px;min-width:0}
+.c2-compare-cards h4,.c2-choice-stages h4{margin:0 0 12px;font-size:17px}.c2-compare-cards p,.c2-choice-stages p{font-size:15px;line-height:1.7;margin:10px 0}.c2-choice-stages{grid-template-columns:repeat(3,minmax(0,1fr))}.c2-choice-stages strong{font:42px Georgia,serif}.c2-compare-cards .c2-model-count{font:24px Georgia,serif}
+@media(max-width:700px){.c2-compare-cards,.c2-choice-stages{grid-template-columns:1fr}.c2-worked-core{padding:14px}.c2-worked-core p,.c2-worked-core li{font-size:15px}}
+@media print{.c2-worked-core,.c2-compare-cards,.c2-choice-stages{break-inside:avoid}.c2-compare-cards{grid-template-columns:1fr 1fr}.c2-choice-stages{grid-template-columns:repeat(3,minmax(0,1fr))}}

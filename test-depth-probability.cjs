@@ -3,9 +3,9 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
 let checks=0;const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m)},near=(a,b)=>ok(Math.abs(a-b)<1e-12,`${a} = ${b}`);
 const src=fs.readFileSync('src/probability.html','utf8'),built=fs.readFileSync('dist/probability.html','utf8');
 for(const [id,step,phrases] of [
- ['c2-bag-weights',5,['50/80','5/11','1/24','selection process','branch uniformly']],
- ['c2-odds-parts',6,['32/56','4/(4 + 3)','57.14%','8/11','relative weights']],
- ['c2-count-allowed',7,['16 allowed meals','18 − 2 = 16','4/16 = 25%','6/16 = 37.5%','equally likely']]
+ ['c2-bag-weights',6,['50/80','5/11','1/24','selection process','branch uniformly']],
+ ['c2-odds-parts',7,['32/56','4/(4 + 3)','57.14%','8/11','relative weights']],
+ ['c2-count-allowed',9,['16 allowed meals','18 − 2 = 16','4/16 = 25%','6/16 = 37.5%','equally likely']]
 ]){
  const pattern=new RegExp('<section class="c2-depth-worked" id="'+id+'"[\\s\\S]*?</section>');
  for(const [name,html]of [['source',src],['built',built]]){
@@ -15,7 +15,7 @@ for(const [id,step,phrases] of [
   ok(block.includes('<details class="c2-check"><summary>Check:'),'native disclosure for practice');
   ok(!/\bhidden\b|<script|<input|<button/.test(block),'complete static explanation without scripts');
   for(const phrase of phrases)ok(block.includes(phrase),'retained numerical reasoning: '+phrase);
-  const start=html.indexOf(`id="prob-step-${step}"`),end=html.indexOf(`id="prob-step-${step+1}"`);ok(html.indexOf(`id="${id}"`)>start&&html.indexOf(`id="${id}"`)<end,'correct lesson step');
+  const start=html.indexOf(`id="class2-step-${step}"`),end=html.indexOf(`id="class2-step-${step+1}"`);ok(html.indexOf(`id="${id}"`)>start&&html.indexOf(`id="${id}"`)<end,'correct lesson step');
  }
 }
 // Independent weighted enumeration over individual balls, not just the displayed formula.

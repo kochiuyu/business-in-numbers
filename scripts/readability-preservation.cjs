@@ -6,6 +6,7 @@ const crypto = require('node:crypto');
 const reference = require('../test-readability-reference.json');
 function restore(source, page) {
   if (page === 'index') source = require('./class-one-preservation.cjs').restore(source);
+  if (page === 'probability') source = require('./class-two-preservation.cjs').restore(source);
   const record = reference.pages[page];
   if (!record) return source;
   const tokens = source.match(/<[^>]*>|[^<]+/g) || [];

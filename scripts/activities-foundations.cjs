@@ -59,7 +59,7 @@ module.exports = [
     explanation: '“And” is intersection; inclusive “or” is union. Express and on time is A ∩ Bᶜ. Neither express nor late is Aᶜ ∩ Bᶜ, equivalently the complement of A ∪ B. Specify the event before selecting a denominator or formula.'
   },
   {
-    id: 'c2-mix-rates', file: 'probability.html', afterTopic: 5,
+    id: 'c2-mix-rates', file: 'probability.html', afterTopic: 6,
     title: 'Audit a tempting average', kind: 'choice',
     prompt: 'A retailer sends 80% of parcels by Route A, where 5% arrive late, and 20% by Route B, where 25% arrive late. Routes cover all parcels and do not overlap. An analyst reports an overall late rate of 15%, the average of 5% and 25%. Which response is justified?',
     options: [

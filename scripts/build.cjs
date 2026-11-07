@@ -76,7 +76,7 @@ function build() {
 function buildProbability() {
   const read=name=>fs.readFileSync(path.join(src,name),'utf8');
   const equations=JSON.parse(read('probability-math.json'));
-  const template=read('probability.html').replace(/\{\{probvisual:([a-z]+)\}\}/g,(_,name)=>require('./class-two-visuals.cjs').render(name)).replace(/\{\{prob(python|output):([a-z]+)\}\}/g,(_,kind,name)=>{
+  const template=read('probability.html').replace(/\{\{probvisual:([a-z-]+)\}\}/g,(_,name)=>require('./class-two-visuals.cjs').render(name)).replace(/\{\{prob(python|output):([a-z]+)\}\}/g,(_,kind,name)=>{
     const text=read(`probability-examples/${name}.${kind==='python'?'py':'txt'}`);
     return `<pre class="code-block" tabindex="0" role="region" aria-label="${kind==='python'?'Python code':'Checked Python output'}: ${esc(name)}. Scroll horizontally if needed."><code>${esc(text)}</code></pre>`;
   });
