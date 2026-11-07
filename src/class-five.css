@@ -26,3 +26,13 @@
 .c5-extra .c5-extra-scroll-hint{display:none;font-size:13px;line-height:1.6}
 @media(max-width:700px){.c5-extra .c5-extra-scroll-hint{display:block}}
 @media print{.c5-extra-scroll{overflow:visible}.c5-extra .c5-extra-scroll svg{min-width:0;width:100%;max-width:100%}.c5-extra .c5-extra-scroll-hint{display:none}}
+
+/* Readability rollout: short first-pass explanations and optional worked depth. */
+.class-five-case .reading-controls p,.class-five-case .lesson-body>p,.class-five-case .lesson-body>ul,.class-five-case .lesson-body>ol,.class-five-case .reading-extension p,.class-five-case .reading-extension ol,.class-five-case .reading-extension ul{max-width:72ch;line-height:1.7}
+.class-five-case .reading-core{max-width:68ch;line-height:1.7}
+.class-five-case .reading-extension{min-width:0}
+.class-five-case .reading-extension>summary{line-height:1.6;overflow-wrap:anywhere}
+.class-five-case .reading-extension>summary:focus-visible{outline:3px solid #bc5f24;outline-offset:4px}
+.class-five-case .reading-extension>.guided-try,.class-five-case .reading-extension>.lesson-bridge{margin:12px 0}
+.class-five-case .c5-path-controls>div{min-width:0}
+.class-five-case .c5-path-controls b{line-height:1.6;overflow-wrap:anywhere}

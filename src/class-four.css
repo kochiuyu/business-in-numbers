@@ -27,3 +27,13 @@
 /* Worked reasoning stays readable without JavaScript or motion. */
 .c4-reasoning-path{display:grid;gap:12px;margin:20px 0}.c4-reasoning-path>div{border-left:3px solid #43684b;padding:14px 18px;background:#edf2e6;min-width:0}.c4-reasoning-path b{font-size:16px}.c4-reasoning-path p{margin:8px 0 0;overflow-wrap:anywhere}
 .c4-extra summary:focus-visible{outline:3px solid #b45a25;outline-offset:3px}
+
+/* Readability rollout: short first-pass explanations and optional worked depth. */
+.class-four-case .reading-controls p,.class-four-case .lesson-body>p,.class-four-case .lesson-body>ul,.class-four-case .lesson-body>ol,.class-four-case .reading-extension p,.class-four-case .reading-extension ol,.class-four-case .reading-extension ul{max-width:72ch;line-height:1.7}
+.class-four-case .reading-core{max-width:68ch;line-height:1.7}
+.class-four-case .reading-extension{min-width:0}
+.class-four-case .reading-extension>summary{line-height:1.6;overflow-wrap:anywhere}
+.class-four-case .reading-extension>summary:focus-visible{outline:3px solid #bc5f24;outline-offset:4px}
+.class-four-case .reading-extension>.guided-try,.class-four-case .reading-extension>.lesson-bridge{margin:12px 0}
+.class-four-case .c4-path-controls>div{min-width:0}
+.class-four-case .c4-path-controls b{line-height:1.6;overflow-wrap:anywhere}

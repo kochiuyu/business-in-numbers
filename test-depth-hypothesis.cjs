@@ -8,7 +8,7 @@ const near=(a,b,tol=1e-10)=>ok(Math.abs(a-b)<=tol,`${a} differs from ${b}`);
 const source=fs.readFileSync('src/hypothesis-testing.html','utf8');
 const math=JSON.parse(fs.readFileSync('src/hypothesis-math.json','utf8'));
 ok((source.match(/<!-- DEPTH48:c6-[a-z-]+:START -->/g)||[]).length===4,'four independently removable additions');
-const originalHtml=source.replace(/<!-- DEPTH48:c6-[a-z-]+:START -->[\s\S]*?<!-- DEPTH48:c6-[a-z-]+:END -->/g,'');
+const originalHtml=require('./scripts/readability-preservation.cjs').restore(source,'hypothesis-testing').replace(/<!-- DEPTH48:c6-[a-z-]+:START -->[\s\S]*?<!-- DEPTH48:c6-[a-z-]+:END -->/g,'');
 const digest=s=>crypto.createHash('sha256').update(s).digest('hex');
 ok(digest(originalHtml)==='704d1fa9bce8ed3e9f4662a6a47f378bd8829ab296911cf6b7ad13ca48d4ad14','all pre-revision Class 6 HTML preserved byte-for-byte');
 const originalMath=Object.fromEntries(Object.entries(math).filter(([key])=>!key.startsWith('depth-')));

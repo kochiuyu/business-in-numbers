@@ -36,3 +36,10 @@
 .c6-depth-worked h4{font:25px/1.3 Georgia,serif;margin:0 0 16px}.c6-depth-worked p,.c6-depth-worked li{font-size:15px;line-height:1.8}.c6-depth-worked ol{padding-left:24px}.c6-depth-worked li{padding-left:4px;margin:18px 0}.c6-depth-worked li p{margin:10px 0}.c6-depth-worked>details{border-top:1px solid #b5c4a9;padding-top:8px}.c6-depth-worked>details>summary{min-height:48px;font-size:15px;line-height:1.6}.c6-depth-worked>details>summary:focus-visible{outline:3px solid #b45a25;outline-offset:3px}
 @media(max-width:700px){.c6-depth-worked{padding:18px 14px}.c6-depth-worked h4{font-size:23px}.c6-depth-worked ol{padding-left:20px}.c6-depth-worked li{padding-left:1px}}
 @media print{.c6-depth-worked{background:white;padding:12pt;box-shadow:none}.c6-depth-worked h4{break-after:avoid}}
+
+/* Readability: keep the main path short and optional detail comfortable to read. */
+.class-six-case .reading-controls p,.class-six-case .lesson-body>p,.class-six-case .lesson-body>ul,.class-six-case .lesson-body>ol,.class-six-case .reading-extension p,.class-six-case .reading-extension ol,.class-six-case .reading-extension ul{max-width:72ch;line-height:1.7}
+.class-six-case .reading-core{max-width:68ch;font-size:16px;line-height:1.7}
+.class-six-case .reading-extension{min-width:0}
+.class-six-case .reading-extension>summary{line-height:1.6;overflow-wrap:anywhere}
+.class-six-case .reading-extension>summary:focus-visible{outline:3px solid #bc5f24;outline-offset:4px}

@@ -39,7 +39,7 @@ for(const html of [source,built]){
   });
  });
 }
-const restored=source.replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'');
+const restored=require('./scripts/readability-preservation.cjs').restore(source,'index').replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'');
 ok(crypto.createHash('sha256').update(restored).digest('hex')==='792640739bb9abd552ba36d02dc8ea78f45810a2cc061445ad4f3dd95fe89181','all pre-revision Class 1 source retained exactly');
 const css=fs.readFileSync('src/class-one.css','utf8');
 for(const phrase of ['.moment-contribution-grid{display:grid','@media(max-width:800px)','grid-template-columns:1fr','width:100%;height:22px','flex-wrap:wrap','stroke:none','print-color-adjust:exact'])ok(css.includes(phrase),'responsive/static style '+phrase);

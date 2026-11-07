@@ -50,7 +50,7 @@ for(const key of keys){
  delete math[key];
 }
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
-eq(hash(source.replace(marker,'')),'aa0608ae68212b8d983403ae0f6cde1b814b1e375f3c155639779aa5dfbca2f1','every pre-revision Class 3 source byte remains unchanged');
+eq(hash(require('./scripts/readability-preservation.cjs').restore(source,'random-variables').replace(marker,'')),'aa0608ae68212b8d983403ae0f6cde1b814b1e375f3c155639779aa5dfbca2f1','every pre-revision Class 3 source byte remains unchanged');
 eq(hash(JSON.stringify(math,null,2)+'\n'),'a7d4d68a2efd82c005eda05105ebd81be5c5332aa320e86833d9bfa9900852af','all 43 previous formulas remain unchanged');
 ok(!/\{\{math:|katex-error/.test(html),'all formulas built');
 console.log(`Passed ${checks} Poisson-limit assertions: finite ratios, fixed-count convergence, recurrence, normalization, zero boundary, accessible formulas and exact source preservation.`);

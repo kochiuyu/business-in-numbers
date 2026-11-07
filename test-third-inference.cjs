@@ -24,7 +24,8 @@ for (const [n, file, id, marker] of [
   const html = fs.readFileSync(`src/${file}.html`, 'utf8');
   const block = html.match(new RegExp(`<aside class="lesson-bridge" id="${id}-check"[\\s\\S]*?<\\/aside>`))?.[0];
   ok(block, `${file}: added bridge exists`);
-  ok(html.includes(`{{${marker}}}${block}`), 'Bridge follows its relevant learning scene');
+  const restored=require('./scripts/readability-preservation.cjs').restore(html,file);
+  ok(restored.includes(`{{${marker}}}${block}`), 'Bridge retains its relevant learning scene through the reviewed optional wrapper');
   ok(block.includes(`aria-labelledby="${id}-title"`), 'Named region');
   ok(block.includes(`<h3 id="${id}-title">`), 'Label target exists');
   ok(block.includes('<strong>Predict:</strong>'), 'Prediction precedes feedback');

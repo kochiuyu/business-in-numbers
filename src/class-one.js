@@ -18,7 +18,8 @@
   parts.forEach((p,i)=>p.hidden=!showAll&&i!==current);
   tail.forEach(p=>p.hidden=!showAll&&current!==5);
   document.querySelectorAll('.case-route a').forEach((a,i)=>{if(i===current)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
-  progress.textContent=showAll?'All six steps · read at your pace':`Step ${current+1} of 6`;
+  const title=parts[current].querySelector('h2').textContent.trim();
+  progress.textContent=showAll?`All six steps · selected: ${title}`:`Step ${current+1} of 6 · ${title}`;
   all.setAttribute('aria-pressed',String(showAll));all.textContent=showAll?'Return to one step':'Show all six steps';
  }
  function reveal(focus=false){
@@ -31,7 +32,7 @@
   if(part)current=parts.indexOf(part);
   else if(tail.some(p=>p===target||p.contains(target)))current=5;
   display();
-  for(let p=target;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;
+  for(let p=target;p;p=p.parentElement){if(p.tagName==='DETAILS')p.open=true;if(p.classList.contains('technical')){body.classList.add('depth-on');document.getElementById('depth').checked=true;}}
   if(focus){const heading=target.matches('.case-part')?target.querySelector('h2'):target;heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});target.scrollIntoView({behavior:reduce.matches||!motion.checked?'instant':'smooth',block:'start'});}
  }
  all.addEventListener('click',()=>{showAll=!showAll;display();});

@@ -31,7 +31,9 @@ for(const [name,expected] of Object.entries(baseline)){
   ok(part.includes(`id="${id}"`)&&part.includes(`aria-labelledby="${id}-title"`)&&part.includes(`id="${id}-title"`),'accessible named bridge');
   ok(part.includes('<details><summary>')&&part.includes('</summary><p>'),'native reasoning feedback');
   ok(!/\bhidden\b|<script|<button|<details[^>]+\bopen\b/.test(part),'explanation needs no JavaScript and feedback starts closed');
-  original=original.replace(part,'');
+  const legacyStart=original.indexOf(start),legacyEnd=original.indexOf(end,legacyStart)+end.length;
+  ok(legacyStart>=0&&legacyEnd>legacyStart,'restored insertion has exact boundaries');
+  original=original.slice(0,legacyStart)+original.slice(legacyEnd);
  }
  ok(digest(original)===expected.html,`${name}: every pre-existing lesson, exercise, technical block and activity remains byte-identical`);
  const oldEquations={...equations};

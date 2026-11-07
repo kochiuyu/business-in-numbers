@@ -32,7 +32,7 @@ const start = html.indexOf('<div class="lesson-bridge" id="hypothesis-error-deno
 const end = html.indexOf('</div>', start) + '</div>'.length;
 const block = html.slice(start, end);
 ok(start >= 0 && end > start, 'Visible error-denominator explanation exists');
-ok(html.includes('{{hypvisual:power}}' + block), 'Explanation stays in existing power step, directly after its chart');
+ok(require('./scripts/readability-preservation.cjs').restore(html,'hypothesis-testing').includes('{{hypvisual:power}}' + block), 'Explanation retains its power-chart position through the reviewed optional wrapper');
 ok(html.indexOf('id="errors-power"', start) > end, 'Original technical lesson still follows the concrete transition');
 ok(block.includes('role="region" aria-labelledby="hypothesis-error-denominators-title"'), 'Exposition has an accessible name');
 ok(block.includes('<h3 id="hypothesis-error-denominators-title">'), 'Region label resolves');

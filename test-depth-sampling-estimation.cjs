@@ -94,7 +94,7 @@ const configs=[
 for(const config of configs){
  const source=fs.readFileSync(`src/${config.page}.html`,'utf8');
  const math=JSON.parse(fs.readFileSync(`src/${config.math}-math.json`,'utf8'));
- let original=source;
+ let original=require('./scripts/readability-preservation.cjs').restore(source,config.page);
  for(const [id,step] of config.blocks){
   const start=`<!-- depth48:${id}:start -->`,end=`<!-- depth48:${id}:end -->`;
   equal(source.split(start).length,2,`${id} unique start`);equal(source.split(end).length,2,`${id} unique end`);
@@ -103,7 +103,9 @@ for(const config of configs){
   ok(block.includes(`aria-labelledby="${id}-title"`)&&block.includes(`id="${id}-title"`),`${id} labelled`);
   ok(block.includes('<details><summary>'),`${id} native disclosure`);
   ok(!/class="lesson"| hidden|<script|<button/.test(block),`${id} no duplicate lesson or JS-only content`);
-  original=original.replace(block,'');
+  const legacyStart=original.indexOf(start),legacyEnd=original.indexOf(end,legacyStart)+end.length;
+  ok(legacyStart>=0&&legacyEnd>legacyStart,'restored insertion has exact boundaries');
+  original=original.slice(0,legacyStart)+original.slice(legacyEnd);
  }
  equal(crypto.createHash('sha256').update(original).digest('hex'),config.hash,'removing additions recovers entire original HTML exactly');
  // Render equations in memory, without changing dist or invoking the build.

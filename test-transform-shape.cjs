@@ -25,6 +25,6 @@ for(const html of [source,built]){
  ok((block.match(/<details class="visual-check"><summary>/g)||[]).length===2,'two native disclosures');
  ok(!/\bhidden\b|<script|<button/.test(block),'whole addition available without JavaScript');
 }
-const restored=source.replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'').replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'');
+const restored=require('./scripts/readability-preservation.cjs').restore(source,'index').replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'').replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'');
 ok(crypto.createHash('sha256').update(restored).digest('hex')==='b0d4035d0aeb62eaf6e54d1e3fecacd287cc1c85f16141ee615f655043e06493','all prior Class 1 source preserved byte for byte');
 console.log(`Passed ${checks} log-transformation checks: independent arithmetic, production parity, inverse/ratios, geometric mean, no-guarantee example, source preservation, accessible static and built content.`);

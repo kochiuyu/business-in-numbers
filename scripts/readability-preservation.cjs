@@ -1,5 +1,5 @@
 'use strict';
-// Restore only the explicitly reviewed pilot changes before applying historical
+// Restore only the explicitly reviewed readability changes before applying historical
 // byte-preservation checks. Reject changed/missing patch text rather than masking it.
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');

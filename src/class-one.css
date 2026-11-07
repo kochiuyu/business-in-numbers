@@ -74,3 +74,9 @@
 .shape-contribution-visual .moment-axis-title{font:13px/1.5 Arial,sans-serif;text-align:center;margin:.2rem 0 0;color:#203e33}.moment-axis-title span{white-space:nowrap}
 @media(max-width:800px){.moment-contribution-grid{grid-template-columns:1fr;gap:1.2rem}.shape-contribution-visual{padding:.75rem}.moment-contribution-panel{padding:0 .2rem}#shape-contributions-reflected{margin-left:-18px;margin-right:-18px}}
 @media print{.shape-contribution-visual{break-inside:avoid}.moment-contribution-row rect{fill:#203e33;print-color-adjust:exact}}
+
+/* Optional worked additions match the native lesson disclosure treatment. */
+.c1-lab-details{border:1px solid var(--line);background:#f6f6ec;border-radius:6px;padding:3px 22px;margin:14px 0}
+.c1-lab-details>summary{min-height:52px;font-size:14px}
+.c1-lab-details>summary:focus-visible{outline:3px solid #bc4f24;outline-offset:4px}
+@media(max-width:700px){.c1-lab-details{padding:3px 15px}}
