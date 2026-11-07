@@ -37,4 +37,22 @@ for(const reduced of [false,true]){
 for(const[id,n]of [['c2-negative-alert',5],['tools',8],['bayes-tree',5],['prob-step-6',6]]){const{d}=run(false,'#'+id);ok(!d.getElementById('prob-step-'+n).hidden,id+' direct deep link');}
 const staticDOM=dom();eq(staticDOM.querySelectorAll('.c2-part').filter(p=>!p.hidden).length,8,'all scenes visible without JS');eq(staticDOM.querySelectorAll('.c2-visual-controls').filter(p=>p.hidden).length,3,'inactive controls hidden without JS');eq(staticDOM.querySelectorAll('.c2-signal').length,3,'all repeated-evidence points rendered without JS');
 const plot=V.repeatedChart();for(const [i,p]of [.4,4/7,8/11].entries())ok(plot.includes(`cx="${90+i*120}" cy="${220-p*180}"`),'independent probability coordinate '+i);
+// Browser history can return to the original URL without a fragment.
+for(const reduced of [false,true]){
+ const {d,events,loc}=run(reduced),parts=d.querySelectorAll('.c2-part');
+ const visible=()=>parts.filter(p=>!p.hidden).map(p=>p.attrs.id);
+ const navigate=hash=>{loc.hash=hash;for(const fn of events.hashchange||[])fn();};
+ navigate('#'+parts[1].attrs.id);eq(visible(),[parts[1].attrs.id],'advance from initial URL');
+ navigate('');eq(visible(),[parts[0].attrs.id],'Back to hashless URL restores first step');
+ eq(d.querySelectorAll('.c2-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);
+ navigate('#'+parts[1].attrs.id);eq(visible(),[parts[1].attrs.id],'Forward restores later step');
+ navigate('#main');eq(visible(),[parts[1].attrs.id],'Back to top preserves current step');
+ navigate('#');eq(visible(),[parts[0].attrs.id],'empty fragment uses initial step');
+ d.getElementById('c2-show-all').fire('click');navigate('#'+parts[1].attrs.id);navigate('');
+ eq(visible(),parts.map(p=>p.attrs.id),'history preserves the show-all preference');
+ d.getElementById('c2-show-all').fire('click');eq(visible(),[parts[0].attrs.id],'return to one step uses restored history');
+ navigate('#'+parts[1].attrs.id);navigate('#missing');eq(visible(),[parts[1].attrs.id],'unknown anchor does not reset lesson');
+}
+ok(html.includes('<a href="#main">Back to top'),'top link remains separate from the initial history state');
+
 console.log(`Passed ${checks} Class 2 visual math, content preservation, staged navigation, deep links, motion, static fallback and print restoration assertions.`);

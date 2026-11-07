@@ -23,6 +23,9 @@
  }
  function reveal(focus=false){
   let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
+  // The hashless URL represents the first step, including after browser Back.
+  // Leave scroll restoration to the browser and preserve the chosen reading mode.
+  if(!id){current=0;display();return;}
   const target=id&&document.getElementById(id);if(!target)return;
   const part=target.closest('.case-part');
   if(part)current=parts.indexOf(part);

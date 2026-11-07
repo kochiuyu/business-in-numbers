@@ -40,4 +40,21 @@ for(const reduced of [false,true]){
 }
 for(const[id,n]of anchors){const{d}=run(false,'#'+id);ok(!d.getElementById('regression-step-'+n).hidden,id+' direct link');}
 const staticDOM=dom();eq(staticDOM.querySelectorAll('.c8-part').filter(p=>!p.hidden).length,15);eq(staticDOM.querySelectorAll('.c8-visual-controls').filter(p=>p.hidden).length,15);ok(staticDOM.querySelectorAll('.c8-part').every(p=>p.querySelector('.c8-scene')));
+// Browser history can return to the original URL without a fragment.
+for(const reduced of [false,true]){
+ const {d,events,loc}=run(reduced),parts=d.querySelectorAll('.c8-part');
+ const visible=()=>parts.filter(p=>!p.hidden).map(p=>p.attrs.id);
+ const navigate=hash=>{loc.hash=hash;for(const fn of events.hashchange||[])fn();};
+ navigate('#'+parts[1].attrs.id);eq(visible(),[parts[1].attrs.id],'advance from initial URL');
+ navigate('');eq(visible(),[parts[0].attrs.id],'Back to hashless URL restores first step');
+ eq(d.querySelectorAll('.c8-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);
+ navigate('#'+parts[1].attrs.id);eq(visible(),[parts[1].attrs.id],'Forward restores later step');
+ navigate('#main');eq(visible(),[parts[1].attrs.id],'Back to top preserves current step');
+ navigate('#');eq(visible(),[parts[0].attrs.id],'empty fragment uses initial step');
+ d.getElementById('c8-show-all').fire('click');navigate('#'+parts[1].attrs.id);navigate('');
+ eq(visible(),parts.map(p=>p.attrs.id),'history preserves the show-all preference');
+ d.getElementById('c8-show-all').fire('click');eq(visible(),[parts[0].attrs.id],'return to one step uses restored history');
+ navigate('#'+parts[1].attrs.id);navigate('#missing');eq(visible(),[parts[1].attrs.id],'unknown anchor does not reset lesson');
+}
+
 console.log(`Passed ${checks} Class 8 visual math, original-content preservation, navigation, controls, deep links, reduced-motion, no-JS and print-restoration assertions.`);

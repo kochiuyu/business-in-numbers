@@ -39,4 +39,22 @@ for(const reduced of [false,true]){
 }
 for(const hash of ['#lab','#graph-panel-box','#case-brief']){const{d}=run(false,hash);const target=d.getElementById(hash.slice(1));ok(!target.closest('.case-part')?.hidden,'deep link visible');}
 const staticDOM=dom();eq(staticDOM.querySelectorAll('.case-part').filter(p=>!p.hidden).length,6,'all scenes available with no JS');eq(staticDOM.querySelectorAll('.visual-controls').filter(p=>p.hidden).length,3,'inactive controls hidden without JS');eq(staticDOM.querySelectorAll('.visual-practice').length,4,'original practice retained');
+// Browser history can return to the original URL without a fragment.
+for(const reduced of [false,true]){
+ const {d,events,loc}=run(reduced),parts=d.querySelectorAll('.case-part');
+ const visible=()=>parts.filter(p=>!p.hidden).map(p=>p.attrs.id);
+ const navigate=hash=>{loc.hash=hash;for(const fn of events.hashchange||[])fn();};
+ navigate('#'+parts[1].attrs.id);eq(visible(),[parts[1].attrs.id],'advance from initial URL');
+ navigate('');eq(visible(),[parts[0].attrs.id],'Back to hashless URL restores first step');
+ eq(d.querySelectorAll('.case-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);
+ navigate('#'+parts[1].attrs.id);eq(visible(),[parts[1].attrs.id],'Forward restores later step');
+ navigate('#main');eq(visible(),[parts[1].attrs.id],'Back to top preserves current step');
+ navigate('#');eq(visible(),[parts[0].attrs.id],'empty fragment uses initial step');
+ d.getElementById('visual-show-all').fire('click');navigate('#'+parts[1].attrs.id);navigate('');
+ eq(visible(),parts.map(p=>p.attrs.id),'history preserves the show-all preference');
+ d.getElementById('visual-show-all').fire('click');eq(visible(),[parts[0].attrs.id],'return to one step uses restored history');
+ navigate('#'+parts[1].attrs.id);navigate('#missing');eq(visible(),[parts[1].attrs.id],'unknown anchor does not reset lesson');
+}
+ok(html.includes('<a href="#main">Back to top'),'top link remains separate from the initial history state');
+
 console.log(`Passed ${checks} Class 1 visual arithmetic, graph geometry, progressive disclosure, no-JS markup, reduced-motion, navigation, keyboard-focus and print-state assertions.`);

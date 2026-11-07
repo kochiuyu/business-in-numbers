@@ -19,14 +19,14 @@
   ],
   "other_pages": {
     "course-introduction.html": "452fc39f2c83f9e0db1664e1bbf94892378ec8d70b7037d1b63ef60705cdcc10",
-    "sampling-distributions.html": "1f75136fa0bf97ee9133ee9ce5c734e84ae6bce7600062d4e16a5712223acc22",
+    "sampling-distributions.html": "72e82ff970d6e5d89357c8cdef7afe553e5d3bef758560678bc0a48e9cfe1061",
     "math-check.html": "a77fc56d9ed7991655bfcf2a22fd209a4afacd23c0c0bfdeacca39d3554be4bf",
-    "random-variables.html": "0ae8a7f20c6c5acc7ec03ab946124ddc780f6ff217dd5d6ec822cce1f0f4314f",
-    "hypothesis-testing.html": "f8f87de26647839af867406dafaf62bb35bed9200f5052500ecb889f0b7aeaa9",
-    "probability.html": "f7e768fa947a4ac38794873e3209059fff3a9bf3eda7d4832a593d59855c9577",
-    "index.html": "dcaef7db4930ef215da4fbaec67225aea166d72f918c315904c690aa0f838062",
-    "estimation.html": "32998212493f7bb95cd2a0799da370c5391afd7ec91105fe1707010d389c8698",
-    "anova.html": "1a205c35f361745d3171ec8ac6d43cdb3ae1d42505e5b2d70ac52e47b66860ce"
+    "random-variables.html": "46c7753c7e542852b8530e3ff9198166b94160db64f2f20010ed4ffe40e67f6f",
+    "hypothesis-testing.html": "65680b6b3407b2f370dc8646ad960e2973ef636d603f0ccdd26e87554eb94ed6",
+    "probability.html": "d30fdc27b534e12f675112533c26f4c06e72c416ddca782a49593e9495140817",
+    "index.html": "ae5df98a85f2e627ce6a876a5f2ce62954f936ce1e500ecd0ab678ab9b88e15e",
+    "estimation.html": "7ab1c6e6c9f8c6b17d932f0bf3950e8977de24f1b0e01d346b7be4e98d410c90",
+    "anova.html": "41237c49beb9f548b80ce24c91f1cb0640baf6b17132f7eeb18cd41ad9d06312"
   },
-  "other_pages_note": "ANOVA built-page snapshot refreshed for the seventh review after independently reviewed comparison-planning clarification. No other page or technical calculation changed."
+  "other_pages_note": "Built-page snapshots refreshed for the eighth navigation review. Only paced-controller fingerprints and Back to top anchor destinations changed; all lesson content, diagrams, calculations and technical topic hashes are unchanged."
 }
