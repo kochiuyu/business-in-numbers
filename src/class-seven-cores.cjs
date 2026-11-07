@@ -36,9 +36,10 @@ const cores={
  'A sample effect-size summary is SSG/SST = (296/3)/(368/3) = 37/46 ≈ .8043. About 80.4% of the sample squared variation is associated with group differences.',
  'This is neither a causal fraction nor proof that A beats every competitor. Planned comparisons, precision, costs and study design answer the next business questions.'
  ],'Does rejecting equal means establish that all three means differ?','No. It establishes evidence that not all are equal, subject to the model.'],
- comparisons:['Turn a planned family into intervals','Suppose the plan specified all three pairwise differences before seeing outcomes. This analysis does not require a significant global F first.',[
+ comparisons:['Turn a planned family into intervals','Treat the three planned differences as one family: B − A, C − A and C − B. We want all three intervals to contain their true population differences together in at least 95% of repeated samples. Three ordinary 95% intervals do not guarantee that joint coverage. Choose the family before seeing outcomes; this analysis does not require a significant global F first.',[
  'Each difference uses SE = √[(8/3)(1/4 + 1/4)] = √(4/3) ≈ 1.1547 minutes, with 9 error df.',
- 'Bonferroni uses .05/3 per two-sided interval and .05/6 in each tail. t(9, 1 − .05/6) ≈ 2.9333 gives margin 2.9333 × 1.1547 ≈ 3.3871 minutes.',
+ 'Bonferroni allows each interval a miss probability of .05/3. The chance that any of the three misses is at most their sum: 3 × (.05/3) = .05. This bound does not require independent comparisons.',
+ 'Split each interval’s miss probability between its two tails: .05/6 in each tail. Each interval therefore has 98⅓% confidence, making it wider than an ordinary 95% interval. t(9, 1 − .05/6) ≈ 2.9333 gives margin 2.9333 × 1.1547 ≈ 3.3871 minutes.',
  'B − A: 4 ± 3.3871 = [0.6129, 7.3871]. C − A: [3.6129, 10.3871]. C − B: [−0.3871, 6.3871]. The family has at least 95% repeated-sample simultaneous coverage under the normal common-variance model, even though comparisons share data.'
  ],'Does B − A establish a saving of at least 3 minutes?','No. Its lower endpoint is only about 0.61 minutes. Excluding zero is different from exceeding a useful business threshold; C − B crossing zero also does not establish equivalence.'],
  cells:['Cross the factors, then replicate','The second case has offers and day types. Each combination is a cell, not a separate factor.',[
@@ -61,10 +62,10 @@ const cores={
  'The parallel illustration has equal sample gains, so its interaction sum of squares is zero. That does not prove the population interaction is zero.',
  'The crossover illustration has gains +$12 and −$12: their average is $0, yet the gain changes by −$24. Averaging can conceal a large interaction.'
  ],'Does a zero marginal offer difference rule out a useful offer in one context?','No. Opposite conditional effects can cancel in the average. Read the cells and their uncertainty.'],
- pieces:['Separate patterns from within-cell noise','Balance makes these components orthogonal. Count how many observations share each fitted effect.',[
+ pieces:['Separate patterns from within-cell noise','In this balanced design, cross-products between the offer, day, interaction and residual components sum to zero. This is what orthogonal means here: the four sums of squares add without leftover cross-terms, as in the earlier one-way split. Count how many observations share each fitted effect.',[
  'Each offer or day effect repeats 6 times: SSA = 6[(−4)² + 4²] = 192 and SSB = 6[(−5)² + 5²] = 300 dollars².',
  'Each interaction repeats 3 times: SSAB = 3[2² + (−2)² + (−2)² + 2²] = 48. Every cell contributes (−2)² + 0² + 2² = 8 residual dollars²; SSE = 4 × 8 = 32. Total: 192 + 300 + 48 + 32 = 572.',
- 'The df are 1, 1, 1 and 4(3 − 1) = 8, totaling 11. MSE = 32/8 = 4 dollars²; the other mean squares are 192, 300 and 48. The denominator is within-cell error, not interaction.'
+ 'The df are 1, 1, 1 and 4(3 − 1) = 8, totaling 11. The error mean square is MSE = 32/8 = 4 dollars²; the other mean squares are 192, 300 and 48. Here MSE estimates the common within-cell variance. It is not Class 5’s estimator mean squared error (variance + bias²). The F denominator is within-cell error, not interaction.'
  ],'Can the same decomposition be used unchanged with unequal or missing cells?','No. These simple orthogonal formulas require the balanced replicated design. An unbalanced model needs explicit hypotheses and weighting.'],
  contrast:['Put the changing gain on a noise scale','A difference of differences isolates whether the offer advantage changes by day. It is not the ordinary weekend increase.',[
  'Contrast = (38 − 26) − (24 − 20) = 12 − 4 = $8. Under no interaction in this two-by-two design, its population value is zero.',

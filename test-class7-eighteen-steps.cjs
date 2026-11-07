@@ -40,6 +40,29 @@ for(const [name,html]of [['source',source],['built',built]]){
 const t=parse(built);
 const claims={orders:['80 minutes','12 independent'],baseline:['284/12','162','24⅚'],split:['−5⅔','296/3','368/3'],freedom:['12 − 3','368/33','2⅔'],ratio:['18.5','96/9','4.625'],reference:['4.2565','.000648'],report:['37/46','80.4%'],comparisons:['1.1547','2.9333','3.3871','[−0.3871, 6.3871]'],cells:['2 × 2 × 3','0 residual df'],averages:['.25 × $4 + .75 × $12','27'],additive:['27 + 4 + 5','40 − 38'],interaction:['−$24','+$12'],pieces:['572','4(3 − 1)','32/8'],contrast:['√(16/3)','3.4641','4.6188'],tests:['192/4','300/4','.008516'],design:['12 − 4','Random assignment'],decision:['0.6129','3 minutes'],software:['F.DIST.RT(18.5,2,9)','scipy.stats.f.sf(12,1,8)']};
 for(const[id,needles]of Object.entries(claims)){const f=t.fragment(t.byId('c7-core-'+id)).replace(/<[^>]*>/g,' ').replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/\s+/g,' ');for(const text of needles)ok(f.includes(text),'visible calculation and condition '+id+' '+text);}
+// Essential first-pass explanations must not depend on opening a disclosure.
+const comprehension={comparisons:[
+ 'three planned differences as one family',
+ 'all three intervals to contain their true population differences together',
+ 'Three ordinary 95% intervals do not guarantee that joint coverage',
+ 'each interval a miss probability of .05/3',
+ '3 × (.05/3) = .05',
+ 'does not require independent comparisons',
+ '.05/6 in each tail',
+ '98⅓% confidence',
+ 'wider than an ordinary 95% interval'
+],pieces:[
+ 'cross-products between the offer, day, interaction and residual components sum to zero',
+ 'what orthogonal means here',
+ 'without leftover cross-terms',
+ 'error mean square is MSE = 32/8',
+ 'estimates the common within-cell variance',
+ 'not Class 5’s estimator mean squared error (variance + bias²)'
+]};
+for(const [id,phrases]of Object.entries(comprehension)){
+ const core=t.byId('c7-core-'+id);
+ for(const phrase of phrases)ok(t.nodes.some(n=>['p','li'].includes(n.tag)&&ancestors(n).includes(core)&&!ancestors(n).some(a=>a.tag==='details')&&t.fragment(n).includes(phrase)),'first-pass meaning outside disclosures: '+phrase);
+}
 const near=(a,b,tol=1e-8)=>ok(Math.abs(a-b)<tol,`independent arithmetic ${a} = ${b}`);
 near(284/12,71/3);near((40+96+162)/12,149/6);near(4*((-11/3)**2+(1/3)**2+(10/3)**2),296/3);near(296/3+24,368/3);near((296/3/2)/(24/9),18.5);near((296/3/2)/(96/9),4.625);near((296/3)/(368/3),37/46);near(Math.sqrt((8/3)*(.25+.25)),1.1547005383792515);near(6*(16+16),192);near(6*(25+25),300);near(3*(4+4+4+4),48);near(192+300+48+32,572);near((8/Math.sqrt(16/3))**2,12);
 for(const[id,step]of [['grouped-data',1],['one-model',2],['one-decomposition',3],['em-f-bridge',4],['one-test',5],['one-proof',6],['one-interpretation',7],['anova-followup-check',8],['two-design',9],['two-estimation',10],['two-model',11],['interaction-lab',12],['two-decomposition',13],['em-interaction-scale-bridge',14],['two-tests',15],['model-checks',16],['tools',18],['practice',18]])ok(ancestors(t.byId(id)).includes(t.byId(expected[step-1])),'legacy subject destination '+id);
