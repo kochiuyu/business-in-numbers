@@ -1,6 +1,14 @@
 'use strict';
 (() => {
  const body=document.body;if(!body.classList.contains('class-six-case'))return;
+
+ // Added demonstrations retain their static default when JavaScript is unavailable.
+ document.querySelectorAll('[data-c6-extra]').forEach(button=>button.addEventListener('click',()=>{
+  const key=button.dataset.c6Extra,value=button.dataset.value;
+  document.getElementById('c6-extra-'+key).innerHTML=ClassSixViews.extraViews[key](value);
+  document.querySelectorAll('[data-c6-extra="'+key+'"]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+ }));
+ document.querySelectorAll('.c6-extra-controls').forEach(group=>group.hidden=false);
  const parts=[...document.querySelectorAll('.c6-part')];if(parts.length!==12)return;
  const $=id=>document.getElementById(id),all=$('c6-show-all'),motion=$('c6-motion'),reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
  let current=0,showAll=false;motion.checked=!reduce.matches;

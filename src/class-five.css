@@ -11,3 +11,18 @@
 @media(max-width:700px){.c5-order-board{padding:14px 10px}.c5-order-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.c5-order-cards>div{padding:14px 4px;gap:10px}.c5-order-cards b{font-size:24px}.c5-order-cards span,.c5-order-cards small{font-size:10px}.c5-target-card{padding:15px}.c5-target-card span{font-size:13px}.c5-rule-card{padding:17px 14px}.c5-rule-card b{font-size:22px;overflow-wrap:anywhere}.c5-rule-card span,.c5-rule-card small{font-size:12px}.c5-conversion-grid{grid-template-columns:repeat(10,minmax(0,1fr));gap:6px}.c5-conversion-grid>div{gap:3px}.c5-recipe{grid-template-columns:1fr;gap:9px}.c5-recipe>i{text-align:center}.c5-recipe>div{padding:15px}.c5-recipe b{font-size:23px}.c5-figure svg text{font-size:17px}.c5-figure svg[data-c5-chart="c5-quality"] text{font-size:17px}.c5-sd-choice,.c5-plan-brief,.c5-budget-card{padding:20px 15px}.c5-plan-brief h4,.c5-budget-card h4{font-size:24px}.c5-n-strip{gap:16px;padding:16px 12px}.c5-n-strip strong{font-size:41px}.c5-n-strip span{font-size:11px}.c5-sd-choice>p,.c5-plan-brief>p,.c5-budget-card>p{font-size:14px}}
 
 @media(max-width:700px){.c5-figure svg text,.c5-figure svg[data-c5-chart] text,.c5-figure svg .c5-miss-label{font-size:22px}}
+
+/* Extra inference demonstrations: native controls, no animation or new dependencies. */
+.c5-extra{margin:24px 0;padding:24px;border:1px solid #b5c4a9;border-left:4px solid #43684b;border-radius:7px;background:#fffdf5;min-width:0}
+.c5-extra h4{font:25px/1.3 Georgia,serif;margin:0 0 16px}.c5-extra p{font-size:15px;line-height:1.75}.c5-extra-controls{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.c5-extra-controls[hidden]{display:none}.c5-extra-controls button{font:inherit;font-size:14px;min-height:44px;padding:10px 14px;border:1px solid #43684b;border-radius:5px;color:#173f36;background:#fffdf5;cursor:pointer}.c5-extra-controls button[aria-pressed="true"]{background:#173f36;color:#fff}.c5-extra-controls button:focus-visible{outline:3px solid #b45a25;outline-offset:3px}.c5-extra .c5-figure{max-width:540px;margin:20px auto}.c5-extra .c5-figure svg text{font-size:17px}
+@media(max-width:700px){.c5-extra{padding:18px 14px}.c5-extra h4{font-size:23px}.c5-extra-controls{display:grid;grid-template-columns:1fr}.c5-extra-controls button{text-align:left}}
+@media print{.c5-extra-controls{display:none!important}.c5-extra{break-inside:avoid;padding:12pt;box-shadow:none}}
+.c5-extra-weights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.c5-extra-weights>div{display:grid;gap:8px;background:#edf2e6;padding:15px}.c5-extra-weights meter{width:100%}.c5-extra-weights b{font-size:16px}
+
+/* Keep diagram type readable rather than shrinking 440 viewBox units into a phone. */
+.c5-extra-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;border-radius:4px}
+.c5-extra .c5-extra-scroll svg{display:block;width:100%;min-width:440px;max-width:none}
+.c5-extra-scroll:focus-visible{outline:3px solid #b45a25;outline-offset:3px}
+.c5-extra .c5-extra-scroll-hint{display:none;font-size:13px;line-height:1.6}
+@media(max-width:700px){.c5-extra .c5-extra-scroll-hint{display:block}}
+@media print{.c5-extra-scroll{overflow:visible}.c5-extra .c5-extra-scroll svg{min-width:0;width:100%;max-width:100%}.c5-extra .c5-extra-scroll-hint{display:none}}

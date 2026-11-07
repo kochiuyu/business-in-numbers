@@ -1,6 +1,14 @@
 'use strict';
 (() => {
  const body=document.body;if(!body.classList.contains('class-four-case'))return;
+
+ // Added demonstrations retain their static default when JavaScript is unavailable.
+ document.querySelectorAll('[data-c4-extra]').forEach(button=>button.addEventListener('click',()=>{
+  const key=button.dataset.c4Extra,value=button.dataset.value;
+  document.getElementById('c4-extra-'+key).innerHTML=ClassFourViews.extraViews[key](value);
+  document.querySelectorAll('[data-c4-extra="'+key+'"]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+ }));
+ document.querySelectorAll('.c4-extra-controls').forEach(group=>group.hidden=false);
  const parts=[...document.querySelectorAll('.c4-part')];if(parts.length!==10)return;
  const $=id=>document.getElementById(id),all=$('c4-show-all'),motion=$('c4-motion'),reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
  let current=0,showAll=false;motion.checked=!reduce.matches;

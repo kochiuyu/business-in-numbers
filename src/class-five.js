@@ -1,6 +1,14 @@
 'use strict';
 (() => {
  const body=document.body;if(!body.classList.contains('class-five-case'))return;
+
+ // Added demonstrations retain their static default when JavaScript is unavailable.
+ document.querySelectorAll('[data-c5-extra]').forEach(button=>button.addEventListener('click',()=>{
+  const key=button.dataset.c5Extra,value=button.dataset.value;
+  document.getElementById('c5-extra-'+key).innerHTML=ClassFiveViews.extraViews[key](value);
+  document.querySelectorAll('[data-c5-extra="'+key+'"]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+ }));
+ document.querySelectorAll('.c5-extra-controls').forEach(group=>group.hidden=false);
  const parts=[...document.querySelectorAll('.c5-part')];if(parts.length!==10)return;
  const $=id=>document.getElementById(id),all=$('c5-show-all'),motion=$('c5-motion'),reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
  let current=0,showAll=false;motion.checked=!reduce.matches;

@@ -13,3 +13,27 @@
 @media print{.class-one-case *,.class-one-case *::before,.class-one-case *::after{transition:none!important;animation:none!important}.class-one-case #shape-labels{display:flex!important}.class-one-case #shape-labels .fence-label{display:inline!important}}
 
 .c1-printing *{transition:none!important;animation:none!important}
+
+/* Exposition comparisons: static first, no animation, color-independent labels. */
+.foundation-lab{margin:1.5rem 0;padding:clamp(1rem,3vw,1.6rem);border:1px solid #b8cec8;border-radius:14px;background:#f4f8f6;color:#18382f;break-inside:avoid}
+.foundation-lab .foundation-kicker{font-size:.72rem;letter-spacing:.08em;font-weight:700;color:#416356}
+.foundation-controls{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.foundation-controls[hidden],.foundation-panel[hidden]{display:none}
+.foundation-controls button{font:inherit;min-height:44px;padding:.55rem .8rem;border:1px solid #557c6c;border-radius:6px;background:white;color:#18382f;cursor:pointer}
+.foundation-controls button[aria-pressed="true"]{background:#183f32;color:white}
+.foundation-controls button:focus-visible{outline:3px solid #ac5819;outline-offset:3px}
+.foundation-panel{padding:.5rem 0}.foundation-panel svg{display:block;width:100%;max-width:620px;height:auto;margin:.6rem auto;background:white;border-radius:8px}
+.foundation-panel svg text{font-family:system-ui,sans-serif;font-size:14px;fill:#173b31}
+.foundation-panel svg rect,.foundation-panel svg circle{fill:#a6cfbd;stroke:#315f4d;stroke-width:1.5}
+.foundation-panel svg .foundation-other{fill:#f3f0e8;stroke:#837963}
+.foundation-panel svg .foundation-kept{fill:#a6cfbd;stroke:#173b31;stroke-width:2}
+.foundation-panel svg .foundation-axis{stroke:#315f4d;fill:none;stroke-width:2}
+.foundation-lab details{margin-top:.6rem}.foundation-lab summary{cursor:pointer;font-weight:650;min-height:44px;padding:.5rem 0}
+@media(max-width:420px){.foundation-lab{padding:.8rem}.foundation-panel svg text{font-size:15px}}
+@media print{.foundation-controls{display:none!important}.foundation-panel[hidden]{display:block!important}.foundation-lab{background:white;break-inside:auto}.foundation-panel{break-inside:avoid}}
+
+.foundation-chart{max-width:100%;overflow-x:auto;border-radius:8px}.foundation-chart:focus-visible{outline:3px solid #ac5819;outline-offset:3px}.foundation-chart svg{min-width:500px}.foundation-lab{min-width:0}
+@media print{.foundation-chart{overflow:visible}.foundation-chart svg{min-width:0}}
+
+@media(max-width:700px){.foundation-chart::before{content:"Swipe the diagram sideways, or focus it and use the arrow keys.";display:block;font-size:13px;line-height:1.5;color:#45584e;margin:0 0 10px;white-space:normal}}
+@media print{.foundation-chart::before{display:none}}

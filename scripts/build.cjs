@@ -156,7 +156,7 @@ function buildAnova(){
  for(const [key,name] of [['anova-python','anova.py'],['anova-output','anova-output.txt']])template=template.replace('{{'+key+'}}',`<pre class="code-block" tabindex="0" role="region" aria-label="${key==='anova-python'?'Complete Python ANOVA example':'Checked ANOVA output'}. Scroll horizontally if needed."><code>${esc(read('downloads/'+name))}</code></pre>`);
  const equations=JSON.parse(read('anova-math.json')),html=learning.enhance(compile(template,equations),'anova.html');if(/\{\{/.test(html))throw Error('Uncompiled Class 7 placeholder');
  fs.writeFileSync(path.join(dist,'anova.html'),html);
- for(const name of ['anova.css','anova-core.js','anova-view.js','anova.js','class-seven.css','class-seven.js','class-seven-visuals.js'])fs.copyFileSync(path.join(src,name),path.join(dist,name));
+ for(const name of ['anova.css','anova-core.js','anova-view.js','anova.js','class-seven.css','class-seven.js','class-seven-visuals.js','exposition-modeling.css','exposition-modeling.js'])fs.copyFileSync(path.join(src,name),path.join(dist,name));
  fs.mkdirSync(path.join(dist,'downloads'),{recursive:true});fs.copyFileSync(path.join(src,'downloads/anova.py'),path.join(dist,'downloads/anova.py'));
  console.log(`Rendered ${Object.keys(equations).length} Class 7 expressions, two interactive labs and all default charts.`);
 }
@@ -167,7 +167,7 @@ function buildRegression(){
  for(const [key,name] of [['regression-python','regression.py'],['regression-output','regression-output.txt']])template=template.replace('{{'+key+'}}',`<pre class="code-block" tabindex="0" role="region" aria-label="${key==='regression-python'?'Complete Python regression example':'Checked regression output'}. Scroll horizontally if needed."><code>${esc(read('downloads/'+name))}</code></pre>`);
  const equations=JSON.parse(read('regression-math.json')),html=learning.enhance(compile(template,equations),'regression.html');if(/\{\{/.test(html))throw Error('Uncompiled Week 8 placeholder');
  fs.writeFileSync(path.join(dist,'regression.html'),html);
- for(const name of ['regression.css','regression-core.js','regression-view.js','regression.js','class-eight.css','class-eight.js','class-eight-visuals.js'])fs.copyFileSync(path.join(src,name),path.join(dist,name));
+ for(const name of ['regression.css','regression-core.js','regression-view.js','regression.js','class-eight.css','class-eight.js','class-eight-visuals.js','exposition-modeling.css','exposition-modeling.js'])fs.copyFileSync(path.join(src,name),path.join(dist,name));
  fs.mkdirSync(path.join(dist,'downloads'),{recursive:true});fs.copyFileSync(path.join(src,'downloads/regression.py'),path.join(dist,'downloads/regression.py'));
  console.log(`Rendered ${Object.keys(equations).length} Week 8 expressions, two interactive labs and all default charts.`);
 }

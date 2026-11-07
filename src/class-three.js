@@ -15,3 +15,19 @@
  body.classList.add('c3-ready');document.querySelector('.c3-path-controls').hidden=false;document.querySelectorAll('.c3-visual-controls').forEach(c=>c.hidden=false);for(const[key,view]of Object.entries(views))select(key,view);display();reveal(false);
  let printState;window.addEventListener('beforeprint',()=>{if(printState)return;printState={...views};for(const[key,view]of Object.entries({distribution:'atmost',moments:'spread',joint:'0.25',counts:'binomial',area:'half',normal:'center',decision:'2'}))select(key,view);});window.addEventListener('afterprint',()=>{if(!printState)return;for(const[key,view]of Object.entries(printState))select(key,view);printState=undefined;});
 })();
+
+// Small comparisons leave every worked case visible without JavaScript.
+(() => {
+ document.querySelectorAll('.foundation-lab').forEach(lab => {
+  const buttons=[...lab.querySelectorAll('[data-foundation-choice]')];
+  const panels=[...lab.querySelectorAll('[data-foundation-panel]')];
+  const controls=lab.querySelector('.foundation-controls');
+  if(!controls || buttons.length!==panels.length || !buttons.length)return;
+  function choose(index){
+   panels.forEach((panel,i)=>{panel.hidden=i!==index;});
+   buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+  }
+  buttons.forEach((button,i)=>button.addEventListener('click',()=>choose(i)));
+  choose(0);controls.hidden=false;
+ });
+})();

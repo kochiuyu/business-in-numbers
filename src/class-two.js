@@ -19,3 +19,19 @@
  body.classList.add('c2-ready');document.querySelector('.c2-path-controls').hidden=false;document.querySelectorAll('.c2-visual-controls').forEach(c=>c.hidden=false);for(const[key,view]of Object.entries(views))select(key,view);display();reveal(false);
  let printState;window.addEventListener('beforeprint',()=>{if(printState)return;printState={...views};select('events','intersection');select('condition','joint');select('repeated','2');});window.addEventListener('afterprint',()=>{if(!printState)return;for(const[key,view]of Object.entries(printState))select(key,view);printState=undefined;});
 })();
+
+// Small comparisons leave every worked case visible without JavaScript.
+(() => {
+ document.querySelectorAll('.foundation-lab').forEach(lab => {
+  const buttons=[...lab.querySelectorAll('[data-foundation-choice]')];
+  const panels=[...lab.querySelectorAll('[data-foundation-panel]')];
+  const controls=lab.querySelector('.foundation-controls');
+  if(!controls || buttons.length!==panels.length || !buttons.length)return;
+  function choose(index){
+   panels.forEach((panel,i)=>{panel.hidden=i!==index;});
+   buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+  }
+  buttons.forEach((button,i)=>button.addEventListener('click',()=>choose(i)));
+  choose(0);controls.hidden=false;
+ });
+})();

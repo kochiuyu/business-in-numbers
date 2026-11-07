@@ -6,3 +6,29 @@
 @media(max-width:700px){.class-three-case .hero{padding:30px 26px;gap:16px}.class-three-case .hero h1{font-size:40px}.class-three-case .hero-viz{max-width:350px;margin:auto;width:100%}.class-three-case .course-guide{padding:0 16px}.class-three-case .course-strip{align-items:flex-start}.class-three-case .course-strip>span{font-size:11px}.class-three-case .depth-switch{font-size:11px;gap:6px}.class-three-case .c3-start>h2{font-size:29px}.c3-route{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.c3-route a{min-height:89px;padding:13px;gap:8px}.c3-route a b{font-size:13px}.c3-part-heading h2{font-size:30px}.c3-part{padding-top:24px}.c3-scene{padding:20px 16px;border-radius:7px}.c3-scene>h3{font-size:27px}.c3-lead{font-size:15px}.c3-fixed{font-size:9px;max-width:95px;text-align:right}.c3-kicker{font-size:9px;line-height:1.6}.c3-figure{margin:22px 0 16px}.c3-figure svg text{font-size:22px}.c3-figure figcaption,.c3-caption{font-size:13px;padding:12px}.c3-visual-controls{display:grid;grid-template-columns:1fr}.c3-visual-controls button{text-align:left;font-size:13px}.c3-check summary,.c3-check>p{font-size:14px}.c3-takeaway{font-size:16px;padding:12px 15px}.c3-path-controls{flex-wrap:wrap;gap:7px 14px;padding:12px 14px}.c3-path-controls>div{flex-basis:40%}.c3-path-controls button{width:100%;margin-top:2px}.c3-path-controls>label{flex:1;justify-content:flex-end}.class-three-case .lesson{padding:0 15px}.class-three-case .lesson>summary b{font-size:16px}.class-three-case .lesson>summary small{font-size:11px}.class-three-case .visual-practice{padding:2px 15px}.c3-step-nav{gap:15px}.c3-step-nav .button{font-size:12px;padding:12px 14px;gap:14px;max-width:65%}.c3-back{font-size:12px;max-width:130px}.c3-order-grid,.c3-joint-grid{gap:10px}.c3-order-grid article,.c3-joint-grid article{padding:14px 12px}.c3-order-grid article>span,.c3-joint-grid article>span{font-size:9px;line-height:1.5}.c3-order-grid b{font-size:24px}.c3-counter-pair{gap:8px}.c3-counter-pair i{width:32px;height:32px;font-size:18px}.c3-trials{grid-template-columns:repeat(3,1fr)}.c3-bays{grid-template-columns:repeat(3,1fr)}.c3-model-card{padding:18px 14px}.c3-model-card h4{font-size:27px;overflow-wrap:anywhere}.c3-population{gap:4px}.c3-population i{font-size:12px}.c3-wait-pair{grid-template-columns:1fr;gap:0}.c3-family-flow article{padding:20px 16px}.c3-formula-picture{font-size:25px}.c3-background,.c3-lab-details{padding:3px 14px}.c3-lab-details>.block{padding:20px 0}.c3-lab-details .rv-lab{padding:14px}.c3-lab-details h2{font-size:27px}.c3-lab-details .practice{display:block}}
 @media(prefers-reduced-motion:reduce){.class-three-case *,.class-three-case *::before,.class-three-case *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{.c3-part[hidden]{display:block!important}.c3-path-controls,.c3-visual-controls,.c3-step-nav,.c3-route{display:none!important}.c3-scene{box-shadow:none;break-inside:avoid;padding:14pt;border:1pt solid #aaa}.c3-figure{max-width:400pt}.c3-scene>h3{font-size:22pt}.c3-figure figcaption{font-size:10pt}.c3-order-grid,.c3-joint-grid{grid-template-columns:1fr 1fr}.class-three-case *{transition:none!important;animation:none!important}.c3-result{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+/* Exposition comparisons: static first, no animation, color-independent labels. */
+.foundation-lab{margin:1.5rem 0;padding:clamp(1rem,3vw,1.6rem);border:1px solid #b8cec8;border-radius:14px;background:#f4f8f6;color:#18382f;break-inside:avoid}
+.foundation-lab .foundation-kicker{font-size:.72rem;letter-spacing:.08em;font-weight:700;color:#416356}
+.foundation-controls{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.foundation-controls[hidden],.foundation-panel[hidden]{display:none}
+.foundation-controls button{font:inherit;min-height:44px;padding:.55rem .8rem;border:1px solid #557c6c;border-radius:6px;background:white;color:#18382f;cursor:pointer}
+.foundation-controls button[aria-pressed="true"]{background:#183f32;color:white}
+.foundation-controls button:focus-visible{outline:3px solid #ac5819;outline-offset:3px}
+.foundation-panel{padding:.5rem 0}.foundation-panel svg{display:block;width:100%;max-width:620px;height:auto;margin:.6rem auto;background:white;border-radius:8px}
+.foundation-panel svg text{font-family:system-ui,sans-serif;font-size:14px;fill:#173b31}
+.foundation-panel svg rect,.foundation-panel svg circle{fill:#a6cfbd;stroke:#315f4d;stroke-width:1.5}
+.foundation-panel svg .foundation-other{fill:#f3f0e8;stroke:#837963}
+.foundation-panel svg .foundation-kept{fill:#a6cfbd;stroke:#173b31;stroke-width:2}
+.foundation-panel svg .foundation-axis{stroke:#315f4d;fill:none;stroke-width:2}
+.foundation-lab details{margin-top:.6rem}.foundation-lab summary{cursor:pointer;font-weight:650;min-height:44px;padding:.5rem 0}
+@media(max-width:420px){.foundation-lab{padding:.8rem}.foundation-panel svg text{font-size:15px}}
+@media print{.foundation-controls{display:none!important}.foundation-panel[hidden]{display:block!important}.foundation-lab{background:white;break-inside:auto}.foundation-panel{break-inside:avoid}}
+
+.foundation-chart{max-width:100%;overflow-x:auto;border-radius:8px}.foundation-chart:focus-visible{outline:3px solid #ac5819;outline-offset:3px}.foundation-chart svg{min-width:500px}.foundation-lab{min-width:0}
+@media print{.foundation-chart{overflow:visible}.foundation-chart svg{min-width:0}}
+
+@media(max-width:700px){.foundation-chart::before{content:"Swipe the diagram sideways, or focus it and use the arrow keys.";display:block;font-size:13px;line-height:1.5;color:#45584e;margin:0 0 10px;white-space:normal}}
+@media print{.foundation-chart::before{display:none}}
+
+.c3-figure svg .c3-y-tick{font-size:20px}

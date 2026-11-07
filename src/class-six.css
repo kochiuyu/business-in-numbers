@@ -11,3 +11,18 @@
 @media(max-width:700px){.c6-route{grid-template-columns:repeat(2,minmax(0,1fr))}.c6-brief{padding:20px 14px}.c6-brief h4{font-size:24px}.c6-claim-row,.c6-errors,.c6-team-cards{grid-template-columns:1fr;gap:12px}.c6-claim-row>div,.c6-errors>article,.c6-team-cards>div{padding:18px 15px}.c6-claim-row b,.c6-team-cards b{font-size:24px}.c6-rule-card{padding:18px 14px}.c6-rule-card b{font-size:22px;overflow-wrap:anywhere}.c6-rule-card small{font-size:13px}.c6-pair-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.c6-pair-list b{font-size:20px}.c6-variance-tiles{gap:12px}.c6-variance-tiles span{font-size:11px}.c6-variance-tiles small{font-size:11px}.c6-figure svg text{font-size:22px}.c6-sealed{padding:20px 12px;font-size:14px}.c6-step-nav .button{max-width:67%;font-size:12px}.c6-decision li{font-size:14px}}
 
 @media(max-width:700px){.c6-background .intro>div,.c6-background .question-grid{min-width:0}.c6-background .question-grid{grid-template-columns:1fr;gap:16px}.c6-background .question-grid a{min-width:0}.c6-background .question-grid b{font-size:14px}.c6-background .question-grid p{font-size:13px}}
+
+/* Extra inference demonstrations: native controls, no animation or new dependencies. */
+.c6-extra{margin:24px 0;padding:24px;border:1px solid #b5c4a9;border-left:4px solid #43684b;border-radius:7px;background:#fffdf5;min-width:0}
+.c6-extra h4{font:25px/1.3 Georgia,serif;margin:0 0 16px}.c6-extra p{font-size:15px;line-height:1.75}.c6-extra-controls{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.c6-extra-controls[hidden]{display:none}.c6-extra-controls button{font:inherit;font-size:14px;min-height:44px;padding:10px 14px;border:1px solid #43684b;border-radius:5px;color:#173f36;background:#fffdf5;cursor:pointer}.c6-extra-controls button[aria-pressed="true"]{background:#173f36;color:#fff}.c6-extra-controls button:focus-visible{outline:3px solid #b45a25;outline-offset:3px}.c6-extra .c6-figure{max-width:540px;margin:20px auto}.c6-extra .c6-figure svg text{font-size:17px}
+@media(max-width:700px){.c6-extra{padding:18px 14px}.c6-extra h4{font-size:23px}.c6-extra-controls{display:grid;grid-template-columns:1fr}.c6-extra-controls button{text-align:left}}
+@media print{.c6-extra-controls{display:none!important}.c6-extra{break-inside:avoid;padding:12pt;box-shadow:none}}
+.c6-extra-errorrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;padding:16px;border:1px solid #a7b89b;background:#edf2e6}.c6-extra-errorrow h5{grid-column:1/-1;font-size:16px;margin:0}.c6-extra-errorrow>div{display:grid;gap:9px;background:#fffdf5;padding:14px}.c6-extra-errorrow b{font-size:18px}.c6-extra-errorrow span{font-size:14px;line-height:1.5}@media(max-width:500px){.c6-extra-errorrow{grid-template-columns:1fr}}
+
+/* Keep diagram type readable rather than shrinking 440 viewBox units into a phone. */
+.c6-extra-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;border-radius:4px}
+.c6-extra .c6-extra-scroll svg{display:block;width:100%;min-width:440px;max-width:none}
+.c6-extra-scroll:focus-visible{outline:3px solid #b45a25;outline-offset:3px}
+.c6-extra .c6-extra-scroll-hint{display:none;font-size:13px;line-height:1.6}
+@media(max-width:700px){.c6-extra .c6-extra-scroll-hint{display:block}}
+@media print{.c6-extra-scroll{overflow:visible}.c6-extra .c6-extra-scroll svg{min-width:0;width:100%;max-width:100%}.c6-extra .c6-extra-scroll-hint{display:none}}

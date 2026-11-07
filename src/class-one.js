@@ -56,3 +56,19 @@
  window.addEventListener('beforeprint',()=>{printViews=[...document.querySelectorAll('[data-visual][aria-pressed="true"]')].map(b=>[b.dataset.visual,b.dataset.view]);body.classList.add('c1-printing');center('original');spread('target');shape('fence');});
  window.addEventListener('afterprint',()=>{if(printViews){for(const[key,view]of printViews){if(key==='center')center(view);if(key==='spread')spread(view);if(key==='shape')shape(view);}printViews=null;body.classList.remove('c1-printing');}});
 })();
+
+// Small comparisons leave every worked case visible without JavaScript.
+(() => {
+ document.querySelectorAll('.foundation-lab').forEach(lab => {
+  const buttons=[...lab.querySelectorAll('[data-foundation-choice]')];
+  const panels=[...lab.querySelectorAll('[data-foundation-panel]')];
+  const controls=lab.querySelector('.foundation-controls');
+  if(!controls || buttons.length!==panels.length || !buttons.length)return;
+  function choose(index){
+   panels.forEach((panel,i)=>{panel.hidden=i!==index;});
+   buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+  }
+  buttons.forEach((button,i)=>button.addEventListener('click',()=>choose(i)));
+  choose(0);controls.hidden=false;
+ });
+})();
