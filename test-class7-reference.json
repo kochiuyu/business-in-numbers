@@ -1,7 +1,7 @@
 {
   "base_commit": "0227e92e8f944315e680501edc5510c8434cabac",
   "topic_sha256": [
-    "d83162538bf2919f82535c265cf1d085254a16db58cf06ac02c1ec3bd4131508",
+    "a8667c3bbe7931757c370c77ee6a94d812d20e6393237743a6cf8243da75af62",
     "f6823b1162acb73100924dd4ffa710ff9b8b4790604f52bf848779224e86b1da",
     "f1649c2b4879ccc24bb3e6a8882c7553906ace1ab7002b7092c0101e8b7f346c",
     "189993edf4040622e4c7ca6c8c0680a937826fe9749d217c0d43151269cda5bb",
@@ -27,5 +27,6 @@
     "index.html": "dcaef7db4930ef215da4fbaec67225aea166d72f918c315904c690aa0f838062",
     "estimation.html": "32998212493f7bb95cd2a0799da370c5391afd7ec91105fe1707010d389c8698"
   },
-  "other_pages_note": "Built-page snapshots refreshed for the sixth data-quality review. New missing-data, nonresponse, paired-arithmetic and quantile-translation bridges were independently reviewed. Original lesson bodies and technical material are unchanged."
+  "other_pages_note": "Built-page snapshots refreshed for the sixth data-quality review. New missing-data, nonresponse, paired-arithmetic and quantile-translation bridges were independently reviewed. Original lesson bodies and technical material are unchanged.",
+  "topic_note": "Topic 1 wording corrected in the seventh review: the global ANOVA is not a mandatory gate for a prespecified single contrast or family-controlled comparisons. All other original topics are unchanged."
 }
