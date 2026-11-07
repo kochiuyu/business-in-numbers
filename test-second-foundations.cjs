@@ -18,13 +18,15 @@ function lessons(source) {
   }
   return out;
 }
-// Fourth review refreshes only the reviewed total-probability and moments explanations.
+// Reviewed snapshots: Class 1 shape is intentionally deepened; test-depth-shape.cjs
+// independently reconstructs and verifies the entire pre-deepening shape lesson.
+// All other lesson snapshot hashes remain unchanged.
 const baseline = {
   "index.html": [
     "b5f8d3050d25e4cce8119bf2732c5fbf721530ae54b2c9fc98a5906ba89f40c9",
     "3e10a7fca55d15dddb675d4eb54db5729328c8e0727773239f669d9e53856598",
     "a1241ebb4c7ba8329e7053448f6d7b0fa4662a5276efc154ee6b885f1e735b9d",
-    "8bb46b6f1a2cf6eeb73dc26bca80fcb5d6bd845fa9ba27ccb1bb66714ff58c9a",
+    "16f9a3c422806eba9916323df97a56a52bea23de4831da6f04a50a7d61c2bbe8",
     "0a76071b55d59121606cffaac59d88da81a0272fe475782cd878ab25c7b9d4ac",
     "6e8f7599e9d9a173f5631697cf8fc3904b6ab2a8d25b85e2c8e82b0bd1884920"
   ],

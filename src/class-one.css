@@ -45,3 +45,13 @@
 .second-foundation-chart{overflow-x:auto;border-radius:8px;background:#fff;max-width:100%}.second-foundation-chart svg{display:block;width:100%;min-width:580px;height:auto}.second-foundation-chart text{font:16px system-ui,sans-serif;fill:#203e33}.second-foundation-chart rect{fill:#e4eee7;stroke:#769581}.second-foundation-chart path{fill:none;stroke:#51745d;stroke-width:2}.second-foundation-chart .second-curve{stroke-width:3}.second-foundation-chart .second-target{stroke:#94602a;stroke-dasharray:6 5}.second-foundation-chart .second-open{fill:white;stroke:#315e44;stroke-width:2}.second-foundation-chart .second-filled{fill:#315e44}
 .second-foundation summary{cursor:pointer;padding:.65rem 0;min-height:44px;font-weight:650}.second-foundation-chart:focus-visible,.second-foundation summary:focus-visible{outline:3px solid #94602a;outline-offset:3px}
 @media print{.second-foundation-chart{overflow:visible}.second-foundation-chart svg{min-width:0}.second-foundation{break-inside:avoid}}
+
+/* Shape deepening: full static tables, optional comparison controls. */
+.shape-table-scroll{max-width:100%;overflow-x:auto;margin:1rem 0;border:1px solid #c9d8d0;border-radius:8px;background:#fff}
+.shape-table-scroll:focus-visible{outline:3px solid #94602a;outline-offset:3px}
+.shape-moment-table{width:100%;border-collapse:collapse;min-width:390px;font-variant-numeric:tabular-nums}
+.shape-moment-table caption{text-align:left;padding:.8rem;font-size:.9rem;color:#203e33;caption-side:top}
+.shape-moment-table th,.shape-moment-table td{text-align:right;padding:.7rem;border-bottom:1px solid #d9e3dc;white-space:nowrap}
+.shape-moment-table th:first-child{text-align:left}.shape-moment-table thead{background:#e4eee7}
+#shape-zero-lab .foundation-panel{padding-top:.7rem}#shape-moment-worked>details{margin-top:1rem}
+@media print{.shape-table-scroll{overflow:visible}.shape-moment-table{min-width:0}#shape-moment-worked{break-inside:auto}}

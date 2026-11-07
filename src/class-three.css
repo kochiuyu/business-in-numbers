@@ -40,3 +40,12 @@
 .second-foundation-chart{overflow-x:auto;border-radius:8px;background:#fff;max-width:100%}.second-foundation-chart svg{display:block;width:100%;min-width:580px;height:auto}.second-foundation-chart text{font:16px system-ui,sans-serif;fill:#203e33}.second-foundation-chart rect{fill:#e4eee7;stroke:#769581}.second-foundation-chart path{fill:none;stroke:#51745d;stroke-width:2}.second-foundation-chart .second-curve{stroke-width:3}.second-foundation-chart .second-target{stroke:#94602a;stroke-dasharray:6 5}.second-foundation-chart .second-open{fill:white;stroke:#315e44;stroke-width:2}.second-foundation-chart .second-filled{fill:#315e44}
 .second-foundation summary{cursor:pointer;padding:.65rem 0;min-height:44px;font-weight:650}.second-foundation-chart:focus-visible,.second-foundation summary:focus-visible{outline:3px solid #94602a;outline-offset:3px}
 @media print{.second-foundation-chart{overflow:visible}.second-foundation-chart svg{min-width:0}.second-foundation{break-inside:avoid}}
+
+/* Worked model bridges stay readable without scripts or a wide viewport. */
+.c3-depth-calculation{padding:.5rem 1rem;background:#fff;border-left:4px solid #51745d;border-radius:4px}
+.c3-depth-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1rem 0}
+.c3-depth-pair article{padding:1rem;background:#fff;border:1px solid #c9d8d0;border-radius:8px;min-width:0}
+.c3-depth-pair h4{margin-top:0}.c3-depth-pair p{margin-bottom:0}
+.c3-depth details{margin-top:1rem}.c3-depth h4{margin-top:1.4rem}
+@media(max-width:560px){.c3-depth-pair{grid-template-columns:1fr}.c3-depth ol{padding-left:1.3rem}}
+@media print{.c3-depth{break-inside:auto}.c3-depth-pair article,.c3-depth-calculation{break-inside:avoid}}
