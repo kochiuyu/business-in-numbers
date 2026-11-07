@@ -46,7 +46,38 @@ function plotPair(key){const p=pairs[key], r=Stats.correlation(p.x,p.y);$('r-val
 document.querySelectorAll('[data-pair]').forEach(b=>b.addEventListener('click',()=>plotPair(b.dataset.pair)));
 const questions=[{q:'You need a one-number description of a typical purchase on the $200 day. Which is the strongest answer?',a:['The median, $31, with a note about the large order.','The mean, $45, because it always describes a typical purchase.','Delete the $200 order before calculating anything.'],correct:0,why:'The median describes the middle purchase without letting the one large order dominate it. The mean still matters for revenue. Check unusual observations rather than deleting them automatically.'},{q:'Suppliers A and B both average five delivery days. What should you check next?',a:['Nothing: equal means imply equal reliability.','The spread and the actual delivery-time pattern.','Only which supplier has the larger maximum.'],correct:1,why:'Averages hide variation. The standard deviation, IQR and the distribution help assess consistency. Context, data quality and the number of observations also matter.'},{q:'A dataset has zero skewness and zero excess kurtosis. What can you conclude?',a:['The observations must follow a normal distribution.','Its mean must equal its median.','These two numbers alone do not establish normality.'],correct:2,why:'Matching these moments is not enough to identify a distribution. Inspect the data and use appropriate diagnostics. Even zero skewness alone does not establish symmetry.'},{q:'Ice-cream and summer-clothing sales are positively correlated. What is justified?',a:['Increasing ice-cream sales will cause more clothing sales.','The sales move together; weather may affect both.','One of the two datasets must be incorrect.'],correct:1,why:'Correlation is association. A common cause, such as weather, can drive both. A causal claim needs a credible design and assumptions, not just a correlation.'}];
 let qi=0;const answers={};
-function renderQuiz(){const q=questions[qi],answered=answers[qi]!==undefined;const right=answers[qi]===q.correct;$('quiz').innerHTML=`<div class="quiz-top"><span>QUESTION ${qi+1} OF ${questions.length}</span><span>${Object.keys(answers).length} explored</span></div><h3 id="quiz-question" tabindex="-1">${q.q}</h3><div class="quiz-answers" role="group" aria-labelledby="quiz-question">${q.a.map((a,i)=>`<button data-answer="${i}" aria-pressed="${answers[qi]===i}" class="${answers[qi]===i?(right?'selected':'wrong'):''}">${a}</button>`).join('')}</div>${answered?`<p class="quiz-feedback" role="status"><b>${right?'Yes.':'Reconsider that choice.'}</b> ${q.why}</p>`:''}<div class="quiz-nav"><button id="previous-question" ${qi===0?'disabled':''}>← Previous</button><button id="next-question">${qi===questions.length-1?'Start again ↺':'Next question →'}</button></div>`;document.querySelectorAll('[data-answer]').forEach(b=>b.addEventListener('click',()=>{answers[qi]=Number(b.dataset.answer);renderQuiz();document.querySelector(`[data-answer="${answers[qi]}"]`).focus({preventScroll:true});}));$('previous-question').addEventListener('click',()=>{qi--;renderQuiz();$('quiz-question').focus({preventScroll:true});});$('next-question').addEventListener('click',()=>{if(qi===questions.length-1){qi=0;Object.keys(answers).forEach(k=>delete answers[k]);}else qi++;renderQuiz();$('quiz-question').focus({preventScroll:true});});}
+function renderQuiz(){
+ const q=questions[qi];
+ $('quiz').innerHTML=`<div class="quiz-top"><span>QUESTION ${qi+1} OF ${questions.length}</span><span id="quiz-explored">${Object.keys(answers).length} explored</span></div><h3 id="quiz-question" tabindex="-1">${q.q}</h3><div class="quiz-answers" role="group" aria-labelledby="quiz-question">${q.a.map((answer,i)=>`<button data-answer="${i}" aria-pressed="false">${answer}</button>`).join('')}</div><p id="quiz-feedback" class="quiz-feedback" role="status" aria-atomic="true"></p><div class="quiz-nav"><button id="previous-question" ${qi===0?'disabled':''}>← Previous</button><button id="next-question">${qi===questions.length-1?'Start again ↺':'Next question →'}</button></div>`;
+ const buttons=[...document.querySelectorAll('[data-answer]')],feedback=$('quiz-feedback');
+ function updateAnswer(){
+  const chosen=answers[qi],answered=chosen!==undefined,right=chosen===q.correct;
+  buttons.forEach(button=>{
+   const selected=Number(button.dataset.answer)===chosen;
+   button.setAttribute('aria-pressed',String(selected));
+   button.classList.toggle('selected',selected&&right);
+   button.classList.toggle('wrong',selected&&!right);
+   if(selected)button.setAttribute('aria-describedby','quiz-feedback');
+   else button.removeAttribute('aria-describedby');
+  });
+  $('quiz-explored').textContent=`${Object.keys(answers).length} explored`;
+  // Keep the live region and answer buttons mounted: only its content changes.
+  if(answered)feedback.innerHTML=`<b>${right?'Yes.':'Reconsider that choice.'}</b> ${q.why}`;
+ }
+ buttons.forEach(button=>button.addEventListener('click',()=>{
+  const chosen=Number(button.dataset.answer);
+  if(answers[qi]===chosen)return;
+  answers[qi]=chosen;
+  updateAnswer();
+ }));
+ $('previous-question').addEventListener('click',()=>{qi--;renderQuiz();$('quiz-question').focus({preventScroll:true});});
+ $('next-question').addEventListener('click',()=>{
+  if(qi===questions.length-1){qi=0;Object.keys(answers).forEach(key=>delete answers[key]);}
+  else qi++;
+  renderQuiz();$('quiz-question').focus({preventScroll:true});
+ });
+ updateAnswer();
+}
 function openAnchor(){const id=decodeURIComponent(location.hash.slice(1));if(!id)return;const target=$(id);if(target&&target.tagName==='DETAILS')target.open=true;}
 window.addEventListener('hashchange',openAnchor);openAnchor();update();plotPair('positive');renderQuiz();
 

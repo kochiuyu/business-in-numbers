@@ -24,7 +24,39 @@ const questions=[
 ['X~N(500,16). How should 496 be standardized?',['(496−500)/16','496/4','(496−500)/4'],2,'The second normal parameter is variance 16; divide by SD 4 to get z=−1.'],
 ['For a standard normal right-tail probability .025, which inverse-CDF input is correct?',['.975','.025','.95'],0,'CDF inverses use the left-tail probability. One minus .025 is .975, giving about 1.96.'],
 ['Student t with one degree of freedom is symmetric about zero. What is its mean?',['0, because every symmetric distribution has mean zero.','Undefined. Symmetry does not guarantee a finite mean.','1, because there is one degree of freedom.'],1,'The t mean exists only above one degree of freedom. The median is still zero.']];
-let qi=0;const answers={};function quiz(){const [q,a,c,why]=questions[qi],answered=answers[qi]!==undefined,right=answers[qi]===c;$('quiz').innerHTML=`<div class="quiz-top"><span>QUESTION ${qi+1} OF ${questions.length}</span><span>${Object.keys(answers).length} explored</span></div><h3 id="quiz-question" tabindex="-1">${q}</h3><div class="quiz-answers" role="group" aria-labelledby="quiz-question">${a.map((x,i)=>`<button data-answer="${i}" aria-pressed="${answers[qi]===i}" class="${answers[qi]===i?(right?'selected':'wrong'):''}">${x}</button>`).join('')}</div>${answered?`<p class="quiz-feedback" role="status"><b>${right?'Yes.':'Reconsider that choice.'}</b> ${why}</p>`:''}<div class="quiz-nav"><button id="previous-question" ${qi===0?'disabled':''}>← Previous</button><button id="next-question">${qi===questions.length-1?'Start again ↺':'Next question →'}</button></div>`;document.querySelectorAll('[data-answer]').forEach(b=>b.addEventListener('click',()=>{answers[qi]=Number(b.dataset.answer);quiz();document.querySelector(`[data-answer="${answers[qi]}"]`).focus({preventScroll:true});}));$('previous-question').addEventListener('click',()=>{qi--;quiz();$('quiz-question').focus({preventScroll:true});});$('next-question').addEventListener('click',()=>{if(qi===questions.length-1){qi=0;Object.keys(answers).forEach(k=>delete answers[k]);}else qi++;quiz();$('quiz-question').focus({preventScroll:true});});}
+let qi=0;const answers={};function quiz(){
+ const [question,options,correct,why]=questions[qi];
+ const q={q:question,a:options,correct,why};
+ $('quiz').innerHTML=`<div class="quiz-top"><span>QUESTION ${qi+1} OF ${questions.length}</span><span id="quiz-explored">${Object.keys(answers).length} explored</span></div><h3 id="quiz-question" tabindex="-1">${q.q}</h3><div class="quiz-answers" role="group" aria-labelledby="quiz-question">${q.a.map((answer,i)=>`<button data-answer="${i}" aria-pressed="false">${answer}</button>`).join('')}</div><p id="quiz-feedback" class="quiz-feedback" role="status" aria-atomic="true"></p><div class="quiz-nav"><button id="previous-question" ${qi===0?'disabled':''}>← Previous</button><button id="next-question">${qi===questions.length-1?'Start again ↺':'Next question →'}</button></div>`;
+ const buttons=[...document.querySelectorAll('[data-answer]')],feedback=$('quiz-feedback');
+ function updateAnswer(){
+  const chosen=answers[qi],answered=chosen!==undefined,right=chosen===q.correct;
+  buttons.forEach(button=>{
+   const selected=Number(button.dataset.answer)===chosen;
+   button.setAttribute('aria-pressed',String(selected));
+   button.classList.toggle('selected',selected&&right);
+   button.classList.toggle('wrong',selected&&!right);
+   if(selected)button.setAttribute('aria-describedby','quiz-feedback');
+   else button.removeAttribute('aria-describedby');
+  });
+  $('quiz-explored').textContent=`${Object.keys(answers).length} explored`;
+  // Keep the live region and answer buttons mounted: only its content changes.
+  if(answered)feedback.innerHTML=`<b>${right?'Yes.':'Reconsider that choice.'}</b> ${q.why}`;
+ }
+ buttons.forEach(button=>button.addEventListener('click',()=>{
+  const chosen=Number(button.dataset.answer);
+  if(answers[qi]===chosen)return;
+  answers[qi]=chosen;
+  updateAnswer();
+ }));
+ $('previous-question').addEventListener('click',()=>{qi--;quiz();$('quiz-question').focus({preventScroll:true});});
+ $('next-question').addEventListener('click',()=>{
+  if(qi===questions.length-1){qi=0;Object.keys(answers).forEach(key=>delete answers[key]);}
+  else qi++;
+  quiz();$('quiz-question').focus({preventScroll:true});
+ });
+ updateAnswer();
+}
 function openAnchor(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}const el=$(id);if(!el)return;let p=el;while(p){if(p.tagName==='DETAILS')p.open=true;p=p.parentElement;}}
 window.addEventListener('hashchange',openAnchor);openAnchor();quiz();
 })();

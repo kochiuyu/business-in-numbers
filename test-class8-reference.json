@@ -18,15 +18,15 @@
     "d6163ce92877f03c384d5cb2eef68d0a02a3280b89f2eafddd24d1612c3653e1"
   ],
   "other_pages": {
-    "course-introduction.html": "452fc39f2c83f9e0db1664e1bbf94892378ec8d70b7037d1b63ef60705cdcc10",
-    "sampling-distributions.html": "72e82ff970d6e5d89357c8cdef7afe553e5d3bef758560678bc0a48e9cfe1061",
-    "math-check.html": "a77fc56d9ed7991655bfcf2a22fd209a4afacd23c0c0bfdeacca39d3554be4bf",
-    "random-variables.html": "46c7753c7e542852b8530e3ff9198166b94160db64f2f20010ed4ffe40e67f6f",
-    "hypothesis-testing.html": "65680b6b3407b2f370dc8646ad960e2973ef636d603f0ccdd26e87554eb94ed6",
-    "probability.html": "d30fdc27b534e12f675112533c26f4c06e72c416ddca782a49593e9495140817",
-    "index.html": "ae5df98a85f2e627ce6a876a5f2ce62954f936ce1e500ecd0ab678ab9b88e15e",
-    "estimation.html": "7ab1c6e6c9f8c6b17d932f0bf3950e8977de24f1b0e01d346b7be4e98d410c90",
-    "anova.html": "41237c49beb9f548b80ce24c91f1cb0640baf6b17132f7eeb18cd41ad9d06312"
+    "course-introduction.html": "e403cbd85d9497623fcc097ed5667713410ca5abf8d0f413bffc5c53112b2cbe",
+    "sampling-distributions.html": "e9f3bf42191cd0e9bafc7773dbba207dbfd6c0a4429ec15f8f1e4e02fa93504e",
+    "math-check.html": "5dbebe5efb47da9529cb1d607511f22bbe51d0973f3238d8b5c80a120eb3b08b",
+    "random-variables.html": "c98b1c42eaf03102b2c3f1a4a789797b1a5d038c316ec9d4cbc8192dc93777be",
+    "hypothesis-testing.html": "2c75f0d0c4a2f0e976f55501bace4221d5ac4c4fbd8d4c7369a5e0b656cd83c5",
+    "probability.html": "27afd0449c019db4b80eeeacecedba8843077af89aa4dcdd70a17d74734f2132",
+    "index.html": "3c1a9749cabf0b75839d92160962f8195e4ed287a08a842ad1f1055caf81601e",
+    "estimation.html": "582155b47424dd7d6a9b6915f10ab611b44209c9f249a32baac4594ade042cc3",
+    "anova.html": "74f92ecd9ad0d70dbafebe685e72c02302f1b925e992d5f584f422f685598218"
   },
-  "other_pages_note": "Built-page snapshots refreshed for the eighth navigation review. Only paced-controller fingerprints and Back to top anchor destinations changed; all lesson content, diagrams, calculations and technical topic hashes are unchanged."
+  "other_pages_note": "Built-page snapshots refreshed for the ninth accessibility review. Only semantic roles and quiz/style asset fingerprints changed; lesson text, mathematics, diagrams and original topic hashes remain unchanged."
 }

@@ -233,6 +233,7 @@ class Element {
   constructor(tag='DIV') { this.tagName=tag; this.dataset={}; this.attrs={}; this.handlers={}; this.value=''; this.checked=false; this.hidden=false; this.open=false; this.parentElement=null; this.textContent=''; this.innerHTML=''; this.classList={toggle(){},remove(){},add(){}}; }
   addEventListener(type, fn) { (this.handlers[type] ||= []).push(fn); }
   setAttribute(key,value) { this.attrs[key]=String(value); }
+  removeAttribute(key) { delete this.attrs[key]; }
   focus() {}
   fire(type) { for (const fn of this.handlers[type] || []) fn({target:this,preventDefault(){}}); }
 }
