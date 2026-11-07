@@ -34,6 +34,8 @@ Class 4 follows thirteen focused steps: sampling design, exact sampling distribu
 
 Class 5 follows fifteen focused steps: target, unbiasedness, efficiency, consistency, individual spread, mean SE, binary estimation, rate SE, mean interval, confidence interpretation, t interval, rate interval, mean planning, rate planning, and the business decision. Essential calculations stay visible; all original details and exercises remain. Sequential links use `#class5-step-1` through `#class5-step-15`; original `#estimation-step-*` and topic links retain their subjects.
 
+Class 6 follows seventeen focused steps: claim, decision errors, power, statistic and cutoffs, p-value, known-SD z, estimated-SD t, test–interval matching, one rate, comparison design, pooled means, Welch means, paired means, two rates, variances, reporting, and software audit. Core calculations stay visible; all original explanations and proofs remain. Sequential links use `#class6-step-1` through `#class6-step-17`; original `#hypothesis-step-*` and topic links retain their subjects.
+
 Run `npm run test:navigation` after building for navigation structure and interaction regression checks. Browser QA should also check narrow phone layouts, keyboard focus, Back/Forward, and the no-JavaScript fallback.
 
 ## GitHub Pages

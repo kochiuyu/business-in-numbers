@@ -10,6 +10,7 @@ function restore(source, page) {
   if (page === 'random-variables') source = require('./class-three-preservation.cjs').restore(source);
   if (page === 'sampling-distributions') source = require('./class-four-preservation.cjs').restore(source);
   if (page === 'estimation') source = require('./class-five-preservation.cjs').restore(source);
+  if (page === 'hypothesis-testing') source = require('./class-six-preservation.cjs').restore(source);
   const record = reference.pages[page];
   if (!record) return source;
   const tokens = source.match(/<[^>]*>|[^<]+/g) || [];

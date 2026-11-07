@@ -17,10 +17,10 @@ const compiled=compile(source,math); // In-memory KaTeX validation; never writes
 const variants=[['source',source],['compiled in memory',compiled]];
 if(process.argv.includes('--built'))variants.push(['built',fs.readFileSync('dist/hypothesis-testing.html','utf8')]);
 const cases=[
- ['c6-pooled-steps',8,['784','351','1135','49/88','88 residual degrees','−3.5140','−0.4860'],['depth-pooled-variance','depth-pooled-test']],
- ['c6-welch-steps',8,['.320','.225','87.6730','−3.4672','−0.5328','not guaranteed'],['depth-welch-se','depth-welch-df']],
- ['c6-proportion-steps',10,['30 of 50','28 of 40','32.22/17.78','25.78/14.22','−29.65, 9.65','each visitor the same weight'],['depth-prop-pool','depth-prop-test','depth-prop-interval']],
- ['c6-f-tail-steps',11,['49 numerator df and 39 denominator df','.19274','.55303 and 1.84629','.54163 and 1.80821','1.2247'],['depth-f-reciprocal']]
+ ['c6-pooled-steps',11,['784','351','1135','49/88','88 residual degrees','−3.5140','−0.4860'],['depth-pooled-variance','depth-pooled-test']],
+ ['c6-welch-steps',12,['.320','.225','87.6730','−3.4672','−0.5328','not guaranteed'],['depth-welch-se','depth-welch-df']],
+ ['c6-proportion-steps',14,['30 of 50','28 of 40','32.22/17.78','25.78/14.22','−29.65, 9.65','each visitor the same weight'],['depth-prop-pool','depth-prop-test','depth-prop-interval']],
+ ['c6-f-tail-steps',15,['49 numerator df and 39 denominator df','.19274','.55303 and 1.84629','.54163 and 1.80821','1.2247'],['depth-f-reciprocal']]
 ];
 for(const [name,html] of variants){
  for(const [id,step,phrases,keys] of cases){
@@ -32,7 +32,7 @@ for(const [name,html] of variants){
   ok((block.match(/<li>/g)||[]).length>=3,`${id} explains intermediate steps`);
   ok(block.includes('<details><summary>Check:'),`${id} has a native reasoning check`);
   ok(!/<script|<button|<input|\shidden(?:\s|=|>)/.test(block),`${id} remains useful without JavaScript`);
-  ok(html.indexOf(`id="${id}"`)>html.indexOf(`id="hypothesis-step-${step}"`)&&html.indexOf(`id="${id}"`)<html.indexOf(`id="hypothesis-step-${step+1}"`),`${id} stays in its lesson`);
+  ok(html.indexOf(`id="${id}"`)>html.indexOf(`id="class6-step-${step}"`)&&html.indexOf(`id="${id}"`)<html.indexOf(`id="class6-step-${step+1}"`),`${id} stays in its lesson`);
   for(const phrase of phrases)ok(block.includes(phrase),`${name}: ${id} retains ${phrase}`);
   for(const key of keys){
    ok(math[key]?.display===true&&math[key].text.length>40,`${key} has accessible equation metadata`);

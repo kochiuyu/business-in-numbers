@@ -1,0 +1,667 @@
+{
+  "baseline_sha256": "ea5b29a65aadf6ab3050bd2c77f27b3d8d58f4ff05dabd2c2d56584eb2fe482f",
+  "reviewed_sha256": "3a308f8960e3a3a7059954e561222208c896ff275111cb8f85e5c8c19b9fc8f8",
+  "patches": [
+    {
+      "token_start": 152,
+      "token_end": 153,
+      "before": "CLASS 6 · TWELVE SMALL STEPS",
+      "after": "CLASS 6 · SEVENTEEN FOCUSED STEPS"
+    },
+    {
+      "token_start": 158,
+      "token_end": 159,
+      "before": "Follow the dispatch manager from a promise to a careful decision. Start with each picture, try its controls and explain the takeaway. Open an explanation or worked example when you want the calculations. All examples are synthetic; each change of dataset is labeled.",
+      "after": "Follow the dispatch manager from a promise to a careful decision. Separate the error rule from the evidence, then choose a test from the outcome and study design. Each step keeps its core reasoning and calculation visible. All examples are synthetic; each change of dataset is labeled."
+    },
+    {
+      "token_start": 160,
+      "token_end": 162,
+      "before": "<nav class=\"c6-route\" aria-label=\"Class 6 illustrated path\"><a href=\"#hypothesis-step-1\">",
+      "after": "<nav class=\"c6-route\" aria-label=\"Class 6 steps\"><a href=\"#class6-step-1\">"
+    },
+    {
+      "token_start": 169,
+      "token_end": 170,
+      "before": "<a href=\"#hypothesis-step-2\">",
+      "after": "<a href=\"#class6-step-2\">"
+    },
+    {
+      "token_start": 174,
+      "token_end": 175,
+      "before": "Weigh the two errors",
+      "after": "Distinguish decision errors"
+    },
+    {
+      "token_start": 177,
+      "token_end": 178,
+      "before": "<a href=\"#hypothesis-step-3\">",
+      "after": "<a href=\"#class6-step-3\">"
+    },
+    {
+      "token_start": 182,
+      "token_end": 183,
+      "before": "See the tail area",
+      "after": "Plan power for an effect"
+    },
+    {
+      "token_start": 185,
+      "token_end": 186,
+      "before": "<a href=\"#hypothesis-step-4\">",
+      "after": "<a href=\"#class6-step-4\">"
+    },
+    {
+      "token_start": 190,
+      "token_end": 191,
+      "before": "Choose the reference",
+      "after": "Standardize and set cutoffs"
+    },
+    {
+      "token_start": 193,
+      "token_end": 194,
+      "before": "<a href=\"#hypothesis-step-5\">",
+      "after": "<a href=\"#class6-step-5\">"
+    },
+    {
+      "token_start": 196,
+      "token_end": 220,
+      "before": "",
+      "after": "</span><b>Read the p-value</b></a><a href=\"#class6-step-6\"><span>06</span><b>Test a mean with known SD</b></a><a href=\"#class6-step-7\"><span>07</span><b>Estimate SD and use t</b></a><a href=\"#class6-step-8\"><span>08"
+    },
+    {
+      "token_start": 225,
+      "token_end": 226,
+      "before": "<a href=\"#hypothesis-step-6\">",
+      "after": "<a href=\"#class6-step-9\">"
+    },
+    {
+      "token_start": 227,
+      "token_end": 228,
+      "before": "06",
+      "after": "09"
+    },
+    {
+      "token_start": 233,
+      "token_end": 234,
+      "before": "<a href=\"#hypothesis-step-7\">",
+      "after": "<a href=\"#class6-step-10\">"
+    },
+    {
+      "token_start": 235,
+      "token_end": 236,
+      "before": "07",
+      "after": "10"
+    },
+    {
+      "token_start": 238,
+      "token_end": 239,
+      "before": "Keep the design visible",
+      "after": "Choose the comparison design"
+    },
+    {
+      "token_start": 241,
+      "token_end": 242,
+      "before": "<a href=\"#hypothesis-step-8\">",
+      "after": "<a href=\"#class6-step-11\">"
+    },
+    {
+      "token_start": 243,
+      "token_end": 244,
+      "before": "08",
+      "after": "11"
+    },
+    {
+      "token_start": 246,
+      "token_end": 247,
+      "before": "Compare separate teams",
+      "after": "Pool a shared variance"
+    },
+    {
+      "token_start": 249,
+      "token_end": 250,
+      "before": "<a href=\"#hypothesis-step-9\">",
+      "after": "<a href=\"#class6-step-12\">"
+    },
+    {
+      "token_start": 251,
+      "token_end": 252,
+      "before": "09",
+      "after": "12"
+    },
+    {
+      "token_start": 254,
+      "token_end": 255,
+      "before": "Keep the pairs together",
+      "after": "Allow unequal variances"
+    },
+    {
+      "token_start": 257,
+      "token_end": 258,
+      "before": "<a href=\"#hypothesis-step-10\">",
+      "after": "<a href=\"#class6-step-13\">"
+    },
+    {
+      "token_start": 259,
+      "token_end": 268,
+      "before": "10",
+      "after": "13</span><b>Keep matched pairs together</b></a><a href=\"#class6-step-14\"><span>14"
+    },
+    {
+      "token_start": 273,
+      "token_end": 274,
+      "before": "<a href=\"#hypothesis-step-11\">",
+      "after": "<a href=\"#class6-step-15\">"
+    },
+    {
+      "token_start": 275,
+      "token_end": 276,
+      "before": "11",
+      "after": "15"
+    },
+    {
+      "token_start": 278,
+      "token_end": 279,
+      "before": "Compare consistency",
+      "after": "Compare population variances"
+    },
+    {
+      "token_start": 281,
+      "token_end": 282,
+      "before": "<a href=\"#hypothesis-step-12\">",
+      "after": "<a href=\"#class6-step-16\">"
+    },
+    {
+      "token_start": 283,
+      "token_end": 284,
+      "before": "12",
+      "after": "16"
+    },
+    {
+      "token_start": 286,
+      "token_end": 295,
+      "before": "Write the recommendation",
+      "after": "Interpret the business result</b></a><a href=\"#class6-step-17\"><span>17</span><b>Reproduce and audit calculations"
+    },
+    {
+      "token_start": 301,
+      "token_end": 302,
+      "before": "Step 1 of 12 · Choose the claim",
+      "after": "Step 1 of 17 · Choose the claim"
+    },
+    {
+      "token_start": 312,
+      "token_end": 313,
+      "before": "Show all twelve steps",
+      "after": "Show all seventeen steps"
+    },
+    {
+      "token_start": 340,
+      "token_end": 341,
+      "before": " Follow the dispatch manager from a promise to a defensible decision: choose a claim and error trade-off (1–3), test one population and recover its interval (4–7), choose a comparison from the design (8–13), then report and reproduce it (14–15).",
+      "after": " Follow the dispatch manager from a promise to a defensible decision: choose a claim and error trade-off (steps 1–5), test one population and recover its interval (steps 6–9), choose a comparison from the design (steps 10–15), then report and reproduce it (steps 16–17)."
+    },
+    {
+      "token_start": 407,
+      "token_end": 409,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-1\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 411,
+      "token_end": 412,
+      "before": "01 / 12 · THE DECISION",
+      "after": "STEP 01 OF 17"
+    },
+    {
+      "token_start": 419,
+      "token_end": 420,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 504,
+      "token_end": 506,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-2\">Next · Weigh the two errors <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-2\">Next · Distinguish decision errors →"
+    },
+    {
+      "token_start": 510,
+      "token_end": 512,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-2\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 514,
+      "token_end": 515,
+      "before": "02 / 12 · THE DECISION",
+      "after": "STEP 02 OF 17"
+    },
+    {
+      "token_start": 517,
+      "token_end": 518,
+      "before": "Weigh the two errors",
+      "after": "Distinguish decision errors"
+    },
+    {
+      "token_start": 520,
+      "token_end": 524,
+      "before": "{{hypvisual:power}}",
+      "after": "{{hypvisual:errors}}<p class=\"c6-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 611,
+      "token_end": 611,
+      "before": "<p class=\"c6-reference-note\">Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 720,
+      "token_end": 721,
+      "before": "<a class=\"c6-back\" href=\"#hypothesis-step-1\">",
+      "after": "<a class=\"c6-back\" href=\"#class6-step-1\">"
+    },
+    {
+      "token_start": 723,
+      "token_end": 725,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-3\">Next · See the tail area <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-3\">Next · Plan power for an effect →"
+    },
+    {
+      "token_start": 728,
+      "token_end": 731,
+      "before": "<section class=\"c6-part\" id=\"hypothesis-step-3\" aria-labelledby=\"c6-step-3-title\">",
+      "after": "<section class=\"c6-part\" id=\"hypothesis-power\" aria-labelledby=\"hypothesis-power-title\"><span class=\"c6-step-anchor\" id=\"class6-step-3\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 733,
+      "token_end": 734,
+      "before": "03 / 12 · THE DECISION",
+      "after": "STEP 03 OF 17"
+    },
+    {
+      "token_start": 735,
+      "token_end": 737,
+      "before": "<h2 id=\"c6-step-3-title\">See the tail area",
+      "after": "<h2 id=\"hypothesis-power-title\">Plan power for an effect"
+    },
+    {
+      "token_start": 739,
+      "token_end": 740,
+      "before": "{{hypvisual:tails}}",
+      "after": "{{hypvisual:power}}"
+    },
+    {
+      "token_start": 741,
+      "token_end": 766,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><nav class=\"c6-step-nav\" aria-label=\"Step 3 navigation\"><a class=\"c6-back\" href=\"#class6-step-2\">← Previous step</a><a class=\"button\" href=\"#class6-step-4\">Next · Standardize and set cutoffs →</a></nav></section><section class=\"c6-part\" id=\"hypothesis-statistic\" aria-labelledby=\"hypothesis-statistic-title\"><span class=\"c6-step-anchor\" id=\"class6-step-4\" aria-hidden=\"true\"></span><header class=\"c6-part-heading\"><div class=\"eyebrow\">STEP 04 OF 17</div><h2 id=\"hypothesis-statistic-title\">Standardize and set cutoffs</h2></header>{{hypvisual:statistic}}<p class=\"c6-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 813,
+      "token_end": 837,
+      "before": "\n",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 4 navigation\"><a class=\"c6-back\" href=\"#class6-step-3\">← Previous step</a><a class=\"button\" href=\"#class6-step-5\">Next · Read the p-value →</a></nav></section><section class=\"c6-part\" id=\"hypothesis-step-3\" aria-labelledby=\"c6-step-3-title\"><span class=\"c6-step-anchor\" id=\"class6-step-5\" aria-hidden=\"true\"></span><header class=\"c6-part-heading\"><div class=\"eyebrow\">STEP 05 OF 17</div><h2 id=\"c6-step-3-title\">Read the p-value</h2></header>{{hypvisual:tails}}<p class=\"c6-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 950,
+      "token_end": 952,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 3 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-2\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 5 navigation\"><a class=\"c6-back\" href=\"#class6-step-4\">"
+    },
+    {
+      "token_start": 954,
+      "token_end": 956,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-4\">Next · Choose the reference <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-6\">Next · Test a mean with known SD →"
+    },
+    {
+      "token_start": 960,
+      "token_end": 962,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-6\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 964,
+      "token_end": 965,
+      "before": "04 / 12 · THE DECISION",
+      "after": "STEP 06 OF 17"
+    },
+    {
+      "token_start": 967,
+      "token_end": 968,
+      "before": "Choose the reference",
+      "after": "Test a mean with known SD"
+    },
+    {
+      "token_start": 970,
+      "token_end": 971,
+      "before": "{{hypvisual:student}}",
+      "after": "{{hypvisual:known}}"
+    },
+    {
+      "token_start": 972,
+      "token_end": 973,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1027,
+      "token_end": 1051,
+      "before": "",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 6 navigation\"><a class=\"c6-back\" href=\"#class6-step-5\">← Previous step</a><a class=\"button\" href=\"#class6-step-7\">Next · Estimate SD and use t →</a></nav></section><section class=\"c6-part\" id=\"hypothesis-student\" aria-labelledby=\"hypothesis-student-title\"><span class=\"c6-step-anchor\" id=\"class6-step-7\" aria-hidden=\"true\"></span><header class=\"c6-part-heading\"><div class=\"eyebrow\">STEP 07 OF 17</div><h2 id=\"hypothesis-student-title\">Estimate SD and use t</h2></header>{{hypvisual:student}}<p class=\"c6-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 1130,
+      "token_end": 1132,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 4 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-3\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 7 navigation\"><a class=\"c6-back\" href=\"#class6-step-6\">"
+    },
+    {
+      "token_start": 1134,
+      "token_end": 1136,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-5\">Next · Match test and interval <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-8\">Next · Match test and interval →"
+    },
+    {
+      "token_start": 1140,
+      "token_end": 1142,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-8\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1144,
+      "token_end": 1145,
+      "before": "05 / 12 · THE DECISION",
+      "after": "STEP 08 OF 17"
+    },
+    {
+      "token_start": 1152,
+      "token_end": 1153,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1222,
+      "token_end": 1224,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 5 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-4\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 8 navigation\"><a class=\"c6-back\" href=\"#class6-step-7\">"
+    },
+    {
+      "token_start": 1226,
+      "token_end": 1228,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-6\">Next · Test a conversion rate <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-9\">Next · Test a conversion rate →"
+    },
+    {
+      "token_start": 1232,
+      "token_end": 1234,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-9\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1236,
+      "token_end": 1237,
+      "before": "06 / 12 · THE DECISION",
+      "after": "STEP 09 OF 17"
+    },
+    {
+      "token_start": 1244,
+      "token_end": 1245,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1309,
+      "token_end": 1311,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 6 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-5\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 9 navigation\"><a class=\"c6-back\" href=\"#class6-step-8\">"
+    },
+    {
+      "token_start": 1313,
+      "token_end": 1315,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-7\">Next · Keep the design visible <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-10\">Next · Choose the comparison design →"
+    },
+    {
+      "token_start": 1319,
+      "token_end": 1321,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-10\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1323,
+      "token_end": 1324,
+      "before": "07 / 12 · THE DECISION",
+      "after": "STEP 10 OF 17"
+    },
+    {
+      "token_start": 1326,
+      "token_end": 1327,
+      "before": "Keep the design visible",
+      "after": "Choose the comparison design"
+    },
+    {
+      "token_start": 1331,
+      "token_end": 1332,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1418,
+      "token_end": 1420,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 7 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-6\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 10 navigation\"><a class=\"c6-back\" href=\"#class6-step-9\">"
+    },
+    {
+      "token_start": 1422,
+      "token_end": 1424,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-8\">Next · Compare separate teams <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-11\">Next · Pool a shared variance →"
+    },
+    {
+      "token_start": 1427,
+      "token_end": 1430,
+      "before": "<section class=\"c6-part\" id=\"hypothesis-step-8\" aria-labelledby=\"c6-step-8-title\">",
+      "after": "<section class=\"c6-part\" id=\"hypothesis-pooled\" aria-labelledby=\"hypothesis-pooled-title\"><span class=\"c6-step-anchor\" id=\"class6-step-11\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1432,
+      "token_end": 1433,
+      "before": "08 / 12 · THE DECISION",
+      "after": "STEP 11 OF 17"
+    },
+    {
+      "token_start": 1434,
+      "token_end": 1436,
+      "before": "<h2 id=\"c6-step-8-title\">Compare separate teams",
+      "after": "<h2 id=\"hypothesis-pooled-title\">Pool a shared variance"
+    },
+    {
+      "token_start": 1438,
+      "token_end": 1439,
+      "before": "{{hypvisual:independent}}",
+      "after": "{{hypvisual:pooled}}"
+    },
+    {
+      "token_start": 1440,
+      "token_end": 1441,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1563,
+      "token_end": 1587,
+      "before": "",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 11 navigation\"><a class=\"c6-back\" href=\"#class6-step-10\">← Previous step</a><a class=\"button\" href=\"#class6-step-12\">Next · Allow unequal variances →</a></nav></section><section class=\"c6-part\" id=\"hypothesis-step-8\" aria-labelledby=\"c6-step-8-title\"><span class=\"c6-step-anchor\" id=\"class6-step-12\" aria-hidden=\"true\"></span><header class=\"c6-part-heading\"><div class=\"eyebrow\">STEP 12 OF 17</div><h2 id=\"c6-step-8-title\">Allow unequal variances</h2></header>{{hypvisual:independent}}<p class=\"c6-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 1713,
+      "token_end": 1715,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 8 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-7\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 12 navigation\"><a class=\"c6-back\" href=\"#class6-step-11\">"
+    },
+    {
+      "token_start": 1717,
+      "token_end": 1719,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-9\">Next · Keep the pairs together <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-13\">Next · Keep matched pairs together →"
+    },
+    {
+      "token_start": 1723,
+      "token_end": 1725,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-13\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1727,
+      "token_end": 1728,
+      "before": "09 / 12 · THE DECISION",
+      "after": "STEP 13 OF 17"
+    },
+    {
+      "token_start": 1730,
+      "token_end": 1731,
+      "before": "Keep the pairs together",
+      "after": "Keep matched pairs together"
+    },
+    {
+      "token_start": 1735,
+      "token_end": 1736,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1811,
+      "token_end": 1811,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 1891,
+      "token_end": 1893,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 9 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-8\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 13 navigation\"><a class=\"c6-back\" href=\"#class6-step-12\">"
+    },
+    {
+      "token_start": 1895,
+      "token_end": 1897,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-10\">Next · Compare conversion rates <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-14\">Next · Compare conversion rates →"
+    },
+    {
+      "token_start": 1901,
+      "token_end": 1903,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-14\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1905,
+      "token_end": 1906,
+      "before": "10 / 12 · THE DECISION",
+      "after": "STEP 14 OF 17"
+    },
+    {
+      "token_start": 1913,
+      "token_end": 1914,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 2081,
+      "token_end": 2083,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 10 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-9\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 14 navigation\"><a class=\"c6-back\" href=\"#class6-step-13\">"
+    },
+    {
+      "token_start": 2085,
+      "token_end": 2087,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-11\">Next · Compare consistency <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-15\">Next · Compare population variances →"
+    },
+    {
+      "token_start": 2091,
+      "token_end": 2093,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-15\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2095,
+      "token_end": 2096,
+      "before": "11 / 12 · THE DECISION",
+      "after": "STEP 15 OF 17"
+    },
+    {
+      "token_start": 2098,
+      "token_end": 2099,
+      "before": "Compare consistency",
+      "after": "Compare population variances"
+    },
+    {
+      "token_start": 2103,
+      "token_end": 2104,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 2257,
+      "token_end": 2259,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 11 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-10\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 15 navigation\"><a class=\"c6-back\" href=\"#class6-step-14\">"
+    },
+    {
+      "token_start": 2261,
+      "token_end": 2263,
+      "before": "<a class=\"button\" href=\"#hypothesis-step-12\">Next · Write the recommendation <span aria-hidden=\"true\">→</span>",
+      "after": "<a class=\"button\" href=\"#class6-step-16\">Next · Interpret the business result →"
+    },
+    {
+      "token_start": 2267,
+      "token_end": 2269,
+      "before": "",
+      "after": "<span class=\"c6-step-anchor\" id=\"class6-step-16\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2271,
+      "token_end": 2272,
+      "before": "12 / 12 · THE DECISION",
+      "after": "STEP 16 OF 17"
+    },
+    {
+      "token_start": 2274,
+      "token_end": 2275,
+      "before": "Write the recommendation",
+      "after": "Interpret the business result"
+    },
+    {
+      "token_start": 2278,
+      "token_end": 2281,
+      "before": "",
+      "after": "<p class=\"c6-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 2323,
+      "token_end": 2323,
+      "before": "<p class=\"c6-reference-note\">Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 2408,
+      "token_end": 2432,
+      "before": "",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 16 navigation\"><a class=\"c6-back\" href=\"#class6-step-15\">← Previous step</a><a class=\"button\" href=\"#class6-step-17\">Next · Reproduce and audit calculations →</a></nav></section><section class=\"c6-part\" id=\"hypothesis-tools\" aria-labelledby=\"hypothesis-tools-title\"><span class=\"c6-step-anchor\" id=\"class6-step-17\" aria-hidden=\"true\"></span><header class=\"c6-part-heading\"><div class=\"eyebrow\">STEP 17 OF 17</div><h2 id=\"hypothesis-tools-title\">Reproduce and audit calculations</h2></header>{{hypvisual:tools}}<p class=\"c6-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 2486,
+      "token_end": 2488,
+      "before": "<nav class=\"c6-step-nav\" aria-label=\"Step 12 navigation\"><a class=\"c6-back\" href=\"#hypothesis-step-11\">",
+      "after": "<nav class=\"c6-step-nav\" aria-label=\"Step 17 navigation\"><a class=\"c6-back\" href=\"#class6-step-16\">"
+    },
+    {
+      "token_start": 2491,
+      "token_end": 2492,
+      "before": "Try the knowledge check <span aria-hidden=\"true\">→</span>",
+      "after": "Try the knowledge check →"
+    }
+  ],
+  "reviewed_dist_sha256": "f0724d727056ccf26b0aceda57e3c4df2dbcbfb7733e20c457efb59952148199"
+}

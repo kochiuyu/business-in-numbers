@@ -40,7 +40,7 @@ for(const view of ['z','t']){
  const out=V.views.student(view);
  ok(out.includes('52 − 50 = 2'),'statistic numerator agrees with the lab');
  ok(!out.includes('32 − 30')&&!out.includes('μ = 30'),'no stale visual benchmark');
- if(view==='z')ok(html.includes(out),'built static default uses the same values');
+ if(view==='t')ok(html.includes(out),'built static default uses the same values');
 }
 for(const view of ['two','one']){
  const out=V.views.interval(view);
@@ -80,13 +80,13 @@ function dom(){const root=new Element('document'),stack=[root],voids=new Set(['M
 function run(reduced,hash=''){const d=dom(),events={},loc={hash},media={matches:reduced,addEventListener:(k,f)=>media[k]=f};const w={matchMedia:()=>media,addEventListener:(k,f)=>(events[k]||=[]).push(f)};vm.runInNewContext(source,{document:d,window:w,location:loc,ClassSixViews:V});return{d,events,loc,media};}
 
 
-const anchors=[['hypotheses',1],['errors-power',2],['power-lab',2],['testing-procedure',3],['known-variance',4],['unknown-variance',4],['mean-lab',4],['test-and-interval',5],['one-proportion',6],['proportion-lab',6],['two-sample-design',7],['pooled-means',8],['welch-means',8],['independent-lab',8],['paired-means',9],['paired-lab',9],['two-proportions',10],['twoprop-lab',10],['variance-ratio',11],['variance-lab',11],['reporting',12],['tools',12]];
+const anchors=[["hypotheses", 1], ["errors-power", 2], ["power-lab", 2], ["testing-procedure", 5], ["known-variance", 6], ["unknown-variance", 7], ["mean-lab", 7], ["test-and-interval", 8], ["one-proportion", 9], ["proportion-lab", 9], ["two-sample-design", 10], ["pooled-means", 11], ["welch-means", 12], ["independent-lab", 12], ["paired-means", 13], ["paired-lab", 13], ["two-proportions", 14], ["twoprop-lab", 14], ["variance-ratio", 15], ["variance-lab", 15], ["reporting", 16], ["tools", 17], ["hypothesis-step-1", 1], ["hypothesis-step-2", 2], ["hypothesis-step-3", 5], ["hypothesis-step-4", 6], ["hypothesis-step-5", 8], ["hypothesis-step-6", 9], ["hypothesis-step-7", 10], ["hypothesis-step-8", 12], ["hypothesis-step-9", 13], ["hypothesis-step-10", 14], ["hypothesis-step-11", 15], ["hypothesis-step-12", 16]];
 for(const reduced of [false,true]){
  const{d,events,loc,media}=run(reduced),parts=d.querySelectorAll('.c6-part'),visible=()=>parts.map((p,i)=>!p.hidden?i+1:null).filter(Boolean),fire=k=>(events[k]||[]).forEach(fn=>fn());
  eq(visible(),[1]);eq(d.getElementById('c6-motion').checked,!reduced);eq(d.body.classList.contains('c6-no-motion'),reduced);
- for(let n=2;n<=12;n++){loc.hash='#hypothesis-step-'+n;fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c6-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
+ for(let n=2;n<=17;n++){loc.hash='#class6-step-'+n;fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c6-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
  for(const[id,n]of anchors){loc.hash='#'+id;fire('hashchange');eq(visible(),[n],id);for(let p=d.getElementById(id);p;p=p.parentElement)if(p.tagName==='DETAILS')ok(p.open,id+' open ancestor');}
- d.getElementById('c6-show-all').fire('click');eq(visible(),Array.from({length:12},(_,i)=>i+1));d.getElementById('c6-show-all').fire('click');eq(visible(),[12]);
+ d.getElementById('c6-show-all').fire('click');eq(visible(),Array.from({length:17},(_,i)=>i+1));d.getElementById('c6-show-all').fire('click');eq(visible(),[16]);
  for(const b of d.querySelectorAll('[data-c6-visual]')){b.fire('click');eq(b.getAttribute('aria-pressed'),'true');eq(d.querySelectorAll(`[data-c6-visual="${b.dataset.c6Visual}"]`).filter(x=>x.getAttribute('aria-pressed')==='true').length,1);ok(d.getElementById('c6-'+b.dataset.c6Visual+'-result').innerHTML.length>200);}
  const pick=(key,v)=>d.querySelector(`[data-c6-visual="${key}"][data-view="${v}"]`).fire('click');
  for(const[key,values]of Object.entries(choices))for(const v of values){pick(key,v);eq(d.getElementById('c6-'+key+'-result').innerHTML,V.views[key](v));}
@@ -94,8 +94,8 @@ for(const reduced of [false,true]){
  d.getElementById('c6-motion').checked=false;d.getElementById('c6-motion').fire('change');ok(d.body.classList.contains('c6-no-motion'));media.matches=true;media.change();eq(d.getElementById('c6-motion').checked,false);
  loc.hash='#%bad';fire('hashchange');loc.hash='#missing';fire('hashchange');ok(true);
 }
-for(const[id,n]of anchors){const{d}=run(false,'#'+id);ok(!d.getElementById('hypothesis-step-'+n).hidden,id+' direct link');}
-const staticDOM=dom();eq(staticDOM.querySelectorAll('.c6-part').filter(p=>!p.hidden).length,12);eq(staticDOM.querySelectorAll('.c6-visual-controls').filter(p=>p.hidden).length,12);ok(staticDOM.querySelectorAll('.c6-part').every(p=>p.querySelector('.c6-scene')));
+for(const[id,n]of anchors){const{d}=run(false,'#'+id);ok(!d.getElementById('class6-step-'+n).closest('.c6-part').hidden,id+' direct link');}
+const staticDOM=dom();eq(staticDOM.querySelectorAll('.c6-part').filter(p=>!p.hidden).length,17);eq(staticDOM.querySelectorAll('.c6-visual-controls').filter(p=>p.hidden).length,12);ok(staticDOM.querySelectorAll('.c6-part').every(p=>p.querySelector('.c6-scene')));
 // Browser history can return to the original URL without a fragment.
 for(const reduced of [false,true]){
  const {d,events,loc}=run(reduced),parts=d.querySelectorAll('.c6-part');
