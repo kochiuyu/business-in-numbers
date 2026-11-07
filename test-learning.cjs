@@ -24,6 +24,25 @@ for(const [file] of lessons){
  ok(!/\{\{[a-z][a-z:-]*\}\}|\{\{math:|katex-error/.test(html),file+' fully compiled');
  ok(/href="learning\.[a-f0-9]{16}\.css"/.test(html));ok(/src="learning\.[a-f0-9]{16}\.js"/.test(html));
 }
+// The introduction must describe the controls that learners actually encounter.
+const introduction=fs.readFileSync('dist/course-introduction.html','utf8');
+ok(!/Read-in-order mode|compact review/i.test(introduction),'introduction does not name retired reading modes');
+for(const label of ['Open all explanations','Close explanations']){
+ ok(introduction.includes('“'+label+'”'),'introduction names '+label);
+ for(const [file]of lessons)ok(fs.readFileSync('dist/'+file,'utf8').includes('>'+label+'<'),file+' has the documented control '+label);
+}
+ok(introduction.includes('The technical-depth switch reveals extra mathematics inside explanations.'),'introduction locates technical depth');
+ok(introduction.includes('Check answers stay closed until you choose to reveal them.'),'introduction preserves learner-controlled answers');
+ok(introduction.includes('full reading route without opening explanations'),'introduction separates route length from depth');
+
+// A worked extension must name and link a separately collapsed explorer.
+const randomSource=fs.readFileSync('src/random-variables.html','utf8');
+ok(randomSource.includes('open <a href="#joint">Shared risk does not disappear by addition</a> and move q, the probability that both channels sell'),'joint-risk task names its explorer and defines q');
+ok(!randomSource.includes('below, move q'),'joint-risk task does not rely on physical adjacency');
+const samplingSource=fs.readFileSync('src/sampling-distributions.html','utf8');
+ok(samplingSource.includes('Open <a href="#statistics">One population. Many possible sample means.</a> and select n=3'),'enumeration task names its separately closed explorer');
+ok(!samplingSource.includes('The explorer below lets you check these bars'),'enumeration task does not imply its explorer is already open');
+
 // Shared reading controls: repeated mode changes, custom state, malformed anchor,
 // deep linking into a closed panel, and absent toolbar all remain safe.
 class Node{constructor(tag='DIV'){this.tagName=tag;this.open=true;this.hidden=true;this.attrs={};this.handlers={};this.dataset={};this.parentElement=null;this.textContent='';}addEventListener(k,f){this.handlers[k]=f;}setAttribute(k,v){this.attrs[k]=v;}}

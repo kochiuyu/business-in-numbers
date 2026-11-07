@@ -651,110 +651,116 @@
           "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 1039,
-          "token_end": 1043,
+          "token_start": 1033,
+          "token_end": 1038,
+          "before": " below, move q from .25 to .5, then to 0. At .25 the two indicators are independent. At .5 they agree; at 0 exactly one is 1. Check that both marginal probabilities stay .5 and the expected total stays 1, while total variance changes. Covariance records the connection that individual means and variances miss.",
+          "after": " open <a href=\"#joint\">Shared risk does not disappear by addition</a> and move q, the probability that both channels sell, from .25 to .5, then to 0. At .25 the two indicators are independent. At .5 they agree; at 0 exactly one is 1. Check that both marginal probabilities stay .5 and the expected total stays 1, while total variance changes. Covariance records the connection that individual means and variances miss."
+        },
+        {
+          "token_start": 1043,
+          "token_end": 1047,
           "before": "",
           "after": "<details class=\"c3-lab-details reading-extension\" data-reading-extension><summary>Worked calculation · How covariance changes the total spread</summary>"
         },
         {
-          "token_start": 1225,
-          "token_end": 1230,
+          "token_start": 1229,
+          "token_end": 1234,
           "before": " .20 covariance is not the 45% probability that both are busy. Covariance summarizes average co-movement around the two means. The next comparison shows why a zero average product can still hide a relationship.",
           "after": " .20 covariance is not the 45% probability that both are busy. Covariance summarizes average co-movement around the two means. The <a href=\"#foundation-zero-covariance\">zero-covariance comparison</a> shows why a zero average product can still hide a relationship."
         },
         {
-          "token_start": 1233,
-          "token_end": 1234,
+          "token_start": 1237,
+          "token_end": 1238,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 1235,
-          "token_end": 1239,
+          "token_start": 1239,
+          "token_end": 1243,
           "before": "",
           "after": "<details class=\"c3-lab-details reading-extension\" data-reading-extension><summary>Compare another case · Zero covariance with a real relationship</summary>"
         },
         {
-          "token_start": 1394,
-          "token_end": 1395,
+          "token_start": 1398,
+          "token_end": 1399,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 1504,
-          "token_end": 1505,
+          "token_start": 1508,
+          "token_end": 1509,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 1957,
-          "token_end": 1958,
+          "token_start": 1961,
+          "token_end": 1962,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 1976,
-          "token_end": 1980,
+          "token_start": 1980,
+          "token_end": 1984,
           "before": "",
           "after": "<details class=\"c3-lab-details reading-extension\" data-reading-extension><summary>Worked example · Change time units and choose a deadline</summary>"
         },
         {
-          "token_start": 2084,
-          "token_end": 2085,
+          "token_start": 2088,
+          "token_end": 2089,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 2159,
-          "token_end": 2163,
+          "token_start": 2163,
+          "token_end": 2167,
           "before": "",
           "after": "<details class=\"c3-lab-details reading-extension\" data-reading-extension><summary>Compare another case · Does an arrival become due?</summary>"
         },
         {
-          "token_start": 2274,
-          "token_end": 2275,
+          "token_start": 2278,
+          "token_end": 2279,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 2363,
-          "token_end": 2364,
+          "token_start": 2367,
+          "token_end": 2368,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 2719,
-          "token_end": 2720,
+          "token_start": 2723,
+          "token_end": 2724,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 2738,
-          "token_end": 2742,
+          "token_start": 2742,
+          "token_end": 2746,
           "before": "",
           "after": "<details class=\"c3-lab-details reading-extension\" data-reading-extension><summary>Go further · Build chi-square, t and F from their ingredients</summary>"
         },
         {
-          "token_start": 2884,
-          "token_end": 2885,
+          "token_start": 2888,
+          "token_end": 2889,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 2974,
-          "token_end": 2975,
+          "token_start": 2978,
+          "token_end": 2979,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 3013,
-          "token_end": 3017,
+          "token_start": 3017,
+          "token_end": 3021,
           "before": "",
           "after": "<details class=\"c3-lab-details reading-extension\" data-reading-extension><summary>Worked decision · Compare staffing cost with overload cost</summary>"
         },
         {
-          "token_start": 3101,
-          "token_end": 3102,
+          "token_start": 3105,
+          "token_end": 3106,
           "before": "",
           "after": "</details>"
         }
@@ -800,164 +806,170 @@
           "after": "<details class=\"c4-lab-details reading-extension\" data-reading-extension><summary>Worked extension · Enumerate three draws instead of two</summary>"
         },
         {
-          "token_start": 703,
+          "token_start": 699,
           "token_end": 704,
+          "before": " to 200/9 dollars². The explorer below lets you check these bars by selecting n=3.",
+          "after": " to 200/9 dollars². Open <a href=\"#statistics\">One population. Many possible sample means.</a> and select n=3 in its explorer to check these bars."
+        },
+        {
+          "token_start": 707,
+          "token_end": 708,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 706,
-          "token_end": 707,
+          "token_start": 710,
+          "token_end": 711,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 855,
-          "token_end": 856,
+          "token_start": 859,
+          "token_end": 860,
           "before": "← Previous step",
           "after": "← Choose the population"
         },
         {
-          "token_start": 873,
-          "token_end": 877,
+          "token_start": 877,
+          "token_end": 881,
           "before": "",
           "after": "<details class=\"c4-lab-details reading-extension\" data-reading-extension><summary>Optional derivation · Why averaging divides variance by n</summary>"
         },
         {
-          "token_start": 914,
-          "token_end": 915,
+          "token_start": 918,
+          "token_end": 919,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 917,
-          "token_end": 918,
+          "token_start": 921,
+          "token_end": 922,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 988,
-          "token_end": 989,
+          "token_start": 992,
+          "token_end": 993,
           "before": "← Previous step",
           "after": "← Make the averages"
         },
         {
-          "token_start": 1006,
-          "token_end": 1010,
+          "token_start": 1010,
+          "token_end": 1014,
           "before": "",
           "after": "<details class=\"c4-lab-details reading-extension\" data-reading-extension><summary>Worked extension · Bound the chance of a large error</summary>"
         },
         {
-          "token_start": 1058,
-          "token_end": 1059,
+          "token_start": 1062,
+          "token_end": 1063,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 1061,
-          "token_end": 1062,
+          "token_start": 1065,
+          "token_end": 1066,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 1128,
-          "token_end": 1129,
+          "token_start": 1132,
+          "token_end": 1133,
           "before": "← Previous step",
           "after": "← Separate SD from SE"
         },
         {
-          "token_start": 1146,
-          "token_end": 1147,
+          "token_start": 1150,
+          "token_end": 1151,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 1309,
-          "token_end": 1310,
+          "token_start": 1313,
+          "token_end": 1314,
           "before": "← Previous step",
           "after": "← Follow one growing sample"
         },
         {
-          "token_start": 1327,
-          "token_end": 1328,
+          "token_start": 1331,
+          "token_end": 1332,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 1459,
-          "token_end": 1460,
+          "token_start": 1463,
+          "token_end": 1464,
           "before": "← Previous step",
           "after": "← Compare many samples"
         },
         {
-          "token_start": 1477,
-          "token_end": 1478,
+          "token_start": 1481,
+          "token_end": 1482,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 1667,
-          "token_end": 1668,
+          "token_start": 1671,
+          "token_end": 1672,
           "before": "← Previous step",
           "after": "← Measure an unusual average"
         },
         {
-          "token_start": 1685,
-          "token_end": 1686,
+          "token_start": 1689,
+          "token_end": 1690,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 1903,
-          "token_end": 1904,
+          "token_start": 1907,
+          "token_end": 1908,
           "before": "← Previous step",
           "after": "← Translate a percentage"
         },
         {
-          "token_start": 1920,
-          "token_end": 1924,
+          "token_start": 1924,
+          "token_end": 1928,
           "before": "",
           "after": "<details class=\"c4-lab-details reading-extension\" data-reading-extension><summary>Worked example · Compare more receipts with more stores</summary>"
         },
         {
-          "token_start": 2037,
-          "token_end": 2038,
+          "token_start": 2041,
+          "token_end": 2042,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 2040,
-          "token_end": 2041,
+          "token_start": 2044,
+          "token_end": 2045,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 2113,
-          "token_end": 2114,
+          "token_start": 2117,
+          "token_end": 2118,
           "before": "← Previous step",
           "after": "← Estimate the unknown spread"
         },
         {
-          "token_start": 2131,
-          "token_end": 2132,
+          "token_start": 2135,
+          "token_end": 2136,
           "before": "Go deeper when you are ready. Full explanations and practice are below.",
           "after": "Ready to go further? Open an explanation or worked example in this step. Technical depth adds the formal detail inside explanations."
         },
         {
-          "token_start": 2162,
-          "token_end": 2166,
+          "token_start": 2166,
+          "token_end": 2170,
           "before": "",
           "after": "<details class=\"c4-lab-details reading-extension\" data-reading-extension><summary>Apply the lesson · Explain the staffing recommendation</summary>"
         },
         {
-          "token_start": 2214,
-          "token_end": 2215,
+          "token_start": 2218,
+          "token_end": 2219,
           "before": "",
           "after": "</details>"
         },
         {
-          "token_start": 2333,
-          "token_end": 2334,
+          "token_start": 2337,
+          "token_end": 2338,
           "before": "← Previous step",
           "after": "← Check the sampling design"
         }
