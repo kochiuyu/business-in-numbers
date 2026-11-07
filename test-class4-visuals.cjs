@@ -5,7 +5,7 @@ const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual
 const source=fs.readFileSync('src/class-four.js','utf8'),html=fs.readFileSync('dist/sampling-distributions.html','utf8'),css=fs.readFileSync('src/class-four.css','utf8');
 function topics(s){const out=[];const re=/<\/?details\b[^>]*>/g;let m,depth=0,start=-1;while((m=re.exec(s))){if(m[0].startsWith('</')){depth--;if(depth===0&&start!==-1){out.push(s.slice(start,re.lastIndex));start=-1;}}else{if(depth===0&&m[0].includes('class="lesson"'))start=m.index;depth++;}}return out;}
 eq(topics(fs.readFileSync('src/sampling-distributions.html','utf8')).map(t=>crypto.createHash('sha256').update(t).digest('hex')),JSON.parse(fs.readFileSync('test-class4-reference.json','utf8')).topic_sha256,'all 12 original topics are unchanged');
-eq((html.match(/<math xmlns=/g)||[]).length,28);eq((html.match(/class="visual-practice"/g)||[]).length,4);
+eq((html.match(/<math xmlns=/g)||[]).length,32);eq((html.match(/class="visual-practice"/g)||[]).length,4);
 for(const name of Object.keys(V.views)){ok(V.render(name).includes('c4-scene'));ok(V.render(name).includes('Pause'));}
 for(const [v,c]of [['10',1],['20',3],['30',1]])ok(V.views.pairs(v).includes(`${c} of 9 samples`));
 for(const [n,se]of [[1,12],[25,2.4],[100,1.2]])ok(V.views.precision(n).includes(`SE = ${se.toFixed(1)} min`));

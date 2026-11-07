@@ -154,5 +154,23 @@
     "text": "For a balanced fixed-effects model, each effect mean square contains error variance plus its squared population effect contribution; the error mean square contains only the error variance.",
     "title": "Two Ems",
     "display": true
+  },
+  "depth-weighted-means": {
+    "title": "Two averages for unequal group counts",
+    "tex": "\\begin{aligned}\\bar x&=\\frac{2(20)+4(24)+6(27)}{12}=\\frac{149}{6}=24\\tfrac56,\\\\\\widehat\\mu_{\\mathrm{eq}}&=\\frac{20+24+27}{3}=\\frac{71}{3}=23\\tfrac23.\\end{aligned}",
+    "text": "The sample grand mean weights the three means by 2, 4 and 6 orders, giving 24 and five sixths minutes. The equal-process average is 23 and two thirds minutes.",
+    "display": true
+  },
+  "depth-weighted-effects": {
+    "title": "Count-weighted effects cancel",
+    "tex": "\\sum_i n_i(\\bar x_i-\\bar x)=2\\!\\left(-\\frac{29}{6}\\right)+4\\!\\left(-\\frac56\\right)+6\\!\\left(\\frac{13}{6}\\right)=0",
+    "text": "The count-weighted deviations of group means from the sample grand mean sum to zero: 2 times negative 29 over 6, plus 4 times negative 5 over 6, plus 6 times 13 over 6.",
+    "display": true
+  },
+  "depth-interaction-constraints": {
+    "title": "One independent interaction in a two-by-two design",
+    "tex": "\\begin{pmatrix}\\tau_{11}&\\tau_{12}\\\\\\tau_{21}&\\tau_{22}\\end{pmatrix}=\\begin{pmatrix}d&-d\\\\-d&d\\end{pmatrix},\\qquad\\sum_j\\tau_{ij}=0,\\quad\\sum_i\\tau_{ij}=0",
+    "text": "With offers in rows and day types in columns, the interaction entries are d, negative d, negative d and d. Every row and every column sums to zero, leaving one free interaction value.",
+    "display": true
   }
 }

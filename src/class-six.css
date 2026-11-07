@@ -30,3 +30,9 @@
 /* Worked reasoning stays readable without JavaScript or motion. */
 .c6-reasoning-path{display:grid;gap:12px;margin:20px 0}.c6-reasoning-path>div{border-left:3px solid #43684b;padding:14px 18px;background:#edf2e6;min-width:0}.c6-reasoning-path b{font-size:16px}.c6-reasoning-path p{margin:8px 0 0;overflow-wrap:anywhere}
 .c6-extra summary:focus-visible{outline:3px solid #b45a25;outline-offset:3px}
+
+/* Source-grounded worked examples: paced steps beside the existing laboratories. */
+.c6-depth-worked{margin:28px 0;padding:22px;border:1px solid #b5c4a9;border-left:4px solid #43684b;border-radius:7px;background:#f4f5ec;min-width:0}
+.c6-depth-worked h4{font:25px/1.3 Georgia,serif;margin:0 0 16px}.c6-depth-worked p,.c6-depth-worked li{font-size:15px;line-height:1.8}.c6-depth-worked ol{padding-left:24px}.c6-depth-worked li{padding-left:4px;margin:18px 0}.c6-depth-worked li p{margin:10px 0}.c6-depth-worked>details{border-top:1px solid #b5c4a9;padding-top:8px}.c6-depth-worked>details>summary{min-height:48px;font-size:15px;line-height:1.6}.c6-depth-worked>details>summary:focus-visible{outline:3px solid #b45a25;outline-offset:3px}
+@media(max-width:700px){.c6-depth-worked{padding:18px 14px}.c6-depth-worked h4{font-size:23px}.c6-depth-worked ol{padding-left:20px}.c6-depth-worked li{padding-left:1px}}
+@media print{.c6-depth-worked{background:white;padding:12pt;box-shadow:none}.c6-depth-worked h4{break-after:avoid}}

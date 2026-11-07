@@ -148,5 +148,23 @@
     "tex": "\\begin{aligned}E(Y_0-\\widehat Y_0\\mid X,x_0)&=0,\\\\\\operatorname{Cov}(Y_0,\\widehat Y_0\\mid X,x_0)&=0,\\\\\\operatorname{Var}(Y_0-\\widehat Y_0\\mid X,x_0)&=\\sigma^2+\\sigma^2h_0.\\end{aligned}",
     "text": "Independence of the new error and fitting data removes the covariance term. Add the new observation variance and fitted-mean variance.",
     "display": true
+  },
+  "depth-slope-weights": {
+    "title": "A slope as a weighted sum of responses",
+    "tex": "\\begin{gathered}b=\\sum_iw_i y_i,\\qquad w_i=\\frac{x_i-\\bar x}{S_{xx}},\\\\(w_1,\\ldots,w_8)=\\frac1{84}(-7,-5,-3,-1,1,3,5,7),\\\\\\sum_i w_i=0,\\qquad\\sum_iw_ix_i=1,\\qquad\\sum_iw_i^2=\\frac1{42}.\\end{gathered}",
+    "text": "For fixed spending values, the slope is a weighted sum of responses. The eight weights are negative 7, negative 5, negative 3, negative 1, 1, 3, 5 and 7, all divided by 84. They sum to zero; their products with x sum to one; their squares sum to one over 42.",
+    "display": true
+  },
+  "depth-slope-unbiased": {
+    "title": "Why the slope is unbiased under the model",
+    "tex": "\\begin{aligned}b&=\\sum_iw_i(\\alpha+\\beta x_i+\\varepsilon_i)\\\\&=\\alpha\\underbrace{\\sum_iw_i}_{0}+\\beta\\underbrace{\\sum_iw_ix_i}_{1}+\\sum_iw_i\\varepsilon_i\\\\&=\\beta+\\sum_iw_i\\varepsilon_i,\\\\E(b\\mid X)&=\\beta+\\sum_iw_iE(\\varepsilon_i\\mid X)=\\beta.\\end{aligned}",
+    "text": "Substitute the population model into the weighted sum. The intercept term cancels, the slope term equals beta, and the remaining weighted errors have conditional expectation zero. Hence the slope estimator has conditional expectation beta.",
+    "display": true
+  },
+  "depth-mean-covariance": {
+    "title": "Keep covariance when calculating mean-response uncertainty",
+    "tex": "\\begin{aligned}\\widehat{\\operatorname{Var}}(a)&=\\frac{459}{784},&\\widehat{\\operatorname{Var}}(b)&=\\frac9{392},&\\widehat{\\operatorname{Cov}}(a,b)&=-\\frac{81}{784},\\\\\\widehat{\\operatorname{Var}}(a+4.5b)&=\\frac{459}{784}+4.5^2\\frac9{392}+2(4.5)\\!\\left(-\\frac{81}{784}\\right)\\\\&=\\frac{27}{224}\\approx0.120536,\\\\SE(a+4.5b)&=\\sqrt{\\frac{27}{224}}\\approx0.3472.\\end{aligned}",
+    "text": "Estimated variance of the intercept is 459 over 784, slope variance is 9 over 392 and their covariance is negative 81 over 784. Variance of a plus 4.5 b includes both variance terms and twice 4.5 times the covariance. The result is 27 over 224, giving standard error about 0.3472 tens of orders.",
+    "display": true
   }
 }

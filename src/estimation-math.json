@@ -148,5 +148,29 @@
     "text": "Sample size is inversely proportional to squared margin. At 95 percent with planning proportion one half, the rounded-z formula is about 0.9604 over margin squared.",
     "title": "Precision has a square-law cost",
     "display": true
+  },
+  "depth-fixed-weight-comparison": {
+    "title": "Equal observed results, unequal sampling variances",
+    "tex": "\\begin{aligned}A&=\\frac{X_1+X_2+X_3+X_4+X_5}{5},& A_{\\mathrm{obs}}&=50,\\\\B&=\\frac{X_1+X_4}{2},&B_{\\mathrm{obs}}&=50,\\\\\\operatorname{Var}(A)&=\\sigma^2\\left[5(1/5)^2\\right]=\\frac{\\sigma^2}{5},\\\\\\operatorname{Var}(B)&=\\sigma^2\\left[(1/2)^2+(1/2)^2\\right]=\\frac{\\sigma^2}{2}.\\end{aligned}",
+    "text": "A averages all five orders and B averages only the first and fourth. Both observed estimates are 50 dollars. Under IID common-variance sampling, A has variance sigma squared over five and B has variance sigma squared over two.",
+    "display": true
+  },
+  "depth-centered-squares": {
+    "title": "Expand the deviations about a fitted center",
+    "tex": "\\begin{aligned}X_i-\\mu&=(X_i-\\bar X)+(\\bar X-\\mu),\\\\\\sum_i(X_i-\\mu)^2&=\\sum_i(X_i-\\bar X)^2\\\\&\\quad+2(\\bar X-\\mu)\\underbrace{\\sum_i(X_i-\\bar X)}_{0}+n(\\bar X-\\mu)^2.\\end{aligned}",
+    "text": "Split each deviation from the population mean into a residual from the sample mean and the sample mean error. Expanding and adding the squares leaves the residual sum of squares plus n times the squared mean error. The cross term vanishes because residuals sum to zero.",
+    "display": true
+  },
+  "depth-binary-residuals": {
+    "title": "Group the binary residual sum of squares",
+    "tex": "\\begin{aligned}\\sum_i(X_i-p)^2&=K(1-p)^2+(n-K)p^2\\\\&=np(1-p)^2+n(1-p)p^2=np(1-p),\\\\48(.76)^2+152(.24)^2&=27.7248+8.7552=36.48.\\end{aligned}",
+    "text": "The residual sum of squares is K times the square of one minus p, plus the quantity n minus K, multiplied by the square of p. Substituting K equals n p and factoring gives n p times one minus p. For 48 successes among 200 visitors, the two contributions are 27.7248 and 8.7552, totaling 36.48.",
+    "display": true
+  },
+  "depth-interval-rearrangement": {
+    "title": "Invert the normal pivot event",
+    "tex": "\\begin{gathered}a=\\sigma/\\sqrt n>0,\\qquad c=z_{\\alpha/2}>0,\\\\-c\\le\\frac{\\bar X-\\mu}{a}\\le c\\\\\\Longleftrightarrow\\quad-ca\\le\\bar X-\\mu\\le ca\\\\\\Longleftrightarrow\\quad\\bar X-ca\\le\\mu\\le\\bar X+ca.\\end{gathered}",
+    "text": "Let a be the standard error and c the positive normal critical value. Multiply the central standardized-error inequalities by a. Rearranging the left inequality bounds mu above by sample mean plus c a; rearranging the right bounds mu below by sample mean minus c a.",
+    "display": true
   }
 }

@@ -166,5 +166,29 @@
     "tex": "\\mathrm{JB}=\\frac n6\\left[g_1^2+\\frac{(g_2-3)^2}{4}\\right]\\overset{\\mathrm{approx}}{\\sim}\\chi^2_2\\quad\\text{under IID normality}",
     "text": "Jarque–Bera uses moment-based skewness g1 and ordinary kurtosis g2. Its chi-square reference with two degrees of freedom is asymptotic under normality.",
     "display": true
+  },
+  "depth-three-draw-distribution": {
+    "title": "Group all twenty-seven ordered triples",
+    "tex": "\\begin{array}{c|rrrrrrr}\\bar X&10&40/3&50/3&20&70/3&80/3&30\\\\\\hline\\text{count}&1&3&6&7&6&3&1\\\\P(\\bar X)&1/27&3/27&6/27&7/27&6/27&3/27&1/27\\end{array}",
+    "text": "For three independent draws, the seven possible averages are 10, 40 over 3, 50 over 3, 20, 70 over 3, 80 over 3, and 30 dollars. Their counts out of 27 are 1, 3, 6, 7, 6, 3, and 1.",
+    "display": true
+  },
+  "depth-three-draw-variance": {
+    "title": "Variance from paired squared deviations",
+    "tex": "\\begin{aligned}E[\\bar X]&=20,\\\\\\operatorname{Var}(\\bar X)&=\\frac{2\\left[1(10)^2+3(20/3)^2+6(10/3)^2\\right]+7(0)^2}{27}\\\\&=\\frac{600}{27}=\\frac{200}{9}.\\end{aligned}",
+    "text": "The mean is 20 dollars. Pair the equally likely lower and upper deviations. Twice the weighted squared deviations 100, three times 400 over 9, and six times 100 over 9, plus the center contribution zero, divided by 27 gives variance 200 over 9 dollars squared.",
+    "display": true
+  },
+  "depth-sum-to-average": {
+    "title": "From sum variance to mean standard error",
+    "tex": "\\begin{aligned}\\operatorname{Var}\\!\\left(\\sum_{i=1}^nX_i\\right)&=n\\sigma^2\\quad\\text{under independence},\\\\\\operatorname{Var}\\!\\left(\\frac1n\\sum_{i=1}^nX_i\\right)&=\\left(\\frac1n\\right)^2n\\sigma^2=\\frac{\\sigma^2}{n},\\\\\\operatorname{SE}(\\bar X)&=\\sqrt{\\frac{\\sigma^2}{n}}=\\frac{\\sigma}{\\sqrt n}.\\end{aligned}",
+    "text": "Independent observations with common variance sigma squared have sum variance n sigma squared. Scaling the sum by one over n scales its variance by one over n squared. Taking the square root gives the standard error.",
+    "display": true
+  },
+  "depth-lln-precision": {
+    "title": "A lower bound on probability within the tolerance",
+    "tex": "\\begin{aligned}P(|\\bar X-12|<3)&=1-P(|\\bar X-12|\\ge3)\\\\&\\ge1-\\min\\!\\left(1,\\frac{144/n}{3^2}\\right)=\\max\\!\\left(0,1-\\frac{16}{n}\\right),\\\\1-\\frac{16}{n}\\ge.95&\\quad\\Longleftrightarrow\\quad n\\ge320.\\end{aligned}",
+    "text": "The probability of an error smaller than three minutes is one minus the probability of an error at least three. Chebyshev gives a lower bound of the larger of zero and one minus 16 over n. This bound is at least 0.95 when n is at least 320.",
+    "display": true
   }
 }

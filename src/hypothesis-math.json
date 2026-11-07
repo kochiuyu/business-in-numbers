@@ -190,5 +190,53 @@
     "text": "A confidence interval for the population variance ratio divides the sample variance ratio by the upper and lower F quantiles in reverse order.",
     "title": "Confidence interval for a variance ratio",
     "display": true
+  },
+  "depth-pooled-variance": {
+    "tex": "S_p^2=\\frac{49(16)+39(9)}{88}=\\frac{1135}{88}\\approx12.8977\\ \\text{minutes}^2",
+    "text": "The pooled variance is 49 times 16 plus 39 times 9, divided by 88, about 12.8977 square minutes.",
+    "title": "Pool residual sums, not standard deviations",
+    "display": true
+  },
+  "depth-pooled-test": {
+    "tex": "\\begin{aligned}\\operatorname{SE}_{\\rm pooled}&=\\sqrt{\\frac{1135}{88}\\left(\\frac1{50}+\\frac1{40}\\right)}\\approx0.7618\\ \\text{minutes}\\\\t&=\\frac{(40-42)-0}{\\operatorname{SE}_{\\rm pooled}}\\approx-2.6252\\end{aligned}",
+    "text": "The pooled SE is the square root of 1135 over 88 times the sum of 1 over 50 and 1 over 40, about 0.7618 minutes. The difference of minus 2 minutes divided by this SE gives t about minus 2.6252.",
+    "title": "Convert pooled spread to the uncertainty of a difference",
+    "display": true
+  },
+  "depth-welch-se": {
+    "tex": "\\begin{aligned}V_A&=\\frac{4^2}{50}=0.320,\\qquad V_B=\\frac{3^2}{40}=0.225\\\\\\operatorname{SE}_W&=\\sqrt{V_A+V_B}=\\sqrt{0.545}\\approx0.7382\\ \\text{minutes}\\end{aligned}",
+    "text": "A contributes 0.320 square minutes and B contributes 0.225 square minutes. Welch SE is the square root of their sum, about 0.7382 minutes.",
+    "title": "Add separate sources of uncertainty",
+    "display": true
+  },
+  "depth-welch-df": {
+    "tex": "\\nu=\\frac{(0.320+0.225)^2}{0.320^2/49+0.225^2/39}\\approx87.6730",
+    "text": "Welch effective degrees of freedom are 0.545 squared divided by 0.320 squared over 49 plus 0.225 squared over 39, about 87.6730.",
+    "title": "Retain the fractional reference degrees of freedom",
+    "display": true
+  },
+  "depth-prop-pool": {
+    "tex": "\\widehat p_{\\rm pool}=\\frac{30+28}{50+40}=\\frac{58}{90}=\\frac{50}{90}(0.60)+\\frac{40}{90}(0.70)\\approx0.64444",
+    "text": "The pooled proportion is 58 successes over 90 visitors, equivalently a sample-size-weighted mean of 0.60 and 0.70, about 0.64444.",
+    "title": "Pool visitors rather than averaging percentages",
+    "display": true
+  },
+  "depth-prop-test": {
+    "tex": "\\begin{aligned}\\operatorname{SE}_0&=\\sqrt{\\frac{58}{90}\\frac{32}{90}\\left(\\frac1{50}+\\frac1{40}\\right)}\\approx0.10154\\\\z&=\\frac{0.60-0.70}{\\operatorname{SE}_0}\\approx-0.9848\\end{aligned}",
+    "text": "The null SE uses pooled success and failure probabilities and reciprocal sample sizes. It is about 0.10154. Dividing minus 0.10 by it gives z about minus 0.9848.",
+    "title": "Compute surprise under the equal-rate model",
+    "display": true
+  },
+  "depth-prop-interval": {
+    "tex": "\\begin{aligned}\\operatorname{SE}_{\\rm CI}&=\\sqrt{\\frac{0.60(0.40)}{50}+\\frac{0.70(0.30)}{40}}\\approx0.10025\\\\95\\%\\ \\text{CI}&:\\ -0.10\\ \\pm\\ z_{0.975}\\operatorname{SE}_{\\rm CI}\\approx[-0.29649,\\ 0.09649]\\end{aligned}",
+    "text": "The unpooled interval SE is about 0.10025. The 95 percent interval is minus 0.10 plus or minus the 0.975 standard normal quantile times that SE, about minus 0.29649 to 0.09649.",
+    "title": "Estimate a difference without imposing equality",
+    "display": true
+  },
+  "depth-f-reciprocal": {
+    "tex": "P(F_{49,39}\\ge1.5)=P(F_{39,49}\\le2/3)\\approx0.09637",
+    "text": "The upper-tail probability above 1.5 with 49 and 39 degrees of freedom equals the lower-tail probability below two thirds with 39 and 49 degrees of freedom, about 0.09637.",
+    "title": "A reciprocal changes which tail holds the same evidence",
+    "display": true
   }
 }

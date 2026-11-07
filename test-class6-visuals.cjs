@@ -6,7 +6,7 @@ const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual
 const source=fs.readFileSync('src/class-six.js','utf8'),html=fs.readFileSync('dist/hypothesis-testing.html','utf8'),css=fs.readFileSync('src/class-six.css','utf8');
 function topics(s){const out=[];const re=/<\/?details\b[^>]*>/g;let m,depth=0,start=-1;while((m=re.exec(s))){if(m[0].startsWith('</')){depth--;if(depth===0&&start!==-1){out.push(s.slice(start,re.lastIndex));start=-1;}}else{if(depth===0&&m[0].includes('class="lesson"'))start=m.index;depth++;}}return out;}
 eq(topics(fs.readFileSync('src/hypothesis-testing.html','utf8')).map(t=>crypto.createHash('sha256').update(t).digest('hex')),JSON.parse(fs.readFileSync('test-class6-reference.json','utf8')).topic_sha256,'all 15 original topic bodies unchanged');
-eq((html.match(/<math xmlns=/g)||[]).length,32);eq((html.match(/class="visual-practice"/g)||[]).length,4);
+eq((html.match(/<math xmlns=/g)||[]).length,40);eq((html.match(/class="visual-practice"/g)||[]).length,4);
 
 const choices=Object.fromEntries(Object.entries(V.specs).map(([k,s])=>[k,s[4].map(b=>b[0])]));
 for(const[key,values]of Object.entries(choices)){ok(V.render(key).includes('Pause'));ok(V.render(key).includes('c6-scene'));for(const v of values){const out=V.views[key](v);ok(out.length>200);ok(!/NaN|undefined/.test(out),key+' '+v);for(const match of out.matchAll(/<svg[\s\S]*?<\/svg>/g)){ok(match[0].includes('role="img"'));ok(match[0].includes('<title'));ok(match[0].includes('<desc'));}}}
