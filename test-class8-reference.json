@@ -26,7 +26,7 @@
     "probability.html": "8f16df76f802238ca7fb7daa417f7b69595d66e75f07b29cacebdef193305e5a",
     "index.html": "e24f4d2f49eb7531ba77eb236fb9b50b68e95cde62dae17c0cc2437ce8e2097c",
     "estimation.html": "ea101e2c8f97654dc33bead7f915ff4f95c9bd8e34ee05b1b07cc44d99f0bd68",
-    "anova.html": "b9412b784addbe671735b98535cc51c3b39cc375de48c3012144e877283ae3ef"
+    "anova.html": "894682131b7a83b81d5372528e4bf6029d77ca5460e2cb7b7fcf9a75a877c5f9"
   },
-  "other_pages_note": "Built-page snapshots refreshed after centered/scaled arithmetic and malformed-fragment repairs. Lesson text and formulas are unchanged. Default ANOVA and regression SVG coordinates differ at floating-point roundoff; ANOVA endpoint rounding changes by 0.01 and one tail shading segment follows the corrected cutoff."
+  "other_pages_note": "Modeling chart-axis labels refreshed after verifying that lesson text and formulas outside SVGs and asset fingerprints are unchanged. Class 7 and 8 statistical calculations and plotted geometry remain unchanged."
 }
