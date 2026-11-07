@@ -34,7 +34,7 @@ for(const match of source.slice(shapeStart).matchAll(/<\/?details\b[^>]*>/g)){
 }
 ok(shapeStart>=0&&shapeEnd>shapeStart,'shape lesson boundaries exist');
 const shapeLesson=source.slice(shapeStart,shapeEnd);
-const legacy=shapeLesson.replace(/<section class="second-foundation shape-depth-worked" id="shape-moment-worked"[\s\S]*?(?=<div class="warning"><b>Two tempting shortcuts to avoid<\/b>)/,'').replace(/(<h4>Technical depth · Standardized moments<\/h4>)<p>[\s\S]*?<\/p>(?=\{\{math:moments\}\})/,'$1');
+const legacy=shapeLesson.replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'').replace(/<section class="second-foundation shape-depth-worked" id="shape-moment-worked"[\s\S]*?(?=<div class="warning"><b>Two tempting shortcuts to avoid<\/b>)/,'').replace(/(<h4>Technical depth · Standardized moments<\/h4>)<p>[\s\S]*?<\/p>(?=\{\{math:moments\}\})/,'$1');
 ok(crypto.createHash('sha256').update(legacy).digest('hex')==='8bb46b6f1a2cf6eeb73dc26bca80fcb5d6bd845fa9ba27ccb1bb66714ff58c9a','entire original shape lesson preserved exactly');
 for(const token of ['moments','corrected-moments','shape-domains','log-transform'])ok(shapeLesson.includes('{{math:'+token+'}}'),'retained formula '+token);
 for(const marker of ['id="case-fence-worked"','id="shape-values"','href="#graph-panel-box"','Box–Cox requires positive values','Zero excess kurtosis does not prove normality'])ok(shapeLesson.includes(marker),'retained legacy activity or caveat '+marker);

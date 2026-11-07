@@ -21,6 +21,6 @@ for(const html of documents){
  ok(html.includes('id="harmonic-rate-bridge" aria-labelledby="harmonic-rate-heading"'),'named teaching section');
  ok(html.includes('<details class="visual-check" id="shape-scale-bridge"><summary>'),'native disclosure works without JavaScript');
 }
-const restored=source.replace(/<section class="case-worked" id="harmonic-rate-bridge"[\s\S]*?<\/section>/,'').replace(/<details class="visual-check" id="shape-scale-bridge">[\s\S]*?<\/details>\n/,'');
+const restored=source.replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'').replace(/<section class="case-worked" id="harmonic-rate-bridge"[\s\S]*?<\/section>/,'').replace(/<details class="visual-check" id="shape-scale-bridge">[\s\S]*?<\/details>\n/,'');
 ok(crypto.createHash('sha256').update(restored).digest('hex')==='689c8e0653e6380210b4cdd555d45d992bc5986fff149858b69884444c831a34','all prior Class 1 content preserved byte for byte');
 console.log(`Passed ${checks} Class 1 bridges assertions (independent moments, rates, production parity, readable content, complete source preservation${process.argv.includes('--built')?', built HTML':''}).`);
