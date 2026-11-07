@@ -9,6 +9,8 @@ for(const[f,hash]of Object.entries(reference.other_pages).filter(([f])=>f!=='reg
 eq((html.match(/<math xmlns=/g)||[]).length,26);eq((html.match(/class="visual-practice"/g)||[]).length,4);
 const choices=Object.fromEntries(Object.entries(V.specs).map(([k,s])=>[k,s[4].map(b=>b[0])]));
 for(const[key,values]of Object.entries(choices)){ok(V.render(key).includes('Pause'));ok(V.render(key).includes('c7-scene'));for(const v of values){const out=V.views[key](v);ok(out.length>200);ok(!/NaN|undefined/.test(out),key+' '+v);for(const match of out.matchAll(/<svg[\s\S]*?<\/svg>/g)){ok(match[0].includes('role="img"'));ok(match[0].includes('<title'));ok(match[0].includes('<desc'));}}}
+// SVG geometry is serialized deterministically across supported JavaScript runtimes.
+for(const view of ['observed','noise']){const curve=V.views.reference(view).match(/class="c7-curve" d="([^"]+)"/)[1];ok(!/\d+\.\d{7,}/.test(curve),'stable SVG coordinate precision');}
 // Independent hand arithmetic and SciPy reference values, not rounded before decisions.
 const d=A.oneWay(),n=A.oneWay(V.noisy()),two=A.twoWay(),parallel=A.twoWay(A.PARALLEL),cross=A.twoWay(A.CROSSOVER);
 near(d.grandMean,71/3);near(d.between.ss,296/3);near(d.within.ss,24);near(d.total.ss,368/3);near(d.F,18.5);near(d.p,.0006481582449937734);near(d.crit,4.25649472909375);
