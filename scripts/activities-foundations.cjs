@@ -48,7 +48,7 @@ module.exports = [
   {
     id: 'c2-language-events', file: 'probability.html', afterTopic: 2,
     title: 'Translate a shipping request into events', kind: 'match',
-    prompt: 'Let A mean “an order uses express shipping” and B mean “an order is late.” Match each request to its event. “Or” includes both unless explicitly excluded.',
+    prompt: 'Consider only delivered orders, each classified as on time or late against a defined deadline. Let A mean “an order uses express shipping” and B mean “an order is late.” Match each request to its event. “Or” includes both unless explicitly excluded.',
     options: ['A and B', 'A or B (or both)', 'A and not B', 'Neither A nor B'],
     pairs: [
       {prompt: 'Express orders that arrived on time', answer: 2},

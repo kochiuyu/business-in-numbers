@@ -49,7 +49,7 @@
  {q:'Two mutually exclusive events both have positive probability. Are they independent?',a:['Yes, because they are separate events.','Only if their probabilities are equal.','No: one occurring rules out the other.'],correct:2,why:'Their joint probability is zero but the product of their positive probabilities is greater than zero.'},
  {q:'With prior 0.4, sensitivity 0.8 and false-positive rate 0.4, what follows from two conditionally independent positive results?',a:['Posterior 8/11, about 72.73%.','Posterior about 81.63%, using the same probability multiplier twice.','Posterior 100%, because two results agree.'],correct:0,why:'The weighted likelihoods are 0.4 × 0.8² and 0.6 × 0.4². Normalize them. The next signal’s marginal changes after the first result.'},
  {q:'Choose a 3-person committee from 5 people, with no distinct roles. How many committees?',a:['60','10','125'],correct:1,why:'Order does not matter and no person is repeated: C(5,3) = 10. Sixty would assign three distinct roles.'},
- {q:'An event B has probability zero in the model. What is P(A | B) using the elementary ratio?',a:['Zero.','One.','Undefined.'],correct:2,why:'P(A ∩ B)/P(B) has a zero denominator. Do not silently turn an impossible conditioning event into a zero conditional probability.'}
+ {q:'An event B has probability zero in the model. What is P(A | B) using the elementary ratio?',a:['Zero.','One.','Undefined.'],correct:2,why:'P(A ∩ B)/P(B) has a zero denominator, so this elementary ratio is undefined. Probability zero does not always mean impossible: a single point has probability zero in a continuous density model.'}
  ];
  let index=0;const answers={};
  function quiz(){

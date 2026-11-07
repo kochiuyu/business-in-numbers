@@ -17,16 +17,16 @@
     "e0cd79e63736ef8f6979119069e398d80f34e1b17a42c96ac5ad98600f04cf6c"
   ],
   "other_pages": {
-    "regression.html": "c8beeb70f55583b7656e21bb4a23943a742f725297e1094030cc2084abd89941",
+    "regression.html": "02a55b4ae5914014350f4fbb30f019e90411cbcded85a54782f9b741c4210539",
     "course-introduction.html": "e403cbd85d9497623fcc097ed5667713410ca5abf8d0f413bffc5c53112b2cbe",
     "sampling-distributions.html": "e9f3bf42191cd0e9bafc7773dbba207dbfd6c0a4429ec15f8f1e4e02fa93504e",
     "math-check.html": "5dbebe5efb47da9529cb1d607511f22bbe51d0973f3238d8b5c80a120eb3b08b",
     "random-variables.html": "c98b1c42eaf03102b2c3f1a4a789797b1a5d038c316ec9d4cbc8192dc93777be",
     "hypothesis-testing.html": "2c75f0d0c4a2f0e976f55501bace4221d5ac4c4fbd8d4c7369a5e0b656cd83c5",
-    "probability.html": "27afd0449c019db4b80eeeacecedba8843077af89aa4dcdd70a17d74734f2132",
+    "probability.html": "8f16df76f802238ca7fb7daa417f7b69595d66e75f07b29cacebdef193305e5a",
     "index.html": "3c1a9749cabf0b75839d92160962f8195e4ed287a08a842ad1f1055caf81601e",
     "estimation.html": "582155b47424dd7d6a9b6915f10ab611b44209c9f249a32baac4594ade042cc3"
   },
-  "other_pages_note": "Built-page snapshots refreshed for the ninth accessibility review. Only semantic roles and quiz/style asset fingerprints changed; lesson text, mathematics, diagrams and original topic hashes remain unchanged.",
+  "other_pages_note": "Built-page snapshots refreshed for the assessment review. Probability activity now specifies delivered orders and the Class 8 OLS pause feedback says sum of squares. Other changes are quiz/visual asset fingerprints; original technical lesson bodies and mathematics are unchanged.",
   "topic_note": "Topic 1 wording corrected in the seventh review: the global ANOVA is not a mandatory gate for a prespecified single contrast or family-controlled comparisons. All other original topics are unchanged."
 }
