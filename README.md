@@ -38,6 +38,8 @@ Class 6 follows seventeen focused steps: claim, decision errors, power, statisti
 
 Class 7 follows eighteen focused steps: data, grand mean, sum-of-squares decomposition, degrees of freedom and mean squares, F ratio, right tail, global conclusion, planned comparisons, factorial design, cell and marginal means, effects, interaction patterns, four sources, interaction contrast, three tests, replication, business recommendation, and software audit. Core arithmetic stays visible and all original explanations remain. Sequential links use `#class7-step-1` through `#class7-step-18`; original `#anova-step-*` and topic links retain their subjects.
 
+Class 8 follows nineteen focused steps: paired data, line interpretation, least squares, centered sums, fitted coefficients, units, assumptions, residual diagnostics, noise estimation, slope inference, intercept inference, variation decomposition, R², F versus t, mean response, individual response, model limits, business recommendation, and software audit. Essential calculations stay visible; full explanations and proofs remain available. Sequential links use `#class8-step-1` through `#class8-step-19`; original `#regression-step-*` and topic links retain their subjects.
+
 Run `npm run test:navigation` after building for navigation structure and interaction regression checks. Browser QA should also check narrow phone layouts, keyboard focus, Back/Forward, and the no-JavaScript fallback.
 
 ## GitHub Pages

@@ -12,6 +12,7 @@ function restore(source, page) {
   if (page === 'estimation') source = require('./class-five-preservation.cjs').restore(source);
   if (page === 'hypothesis-testing') source = require('./class-six-preservation.cjs').restore(source);
   if (page === 'anova') source = require('./class-seven-preservation.cjs').restore(source);
+  if (page === 'regression') source = require('./class-eight-preservation.cjs').restore(source);
   const record = reference.pages[page];
   if (!record) return source;
   const tokens = source.match(/<[^>]*>|[^<]+/g) || [];

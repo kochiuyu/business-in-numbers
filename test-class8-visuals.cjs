@@ -24,13 +24,13 @@ class Element{
 }
 function dom(){const root=new Element('document'),stack=[root],voids=new Set(['META','LINK','BR','INPUT','HR','IMG','SOURCE','WBR']);let clean=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/<!--[\s\S]*?-->/g,'');for(const m of clean.matchAll(/<\/?([a-z][a-z\d-]*)\b([^>]*?)>/gi)){const closing=m[0].startsWith('</');if(closing){if(stack.at(-1).tagName===m[1].toUpperCase())stack.pop();continue;}const attrs={};for(const a of m[2].matchAll(/([a-z][\w:-]*)(?:="([^"]*)")?/gi))attrs[a[1]]=a[2]??'';const el=new Element(m[1],attrs);el.parentElement=stack.at(-1);el.parentElement.children.push(el);if(!voids.has(el.tagName)&&!m[0].endsWith('/>'))stack.push(el);}root.body=root.querySelector('body');root.getElementById=id=>root.querySelector('#'+id);for(const m of html.matchAll(/<h2 id="([^"]+)"[^>]*>([\s\S]*?)<\/h2>/g)){const el=root.getElementById(m[1]);if(el)el.textContent=m[2].replace(/<[^>]*>/g,'');}return root;}
 function run(reduced,hash=''){const d=dom(),events={},loc={hash},media={matches:reduced,addEventListener:(k,f)=>media[k]=f};const w={matchMedia:()=>media,addEventListener:(k,f)=>(events[k]||=[]).push(f)};vm.runInNewContext(source,{document:d,window:w,location:loc,ClassEightViews:V});return{d,events,loc,media};}
-const anchors=[['relationship',1],['line',2],['least-squares',3],['line-form',3],['coefficients',4],['units',5],['assumptions',6],['residuals',7],['inference',8],['regression-anova',9],['r-square',10],['f-test',11],['mean-response',12],['individual-response',13],['model-lab',14],['model-form',14],['tools',15],['practice',15]];
+const anchors=[['relationship',1],['line',2],['least-squares',3],['line-form',3],['coefficients',5],['units',6],['assumptions',7],['residuals',9],['inference',10],['regression-anova',12],['r-square',13],['f-test',14],['mean-response',15],['individual-response',16],['model-lab',17],['model-form',17],['tools',19],['practice',19]];
 for(const reduced of [false,true]){
  const{d,events,loc,media}=run(reduced),parts=d.querySelectorAll('.c8-part'),visible=()=>parts.map((p,i)=>!p.hidden?i+1:null).filter(Boolean),fire=k=>(events[k]||[]).forEach(fn=>fn());
  eq(visible(),[1]);eq(d.getElementById('c8-motion').checked,!reduced);eq(d.body.classList.contains('c8-no-motion'),reduced);
- for(let n=2;n<=15;n++){loc.hash='#regression-step-'+n;fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c8-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
+ for(let n=2;n<=19;n++){loc.hash='#class8-step-'+n;fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c8-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
  for(const[id,n]of anchors){loc.hash='#'+id;fire('hashchange');eq(visible(),[n],id);for(let p=d.getElementById(id);p;p=p.parentElement)if(p.tagName==='DETAILS')ok(p.open,id+' open ancestor');}
- d.getElementById('c8-show-all').fire('click');eq(visible(),Array.from({length:15},(_,i)=>i+1));d.getElementById('c8-show-all').fire('click');eq(visible(),[15]);
+ d.getElementById('c8-show-all').fire('click');eq(visible(),Array.from({length:19},(_,i)=>i+1));d.getElementById('c8-show-all').fire('click');eq(visible(),[19]);
  for(const b of d.querySelectorAll('[data-c8-visual]')){b.fire('click');eq(b.getAttribute('aria-pressed'),'true');eq(d.querySelectorAll(`[data-c8-visual="${b.dataset.c8Visual}"]`).filter(x=>x.getAttribute('aria-pressed')==='true').length,1);ok(d.getElementById('c8-'+b.dataset.c8Visual+'-result').innerHTML.length>200);}
  const pick=(key,v)=>d.querySelector(`[data-c8-visual="${key}"][data-view="${v}"]`).fire('click');
  for(const[key,values]of Object.entries(choices))for(const v of values){pick(key,v);eq(d.getElementById('c8-'+key+'-result').innerHTML,V.views[key](v));}
@@ -38,8 +38,8 @@ for(const reduced of [false,true]){
  d.getElementById('c8-motion').checked=false;d.getElementById('c8-motion').fire('change');ok(d.body.classList.contains('c8-no-motion'));media.matches=true;media.change();eq(d.getElementById('c8-motion').checked,false);
  loc.hash='#%bad';fire('hashchange');loc.hash='#missing';fire('hashchange');ok(true);
 }
-for(const[id,n]of anchors){const{d}=run(false,'#'+id);ok(!d.getElementById('regression-step-'+n).hidden,id+' direct link');}
-const staticDOM=dom();eq(staticDOM.querySelectorAll('.c8-part').filter(p=>!p.hidden).length,15);eq(staticDOM.querySelectorAll('.c8-visual-controls').filter(p=>p.hidden).length,15);ok(staticDOM.querySelectorAll('.c8-part').every(p=>p.querySelector('.c8-scene')));
+for(const[id,n]of anchors){const{d}=run(false,'#'+id);ok(!d.querySelectorAll('.c8-part')[n-1].hidden,id+' direct link');}
+const staticDOM=dom();eq(staticDOM.querySelectorAll('.c8-part').filter(p=>!p.hidden).length,19);eq(staticDOM.querySelectorAll('.c8-visual-controls').filter(p=>p.hidden).length,15);ok(staticDOM.querySelectorAll('.c8-part').every(p=>p.querySelector('.c8-core')));
 // Browser history can return to the original URL without a fragment.
 for(const reduced of [false,true]){
  const {d,events,loc}=run(reduced),parts=d.querySelectorAll('.c8-part');
@@ -58,7 +58,7 @@ for(const reduced of [false,true]){
 }
 
 // Readability pilot: named progress, all moved anchors, and complete print restoration.
-for(const[id,step]of [['depth-regression-weights', 6], ['em-se-bridge', 8], ['depth-regression-covariance', 12]]){const{d}=run(false,'#'+id);const target=d.getElementById(id);ok(!target.closest('.c8-part').hidden,id+' first-load step visible');let outer=target.closest('[data-reading-extension]');ok(outer&&outer.open,id+' native extension opens');ok(d.getElementById('c8-progress').textContent.includes('Step '+step+' of 15'),id+' step progress');ok(d.getElementById('c8-progress').textContent.includes(target.closest('.c8-part').querySelector('h2').textContent),id+' named current step');}
+for(const[id,step]of [['depth-regression-weights', 7], ['em-se-bridge', 10], ['depth-regression-covariance', 15]]){const{d}=run(false,'#'+id);const target=d.getElementById(id);ok(!target.closest('.c8-part').hidden,id+' first-load step visible');let outer=target.closest('[data-reading-extension]');ok(outer&&outer.open,id+' native extension opens');ok(d.getElementById('c8-progress').textContent.includes('Step '+step+' of 19'),id+' step progress');ok(d.getElementById('c8-progress').textContent.includes(target.closest('.c8-part').querySelector('h2').textContent),id+' named current step');}
 {const{d,events}=run(false),extensions=d.querySelectorAll('[data-reading-extension]');eq(extensions.length,3);ok(extensions.every(x=>!x.open),'extensions initially closed');const mathWindow={addEventListener:(k,f)=>(events[k]||=[]).push(f)};vm.runInNewContext(fs.readFileSync('src/math-ui.js','utf8'),{document:d,window:mathWindow});const fire=k=>(events[k]||[]).forEach(fn=>fn());extensions[0].open=true;fire('beforeprint');ok(extensions.every(x=>x.open),'print opens all extensions');fire('afterprint');ok(extensions[0].open&&!extensions.slice(1).some(x=>x.open),'print restores extension state');}
 {const{d}=run(false,'#depth-regression-normal');ok(d.getElementById('depth').checked,'technical deep link checks depth');ok(d.body.classList.contains('depth-on'),'technical deep link reveals technical content');}
 
