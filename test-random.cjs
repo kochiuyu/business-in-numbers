@@ -7,6 +7,51 @@ for(const n of [1,6,60]){const d=R.discrete('uniform',{n});near(d.mass.reduce((a
 for(const q of [0,.1,.25,.4,.5]){const j=R.joint(q);near(j.cells.reduce((a,b)=>a+b),1);near(j.cells[0]+j.cells[1],.5);near(j.variance,2*q);}
 for(const z of [-8,-4,-2,-1,0,1,2,4,8])near(R.normalCdf(z)+R.normalCdf(-z),1);near(R.normalCdf(1),.8413447460685,8e-8);
 for(const model of ['normal','uniform','exponential']){const d=R.continuous(model);for(const [l,u] of [[d.lo,d.hi],[0,1],[-100,100],[5,5]]){const p=R.interval(d,l,u);ok(p>=0&&p<=1);for(const kind of ['pdf','cdf']){const svg=R.continuousSvg(d,l,u,kind);ok(!/NaN|Infinity/.test(svg));ok(svg.includes('<title')&&svg.includes('<desc'));}}}
+// Narrow continuous models must keep distinct coordinates and nonzero moments visible.
+const axisLabels=svg=>[...svg.matchAll(/<text x="[^"]+" y="255"[^>]*>([^<]+)<\/text>/g)].map(m=>m[1]);
+for(const mu of [500,1000000]){
+ const d=R.continuous('normal',{mu,sd:.001});
+ for(const kind of ['pdf','cdf']){
+  const labels=axisLabels(R.continuousSvg(d,mu-.001,mu+.001,kind));
+  if(mu===500)eq(labels.length,5);else ok([3,5].includes(labels.length));eq(new Set(labels).size,labels.length);
+  labels.forEach((label,i)=>near(Number(label.replaceAll(',','')),mu-.004+i*.008/(labels.length-1),1e-9));
+ }
+ ok(R.continuousSummary(d,mu-.001,mu+.001).includes('<span>Variance</span><strong>0.000001</strong>'));
+}
+const broadNormal=R.continuous('normal',{mu:0,sd:1000000});
+const densityTicks=[...R.continuousSvg(broadNormal,-1000000,1000000).matchAll(/<text x="[^"]+" y="[^"]+" text-anchor="end" font-size="14"[^>]*>([^<]+)<\/text>/g)].map(m=>m[1]);
+eq(densityTicks.length,5);eq(new Set(densityTicks).size,5);
+// All tick strings have room within the viewBox, including small density labels
+// and large-baseline/small-spread endpoints. Geometry uses the same 8px budget.
+for(const d of [broadNormal,R.continuous('normal',{mu:500,sd:.001}),R.continuous('normal',{mu:1000000,sd:.001})]){
+ for(const kind of ['pdf','cdf']){
+  const svg=R.continuousSvg(d,d.lo,d.hi,kind);
+  for(const m of svg.matchAll(/<text x="([^"]+)" y="([^"]+)" text-anchor="(end|middle)" font-size="14"[^>]*>([^<]+)<\/text>/g)){
+   const x=Number(m[1]),width=m[4].length*8,left=x-width/(m[3]==='middle'?2:1),right=m[3]==='middle'?x+width/2:x;
+   ok(left>=0&&right<=560,`Tick ${m[4]} fits horizontally`);
+  }
+ }
+}
+// Dense precision labels reduce in number instead of overlapping adjacent ticks.
+for(const d of [R.continuous('uniform',{a:999999.99999,b:1000000}),R.continuous('uniform',{a:-1000000,b:-999999.99999}),R.continuous('normal',{mu:1000000,sd:.001}),broadNormal]){
+ for(const kind of ['pdf','cdf']){
+  const svg=R.continuousSvg(d,d.lo,d.hi,kind),ticks=[...svg.matchAll(/<text x="([^"]+)" y="255"[^>]*>([^<]+)<\/text>/g)].map(m=>({x:Number(m[1]),width:m[2].length*8}));
+  ok([2,3,5].includes(ticks.length));
+  ticks.forEach((tick,i)=>{ok(tick.x-tick.width/2>=0&&tick.x+tick.width/2<=560);if(i)ok(tick.x-tick.width/2>=ticks[i-1].x+ticks[i-1].width/2+8,'Adjacent x ticks have an 8px gap');});
+ }
+}
+eq(axisLabels(R.continuousSvg(R.continuous('uniform',{a:999999.99999,b:1000000}),999999.99999,1000000)).length,3);
+const fastWait=R.continuous('exponential',{rate:1000});
+eq(new Set(axisLabels(R.continuousSvg(fastWait,0,.001))).size,5);
+ok(R.continuousSummary(fastWait,0,.001).includes('<span>Variance</span><strong>0.000001</strong>'));
+const narrowUniform=R.continuous('uniform',{a:1,b:1.00001});
+ok(R.continuousCalculation(narrowUniform,1,1.00001).startsWith('P(1 ≤ X ≤ 1.00001) = F(1.00001) − F(1)'));
+eq(new Set(axisLabels(R.continuousSvg(narrowUniform,1,1.00001))).size,5);
+ok(!R.continuousSummary(narrowUniform,1,1.00001).includes('<span>Variance</span><strong>0</strong>'));
+ok(!R.continuousSummary(narrowUniform,1,1.00001).includes('<span>Standard deviation</span><strong>0</strong>'));
+// Default teaching coordinates and probabilities keep their familiar presentation.
+eq(axisLabels(R.continuousSvg(R.continuous('normal'),496,504)),['484','492','500','508','516']);
+eq(R.continuousCalculation(R.continuous('normal'),496,504),'P(496 ≤ X ≤ 504) = F(504) − F(496) = 0.841345 − 0.158655 ≈ 0.682689. The probability at any one exact value is zero.');
 for(const fn of [()=>R.discrete('binomial',{n:1.5}),()=>R.discrete('binomial',{p:NaN}),()=>R.discrete('binomial',{p:1.1}),()=>R.discrete('poisson',{lambda:0}),()=>R.discrete('hypergeometric',{N:40,K:41}),()=>R.discrete('hypergeometric',{N:40,n:41}),()=>R.continuous('uniform',{a:8,b:2}),()=>R.continuous('normal',{sd:0}),()=>R.continuous('exponential',{rate:0}),()=>R.interval(R.continuous('normal'),2,1),()=>R.joint(.6)]){checks++;assert.throws(fn);}
 const html=fs.readFileSync('dist/random-variables.html','utf8'),src=fs.readFileSync('src/random-variables.html','utf8'),math=JSON.parse(fs.readFileSync('src/random-math.json','utf8'));
 eq(Object.keys(math).length,43);eq((html.match(/class="lesson"/g)||[]).length,12);ok((html.match(/class="code-block"/g)||[]).length>=10);ok(!/\{\{|katex-error|https?:\/\/(?!www.w3.org)/.test(html));const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);eq(new Set(ids).size,ids.length);for(const m of html.matchAll(/(?:href|src)="([^"#]+)"/g)){if(!m[1].includes(':'))ok(fs.existsSync('dist/'+m[1].split('#')[0]),m[1]);}for(const token of ['random-variables.html','Class 3'])ok(fs.readFileSync('dist/probability.html','utf8').includes(token));ok(fs.readFileSync('dist/index.html','utf8').includes('random-variables.html'));ok(src.includes('.rv-lab{display:block!important}'));
@@ -18,6 +63,13 @@ const listeners={},location={hash:''};const doc={getElementById:get,body:{classL
 ok(get('quiz').innerHTML.includes('QUESTION 1 OF 10'));for(const m of ['hypergeometric','bernoulli','poisson','uniform','binomial']){get('count-model').value=m;get('count-model').fire('change');ok(get('count-summary').innerHTML.includes('Mean'));eq(get('count-error').textContent,'');}
 get('count-n').value='1.5';get('count-form').fire('submit');ok(get('count-error').textContent.includes('integer'));get('count-n').value='';get('count-form').fire('submit');ok(get('count-error').textContent.includes('Enter a number'));get('count-reset').fire('click');eq(get('count-error').textContent,'');get('count-p').value='0';get('count-form').fire('submit');ok(!/NaN|Infinity/.test(get('count-summary').innerHTML));
 for(const m of ['exponential','uniform','normal','uniform']){get('continuous-model').value=m;get('continuous-model').fire('change');ok(get('continuous-summary').innerHTML.includes('Mean'));eq(get('continuous-error').textContent,'');}get('cont-a').value='10';get('continuous-form').fire('submit');ok(get('continuous-error').textContent.includes('a < b'));get('continuous-reset').fire('click');get('cont-lower').value='9';get('continuous-form').fire('submit');ok(get('continuous-error').textContent.includes('must not exceed'));get('continuous-reset').fire('click');eq(get('continuous-error').textContent,'');
+get('continuous-model').value='normal';get('continuous-model').fire('change');
+for(const [id,value]of Object.entries({'cont-mu':500,'cont-sd':.001,'cont-lower':499.999,'cont-upper':500.001}))get(id).value=value;
+get('continuous-form').fire('submit');eq(get('continuous-error').textContent,'');
+eq(new Set(axisLabels(get('continuous-pdf').innerHTML)).size,5);
+ok(get('continuous-summary').innerHTML.includes('<span>Variance</span><strong>0.000001</strong>'));
+get('continuous-reset').fire('click');eq(get('cont-sd').value,'4');
+eq(axisLabels(get('continuous-pdf').innerHTML),['484','492','500','508','516']);
 for(const q of ['0','.5','.25']){get('joint-q').value=q;get('joint-q').fire('input');ok(get('joint-result').textContent.includes('Var(X+Y)'));}ok(get('joint-result').textContent.includes('independent'));
 answers[0].fire('click');ok(get('quiz-feedback').innerHTML.includes('Reconsider'));answers[1].fire('click');ok(get('quiz-feedback').innerHTML.includes('<b>Yes.</b>'));for(let i=0;i<9;i++)get('next-question').fire('click');ok(get('quiz').innerHTML.includes('QUESTION 10 OF 10'));get('next-question').fire('click');ok(get('quiz').innerHTML.includes('0 explored'));get('next-question').fire('click');get('previous-question').fire('click');ok(get('quiz').innerHTML.includes('QUESTION 1 OF 10'));
 location.hash='#%invalid';listeners.hashchange();location.hash='#joint';get('joint').tagName='DETAILS';listeners.hashchange();ok(get('joint').open);new vm.Script(fs.readFileSync('src/random-core.js','utf8'));

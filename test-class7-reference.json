@@ -17,16 +17,16 @@
     "e0cd79e63736ef8f6979119069e398d80f34e1b17a42c96ac5ad98600f04cf6c"
   ],
   "other_pages": {
-    "regression.html": "a772ec33d4c210092b1084684b6aaf1827d8c18495cc790bd73748c03a10280d",
+    "regression.html": "cf967892c1fb929e890a7d2dc5b4d74f89271b9d7162109401f5263a7989abe3",
     "course-introduction.html": "e403cbd85d9497623fcc097ed5667713410ca5abf8d0f413bffc5c53112b2cbe",
-    "sampling-distributions.html": "e9f3bf42191cd0e9bafc7773dbba207dbfd6c0a4429ec15f8f1e4e02fa93504e",
+    "sampling-distributions.html": "ac92478d58e150dcab7832838ebde0310f915922a73b6f08856a25ee5c446fc0",
     "math-check.html": "5dbebe5efb47da9529cb1d607511f22bbe51d0973f3238d8b5c80a120eb3b08b",
-    "random-variables.html": "c98b1c42eaf03102b2c3f1a4a789797b1a5d038c316ec9d4cbc8192dc93777be",
-    "hypothesis-testing.html": "13ca5c45efdf189879b7aa07dc5c4de2375c217092915f2f1bb1ba050f593660",
+    "random-variables.html": "7e4b0ae211e28893a646d3f1f240018e0c0daf19d1c28e568a0252e9c7c7e4e2",
+    "hypothesis-testing.html": "19caf4572054eef5b9896f2b1689594544d00ff7aaed76bb261af4205dfc423e",
     "probability.html": "8f16df76f802238ca7fb7daa417f7b69595d66e75f07b29cacebdef193305e5a",
     "index.html": "3c1a9749cabf0b75839d92160962f8195e4ed287a08a842ad1f1055caf81601e",
-    "estimation.html": "582155b47424dd7d6a9b6915f10ab611b44209c9f249a32baac4594ade042cc3"
+    "estimation.html": "bd63f2a1200336d3c0a10e02d0c351b80a996db18fd0bfd917fb7cd52cf199e1"
   },
-  "other_pages_note": "Built-page snapshots refreshed for the assessment review. Probability activity now specifies delivered orders and the Class 8 OLS pause feedback says sum of squares. Other changes are quiz/visual asset fingerprints; original technical lesson bodies and mathematics are unchanged.",
+  "other_pages_note": "Built-page snapshots refreshed after the paired-input and continuous-axis fixes. Generated HTML changes only the shared runtime asset fingerprints; all lesson text, formulas and default diagrams are unchanged.",
   "topic_note": "Topic 1 wording corrected in the seventh review: the global ANOVA is not a mandatory gate for a prespecified single contrast or family-controlled comparisons. All other original topics are unchanged."
 }
