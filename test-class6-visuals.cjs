@@ -15,7 +15,7 @@ for(const[fn,args,expected]of [
  ['mean',{}, {stat:2,p:.022750131948179195,se:1}],
  ['mean',{tail:'less'}, {p:.9772498680518208}],
  ['mean',{tail:'two'}, {p:.04550026389635839}],
- ['mean',{method:'t',mean:32,mu0:30,sd:4,n:16,tail:'two'},{stat:2,p:.0639450072847203,df:15}],
+ ['mean',{method:'t',mean:52,mu0:50,sd:4,n:16,tail:'two'},{stat:2,p:.0639450072847203,df:15}],
  ['power',{n:64},{power:.6387600313123356,beta:.3612399686876644}],
  ['power',{n:128},{power:.8817090317783474}],
  ['proportion',{}, {stat:2.612789058968724,p:.00449033562094943}],
@@ -27,7 +27,38 @@ for(const[fn,args,expected]of [
 ])for(const[key,value]of Object.entries(expected))near(H[fn](args)[key],value);
 for(const [view,text] of [['greater','0.02275'],['two','0.04550'],['less','0.97725']])ok(V.views.tails(view).includes(text));
 ok(V.views.student('z').includes('0.04550'));ok(V.views.student('t').includes('0.06395'));
-ok(V.views.interval('two').includes('29.87–34.13'));ok(V.views.interval('one').includes('30.25'));ok(V.views.interval('one').includes('0.03197'));ok(V.views.interval('one').includes('no upper bound'));
+ok(V.views.interval('two').includes('49.87–54.13'));ok(V.views.interval('one').includes('50.25'));ok(V.views.interval('one').includes('0.03197'));ok(V.views.interval('one').includes('no upper bound'));
+// The picture-first 16-job sample must be the same case as the full lesson and lab.
+const lessonSource=fs.readFileSync('src/hypothesis-testing.html','utf8');
+const labSource=fs.readFileSync('src/hypothesis.js','utf8');
+ok(lessonSource.includes('a random sample of 16 service jobs has mean 52 minutes and sample SD 4. Testing the 50-minute benchmark gives SE=1 and t=2 with 15 degrees of freedom'),'full lesson retains its original minute case');
+ok(lessonSource.includes('For the 16-job t example, the 95% interval is approximately [49.8686, 54.1314]; it contains 50'),'full interval explanation uses the same case');
+ok(labSource.includes("set('mean',{method:'t',mean:52,mu0:50,sd:4,n:16,tail:'two',alpha:.05})"),'small-sample preset retains the worked example');
+ok(V.specs.student[2].includes('mean 52, benchmark 50'),'scene introduction uses the worked values');
+ok(V.specs.student[2].includes('separate sample from the 64-job'),'do not imply the 64-job sample changed size');
+for(const view of ['z','t']){
+ const out=V.views.student(view);
+ ok(out.includes('52 − 50 = 2'),'statistic numerator agrees with the lab');
+ ok(!out.includes('32 − 30')&&!out.includes('μ = 30'),'no stale visual benchmark');
+ if(view==='z')ok(html.includes(out),'built static default uses the same values');
+}
+for(const view of ['two','one']){
+ const out=V.views.interval(view);
+ ok(out.includes('mean 52, sample SD 4, benchmark 50, t with 15 degrees of freedom'),'spoken description retains all inputs');
+ ok(out.includes('Fixed axis 48 to 55 minutes'),'axis and description shift together');
+ for(const value of [48,50,52,55])ok(out.includes('>'+value+'</text>'),'all interval axis ticks retain the worked scale');
+ ok(out.includes('cx="240"'),'sample mean remains at the same chart position');
+ ok(out.includes('M140 55V190'),'benchmark remains at the same chart position');
+ ok(!out.includes('μ = 30')&&!out.includes('μ ≤ 30'),'both null statements use 50');
+}
+// Translation changes endpoint locations, not SE, statistic, p, or inference.
+for(const method of ['z','t'])for(const tail of ['two','greater']){
+ const old=H.mean({method,mean:32,mu0:30,sd:4,n:16,tail});
+ const current=H.mean({method,mean:52,mu0:50,sd:4,n:16,tail});
+ for(const field of ['se','stat','p','lower','upper'])if(old[field]!==null)near(current[field],old[field]);
+ eq(current.reject,old.reject);
+ current.ci.forEach((endpoint,i)=>near(endpoint,old.ci[i]+20));
+}
 for(const n of ['64','128']){ok(V.views.power(n).includes('Axis fixed 46 to 56'));ok(V.views.power(n).includes(n==='64'?'63.9%':'88.2%'));}
 ok(V.views.proportion('observed').includes('0.00449'));ok(V.views.proportion('null').includes('50 / 150'));
 ok(V.views.independent('welch').includes('50.515'));ok(V.views.independent('pooled').includes('61.10'));ok(V.views.independent('welch').includes('-7.12 to 1.12'));
@@ -59,7 +90,7 @@ for(const reduced of [false,true]){
  for(const b of d.querySelectorAll('[data-c6-visual]')){b.fire('click');eq(b.getAttribute('aria-pressed'),'true');eq(d.querySelectorAll(`[data-c6-visual="${b.dataset.c6Visual}"]`).filter(x=>x.getAttribute('aria-pressed')==='true').length,1);ok(d.getElementById('c6-'+b.dataset.c6Visual+'-result').innerHTML.length>200);}
  const pick=(key,v)=>d.querySelector(`[data-c6-visual="${key}"][data-view="${v}"]`).fire('click');
  for(const[key,values]of Object.entries(choices))for(const v of values){pick(key,v);eq(d.getElementById('c6-'+key+'-result').innerHTML,V.views[key](v));}
- pick('power','64');pick('interval','one');const saved=Object.fromEntries(Object.keys(choices).map(k=>[k,d.getElementById('c6-'+k+'-result').innerHTML]));fire('beforeprint');ok(d.getElementById('c6-power-result').innerHTML.includes('88.2%'));ok(d.getElementById('c6-interval-result').innerHTML.includes('29.87–34.13'));fire('beforeprint');fire('afterprint');for(const key of Object.keys(choices))eq(d.getElementById('c6-'+key+'-result').innerHTML,saved[key]);fire('afterprint');
+ pick('power','64');pick('interval','one');const saved=Object.fromEntries(Object.keys(choices).map(k=>[k,d.getElementById('c6-'+k+'-result').innerHTML]));fire('beforeprint');ok(d.getElementById('c6-power-result').innerHTML.includes('88.2%'));ok(d.getElementById('c6-interval-result').innerHTML.includes('49.87–54.13'));fire('beforeprint');fire('afterprint');for(const key of Object.keys(choices))eq(d.getElementById('c6-'+key+'-result').innerHTML,saved[key]);fire('afterprint');
  d.getElementById('c6-motion').checked=false;d.getElementById('c6-motion').fire('change');ok(d.body.classList.contains('c6-no-motion'));media.matches=true;media.change();eq(d.getElementById('c6-motion').checked,false);
  loc.hash='#%bad';fire('hashchange');loc.hash='#missing';fire('hashchange');ok(true);
 }
