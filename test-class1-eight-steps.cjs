@@ -107,4 +107,14 @@ const values=[10,10,10,10,30],mean=values.reduce((a,b)=>a+b)/values.length;
 const variance=values.reduce((sum,v)=>sum+(v-mean)**2,0)/values.length,sd=Math.sqrt(variance),z=values.map(v=>(v-mean)/sd);
 eq(mean,14,'worked mean');eq(variance,64,'worked population variance');eq(sd,8,'worked SD');
 eq(z,[-.5,-.5,-.5,-.5,2],'worked standardized values');eq(z.reduce((s,v)=>s+v**3,0)/5,1.5,'worked third moment');eq(z.reduce((s,v)=>s+v**4,0)/5,3.25,'worked fourth moment');
+// A chart help link must follow the subject after the former spread lesson
+// is split. Keeping a valid but stale #spread target sends learners to SD.
+for(const [name,html] of [['chart source',read('src/graphs-section.html')],['built page',read('dist/index.html')]]){
+ const link=html.match(/<a href="([^"]+)">The spread lesson explains quartiles and IQR\.<\/a>/);
+ ok(link,name+': quartile explanation link exists');
+ eq(link[1],'#case-fence-worked',name+': chart help reaches visible quartile calculation');
+}
+const quartileTarget=t.byId('case-fence-worked');
+ok(ancestors(quartileTarget).includes(t.byId('case-part-4')),'quartile help stays in Step 3');
+ok(!ancestors(quartileTarget).some(n=>n.tag==='details'||has(n,'technical')),'quartile help does not require optional disclosures');
 console.log(`Passed ${checks} eight-step topology, visible teaching, canonical anchors, legacy IDs and mathematical preservation assertions.`);
