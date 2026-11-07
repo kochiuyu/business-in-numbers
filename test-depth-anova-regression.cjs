@@ -27,7 +27,7 @@ for(const [name,expected] of Object.entries(baseline)){
   ok(i>=0&&j>i,`${name}/${label}: bounded insertion`);
   ok(source.indexOf(start,i+1)===-1&&source.indexOf(end,j)===-1,'unique insertion markers');
   const part=source.slice(i,j),id=`depth-${name}-${label}`;
-  ok(i>source.indexOf(`id="${name}-step-${step}"`)&&j<source.indexOf(`id="${name}-step-${step+1}"`),'bridge belongs to intended lesson step');
+  ok(i>source.indexOf(`id="${name}-step-${step}"`)&&j<source.indexOf(name==='anova'&&step===8?'id="anova-step-12"':`id="${name}-step-${step+1}"`),'bridge belongs to intended lesson step');
   ok(part.includes(`id="${id}"`)&&part.includes(`aria-labelledby="${id}-title"`)&&part.includes(`id="${id}-title"`),'accessible named bridge');
   ok(part.includes('<details><summary>')&&part.includes('</summary><p>'),'native reasoning feedback');
   ok(!/\bhidden\b|<script|<button|<details[^>]+\bopen\b/.test(part),'explanation needs no JavaScript and feedback starts closed');

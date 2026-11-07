@@ -36,6 +36,8 @@ Class 5 follows fifteen focused steps: target, unbiasedness, efficiency, consist
 
 Class 6 follows seventeen focused steps: claim, decision errors, power, statistic and cutoffs, p-value, known-SD z, estimated-SD t, test–interval matching, one rate, comparison design, pooled means, Welch means, paired means, two rates, variances, reporting, and software audit. Core calculations stay visible; all original explanations and proofs remain. Sequential links use `#class6-step-1` through `#class6-step-17`; original `#hypothesis-step-*` and topic links retain their subjects.
 
+Class 7 follows eighteen focused steps: data, grand mean, sum-of-squares decomposition, degrees of freedom and mean squares, F ratio, right tail, global conclusion, planned comparisons, factorial design, cell and marginal means, effects, interaction patterns, four sources, interaction contrast, three tests, replication, business recommendation, and software audit. Core arithmetic stays visible and all original explanations remain. Sequential links use `#class7-step-1` through `#class7-step-18`; original `#anova-step-*` and topic links retain their subjects.
+
 Run `npm run test:navigation` after building for navigation structure and interaction regression checks. Browser QA should also check narrow phone layouts, keyboard focus, Back/Forward, and the no-JavaScript fallback.
 
 ## GitHub Pages

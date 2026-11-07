@@ -10,8 +10,8 @@ for (const [page, id, step] of [['anova','f',4],['regression','se',8]]) {
  const start = html.indexOf(`<aside class="em-activity em-worked" id="em-${id}-bridge"`);
  const end = html.indexOf('</aside>',start);
  const block = html.slice(start,end);
- ok(start>html.indexOf(`id="${page}-step-${step}"`), 'Bridge follows intended step start');
- ok(end<html.indexOf(`id="${page}-step-${step+1}"`), 'Bridge stays in intended step');
+ ok(start>html.indexOf(page==='anova'?'id="anova-mean-squares"':`id="${page}-step-${step}"`), 'Bridge follows intended step start');
+ ok(end<html.indexOf(page==='anova'?'id="anova-step-4"':`id="${page}-step-${step+1}"`), 'Bridge stays in intended step');
  ok(block.includes(`aria-labelledby="em-${id}-heading"`) && block.includes(`id="em-${id}-heading"`),'Named explanation');
  ok(block.includes('<details><summary>') && block.includes('</summary><p>'),'Native learner feedback');
  ok(!/<details[^>]*\bopen\b|\bhidden\b|<script|<button/.test(block),'Feedback closed and content independent of JS');

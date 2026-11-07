@@ -153,7 +153,7 @@ function buildHypothesis(){
 
 function buildAnova(){
  const V=require('../src/anova-view.js'),read=name=>fs.readFileSync(path.join(src,name),'utf8');
- let template=read('anova.html').replace(/\{\{anovavisual:([a-z]+)\}\}/g,(_,name)=>require('../src/class-seven-visuals.js').render(name)).replace(/(<details class="lesson"[^>]*?) open(?=>)/g,'$1').replace('{{anova-tools}}',read('anova-tools.html')).replace('{{one-lab}}',V.lab('one')).replace('{{two-lab}}',V.lab('two'));
+ let template=read('anova.html').replace(/\{\{anovacore:([a-z]+)\}\}/g,(_,name)=>require('../src/class-seven-cores.cjs').render(name)).replace(/\{\{anovavisual:([a-z]+)\}\}/g,(_,name)=>require('../src/class-seven-visuals.js').render(name)).replace(/(<details class="lesson"[^>]*?) open(?=>)/g,'$1').replace('{{anova-tools}}',read('anova-tools.html')).replace('{{one-lab}}',V.lab('one')).replace('{{two-lab}}',V.lab('two'));
  for(const [key,name] of [['anova-python','anova.py'],['anova-output','anova-output.txt']])template=template.replace('{{'+key+'}}',`<pre class="code-block" tabindex="0" role="region" aria-label="${key==='anova-python'?'Complete Python ANOVA example':'Checked ANOVA output'}. Scroll horizontally if needed."><code>${esc(read('downloads/'+name))}</code></pre>`);
  const equations=JSON.parse(read('anova-math.json')),html=learning.enhance(compile(template,equations),'anova.html');if(/\{\{/.test(html))throw Error('Uncompiled Class 7 placeholder');
  fs.writeFileSync(path.join(dist,'anova.html'),html);

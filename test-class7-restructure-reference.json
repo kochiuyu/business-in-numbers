@@ -1,0 +1,716 @@
+{
+  "base_commit": "23b5831671ef374fd789d4375b72d1bcd3b9311f",
+  "baseline_sha256": "c0315908eb4911b969c4ed6f9703ac0f1597bc2186dd573dc87c9db8d07b3098",
+  "reviewed_sha256": "d1a349278673510d80d06dca9b9ae13f26bb46066ec8c9c049dc2666b41c7449",
+  "reviewed_dist_sha256": "6e5fec19a0b8c4c6859fb26d8c190f78d27aa6331666b7b2e76d89d1c88b22c2",
+  "patches": [
+    {
+      "token_start": 176,
+      "token_end": 177,
+      "before": "CLASS 7 \u00b7 FOURTEEN SMALL STEPS",
+      "after": "CLASS 7 \u00b7 EIGHTEEN FOCUSED STEPS"
+    },
+    {
+      "token_start": 184,
+      "token_end": 185,
+      "before": "A packing company wants faster orders. A retailer wants a better offer. Walk through their two synthetic cases, one picture and one question at a time. Try a change and explain what you see. Open an explanation or worked example when you want the calculations.",
+      "after": "A packing company wants faster orders. A retailer wants a better offer. Walk through their two synthetic cases. First build the noise estimate, then test a mean pattern and investigate planned comparisons. Each step keeps its essential reasoning and arithmetic visible; full explanations and proofs remain available below."
+    },
+    {
+      "token_start": 186,
+      "token_end": 188,
+      "before": "<nav class=\"c7-route\" aria-label=\"Class 7 illustrated path\"><a href=\"#anova-step-1\">",
+      "after": "<nav class=\"c7-route\" aria-label=\"Class 7 steps\"><a href=\"#class7-step-1\">"
+    },
+    {
+      "token_start": 195,
+      "token_end": 196,
+      "before": "<a href=\"#anova-step-2\">",
+      "after": "<a href=\"#class7-step-2\">"
+    },
+    {
+      "token_start": 200,
+      "token_end": 201,
+      "before": "Give each process a baseline",
+      "after": "Choose the grand mean"
+    },
+    {
+      "token_start": 203,
+      "token_end": 204,
+      "before": "<a href=\"#anova-step-3\">",
+      "after": "<a href=\"#class7-step-3\">"
+    },
+    {
+      "token_start": 208,
+      "token_end": 209,
+      "before": "Split the total variation",
+      "after": "Split and sum the variation"
+    },
+    {
+      "token_start": 211,
+      "token_end": 212,
+      "before": "<a href=\"#anova-step-4\">",
+      "after": "<a href=\"#class7-step-4\">"
+    },
+    {
+      "token_start": 214,
+      "token_end": 222,
+      "before": "",
+      "after": "</span><b>Count freedom, then average squares</b></a><a href=\"#class7-step-5\"><span>05"
+    },
+    {
+      "token_start": 227,
+      "token_end": 228,
+      "before": "<a href=\"#anova-step-5\">",
+      "after": "<a href=\"#class7-step-6\">"
+    },
+    {
+      "token_start": 229,
+      "token_end": 230,
+      "before": "05",
+      "after": "06"
+    },
+    {
+      "token_start": 235,
+      "token_end": 236,
+      "before": "<a href=\"#anova-step-6\">",
+      "after": "<a href=\"#class7-step-7\">"
+    },
+    {
+      "token_start": 237,
+      "token_end": 238,
+      "before": "06",
+      "after": "07"
+    },
+    {
+      "token_start": 240,
+      "token_end": 241,
+      "before": "Keep the conclusion honest",
+      "after": "State the global conclusion"
+    },
+    {
+      "token_start": 243,
+      "token_end": 244,
+      "before": "<a href=\"#anova-step-7\">",
+      "after": "<a href=\"#class7-step-8\">"
+    },
+    {
+      "token_start": 245,
+      "token_end": 254,
+      "before": "07",
+      "after": "08</span><b>Plan and compare a family</b></a><a href=\"#class7-step-9\"><span>09"
+    },
+    {
+      "token_start": 259,
+      "token_end": 260,
+      "before": "<a href=\"#anova-step-8\">",
+      "after": "<a href=\"#class7-step-10\">"
+    },
+    {
+      "token_start": 261,
+      "token_end": 270,
+      "before": "08",
+      "after": "10</span><b>Read cell and marginal means</b></a><a href=\"#class7-step-11\"><span>11"
+    },
+    {
+      "token_start": 275,
+      "token_end": 276,
+      "before": "<a href=\"#anova-step-9\"><span>09</span><b>Read the right average</b></a><a href=\"#anova-step-10\"><span>10</span><b>Separate four sources</b></a><a href=\"#anova-step-11\"><span>11</span><b>Ask three distinct questions</b></a><a href=\"#anova-step-12\">",
+      "after": "<a href=\"#class7-step-12\">"
+    },
+    {
+      "token_start": 283,
+      "token_end": 284,
+      "before": "<a href=\"#anova-step-13\">",
+      "after": "<a href=\"#class7-step-13\">"
+    },
+    {
+      "token_start": 286,
+      "token_end": 310,
+      "before": "",
+      "after": "</span><b>Separate four sources</b></a><a href=\"#class7-step-14\"><span>14</span><b>Measure the changing offer gain</b></a><a href=\"#class7-step-15\"><span>15</span><b>Ask three distinct questions</b></a><a href=\"#class7-step-16\"><span>16"
+    },
+    {
+      "token_start": 315,
+      "token_end": 316,
+      "before": "<a href=\"#anova-step-14\">",
+      "after": "<a href=\"#class7-step-17\">"
+    },
+    {
+      "token_start": 317,
+      "token_end": 318,
+      "before": "14",
+      "after": "17"
+    },
+    {
+      "token_start": 321,
+      "token_end": 329,
+      "before": "",
+      "after": "</b></a><a href=\"#class7-step-18\"><span>18</span><b>Reproduce and audit the table"
+    },
+    {
+      "token_start": 335,
+      "token_end": 336,
+      "before": "Step 1 of 14 \u00b7 Keep each order with its process",
+      "after": "Step 1 of 18 \u00b7 Keep each order with its process"
+    },
+    {
+      "token_start": 346,
+      "token_end": 347,
+      "before": "Show all fourteen steps",
+      "after": "Show all eighteen steps"
+    },
+    {
+      "token_start": 374,
+      "token_end": 375,
+      "before": " Follow the packing company through one outcome and three processes (1\u20136). Then help a retailer decide whether an offer works differently by day type (7\u201312). Check the design and reproduce the evidence (13\u201314).",
+      "after": " Follow the packing company through one outcome and three processes (steps 1\u20138). Then read the retailer\u2019s cell means, interaction and tests (9\u201315). Check the design, decide and reproduce the evidence (16\u201318)."
+    },
+    {
+      "token_start": 441,
+      "token_end": 443,
+      "before": "",
+      "after": "<span class=\"c7-step-anchor\" id=\"class7-step-1\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 445,
+      "token_end": 446,
+      "before": "01 / 14 \u00b7 THE PACKING COMPANY",
+      "after": "STEP 01 OF 18"
+    },
+    {
+      "token_start": 451,
+      "token_end": 452,
+      "before": "{{anovavisual:orders}}",
+      "after": "{{anovavisual:orders}}{{anovacore:orders}}"
+    },
+    {
+      "token_start": 453,
+      "token_end": 454,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 602,
+      "token_end": 603,
+      "before": "\u2190 The learning path",
+      "after": "\u2190 Learning path"
+    },
+    {
+      "token_start": 604,
+      "token_end": 606,
+      "before": "<a class=\"button\" href=\"#anova-step-2\">Next \u00b7 Give each process a baseline <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-2\">Next \u00b7 Choose the grand mean \u2192"
+    },
+    {
+      "token_start": 609,
+      "token_end": 609,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 610,
+      "token_end": 612,
+      "before": "",
+      "after": "<span class=\"c7-step-anchor\" id=\"class7-step-2\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 614,
+      "token_end": 615,
+      "before": "02 / 14 \u00b7 THE PACKING COMPANY",
+      "after": "STEP 02 OF 18"
+    },
+    {
+      "token_start": 617,
+      "token_end": 618,
+      "before": "Give each process a baseline",
+      "after": "Choose the grand mean"
+    },
+    {
+      "token_start": 620,
+      "token_end": 624,
+      "before": "{{anovavisual:baseline}}",
+      "after": "{{anovavisual:baseline}}{{anovacore:baseline}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 625,
+      "token_end": 625,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 698,
+      "token_end": 698,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 699,
+      "token_end": 699,
+      "before": "<p class=\"c7-reference-note\">Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 756,
+      "token_end": 757,
+      "before": "<a class=\"c7-back\" href=\"#anova-step-1\">",
+      "after": "<a class=\"c7-back\" href=\"#class7-step-1\">"
+    },
+    {
+      "token_start": 759,
+      "token_end": 761,
+      "before": "<a class=\"button\" href=\"#anova-step-3\">Next \u00b7 Split the total variation <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-3\">Next \u00b7 Split and sum the variation \u2192"
+    },
+    {
+      "token_start": 764,
+      "token_end": 764,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 765,
+      "token_end": 767,
+      "before": "",
+      "after": "<span class=\"c7-step-anchor\" id=\"class7-step-3\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 769,
+      "token_end": 770,
+      "before": "03 / 14 \u00b7 THE PACKING COMPANY",
+      "after": "STEP 03 OF 18"
+    },
+    {
+      "token_start": 772,
+      "token_end": 773,
+      "before": "Split the total variation",
+      "after": "Split and sum the variation"
+    },
+    {
+      "token_start": 775,
+      "token_end": 779,
+      "before": "{{anovavisual:split}}\n",
+      "after": "{{anovavisual:split}}{{anovacore:split}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 826,
+      "token_end": 826,
+      "before": "\n<p class=\"c7-reference-note\">Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 925,
+      "token_end": 926,
+      "before": "<a class=\"c7-back\" href=\"#anova-step-2\">",
+      "after": "<a class=\"c7-back\" href=\"#class7-step-2\">"
+    },
+    {
+      "token_start": 928,
+      "token_end": 930,
+      "before": "<a class=\"button\" href=\"#anova-step-4\">Next \u00b7 Compare signal with noise <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-4\">Next \u00b7 Count freedom, then average squares \u2192"
+    },
+    {
+      "token_start": 933,
+      "token_end": 936,
+      "before": "\n<section class=\"c7-part\" id=\"anova-step-4\" aria-labelledby=\"c7-step-4-title\">",
+      "after": "<section class=\"c7-part\" id=\"anova-mean-squares\" aria-labelledby=\"anova-mean-squares-title\"><span class=\"c7-step-anchor\" id=\"class7-step-4\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 938,
+      "token_end": 939,
+      "before": "04 / 14 \u00b7 THE PACKING COMPANY",
+      "after": "STEP 04 OF 18"
+    },
+    {
+      "token_start": 940,
+      "token_end": 942,
+      "before": "<h2 id=\"c7-step-4-title\">Compare signal with noise",
+      "after": "<h2 id=\"anova-mean-squares-title\">Count freedom, then average squares"
+    },
+    {
+      "token_start": 944,
+      "token_end": 948,
+      "before": "{{anovavisual:ratio}}\n",
+      "after": "{{anovacore:freedom}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 1010,
+      "token_end": 1011,
+      "before": " the rejection cutoff or the exact expected F value. Step 5 supplies the appropriate cutoff and tail probability.",
+      "after": " the rejection cutoff or the exact expected F value. The right-tail evidence step supplies the appropriate cutoff and tail probability."
+    },
+    {
+      "token_start": 1022,
+      "token_end": 1022,
+      "before": "\n\n",
+      "after": ""
+    },
+    {
+      "token_start": 1124,
+      "token_end": 1145,
+      "before": "\n",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 4 navigation\"><a class=\"c7-back\" href=\"#class7-step-3\">\u2190 Previous step</a><a class=\"button\" href=\"#class7-step-5\">Next \u00b7 Compare signal with noise \u2192</a></nav></section><section class=\"c7-part\" id=\"anova-step-4\" aria-labelledby=\"c7-step-4-title\"><span class=\"c7-step-anchor\" id=\"class7-step-5\" aria-hidden=\"true\"></span><header class=\"c7-part-heading\"><div class=\"eyebrow\">STEP 05 OF 18</div><h2 id=\"c7-step-4-title\">Compare signal with noise</h2></header>{{anovavisual:ratio}}{{anovacore:ratio}}"
+    },
+    {
+      "token_start": 1146,
+      "token_end": 1147,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1223,
+      "token_end": 1225,
+      "before": "<nav class=\"c7-step-nav\" aria-label=\"Step 4 navigation\"><a class=\"c7-back\" href=\"#anova-step-3\">",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 5 navigation\"><a class=\"c7-back\" href=\"#class7-step-4\">"
+    },
+    {
+      "token_start": 1227,
+      "token_end": 1229,
+      "before": "<a class=\"button\" href=\"#anova-step-5\">Next \u00b7 Read the right-tail evidence <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-6\">Next \u00b7 Read the right-tail evidence \u2192"
+    },
+    {
+      "token_start": 1232,
+      "token_end": 1232,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 1233,
+      "token_end": 1235,
+      "before": "",
+      "after": "<span class=\"c7-step-anchor\" id=\"class7-step-6\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1237,
+      "token_end": 1238,
+      "before": "05 / 14 \u00b7 THE PACKING COMPANY",
+      "after": "STEP 06 OF 18"
+    },
+    {
+      "token_start": 1243,
+      "token_end": 1244,
+      "before": "{{anovavisual:reference}}",
+      "after": "{{anovavisual:reference}}{{anovacore:reference}}"
+    },
+    {
+      "token_start": 1245,
+      "token_end": 1246,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1307,
+      "token_end": 1309,
+      "before": "<nav class=\"c7-step-nav\" aria-label=\"Step 5 navigation\"><a class=\"c7-back\" href=\"#anova-step-4\">",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 6 navigation\"><a class=\"c7-back\" href=\"#class7-step-5\">"
+    },
+    {
+      "token_start": 1311,
+      "token_end": 1313,
+      "before": "<a class=\"button\" href=\"#anova-step-6\">Next \u00b7 Keep the conclusion honest <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-7\">Next \u00b7 State the global conclusion \u2192"
+    },
+    {
+      "token_start": 1316,
+      "token_end": 1316,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 1317,
+      "token_end": 1319,
+      "before": "",
+      "after": "<span class=\"c7-step-anchor\" id=\"class7-step-7\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1321,
+      "token_end": 1322,
+      "before": "06 / 14 \u00b7 THE PACKING COMPANY",
+      "after": "STEP 07 OF 18"
+    },
+    {
+      "token_start": 1324,
+      "token_end": 1325,
+      "before": "Keep the conclusion honest",
+      "after": "State the global conclusion"
+    },
+    {
+      "token_start": 1327,
+      "token_end": 1420,
+      "before": "{{anovavisual:report}}\n",
+      "after": "{{anovavisual:report}}{{anovacore:report}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><details class=\"lesson\" id=\"one-interpretation\"><summary><span class=\"lesson-number\">06</span><span><b>A small p-value is the start of the report</b><small>Omnibus inference, effect size and follow-up comparisons</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><div class=\"lesson-bridge\"><h3>A global signal does not choose a winner</h3><p>Return to the packing decision. F=18.5 provides evidence against all means being equal. It does not certify Process A as best or tell us which pairwise differences are precise enough to act on. Use the estimated means to describe the pattern, then ask targeted follow-up questions and compare potential time savings with implementation costs.</p></div><p>The F test is <b>omnibus</b>: rejection says at least one mean differs. It does not identify which process pairs differ, prove every mean is different, or establish that the quickest process will stay quickest in new data.</p><ul><li><b>Show the estimates.</b> Means 20, 24 and 27 minutes make the direction and business magnitude visible.</li><li><b>Plan comparisons.</b> Use prespecified contrasts or a suitable multiple-comparison method such as Tukey\u2019s procedure for pairwise comparisons under the common-variance model. Do not run many unadjusted t tests and ignore multiplicity.</li><li><b>Check usefulness.</b> A seven-minute difference may matter, but consider implementation costs, uncertainty, order mix and study design.</li><li><b>Do not accept equality.</b> A nonsignificant result means insufficient evidence to reject under the chosen design and \u03b1. It is not proof of equality or equivalence.</li></ul>{{math:effect-size}}<p>Here \u03b7\u00b2\u2248.8043 and \u03c9\u00b2\u2248.7447. \u03b7\u00b2 describes this sample\u2019s explained variation; \u03c9\u00b2 is a bias-reduced estimator under the model. Neither is a causal percentage. The lab displays the raw \u03c9\u00b2 estimate, which can be negative in weak-signal samples; some reporting conventions truncate it at zero. Both are undefined when all values are identical.</p></div></details><nav class=\"c7-step-nav\" aria-label=\"Step 7 navigation\"><a class=\"c7-back\" href=\"#class7-step-6\">\u2190 Previous step</a><a class=\"button\" href=\"#class7-step-8\">Next \u00b7 Plan and compare a family \u2192</a></nav></section><section class=\"c7-part\" id=\"anova-comparisons\" aria-labelledby=\"anova-comparisons-title\"><span class=\"c7-step-anchor\" id=\"class7-step-8\" aria-hidden=\"true\"></span><header class=\"c7-part-heading\"><div class=\"eyebrow\">STEP 08 OF 18</div><h2 id=\"anova-comparisons-title\">Plan and compare a family</h2></header>{{anovacore:comparisons}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 1523,
+      "token_end": 1523,
+      "before": "\n\n",
+      "after": ""
+    },
+    {
+      "token_start": 1678,
+      "token_end": 1680,
+      "before": "\n<p class=\"c7-reference-note\">Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.</p><details class=\"lesson\" id=\"one-interpretation\"><summary><span class=\"lesson-number\">06</span><span><b>A small p-value is the start of the report</b><small>Omnibus inference, effect size and follow-up comparisons</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><div class=\"lesson-bridge\"><h3>A global signal does not choose a winner</h3><p>Return to the packing decision. F=18.5 provides evidence against all means being equal. It does not certify Process A as best or tell us which pairwise differences are precise enough to act on. Use the estimated means to describe the pattern, then ask targeted follow-up questions and compare potential time savings with implementation costs.</p></div><p>The F test is <b>omnibus</b>: rejection says at least one mean differs. It does not identify which process pairs differ, prove every mean is different, or establish that the quickest process will stay quickest in new data.</p><ul><li><b>Show the estimates.</b> Means 20, 24 and 27 minutes make the direction and business magnitude visible.</li><li><b>Plan comparisons.</b> Use prespecified contrasts or a suitable multiple-comparison method such as Tukey\u2019s procedure for pairwise comparisons under the common-variance model. Do not run many unadjusted t tests and ignore multiplicity.</li><li><b>Check usefulness.</b> A seven-minute difference may matter, but consider implementation costs, uncertainty, order mix and study design.</li><li><b>Do not accept equality.</b> A nonsignificant result means insufficient evidence to reject under the chosen design and \u03b1. It is not proof of equality or equivalence.</li></ul>{{math:effect-size}}<p>Here \u03b7\u00b2\u2248.8043 and \u03c9\u00b2\u2248.7447. \u03b7\u00b2 describes this sample\u2019s explained variation; \u03c9\u00b2 is a bias-reduced estimator under the model. Neither is a causal percentage. The lab displays the raw \u03c9\u00b2 estimate, which can be negative in weak-signal samples; some reporting conventions truncate it at zero. Both are undefined when all values are identical.</p></div></details><nav class=\"c7-step-nav\" aria-label=\"Step 6 navigation\"><a class=\"c7-back\" href=\"#anova-step-5\">",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 8 navigation\"><a class=\"c7-back\" href=\"#class7-step-7\">"
+    },
+    {
+      "token_start": 1682,
+      "token_end": 1684,
+      "before": "<a class=\"button\" href=\"#anova-step-7\">Next \u00b7 Collect every combination <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-9\">Next \u00b7 Collect every combination \u2192"
+    },
+    {
+      "token_start": 1687,
+      "token_end": 1687,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 1688,
+      "token_end": 1690,
+      "before": "",
+      "after": "<span class=\"c7-step-anchor\" id=\"class7-step-9\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1692,
+      "token_end": 1693,
+      "before": "07 / 14 \u00b7 THE RETAILER",
+      "after": "STEP 09 OF 18"
+    },
+    {
+      "token_start": 1698,
+      "token_end": 1699,
+      "before": "{{anovavisual:cells}}",
+      "after": "{{anovavisual:cells}}{{anovacore:cells}}"
+    },
+    {
+      "token_start": 1700,
+      "token_end": 1701,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1811,
+      "token_end": 1813,
+      "before": "<nav class=\"c7-step-nav\" aria-label=\"Step 7 navigation\"><a class=\"c7-back\" href=\"#anova-step-6\">",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 9 navigation\"><a class=\"c7-back\" href=\"#class7-step-8\">"
+    },
+    {
+      "token_start": 1815,
+      "token_end": 1817,
+      "before": "<a class=\"button\" href=\"#anova-step-8\">Next \u00b7 Build a cell mean in layers <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-10\">Next \u00b7 Read cell and marginal means \u2192"
+    },
+    {
+      "token_start": 1820,
+      "token_end": 1823,
+      "before": "\n<section class=\"c7-part\" id=\"anova-step-8\" aria-labelledby=\"c7-step-8-title\">",
+      "after": "<section class=\"c7-part\" id=\"anova-step-9\" aria-labelledby=\"c7-step-9-title\"><span class=\"c7-step-anchor\" id=\"class7-step-10\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 1825,
+      "token_end": 1826,
+      "before": "08 / 14 \u00b7 THE RETAILER",
+      "after": "STEP 10 OF 18"
+    },
+    {
+      "token_start": 1827,
+      "token_end": 1829,
+      "before": "<h2 id=\"c7-step-8-title\">Build a cell mean in layers",
+      "after": "<h2 id=\"c7-step-9-title\">Read cell and marginal means"
+    },
+    {
+      "token_start": 1831,
+      "token_end": 1834,
+      "before": "{{anovavisual:additive}}<!-- depth48:constraints:start -->\n<details class=\"c7-lab-details reading-extension\" data-reading-extension><summary>Optional derivation \u00b7 Count the free interaction effects</summary><aside class=\"em-activity em-worked\" id=\"depth-anova-constraints\" aria-labelledby=\"depth-anova-constraints-title\">\n<h3 id=\"depth-anova-constraints-title\">Four interaction entries, but only one free number</h3>\n<p>The retailer has two offers and two day types. An interaction entry is what remains after accounting for the grand mean and both main effects. Its row and column averages must therefore be zero: otherwise it would still contain an average offer or day effect.",
+      "after": "{{anovavisual:averages}}{{anovacore:averages}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 1835,
+      "token_end": 1835,
+      "before": "\n<ol class=\"em-worked-path\">\n<li><b>Choose one entry.</b> Call the plain-weekday interaction d. This is a departure from its additive cell prediction, not a departure of one transaction from its cell mean.</li>\n<li><b>Complete its row and column.</b> The plain row must sum to zero, so plain-weekend is \u2212d. The weekday column must sum to zero, so bundle-weekday is also \u2212d.</li>\n<li><b>The last entry is determined.</b> Bundle-weekend must be +d to complete both its row and its column. It is not a fourth independently adjustable effect.</li>\n</ol>\n{{math:depth-interaction-constraints}}\n<p>For these sample means, d = <b>+$2</b>, giving [[+2, \u22122], [\u22122, +2]] with offers in rows and day types in columns. The additive cell means [[18, 28], [26, 36]] become [[20, 26], [24, 38]]. Each correction averages to zero across either factor, so it changes the combinations without changing the marginal means.</p>\n<p><b>This explains the degrees of freedom.</b> Four cell means require one grand mean, one independent offer effect, one independent day effect and one independent interaction effect: <b>1 + 1 + 1 + 1 = 4</b>. In a c-by-r table, freely choose the entries in the (c\u22121)-by-(r\u22121) upper-left block; the remaining entries are fixed by the zero-sum constraints. That leaves <b>(c\u22121)(r\u22121)</b> interaction degrees of freedom, not cr.</p>\n<details><summary>Check: Is making only the grand total of interaction entries zero enough?</summary><p>No. The proposed matrix [[1, 1], [\u22121, \u22121]] totals zero, but its row averages are +1 and \u22121. It contains an offer main effect, so it cannot be the interaction remaining after those main effects have already been removed. Each row and each column must sum to zero.</p></details>\n</aside></details>\n<!-- depth48:constraints:end --><p class=\"c7-reference-note\">Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.</p><details class=\"lesson\" id=\"two-model\"><summary><span class=\"lesson-number\">08</span><span><b>Main effects plus a combination effect</b><small>Grand, marginal and cell means; identifiable effects</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><div class=\"lesson-bridge\"><h3>Understand interaction before interpreting averages</h3><p>If the bundle added the same amount on both day types, one offer effect plus one day effect could describe the four means. Here it does not: the bundle gain changes from $4 to $12. The model therefore needs a combination term. Main effects average over this pattern; they are useful summaries only when their averaging matches the decision.</p></div>{{math:two-model}}<p>A main effect describes an average over the other factor\u2019s levels. <b>Interaction</b> is the part of the cell mean not explained by simply adding the two main effects. It asks whether an effect depends on the other factor.</p>{{math:two-pop-means}}{{math:two-effects}}<div class=\"technical\"><h4>Technical depth \u00b7 Enough constraints to identify the model</h4>{{math:two-constraints}}<p>A single grand sum of interaction effects equal to zero is insufficient. Row and column constraints leave (c\u22121)(r\u22121) independent interaction terms. Together, 1+(c\u22121)+(r\u22121)+(c\u22121)(r\u22121)=cr parameters describe the cr cell means.</p></div></div></details><nav class=\"c7-step-nav\" aria-label=\"Step 8 navigation\"><a class=\"c7-back\" href=\"#anova-step-7\">\u2190 Previous step</a><a class=\"button\" href=\"#anova-step-9\">Next \u00b7 Read the right average <span aria-hidden=\"true\">\u2192</span></a></nav></section>\n<section class=\"c7-part\" id=\"anova-step-9\" aria-labelledby=\"c7-step-9-title\"><header class=\"c7-part-heading\"><div class=\"eyebrow\">09 / 14 \u00b7 THE RETAILER</div><h2 id=\"c7-step-9-title\">Read the right average</h2></header>{{anovavisual:averages}}\n",
+      "after": ""
+    },
+    {
+      "token_start": 1926,
+      "token_end": 1926,
+      "before": "\n<p class=\"c7-reference-note\">Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.</p>",
+      "after": ""
+    },
+    {
+      "token_start": 1999,
+      "token_end": 2001,
+      "before": "<nav class=\"c7-step-nav\" aria-label=\"Step 9 navigation\"><a class=\"c7-back\" href=\"#anova-step-8\">",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 10 navigation\"><a class=\"c7-back\" href=\"#class7-step-9\">"
+    },
+    {
+      "token_start": 2003,
+      "token_end": 2005,
+      "before": "<a class=\"button\" href=\"#anova-step-10\">Next \u00b7 Separate four sources <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-11\">Next \u00b7 Build a cell mean in layers \u2192"
+    },
+    {
+      "token_start": 2008,
+      "token_end": 2011,
+      "before": "\n<section class=\"c7-part\" id=\"anova-step-10\" aria-labelledby=\"c7-step-10-title\">",
+      "after": "<section class=\"c7-part\" id=\"anova-step-8\" aria-labelledby=\"c7-step-8-title\"><span class=\"c7-step-anchor\" id=\"class7-step-11\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2013,
+      "token_end": 2248,
+      "before": "10 / 14 \u00b7 THE RETAILER",
+      "after": "STEP 11 OF 18</div><h2 id=\"c7-step-8-title\">Build a cell mean in layers</h2></header>{{anovavisual:additive}}{{anovacore:additive}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><!-- depth48:constraints:start --><details class=\"c7-lab-details reading-extension\" data-reading-extension><summary>Optional derivation \u00b7 Count the free interaction effects</summary><aside class=\"em-activity em-worked\" id=\"depth-anova-constraints\" aria-labelledby=\"depth-anova-constraints-title\">\n<h3 id=\"depth-anova-constraints-title\">Four interaction entries, but only one free number</h3>\n<p>The retailer has two offers and two day types. An interaction entry is what remains after accounting for the grand mean and both main effects. Its row and column averages must therefore be zero: otherwise it would still contain an average offer or day effect.</p>\n<ol class=\"em-worked-path\">\n<li><b>Choose one entry.</b> Call the plain-weekday interaction d. This is a departure from its additive cell prediction, not a departure of one transaction from its cell mean.</li>\n<li><b>Complete its row and column.</b> The plain row must sum to zero, so plain-weekend is \u2212d. The weekday column must sum to zero, so bundle-weekday is also \u2212d.</li>\n<li><b>The last entry is determined.</b> Bundle-weekend must be +d to complete both its row and its column. It is not a fourth independently adjustable effect.</li>\n</ol>\n{{math:depth-interaction-constraints}}\n<p>For these sample means, d = <b>+$2</b>, giving [[+2, \u22122], [\u22122, +2]] with offers in rows and day types in columns. The additive cell means [[18, 28], [26, 36]] become [[20, 26], [24, 38]]. Each correction averages to zero across either factor, so it changes the combinations without changing the marginal means.</p>\n<p><b>This explains the degrees of freedom.</b> Four cell means require one grand mean, one independent offer effect, one independent day effect and one independent interaction effect: <b>1 + 1 + 1 + 1 = 4</b>. In a c-by-r table, freely choose the entries in the (c\u22121)-by-(r\u22121) upper-left block; the remaining entries are fixed by the zero-sum constraints. That leaves <b>(c\u22121)(r\u22121)</b> interaction degrees of freedom, not cr.</p>\n<details><summary>Check: Is making only the grand total of interaction entries zero enough?</summary><p>No. The proposed matrix [[1, 1], [\u22121, \u22121]] totals zero, but its row averages are +1 and \u22121. It contains an offer main effect, so it cannot be the interaction remaining after those main effects have already been removed. Each row and each column must sum to zero.</p></details>\n</aside></details><!-- depth48:constraints:end --><details class=\"lesson\" id=\"two-model\"><summary><span class=\"lesson-number\">08</span><span><b>Main effects plus a combination effect</b><small>Grand, marginal and cell means; identifiable effects</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><div class=\"lesson-bridge\"><h3>Understand interaction before interpreting averages</h3><p>If the bundle added the same amount on both day types, one offer effect plus one day effect could describe the four means. Here it does not: the bundle gain changes from $4 to $12. The model therefore needs a combination term. Main effects average over this pattern; they are useful summaries only when their averaging matches the decision.</p></div>{{math:two-model}}<p>A main effect describes an average over the other factor\u2019s levels. <b>Interaction</b> is the part of the cell mean not explained by simply adding the two main effects. It asks whether an effect depends on the other factor.</p>{{math:two-pop-means}}{{math:two-effects}}<div class=\"technical\"><h4>Technical depth \u00b7 Enough constraints to identify the model</h4>{{math:two-constraints}}<p>A single grand sum of interaction effects equal to zero is insufficient. Row and column constraints leave (c\u22121)(r\u22121) independent interaction terms. Together, 1+(c\u22121)+(r\u22121)+(c\u22121)(r\u22121)=cr parameters describe the cr cell means.</p></div></div></details><nav class=\"c7-step-nav\" aria-label=\"Step 11 navigation\"><a class=\"c7-back\" href=\"#class7-step-10\">\u2190 Previous step</a><a class=\"button\" href=\"#class7-step-12\">Next \u00b7 See what averages can hide \u2192</a></nav></section><section class=\"c7-part\" id=\"anova-step-12\" aria-labelledby=\"c7-step-12-title\"><span class=\"c7-step-anchor\" id=\"class7-step-12\" aria-hidden=\"true\"></span><header class=\"c7-part-heading\"><div class=\"eyebrow\">STEP 12 OF 18</div><h2 id=\"c7-step-12-title\">See what averages can hide</h2></header>{{anovavisual:interaction}}{{anovacore:interaction}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><details class=\"lesson\" id=\"interaction-lab\"><summary><span class=\"lesson-number\">12</span><span><b>See why an average can hide the story</b><small>Parallel, nonparallel and crossover cell means</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><div class=\"lesson-bridge\"><h3>Make the hidden pattern visible</h3><p>An interaction plot is a comparison of comparisons. Follow each offer across day types, then compare the vertical gaps. Equal gaps produce parallel lines; different gaps produce nonparallel lines. Lines do not need to cross for interaction to exist. Crossing is an especially strong warning that a single average ranking may be misleading.</p></div><p>Plot the cell means, not only the marginal means. In the default example, the bundle-minus-plain difference is <b>$4 on weekdays</b> and <b>$12 on weekends</b>. The difference of differences is $8. That is the business meaning of interaction.</p><p>Try <b>parallel</b>: a constant offer effect produces zero sample interaction. Try <b>crossover</b>: the better offer reverses between day types. Both marginal offer means can then be equal even when the cell-level differences are large. Nonparallel sample lines suggest interaction; the F test assesses that departure relative to within-cell noise.</p><aside class=\"guided-try\"><h4>Predict \u2192 change \u2192 observe \u2192 explain: Do not let the average hide the recommendation</h4><p>Predict what the interaction and offer main effect could do in a crossover. Try the crossover preset, read both within-day offer differences, then inspect the marginal means and F tests. Explain how opposite offer gains can cancel in the average while interaction remains. Reset and try parallel effects: equal within-day gains remove sample interaction even though an overall offer difference can remain. Sample parallelism is not proof that population interaction is exactly zero.</p></aside>{{two-lab}}<p><b>Use simple effects when interaction matters.</b> Report offer differences within each day type with suitable confidence intervals and multiplicity control. Main effects alone may be a poor decision summary, even when mathematically valid. A small interaction p-value does not by itself establish a useful strategy or a causal mechanism.</p></div></details><nav class=\"c7-step-nav\" aria-label=\"Step 12 navigation\"><a class=\"c7-back\" href=\"#class7-step-11\">\u2190 Previous step</a><a class=\"button\" href=\"#class7-step-13\">Next \u00b7 Separate four sources \u2192</a></nav></section><section class=\"c7-part\" id=\"anova-step-10\" aria-labelledby=\"c7-step-10-title\"><span class=\"c7-step-anchor\" id=\"class7-step-13\" aria-hidden=\"true\"></span><header class=\"c7-part-heading\"><div class=\"eyebrow\">STEP 13 OF 18"
+    },
+    {
+      "token_start": 2253,
+      "token_end": 2254,
+      "before": "{{anovavisual:pieces}}",
+      "after": "{{anovavisual:pieces}}{{anovacore:pieces}}"
+    },
+    {
+      "token_start": 2255,
+      "token_end": 2256,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 2393,
+      "token_end": 2395,
+      "before": "<nav class=\"c7-step-nav\" aria-label=\"Step 10 navigation\"><a class=\"c7-back\" href=\"#anova-step-9\">",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 13 navigation\"><a class=\"c7-back\" href=\"#class7-step-12\">"
+    },
+    {
+      "token_start": 2397,
+      "token_end": 2399,
+      "before": "<a class=\"button\" href=\"#anova-step-11\">Next \u00b7 Ask three distinct questions <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-14\">Next \u00b7 Measure the changing offer gain \u2192"
+    },
+    {
+      "token_start": 2402,
+      "token_end": 2405,
+      "before": "\n<section class=\"c7-part\" id=\"anova-step-11\" aria-labelledby=\"c7-step-11-title\">",
+      "after": "<section class=\"c7-part\" id=\"anova-interaction-contrast\" aria-labelledby=\"anova-interaction-contrast-title\"><span class=\"c7-step-anchor\" id=\"class7-step-14\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2407,
+      "token_end": 2408,
+      "before": "11 / 14 \u00b7 THE RETAILER",
+      "after": "STEP 14 OF 18"
+    },
+    {
+      "token_start": 2409,
+      "token_end": 2411,
+      "before": "<h2 id=\"c7-step-11-title\">Ask three distinct questions",
+      "after": "<h2 id=\"anova-interaction-contrast-title\">Measure the changing offer gain"
+    },
+    {
+      "token_start": 2413,
+      "token_end": 2417,
+      "before": "{{anovavisual:tests}}\n",
+      "after": "{{anovacore:contrast}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p>"
+    },
+    {
+      "token_start": 2472,
+      "token_end": 2493,
+      "before": "\n",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 14 navigation\"><a class=\"c7-back\" href=\"#class7-step-13\">\u2190 Previous step</a><a class=\"button\" href=\"#class7-step-15\">Next \u00b7 Ask three distinct questions \u2192</a></nav></section><section class=\"c7-part\" id=\"anova-step-11\" aria-labelledby=\"c7-step-11-title\"><span class=\"c7-step-anchor\" id=\"class7-step-15\" aria-hidden=\"true\"></span><header class=\"c7-part-heading\"><div class=\"eyebrow\">STEP 15 OF 18</div><h2 id=\"c7-step-11-title\">Ask three distinct questions</h2></header>{{anovavisual:tests}}{{anovacore:tests}}"
+    },
+    {
+      "token_start": 2494,
+      "token_end": 2495,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 2556,
+      "token_end": 2558,
+      "before": "<nav class=\"c7-step-nav\" aria-label=\"Step 11 navigation\"><a class=\"c7-back\" href=\"#anova-step-10\">",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 15 navigation\"><a class=\"c7-back\" href=\"#class7-step-14\">"
+    },
+    {
+      "token_start": 2560,
+      "token_end": 2562,
+      "before": "<a class=\"button\" href=\"#anova-step-12\">Next \u00b7 See what averages can hide <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-16\">Next \u00b7 Count independent replications \u2192"
+    },
+    {
+      "token_start": 2565,
+      "token_end": 2568,
+      "before": "\n<section class=\"c7-part\" id=\"anova-step-12\" aria-labelledby=\"c7-step-12-title\">",
+      "after": "<section class=\"c7-part\" id=\"anova-step-13\" aria-labelledby=\"c7-step-13-title\"><span class=\"c7-step-anchor\" id=\"class7-step-16\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2570,
+      "token_end": 2571,
+      "before": "12 / 14 \u00b7 THE RETAILER</div><h2 id=\"c7-step-12-title\">See what averages can hide</h2></header>{{anovavisual:interaction}}<p class=\"c7-reference-note\">Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.</p><details class=\"lesson\" id=\"interaction-lab\"><summary><span class=\"lesson-number\">12</span><span><b>See why an average can hide the story</b><small>Parallel, nonparallel and crossover cell means</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><div class=\"lesson-bridge\"><h3>Make the hidden pattern visible</h3><p>An interaction plot is a comparison of comparisons. Follow each offer across day types, then compare the vertical gaps. Equal gaps produce parallel lines; different gaps produce nonparallel lines. Lines do not need to cross for interaction to exist. Crossing is an especially strong warning that a single average ranking may be misleading.</p></div><p>Plot the cell means, not only the marginal means. In the default example, the bundle-minus-plain difference is <b>$4 on weekdays</b> and <b>$12 on weekends</b>. The difference of differences is $8. That is the business meaning of interaction.</p><p>Try <b>parallel</b>: a constant offer effect produces zero sample interaction. Try <b>crossover</b>: the better offer reverses between day types. Both marginal offer means can then be equal even when the cell-level differences are large. Nonparallel sample lines suggest interaction; the F test assesses that departure relative to within-cell noise.</p><aside class=\"guided-try\"><h4>Predict \u2192 change \u2192 observe \u2192 explain: Do not let the average hide the recommendation</h4><p>Predict what the interaction and offer main effect could do in a crossover. Try the crossover preset, read both within-day offer differences, then inspect the marginal means and F tests. Explain how opposite offer gains can cancel in the average while interaction remains. Reset and try parallel effects: equal within-day gains remove sample interaction even though an overall offer difference can remain. Sample parallelism is not proof that population interaction is exactly zero.</p></aside>{{two-lab}}<p><b>Use simple effects when interaction matters.</b> Report offer differences within each day type with suitable confidence intervals and multiplicity control. Main effects alone may be a poor decision summary, even when mathematically valid. A small interaction p-value does not by itself establish a useful strategy or a causal mechanism.</p></div></details><nav class=\"c7-step-nav\" aria-label=\"Step 12 navigation\"><a class=\"c7-back\" href=\"#anova-step-11\">\u2190 Previous step</a><a class=\"button\" href=\"#anova-step-13\">Next \u00b7 Count independent replications <span aria-hidden=\"true\">\u2192</span></a></nav></section>\n<section class=\"c7-part\" id=\"anova-step-13\" aria-labelledby=\"c7-step-13-title\"><header class=\"c7-part-heading\"><div class=\"eyebrow\">13 / 14 \u00b7 THE RETAILER",
+      "after": "STEP 16 OF 18"
+    },
+    {
+      "token_start": 2576,
+      "token_end": 2577,
+      "before": "{{anovavisual:design}}",
+      "after": "{{anovavisual:design}}{{anovacore:design}}"
+    },
+    {
+      "token_start": 2578,
+      "token_end": 2579,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 2665,
+      "token_end": 2667,
+      "before": "<nav class=\"c7-step-nav\" aria-label=\"Step 13 navigation\"><a class=\"c7-back\" href=\"#anova-step-12\">",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 16 navigation\"><a class=\"c7-back\" href=\"#class7-step-15\">"
+    },
+    {
+      "token_start": 2669,
+      "token_end": 2671,
+      "before": "<a class=\"button\" href=\"#anova-step-14\">Next \u00b7 Make a conditional recommendation <span aria-hidden=\"true\">\u2192</span>",
+      "after": "<a class=\"button\" href=\"#class7-step-17\">Next \u00b7 Make a conditional recommendation \u2192"
+    },
+    {
+      "token_start": 2674,
+      "token_end": 2674,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 2675,
+      "token_end": 2677,
+      "before": "",
+      "after": "<span class=\"c7-step-anchor\" id=\"class7-step-17\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2679,
+      "token_end": 2680,
+      "before": "14 / 14 \u00b7 THE RETAILER",
+      "after": "STEP 17 OF 18"
+    },
+    {
+      "token_start": 2685,
+      "token_end": 2686,
+      "before": "{{anovavisual:decision}}",
+      "after": "{{anovavisual:decision}}{{anovacore:decision}}"
+    },
+    {
+      "token_start": 2687,
+      "token_end": 2712,
+      "before": "Ready to go further? Open an explanation or worked example below. Technical depth adds the formal detail inside explanations.",
+      "after": "The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations.</p><nav class=\"c7-step-nav\" aria-label=\"Step 17 navigation\"><a class=\"c7-back\" href=\"#class7-step-16\">\u2190 Previous step</a><a class=\"button\" href=\"#class7-step-18\">Next \u00b7 Reproduce and audit the table \u2192</a></nav></section><section class=\"c7-part\" id=\"anova-software\" aria-labelledby=\"anova-software-title\"><span class=\"c7-step-anchor\" id=\"class7-step-18\" aria-hidden=\"true\"></span><header class=\"c7-part-heading\"><div class=\"eyebrow\">STEP 18 OF 18</div><h2 id=\"anova-software-title\">Reproduce and audit the table</h2></header>{{anovacore:software}}<p class=\"c7-reference-note\">The core idea and calculation stay visible. Open the explanation or worked example below for more detail. Technical depth adds the formal derivations."
+    },
+    {
+      "token_start": 2742,
+      "token_end": 2742,
+      "before": "<nav class=\"c7-step-nav\" aria-label=\"Step 14 navigation\"><a class=\"c7-back\" href=\"#anova-step-13\">\u2190 Previous step</a><a class=\"button\" href=\"#practice\">Check your judgment <span aria-hidden=\"true\">\u2192</span></a></nav>",
+      "after": ""
+    },
+    {
+      "token_start": 2877,
+      "token_end": 2885,
+      "before": "",
+      "after": "<nav class=\"c7-step-nav\" aria-label=\"Step 18 navigation\"><a class=\"c7-back\" href=\"#class7-step-17\">\u2190 Previous step</a><a class=\"button\" href=\"#practice\">Check your judgment \u2192</a></nav>"
+    }
+  ]
+}

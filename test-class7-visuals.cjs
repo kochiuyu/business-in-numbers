@@ -4,7 +4,7 @@ const V=require('./src/class-seven-visuals.js'),A=require('./src/anova-core.js')
 const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m)},near=(a,b)=>ok(Math.abs(a-b)<1e-10);
 const source=fs.readFileSync('src/class-seven.js','utf8'),html=fs.readFileSync('dist/anova.html','utf8'),css=fs.readFileSync('src/class-seven.css','utf8'),reference=JSON.parse(fs.readFileSync('test-class7-reference.json','utf8'));
 function topics(s){const out=[];const re=/<\/?details\b[^>]*>/g;let m,depth=0,start=-1;while((m=re.exec(s))){if(m[0].startsWith('</')){depth--;if(depth===0&&start!==-1){out.push(s.slice(start,re.lastIndex));start=-1;}}else{if(depth===0&&m[0].includes('class="lesson"'))start=m.index;depth++;}}return out;}
-eq(topics(fs.readFileSync('src/anova.html','utf8')).map(t=>crypto.createHash('sha256').update(t).digest('hex')),reference.topic_sha256,'all 14 original topic bodies unchanged');
+eq(topics(fs.readFileSync('src/anova.html','utf8')).map(t=>crypto.createHash('sha256').update(t).digest('hex')).sort(),[...reference.topic_sha256].sort(),'all 14 original topic bodies unchanged');
 for(const[f,hash]of Object.entries(reference.other_pages).filter(([f])=>f!=='regression.html'))eq(crypto.createHash('sha256').update(fs.readFileSync('dist/'+f)).digest('hex'),f==='hypothesis-testing.html'?require('./test-class6-restructure-reference.json').reviewed_dist_sha256:f==='estimation.html'?require('./test-class5-restructure-reference.json').reviewed_dist_sha256:f==='sampling-distributions.html'?require('./test-class4-restructure-reference.json').reviewed_dist_sha256:f==='random-variables.html'?require('./test-class3-restructure-reference.json').reviewed_dist_sha256:hash,'reviewed page '+f);
 eq((html.match(/<math xmlns=/g)||[]).length,29);eq((html.match(/class="visual-practice"/g)||[]).length,4);
 const choices=Object.fromEntries(Object.entries(V.specs).map(([k,s])=>[k,s[4].map(b=>b[0])]));
@@ -36,13 +36,13 @@ class Element{
 }
 function dom(){const root=new Element('document'),stack=[root],voids=new Set(['META','LINK','BR','INPUT','HR','IMG','SOURCE','WBR']);let clean=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/<!--[\s\S]*?-->/g,'');for(const m of clean.matchAll(/<\/?([a-z][a-z\d-]*)\b([^>]*?)>/gi)){const closing=m[0].startsWith('</');if(closing){if(stack.at(-1).tagName===m[1].toUpperCase())stack.pop();continue;}const attrs={};for(const a of m[2].matchAll(/([a-z][\w:-]*)(?:="([^"]*)")?/gi))attrs[a[1]]=a[2]??'';const el=new Element(m[1],attrs);el.parentElement=stack.at(-1);el.parentElement.children.push(el);if(!voids.has(el.tagName)&&!m[0].endsWith('/>'))stack.push(el);}root.body=root.querySelector('body');root.getElementById=id=>root.querySelector('#'+id);for(const m of html.matchAll(/<h2 id="([^"]+)"[^>]*>([\s\S]*?)<\/h2>/g)){const el=root.getElementById(m[1]);if(el)el.textContent=m[2].replace(/<[^>]*>/g,'');}return root;}
 function run(reduced,hash=''){const d=dom(),events={},loc={hash},media={matches:reduced,addEventListener:(k,f)=>media[k]=f};const w={matchMedia:()=>media,addEventListener:(k,f)=>(events[k]||=[]).push(f)};vm.runInNewContext(source,{document:d,window:w,location:loc,ClassSevenViews:V});return{d,events,loc,media};}
-const anchors=[['grouped-data',1],['one-model',2],['one-decomposition',3],['one-test',4],['one-form',4],['one-proof',5],['one-interpretation',6],['two-design',7],['two-model',8],['two-estimation',9],['two-decomposition',10],['two-tests',11],['interaction-lab',12],['two-form',12],['model-checks',13],['tools',14],['practice',14]];
+const anchors=[['grouped-data',1],['one-model',2],['one-decomposition',3],['em-f-bridge',4],['one-test',5],['one-form',5],['one-proof',6],['one-interpretation',7],['anova-followup-check',8],['two-design',9],['two-estimation',10],['two-model',11],['interaction-lab',12],['two-form',12],['two-decomposition',13],['em-interaction-scale-bridge',14],['two-tests',15],['model-checks',16],['practice',18],['tools',18]];
 for(const reduced of [false,true]){
  const{d,events,loc,media}=run(reduced),parts=d.querySelectorAll('.c7-part'),visible=()=>parts.map((p,i)=>!p.hidden?i+1:null).filter(Boolean),fire=k=>(events[k]||[]).forEach(fn=>fn());
  eq(visible(),[1]);eq(d.getElementById('c7-motion').checked,!reduced);eq(d.body.classList.contains('c7-no-motion'),reduced);
- for(let n=2;n<=14;n++){loc.hash='#anova-step-'+n;fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c7-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
+ for(let n=2;n<=18;n++){loc.hash='#class7-step-'+n;fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c7-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
  for(const[id,n]of anchors){loc.hash='#'+id;fire('hashchange');eq(visible(),[n],id);for(let p=d.getElementById(id);p;p=p.parentElement)if(p.tagName==='DETAILS')ok(p.open,id+' open ancestor');}
- d.getElementById('c7-show-all').fire('click');eq(visible(),Array.from({length:14},(_,i)=>i+1));d.getElementById('c7-show-all').fire('click');eq(visible(),[14]);
+ d.getElementById('c7-show-all').fire('click');eq(visible(),Array.from({length:18},(_,i)=>i+1));d.getElementById('c7-show-all').fire('click');eq(visible(),[18]);
  for(const b of d.querySelectorAll('[data-c7-visual]')){b.fire('click');eq(b.getAttribute('aria-pressed'),'true');eq(d.querySelectorAll(`[data-c7-visual="${b.dataset.c7Visual}"]`).filter(x=>x.getAttribute('aria-pressed')==='true').length,1);ok(d.getElementById('c7-'+b.dataset.c7Visual+'-result').innerHTML.length>200);}
  const pick=(key,v)=>d.querySelector(`[data-c7-visual="${key}"][data-view="${v}"]`).fire('click');
  for(const[key,values]of Object.entries(choices))for(const v of values){pick(key,v);eq(d.getElementById('c7-'+key+'-result').innerHTML,V.views[key](v));}
@@ -50,8 +50,8 @@ for(const reduced of [false,true]){
  d.getElementById('c7-motion').checked=false;d.getElementById('c7-motion').fire('change');ok(d.body.classList.contains('c7-no-motion'));media.matches=true;media.change();eq(d.getElementById('c7-motion').checked,false);
  loc.hash='#%bad';fire('hashchange');loc.hash='#missing';fire('hashchange');ok(true);
 }
-for(const[id,n]of anchors){const{d}=run(false,'#'+id);ok(!d.getElementById('anova-step-'+n).hidden,id+' direct link');}
-const staticDOM=dom();eq(staticDOM.querySelectorAll('.c7-part').filter(p=>!p.hidden).length,14);eq(staticDOM.querySelectorAll('.c7-visual-controls').filter(p=>p.hidden).length,14);ok(staticDOM.querySelectorAll('.c7-part').every(p=>p.querySelector('.c7-scene')));
+for(const[id,n]of anchors){const{d}=run(false,'#'+id);ok(!d.querySelectorAll('.c7-part')[n-1].hidden,id+' direct link');}
+const staticDOM=dom();eq(staticDOM.querySelectorAll('.c7-part').filter(p=>!p.hidden).length,18);eq(staticDOM.querySelectorAll('.c7-visual-controls').filter(p=>p.hidden).length,14);ok(staticDOM.querySelectorAll('.c7-part').every(p=>p.querySelector('.c7-core')));
 // Browser history can return to the original URL without a fragment.
 for(const reduced of [false,true]){
  const {d,events,loc}=run(reduced),parts=d.querySelectorAll('.c7-part');

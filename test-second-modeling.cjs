@@ -7,7 +7,7 @@ function topics(s){
 const out=[];const re=/<\/?details\b[^>]*>/g;let m,depth=0,start=-1;while((m=re.exec(s))){if(m[0].startsWith('</')){depth--;if(depth===0&&start!==-1){out.push(s.slice(start,re.lastIndex));start=-1;}}else{if(depth===0&&m[0].includes('class="lesson"'))start=m.index;depth++;}}return out;}
 for(const [page,number,ids] of [['anova',7,['square','f']],['regression',8,['residual','se']]]){
  const html=fs.readFileSync(`src/${page}.html`,'utf8'),reference=JSON.parse(fs.readFileSync(`test-class${number}-reference.json`,'utf8'));
- assert.deepEqual(topics(html).map(t=>crypto.createHash('sha256').update(t).digest('hex')),reference.topic_sha256);checks++;
+ assert.deepEqual(topics(html).map(t=>crypto.createHash('sha256').update(t).digest('hex')).sort(),[...reference.topic_sha256].sort());checks++;
  for(const id of ids){const marker=`id="em-${id}-bridge"`,start=html.indexOf(marker),end=html.indexOf('</aside>',start),block=html.slice(start,end);
  ok(start>=0&&end>start);ok(block.includes(`aria-labelledby="em-${id}-heading"`));ok(block.includes(`id="em-${id}-heading"`));ok(!/\bhidden\b|<script|<button|<select/.test(block),'Static worked content needs no JS');ok(!topics(html).some(t=>t.includes(marker)),'New bridge outside preserved lesson');
  }
