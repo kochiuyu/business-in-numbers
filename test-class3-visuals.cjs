@@ -3,10 +3,12 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const V=require('./src/class-three-visuals.js');let checks=0;
 const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m)},near=(a,b)=>ok(Math.abs(a-b)<1e-12);
 const source=fs.readFileSync('src/class-three.js','utf8'),html=fs.readFileSync('dist/random-variables.html','utf8'),css=fs.readFileSync('src/class-three.css','utf8');
+const stepIds=['rv-step-1','rv-step-2','rv-cdf','rv-step-3','rv-variance','rv-step-4','rv-covariance','rv-step-5','rv-arrivals','rv-step-6','rv-waits','rv-step-7','rv-quantiles','rv-step-8','rv-step-9'];
 function topics(s){const out=[];const re=/<\/?details\b[^>]*>/g;let m,depth=0,start=-1;while((m=re.exec(s))){if(m[0].startsWith('</')){depth--;if(depth===0&&start!==-1){out.push(s.slice(start,re.lastIndex));start=-1;}}else{if(depth===0&&m[0].includes('class="lesson"'))start=m.index;depth++;}}return out;}
 eq(topics(fs.readFileSync('src/random-variables.html','utf8')).map(t=>crypto.createHash('sha256').update(t).digest('hex')),JSON.parse(fs.readFileSync('test-class3-reference.json','utf8')).topic_sha256,'all 12 complete original topics unchanged');
 eq((html.match(/<math xmlns=/g)||[]).length,47);eq((html.match(/class="visual-practice"/g)||[]).length,4);eq((html.match(/class="lesson-bridge"/g)||[]).length,12);
 for(const name of ['mapping','distribution','moments','joint','counts','area','normal','families','decision']){ok(V.render(name).includes('c3-scene'));ok(V.render(name).includes('Pause'));}
+for(const name of ['cdf','variance','jointtable','arrivals','waits','quantiles'])ok(V.render(name).includes('c3-scene'),name+' static scene');
 near(V.mass.reduce((a,b)=>a+b),1);near(V.mass.reduce((s,p,i)=>s+i*p,0),1.7);near(V.mass.reduce((s,p,i)=>s+(i-1.7)**2*p,0),.81);
 for(const[k,v]of Object.entries({exact:40,atmost:80,atleast:60}))ok(V.views.distribution(k).includes(`${v}%.</b>`));
 for(const[q,risk,variance]of [[.05,5,.1],[.25,25,.5],[.45,45,.9]]){const cells=[q,.5-q,.5-q,q];near(cells.reduce((s,p)=>s+p),1);near(cells[0]+cells[1],.5);near(cells[1]+cells[3],.5);ok(V.views.joint(q).includes(`${risk}% of the time`));ok(V.views.joint(q).includes(variance.toFixed(2)));}
@@ -27,17 +29,18 @@ function run(reduced,hash=''){const d=dom(),events={},loc={hash},media={matches:
 for(const reduced of [false,true]){
  const{d,events,loc,media}=run(reduced),parts=d.querySelectorAll('.c3-part'),visible=()=>parts.map((p,i)=>!p.hidden?i+1:null).filter(Boolean),fire=k=>(events[k]||[]).forEach(fn=>fn());
  eq(visible(),[1]);eq(d.getElementById('c3-motion').checked,!reduced);eq(d.body.classList.contains('c3-no-motion'),reduced);
- for(let n=2;n<=9;n++){loc.hash='#rv-step-'+n;fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c3-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
- for(const[id,n]of [['variables',1],['mass-cdf',2],['moments',3],['joint',4],['discrete-models',5],['count-proofs',5],['count-lab',5],['density',6],['wait-models',6],['normal',7],['normal-foundations',7],['continuous-lab',7],['inference-families',8],['tools',9],['practice',9],['c3-revenue-transform',3],['c3-capacity-tail',5],['c3-model-assumptions',6],['c3-sd-not-variance',7]]){loc.hash='#'+id;fire('hashchange');eq(visible(),[n],id);for(let p=d.getElementById(id);p;p=p.parentElement)if(p.tagName==='DETAILS')ok(p.open,id+' open ancestor');}
- d.getElementById('c3-show-all').fire('click');eq(visible(),[1,2,3,4,5,6,7,8,9]);d.getElementById('c3-show-all').fire('click');eq(visible(),[7]);
+ for(let n=2;n<=15;n++){loc.hash='#'+stepIds[n-1];fire('hashchange');eq(visible(),[n]);ok(parts[n-1].querySelector('h2').focused);eq(d.querySelectorAll('.c3-route a').filter(a=>a.getAttribute('aria-current')==='step').length,1);}
+ for(const[id,n]of [['variables',1],['mass-cdf',3],['moments',5],['joint',7],['discrete-models',8],['count-proofs',9],['count-lab',9],['density',10],['wait-models',11],['normal',12],['normal-foundations',12],['continuous-lab',13],['inference-families',14],['tools',15],['practice',15],['c3-revenue-transform',5],['c3-capacity-tail',8],['c3-model-assumptions',11],['c3-sd-not-variance',12]]){loc.hash='#'+id;fire('hashchange');eq(visible(),[n],id);for(let p=d.getElementById(id);p;p=p.parentElement)if(p.tagName==='DETAILS')ok(p.open,id+' open ancestor');}
+ d.getElementById('c3-show-all').fire('click');eq(visible(),Array.from({length:15},(_,i)=>i+1));d.getElementById('c3-show-all').fire('click');eq(visible(),[12]);
  const pick=(key,v)=>d.querySelector(`[data-c3-visual="${key}"][data-view="${v}"]`).fire('click');
  for(const b of d.querySelectorAll('[data-c3-visual]')){b.fire('click');eq(b.getAttribute('aria-pressed'),'true');eq(d.querySelectorAll(`[data-c3-visual="${b.dataset.c3Visual}"]`).filter(x=>x.getAttribute('aria-pressed')==='true').length,1);ok(d.getElementById('c3-'+b.dataset.c3Visual+'-result').innerHTML.length>200);}
  pick('distribution','atleast');pick('normal','tail');pick('decision','1');fire('beforeprint');ok(d.getElementById('c3-decision-result').innerHTML.includes('20% chance'));fire('afterprint');ok(d.getElementById('c3-decision-result').innerHTML.includes('60% chance'));ok(d.getElementById('c3-normal-result').innerHTML.includes('506.58'));
  d.getElementById('c3-motion').checked=false;d.getElementById('c3-motion').fire('change');ok(d.body.classList.contains('c3-no-motion'));media.matches=true;media.change();eq(d.getElementById('c3-motion').checked,false);
  loc.hash='#%bad';fire('hashchange');loc.hash='#missing';fire('hashchange');ok(true);
 }
-for(const[id,n]of [['count-lab',5],['continuous-lab',7],['c3-revenue-transform',3],['practice',9]]){const{d}=run(false,'#'+id);ok(!d.getElementById('rv-step-'+n).hidden,id+' direct link');}
-const staticDOM=dom();eq(staticDOM.querySelectorAll('.c3-part').filter(p=>!p.hidden).length,9);eq(staticDOM.querySelectorAll('.c3-visual-controls').filter(p=>p.hidden).length,7);ok(staticDOM.querySelectorAll('.c3-part').every(p=>p.querySelector('.c3-scene')));
+for(const[id,n]of [['count-lab',9],['continuous-lab',13],['c3-revenue-transform',5],['practice',15]]){const{d}=run(false,'#'+id);ok(!d.getElementById(stepIds[n-1]).hidden,id+' direct link');}
+for(const reduced of [false,true])for(let n=1;n<=15;n++)for(const id of [stepIds[n-1],'class3-step-'+n]){const{d,events,loc}=run(reduced,'#'+id);eq(d.querySelectorAll('.c3-part').filter(p=>!p.hidden).map(p=>p.attrs.id),[stepIds[n-1]],id+' direct route');loc.hash='#'+id;for(const fn of events.hashchange||[])fn();ok(d.getElementById(stepIds[n-1]).querySelector('h2').focused,id+' navigation focuses actual heading');}
+const staticDOM=dom();eq(staticDOM.querySelectorAll('.c3-part').filter(p=>!p.hidden).length,15);eq(staticDOM.querySelectorAll('.c3-visual-controls').filter(p=>p.hidden).length,7);ok(staticDOM.querySelectorAll('.c3-part').every(p=>p.querySelector('.c3-scene')));
 // Browser history can return to the original URL without a fragment.
 for(const reduced of [false,true]){
  const {d,events,loc}=run(reduced),parts=d.querySelectorAll('.c3-part');

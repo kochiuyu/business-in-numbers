@@ -28,6 +28,8 @@ Class 1 follows eight teaching steps: records, center, quartiles and boxplots, v
 
 Class 2 follows eleven teaching steps: outcomes and events, event operations and validity, conditioning, independence, weighted paths, Bayes, odds and a first update, repeated evidence, sequential choices, arrangements and selections, and a business decision. Each core calculation stays visible. Sequential links use `#class2-step-1` through `#class2-step-11`; original `#prob-step-*` links keep their subject destinations.
 
+Class 3 follows fifteen focused steps: mapping, PMF, CDF, expectation, variance, joint probabilities, covariance, trials and draws, arrivals, density, waits, normal probabilities, normal cutoffs, inference families, and a capacity decision. Essential calculations remain visible; full explanations, proofs and all eleven distribution families remain available. Sequential links use `#class3-step-1` through `#class3-step-15`; original `#rv-step-*` and topic links keep their subjects.
+
 Run `npm run test:navigation` after building for navigation structure and interaction regression checks. Browser QA should also check narrow phone layouts, keyboard focus, Back/Forward, and the no-JavaScript fallback.
 
 ## GitHub Pages

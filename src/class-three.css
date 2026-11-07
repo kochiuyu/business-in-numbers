@@ -49,3 +49,12 @@
 .c3-depth details{margin-top:1rem}.c3-depth h4{margin-top:1.4rem}
 @media(max-width:560px){.c3-depth-pair{grid-template-columns:1fr}.c3-depth ol{padding-left:1.3rem}}
 @media print{.c3-depth{break-inside:auto}.c3-depth-pair article,.c3-depth-calculation{break-inside:avoid}}
+
+/* Each operation keeps its arithmetic visible, independent of the comparison controls. */
+.c3-step-anchor{display:block;position:relative;top:-20px;scroll-margin-top:24px}
+.c3-core{margin:1.4rem 0;padding:1.1rem 1.2rem;border-left:4px solid #51745d;background:#f4f7ef;min-width:0;overflow-wrap:break-word}
+.c3-core h4{font-size:1.1rem;line-height:1.4;margin:.1rem 0 .8rem}.c3-core p,.c3-core li{font-size:1rem;line-height:1.65;max-width:75ch}.c3-core li+li{margin-top:.6rem}.c3-core p:last-child{margin-bottom:0}
+.c3-core-table{max-width:100%;overflow-x:auto;margin:.8rem 0;border:1px solid #bccbb7;border-radius:6px;background:#fffef9}.c3-core-table:focus-visible{outline:3px solid #97451f;outline-offset:3px}
+.c3-core-table table{width:100%;border-collapse:collapse;min-width:340px;font-size:.92rem}.c3-core-table caption{text-align:left;font-weight:700;padding:.75rem .8rem;color:#173f36}.c3-core-table th,.c3-core-table td{padding:.65rem .8rem;text-align:left;vertical-align:top;border-top:1px solid #d7dfd1;line-height:1.5}.c3-core-table thead{background:#e8eee0}.c3-core-table th{font-weight:650}
+@media(max-width:700px){.c3-core{padding:.85rem .8rem}.c3-core p,.c3-core li{font-size:.94rem}.c3-core ol{padding-left:1.3rem}.c3-core-table table{font-size:.85rem}.c3-core-table::before{content:"Scroll the table sideways if needed.";display:block;padding:.5rem .8rem;font-size:.8rem;color:#52654c}}
+@media print{.c3-core{background:#fff;border:1pt solid #aaa;padding:10pt;break-inside:auto}.c3-core p,.c3-core li{font-size:10pt}.c3-core-table{overflow:visible}.c3-core-table table{min-width:0;font-size:9pt}.c3-core-table::before{display:none}.c3-core-table tr{break-inside:avoid}.c3-scene{break-inside:auto}}

@@ -60,7 +60,7 @@ const baseline = {
 };
 for (const [i, file] of ['index.html', 'probability.html', 'random-variables.html'].entries()) {
   const source = fs.readFileSync('src/' + file, 'utf8').replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'').replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'');
-  const snapshotSource = file === 'index.html' ? require('./scripts/class-one-preservation.cjs').restore(fs.readFileSync('src/' + file, 'utf8')).replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'').replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'') : file === 'probability.html' ? require('./scripts/class-two-preservation.cjs').restore(source) : source;
+  const snapshotSource = file === 'index.html' ? require('./scripts/class-one-preservation.cjs').restore(fs.readFileSync('src/' + file, 'utf8')).replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'').replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'') : file === 'probability.html' ? require('./scripts/class-two-preservation.cjs').restore(source) : require('./scripts/class-three-preservation.cjs').restore(source);
   assert.deepEqual(lessons(snapshotSource).map(s => crypto.createHash('sha256').update(s).digest('hex')), baseline[file], 'Reviewed lesson disclosures match the protected baseline: ' + file); checks++;
   const blocks = source.match(/<section class="second-foundation"[\s\S]*?<\/section>/g) || [];
   ok(blocks.length === 1, 'One purposeful bridge per class');

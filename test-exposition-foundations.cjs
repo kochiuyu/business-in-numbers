@@ -7,7 +7,7 @@ for(const file of files){
  const s=fs.readFileSync('src/'+file,'utf8');
  const classNo=files.indexOf(file)+1;
  if(classNo>1){
-  const historical=classNo===2?require('./scripts/class-two-preservation.cjs').restore(s):s;
+  const historical=classNo===2?require('./scripts/class-two-preservation.cjs').restore(s):require('./scripts/class-three-preservation.cjs').restore(s);
   const hashes=originalDetails(historical).map(t=>crypto.createHash('sha256').update(classNo===2?t.replace(' open>','>'):t).digest('hex'));
   assert.deepEqual(hashes,JSON.parse(fs.readFileSync(`test-class${classNo}-reference.json`,'utf8')).topic_sha256,'original lesson bodies unchanged');checks++;
  }

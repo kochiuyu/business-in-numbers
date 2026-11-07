@@ -23,7 +23,8 @@ const html=fs.readFileSync('dist/random-variables.html','utf8');
 const id='bridge-joint-arithmetic';
 for (const s of [source,html]) {
  const start=s.indexOf(`id="${id}"`);
- assert.ok(start>s.indexOf('id="rv-step-4"')&&start<s.indexOf('id="foundation-zero-covariance"'));
+ assert.ok(s.includes('id="rv-covariance"'),'delivered covariance step exists');
+ assert.ok(start>s.indexOf('id="rv-covariance"')&&start<s.indexOf('id="foundation-zero-covariance"'));
  assert.equal(s.split(`id="${id}"`).length,2);
  assert.ok(s.includes(`aria-labelledby="${id}-title"`));
  assert.ok(s.includes(`id="${id}-title"`));
