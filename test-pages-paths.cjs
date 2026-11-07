@@ -6,7 +6,7 @@ const base = new URL('https://kochiuyu.github.io/business-in-numbers/');
 let count = 0;
 for (const name of fs.readdirSync('dist').filter(n => n.endsWith('.html') || n.endsWith('.css'))) {
   const source = fs.readFileSync(path.join('dist', name), 'utf8');
-  assert(!/PRIVATE REVIEW|owner-private|not publicly shared|remains private to its owner/i.test(source), name + ': stale privacy wording');
+  assert(!/PRIVATE[ -](?:REVIEW|PREVIEW)|owner-private|not publicly shared|(?:remains|is) private to its owner|supplied as [^<]*\.tex/i.test(source), name + ': stale privacy wording');
   const refs = [...source.matchAll(/(?:href|src)=["']([^"']+)["']/g)].map(m => m[1]);
   if (name.endsWith('.css')) refs.push(...[...source.matchAll(/url\(["']?([^"')]+)["']?\)/g)].map(m => m[1]));
   for (const ref of refs) {
