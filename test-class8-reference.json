@@ -21,12 +21,13 @@
     "course-introduction.html": "e403cbd85d9497623fcc097ed5667713410ca5abf8d0f413bffc5c53112b2cbe",
     "sampling-distributions.html": "996ed13ab0f16600faef496426ee99b1a0e884f164cd00031150e1c03434616e",
     "math-check.html": "5dbebe5efb47da9529cb1d607511f22bbe51d0973f3238d8b5c80a120eb3b08b",
-    "random-variables.html": "5c1f59ad61e1cee463c07872481049eb871b05adaadbd63e1f61f903ec8e0b00",
+    "random-variables.html": "16cc91780d9fbbb82db7b4c690ab4da1601aed4210520483696db729dc9430c6",
     "hypothesis-testing.html": "71029348565b79de78f49f065ad6577507b695d6a2f3e5821adf0ac79a345029",
-    "probability.html": "e618e47a9dc9835788a62481b7b90e39bb6f7d048f78acbaf22be5ea181e4534",
-    "index.html": "a82c07caba80b1aa0d40adba5673785cb425f0e911b2e2901db6d7a1e75a4198",
+    "probability.html": "4d6120732eb2c835123334e1aaf8dbb566789f2e335672cad1c0e953fef597c1",
+    "index.html": "c6cfeb624af529d92acdc3a83b9a1059dbe1b2b34ef2f3e857fbb469efb65cc9",
     "estimation.html": "ea101e2c8f97654dc33bead7f915ff4f95c9bd8e34ee05b1b07cc44d99f0bd68",
     "anova.html": "894682131b7a83b81d5372528e4bf6029d77ca5460e2cb7b7fcf9a75a877c5f9"
   },
-  "other_pages_note": "Modeling chart-axis labels refreshed after verifying that lesson text and formulas outside SVGs and asset fingerprints are unchanged. Class 7 and 8 statistical calculations and plotted geometry remain unchanged."
+  "other_pages_note": "Modeling chart-axis labels refreshed after verifying that lesson text and formulas outside SVGs and asset fingerprints are unchanged. Class 7 and 8 statistical calculations and plotted geometry remain unchanged.",
+  "bridge_review_note": "First-three-class page hashes refreshed after independently audited additions to standardized shape/rate averaging, feasible overlaps and covariance. Previous Class1\u20133 text preserved except fourth-central-moment terminology. All other built files unchanged."
 }

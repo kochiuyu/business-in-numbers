@@ -18,15 +18,16 @@ function lessons(source) {
   }
   return out;
 }
-// Reviewed snapshots: Class 1 shape is intentionally deepened; test-depth-shape.cjs
-// independently reconstructs and verifies the entire pre-deepening shape lesson.
-// All other lesson snapshot hashes remain unchanged.
+// Reviewed snapshots: Class 1 shape/rate explanations are intentionally deepened.
+// test-bridges-shape.cjs reconstructs the full prior page; test-depth-shape.cjs
+// also reconstructs the earlier shape lesson. Class 3 fixes only the phrase
+// "raw fourth central moment"; test-bridges-random.cjs proves other text retained.
 const baseline = {
   "index.html": [
     "b5f8d3050d25e4cce8119bf2732c5fbf721530ae54b2c9fc98a5906ba89f40c9",
-    "3e10a7fca55d15dddb675d4eb54db5729328c8e0727773239f669d9e53856598",
+    "51588b597e73dcb3deb503517b1e49d7723e9e522211ab54710c921c92818127",
     "a1241ebb4c7ba8329e7053448f6d7b0fa4662a5276efc154ee6b885f1e735b9d",
-    "16f9a3c422806eba9916323df97a56a52bea23de4831da6f04a50a7d61c2bbe8",
+    "8abf65b2ce59470220eba61ae975fcf78da6e4ace8e37b998c8599decac17dbe",
     "0a76071b55d59121606cffaac59d88da81a0272fe475782cd878ab25c7b9d4ac",
     "6e8f7599e9d9a173f5631697cf8fc3904b6ab2a8d25b85e2c8e82b0bd1884920"
   ],
@@ -52,7 +53,7 @@ const baseline = {
     "4b2e63c4a0ebf56169785cfca6fc401fd81727656ed291db6377d98989772734",
     "61c07529f66501c3234fe77906b9e2fad8178c6148d2ca4ab1aa2de0d5df9625",
     "e7321a96230cefffac822feea0ff155ad21d4fd65fc8204cd8ad02ec1c164053",
-    "857f4cbb9f598a04dbbf37f21cd3d3d0438d7aedc6711d3c14bf2e819c7e2c47",
+    "5c6f50e40cc85f128c9f06a0552d659c5a930ed7a0bec28a033fbe2a6283d5f1",
     "f3cd4e20903795291a76bd6debe8fdc1fab6c10b461290cd0983dbd72c6a7844",
     "7cf36d1afae4520c4b751514d099ee293a48e6b8a2eb1a321d8a66b733bce167"
   ]
