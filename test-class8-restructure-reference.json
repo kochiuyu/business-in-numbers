@@ -2,7 +2,7 @@
   "base_commit": "43ae54ac1e4944e87490cdd1715ebd1519589dff",
   "baseline_sha256": "d1d46c92cf014fb1a9792aad20dda35c6741062c688eabb69430b96efc2fb3db",
   "reviewed_sha256": "a5355eef2ab6028024d2b10fc7e1077e0787226dff1c9783fe7f3128ca7856a0",
-  "reviewed_dist_sha256": "e9fa0a198855e009736acf05fda988dc6fab29ce1da6210d56a17c22c5a29908",
+  "reviewed_dist_sha256": "70debbb5067b9af02fb06ad55c6df27d533ecd27af1325c4a9b6cb9ccc3c937e",
   "patches": [
     {
       "token_start": 152,
@@ -958,5 +958,6 @@
       "before": "Knowledge check <span aria-hidden=\"true\">\u2192</span>",
       "after": "Check your judgment \u2192"
     }
-  ]
+  ],
+  "population_model_review_note": "First-pass Step 7 now defines population parameters, errors and conditional expectation before the retained weight proof; explains unbiasedness and the restricted best-linear claim. Independent math/pedagogy and desktop/narrow browser review approved. All nineteen steps, original explanations and numerical content retained."
 }

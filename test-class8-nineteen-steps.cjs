@@ -38,6 +38,12 @@ for(const [name,html]of [['source',source],['built',built]]){
  if(name==='built')ok(!/\{\{(?:regvisual|regcore|math|activity):|katex-error/.test(html),'no unresolved teaching templates');
 }
 const t=parse(built);
+// The first-pass transition must define the population model before its proof.
+// Checking text outside details prevents these essentials moving into an optional panel.
+const modelCore=t.byId('c8-core-assumptions');
+const modelVisible=t.fragment(modelCore).replace(/<details\b[\s\S]*?<\/details>/g,'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
+for(const needle of ['yᵢ = α + βxᵢ + εᵢ','unknown population intercept','unknown population slope','week’s departure from its population mean','fitted a and b estimate α and β','not a test’s significance level','E(yᵢ | x) means','E(εᵢ | x) = 0','Common error variance σ²','Step 9 estimates it with s²','treating the observed spend values as fixed','weights determined only by the predictors','across repeated samples','smallest sampling variance within that class','linear in the observed outcomes'])ok(modelVisible.includes(needle),'first-pass population-model meaning '+needle);
+ok(modelVisible.indexOf('yᵢ = α + βxᵢ + εᵢ')<modelVisible.indexOf('b = Σwᵢyᵢ'),'define model before using weighted-slope proof');
 const claims={pairs:['(3,16)','n = 8'],line:['17.5','19.29'],fit:['SSE = 8','81/14'],center:['36/8','Sxx = 2','Sxy = 22.75'],coefficients:['bSxx = Sxy','247/28','42δb²'],units:['27/28','x* = 9'],assumptions:['Σwᵢ = 0','1/42','independent normal'],residuals:['39/28','−43/28'],noise:['4536/784','8 − 2 = 6','27/28'],inference:['0.151523','12.727922','[1.557808, 2.299335]'],intercept:['0.765153','[6.949167, 10.693691]','0.347183'],partition:['2187/14','162'],fitshare:['27/28','96.43%'],tests:['162','0.000007215'],mean:['0.347183','[16.650475, 18.349525]','0.633866'],individual:['1.041548','[14.951425, 20.048575]'],challenge:['31.964286','5/12','11/84'],decision:['19.29','149.51–200.49'],software:['F.DIST.RT(162,1,6)','scipy.stats.t.sf']};
 for(const[id,needles]of Object.entries(claims)){const f=t.fragment(t.byId('c8-core-'+id)).replace(/<[^>]*>/g,' ').replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/\s+/g,' ');for(const text of needles)ok(f.includes(text),'visible calculation and condition '+id+' '+text);}
 const near=(a,b,tol=1e-8)=>ok(Math.abs(a-b)<tol,`independent arithmetic ${a} = ${b}`);
