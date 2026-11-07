@@ -17,15 +17,15 @@
     "e0cd79e63736ef8f6979119069e398d80f34e1b17a42c96ac5ad98600f04cf6c"
   ],
   "other_pages": {
-    "regression.html": "f7543f6373af381f633da183e1c2f90cff9620df0273d3fe8d6e6328f9e375a0",
+    "regression.html": "1d2fa12d9ad9b8ba1a7c3b2d56f4a599ff056c2be2eba71dd11bf406558469fd",
     "course-introduction.html": "452fc39f2c83f9e0db1664e1bbf94892378ec8d70b7037d1b63ef60705cdcc10",
-    "sampling-distributions.html": "c293e6bfec415597de7b58d45f10b37f9b1e1175e0b50a4b6a6872f155c32dac",
+    "sampling-distributions.html": "848e2fd34f0c6cd4b182da021185a942c98ba86960da65696a1187fe53219f97",
     "math-check.html": "a77fc56d9ed7991655bfcf2a22fd209a4afacd23c0c0bfdeacca39d3554be4bf",
-    "random-variables.html": "857413bb75cb3d783f6d32b398af60f9bc87dccd0c2e1fb054354c85fe8974b8",
-    "hypothesis-testing.html": "97ee7dcae67d8427c5bcae3c6bc1a44bc1fbdf2e969e2d6a266af04878c8d524",
-    "probability.html": "ffc61be7ba97424ec0f699799c13e1b31fb9fb4cdcf48f2c39157b96cf25a925",
-    "index.html": "bd8f44e3f65c3e9e45b8f5b986ce11d6a5bc60ae22826e86fd5b0eb9329fbd7f",
-    "estimation.html": "5f1532ecdf4a22767a1d72d6cd1080da205f52293cd21909909cbc6fe6c1f811"
+    "random-variables.html": "675bc25c7068675be014736df55d28a299bce9314d0f198290bbb403f6b0c6e5",
+    "hypothesis-testing.html": "93aec7506524d8f67eec25a05c19abcd947749f3bf8209ee8890834a9d0ec3dc",
+    "probability.html": "465b86e3b76843973011f925ad9862057a29667db8f1b9d2bfdc4c53ba03513b",
+    "index.html": "472e68b321e2bff1dcda8a83edde6128d0de7d5399c9a457166a443ad7b57f7e",
+    "estimation.html": "32998212493f7bb95cd2a0799da370c5391afd7ec91105fe1707010d389c8698"
   },
   "other_pages_note": "Built-page snapshot refreshed for the 2026-11-07 second exposition review and deterministic runtime asset fingerprints. Original topic_sha256 preservation fixtures are unchanged."
 }
