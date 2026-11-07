@@ -28,5 +28,5 @@ class Structure(HTMLParser):
   if 'aria-labelledby' in a:self.refs+=a['aria-labelledby'].split()
   if tag=='svg':self.svg+=1
   if tag=='math':self.math+=1
-s=Structure();s.feed(Path('dist/random-variables.html').read_text());assert len(s.ids)==len(set(s.ids));assert all(x in s.ids for x in s.refs);assert s.svg>=7;assert s.math==43
-print(f'Passed {count} SciPy oracle comparisons, 4 SVG parses, all ID references, 7 diagrams and 43 MathML formulas.')
+s=Structure();s.feed(Path('dist/random-variables.html').read_text());assert len(s.ids)==len(set(s.ids));assert all(x in s.ids for x in s.refs);assert s.svg>=7;assert s.math==47
+print(f'Passed {count} SciPy oracle comparisons, 4 SVG parses, all ID references, 7 diagrams and 47 MathML formulas.')

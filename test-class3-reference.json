@@ -6,7 +6,7 @@
     "bfc0871790f606b283a7c891f3c46c34ffd6e6b64dee93d63aae8b2c37216dee",
     "ace3893d3c0fbd3d194eb0f098152daa6e5d72b0ff23bb6094adc7b2114bb028",
     "c1a1f984db636689ce0d605944766378a9a210e417fb35c1bf33ac177d2acbda",
-    "367a158baab528536319759d09f4587a3aabe4e54485a458897bee80953009e5",
+    "cea4c142a48ea399096dd94b056ee678bfda9e0d2ac9b4bb388702ca5ab3a60e",
     "4b2e63c4a0ebf56169785cfca6fc401fd81727656ed291db6377d98989772734",
     "61c07529f66501c3234fe77906b9e2fad8178c6148d2ca4ab1aa2de0d5df9625",
     "e7321a96230cefffac822feea0ff155ad21d4fd65fc8204cd8ad02ec1c164053",
@@ -19,6 +19,11 @@
       "topic": "normal-foundations",
       "change": "Corrected contradictory terminology: fourth central moment, not raw fourth central moment. Formula and all other original text unchanged.",
       "previous_sha256": "857f4cbb9f598a04dbbf37f21cd3d3d0438d7aedc6711d3c14bf2e819c7e2c47"
+    },
+    {
+      "topic": "count-proofs",
+      "change": "Restored the source binomial-to-Poisson ratio, zero-count anchor, recurrence and normalization inside the existing technical panel. All pre-existing text remains unchanged.",
+      "previous_sha256": "367a158baab528536319759d09f4587a3aabe4e54485a458897bee80953009e5"
     }
   ]
 }

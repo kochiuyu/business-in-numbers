@@ -256,5 +256,29 @@
     "text": "The F density is a positive-support ratio density with beta-function normalization.",
     "title": "The F density is a positive-support ratio density with beta-function normalization.",
     "display": true
+  },
+  "poisson-limit-ratio": {
+    "tex": "\\begin{aligned}\\frac{b_n(x+1)}{b_n(x)}&=\\frac{n-x}{x+1}\\frac{p}{1-p}\\\\&=\\frac{\\lambda}{x+1}\\frac{1-x/n}{1-\\lambda/n}\\\\&\\longrightarrow\\frac{\\lambda}{x+1}.\\end{aligned}",
+    "text": "The exact adjacent binomial ratio is (n minus x) over (x plus one), times p over (one minus p). With p equal to lambda over n, it tends to lambda over (x plus one), for fixed lambda and x.",
+    "title": "The exact adjacent binomial ratio is (n minus x) over (x plus one), times p over (one minus p). With p equal to lambda over n, it tends to lambda over (x plus one), for fixed lambda and x.",
+    "display": true
+  },
+  "poisson-limit-zero": {
+    "tex": "q_0=\\lim_{n\\to\\infty}b_n(0)=\\lim_{n\\to\\infty}\\left(1-\\frac{\\lambda}{n}\\right)^n=e^{-\\lambda}.",
+    "text": "The probability of zero successes is (one minus lambda over n) to the power n. Its limit is e to the power minus lambda.",
+    "title": "The probability of zero successes is (one minus lambda over n) to the power n. Its limit is e to the power minus lambda.",
+    "display": true
+  },
+  "poisson-limit-recurrence": {
+    "tex": "\\begin{aligned}q_1&=q_0\\lambda,\\\\q_2&=q_1\\frac{\\lambda}{2}=q_0\\frac{\\lambda^2}{2!},\\\\q_3&=q_2\\frac{\\lambda}{3}=q_0\\frac{\\lambda^3}{3!},\\\\q_x&=q_0\\frac{\\lambda^x}{x!}=e^{-\\lambda}\\frac{\\lambda^x}{x!}.\\end{aligned}",
+    "text": "Starting at q zero, multiply successively by lambda over one, lambda over two, and lambda over three. At count x the denominators form x factorial, giving e to minus lambda times lambda to x divided by x factorial.",
+    "title": "Starting at q zero, multiply successively by lambda over one, lambda over two, and lambda over three. At count x the denominators form x factorial, giving e to minus lambda times lambda to x divided by x factorial.",
+    "display": true
+  },
+  "poisson-limit-normalization": {
+    "tex": "\\sum_{x=0}^{\\infty}q_x=e^{-\\lambda}\\sum_{x=0}^{\\infty}\\frac{\\lambda^x}{x!}=e^{-\\lambda}e^{\\lambda}=1.",
+    "text": "The limiting masses sum to e to minus lambda times the exponential series for e to lambda, which equals one.",
+    "title": "The limiting masses sum to e to minus lambda times the exponential series for e to lambda, which equals one.",
+    "display": true
   }
 }

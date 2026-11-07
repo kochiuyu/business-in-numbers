@@ -5,7 +5,7 @@ const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual
 const source=fs.readFileSync('src/class-three.js','utf8'),html=fs.readFileSync('dist/random-variables.html','utf8'),css=fs.readFileSync('src/class-three.css','utf8');
 function topics(s){const out=[];const re=/<\/?details\b[^>]*>/g;let m,depth=0,start=-1;while((m=re.exec(s))){if(m[0].startsWith('</')){depth--;if(depth===0&&start!==-1){out.push(s.slice(start,re.lastIndex));start=-1;}}else{if(depth===0&&m[0].includes('class="lesson"'))start=m.index;depth++;}}return out;}
 eq(topics(fs.readFileSync('src/random-variables.html','utf8')).map(t=>crypto.createHash('sha256').update(t).digest('hex')),JSON.parse(fs.readFileSync('test-class3-reference.json','utf8')).topic_sha256,'all 12 complete original topics unchanged');
-eq((html.match(/<math xmlns=/g)||[]).length,43);eq((html.match(/class="visual-practice"/g)||[]).length,4);eq((html.match(/class="lesson-bridge"/g)||[]).length,12);
+eq((html.match(/<math xmlns=/g)||[]).length,47);eq((html.match(/class="visual-practice"/g)||[]).length,4);eq((html.match(/class="lesson-bridge"/g)||[]).length,12);
 for(const name of ['mapping','distribution','moments','joint','counts','area','normal','families','decision']){ok(V.render(name).includes('c3-scene'));ok(V.render(name).includes('Pause'));}
 near(V.mass.reduce((a,b)=>a+b),1);near(V.mass.reduce((s,p,i)=>s+i*p,0),1.7);near(V.mass.reduce((s,p,i)=>s+(i-1.7)**2*p,0),.81);
 for(const[k,v]of Object.entries({exact:40,atmost:80,atleast:60}))ok(V.views.distribution(k).includes(`${v}%.</b>`));

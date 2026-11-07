@@ -36,5 +36,5 @@ for (const s of [source,html]) {
 }
 console.log('Passed 51 independently enumerated joint models, weighted covariance arithmetic, sum variance and static bridge structure.');
 
-const restored=source.replace(/<section class="second-foundation c3-depth" id="bridge-joint-arithmetic"[\s\S]*?<\/section>\n/,'').replace('The fourth central moment','The raw fourth central moment');
+const restored=source.replace(/<!-- poisson-limit-steps:start -->[\s\S]*?<!-- poisson-limit-steps:end -->/,'').replace(/<section class="second-foundation c3-depth" id="bridge-joint-arithmetic"[\s\S]*?<\/section>\n/,'').replace('The fourth central moment','The raw fourth central moment');
 assert.equal(require('node:crypto').createHash('sha256').update(restored).digest('hex'),'46b55b68ddeb04a422ae1d0fd6066d366db5e94814abe760799eedac46564ef3','all prior Class 3 material retained, apart from explicitly corrected moment terminology');
