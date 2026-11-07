@@ -66,6 +66,43 @@ for(const c of [d.lower,d.upper])if(c!==null&&c>=lo&&c<=hi)b+=`<line x1="${x(c)}
 const marker=Math.max(lo,Math.min(hi,d.stat));b+=`<line x1="${x(marker)}" x2="${x(marker)}" y1="55" y2="254" stroke="#bc4f24" stroke-width="2"/><text x="${Math.min(510,Math.max(100,x(marker)))}" y="49" text-anchor="middle" font-size="13">Observed ${fmt(d.stat,3)}${marker!==d.stat?' (off scale)':''}</text>`;
 for(let i=0;i<5;i++){const v=lo+(hi-lo)*i/4;b+=`<text x="${x(v)}" y="275" text-anchor="middle" font-size="12">${fmt(v,2)}</text>`;}b+=`<text x="325" y="307" text-anchor="middle" font-size="13">${isF?'F variance ratio':d.dist==='t'?'Student t statistic':'Standard normal z statistic'} · plotted ${fmt(lo,2)} to ${fmt(hi,2)}</text>`;
 return svg(id+'-plot','Test tails and rejection cutoffs',`${d.dist} reference. Observed statistic ${d.stat}; p ${d.p}. ${d.tail} alternative. Orange p-value region, dashed critical cutoffs ${d.lower} and ${d.upper}. Plot range ${lo} to ${hi}; omitted tails still included in probability.`,b);}
-function powerSvg(d){const lo=Math.min(d.mu0,d.mu1)-4*d.se,hi=Math.max(d.mu0,d.mu1)+4*d.se,x=v=>60+(v-lo)/(hi-lo)*530,pdf=(v,m)=>Math.exp(-.5*((v-m)/d.se)**2),y=p=>254-205*p,pts=Array.from({length:501},(_,i)=>lo+(hi-lo)*i/500);let b='<text x="60" y="22" font-size="14">Green: null mean · orange: chosen true mean</text>';for(let i=0;i<pts.length-1;i++){const v=pts[i],v2=pts[i+1];if((d.lower!==null&&v<=d.lower)||(d.upper!==null&&v>=d.upper))b+=`<path d="M${x(v)},254 L${x(v)},${y(pdf(v,d.mu1))} L${x(v2)},${y(pdf(v2,d.mu1))} L${x(v2)},254 Z" fill="#dfb899"/>`;}for(const[m,color]of [[d.mu0,'#173f36'],[d.mu1,'#bc4f24']])b+=`<path d="${pts.map((v,i)=>`${i?'L':'M'}${x(v)},${y(pdf(v,m))}`).join(' ')}" fill="none" stroke="${color}" stroke-width="2.5"/>`;for(const c of [d.lower,d.upper])if(c!==null&&c>=lo&&c<=hi)b+=`<line x1="${x(c)}" x2="${x(c)}" y1="35" y2="254" stroke="#527c65" stroke-dasharray="5 4"/>`;for(let i=0;i<5;i++){const v=lo+(hi-lo)*i/4;b+=`<text x="${x(v)}" y="278" text-anchor="middle" font-size="12">${fmt(v,3)}</text>`;}b+='<text x="325" y="308" text-anchor="middle" font-size="13">Sample mean · shaded area = rejection probability at chosen mean</text>';return svg('power-plot','Rejection probability at a specified true mean',`Sampling means under null ${d.mu0} and true mean ${d.mu1}, SE ${d.se}. Rejection probability ${d.power}. Curves show four SE beyond both means; all tails included. Both peaks scaled to one.`,b);}
+function powerSvg(d){
+ // Work in SE units: raw sample-mean grids can miss entire narrow densities,
+ // and subtracting a large location at each vertex loses useful precision.
+ const split=Math.abs(d.shift)>8,compact=v=>Math.abs(v)>=1e4?v.toExponential(3):fmt(v,3);
+ let b='<text x="30" y="22" font-size="15">Green: null mean · orange: chosen true mean</text>';
+ b+=`<text x="30" y="43" font-size="14">${split?'Separate centered panels; gap between means not shown.':'Common axis in standard-error (SE) units.'}</text>`;
+ function panel(top,lo,hi,origin,curves,label){
+  const base=top+185,x=v=>60+(v-lo)/(hi-lo)*530,y=p=>base-140*p,pdf=(v,m)=>Math.exp(-.5*(v-m)**2);
+  // Use the actual numerical decision boundaries returned by power(), not a
+  // separately rounded or recomputed rule. Include them as polygon vertices.
+  const cuts=[d.lower,d.upper].map(c=>c===null?null:(c-origin)/d.se);
+  const pts=[...new Set([...Array.from({length:401},(_,i)=>lo+(hi-lo)*i/400),...curves.map(c=>c[0]),...cuts.filter(c=>c!==null&&c>=lo&&c<=hi)])].sort((a,b)=>a-b);
+  const reject=v=>(cuts[0]!==null&&v<=cuts[0])||(cuts[1]!==null&&v>=cuts[1]);
+  b+=`<g data-power-panel="${origin===d.mu0?'null':'chosen'}"><text x="30" y="${top+18}" font-size="14">${esc(label)}</text>`;
+  const chosenCurve=curves.find(c=>c[2]);
+  if(chosenCurve){
+   const m=chosenCurve[0];
+   for(let i=0;i<pts.length-1;i++){
+    const v=pts[i],w=pts[i+1];if(reject((v+w)/2))b+=`<path data-power-shade="true" d="M${x(v)},${base} L${x(v)},${y(pdf(v,m))} L${x(w)},${y(pdf(w,m))} L${x(w)},${base} Z" fill="#dfb899"/>`;
+   }
+  }
+  for(const [m,color,chosen]of curves){
+   b+=`<path data-power-curve="${chosen?'chosen':'null'}" d="${pts.map((v,i)=>`${i?'L':'M'}${x(v)},${y(pdf(v,m))}`).join(' ')}" fill="none" stroke="${color}" stroke-width="2.5"/>`;
+  }
+  b+=`<line x1="60" x2="590" y1="${base}" y2="${base}" stroke="#62776c"/>`;
+  for(const c of cuts)if(c!==null&&c>=lo&&c<=hi)b+=`<line data-power-cutoff="${c}" x1="${x(c)}" x2="${x(c)}" y1="${top+35}" y2="${base}" stroke="#527c65" stroke-dasharray="5 4"/>`;
+  for(let i=0;i<5;i++){const v=lo+(hi-lo)*i/4;b+=`<text x="${x(v)}" y="${base+21}" text-anchor="middle" font-size="13">${compact(v)}</text>`;}
+  const rule=cuts.map((c,i)=>c===null?'':`${i===0?'≤':'≥'} ${compact(c)}${c<lo?' (off left)':c>hi?' (off right)':''}`).filter(Boolean).join(' or ');
+  b+=`<text x="325" y="${base+44}" text-anchor="middle" font-size="14">${split?(origin===d.mu0?'(Sample mean − μ₀) / SE':'(Sample mean − chosen μ) / SE'):'(Sample mean − μ₀) / SE'}</text><text x="30" y="${base+67}" font-size="14">Reject: ${esc(rule)}</text></g>`;
+ }
+ if(split){
+  panel(55,-4,4,d.mu0,[[0,'#173f36',false]],`Null panel: μ₀ = ${d.mu0}`);
+  panel(325,-4,4,d.mu1,[[0,'#bc4f24',true]],`Chosen panel: μ = ${d.mu1}`);
+ }else panel(55,Math.min(0,d.shift)-4,Math.max(0,d.shift)+4,d.mu0,[[0,'#173f36',false],[d.shift,'#bc4f24',true]],`μ₀ = ${d.mu0} · chosen μ = ${d.mu1}`);
+ const footer=split?615:345;
+ b+=`<text x="30" y="${footer}" font-size="14">Shading = rejection probability at chosen mean.</text><text x="30" y="${footer+22}" font-size="14">Peaks = 1; dashed = cutoffs; all tails counted.</text>`;
+ return svg('power-plot','Rejection probability at a specified true mean',`Sampling means under null ${d.mu0} and true mean ${d.mu1}, SE ${d.se}. Rejection probability ${d.power}. ${d.tail} alternative. ${split?'Separate centered panels, each from −4 to 4 SE around its own mean; the gap between means is not shown.':'Common standardized sample-mean axis, (sample mean − null mean) / SE.'} Mean separation ${d.shift} SE. Green null density, orange chosen-mean density. Shaded chosen-mean area is rejection probability; dashed lines are decision boundaries. Off-scale cutoffs are labeled. Both peaks scaled to one. All tails included in probabilities.`,b,footer+40);
+}
 const api={mean,proportion,independent,paired,twoprop,variance,power,view,tailSvg,powerSvg,normalCdf,tCdf,fCdf,fSf,zQuant,tQuant,fQuant,beta,fmt,esc,BEFORE,AFTER};if(typeof module==='object')module.exports=api;root.HypothesisModels=api;
 })(typeof window==='undefined'?globalThis:window);

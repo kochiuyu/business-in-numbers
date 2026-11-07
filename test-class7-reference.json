@@ -17,15 +17,15 @@
     "e0cd79e63736ef8f6979119069e398d80f34e1b17a42c96ac5ad98600f04cf6c"
   ],
   "other_pages": {
-    "regression.html": "41ae08f7e0489e69328d940687ae1fb4ae90670efe3c9a4ecfc8ea29185b88fb",
+    "regression.html": "df5bbcc71905660c6873ee70e67b68a7f488929f238ed4f7bea9e8251b11cdb7",
     "course-introduction.html": "e403cbd85d9497623fcc097ed5667713410ca5abf8d0f413bffc5c53112b2cbe",
-    "sampling-distributions.html": "ac92478d58e150dcab7832838ebde0310f915922a73b6f08856a25ee5c446fc0",
+    "sampling-distributions.html": "996ed13ab0f16600faef496426ee99b1a0e884f164cd00031150e1c03434616e",
     "math-check.html": "5dbebe5efb47da9529cb1d607511f22bbe51d0973f3238d8b5c80a120eb3b08b",
     "random-variables.html": "7e4b0ae211e28893a646d3f1f240018e0c0daf19d1c28e568a0252e9c7c7e4e2",
-    "hypothesis-testing.html": "19caf4572054eef5b9896f2b1689594544d00ff7aaed76bb261af4205dfc423e",
+    "hypothesis-testing.html": "71029348565b79de78f49f065ad6577507b695d6a2f3e5821adf0ac79a345029",
     "probability.html": "8f16df76f802238ca7fb7daa417f7b69595d66e75f07b29cacebdef193305e5a",
     "index.html": "e24f4d2f49eb7531ba77eb236fb9b50b68e95cde62dae17c0cc2437ce8e2097c",
-    "estimation.html": "bd63f2a1200336d3c0a10e02d0c351b80a996db18fd0bfd917fb7cd52cf199e1"
+    "estimation.html": "ea101e2c8f97654dc33bead7f915ff4f95c9bd8e34ee05b1b07cc44d99f0bd68"
   },
   "other_pages_note": "Built-page snapshots refreshed after centered/scaled arithmetic and malformed-fragment repairs. Lesson text and formulas are unchanged. Default ANOVA and regression SVG coordinates differ at floating-point roundoff; ANOVA endpoint rounding changes by 0.01 and one tail shading segment follows the corrected cutoff.",
   "topic_note": "Topic 1 wording corrected in the seventh review: the global ANOVA is not a mandatory gate for a prespecified single contrast or family-controlled comparisons. All other original topics are unchanged."
