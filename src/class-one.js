@@ -61,6 +61,36 @@
  window.addEventListener('afterprint',()=>{if(printViews){for(const[key,view]of printViews){if(key==='center')center(view);if(key==='spread')spread(view);if(key==='shape')shape(view);}printViews=null;body.classList.remove('c1-printing');}});
 })();
 
+// Table questions: the records stay fixed; only the named whole changes.
+(() => {
+ const table=document.getElementById('payment-count-table');
+ const lab=document.getElementById('table-denominator-lab');
+ if(!table||!lab)return;
+ const buttons=[...lab.querySelectorAll('[data-table-question]')];
+ const controls=lab.querySelector('.table-question-controls');
+ const result=document.getElementById('table-question-result');
+ const cell=id=>document.getElementById('payment-'+id);
+ const inside=['online-card','online-other','store-card','store-other'];
+ const questions={
+  all:{cells:inside,total:'grand-total',label:'Of all orders',whole:'all four inside cells',conclusion:'of all orders were both online and card-paid'},
+  online:{cells:['online-card','online-other'],total:'online-total',label:'Of online orders',whole:'the two inside cells in the online row',conclusion:'of online orders used a card'},
+  card:{cells:['online-card','store-card'],total:'card-total',label:'Of card-paid orders',whole:'the two inside cells in the card column',conclusion:'of card-paid orders were online'}
+ };
+ if(!controls||!result||buttons.length!==3||!inside.every(id=>cell(id)))return;
+ function choose(key){
+  const q=questions[key];if(!q)return;
+  table.querySelectorAll('[data-count]').forEach(c=>{c.classList.remove('table-in-whole','table-is-part','table-is-total');});
+  q.cells.forEach(id=>cell(id).classList.add('table-in-whole'));
+  cell('online-card').classList.add('table-is-part');cell(q.total).classList.add('table-is-total');
+  const numerator=Number(cell('online-card').dataset.count),denominator=Number(cell(q.total).dataset.count);
+  const percent=numerator/denominator*100;
+  result.textContent=`${q.label}: ${numerator} online-and-card orders ÷ ${denominator} orders × 100 = ${percent}%. ${percent}% ${q.conclusion}. The whole is ${q.whole}.`;
+  buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.tableQuestion===key)));
+ }
+ buttons.forEach(button=>button.addEventListener('click',()=>choose(button.dataset.tableQuestion)));
+ choose('all');controls.hidden=false;
+})();
+
 // Small comparisons leave every worked case visible without JavaScript.
 (() => {
  document.querySelectorAll('.foundation-lab').forEach(lab => {

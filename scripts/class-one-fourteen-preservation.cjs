@@ -5,6 +5,7 @@ const assert=require('node:assert/strict'),crypto=require('node:crypto');
 const reference=require('../test-class1-fourteen-reference.json');
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
 function restore(source){
+ source=require('./class-one-tables-preservation.cjs').restore(source);
  if(hash(source)===reference.baseline_sha256)return source;
  assert.equal(hash(source),reference.reviewed_sha256,'fourteen-step source matches reviewed layout');
  const tokens=source.match(/<[^>]*>|[^<]+/g)||[];
