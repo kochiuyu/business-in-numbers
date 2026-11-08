@@ -232,7 +232,7 @@
         "anchor": "class2-step-8",
         "short": "Update again",
         "description": "State the dependence assumption before multiplying another likelihood ratio.",
-        "bridge": "The model now distinguishes an independent new signal from a repeated report. Return to the 1% alert case and communicate the probability without confusing it with an action threshold."
+        "bridge": "The model now distinguishes a new signal that is independent conditional on the true state from a repeated report. Return to the 1% alert case and communicate the probability without confusing it with an action threshold."
       },
       {
         "id": "prob-step-8",
@@ -380,6 +380,752 @@
         "short": "Meet inference families",
         "description": "Preview the reference distributions needed in later classes.",
         "bridge": "Those reference families become useful when a statistic varies across samples. Class 4 now asks how a sample average or rate would change if the sample were drawn again."
+      }
+    ]
+  },
+  "sampling-distributions.html": {
+    "classNumber": 4,
+    "partClass": "c4-part",
+    "routeClass": "c4-route",
+    "question": "Could another well-chosen sample change the staffing recommendation?",
+    "outcome": "Explain how sample design, sample size and the reference model affect uncertainty in an average or rate.",
+    "phases": [
+      {
+        "anchor": "class4-step-1",
+        "title": "Design the sample",
+        "description": "Step 1 · Name the population, independent unit and selection method."
+      },
+      {
+        "anchor": "class4-step-2",
+        "title": "Build sampling variation",
+        "description": "Steps 2–6 · Follow repeated averages from their center to their spread and shape."
+      },
+      {
+        "anchor": "class4-step-7",
+        "title": "Choose a reference calculation",
+        "description": "Steps 7–11 · Match mean, count or rate questions to what is known about variability."
+      },
+      {
+        "anchor": "class4-step-12",
+        "title": "Check and recommend",
+        "description": "Steps 12–13 · Revisit the design, audit the calculation and defend the next action."
+      }
+    ],
+    "logic": "A sampling distribution describes a statistic across repeated samples. Its center and SE explain reliability; LLN and CLT answer different questions about what larger samples change. The later mean, proportion and t examples are applications to different information, followed by a return to design.",
+    "data": "The service-credit, support-duration, delivery and conversion models are separate synthetic cases. The support scenario motivates a sampling decision; calculations in the other examples do not establish a staffing benefit.",
+    "preview": "<aside class=\"roadmap-preview\" id=\"class4-design-preview\" aria-labelledby=\"class4-design-preview-title\"><h4 id=\"class4-design-preview-title\">Check the sampling story first</h4><p>Before any formula, name the target population, the unit being sampled and how it can enter the sample. Check missing groups, nonresponse and shared outages or stores. More rows do not automatically mean more independent information.</p><p>Start with <a href=\"#class4-step-1\">coverage and selection</a>; return to the <a href=\"#class4-step-12\">full design and diagnostic check</a> before recommending action.</p><p><b>Choose the application:</b> <a href=\"#class4-step-7\">a mean with known population SD</a>, <a href=\"#class4-step-8\">a binary rate and its count</a>, or <a href=\"#class4-step-10\">a mean with estimated spread</a>. These are different modeling situations, not successive formulas for one dataset.</p></aside>",
+    "steps": [
+      {
+        "id": "sampling-step-1",
+        "anchor": "class4-step-1",
+        "short": "Choose the population",
+        "description": "Name whose outcomes matter and how observations enter the sample.",
+        "bridge": "Once the target and selection model are clear, use a tiny service-credit population to see every possible sample average."
+      },
+      {
+        "id": "sampling-step-2",
+        "anchor": "class4-step-2",
+        "short": "Make the averages",
+        "description": "Build an exact distribution from all possible samples.",
+        "bridge": "Each bar collects sample averages with their probabilities. Use those probabilities to find the center of the whole sampling distribution."
+      },
+      {
+        "id": "sampling-center",
+        "anchor": "class4-step-3",
+        "short": "Find the center",
+        "description": "Explain unbiasedness across repeated samples.",
+        "bridge": "A distribution can be centered on the target and still be very wide. Next measure how much its averages vary."
+      },
+      {
+        "id": "sampling-step-3",
+        "anchor": "class4-step-4",
+        "short": "Separate SD from SE",
+        "description": "Distinguish variation among observations from variation among averages.",
+        "bridge": "SE measures the uncertainty of an average under the sampling model. Now follow one growing sample to see what convergence does, and does not, promise."
+      },
+      {
+        "id": "sampling-step-4",
+        "anchor": "class4-step-5",
+        "short": "Follow a growing sample",
+        "description": "Explain the LLN without expecting every new value to improve the average.",
+        "bridge": "The LLN concerns concentration near the target. To calculate approximate probabilities, we also need the shape of the standardized sampling distribution."
+      },
+      {
+        "id": "sampling-step-5",
+        "anchor": "class4-step-6",
+        "short": "Compare many samples",
+        "description": "Use the CLT carefully and distinguish sample size from simulation repetitions.",
+        "bridge": "The sampling distribution now has a center, spread and a possible reference shape. In a separate delivery model, translate a mean cutoff into standard-error units."
+      },
+      {
+        "id": "sampling-step-6",
+        "anchor": "class4-step-7",
+        "short": "Measure an unusual average",
+        "description": "Convert a mean cutoff into a probability under a stated model.",
+        "bridge": "This calculation concerns a numerical mean with known population SD. Switch to a yes/no conversion outcome, where a sample rate is the average of zeros and ones."
+      },
+      {
+        "id": "sampling-step-7",
+        "anchor": "class4-step-8",
+        "short": "Build a sample proportion",
+        "description": "Connect a binary outcome, conversion count and sample rate.",
+        "bridge": "The rate and count describe the same sample on different scales. Translate the business wording into an exact integer event before approximating its probability."
+      },
+      {
+        "id": "sampling-count-event",
+        "anchor": "class4-step-9",
+        "short": "Translate the count event",
+        "description": "Keep strict inequalities and continuity corrections consistent.",
+        "bridge": "Count probabilities depend on their binary model. Return to a numerical mean and remove a different idealization: the population spread is usually unknown."
+      },
+      {
+        "id": "sampling-step-8",
+        "anchor": "class4-step-10",
+        "short": "Estimate unknown spread",
+        "description": "Use sample variation while recognizing uncertainty in the scale estimate.",
+        "bridge": "Replacing the population SD with a sample SD changes the standardized mean. Under independent normal sampling, Student t accounts for that extra uncertainty."
+      },
+      {
+        "id": "sampling-student",
+        "anchor": "class4-step-11",
+        "short": "Use Student t",
+        "description": "Read a benchmark tail using estimated SE and the correct degrees of freedom.",
+        "bridge": "A t probability is conditional on a benchmark and sampling model. Revisit how the records were collected before treating a precise calculation as reliable evidence."
+      },
+      {
+        "id": "sampling-step-9",
+        "anchor": "class4-step-12",
+        "short": "Check the sampling design",
+        "description": "Review independent units, coverage and diagnostics before trusting the SE.",
+        "bridge": "With the assumptions and limitations stated, compare the value of more suitable observations with more computer repetitions, then explain a defensible sampling recommendation."
+      },
+      {
+        "id": "sampling-step-10",
+        "anchor": "class4-step-13",
+        "short": "Make the recommendation",
+        "description": "Explain what would improve the estimate and reproduce the reasoning.",
+        "bridge": "Class 4 asks what samples could occur under a population model. Class 5 reverses that direction: use an observed sample to estimate an unknown target with uncertainty."
+      }
+    ]
+  },
+  "estimation.html": {
+    "classNumber": 5,
+    "partClass": "c5-part",
+    "routeClass": "c5-route",
+    "question": "Is the estimate precise enough for the budget or conversion decision?",
+    "outcome": "Choose an interval, explain its uncertainty and plan a sample size for a useful margin.",
+    "phases": [
+      {
+        "anchor": "class5-step-1",
+        "title": "Choose the target and rule",
+        "description": "Steps 1–4 · Separate the parameter, estimation rule and observed result."
+      },
+      {
+        "anchor": "class5-step-5",
+        "title": "Estimate uncertainty",
+        "description": "Steps 5–8 · Build parallel SE calculations for numerical means and binary rates."
+      },
+      {
+        "anchor": "class5-step-9",
+        "title": "Build and interpret intervals",
+        "description": "Steps 9–12 · Match the interval to the target and interpret repeated coverage."
+      },
+      {
+        "anchor": "class5-step-13",
+        "title": "Plan precision and decide",
+        "description": "Steps 13–15 · Choose a useful margin, plan collection and explain the limits."
+      }
+    ],
+    "logic": "The target comes first. Bias, precision and consistency describe the estimation rule across samples; SE quantifies sampling uncertainty. Mean and rate calculations follow parallel paths that share confidence interpretation, then return to the same question: is the precision useful for the decision?",
+    "data": "The five-order $50 warm-up, the $72 budget sample, repair times and conversion counts are separate synthetic examples. The budget calculation uses 81 orders and a supplied known population SD of $18; the main rate example uses 48 conversions among 200 visitors.",
+    "preview": "<aside class=\"roadmap-preview\" id=\"class5-parallel-paths\" aria-labelledby=\"class5-parallel-paths-title\"><h4 id=\"class5-parallel-paths-title\">Two targets, parallel estimation paths</h4><ul><li><b>Numerical mean:</b> <a href=\"#class5-step-5\">individual spread</a> → <a href=\"#class5-step-6\">mean SE</a> → <a href=\"#class5-step-9\">known-SD interval</a> or <a href=\"#class5-step-11\">estimated-SD t interval</a> → <a href=\"#class5-step-13\">mean precision planning</a>.</li><li><b>Binary rate:</b> <a href=\"#class5-step-7\">conversion estimate</a> → <a href=\"#class5-step-8\">rate SE</a> → <a href=\"#class5-step-12\">rate interval</a> → <a href=\"#class5-step-14\">rate precision planning</a>.</li></ul><p>Both paths use <a href=\"#class5-step-10\">confidence interpretation</a> and finish with <a href=\"#class5-step-15\">a decision note</a>. The numbered route teaches both targets; a real analysis selects the relevant path. Known-SD z and estimated-SD t are choices based on available information, not whichever interval looks preferable.</p><p>Sampling uncertainty does not cover bias from missing groups or unrepresentative records. Check the collection design before treating a narrow interval as reliable.</p></aside>",
+    "steps": [
+      {
+        "id": "estimation-step-1",
+        "anchor": "class5-step-1",
+        "short": "Name the target",
+        "description": "Separate the population parameter, estimator and observed estimate.",
+        "bridge": "A rule can always return a number. Before relying on it, ask where its results would be centered across repeated samples."
+      },
+      {
+        "id": "estimation-step-2",
+        "anchor": "class5-step-2",
+        "short": "Check average error",
+        "description": "Use repeated samples to distinguish bias from a single estimation error.",
+        "bridge": "Two rules can be centered on the same target yet disagree in precision. Compare their sampling variances under the same assumptions."
+      },
+      {
+        "id": "estimation-efficiency",
+        "anchor": "class5-step-3",
+        "short": "Compare precision",
+        "description": "Compare estimator variability without forgetting bias and assumptions.",
+        "bridge": "Precision at one sample size does not say what happens as information grows. Next ask whether both spread and bias move toward the target."
+      },
+      {
+        "id": "estimation-consistency",
+        "anchor": "class5-step-4",
+        "short": "Ask what more data fixes",
+        "description": "Explain consistency and why more observations cannot remove every bias.",
+        "bridge": "Having chosen a target and estimation rule, build the numerical-mean path. First estimate how variable individual observations are."
+      },
+      {
+        "id": "estimation-step-3",
+        "anchor": "class5-step-5",
+        "short": "Estimate individual spread",
+        "description": "Use squared deviations and account for the fitted sample mean.",
+        "bridge": "The sample SD describes individual observations. Divide by the square root of the independent sample size to estimate the mean’s SE under the IID model."
+      },
+      {
+        "id": "estimation-standard-error",
+        "anchor": "class5-step-6",
+        "short": "Estimate mean uncertainty",
+        "description": "Translate individual spread into the estimated SE of an average.",
+        "bridge": "The mean path now has an uncertainty estimate. Next build the parallel calculation for conversions, where every observation is zero or one."
+      },
+      {
+        "id": "estimation-step-4",
+        "anchor": "class5-step-7",
+        "short": "Estimate a conversion rate",
+        "description": "Turn binary records into a sample proportion and its variation.",
+        "bridge": "The observed proportion summarizes individual conversion outcomes. Now measure how that proportion would vary across suitable repeated samples."
+      },
+      {
+        "id": "estimation-rate-error",
+        "anchor": "class5-step-8",
+        "short": "Estimate rate uncertainty",
+        "description": "Keep the rate’s SE distinct from variation among binary observations.",
+        "bridge": "Both paths now have standard errors. Return first to a numerical mean to see how an estimate, SE and reference multiplier form an interval."
+      },
+      {
+        "id": "estimation-step-5",
+        "anchor": "class5-step-9",
+        "short": "Build a mean interval",
+        "description": "Combine the estimate with a margin under the known-SD model.",
+        "bridge": "The endpoints are calculated, but their meaning is still unfinished. Interpret the confidence level through repeated use of the entire procedure."
+      },
+      {
+        "id": "estimation-step-6",
+        "anchor": "class5-step-10",
+        "short": "Read confidence correctly",
+        "description": "Distinguish repeated interval coverage from an individual outcome range.",
+        "bridge": "Confidence describes the procedure under its assumptions. Return to mean estimation when population SD is unknown and must be estimated from the sample."
+      },
+      {
+        "id": "estimation-step-7",
+        "anchor": "class5-step-11",
+        "short": "Use an estimated SD",
+        "description": "Build a t interval with the appropriate assumptions and degrees of freedom.",
+        "bridge": "A numerical mean with estimated SD uses one reference model. Switch to the rate path, where a simple normal interval can behave poorly near zero or one."
+      },
+      {
+        "id": "estimation-step-8",
+        "anchor": "class5-step-12",
+        "short": "Check a rate interval",
+        "description": "Recognize normal-interval limits and compare a suitable rate method.",
+        "bridge": "An interval reveals the precision already achieved. Reverse the calculation to plan how many appropriate observations a future mean estimate would need."
+      },
+      {
+        "id": "estimation-step-9",
+        "anchor": "class5-step-13",
+        "short": "Plan mean precision",
+        "description": "Choose a meaningful margin and state the planning SD.",
+        "bridge": "Mean planning uses variability in the outcome’s units. The parallel rate calculation uses a planning proportion and a margin measured in proportion units."
+      },
+      {
+        "id": "estimation-rate-plan",
+        "anchor": "class5-step-14",
+        "short": "Plan rate precision",
+        "description": "Use a justified planning rate and round the required sample size upward.",
+        "bridge": "Both planning paths connect a useful margin to data collection. Return to the business requirement and report the estimate, uncertainty, design and next action together."
+      },
+      {
+        "id": "estimation-step-10",
+        "anchor": "class5-step-15",
+        "short": "Make the decision",
+        "description": "Compare the interval with a business requirement without promising success.",
+        "bridge": "Class 6 turns a predeclared benchmark into a testable claim. Carry forward the target, SE and assumptions, and match any test to the interval and direction of the question."
+      }
+    ]
+  },
+  "hypothesis-testing.html": {
+    "classNumber": 6,
+    "partClass": "c6-part",
+    "routeClass": "c6-route",
+    "question": "What evidence would justify investigating a broken service promise?",
+    "outcome": "Predeclare the claim and error trade-off, choose a method from the study design, and report the effect with uncertainty.",
+    "phases": [
+      {
+        "anchor": "class6-step-1",
+        "title": "Define the decision rule",
+        "description": "Steps 1–5 · Choose the claim, meaningful effect, error tolerance and evidence scale."
+      },
+      {
+        "anchor": "class6-step-6",
+        "title": "Test one population",
+        "description": "Steps 6–9 · Select a mean or rate method and recover the uncertainty interval."
+      },
+      {
+        "anchor": "class6-step-10",
+        "title": "Choose a comparison method",
+        "description": "Steps 10–15 · Match independent, paired, binary or variability questions to a suitable test."
+      },
+      {
+        "anchor": "class6-step-16",
+        "title": "Report and audit",
+        "description": "Steps 16–17 · Separate evidence from business value and check the software result."
+      }
+    ],
+    "logic": "A test begins with a question and an error rule, then measures evidence under the stated null model. Later tests are alternatives for different outcomes and designs, not a checklist to run on every file. Estimates and intervals keep the size and uncertainty of the effect visible when returning to the decision.",
+    "data": "The 24-hour dispatch promise has no collected sample: its final output is a defensible study plan, not a test result. The minute-based processing studies, conversion samples and packaging-variance examples are separate synthetic cases and cannot supply missing dispatch evidence.",
+    "preview": "<aside class=\"roadmap-preview\" id=\"class6-method-preview\" aria-labelledby=\"class6-method-preview-title\"><h4 id=\"class6-method-preview-title\">Choose the method before reading the p-value</h4><ul><li><b>One population:</b> use the <a href=\"#class6-step-6\">known-SD mean model</a>, the <a href=\"#class6-step-7\">estimated-SD mean model</a>, or a <a href=\"#class6-step-9\">binary-rate model</a>, as the target and information require.</li><li><b>Two numerical means:</b> first check the <a href=\"#class6-step-10\">comparison design</a>. Independent groups commonly use <a href=\"#class6-step-12\">Welch’s method</a>; <a href=\"#class6-step-11\">pooled t</a> needs a justified common variance. Matched observations need <a href=\"#class6-step-13\">one difference per pair</a>.</li><li><b>Other targets:</b> <a href=\"#class6-step-14\">two conversion rates</a> and <a href=\"#class6-step-15\">two population variances</a> answer different business questions.</li></ul><p>The numbered route teaches the alternatives. A real analysis does not run them all and keep the smallest p-value. A preliminary variance test is not required to choose Welch, and non-rejection of equal variances does not prove the pooled model.</p><p>Fix the population, direction, meaningful effect and comparison family before inspecting outcomes. Pairing or a small p-value alone does not establish causation.</p></aside>",
+    "steps": [
+      {
+        "id": "hypothesis-step-1",
+        "anchor": "class6-step-1",
+        "short": "Choose the claim",
+        "description": "State the population target, null benchmark and prespecified direction.",
+        "bridge": "A claim becomes a decision only after its possible mistakes are understood. Compare the cost of a false alarm with the cost of missing a real problem."
+      },
+      {
+        "id": "hypothesis-step-2",
+        "anchor": "class6-step-2",
+        "short": "Distinguish decision errors",
+        "description": "Interpret false alarms and missed effects under the right conditions.",
+        "bridge": "The false-alarm rate describes behavior when the null holds. Power asks whether the planned rule can detect a particular effect large enough to matter."
+      },
+      {
+        "id": "hypothesis-power",
+        "anchor": "class6-step-3",
+        "short": "Plan power",
+        "description": "Plan detection for a meaningful effect rather than for an observed p-value.",
+        "bridge": "A power calculation needs a decision rule. Next express a gap in standard-error units and connect the chosen alternative to the rejection cutoffs."
+      },
+      {
+        "id": "hypothesis-statistic",
+        "anchor": "class6-step-4",
+        "short": "Standardize and set cutoffs",
+        "description": "Keep the statistic, tail and quantile convention aligned.",
+        "bridge": "The rejection cutoff belongs to the predeclared rule. The p-value summarizes how extreme the observed statistic is under that same null reference."
+      },
+      {
+        "id": "hypothesis-step-3",
+        "anchor": "class6-step-5",
+        "short": "Read the p-value",
+        "description": "Measure null-model tail probability without assigning probability to the null.",
+        "bridge": "Apply this evidence logic to a concrete numerical mean, starting with the idealized case where the population SD is supplied."
+      },
+      {
+        "id": "hypothesis-step-4",
+        "anchor": "class6-step-6",
+        "short": "Test a mean with known SD",
+        "description": "Use the known-spread reference with the declared hypothesis and direction.",
+        "bridge": "Population SD is often unknown. Estimating it from the observations changes the reference distribution and brings degrees of freedom into the calculation."
+      },
+      {
+        "id": "hypothesis-student",
+        "anchor": "class6-step-7",
+        "short": "Estimate SD and use t",
+        "description": "Account for estimated spread under the t model’s assumptions.",
+        "bridge": "A rejection decision alone hides the size of the effect. Recover a matching interval and check that its level, direction and method answer the same question."
+      },
+      {
+        "id": "hypothesis-step-5",
+        "anchor": "class6-step-8",
+        "short": "Match test and interval",
+        "description": "Check when an interval and test express the same evidence.",
+        "bridge": "The test–interval connection depends on matching constructions. Next keep the testing logic but change the outcome to a binary conversion rate."
+      },
+      {
+        "id": "hypothesis-step-6",
+        "anchor": "class6-step-9",
+        "short": "Test a conversion rate",
+        "description": "Separate the benchmark rate from the estimate used to describe the sample.",
+        "bridge": "One population has been compared with a benchmark. To compare two observed groups, first identify whether their observations are independent or meaningfully paired."
+      },
+      {
+        "id": "hypothesis-step-7",
+        "anchor": "class6-step-10",
+        "short": "Choose the comparison design",
+        "description": "Use the observation unit, pairing and outcome to select a method.",
+        "bridge": "For two independent numerical groups, pooled t is one possible model. Examine what a justified common variance allows you to combine before comparing it with Welch."
+      },
+      {
+        "id": "hypothesis-pooled",
+        "anchor": "class6-step-11",
+        "short": "Pool a shared variance",
+        "description": "Combine within-group spread only under a defensible common-variance model.",
+        "bridge": "If a shared variance is not justified, keep each group’s variance contribution separate. Welch changes the SE and degrees of freedom while targeting the same mean difference."
+      },
+      {
+        "id": "hypothesis-step-8",
+        "anchor": "class6-step-12",
+        "short": "Allow unequal variances",
+        "description": "Use separate variance estimates for independent-group mean comparisons.",
+        "bridge": "Welch still requires independent groups. When the same units are measured twice or deliberately matched, preserve the pairs and analyze their differences instead."
+      },
+      {
+        "id": "hypothesis-step-9",
+        "anchor": "class6-step-13",
+        "short": "Keep pairs together",
+        "description": "Make one signed difference per pair and preserve independent pairs.",
+        "bridge": "Pairing changes the sampling unit for numerical outcomes. The next example switches to independent binary groups and compares conversion proportions."
+      },
+      {
+        "id": "hypothesis-step-10",
+        "anchor": "class6-step-14",
+        "short": "Compare conversion rates",
+        "description": "Distinguish the equality-test SE from the interval’s uncertainty calculation.",
+        "bridge": "A conversion comparison concerns population rates. Sometimes the business target is variability instead; then compare variances rather than means or rates."
+      },
+      {
+        "id": "hypothesis-step-11",
+        "anchor": "class6-step-15",
+        "short": "Compare population variances",
+        "description": "Fix the ratio order and respect the F test’s normality sensitivity.",
+        "bridge": "Every test answers a particular target question under assumptions. Return to effect size, uncertainty and the consequences of action before writing the recommendation."
+      },
+      {
+        "id": "hypothesis-step-12",
+        "anchor": "class6-step-16",
+        "short": "Interpret the business result",
+        "description": "Report magnitude and uncertainty without equating non-rejection with no effect.",
+        "bridge": "Make the interpretation reproducible. Check that software uses the intended design, subtraction order, reference distribution and tail rather than copying an isolated p-value."
+      },
+      {
+        "id": "hypothesis-tools",
+        "anchor": "class6-step-17",
+        "short": "Audit the calculations",
+        "description": "Reproduce the test and interval with the right inputs, signs and assumptions.",
+        "bridge": "Class 7 extends mean comparisons to several groups and combinations of factors. Carry forward independent units, planned comparisons, multiplicity control and the distinction between evidence and business value."
+      }
+    ]
+  },
+  "anova.html": {
+    "classNumber": 7,
+    "partClass": "c7-part",
+    "routeClass": "c7-route",
+    "question": "Which process differences matter, and does an offer’s effect depend on the day?",
+    "outcome": "Separate group variation from noise, interpret interaction and support a qualified business recommendation.",
+    "phases": [
+      {
+        "anchor": "class7-step-1",
+        "title": "Frame the group comparison",
+        "description": "Steps 1–4 · Keep independent units, define the baseline and account for variation."
+      },
+      {
+        "anchor": "class7-step-5",
+        "title": "Read evidence and comparisons",
+        "description": "Steps 5–8 · Distinguish the global mean question from planned comparison families."
+      },
+      {
+        "anchor": "class7-step-9",
+        "title": "Read a factorial experiment",
+        "description": "Steps 9–15 · Follow cell means, interaction and the separate factor questions."
+      },
+      {
+        "anchor": "class7-step-16",
+        "title": "Audit and recommend",
+        "description": "Steps 16–18 · Check replication and assumptions, report conditional results and reproduce the table."
+      }
+    ],
+    "logic": "One-way ANOVA compares variation between process means with variation within processes. Global and specific comparisons answer different questions. A separate two-factor retailer case then asks whether an offer difference changes by day type; the final design check returns to the independent units that made the uncertainty calculation possible.",
+    "data": "The three packing processes use twelve synthetic processing times in minutes. The offer-by-day retailer case is a different twelve-observation dataset in dollars per transaction. Hypothetical unequal group sizes, future sales mixes and one-observation-per-cell examples change the question or design; they are not additional observations. Spending is not profit.",
+    "preview": "<aside class=\"roadmap-preview\" id=\"class7-design-preview\" aria-labelledby=\"class7-design-preview-title\"><h4 id=\"class7-design-preview-title\">Plan the experiment and comparisons first</h4><p>Name the response, factors, target population and independent experimental or sampling unit before calculating. Copies and repeated measurements do not create independent replication. Random assignment can support a causal comparison; group labels alone cannot.</p><p>For the two-factor example, check that all offer-by-day cells are present and independently replicated. Its simple decomposition uses equal replication. Missing cells, unequal replication or correlated observations need an appropriate different model. Begin with <a href=\"#class7-step-1\">the unit of analysis</a> and return to the <a href=\"#class7-step-16\">full design review</a>.</p><p><b>Plan specific questions before outcomes:</b> a single prespecified contrast, or a comparison family with suitable error control, does <b>not</b> require a significant omnibus F first. Planning several comparisons does not remove multiplicity. The <a href=\"#class7-step-8\">comparison-family step</a> follows the global test for teaching clarity; it is not a mandatory testing gate. Read the <a href=\"#anova-comparison-plan\">full distinction</a>.</p></aside>",
+    "steps": [
+      {
+        "id": "anova-step-1",
+        "anchor": "class7-step-1",
+        "short": "Keep orders with their process",
+        "description": "Identify the numerical response, group labels and independent units.",
+        "bridge": "Once each observation has its correct group, choose a common baseline. The grand sample mean weights observations, which may differ from equally weighting processes."
+      },
+      {
+        "id": "anova-step-2",
+        "anchor": "class7-step-2",
+        "short": "Choose the grand mean",
+        "description": "Match the average’s weights to the target and ANOVA calculation.",
+        "bridge": "The grand mean gives every order a common reference. Split each departure into a group-mean difference and a within-group residual before summing squares."
+      },
+      {
+        "id": "anova-step-3",
+        "anchor": "class7-step-3",
+        "short": "Split the variation",
+        "description": "Separate between-group and within-group sums of squares.",
+        "bridge": "Sums of squares measure total variation, but different components use different numbers of independent directions. Count degrees of freedom before comparing average squared variation."
+      },
+      {
+        "id": "anova-mean-squares",
+        "anchor": "class7-step-4",
+        "short": "Count degrees of freedom",
+        "description": "Convert sums of squares into comparable mean squares.",
+        "bridge": "Under equal population means, both mean squares estimate the same error variance. Their ratio asks whether between-group variation is large relative to within-group noise."
+      },
+      {
+        "id": "anova-step-4",
+        "anchor": "class7-step-5",
+        "short": "Compare signal with noise",
+        "description": "Build the F ratio and retain its numerator and denominator roles.",
+        "bridge": "A large ratio needs a reference scale. Use the F distribution with the correct degrees of freedom to measure its right-tail probability under equal means."
+      },
+      {
+        "id": "anova-step-5",
+        "anchor": "class7-step-6",
+        "short": "Read right-tail evidence",
+        "description": "Use the correct F reference for the global equal-means question.",
+        "bridge": "The tail probability evaluates one global null. Translate it into a statement about population means without claiming that a particular pair differs."
+      },
+      {
+        "id": "anova-step-6",
+        "anchor": "class7-step-7",
+        "short": "State the global conclusion",
+        "description": "Explain what the omnibus result can and cannot identify.",
+        "bridge": "Specific differences need their own planned analysis and family error control. They do not require a significant global F first; the next step explains that separate comparison task."
+      },
+      {
+        "id": "anova-comparisons",
+        "anchor": "class7-step-8",
+        "short": "Compare a planned family",
+        "description": "Use adjusted intervals to distinguish evidence from useful savings.",
+        "bridge": "One-way comparisons address one factor. Switch to new retailer data with two offers and two day types, where the effect of one factor may depend on the other."
+      },
+      {
+        "id": "anova-step-7",
+        "anchor": "class7-step-9",
+        "short": "Collect every combination",
+        "description": "Identify complete, replicated cells in the two-factor design.",
+        "bridge": "The four cells define the comparisons. Read their means first, then average across levels only with weights appropriate to the question."
+      },
+      {
+        "id": "anova-step-9",
+        "anchor": "class7-step-10",
+        "short": "Read cell and marginal means",
+        "description": "Check which factor levels and future mix an average represents.",
+        "bridge": "Cell and marginal means show the pattern. Express each cell mean as a baseline, two main effects and an interaction contribution to see what the averages omit."
+      },
+      {
+        "id": "anova-step-8",
+        "anchor": "class7-step-11",
+        "short": "Build cell means in layers",
+        "description": "Separate main effects from the remaining interaction pattern.",
+        "bridge": "The interaction terms describe changing effects across levels. See that change directly by comparing the offer gains on weekdays and weekends."
+      },
+      {
+        "id": "anova-step-12",
+        "anchor": "class7-step-12",
+        "short": "See what averages can hide",
+        "description": "Recognize unequal effects even when the lines do not cross.",
+        "bridge": "The plot shows whether the offer gain changes by day. Now partition total squared variation into the two main effects, interaction and within-cell noise."
+      },
+      {
+        "id": "anova-step-10",
+        "anchor": "class7-step-13",
+        "short": "Separate four sources",
+        "description": "Track factor, interaction and error variation in the balanced design.",
+        "bridge": "The interaction sum of squares measures departure from additivity. In this two-by-two example, a difference of offer differences expresses that departure in business units."
+      },
+      {
+        "id": "anova-interaction-contrast",
+        "anchor": "class7-step-14",
+        "short": "Measure the changing gain",
+        "description": "Calculate the interaction contrast and relate it to noise.",
+        "bridge": "The changing offer gain is one question. Keep its interaction test distinct from the two main-effect tests, even though all use the same within-cell error estimate."
+      },
+      {
+        "id": "anova-step-11",
+        "anchor": "class7-step-15",
+        "short": "Ask three distinct questions",
+        "description": "Separate each main effect from interaction before recommending action.",
+        "bridge": "The three F ratios rely on credible within-cell noise. Return to the design and count independent replications before interpreting their precision."
+      },
+      {
+        "id": "anova-step-13",
+        "anchor": "class7-step-16",
+        "short": "Count independent replications",
+        "description": "Check design, residuals, variance and balance rather than merely counting rows.",
+        "bridge": "With the limits of the design and uncertainty stated, report the offer differences by day and assess whether they matter commercially."
+      },
+      {
+        "id": "anova-step-14",
+        "anchor": "class7-step-17",
+        "short": "Make a conditional recommendation",
+        "description": "Keep day-specific estimates, business costs and causal limits visible.",
+        "bridge": "A recommendation should be auditable. Rebuild the design, sums of squares, degrees of freedom and tests instead of reproducing only the smallest p-value."
+      },
+      {
+        "id": "anova-software",
+        "anchor": "class7-step-18",
+        "short": "Audit the ANOVA table",
+        "description": "Reproduce the model and comparisons with the correct error denominator.",
+        "bridge": "Class 8 replaces categorical group labels with a numerical predictor. The same variation-versus-noise reasoning supports a fitted line, while prediction and causal spending decisions remain distinct."
+      }
+    ]
+  },
+  "regression.html": {
+    "classNumber": 8,
+    "partClass": "c8-part",
+    "routeClass": "c8-route",
+    "question": "Can this advertising-demand line support a defensible forecast for a comparable future week?",
+    "outcome": "Fit and diagnose a line, distinguish mean from individual prediction, and evaluate usefulness on outcomes the model has not seen.",
+    "phases": [
+      {
+        "anchor": "class8-step-1",
+        "title": "Fit in business units",
+        "description": "Steps 1–6 · Preserve paired observations, choose least squares and interpret the fitted line."
+      },
+      {
+        "anchor": "class8-step-7",
+        "title": "Quantify uncertainty",
+        "description": "Steps 7–11 · State the model, diagnose residuals and assess coefficient uncertainty."
+      },
+      {
+        "anchor": "class8-step-12",
+        "title": "Assess fit and future performance",
+        "description": "Steps 12–14 · Explain R², compare a future forecast with a baseline and connect the slope tests."
+      },
+      {
+        "anchor": "class8-step-15",
+        "title": "Predict, challenge and report",
+        "description": "Steps 15–19 · Select the prediction target, check the model’s reach and audit a bounded recommendation."
+      }
+    ],
+    "logic": "Least squares fits the observed pairs; inference adds assumptions about how outcomes vary. R² describes training fit, while the future-week exercise checks an unseen outcome against a frozen baseline. Mean and individual prediction need different intervals. Neither a precise slope nor a successful forecast alone identifies the causal return on advertising.",
+    "data": "The main case has eight synthetic market-weeks, with spend in $100 units and demand in tens of orders. The hypothetical ninth week, added leverage points and causal-mechanism illustration are separate exercises, not extra evidence in the original fit. The software appendix also retains a separate five-point source dataset.",
+    "preview": "<aside class=\"roadmap-preview\" id=\"class8-evaluation-preview\" aria-labelledby=\"class8-evaluation-preview-title\"><h4 id=\"class8-evaluation-preview-title\">A good fit still needs a future-data check</h4><p>In <a href=\"#class8-step-13\">step 13</a>, the visible <a href=\"#em-future-check-bridge\">future-week exercise</a> freezes the fitted line and original mean-only baseline, predicts before observing the outcome, and compares their errors on the same hypothetical new week.</p><p>One week cannot establish which rule forecasts better. Evaluate repeated predictions on later comparable outcomes using a chosen error measure. For time-ordered data, use only information available at each forecast date; keep fresh data for a final check after model selection.</p><p><b>Choose the prediction target:</b> <a href=\"#class8-step-15\">average demand at a given spend</a> needs a mean-response interval; <a href=\"#class8-step-16\">one new week</a> also includes fresh outcome noise. Check <a href=\"#class8-step-17\">range, process stability and model limits</a> before use. Predictive usefulness does not by itself establish causal advertising lift.</p></aside>",
+    "steps": [
+      {
+        "id": "regression-step-1",
+        "anchor": "class8-step-1",
+        "short": "Keep market-weeks together",
+        "description": "Preserve each spend-demand pair and its measurement units.",
+        "bridge": "The paired observations suggest a relationship. Read what a line’s intercept and slope would mean before choosing numerical coefficients."
+      },
+      {
+        "id": "regression-step-2",
+        "anchor": "class8-step-2",
+        "short": "Read the line in units",
+        "description": "Interpret fitted baseline and change without promising each outcome.",
+        "bridge": "A plausible line needs a fitting rule. Compare squared misses so that “best fitting” has a precise meaning for these observed pairs."
+      },
+      {
+        "id": "regression-step-3",
+        "anchor": "class8-step-3",
+        "short": "Compare prediction rules",
+        "description": "Use squared errors to compare a candidate line with a baseline.",
+        "bridge": "Least squares defines what to minimize. Center the observations and build the sums that turn this visual fitting problem into a calculation."
+      },
+      {
+        "id": "regression-centered-sums",
+        "anchor": "class8-step-4",
+        "short": "Build centered sums",
+        "description": "Calculate predictor spread and paired co-movement around the means.",
+        "bridge": "The centered sums measure horizontal spread and joint tilt. Their ratio gives the least-squares slope, after which the means determine the intercept."
+      },
+      {
+        "id": "regression-step-4",
+        "anchor": "class8-step-5",
+        "short": "Solve for the fitted line",
+        "description": "Derive coefficients and verify the least-squares balances.",
+        "bridge": "The fitted line now has numerical coefficients. Change the measurement scale to see which numbers change and which predictions remain the same."
+      },
+      {
+        "id": "regression-step-5",
+        "anchor": "class8-step-6",
+        "short": "Change units carefully",
+        "description": "Explain coefficient rescaling without changing the fitted outcomes.",
+        "bridge": "The fitted line can be computed without a probability model. To attach uncertainty or test a population slope, state the additional assumptions about errors and the mean relationship."
+      },
+      {
+        "id": "regression-step-6",
+        "anchor": "class8-step-7",
+        "short": "Separate fitting from inference",
+        "description": "Distinguish an algebraic fit from a population uncertainty model.",
+        "bridge": "The model makes assumptions about unobserved errors. Inspect the residuals we can calculate for patterns that may challenge those assumptions."
+      },
+      {
+        "id": "regression-step-7",
+        "anchor": "class8-step-8",
+        "short": "Diagnose the misses",
+        "description": "Distinguish residuals from errors and inspect patterns, spread and time order.",
+        "bridge": "Residual patterns help question the model. Their squared size also estimates the noise left after fitting the intercept and slope."
+      },
+      {
+        "id": "regression-noise",
+        "anchor": "class8-step-9",
+        "short": "Estimate unexplained noise",
+        "description": "Use residual variation and account for two fitted coefficients.",
+        "bridge": "The estimated noise scale tells us how much the fitted slope could vary across suitable repeated samples. Use it to build the slope’s SE, test and interval."
+      },
+      {
+        "id": "regression-step-8",
+        "anchor": "class8-step-10",
+        "short": "Test and bracket the slope",
+        "description": "Report slope magnitude and uncertainty without claiming causal lift.",
+        "bridge": "The slope describes change per unit of spend. The intercept answers a different target question, which may be outside the observed range unless the predictor is recentered."
+      },
+      {
+        "id": "regression-intercept",
+        "anchor": "class8-step-11",
+        "short": "Choose the baseline",
+        "description": "Interpret or recenter the intercept without changing the fitted line.",
+        "bridge": "Coefficients describe the line’s position and tilt. Now compare its fitted outcomes with the mean-only baseline by splitting the sample’s total variation."
+      },
+      {
+        "id": "regression-step-9",
+        "anchor": "class8-step-12",
+        "short": "Split total variation",
+        "description": "Separate fitted and residual variation for a line with an intercept.",
+        "bridge": "The split shows how much squared error the fitted line removes in this sample. Express that share as R², then check a forecast on a new outcome the fitting process did not use."
+      },
+      {
+        "id": "regression-step-10",
+        "anchor": "class8-step-13",
+        "short": "Check fit and future errors",
+        "description": "Interpret R² and compare a frozen forecast with a baseline on a new week.",
+        "bridge": "Future errors assess predictive performance on unseen outcomes. Return to the original training data for a different connection: with one slope, the global F test restates its two-sided t test rather than adding independent evidence.",
+        "routeTitle": "Check fit and future errors",
+        "headingTitle": "Check fit and future errors"
+      },
+      {
+        "id": "regression-step-11",
+        "anchor": "class8-step-14",
+        "short": "Connect the slope tests",
+        "description": "Explain F = t² and distinguish its two-sided evidence from directional tests.",
+        "bridge": "Evidence against a zero slope does not supply a forecast interval. Choose a spend level and first estimate uncertainty in the average response there."
+      },
+      {
+        "id": "regression-step-12",
+        "anchor": "class8-step-15",
+        "short": "Estimate average demand",
+        "description": "Build an interval for the conditional mean at a stated spend level.",
+        "bridge": "An average-response interval describes uncertainty in the fitted mean. A single future week has its own additional outcome noise, so it needs a wider prediction interval under the same model."
+      },
+      {
+        "id": "regression-step-13",
+        "anchor": "class8-step-16",
+        "short": "Predict one new week",
+        "description": "Include fresh outcome noise as well as estimation uncertainty.",
+        "bridge": "Both intervals rely on the model remaining appropriate. Check observed range, predictor leverage, unusual misses and changes in the underlying process before using a forecast."
+      },
+      {
+        "id": "regression-step-14",
+        "anchor": "class8-step-17",
+        "short": "Challenge the model’s reach",
+        "description": "Check extrapolation, influence and model assumptions before use.",
+        "bridge": "With the model’s reach and uncertainty stated, separate the capacity forecast from the causal and financial evidence needed to raise an advertising budget."
+      },
+      {
+        "id": "regression-step-15",
+        "anchor": "class8-step-18",
+        "short": "Make a bounded recommendation",
+        "description": "Match prediction, causal claims and commercial costs to their evidence.",
+        "bridge": "A bounded recommendation should be reproducible. Audit the pairs, units, coefficients, noise estimates and the interval for the actual forecast target."
+      },
+      {
+        "id": "regression-software",
+        "anchor": "class8-step-19",
+        "short": "Audit the regression result",
+        "description": "Reproduce the fitted model, inference and prediction target.",
+        "bridge": "Use the full course chain on a new business question: define the target and design, preserve the records, quantify uncertainty, check new outcomes and report what the evidence can support."
       }
     ]
   }

@@ -1,5 +1,10 @@
 {
-  "index.html": "32a34313a25b561bd8f6ec233f1dbd042199c895b158a037bdf9a6b8ba0876c8",
-  "probability.html": "6487fb1efdc8db389d2c0abb308b94a82711f5076f202fc974dbc67d250b0218",
-  "random-variables.html": "014e921bc57c7e4b2977d0e14750b8f8d4fc0ba6ff1cfd7e9f4f92bc5c6157c8"
+  "index.html": "e185e5475bfe5d92528d7b524f0ee2e5f3cd65b5bacf05fedce1399aa6d3f36b",
+  "probability.html": "23a768b3c0069d1751c2c857c8aed96a0a620b72dc24faaa67b146dc47dbedcd",
+  "random-variables.html": "8978a1e203f1b207594b37baba98d133cc9ea38ab8e8d4ff162f46a112e8da9c",
+  "sampling-distributions.html": "08336fee0bbff9e40661d2c32c6e90792c432fc15ae339dfcff3fa27da75696a",
+  "estimation.html": "9120019cd2a4636aef33eaaa61e9ac340b71e5e7ee0e6cbf25538f0ada43e0fc",
+  "hypothesis-testing.html": "e7c5d8dbafda34091662c010b58674f48f372f4100d37858ae9f876b6d9c0e51",
+  "anova.html": "ea428f67ee2228a9d876954d99a92d2db97c02f1c55a26dbfd9471d5a0368e1d",
+  "regression.html": "096ab0ad98d9e19451ee09c263ebd409c5b20cec09efa67d92c8d9e0b64a4f6a"
 }

@@ -38,7 +38,7 @@
  all.addEventListener('click',()=>{showAll=!showAll;display();});
  window.addEventListener('hashchange',()=>reveal(true));
  // Same-anchor navigation still reveals a step if its display state was changed.
- document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(a&&a.hash===location.hash){e.preventDefault();reveal(true);}});
+ document.addEventListener('click',e=>{if(e.defaultPrevented||e.button>0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;const a=e.target.closest('a[href^="#"]');if(a&&a.hash===location.hash){e.preventDefault();reveal(true);}});
  body.classList.add('c1-ready');controls.hidden=false;document.querySelectorAll('.visual-controls').forEach(c=>c.hidden=false);display();reveal(false);
  const values=[18,22,24,25,28,30,32,35,38,42,46,200];
  const centerCaptions={original:'Each bar is one purchase. Eleven are $18–$46; one is $200.',equal:'Picture the same $540 shared equally: 12 × $45. These equal shares illustrate the mean; they are not new observed orders.',middle:'Keep the original orders sorted. Positions 6 and 7 are $30 and $32. Their midpoint, $31, is the median.'};

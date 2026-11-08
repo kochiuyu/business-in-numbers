@@ -22,7 +22,7 @@ function enhance(html,file){
  const routeLinks=ns.filter(n=>n.tag==='a'&&n.start>route.start&&n.end<route.end);
  if(routeLinks.length!==p.steps.length)throw Error('Roadmap link mismatch');
  const originalLinks=new Map(routeLinks.map(n=>[n.attrs.href,html.slice(n.start,n.end)]));
- const link=s=>{const old=originalLinks.get('#'+s.anchor);if(!old)throw Error('Missing legacy route anchor: '+s.anchor);return old.replace(/<span>\d+<\/span>/,'<span>'+String(p.steps.indexOf(s)+1).padStart(2,'0')+'</span>').replace('</a>','<small class="route-purpose">'+esc(s.description)+'</small></a>');};
+ const link=s=>{const old=originalLinks.get('#'+s.anchor);if(!old)throw Error('Missing legacy route anchor: '+s.anchor);return (s.routeTitle?old.replace(/<b>[\s\S]*?<\/b>/,'<b>'+esc(s.routeTitle)+'</b>'):old).replace(/<span>\d+<\/span>/,'<span>'+String(p.steps.indexOf(s)+1).padStart(2,'0')+'</span>').replace('</a>','<small class="route-purpose">'+esc(s.description)+'</small></a>');};
  const routeBody=p.steps.map(s=>route.tag==='ol'?'<li>'+link(s)+'</li>':link(s)).join('');
  patch(route.openEnd,route.end-('</'+route.tag+'>').length,routeBody);
  const roadmap=`<section class="lesson-roadmap" id="class-${p.classNumber}-roadmap" aria-labelledby="roadmap-question"><p class="roadmap-kicker">THE QUESTION BEHIND THE STEPS</p><h3 id="roadmap-question">${esc(p.question)}</h3><p class="roadmap-outcome"><b>By the end:</b> ${esc(p.outcome)}</p><ol class="roadmap-phases">${p.phases.map((phase,i)=>`<li><a href="#${esc(phase.anchor)}"><span class="roadmap-phase-number">${i+1}</span><b>${esc(phase.title)}</b><span>${esc(phase.description)}</span></a>${i<p.phases.length-1?'<span class="roadmap-connector" aria-hidden="true">↓</span>':''}</li>`).join('')}</ol><p class="roadmap-logic"><b>How the pieces connect:</b> ${esc(p.logic)}</p><p class="roadmap-data"><b>Keep the examples straight:</b> ${esc(p.data)}</p>${p.preview||''}</section>`;
@@ -31,6 +31,7 @@ function enhance(html,file){
  const ordered=p.steps.map((s,i)=>{
   const n=byId.get(s.id);if(!n)throw Error('Unknown semantic step: '+s.id);
   let frag=html.slice(n.start,n.end);
+  if(s.headingTitle)frag=frag.replace(/(<h2\b[^>]*>)[\s\S]*?(<\/h2>)/,'$1'+esc(s.headingTitle)+'$2');
   if(p.reorder){
    frag=frag.replace(/STEP \d+ (?:\/|OF) \d+/,`STEP ${i+1} / ${parts.length}`);
    frag=frag.replace(new RegExp(`(<span class="c${p.classNumber}-kicker">)\\d+ /`),`$1${String(i+1).padStart(2,'0')} /`);
@@ -43,7 +44,7 @@ function enhance(html,file){
   }
   const local=nodes(frag),nav=local.find(n=>has(n,p.classNumber===1?'visual-step-nav':`c${p.classNumber}-step-nav`));
   if(!nav)throw Error('Missing step navigation '+s.id);
-  const addition=(s.addition||'')+`<aside class="step-bridge" aria-label="Connection to the next idea"><b>${i===parts.length-1?'Carry this into the next class':'Why this leads to the next step'}</b><p>${esc(s.bridge)}</p></aside>`;
+  const addition=(s.addition||'')+`<aside class="step-bridge" aria-label="Connection to the next idea"><b>${i===parts.length-1?(p.classNumber===8?'Carry this into your next analysis':'Carry this into the next class'):'Why this leads to the next step'}</b><p>${esc(s.bridge)}</p></aside>`;
   return frag.slice(0,nav.start)+addition+frag.slice(nav.start);
  });
  if(p.reorder){

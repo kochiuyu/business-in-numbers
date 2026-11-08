@@ -33,4 +33,40 @@ const x=[1,2,5,8,9],mean=x.reduce((a,b)=>a+b)/5,variance=x.reduce((s,v)=>s+(v-me
 ok(first.includes('does <b>not</b> make a distribution normal'),'no normality implied by standardization');
 const css=fs.readFileSync('src/lesson-roadmaps.css','utf8');ok(css.includes('a small.route-purpose{display:block'),'descriptions override old hidden style');ok(css.includes('@media(max-width:700px)'),'narrow layout');ok(css.includes('outline:3px solid'),'keyboard focus');
 const repeatCode=fs.readFileSync('src/class-one.js','utf8');ok(repeatCode.includes('if(a&&a.hash===location.hash){e.preventDefault();reveal(true);}'),'same-anchor click cancels native focus reset before revealing heading');
+if(R.plans['probability.html'])ok(R.plans['probability.html'].steps.find(s=>s.id==='prob-step-6').bridge.includes('independent conditional on the true state'),'repeated-signal bridge states conditional independence');
+// Distinct branches and preview checks are visible teaching, not hidden guidance.
+const branchChecks={
+ 'sampling-distributions.html':['class4-design-preview','different modeling situations'],
+ 'estimation.html':['class5-parallel-paths','parallel estimation paths','Known-SD z and estimated-SD t'],
+ 'hypothesis-testing.html':['class6-method-preview','24-hour'],
+ 'anova.html':['class7-design-preview'],
+ 'regression.html':['class8-evaluation-preview','em-future-check-bridge','Carry this into your next analysis']
+};
+for(const [file,tokens]of Object.entries(branchChecks))if(R.plans[file]){
+ const html=fs.readFileSync('dist/'+file,'utf8');for(const token of tokens)ok(html.includes(token),file+' branch or preview '+token);
+ const ns=R.nodes(html),preview=ns.find(n=>has(n,'roadmap-preview'));ok(preview&&!ns.some(n=>n.tag==='details'&&inside(preview,n)),file+' preview visible');
+}
+if(R.plans['regression.html']){
+ const html=fs.readFileSync('dist/regression.html','utf8'),ns=R.nodes(html),exercise=ns.find(n=>n.attrs.id==='em-future-check-bridge');
+ ok(exercise&&!ns.some(n=>n.tag==='details'&&inside(exercise,n)),'future-data evaluation stays visible');
+ eq(ns.filter(n=>has(n,'c8-part')).length,19,'no redundant twentieth step');
+ ok(html.includes('Check fit and future errors'),'step card explicitly names evaluation');
+ const step13=ns.find(n=>n.attrs.id==='regression-step-10'),heading=ns.find(n=>n.tag==='h2'&&inside(n,step13));eq(html.slice(heading.openEnd,heading.end-5),'Check fit and future errors','step heading matches evaluation card');
+ const forecast=(247/28+(27/14)*6)*10;
+ eq(forecast.toFixed(4),'203.9286','independent fixed-line prediction for hypothetical $600 week');
+ eq(((180-forecast)**2).toFixed(4),'572.5765','future squared error, not training error');
+ eq((180-175)**2,25,'frozen mean-only baseline error');
+ ok(!html.includes('Carry this into the next class'),'course ends without fictitious next class');
+}
+// Intercept an ordinary repeated anchor, but preserve modified-click browser behavior.
+const names=['one','two','three','four','five','six','seven','eight'];
+for(const p of Object.values(R.plans)){
+ const js=fs.readFileSync('src/class-'+names[p.classNumber-1]+'.js','utf8');
+ const snippet=js.match(/document\.addEventListener\('click',e=>\{[^\n]*?reveal\(true\);\}\}\);/)[0];
+ let handler,reveals=0,prevented=false;
+ require('node:vm').runInNewContext(snippet,{document:{addEventListener:(_,f)=>handler=f},location:{hash:'#same'},reveal:()=>reveals++});
+ const event=extra=>({button:0,target:{closest:()=>({hash:'#same'})},preventDefault(){prevented=true},...extra});
+ handler(event({}));eq(reveals,1,'ordinary repeated click reveals heading');ok(prevented,'ordinary repeated click cancels native focus reset');
+ for(const extra of [{ctrlKey:true},{metaKey:true},{shiftKey:true},{altKey:true},{button:1},{defaultPrevented:true}]){prevented=false;reveals=0;handler(event(extra));eq(reveals,0,'modified/already-handled click stays native');eq(prevented,false,'modified click is not canceled');}
+}
 console.log(`Passed ${checks} roadmap, description, bridge, preservation, stable-anchor and arithmetic assertions.`);
