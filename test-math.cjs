@@ -26,7 +26,7 @@ equal(options.trust,false);equal(options.throwOnError,true);equal(options.strict
 const unsafe=renderMath('unsafe',{title:'Unsafe',text:'No active content',tex:'\\href{javascript:alert(1)}{x}'});
 check(!unsafe.includes('<a '),'Untrusted TeX must not create links');
 throws(()=>renderMath('unsafe-html',{title:'Unsafe',text:'No raw HTML',tex:'\\htmlStyle{color:red}{x}'}));
-const html=fs.readFileSync('dist/index.html','utf8');
+const html=fs.readFileSync('dist/descriptive-statistics.html','utf8');
 const standalone=fs.readFileSync('class1-standalone.html','utf8');
 equal((html.match(/<math xmlns=/g)||[]).length,Object.keys(lesson).length);
 check(!html.includes('{{math:'),'Uncompiled source placeholder');
@@ -36,7 +36,7 @@ check(!/<(?:script|link)[^>]+(?:src|href)=/i.test(standalone),'Standalone refere
 check(!/url\((?!data:)/i.test(standalone),'Standalone has non-embedded fonts');
 check(html.includes('<noscript>'),'No-JavaScript explanation missing');
 check(fs.existsSync('dist/vendor/katex/LICENSE'),'KaTeX license missing');
-const original=fs.readFileSync('src/index.html','utf8');
+const original=fs.readFileSync('src/descriptive-statistics.html','utf8');
 const ids=t=>[...t.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]).sort();
 const currentIds=new Set(ids(html));
 for(const id of ids(original)) check(currentIds.has(id),`Existing interaction ID removed: ${id}`);

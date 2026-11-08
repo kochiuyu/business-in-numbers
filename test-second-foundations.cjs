@@ -23,7 +23,7 @@ function lessons(source) {
 // also reconstructs the earlier shape lesson. Class 3 fixes only the phrase
 // "raw fourth central moment"; test-bridges-random.cjs proves other text retained.
 const baseline = {
-  "index.html": [
+  "descriptive-statistics.html": [
     "b5f8d3050d25e4cce8119bf2732c5fbf721530ae54b2c9fc98a5906ba89f40c9",
     "51588b597e73dcb3deb503517b1e49d7723e9e522211ab54710c921c92818127",
     "a1241ebb4c7ba8329e7053448f6d7b0fa4662a5276efc154ee6b885f1e735b9d",
@@ -58,9 +58,9 @@ const baseline = {
     "7cf36d1afae4520c4b751514d099ee293a48e6b8a2eb1a321d8a66b733bce167"
   ]
 };
-for (const [i, file] of ['index.html', 'probability.html', 'random-variables.html'].entries()) {
+for (const [i, file] of ['descriptive-statistics.html', 'probability.html', 'random-variables.html'].entries()) {
   const source = fs.readFileSync('src/' + file, 'utf8').replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'').replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'');
-  const snapshotSource = file === 'index.html' ? require('./scripts/class-one-preservation.cjs').restore(fs.readFileSync('src/' + file, 'utf8')).replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'').replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'') : file === 'probability.html' ? require('./scripts/class-two-preservation.cjs').restore(source) : require('./scripts/class-three-preservation.cjs').restore(source);
+  const snapshotSource = file === 'descriptive-statistics.html' ? require('./scripts/class-one-preservation.cjs').restore(fs.readFileSync('src/' + file, 'utf8')).replace(/<!-- shape-contribution-visual:start -->[\s\S]*?<!-- shape-contribution-visual:end -->/g,'').replace(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>\n/,'') : file === 'probability.html' ? require('./scripts/class-two-preservation.cjs').restore(source) : require('./scripts/class-three-preservation.cjs').restore(source);
   assert.deepEqual(lessons(snapshotSource).map(s => crypto.createHash('sha256').update(s).digest('hex')), baseline[file], 'Reviewed lesson disclosures match the protected baseline: ' + file); checks++;
   const blocks = source.match(/<section class="second-foundation"[\s\S]*?<\/section>/g) || [];
   ok(blocks.length === 1, 'One purposeful bridge per class');

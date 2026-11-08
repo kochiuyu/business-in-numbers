@@ -15,7 +15,7 @@ const asymmetric=[7,9,9,9,9,9,12,12,12,12];near(moments(asymmetric).mean,10);nea
 ok(!asymmetric.includes(13),'no mirror for $7 about the $10 mean');
 const discrete=[9,10,10,10,10,11];near(moments(discrete).m2,1/3);near(moments(discrete).m4,1/3);near(moments(discrete).pearson,3);near(Stats.describe(discrete).excess,0);
 ok(Stats.describe([10,10,10,10]).skew===null,'constant skew undefined');ok(Stats.describe([10,10,10,10]).excess===null,'constant kurtosis undefined');
-const source=fs.readFileSync('src/index.html','utf8'),built=fs.readFileSync('dist/index.html','utf8');
+const source=fs.readFileSync('src/descriptive-statistics.html','utf8'),built=fs.readFileSync('dist/descriptive-statistics.html','utf8');
 for(const html of [source,built]){
  for(const id of ['shape-moment-worked','shape-benchmark-checks','shape-zero-lab','shape-zero-skew-heading','shape-zero-kurt-heading'])ok(html.includes(`id="${id}"`),id+' exists');
  for(const phrase of ['64 dollars²','0.0625','2.2361','−27 − 5 + 32 = 0','SKEW.P(A2:A6)','corrected sample excess','Undefined is not zero','not a probability of an extreme event','do not claim that the records are the entire business population'])ok(html.includes(phrase),phrase);

@@ -4,7 +4,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),crypto=require(
 const Stats=require('./src/stats.js');let checks=0;
 const ok=(v,m)=>{checks++;assert.ok(v,m);};
 const near=(a,b,m)=>ok(Math.abs(a-b)<1e-10,m||`${a} ≈ ${b}`);
-const source=fs.readFileSync('src/index.html','utf8'),built=fs.readFileSync('dist/index.html','utf8');
+const source=fs.readFileSync('src/descriptive-statistics.html','utf8'),built=fs.readFileSync('dist/descriptive-statistics.html','utf8');
 function groups(reflected){const data=reflected?[30,30,30,30,10]:[10,10,10,10,30];const mean=data.reduce((a,b)=>a+b,0)/5,sd=Math.sqrt(data.reduce((a,b)=>a+(b-mean)**2,0)/5);return {data,z:data.map(v=>(v-mean)/sd)};}
 function figures(html){return [...html.matchAll(/<!-- shape-contribution-visual:start -->([\s\S]*?)<!-- shape-contribution-visual:end -->/g)].map(m=>m[1]);}
 for(const html of [source,built]){

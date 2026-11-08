@@ -74,7 +74,7 @@ class Blocks(HTMLParser):
     def handle_endtag(self, tag):
         if tag=='pre' and self.capture:
             self.blocks.append((self.label,self.value)); self.capture=False
-for file in ['dist/index.html', 'class1-standalone.html']:
+for file in ['dist/descriptive-statistics.html', 'class1-standalone.html']:
     html=(root/file).read_text(); parser=Blocks();parser.feed(html)
     check(len(parser.blocks)==12, 'missing displayed code/output')
     check('{{python:' not in html and '{{output:' not in html and '{{tool-reference}}' not in html, 'unbuilt placeholder')

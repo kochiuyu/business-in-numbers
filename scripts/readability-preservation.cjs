@@ -5,6 +5,8 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const reference = require('../test-readability-reference.json');
 function restore(source, page) {
+  if (page === 'descriptive-statistics') page = 'index';
+  source = source.replaceAll('descriptive-statistics.html', 'index.html');
   if (page === 'index') source = require('./class-one-preservation.cjs').restore(source);
   if (page === 'probability') source = require('./class-two-preservation.cjs').restore(source);
   if (page === 'random-variables') source = require('./class-three-preservation.cjs').restore(source);

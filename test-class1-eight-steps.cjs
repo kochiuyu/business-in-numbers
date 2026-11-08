@@ -4,7 +4,7 @@
 const fs=require('node:fs'),assert=require('node:assert/strict');
 let checks=0;const ok=(v,m)=>{checks++;assert.ok(v,m);},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m);};
 const read=p=>fs.readFileSync(p,'utf8');
-const source=require('./scripts/class-one-twelve-preservation.cjs').restore(read('src/index.html')); 
+const source=require('./scripts/class-one-twelve-preservation.cjs').restore(read('src/descriptive-statistics.html')); 
 const expected=['case-part-1','case-part-2','case-part-4','case-part-3','case-skewness','case-kurtosis','case-part-5','case-part-6'];
 function parse(html){
  const nodes=[],stack=[],voids=new Set('area base br col embed hr img input link meta param source track wbr'.split(' '));
@@ -37,10 +37,10 @@ for(const [name,html] of [['restored eight-step source',source]]){
  const ids=t.nodes.map(n=>n.attrs.id).filter(Boolean);eq(ids.length,new Set(ids).size,name+': unique IDs');
  for(const i of [1,2,3,4,5,6,7,8])ok(t.nodes.some(n=>n.tag==='a'&&n.attrs.href==='#class1-step-'+i),name+': reachable canonical step '+i);
 }
-const baseline=JSON.parse(read('course-structure.json'))['index.html'];
+const baseline=JSON.parse(read('course-structure.json'))['descriptive-statistics.html'];
 for(const id of baseline.ids)eq([...source.matchAll(/\bid="([^"]+)"/g)].filter(m=>m[1]===id).length,1,'original ID retained exactly once: '+id);
 eq([...source.matchAll(/\{\{math:([^}]+)\}\}/g)].map(m=>m[1]).sort(),baseline.math,'all original formula placeholders retained');
-const activities=require('./scripts/activities.cjs').data().filter(a=>a.file==='index.html');
+const activities=require('./scripts/activities.cjs').data().filter(a=>a.file==='descriptive-statistics.html');
 eq(activities.map(a=>[a.id,a.afterTopic]),[['c1-measurements',1],['c1-weighted-orders',4],['c1-change-units',9],['c1-preserve-pairs',13]],'practice follows semantic topics, not stale numeric positions');
 // Deliberate navigation, headings and local-reference wording only. Everything
 // else is compared as a multiset of exact text leaves, independent of location.
@@ -109,7 +109,7 @@ eq(mean,14,'worked mean');eq(variance,64,'worked population variance');eq(sd,8,'
 eq(z,[-.5,-.5,-.5,-.5,2],'worked standardized values');eq(z.reduce((s,v)=>s+v**3,0)/5,1.5,'worked third moment');eq(z.reduce((s,v)=>s+v**4,0)/5,3.25,'worked fourth moment');
 // A chart help link must follow the subject after the former spread lesson
 // is split. Keeping a valid but stale #spread target sends learners to SD.
-for(const [name,html] of [['chart source',read('src/graphs-section.html')],['built page',read('dist/index.html')]]){
+for(const [name,html] of [['chart source',read('src/graphs-section.html')],['built page',read('dist/descriptive-statistics.html')]]){
  const link=html.match(/<a href="([^"]+)">The spread lesson explains quartiles and IQR\.<\/a>/);
  ok(link,name+': quartile explanation link exists');
  eq(link[1],'#case-fence-worked',name+': chart help reaches visible quartile calculation');

@@ -15,7 +15,7 @@ for(const key of ['mean','sd','skew','excess']){near(Stats.describe(x)[key],raw[
 for(const points of [[10,10,10,10,30],[1,1,1,1,9],[.001,.001,.001,.001,8]]){const transformed=independent(points.map(Math.log));near(transformed.skew,1.5);near(transformed.excess,.25);}
 const cents=independent(x.map(v=>Math.log(100*v)));
 near(cents.mean,log.mean+Math.log(100));near(cents.skew,log.skew);near(cents.excess,log.excess);
-const source=fs.readFileSync('src/index.html','utf8'),built=fs.readFileSync('dist/index.html','utf8');
+const source=fs.readFileSync('src/descriptive-statistics.html','utf8'),built=fs.readFileSync('dist/descriptive-statistics.html','utf8');
 for(const html of [source,built]){
  const block=html.match(/<section class="shape-log-worked" id="shape-log-worked"[\s\S]*?<\/section>/)?.[0];ok(block,'log worked example retained');
  for(const value of ['3.5529','0.5879','2.8654','1.9894','6.5473','3.6698','$34.92','0.1823','20%','1.5','0.25'])ok(block.includes(value),'checked numerical display '+value);

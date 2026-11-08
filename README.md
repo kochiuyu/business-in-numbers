@@ -2,7 +2,7 @@
 
 An interactive eight-class business statistics course: descriptive statistics, probability, random variables, sampling distributions, estimation, hypothesis testing, ANOVA, and regression.
 
-Start with [the course introduction](https://kochiuyu.github.io/business-in-numbers/course-introduction.html), or [Class 1](https://kochiuyu.github.io/business-in-numbers/). Examples are synthetic teaching cases, not business forecasts.
+Start with [Start Here](https://kochiuyu.github.io/business-in-numbers/), or open [Class 1](https://kochiuyu.github.io/business-in-numbers/descriptive-statistics.html). Examples are synthetic teaching cases, not business forecasts.
 
 ## Privacy
 
@@ -48,7 +48,7 @@ Run `npm run test:navigation` after building for navigation structure and intera
 
 ## GitHub Pages
 
-The workflow builds and tests pushes to `main`, then deploys `dist/` using GitHub Actions. Select **GitHub Actions** in the repository's Pages settings. Pull requests run the checks without deployment. Links are relative and tested under `/business-in-numbers/`; `index.html` remains Class 1, with Start Here links to the introduction.
+The workflow builds and tests pushes to `main`, then deploys `dist/` using GitHub Actions. Select **GitHub Actions** in the repository's Pages settings. Pull requests run the checks without deployment. Links are relative and tested under `/business-in-numbers/`; `index.html` is Start Here, and `descriptive-statistics.html` is Class 1. The original `course-introduction.html` address remains readable. Previously shared root/index Class 1 anchors automatically continue to the same subject on the new Class 1 URL when JavaScript is enabled, preserving query strings and fragments. The homepage also includes an explicit Class 1 link for readers without JavaScript.
 
 ## Sources and third-party notices
 

@@ -22,7 +22,7 @@ for(const convention of ['exc','inc']){
 eq(G.boxSummary(G.orders).upperWhisker,46);eq(G.boxSummary(G.orders).upperFence,66.125);
 throws(()=>G.boxSummary([1,2,3]));throws(()=>G.boxSummary(G.orders,'invalid'));throws(()=>G.category('wrong'));throws(()=>G.render('wrong'));
 for(const name of ['category','distribution','time','scatter','box']){const svg=G.render(name);ok(svg.includes('role="img"'));ok(svg.includes('<title'));ok(svg.includes('<desc'));ok(!/NaN|Infinity|undefined/.test(svg));}
-const html=fs.readFileSync('dist/index.html','utf8');
+const html=fs.readFileSync('dist/descriptive-statistics.html','utf8');
 for(const token of ['Frequency polygon','frequency polygon','zero baseline','upper-inclusive','frequency density','modified boxplot','graph-category-mode','graph-bin-width','graph-polygon','graph-quartile'])ok(html.includes(token),'Missing content '+token);
 ok(!/\{\{(?:graph|graphs|python|output):?/.test(html),'Uncompiled placeholder');
 for(const name of ['graphs.css','graphs-core.js','graphs.js'])ok(fs.existsSync('dist/'+name));

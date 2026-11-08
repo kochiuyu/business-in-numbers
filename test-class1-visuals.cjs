@@ -2,7 +2,7 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const V=require('./scripts/class-one-visuals.cjs');
 let checks=0;const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m)};
-const source=fs.readFileSync('src/class-one.js','utf8'),html=fs.readFileSync('dist/index.html','utf8'),css=fs.readFileSync('src/class-one.css','utf8');
+const source=fs.readFileSync('src/class-one.js','utf8'),html=fs.readFileSync('dist/descriptive-statistics.html','utf8'),css=fs.readFileSync('src/class-one.css','utf8');
 const values=[18,22,24,25,28,30,32,35,38,42,46,200];eq(V.orders,values);eq(V.orders.reduce((a,b)=>a+b),540);eq(V.orders.reduce((a,b)=>a+b)/12,45);eq((V.orders[5]+V.orders[6])/2,31);
 for(const name of ['records','center','shape','spread','relationship','briefing']){const h=V.render(name);ok(h.includes('visual-scene'),'scene '+name);ok(h.includes('<summary>'),'each scene includes a pause/reveal');ok(!h.includes('autoplay'));}
 for(const mode of ['original','equal','middle']){const s=V.ordersChart(mode);const bars=[...s.matchAll(/class="visual-bar[^"]*" x="([\d.]+)" y="([\d.]+)" width="20" height="([\d.]+)"/g)];eq(bars.length,12);bars.forEach((b,i)=>{eq(+b[1],45+i*29);eq(+b[2]+ +b[3],195);eq(+b[3],(mode==='equal'?45:values[i])*.7);});}

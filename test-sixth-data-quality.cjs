@@ -2,8 +2,8 @@
 const fs=require('node:fs'),assert=require('node:assert/strict');
 let checks=0;const ok=(v,m)=>{checks++;assert.ok(v,m);};
 const blocks=[
- ['index','records-missing-check','case-part-1',['0</td>','Blank','10/3 ≈ 3.33','2.50','18/4 = 4.50','3 of 4 pickups measured','does not establish','sampling-distributions.html#sampling-nonresponse-check']],
- ['sampling-distributions','sampling-nonresponse-check','sampling-step-1',['60/100 = 60%','48/60 = 80%','48/100 = 48%','88/100 = 88%','one-percentage-point steps','not a 95% confidence interval','68%','All 100 target customers were invited','index.html#records-missing-check']],
+ ['descriptive-statistics','records-missing-check','case-part-1',['0</td>','Blank','10/3 ≈ 3.33','2.50','18/4 = 4.50','3 of 4 pickups measured','does not establish','sampling-distributions.html#sampling-nonresponse-check']],
+ ['sampling-distributions','sampling-nonresponse-check','sampling-step-1',['60/100 = 60%','48/60 = 80%','48/100 = 48%','88/100 = 88%','one-percentage-point steps','not a 95% confidence interval','68%','All 100 target customers were invited','descriptive-statistics.html#records-missing-check']],
  ['hypothesis-testing','testing-quantile-bridge','hypothesis-statistic',['upper-tail area','lower-tail probability','≈ +1.96','≈ −1.96','t<sub>ν,.025</sub>','t<sub>ν,.975</sub>','estimation.html#known-variance']],
  ['hypothesis-testing','paired-calculation-check','hypothesis-step-9',['3, 4, 0, 5, 4, 1, 3, 4','20/7','1.6903','0.5976','5.020','7 degrees of freedom','unrounded values','n = 16','independent differences from the same normal distribution','Match by ID','n counts those complete pairs']]
 ];

@@ -6,7 +6,7 @@ function check(value,message){checks++;assert.ok(value,message);}
 // roles are reserved for visual marks whose label replaces their whole content;
 // groups keep meaningful child text available to assistive technology.
 const required={
- 'src/index.html':[['case-evidence','group']],
+ 'src/descriptive-statistics.html':[['case-evidence','group']],
  'src/anova.html':[['anova-hero-chart','group']],
  'src/class-four-visuals.js':[['c4-inbox','group'],['c4-pairs','group']],
  'src/class-five-visuals.js':[['c5-order-cards','group'],['c5-conversion-grid','img']]
@@ -19,7 +19,7 @@ for(const dir of ['src','scripts','dist'])for(const file of fs.readdirSync(dir))
  const source=fs.readFileSync(path.join(dir,file),'utf8');
  for(const match of source.matchAll(/<(?:div|span)\b[^>]*\baria-label="[^>]*>/g))check(/\brole="(?:group|img|region|status|alert|note|radiogroup|toolbar|progressbar|list|listitem|tablist)"/.test(match[0]),`${dir}/${file}: named generic element needs a role: ${match[0]}`);
 }
-for(const file of ['index','probability','random-variables','sampling-distributions','estimation','hypothesis-testing','anova','regression']){
+for(const file of ['descriptive-statistics','probability','random-variables','sampling-distributions','estimation','hypothesis-testing','anova','regression']){
  const html=fs.readFileSync(`dist/${file}.html`,'utf8'),ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  check(new Set(ids).size===ids.length,`${file}: unique IDs`);
  for(const [,refs]of html.matchAll(/\baria-(?:labelledby|describedby|controls)="([^"]+)"/g))for(const id of refs.split(/\s+/))check(ids.includes(id),`${file}: ARIA reference ${id} exists`);

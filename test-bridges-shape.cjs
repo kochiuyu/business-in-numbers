@@ -13,8 +13,8 @@ near(Math.max(...old)-a.mean,16);near(Math.max(...changed)-b.mean,32);
 const distances=[60,60],speeds=[30,60],times=distances.map((d,i)=>d/speeds[i]);
 near(times[0],2);near(times[1],1);near(distances.reduce((x,y)=>x+y)/times.reduce((x,y)=>x+y),40);near(2/speeds.reduce((sum,v)=>sum+1/v,0),40);
 near((30*1+60*1)/(1+1),45);
-const source=fs.readFileSync('src/index.html','utf8');
-const documents=[source];if(process.argv.includes('--built'))documents.push(fs.readFileSync('dist/index.html','utf8'));
+const source=fs.readFileSync('src/descriptive-statistics.html','utf8');
+const documents=[source];if(process.argv.includes('--built'))documents.push(fs.readFileSync('dist/descriptive-statistics.html','utf8'));
 for(const html of documents){
  for(const id of ['harmonic-rate-bridge','harmonic-rate-heading','shape-scale-bridge'])ok(html.includes(`id="${id}"`),id+' exists');
  for(const phrase of ['256 dollars²','2X − 10','Absolute spread has increased','not a currency conversion','Equal times justify the arithmetic mean here','equal distances justify the harmonic mean','2 ÷ (1/30 + 1/60)'])ok(html.includes(phrase),phrase+' preserved');

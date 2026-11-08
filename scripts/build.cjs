@@ -34,11 +34,11 @@ function build() {
   const fixtures=JSON.parse(read('math-fixtures.json'));
   const references=JSON.parse(read('tool-reference.json'));
   const toolTable='<div class="table-scroll tool-reference" tabindex="0" role="region" aria-label="Excel and Python reference. Scroll horizontally if needed."><table><caption>Same five numbers: 1, 2, 3, 4, 5</caption><thead><tr><th scope="col">Question</th><th scope="col">Excel · A2:A6</th><th scope="col">Python · x</th><th scope="col">Result / interpretation</th></tr></thead><tbody>'+references.map(([question,excel,python,result])=>`<tr><th scope="row">${esc(question)}</th><td>${excel.split(' / ').map(formula=>`<code>${esc(formula)}</code>`).join(' / ')}</td><td><code>${esc(python)}</code></td><td>${esc(result)}</td></tr>`).join('')+'</tbody></table></div>';
-  const template=read('index.html').replace(/\{\{visual:([a-z]+)\}\}/g,(_,name)=>require('./class-one-visuals.cjs').render(name)).replace('{{graphs-section}}',read('graphs-section.html')).replace(/\{\{graph:([a-z]+)\}\}/g,(_,name)=>graphs.render(name)).replace('{{tool-reference}}',toolTable).replace(/\{\{(python|output):([a-z]+)\}\}/g,(_,kind,name)=>{
+  const template=read('descriptive-statistics.html').replace(/\{\{visual:([a-z]+)\}\}/g,(_,name)=>require('./class-one-visuals.cjs').render(name)).replace('{{graphs-section}}',read('graphs-section.html')).replace(/\{\{graph:([a-z]+)\}\}/g,(_,name)=>graphs.render(name)).replace('{{tool-reference}}',toolTable).replace(/\{\{(python|output):([a-z]+)\}\}/g,(_,kind,name)=>{
     const text=read(`examples/${name}.${kind==='python'?'py':'txt'}`);
     return `<pre class="code-block" tabindex="0" role="region" aria-label="${kind==='python'?'Python code':'Checked Python output'}: ${esc(name)}. Scroll horizontally if needed."><code>${esc(text)}</code></pre>`;
   });
-  const html=learning.enhance(require('./class-one-concept-pictures.cjs').enhance(compile(template,equations)),'index.html');
+  const html=learning.enhance(require('./class-one-concept-pictures.cjs').enhance(compile(template,equations)),'descriptive-statistics.html');
   const css=read('styles.css');
   const graphsCss=read('graphs.css');
   const fixtureHtml=compile(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mathematics typesetting check</title><link rel="stylesheet" href="vendor/katex/katex.min.css"><link rel="stylesheet" href="styles.css"></head><body class="math-test-page"><main class="block"><h1>Mathematics typesetting check</h1><p>Typesetting examples, not a new lesson or a claim of source coverage. These examples exercise conditional probability, fractions, limits, sums, binomial coefficients, matrices and aligned derivations.</p>${Object.keys(fixtures).map(id=>`<section><h2>${esc(fixtures[id].title)}</h2>{{math:${id}}}</section>`).join('')}</main><script src="math-ui.js"></script></body></html>`,fixtures);
@@ -57,7 +57,7 @@ function build() {
   fs.cpSync(path.join(vendor,'fonts'),path.join(dist,'vendor/katex/fonts'),{recursive:true});
   fs.copyFileSync(path.join(vendor,'katex.min.css'),path.join(dist,'vendor/katex/katex.min.css'));
   fs.copyFileSync(path.join(vendor,'../LICENSE'),path.join(dist,'vendor/katex/LICENSE'));
-  fs.writeFileSync(path.join(dist,'index.html'),html);
+  fs.writeFileSync(path.join(dist,'descriptive-statistics.html'),html);
   fs.writeFileSync(path.join(dist,'math-check.html'),fixtureHtml);
   for(const name of ['lesson-roadmaps.css','styles.css','stats.js','app.js','math-ui.js','graphs.css','graphs-core.js','graphs.js','learning.css','learning.js','activities.css','activities.js','navigation.css','navigation.js','class-one.css','class-one.js']) fs.copyFileSync(path.join(src,name),path.join(dist,name));
   fs.writeFileSync(path.join(root,'class1-standalone.html'),standalone);
@@ -70,6 +70,7 @@ function build() {
   buildHypothesis();
   buildAnova();
   buildRegression();
+  require('./homepage.cjs').build(dist);
   require('./fingerprint-assets.cjs').fingerprintAssets(dist);
   console.log(`Rendered ${Object.keys(equations).length} lesson expressions and ${Object.keys(fixtures).length} QA expressions with KaTeX ${katex.version}.`);
 }

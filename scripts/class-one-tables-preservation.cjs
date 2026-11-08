@@ -4,6 +4,7 @@ const assert=require('node:assert/strict'),crypto=require('node:crypto');
 const reference=require('../test-class1-tables-reference.json');
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
 function restore(source){
+ source=source.replaceAll('descriptive-statistics.html','index.html');
  if(!source.includes('id="table-from-records"'))return source;
  assert.equal(hash(source),reference.reviewed_sha256,'reviewed table-step source');
  const a=source.indexOf('<section class="case-part" id="case-tables"'),b=source.indexOf('<section class="case-part" id="case-charts"');

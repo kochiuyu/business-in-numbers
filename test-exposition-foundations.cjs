@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),crypto=require('node:crypto');
 let checks=0;const ok=(x,m)=>{checks++;assert.ok(x,m);},near=(a,b)=>ok(Math.abs(a-b)<1e-10,`${a} ≈ ${b}`);
-const files=['index.html','probability.html','random-variables.html'];
+const files=['descriptive-statistics.html','probability.html','random-variables.html'];
 function originalDetails(s){const out=[];let depth=0,start=-1;for(const m of s.matchAll(/<\/?details\b[^>]*>/g)){if(m[0].startsWith('</')){depth--;if(depth===0&&start>=0){out.push(s.slice(start,m.index+m[0].length));start=-1;}}else{if(depth===0&&m[0].includes('class="lesson"'))start=m.index;depth++;}}return out;}
 for(const file of files){
  const s=fs.readFileSync('src/'+file,'utf8');

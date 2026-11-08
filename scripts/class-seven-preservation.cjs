@@ -6,6 +6,7 @@ const assert=require('node:assert/strict'),crypto=require('node:crypto');
 const reference=require('../test-class7-restructure-reference.json');
 const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
 function restore(source){
+ source=source.replaceAll('descriptive-statistics.html','index.html');
  assert.equal(hash(source),reference.reviewed_sha256,'eighteen-step Class 7 source matches reviewed layout');
  const tokens=source.match(/<[^>]*>|[^<]+/g)||[];
  for(const patch of [...reference.patches].reverse()){

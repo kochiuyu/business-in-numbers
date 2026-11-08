@@ -5,7 +5,7 @@ let checks = 0;
 const ok = (condition, message) => { checks++; assert.ok(condition, message); };
 const near = (a, b) => ok(Math.abs(a-b)<1e-12, `${a} matches ${b}`);
 const cases = [
-  ['index.html','third-supplier-mix',['4.4 days','6.6 days','4.8 days','3.8 days','standardized comparisons','six-day target']],
+  ['descriptive-statistics.html','third-supplier-mix',['4.4 days','6.6 days','4.8 days','3.8 days','standardized comparisons','six-day target']],
   ['probability.html','third-alert-decision',['15.38%','$7.69','$15.69','16%','p &gt; 8%','Class 3']],
   ['random-variables.html','third-overload-cost',['0.20 orders per slot','$6 per slot','$10 per slot','$40 per excess order','nonlinear','queueing model']]
 ];

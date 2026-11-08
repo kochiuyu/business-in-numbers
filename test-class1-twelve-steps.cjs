@@ -2,7 +2,7 @@
 // Test the delivered fourteen-step lesson as well as exact historical preservation.
 const fs=require('node:fs'),assert=require('node:assert/strict');
 let checks=0;const ok=(v,m)=>{checks++;assert.ok(v,m);},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m);};
-const read=p=>fs.readFileSync(p,'utf8'),source=read('src/index.html');
+const read=p=>fs.readFileSync(p,'utf8'),source=read('src/descriptive-statistics.html');
 const original=require('./scripts/class-one-twelve-preservation.cjs').restore(source);
 const expected=['case-part-1','case-tables','case-charts','case-part-2','case-median','case-mode','case-part-4','case-part-3','case-sd-cv','case-skewness','case-kurtosis','case-covariance','case-part-5','case-part-6'];
 const topics=['records','tables','charts','mean','median','mode','quartiles','variance','sd-cv','skewness','kurtosis','covariance','correlation','briefing'];
@@ -28,9 +28,9 @@ const leaves=html=>{const m=new Map();for(const s of html.split(/<[^>]*>/).map(x
 const previous=require('./scripts/class-one-fourteen-preservation.cjs').restore(source);
 const before=leaves(previous),after=leaves(source),missing={};for(const [s,n]of before)if(n>(after.get(s)||0))missing[s]=n-(after.get(s)||0);
 const reference=JSON.parse(read('test-class1-fourteen-reference.json'));
-eq(require('node:crypto').createHash('sha256').update(read('dist/index.html')).digest('hex'),reference.reviewed_dist_sha256,'reviewed fourteen-step built page');
+eq(require('node:crypto').createHash('sha256').update(read('dist/descriptive-statistics.html')).digest('hex'),reference.reviewed_dist_sha256,'reviewed fourteen-step built page');
 eq(missing,reference.reviewed_changed_leaves,'only reviewed heading, navigation and local-reference text changes');
-for(const [name,html]of [['source',source],['built',read('dist/index.html')]]){
+for(const [name,html]of [['source',source],['built',read('dist/descriptive-statistics.html')]]){
  const t=parse(html),parts=t.nodes.filter(n=>has(n,'case-part'));
  eq(parts.map(n=>n.attrs.id),expected,name+' fourteen semantic steps');
  const ids=t.nodes.map(n=>n.attrs.id).filter(Boolean);eq(ids.length,new Set(ids).size,name+' unique IDs');
@@ -44,7 +44,7 @@ for(const [name,html]of [['source',source],['built',read('dist/index.html')]]){
  if(name==='built'){const gallery=t.byId('charts');ok(ancestors(gallery).includes(parts[2]),'gallery belongs to chart step');ok(!ancestors(gallery).some(p=>p.tag==='details'),'gallery visible without disclosures');for(const panel of t.nodes.filter(n=>has(n,'graph-panel')))ok(!ancestors(panel).some(p=>p.tag==='details'),'each chart outside disclosures '+panel.attrs.id);}
  if(name==='built')ok(!/\{\{(?:math|classonevisual|activity):|katex-error/.test(html),'built teaching renders without unresolved formulas');
 }
-eq(require('./scripts/activities.cjs').data().filter(a=>a.file==='index.html').map(a=>[a.id,a.afterTopic]),[['c1-measurements',1],['c1-weighted-orders',4],['c1-change-units',9],['c1-preserve-pairs',13]],'practice remains with matching subject');
+eq(require('./scripts/activities.cjs').data().filter(a=>a.file==='descriptive-statistics.html').map(a=>[a.id,a.afterTopic]),[['c1-measurements',1],['c1-weighted-orders',4],['c1-change-units',9],['c1-preserve-pairs',13]],'practice remains with matching subject');
 // Independent original-record arithmetic protects the lesson's numerical claims.
 const near=(a,b,m)=>ok(Math.abs(a-b)<1e-12,m),sum=xs=>xs.reduce((a,b)=>a+b,0),mean=xs=>sum(xs)/xs.length;
 const orders=[18,22,24,25,28,30,32,35,38,42,46,200];
@@ -59,7 +59,7 @@ eq(mean(x),3,'advertising mean');eq(mean(y),6,'sales mean');eq(products,[4,-1,0,
 near((sum(products)/5)/Math.sqrt((ss(x)/5)*(ss(y)/5)),(sum(products)/4)/Math.sqrt((ss(x)/4)*(ss(y)/4)),'consistent population/sample conventions give identical correlation');
 const historicalTree=parse(original);
 for(const node of historicalTree.nodes.filter(n=>has(n,'technical')))ok(previous.includes(historicalTree.fragment(node)),'original technical section retained after reversing reviewed local-reference wording '+(node.attrs.id||node.attrs.class));
-for(const [name,html]of [['source',source],['built',read('dist/index.html')]]){
+for(const [name,html]of [['source',source],['built',read('dist/descriptive-statistics.html')]]){
  const t=parse(html);
  const claims={
   'tables-core':[1,['frequency table','50 ÷ 100 = 0.50','20/100 = 0.20','not Record A','not their monetary values']],

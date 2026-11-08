@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),assert=require('node:assert/strict'),vm=require('node:vm');
 let checks=0;const ok=(v,m)=>{checks++;assert.ok(v,m)},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m)},read=p=>fs.readFileSync(p,'utf8');
-const source=read('src/index.html'),html=read('dist/index.html'),css=read('src/class-one.css');
+const source=read('src/descriptive-statistics.html'),html=read('dist/descriptive-statistics.html'),css=read('src/class-one.css');
 const before=require('./test-class1-tables-reference.json').baseline_table;
 const table=s=>s.slice(s.indexOf('<section class="case-part" id="case-tables"'),s.indexOf('<section class="case-part" id="case-charts"'));
 const leaves=s=>{const m=new Map();for(const x of s.split(/<[^>]*>/).map(x=>x.trim()).filter(Boolean))m.set(x,(m.get(x)||0)+1);return m};

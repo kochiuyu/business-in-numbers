@@ -17,7 +17,7 @@ for (const [file, shortcuts] of Object.entries(sections)) {
   ok(header.includes('<nav aria-label="All classes">'), file + ': named course navigation');
   const courseNav = header.match(/<nav aria-label="All classes">([\s\S]*?)<\/nav>/)[1];
   eq((courseNav.match(/<li>/g) || []).length, 8, file + ': all eight classes');
-  eq((courseNav.match(/aria-current="page"/g) || []).length, file === 'course-introduction.html' ? 0 : 1, file + ': current class');
+  eq((courseNav.match(/aria-current="page"/g) || []).length, ['index.html','course-introduction.html'].includes(file) ? 0 : 1, file + ': current class');
   for (const [href, title] of classes) {
     ok(courseNav.includes('href="' + href + '"'), file + ': class URL ' + href);
     ok(courseNav.includes(title), file + ': title ' + title);
@@ -33,7 +33,7 @@ for (const [file, shortcuts] of Object.entries(sections)) {
 }
 for (const asset of ['navigation.js', 'navigation.css']) eq(fs.readFileSync('dist/' + asset, 'utf8'), fs.readFileSync('src/' + asset, 'utf8'), asset + ': build copies latest source');
 assert.throws(() => enhance('<html></html>', 'unknown.html'), /Unknown navigation page/); checks++;
-assert.throws(() => enhance('<html></html>', 'index.html'), /Missing course header/); checks++;
+assert.throws(() => enhance('<html></html>', 'descriptive-statistics.html'), /Missing course header/); checks++;
 
 // Dependency-free DOM harness. Browser layout and native history are covered by
 // manual browser QA; this exercises only our JS behavior, not emulated layout.

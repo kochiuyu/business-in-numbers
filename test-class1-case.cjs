@@ -14,9 +14,9 @@ const ok = (condition, message) => { checks++; assert.ok(condition, message); };
 const eq = (actual, expected, message) => { checks++; assert.deepEqual(actual, expected, message); };
 const near = (actual, expected, message) => ok(Math.abs(actual - expected) < 1e-10, message || `${actual} != ${expected}`);
 const read = name => fs.readFileSync(name, 'utf8');
-const source = read('src/index.html');
+const source = read('src/descriptive-statistics.html');
 const graphs = read('src/graphs-section.html');
-const built = read('dist/index.html');
+const built = read('dist/descriptive-statistics.html');
 const app = read('src/app.js');
 const text = html => html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 
@@ -76,13 +76,13 @@ for (const [name, html] of [['source', source], ['built', built]]) {
   }
   if (name === 'built') {
     ok(t.within(t.byId('charts'), parts[2]), 'charts own a dedicated visible step');
-    for (const a of activities().filter(a => a.file === 'index.html')) {
+    for (const a of activities().filter(a => a.file === 'descriptive-statistics.html')) {
       const activity = t.byId(a.id), part = parts[a.afterTopic-1];
       ok(t.within(activity, part), a.id + ': practice remains in its matching part');
       const answer = t.nodes.find(n => t.has(n, 'case-answer') && t.within(n, part));
       ok(activity.end <= answer.start, a.id + ': practice precedes carry-forward answer');
     }
-    for (const [id] of sections['index.html']) ok(t.byId(id), 'navigation target ' + id);
+    for (const [id] of sections['descriptive-statistics.html']) ok(t.byId(id), 'navigation target ' + id);
   }
 }
 
@@ -131,15 +131,15 @@ for (const [name, html] of [['source', source], ['built', built]]) {
 
 // Preserve the existing mathematical and technical coverage, original controls,
 // Python examples and four active challenges through the structural rewrite.
-const baseline = JSON.parse(read('course-structure.json'))['index.html'];
+const baseline = JSON.parse(read('course-structure.json'))['descriptive-statistics.html'];
 eq([...source.matchAll(/\{\{math:([^}]+)\}\}/g)].map(m => m[1]).sort(), baseline.math, 'all original formula placeholders retained');
 for (const id of baseline.ids) ok(source.includes(`id="${id}"`), 'original control/anchor retained: ' + id);
 for (const name of ['quickstart','orders','paired','shape','case']) {
   ok(source.includes(`{{python:${name}}}`), 'Python example retained: ' + name);
   ok(source.includes(`{{output:${name}}}`), 'checked Python output retained: ' + name);
 }
-eq(activities().filter(a => a.file === 'index.html').map(a => a.id), ['c1-measurements','c1-weighted-orders','c1-change-units','c1-preserve-pairs'], 'four original activities retained');
-ok(addActivities(source, 'index.html').includes('c1-preserve-pairs'), 'activity insertion still succeeds');
+eq(activities().filter(a => a.file === 'descriptive-statistics.html').map(a => a.id), ['c1-measurements','c1-weighted-orders','c1-change-units','c1-preserve-pairs'], 'four original activities retained');
+ok(addActivities(source, 'descriptive-statistics.html').includes('c1-preserve-pairs'), 'activity insertion still succeeds');
 ok(!/\{\{(?:math|python|output|graphs-section):?|katex-error/.test(built), 'built case has no unresolved lesson expressions');
 
 // Independent arithmetic on the fixed case, cross-checked against both runtime

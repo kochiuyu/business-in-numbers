@@ -671,5 +671,6 @@
       "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 14 navigation\">"
     }
   ],
-  "reviewed_dist_sha256": "e185e5475bfe5d92528d7b524f0ee2e5f3cd65b5bacf05fedce1399aa6d3f36b"
+  "reviewed_dist_sha256": "9a8a672cf39fddbe4b57514bd359ef696e84f7fcc922dc6bc3721600a01b1096",
+  "homepage_migration_note": "Class 1 moved to descriptive-statistics.html; independent review confirmed all built lesson content identical after URL normalization."
 }

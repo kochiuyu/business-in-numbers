@@ -2,7 +2,7 @@
 // Fixed-scenario practice: answers do not depend on current laboratory controls.
 module.exports = [
   {
-    id: 'c1-measurements', file: 'index.html', afterTopic: 1,
+    id: 'c1-measurements', file: 'descriptive-statistics.html', afterTopic: 1,
     title: 'Match the variable to its meaning', kind: 'match',
     prompt: 'Transfer exercise with separate data. A shop records four fields for each order. Match each field to its data type. A numerical label is not automatically a measurement.',
     options: ['Continuous measurement', 'Nominal category', 'Discrete count', 'Ordinal category'],
@@ -15,7 +15,7 @@ module.exports = [
     explanation: 'Payment codes name categories, so their numerical average has no useful meaning. Item counts have whole-number outcomes. Satisfaction has an order but no established equal spacing. Mass is modeled as a continuous measurement even when the instrument rounds it.'
   },
   {
-    id: 'c1-weighted-orders', file: 'index.html', afterTopic: 4,
+    id: 'c1-weighted-orders', file: 'descriptive-statistics.html', afterTopic: 4,
     title: 'Combine two branches fairly', kind: 'number',
     prompt: 'Transfer exercise with separate data. Explore the order lab and notice that its mean divides total revenue by the number of orders. Now use this fixed scenario: Branch A has 8 orders averaging $30 each; Branch B has 2 orders averaging $80 each. What is the mean value across all 10 orders? Enter dollars per order.',
     link: {href: '#lab', label: 'Explore the order lab'},
@@ -24,7 +24,7 @@ module.exports = [
     explanation: 'A contributes 8 × $30 = $240; B contributes 2 × $80 = $160. Combined mean = ($240 + $160)/(8 + 2) = $40 per order. The unweighted mean $55 treats a two-order branch like an eight-order branch and answers a different question.'
   },
   {
-    id: 'c1-change-units', file: 'index.html', afterTopic: 9,
+    id: 'c1-change-units', file: 'descriptive-statistics.html', afterTopic: 9,
     title: 'Separate a unit change from new variation', kind: 'choice',
     prompt: 'Transfer exercise with separate data. The same parcel weights are recorded first in kilograms and then in grams. Their mean is 2 kg and their standard deviation is 0.3 kg. Which report is correct after the conversion?',
     options: [
@@ -35,7 +35,7 @@ module.exports = [
     explanation: 'Multiplication by a positive constant c multiplies the mean and SD by c and variance by c². CV = 100 × 0.3/2 = 15%, unchanged at 100 × 300/2,000. These positive ratio-scale measurements support a meaningful CV.'
   },
   {
-    id: 'c1-preserve-pairs', file: 'index.html', afterTopic: 13,
+    id: 'c1-preserve-pairs', file: 'descriptive-statistics.html', afterTopic: 13,
     title: 'Protect the relationship before calculating', kind: 'choice',
     prompt: 'Transfer exercise with separate data. Three stores have (advertising spend, sales) pairs (1, 9), (2, 3), (3, 6), in thousands of dollars. An analyst sorts each column separately, producing (1, 3), (2, 6), (3, 9). What should you do?',
     options: [

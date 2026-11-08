@@ -27,7 +27,7 @@ for(const [file,plan]of Object.entries(R.plans)){
  const owners=ns=>{const result={};for(const n of ns.filter(n=>n.attrs.id)){let p=n;while(p&&!has(p,plan.partClass))p=p.parent;if(p)result[n.attrs.id]=p.attrs.id;}return result;};
  const priorOwners=owners(old),nowOwners=owners(current);for(const [id,owner]of Object.entries(priorOwners))eq(nowOwners[id],owner,file+' old deep link still denotes same subject '+id);
 }
-const first=fs.readFileSync('dist/index.html','utf8'),n=R.nodes(first),mini=n.find(n=>n.attrs.id==='standard-deviation-units');
+const first=fs.readFileSync('dist/descriptive-statistics.html','utf8'),n=R.nodes(first),mini=n.find(n=>n.attrs.id==='standard-deviation-units');
 ok(mini,'standardized-distance mini-lesson');ok(!n.some(d=>d.tag==='details'&&inside(mini,d)),'standardized distance visible');ok(mini.start<n.find(n=>n.attrs.id==='case-skewness').start,'standardized units before shape');
 const x=[1,2,5,8,9],mean=x.reduce((a,b)=>a+b)/5,variance=x.reduce((s,v)=>s+(v-mean)**2,0)/5;eq(mean,5);eq(variance,10);eq(((9-mean)/Math.sqrt(variance)).toFixed(4),'1.2649');eq(((1-mean)/Math.sqrt(variance)).toFixed(4),'-1.2649');eq((5-mean)/Math.sqrt(variance),0);
 ok(first.includes('does <b>not</b> make a distribution normal'),'no normality implied by standardization');
