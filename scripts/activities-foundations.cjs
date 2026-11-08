@@ -24,7 +24,7 @@ module.exports = [
     explanation: 'A contributes 8 × $30 = $240; B contributes 2 × $80 = $160. Combined mean = ($240 + $160)/(8 + 2) = $40 per order. The unweighted mean $55 treats a two-order branch like an eight-order branch and answers a different question.'
   },
   {
-    id: 'c1-change-units', file: 'index.html', afterTopic: 4,
+    id: 'c1-change-units', file: 'index.html', afterTopic: 7,
     title: 'Separate a unit change from new variation', kind: 'choice',
     prompt: 'Transfer exercise with separate data. The same parcel weights are recorded first in kilograms and then in grams. Their mean is 2 kg and their standard deviation is 0.3 kg. Which report is correct after the conversion?',
     options: [
@@ -35,7 +35,7 @@ module.exports = [
     explanation: 'Multiplication by a positive constant c multiplies the mean and SD by c and variance by c². CV = 100 × 0.3/2 = 15%, unchanged at 100 × 300/2,000. These positive ratio-scale measurements support a meaningful CV.'
   },
   {
-    id: 'c1-preserve-pairs', file: 'index.html', afterTopic: 7,
+    id: 'c1-preserve-pairs', file: 'index.html', afterTopic: 11,
     title: 'Protect the relationship before calculating', kind: 'choice',
     prompt: 'Transfer exercise with separate data. Three stores have (advertising spend, sales) pairs (1, 9), (2, 3), (3, 6), in thousands of dollars. An analyst sorts each column separately, producing (1, 3), (2, 6), (3, 9). What should you do?',
     options: [

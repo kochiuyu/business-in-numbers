@@ -89,3 +89,7 @@
 .step-anchor{display:block;position:relative;scroll-margin-top:160px}.class-one-case .case-part>.visual-check{margin:22px 0;padding:14px 20px;border:1px solid var(--line);border-radius:6px}
 @media(max-width:800px){.class-one-case .case-route{grid-template-columns:repeat(2,minmax(0,1fr))}.moment-core-result{grid-template-columns:1fr}.class-one-case .case-part>.case-worked,.step-core{padding:20px 18px}.step-core h3{font-size:24px}}
 @media print{.step-core,.class-one-case .case-part>.case-worked{box-shadow:none;border-color:#888}.moment-core-result{grid-template-columns:1fr 1fr}.step-anchor{scroll-margin-top:0}}
+
+/* Focused center and spread steps retain compact, visible worked definitions. */
+.step-core>article{margin:16px 0;padding:16px 20px;border-left:4px solid var(--green);background:#edf2e8}.step-core>article h3{font-size:22px;margin-top:0}.step-core>article .equation{background:transparent}.class-one-case .case-route a{min-height:110px}
+@media(max-width:700px){.step-core>article{padding:14px}.class-one-case .case-route a{min-height:105px}}

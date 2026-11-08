@@ -24,6 +24,7 @@ function enhance(html, file) {
       .replace('Pictures come first. Open full explanations when you want the calculations or practice.',
         'First pass: follow the pictures, make a prediction, then check your reasoning. Open all explanations opens topic explanations and optional extensions; check answers stay closed. Show technical depth reveals extra mathematics inside explanations; Show all steps changes only the reading route.');
   }
+  if(file==='index.html')html=html.replace('First pass: follow the pictures, make a prediction, then check your reasoning.','First pass: work through each visible example, make a prediction, then check your reasoning.');
   html=html.replace('</head>','<link rel="stylesheet" href="learning.css"></head>');
   html=html.replace('</body>','<script src="learning.js"></script></body>');
   return require('./navigation.cjs').enhance(activities.enhance(html,file),file);

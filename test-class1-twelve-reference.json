@@ -1,0 +1,766 @@
+{
+  "base_commit": "f174403231c47a2df949a7333f6557fe1fa6b383",
+  "baseline_sha256": "fd4843563e45bb45cf9f6e2dd02310750f51d2d3a39057d18535f5e480f9e38c",
+  "reviewed_sha256": "bdd7ca9f23a61dfb29e032aaaf73076fe440906d92c1d1988923bfc6e26338a0",
+  "reviewed_changed_leaves": {
+    "See the numbers before learning the formulas. Follow one retailer through eight short teaching steps, at your own pace.": 1,
+    "Eight teaching steps · one business case": 1,
+    "Rows, units and comparisons.": 1,
+    "Choose a center": 3,
+    "Mean, median and purpose.": 1,
+    "Read the spread": 2,
+    "Quartiles, IQR and boxplots.": 1,
+    "Build variance and standard deviation": 2,
+    "Square, average, square root.": 1,
+    "Signed cubes and asymmetry.": 1,
+    "Fourth powers and extremes.": 1,
+    "Read relationships": 2,
+    "Paired data, not causation.": 1,
+    "Evidence, action and limits.": 1,
+    "Step 1 of 8 · Know the records": 1,
+    "Show all eight steps": 1,
+    "STEP 1 OF 8": 1,
+    "You do not need to work through all five views now. Use the boxplot for Record A in Step 3 and the scatter plot for Record C in Step 7. The category, time-series and minute-based delivery examples are separate practice data. You can return here from the later parts.": 1,
+    "Next: Choose a center": 1,
+    "STEP 2 OF 8": 1,
+    "Full explanation · calculations, order lab and weighted means": 1,
+    "Each bar is one order, not a frequency count. Leave SD and the orange outlier flags aside for Parts 3 and 4.": 1,
+    "No. Investigate whether it is an error or a different type of customer. A real large order belongs in total revenue. Report mean and median with the reason they differ. Step 3 will turn “unusual” into an explicit check.": 1,
+    "Next: read the middle half and extremes with quartiles and a boxplot.": 1,
+    "Next: Read the spread": 1,
+    "STEP 3 OF 8": 1,
+    "Next: Build variance and SD": 1,
+    "STEP 4 OF 8": 1,
+    "Look beyond the average": 1,
+    "Step 3": 1,
+    "STEP 5 OF 8": 1,
+    "STEP 6 OF 8": 1,
+    ". These are not replacements for the twelve orders in Step 3. Treat these five as the entire order book being described, so every moment divides by": 1,
+    "and the population/sample choice in Step 4. They may differ from the fixed original boxplot in Step 3. Return to “One large order” in the lab to compare that scenario. The formulas and corrections are in technical depth.": 1,
+    "Next: Read relationships": 1,
+    "STEP 7 OF 8": 1,
+    "STEP 8 OF 8": 1
+  },
+  "patches": [
+    {
+      "token_start": 96,
+      "token_end": 97,
+      "before": "See the numbers before learning the formulas. Follow one retailer through eight short teaching steps, at your own pace.",
+      "after": "See the numbers before learning the formulas. Follow one retailer through twelve focused teaching steps, at your own pace."
+    },
+    {
+      "token_start": 180,
+      "token_end": 181,
+      "before": "Eight teaching steps · one business case",
+      "after": "Twelve focused steps · one business case"
+    },
+    {
+      "token_start": 313,
+      "token_end": 314,
+      "before": "<nav aria-label=\"Eight-step business case\">",
+      "after": "<nav aria-label=\"Twelve-step business case\">"
+    },
+    {
+      "token_start": 316,
+      "token_end": 317,
+      "before": "<a href=\"#class1-step-1\">",
+      "after": "<a href=\"#class1-records\">"
+    },
+    {
+      "token_start": 323,
+      "token_end": 323,
+      "before": "<small>Rows, units and comparisons.</small>",
+      "after": ""
+    },
+    {
+      "token_start": 326,
+      "token_end": 327,
+      "before": "<a href=\"#class1-step-2\">",
+      "after": "<a href=\"#class1-mean\">"
+    },
+    {
+      "token_start": 331,
+      "token_end": 332,
+      "before": "Choose a center",
+      "after": "Build the mean"
+    },
+    {
+      "token_start": 333,
+      "token_end": 333,
+      "before": "<small>Mean, median and purpose.</small>",
+      "after": ""
+    },
+    {
+      "token_start": 336,
+      "token_end": 337,
+      "before": "<a href=\"#class1-step-3\">",
+      "after": "<a href=\"#class1-median\">"
+    },
+    {
+      "token_start": 341,
+      "token_end": 342,
+      "before": "Read the spread",
+      "after": "Find the median"
+    },
+    {
+      "token_start": 343,
+      "token_end": 343,
+      "before": "<small>Quartiles, IQR and boxplots.</small>",
+      "after": ""
+    },
+    {
+      "token_start": 346,
+      "token_end": 347,
+      "before": "<a href=\"#class1-step-4\">",
+      "after": "<a href=\"#class1-mode\">"
+    },
+    {
+      "token_start": 351,
+      "token_end": 352,
+      "before": "Build variance and standard deviation",
+      "after": "Find the mode"
+    },
+    {
+      "token_start": 353,
+      "token_end": 353,
+      "before": "<small>Square, average, square root.</small>",
+      "after": ""
+    },
+    {
+      "token_start": 356,
+      "token_end": 357,
+      "before": "<a href=\"#class1-step-5\">",
+      "after": "<a href=\"#class1-quartiles\">"
+    },
+    {
+      "token_start": 361,
+      "token_end": 362,
+      "before": "Understand skewness",
+      "after": "Read quartiles and boxplots"
+    },
+    {
+      "token_start": 363,
+      "token_end": 363,
+      "before": "<small>Signed cubes and asymmetry.</small>",
+      "after": ""
+    },
+    {
+      "token_start": 366,
+      "token_end": 367,
+      "before": "<a href=\"#class1-step-6\">",
+      "after": "<a href=\"#class1-variance\">"
+    },
+    {
+      "token_start": 371,
+      "token_end": 372,
+      "before": "Understand kurtosis",
+      "after": "Build variance"
+    },
+    {
+      "token_start": 373,
+      "token_end": 373,
+      "before": "<small>Fourth powers and extremes.</small>",
+      "after": ""
+    },
+    {
+      "token_start": 376,
+      "token_end": 377,
+      "before": "<a href=\"#class1-step-7\">",
+      "after": "<a href=\"#class1-sd-cv\">"
+    },
+    {
+      "token_start": 381,
+      "token_end": 382,
+      "before": "Read relationships",
+      "after": "Use standard deviation and CV"
+    },
+    {
+      "token_start": 383,
+      "token_end": 383,
+      "before": "<small>Paired data, not causation.</small>",
+      "after": ""
+    },
+    {
+      "token_start": 386,
+      "token_end": 387,
+      "before": "<a href=\"#class1-step-8\">",
+      "after": "<a href=\"#class1-skewness\">"
+    },
+    {
+      "token_start": 391,
+      "token_end": 431,
+      "before": "",
+      "after": "Understand skewness</b></a></li><li><a href=\"#class1-kurtosis\"><span>09</span><b>Understand kurtosis</b></a></li><li><a href=\"#class1-covariance\"><span>10</span><b>Build covariance</b></a></li><li><a href=\"#class1-correlation\"><span>11</span><b>Read correlation</b></a></li><li><a href=\"#class1-briefing\"><span>12</span><b>"
+    },
+    {
+      "token_start": 433,
+      "token_end": 433,
+      "before": "<small>Evidence, action and limits.</small>",
+      "after": ""
+    },
+    {
+      "token_start": 475,
+      "token_end": 476,
+      "before": "Step 1 of 8 · Know the records",
+      "after": "Step 1 of 12 · Know the records"
+    },
+    {
+      "token_start": 486,
+      "token_end": 487,
+      "before": "Show all eight steps",
+      "after": "Show all twelve steps"
+    },
+    {
+      "token_start": 493,
+      "token_end": 495,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-records\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 497,
+      "token_end": 498,
+      "before": "STEP 1 OF 8",
+      "after": "STEP 1 OF 12"
+    },
+    {
+      "token_start": 938,
+      "token_end": 939,
+      "before": "You do not need to work through all five views now. Use the boxplot for Record A in Step 3 and the scatter plot for Record C in Step 7. The category, time-series and minute-based delivery examples are separate practice data. You can return here from the later parts.",
+      "after": "You do not need to work through all five views now. Use the boxplot for Record A in the quartiles step and the scatter plot for Record C in the correlation step. The category, time-series and minute-based delivery examples are separate practice data. You can return here from the later parts."
+    },
+    {
+      "token_start": 971,
+      "token_end": 973,
+      "before": "<a href=\"#class1-step-2\" class=\"button\">Next: Choose a center ",
+      "after": "<a href=\"#class1-mean\" class=\"button\">Next: Build the mean "
+    },
+    {
+      "token_start": 982,
+      "token_end": 984,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-mean\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 986,
+      "token_end": 987,
+      "before": "STEP 2 OF 8",
+      "after": "STEP 2 OF 12"
+    },
+    {
+      "token_start": 989,
+      "token_end": 990,
+      "before": "Choose a center",
+      "after": "Build the mean"
+    },
+    {
+      "token_start": 995,
+      "token_end": 1105,
+      "before": "\n{{visual:center}}\n",
+      "after": "<section class=\"step-core\" id=\"mean-core\" aria-labelledby=\"mean-core-title\"><span class=\"visual-kicker\">RECORD A · ALL TWELVE PURCHASES</span><h3 id=\"mean-core-title\">Use the mean to recover the total.</h3><article><h3>Mean</h3><p>Add the values, divide by their count.</p>{{math:mean}}<p>Uses every value and changes when a distant value changes. It preserves the total: n × mean = total.</p></article><p>The original orders are <b>$18, $22, $24, $25, $28, $30, $32, $35, $38, $42, $46, $200</b>. Their sum is <b>$540</b>. Twelve equal shares of that total would each be <b>$540 ÷ 12 = $45</b>. These shares explain the mean; they are not twelve new observed purchases.</p><div class=\"moment-core-result\"><span>Total revenue: <b>$540</b><br>Number of purchases: <b>12</b></span><span>Revenue per purchase: <b>$45</b><br>Check: 12 × $45 = <b>$540</b></span></div><p>The mean uses every amount. The $200 order therefore matters to revenue per order, even though no actual purchase is exactly $45. That does not make $45 the middle purchase or a recommended price.</p><p><b>Try:</b> keep eleven orders fixed and change only $200 to $50. Predict the new total and mean before revealing.</p><details class=\"visual-check\"><summary>Check the changed total</summary><p>The total falls by $150 to <b>$390</b>. The count stays 12, so the mean is <b>$390 ÷ 12 = $32.50</b>. A change of −$150 to one record changes the mean by −$150/12 = −$12.50. This is a what-if experiment; the fixed business case still uses $200 and $540.</p></details><p>For branch averages with different numbers of orders, weight each average by its order count. The full calculation and original order lab remain below.</p></section>\n\n\n<details class=\"lesson\"><summary><span class=\"lesson-number\">02</span><span><b>Mean, weighted means and the order lab</b><small>Full explanation · comparisons, weighted means and other averages</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><p class=\"case-scope\">After the three center steps, compare their answers on the same records here. The experiment changes only its own lab data.</p>{{visual:center}}"
+    },
+    {
+      "token_start": 1148,
+      "token_end": 1148,
+      "before": "\n<details class=\"lesson\"><summary><span class=\"lesson-number\">02</span><span><b>Choose a center</b><small>Full explanation · calculations, order lab and weighted means</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\">",
+      "after": ""
+    },
+    {
+      "token_start": 1156,
+      "token_end": 1156,
+      "before": "<div class=\"three-col\"><article><h3>Mean</h3><p>Add the values, divide by their count.</p>{{math:mean}}<p>Uses every value and changes when a distant value changes. It preserves the total: n × mean = total.</p></article><article><h3>Median</h3><p>Sort the values and find the middle.</p><div class=\"formula\">Odd n: one middle value<br>Even n, numeric data: average two middle values</div><p>Less sensitive to a few extreme values. It needs meaningful order. With ordinal categories, identify the middle category or categories rather than averaging category labels.</p></article><article><h3>Mode</h3><p>Find the value or category occurring most often.</p>{{math:mode}}<p>There may be several. Here, if every value occurs once, we report “no repeated mode,” matching Excel's no-repeat behavior.</p></article></div>",
+      "after": ""
+    },
+    {
+      "token_start": 1204,
+      "token_end": 1205,
+      "before": "Each bar is one order, not a frequency count. Leave SD and the orange outlier flags aside for Parts 3 and 4.",
+      "after": "Each bar is one order, not a frequency count. Leave SD and the orange outlier flags aside for the spread and shape steps."
+    },
+    {
+      "token_start": 1400,
+      "token_end": 1401,
+      "before": "No. Investigate whether it is an error or a different type of customer. A real large order belongs in total revenue. Report mean and median with the reason they differ. Step 3 will turn “unusual” into an explicit check.",
+      "after": "No. Investigate whether it is an error or a different type of customer. A real large order belongs in total revenue. Report mean and median with the reason they differ. The quartiles step will turn “unusual” into an explicit check."
+    },
+    {
+      "token_start": 1827,
+      "token_end": 1828,
+      "before": "Next: read the middle half and extremes with quartiles and a boxplot.",
+      "after": "Next: locate the middle purchase with the median."
+    },
+    {
+      "token_start": 1832,
+      "token_end": 1833,
+      "before": "<a href=\"#class1-step-1\" class=\"visual-back\">",
+      "after": "<a href=\"#class1-records\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 1835,
+      "token_end": 2162,
+      "before": "<a href=\"#class1-step-3\" class=\"button\">Next: Read the spread ",
+      "after": "<a href=\"#class1-median\" class=\"button\">Next: Find the median <span aria-hidden=\"true\">→</span></a></nav></section><section class=\"case-part\" id=\"case-median\" aria-labelledby=\"case-median-title\"><span class=\"step-anchor\" id=\"class1-median\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 3 OF 12</div><h2 id=\"case-median-title\">Find the median</h2><p>Separate the middle position from revenue per order.</p></div><section class=\"step-core\" id=\"median-core\" aria-labelledby=\"median-core-title\"><span class=\"visual-kicker\">SAME PURCHASES · ORDERED POSITIONS</span><h3 id=\"median-core-title\">Locate the middle instead of sharing the total.</h3><article><h3>Median</h3><p>Sort the values and find the middle.</p><div class=\"formula\">Odd n: one middle value<br>Even n, numeric data: average two middle values</div><p>Less sensitive to a few extreme values. It needs meaningful order. With ordinal categories, identify the middle category or categories rather than averaging category labels.</p></article><p>Sort the twelve purchases: <b>18, 22, 24, 25, 28, 30, 32, 35, 38, 42, 46, 200</b> dollars. With an even count, the middle lies between positions <b>6 and 7</b>: $30 and $32. The median is <b>($30 + $32) ÷ 2 = $31</b>.</p><div class=\"moment-core-result\"><span>Positions 1–6 end at <b>$30</b></span><span>Positions 7–12 begin at <b>$32</b></span></div><p>No observed order must equal the median. Here $31 describes the central position, while the mean $45 describes revenue per order. The median does not reconstruct the $540 total.</p><p><b>Try:</b> replace the $200 purchase with $50, without changing the other eleven. Does the median fall to $32.50 along with the mean?</p><details class=\"visual-check\"><summary>Check the positions</summary><p>No. $50 is still the largest order, so positions 6 and 7 remain $30 and $32. The median stays <b>$31</b>, while the mean becomes <b>$32.50</b>. This illustrates resistance to a change far from the middle, not a rule that the median never changes.</p></details></section><details class=\"lesson\" id=\"median-reference\"><summary><span class=\"lesson-number\">03</span><span><b>Odd counts and meaningful order</b><small>Further explanation · conventions, interpretation and limits</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><p>For an odd number of observations, take the value at position (n + 1)/2 after sorting. As a separate subset exercise, omit the original $200 order and inspect the remaining eleven purchases. Position 6 is $30, so that eleven-order median is $30. Removing a valid order changes the data and is not a recommended treatment of an outlier.</p><p>For ordered categories, the middle category or categories can be meaningful, but averaging arbitrary numeric category codes assumes unjustified spacing. For numeric even-count data, averaging the two central observations is the convention used here.</p></div></details><details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 3 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD · 03</span><h3>The median answers a position question.</h3><p>The twelve-order median is $31. It is less affected by a distant amount than the mean, but it cannot substitute for revenue per order.</p><p class=\"case-next\">Next: find the most frequent value or category with the mode.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 3 navigation\"><a href=\"#class1-mean\" class=\"visual-back\">← Previous step</a><a href=\"#class1-mode\" class=\"button\">Next: Find the mode <span aria-hidden=\"true\">→</span></a></nav></section><section class=\"case-part\" id=\"case-mode\" aria-labelledby=\"case-mode-title\"><span class=\"step-anchor\" id=\"class1-mode\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 4 OF 12</div><h2 id=\"case-mode-title\">Find the mode</h2><p>Count values or categories; allow ties and no repeated value.</p></div><section class=\"step-core\" id=\"mode-core\" aria-labelledby=\"mode-core-title\"><span class=\"visual-kicker\">COUNT REPETITIONS · DO NOT AVERAGE LABELS</span><h3 id=\"mode-core-title\">Ask what occurs most often.</h3><article><h3>Mode</h3><p>Find the value or category occurring most often.</p>{{math:mode}}<p>There may be several. Here, if every value occurs once, we report “no repeated mode,” matching Excel's no-repeat behavior.</p></article><p>In the original twelve purchases, every dollar amount appears once. Under this course’s convention, report <b>no repeated mode</b>. That tells us something different from mean $45 or median $31.</p><p>Try this separate five-purchase practice book: <b>$10, $10, $20, $20, $30</b>. Count frequencies before choosing an answer.</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Practice purchase frequencies. Scroll horizontally if needed.\"><table><caption>Separate practice book, not extra case records</caption><thead><tr><th scope=\"col\">Amount</th><th scope=\"col\">Frequency</th></tr></thead><tbody><tr><th scope=\"row\">$10</th><td>2</td></tr><tr><th scope=\"row\">$20</th><td>2</td></tr><tr><th scope=\"row\">$30</th><td>1</td></tr></tbody></table></div><p><b>Try:</b> is the mode $15 because $10 and $20 tie?</p><details class=\"visual-check\"><summary>Check the tied frequencies</summary><p>No. Both <b>$10 and $20</b> are modes because each has the greatest frequency. Do not average them into $15: that amount does not occur. Modes can also name categories, such as the most common payment method, where a numerical average may have no meaning.</p></details></section><details class=\"lesson\" id=\"mode-reference\"><summary><span class=\"lesson-number\">04</span><span><b>Modes, ties and recording precision</b><small>Further explanation · conventions, interpretation and limits</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><p>A mode is a most frequent value or category. When all frequencies tie at one, the course reports “no repeated mode”; formally, every observed value ties for the largest frequency. This is a reporting convention, not a contradiction.</p><p>Rounding and grouping can change the most frequent recorded value or interval. A histogram’s tallest bin is a modal interval, not necessarily a unique mode of the ungrouped measurements. State the recording precision or grouping rule.</p><p><a href=\"#case-center-worked\">Compare all three centers on the original purchases</a>, or <a href=\"#lab\">change the largest order in the original lab</a>. Use each summary for its own question.</p></div></details><details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 4 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD · 04</span><h3>Frequency is different from middle or total.</h3><p>The original orders have no repeated mode. In the separate practice book, $10 and $20 tie as modes; their average is not a mode.</p><p class=\"case-next\">Next: describe the middle half and unusual values using quartiles and a boxplot.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 4 navigation\"><a href=\"#class1-median\" class=\"visual-back\">← Previous step</a><a href=\"#class1-quartiles\" class=\"button\">Next: Read quartiles and boxplots "
+    },
+    {
+      "token_start": 2171,
+      "token_end": 2173,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-quartiles\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2175,
+      "token_end": 2176,
+      "before": "STEP 3 OF 8",
+      "after": "STEP 5 OF 12"
+    },
+    {
+      "token_start": 2178,
+      "token_end": 2179,
+      "before": "Read the spread",
+      "after": "Read quartiles and boxplots"
+    },
+    {
+      "token_start": 2297,
+      "token_end": 2298,
+      "before": "03",
+      "after": "05"
+    },
+    {
+      "token_start": 2351,
+      "token_end": 2352,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 3 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 5 answer\">"
+    },
+    {
+      "token_start": 2353,
+      "token_end": 2354,
+      "before": "ANSWER TO CARRY FORWARD · 03",
+      "after": "ANSWER TO CARRY FORWARD · 05"
+    },
+    {
+      "token_start": 2366,
+      "token_end": 2368,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 3 navigation\"><a href=\"#class1-step-2\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 5 navigation\"><a href=\"#class1-mode\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 2370,
+      "token_end": 2372,
+      "before": "<a href=\"#class1-step-4\" class=\"button\">Next: Build variance and SD ",
+      "after": "<a href=\"#class1-variance\" class=\"button\">Next: Build variance "
+    },
+    {
+      "token_start": 2381,
+      "token_end": 2383,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-variance\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 2385,
+      "token_end": 2386,
+      "before": "STEP 4 OF 8",
+      "after": "STEP 6 OF 12"
+    },
+    {
+      "token_start": 2388,
+      "token_end": 2389,
+      "before": "Build variance and standard deviation",
+      "after": "Build variance"
+    },
+    {
+      "token_start": 2394,
+      "token_end": 2398,
+      "before": "{{visual:spread}}\n<section class=\"case-worked\" id=\"case-supplier-worked\"><h3>Measure how far each delivery is from five days.",
+      "after": "{{visual:spread}}<section class=\"step-core\" id=\"variance-core\" aria-labelledby=\"variance-core-title\"><h3 id=\"variance-core-title\">Square the deviations before averaging."
+    },
+    {
+      "token_start": 2401,
+      "token_end": 2402,
+      "before": "Standard deviation (SD)",
+      "after": "Variance"
+    },
+    {
+      "token_start": 2403,
+      "token_end": 2404,
+      "before": " summarizes spread using every record. Subtract the mean, square each deviation so positive and negative differences do not cancel, average those squares, then take the square root to return to days.",
+      "after": " measures average squared distance from the mean, with a denominator chosen for the purpose. Signed deviations sum to zero, so averaging those signed gaps would hide real variation."
+    },
+    {
+      "token_start": 2405,
+      "token_end": 2425,
+      "before": "<div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Supplier standard deviation calculation. Scroll horizontally if needed.\">",
+      "after": "<p>Keep the fixed supplier records: <b>A: 4, 5, 5, 5, 6 days</b>; <b>B: 1, 2, 5, 8, 9 days</b>. Both means are <b>5 days</b>. Describe these observed records using denominator <b>n = 5</b>.</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Supplier variance calculation. Scroll horizontally if needed.\">"
+    },
+    {
+      "token_start": 2427,
+      "token_end": 2428,
+      "before": "Describe these five recorded deliveries per supplier: divide by 5",
+      "after": "Subtract 5, square each result, then divide the total by 5"
+    },
+    {
+      "token_start": 2432,
+      "token_end": 2433,
+      "before": "Calculation",
+      "after": "Stage"
+    },
+    {
+      "token_start": 2445,
+      "token_end": 2446,
+      "before": "Days minus mean of 5",
+      "after": "Deviations"
+    },
+    {
+      "token_start": 2448,
+      "token_end": 2449,
+      "before": "−1, 0, 0, 0, 1",
+      "after": "−1,0,0,0,1"
+    },
+    {
+      "token_start": 2451,
+      "token_end": 2452,
+      "before": "−4, −3, 0, 3, 4",
+      "after": "−4,−3,0,3,4"
+    },
+    {
+      "token_start": 2456,
+      "token_end": 2457,
+      "before": "Squared deviations",
+      "after": "Squares"
+    },
+    {
+      "token_start": 2459,
+      "token_end": 2460,
+      "before": "1, 0, 0, 0, 1; total 2",
+      "after": "1,0,0,0,1"
+    },
+    {
+      "token_start": 2462,
+      "token_end": 2463,
+      "before": "16, 9, 0, 9, 16; total 50",
+      "after": "16,9,0,9,16"
+    },
+    {
+      "token_start": 2467,
+      "token_end": 2468,
+      "before": "Population-version variance",
+      "after": "Squared total"
+    },
+    {
+      "token_start": 2470,
+      "token_end": 2471,
+      "before": "2 ÷ 5 = 0.4 days²",
+      "after": "2 days²"
+    },
+    {
+      "token_start": 2473,
+      "token_end": 2474,
+      "before": "50 ÷ 5 = 10 days²",
+      "after": "50 days²"
+    },
+    {
+      "token_start": 2478,
+      "token_end": 2479,
+      "before": "Population-version SD",
+      "after": "Variance"
+    },
+    {
+      "token_start": 2481,
+      "token_end": 2485,
+      "before": "√0.4 ≈ 0.63 days",
+      "after": "2/5=<b>0.4 days²</b>"
+    },
+    {
+      "token_start": 2487,
+      "token_end": 2491,
+      "before": "√10 ≈ 3.16 days",
+      "after": "50/5=<b>10 days²</b>"
+    },
+    {
+      "token_start": 2497,
+      "token_end": 2498,
+      "before": "This describes the observed records with denominator n. Estimating a wider population’s variance from a sample uses n − 1 under the usual assumptions; that is a different purpose. SD is not a maximum delay or a promise that all deliveries fall within one SD of the mean.",
+      "after": "B’s variance is 25 times A’s. That ratio concerns squared distances, not a 25-fold ratio of spreads measured in days. The next step takes the square root to return to days."
+    },
+    {
+      "token_start": 2499,
+      "token_end": 2521,
+      "before": "",
+      "after": "<p><b>Try:</b> if these records are instead an independent, identically distributed sample for estimating a wider population variance, which denominator and values apply?</p><details class=\"visual-check\"><summary>Check the sample denominator</summary><p>Use n − 1 = 4: A’s sample variance is <b>2/4=0.5 days²</b> and B’s is <b>50/4=12.5 days²</b>. All five squared deviations still count. Under the usual sampling assumptions this correction makes sample variance unbiased; it cannot fix unrepresentative data. The records themselves did not become more variable.</p></details>"
+    },
+    {
+      "token_start": 2522,
+      "token_end": 2523,
+      "before": "\n\n",
+      "after": "\n\n\n"
+    },
+    {
+      "token_start": 2846,
+      "token_end": 2847,
+      "before": "04",
+      "after": "06"
+    },
+    {
+      "token_start": 2850,
+      "token_end": 2851,
+      "before": "Look beyond the average",
+      "after": "Variance, denominators and the full supplier case"
+    },
+    {
+      "token_start": 3034,
+      "token_end": 3035,
+      "before": "Step 3",
+      "after": "the quartiles step"
+    },
+    {
+      "token_start": 3074,
+      "token_end": 3282,
+      "before": "",
+      "after": "</div></details>\n<details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 6 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD · 06</span><h3>Average squared distances, in squared units.</h3><p>The recorded population-version variances are 0.4 and 10 days². The sample versions are 0.5 and 12.5 days². Name the purpose and denominator.</p><p class=\"case-next\">Next: take square roots, then compare spread relative to the mean.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 6 navigation\"><a href=\"#class1-quartiles\" class=\"visual-back\">← Previous step</a><a href=\"#class1-sd-cv\" class=\"button\">Next: Use standard deviation and CV <span aria-hidden=\"true\">→</span></a></nav></section><section class=\"case-part\" id=\"case-sd-cv\" aria-labelledby=\"case-sd-cv-title\"><span class=\"step-anchor\" id=\"class1-sd-cv\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 7 OF 12</div><h2 id=\"case-sd-cv-title\">Use standard deviation and CV</h2><p>Separate spread in original units from spread relative to the mean.</p></div><section class=\"step-core\" id=\"sd-cv-core\" aria-labelledby=\"sd-cv-core-title\"><h3 id=\"sd-cv-core-title\">Return to days, then compare relative spread.</h3><p><b>Standard deviation</b> is the square root of variance. It uses every observation and returns spread to the original measurement units. Reuse the variances just calculated: A has 0.4 days² and B has 10 days².</p><ol class=\"case-calculation\"><li><b>Take square roots.</b> A: √0.4 ≈ <b>0.6325 days</b>. B: √10 ≈ <b>3.1623 days</b>.</li><li><b>Compare in days.</b> B’s SD is <b>5 times</b> A’s, the square root of the variance ratio 25. SD is not a maximum deviation or a promised delivery window.</li><li><b>Divide by a meaningful positive mean.</b> Both means are 5 days. The coefficient of variation (CV) = SD / mean × 100% gives A:<b>12.65%</b> and B:<b>63.25%</b>.</li></ol><p>SD describes spread in days; CV describes it relative to the mean. Use CV for ratio-scale data with a meaningful zero and a positive mean. It becomes unstable near zero and is generally unsuitable for comparisons based on arbitrary origins, such as Celsius temperatures.</p><p><b>Try:</b> convert A’s delivery times from days to hours. Does its CV become 24 times larger?</p><details class=\"visual-check\"><summary>Check the unit conversion</summary><p>No. The mean becomes <b>120 hours</b> and SD becomes about <b>15.18 hours</b>. Their ratio is unchanged, so CV stays <b>12.65%</b>. Variance, unlike SD, is multiplied by 24². Use unrounded numbers until the final display.</p></details></section><section class=\"case-worked\" id=\"case-supplier-worked\"><h3>Measure how far each delivery is from five days.</h3><p><b>Standard deviation (SD)</b> summarizes spread using every record. Subtract the mean, square each deviation so positive and negative differences do not cancel, average those squares, then take the square root to return to days.</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Supplier standard deviation calculation. Scroll horizontally if needed.\"><table><caption>Describe these five recorded deliveries per supplier: divide by 5</caption><thead><tr><th scope=\"col\">Calculation</th><th scope=\"col\">Supplier A</th><th scope=\"col\">Supplier B</th></tr></thead><tbody><tr><th scope=\"row\">Days minus mean of 5</th><td>−1, 0, 0, 0, 1</td><td>−4, −3, 0, 3, 4</td></tr><tr><th scope=\"row\">Squared deviations</th><td>1, 0, 0, 0, 1; total 2</td><td>16, 9, 0, 9, 16; total 50</td></tr><tr><th scope=\"row\">Population-version variance</th><td>2 ÷ 5 = 0.4 days²</td><td>50 ÷ 5 = 10 days²</td></tr><tr><th scope=\"row\">Population-version SD</th><td>√0.4 ≈ 0.63 days</td><td>√10 ≈ 3.16 days</td></tr></tbody></table></div><p>This describes the observed records with denominator n. Estimating a wider population’s variance from a sample uses n − 1 under the usual assumptions; that is a different purpose. SD is not a maximum delay or a promise that all deliveries fall within one SD of the mean.</p></section>"
+    },
+    {
+      "token_start": 3297,
+      "token_end": 3327,
+      "before": "",
+      "after": "<details class=\"lesson\" id=\"sd-cv-reference\"><summary><span class=\"lesson-number\">07</span><span><b>Choose the denominator before the square root</b><small>Further explanation · conventions, interpretation and limits</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><p>For the sample convention, take the square roots of 0.5 and 12.5 days²: sample SDs are about 0.7071 and 3.5355 days. With the same means of 5 days, sample CVs are 14.14% and 70.71%. State whether you used population-version or sample-version summaries.</p><p>The n−1 correction makes sample variance unbiased under the usual assumptions; the square root does not make sample SD exactly unbiased. Neither SD nor CV answers the missed-deadline question by itself. Keep the observed late shares and like-for-like checks in the supplier case.</p><p><a href=\"#sample\">Revisit the lab’s population/sample switch</a>. It changes the purpose and denominator, not the fixed supplier records.</p>"
+    },
+    {
+      "token_start": 3329,
+      "token_end": 3329,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 3333,
+      "token_end": 3334,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 4 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 7 answer\">"
+    },
+    {
+      "token_start": 3335,
+      "token_end": 3336,
+      "before": "ANSWER TO CARRY FORWARD · 04",
+      "after": "ANSWER TO CARRY FORWARD · 07"
+    },
+    {
+      "token_start": 3348,
+      "token_end": 3350,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 4 navigation\"><a href=\"#class1-step-3\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 7 navigation\"><a href=\"#class1-variance\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 3352,
+      "token_end": 3353,
+      "before": "<a href=\"#class1-step-5\" class=\"button\">",
+      "after": "<a href=\"#class1-skewness\" class=\"button\">"
+    },
+    {
+      "token_start": 3363,
+      "token_end": 3365,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-skewness\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 3367,
+      "token_end": 3368,
+      "before": "STEP 5 OF 8",
+      "after": "STEP 8 OF 12"
+    },
+    {
+      "token_start": 3492,
+      "token_end": 3493,
+      "before": "05",
+      "after": "08"
+    },
+    {
+      "token_start": 3539,
+      "token_end": 3540,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 5 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 8 answer\">"
+    },
+    {
+      "token_start": 3541,
+      "token_end": 3542,
+      "before": "ANSWER TO CARRY FORWARD · 05",
+      "after": "ANSWER TO CARRY FORWARD · 08"
+    },
+    {
+      "token_start": 3554,
+      "token_end": 3556,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 5 navigation\"><a href=\"#class1-step-4\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 8 navigation\"><a href=\"#class1-sd-cv\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 3558,
+      "token_end": 3559,
+      "before": "<a href=\"#class1-step-6\" class=\"button\">",
+      "after": "<a href=\"#class1-kurtosis\" class=\"button\">"
+    },
+    {
+      "token_start": 3569,
+      "token_end": 3571,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-kurtosis\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 3573,
+      "token_end": 3574,
+      "before": "STEP 6 OF 8",
+      "after": "STEP 9 OF 12"
+    },
+    {
+      "token_start": 3726,
+      "token_end": 3727,
+      "before": "06",
+      "after": "09"
+    },
+    {
+      "token_start": 3774,
+      "token_end": 3775,
+      "before": ". These are not replacements for the twelve orders in Step 3. Treat these five as the entire order book being described, so every moment divides by ",
+      "after": ". These are not replacements for the twelve orders in the quartiles step. Treat these five as the entire order book being described, so every moment divides by "
+    },
+    {
+      "token_start": 4440,
+      "token_end": 4441,
+      "before": " and the population/sample choice in Step 4. They may differ from the fixed original boxplot in Step 3. Return to “One large order” in the lab to compare that scenario. The formulas and corrections are in technical depth.",
+      "after": " and the population/sample choice in the variance step. They may differ from the fixed original boxplot in the quartiles step. Return to “One large order” in the lab to compare that scenario. The formulas and corrections are in technical depth."
+    },
+    {
+      "token_start": 4712,
+      "token_end": 4713,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 6 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 9 answer\">"
+    },
+    {
+      "token_start": 4714,
+      "token_end": 4715,
+      "before": "ANSWER TO CARRY FORWARD · 06",
+      "after": "ANSWER TO CARRY FORWARD · 09"
+    },
+    {
+      "token_start": 4727,
+      "token_end": 4729,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 6 navigation\"><a href=\"#class1-step-5\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 9 navigation\"><a href=\"#class1-skewness\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 4731,
+      "token_end": 4733,
+      "before": "<a href=\"#class1-step-7\" class=\"button\">Next: Read relationships ",
+      "after": "<a href=\"#class1-covariance\" class=\"button\">Next: Build covariance "
+    },
+    {
+      "token_start": 4739,
+      "token_end": 4741,
+      "before": "<section class=\"case-part\" id=\"case-part-5\" aria-labelledby=\"case-part-5-title\"><span class=\"step-anchor\" id=\"class1-step-7\" aria-hidden=\"true\">",
+      "after": "<section class=\"case-part\" id=\"case-covariance\" aria-labelledby=\"case-covariance-title\"><span class=\"step-anchor\" id=\"class1-covariance\" aria-hidden=\"true\">"
+    },
+    {
+      "token_start": 4744,
+      "token_end": 4745,
+      "before": "STEP 7 OF 8",
+      "after": "STEP 10 OF 12"
+    },
+    {
+      "token_start": 4746,
+      "token_end": 4748,
+      "before": "<h2 id=\"case-part-5-title\">Read relationships",
+      "after": "<h2 id=\"case-covariance-title\">Build covariance"
+    },
+    {
+      "token_start": 4750,
+      "token_end": 4751,
+      "before": "Marketing sees higher spending alongside higher sales. Decide whether that association is enough to commit more money.",
+      "after": "Start with signed products from the same paired records."
+    },
+    {
+      "token_start": 4753,
+      "token_end": 4767,
+      "before": "{{visual:relationship}}\n",
+      "after": "<section class=\"step-core\" id=\"covariance-core\" aria-labelledby=\"covariance-core-title\"><h3 id=\"covariance-core-title\">Measure whether paired deviations move together.</h3><p><b>Covariance</b> averages products of paired deviations from their own means. Same-sign deviations contribute positively; opposite signs contribute negatively. Keep the two values from each branch together. Its units are the units of x multiplied by the units of y.</p><p>Use the fixed five branch pairs below. Advertising and sales are both in thousands of dollars. Their means are 3 and 6 respectively.</p></section>"
+    },
+    {
+      "token_start": 4892,
+      "token_end": 5035,
+      "before": "",
+      "after": "</section><section class=\"step-core\" id=\"covariance-check\"><p>The population-version covariance is <b>1.4 (thousand dollars)²</b>. For a sample estimate with n−1, the same cross-product total gives <b>7/4=1.75 (thousand dollars)²</b>. These summarize positive linear co-movement, not an advertising effect or a bounded strength score.</p><p><b>Try:</b> convert advertising alone from thousands of dollars to dollars, leaving sales in thousands. Does the covariance remain 1.4?</p><details class=\"visual-check\"><summary>Check the multiplied units</summary><p>No. Advertising deviations are multiplied by 1000, so the population-version covariance becomes <b>1400 dollar × thousand-dollar units</b>. The records describe the same branches. A covariance’s magnitude depends on measurement scales; it has no universal −1 to 1 bound. Correlation will remove these positive scale factors in the next step.</p></details></section><details class=\"lesson\" id=\"covariance-reference\"><summary><span class=\"lesson-number\">10</span><span><b>Read the sign without overclaiming</b><small>Further explanation · conventions, interpretation and limits</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><p>A positive covariance means that positive cross-products outweigh negative ones overall. It does not mean every branch lies on an increasing line. A negative covariance indicates the opposite overall linear direction.</p><p>Covariance can be zero even when a nonlinear relationship exists. It is symmetric in x and y, but never supplies a causal direction. Adding a constant to every x or y leaves deviations and covariance unchanged; multiplying a variable by a positive factor rescales covariance by that factor.</p><p>For independent, identically distributed paired samples with finite second moments, dividing the centered cross-product sum by n−1 gives the usual unbiased sample covariance. Pairing, sampling assumptions and the target population still matter.</p></div></details><details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 10 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD · 10</span><h3>Keep direction and scale separate.</h3><p>The five branches have covariance 1.4 using n, or 1.75 using n−1, in (thousand dollars)². Positive co-movement does not establish causation; magnitude depends on units.</p><p class=\"case-next\">Next: standardize that same co-movement to obtain correlation.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 10 navigation\"><a href=\"#class1-kurtosis\" class=\"visual-back\">← Previous step</a><a href=\"#class1-correlation\" class=\"button\">Next: Read correlation <span aria-hidden=\"true\">→</span></a></nav></section><section class=\"case-part\" id=\"case-part-5\" aria-labelledby=\"case-part-5-title\"><span class=\"step-anchor\" id=\"class1-step-7\" aria-hidden=\"true\"></span><span class=\"step-anchor\" id=\"class1-correlation\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 11 OF 12</div><h2 id=\"case-part-5-title\">Read correlation</h2><p>Marketing sees higher spending alongside higher sales. Decide whether that association is enough to commit more money.</p></div>{{visual:relationship}}<section class=\"step-core\" id=\"correlation-core\" aria-labelledby=\"correlation-core-title\"><h3 id=\"correlation-core-title\">Standardize the same paired co-movement.</h3><p><b>Pearson correlation</b> divides covariance by the product of the two standard deviations. Use matching population or sample denominators throughout. For these five branches, the centered cross-product total is 7; squared deviations total 10 for advertising and 18 for sales.</p><ol class=\"case-calculation\"><li><b>Use the population convention.</b> Covariance = 7 / 5 = 1.4; variance of x=10/5=2; variance of y=18/5=3.6.</li><li><b>Remove both scales.</b> r = 1.4 / (√2 × √3.6)=<b>7/√180≈0.5217</b>.</li><li><b>Interpret the result.</b> The unit-free coefficient describes a positive linear association, with scatter. It does not estimate the extra sales caused by more advertising.</li></ol>"
+    },
+    {
+      "token_start": 5045,
+      "token_end": 5070,
+      "before": "",
+      "after": "<p><b>Try:</b> after converting advertising from thousands of dollars to dollars, covariance becomes 1000 times larger. Does correlation also become 1000 times larger?</p><details class=\"visual-check\"><summary>Check the cancellation</summary><p>No. Advertising SD is also multiplied by 1000, while sales SD is unchanged. The factor cancels, so <b>r stays 0.5217</b>. If either variable is constant, its SD is zero and correlation is <b>undefined</b>, not zero. A negative rescaling would reverse the sign.</p></details><p>Changing to matched sample denominators also cancels: covariance (7/4) divided by [√(10/4) × √(18/4)] gives the same r. Do not mix a sample covariance with population SDs.</p>"
+    },
+    {
+      "token_start": 5071,
+      "token_end": 5072,
+      "before": "\n",
+      "after": "\n\n"
+    },
+    {
+      "token_start": 5075,
+      "token_end": 5076,
+      "before": "07",
+      "after": "11"
+    },
+    {
+      "token_start": 5185,
+      "token_end": 5186,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 7 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 11 answer\">"
+    },
+    {
+      "token_start": 5187,
+      "token_end": 5188,
+      "before": "ANSWER TO CARRY FORWARD · 07",
+      "after": "ANSWER TO CARRY FORWARD · 11"
+    },
+    {
+      "token_start": 5200,
+      "token_end": 5202,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 7 navigation\"><a href=\"#class1-step-6\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 11 navigation\"><a href=\"#class1-covariance\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 5204,
+      "token_end": 5205,
+      "before": "<a href=\"#class1-step-8\" class=\"button\">",
+      "after": "<a href=\"#class1-briefing\" class=\"button\">"
+    },
+    {
+      "token_start": 5215,
+      "token_end": 5217,
+      "before": "",
+      "after": "<span class=\"step-anchor\" id=\"class1-briefing\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "token_start": 5219,
+      "token_end": 5220,
+      "before": "STEP 8 OF 8",
+      "after": "STEP 12 OF 12"
+    },
+    {
+      "token_start": 5264,
+      "token_end": 5265,
+      "before": "08",
+      "after": "12"
+    },
+    {
+      "token_start": 5962,
+      "token_end": 5963,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 8 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 12 answer\">"
+    },
+    {
+      "token_start": 5964,
+      "token_end": 5965,
+      "before": "ANSWER TO CARRY FORWARD · 08",
+      "after": "ANSWER TO CARRY FORWARD · 12"
+    },
+    {
+      "token_start": 5977,
+      "token_end": 5979,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 8 navigation\"><a href=\"#class1-step-7\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 12 navigation\"><a href=\"#class1-correlation\" class=\"visual-back\">"
+    }
+  ]
+}

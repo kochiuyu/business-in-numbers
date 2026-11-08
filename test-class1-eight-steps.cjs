@@ -1,10 +1,10 @@
 'use strict';
-// Eight-step route and visible worked teaching. Historical snapshots are checked
-// separately; these assertions inspect the page learners actually receive.
+// Historical eight-step arithmetic and preservation checks. The delivered
+// twelve-step route is independently checked by test-class1-twelve-steps.cjs.
 const fs=require('node:fs'),assert=require('node:assert/strict');
 let checks=0;const ok=(v,m)=>{checks++;assert.ok(v,m);},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m);};
 const read=p=>fs.readFileSync(p,'utf8');
-const source=read('src/index.html');
+const source=require('./scripts/class-one-twelve-preservation.cjs').restore(read('src/index.html')); 
 const expected=['case-part-1','case-part-2','case-part-4','case-part-3','case-skewness','case-kurtosis','case-part-5','case-part-6'];
 function parse(html){
  const nodes=[],stack=[],voids=new Set('area base br col embed hr img input link meta param source track wbr'.split(' '));
@@ -20,7 +20,7 @@ function parse(html){
 }
 const has=(n,c)=>(n.attrs.class||'').split(/\s+/).includes(c);
 const ancestors=n=>{const out=[];for(let p=n.parent;p;p=p.parent)out.push(p);return out;};
-for(const [name,html] of [['source',source],['built',read('dist/index.html')]]){
+for(const [name,html] of [['restored eight-step source',source]]){
  const t=parse(html),parts=t.nodes.filter(n=>has(n,'case-part'));
  eq(parts.map(p=>p.attrs.id),expected,name+': explicit pedagogical sequence');
  for(const [i,part] of parts.entries()){
@@ -41,7 +41,7 @@ const baseline=JSON.parse(read('course-structure.json'))['index.html'];
 for(const id of baseline.ids)eq([...source.matchAll(/\bid="([^"]+)"/g)].filter(m=>m[1]===id).length,1,'original ID retained exactly once: '+id);
 eq([...source.matchAll(/\{\{math:([^}]+)\}\}/g)].map(m=>m[1]).sort(),baseline.math,'all original formula placeholders retained');
 const activities=require('./scripts/activities.cjs').data().filter(a=>a.file==='index.html');
-eq(activities.map(a=>[a.id,a.afterTopic]),[['c1-measurements',1],['c1-weighted-orders',2],['c1-change-units',4],['c1-preserve-pairs',7]],'practice follows semantic topics, not stale numeric positions');
+eq(activities.map(a=>[a.id,a.afterTopic]),[['c1-measurements',1],['c1-weighted-orders',2],['c1-change-units',7],['c1-preserve-pairs',11]],'practice follows semantic topics, not stale numeric positions');
 // Deliberate navigation, headings and local-reference wording only. Everything
 // else is compared as a multiset of exact text leaves, independent of location.
 const allowedChangedLeaves={

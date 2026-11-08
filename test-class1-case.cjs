@@ -50,12 +50,12 @@ function tree(html) {
 
 for (const [name, html] of [['source', source], ['built', built]]) {
   const t = tree(html), parts = t.nodes.filter(n => t.has(n, 'case-part'));
-  eq(parts.length, 8, name + ': eight case parts');
-  eq(parts.map(n => n.attrs.id), ['case-part-1','case-part-2','case-part-4','case-part-3','case-skewness','case-kurtosis','case-part-5','case-part-6'], name + ': consecutive part order');
+  eq(parts.length, 12, name + ': twelve case parts');
+  eq(parts.map(n => n.attrs.id), ['case-part-1','case-part-2','case-median','case-mode','case-part-4','case-part-3','case-sd-cv','case-skewness','case-kurtosis','case-covariance','case-part-5','case-part-6'], name + ': consecutive part order');
   const lessons = t.nodes.filter(n => t.has(n, 'lesson'));
-  eq(lessons.length, 8, name + ': eight statistical topics');
+  eq(lessons.length, 12, name + ': twelve statistical topics');
   const brief = t.byId('case-brief');
-  ok(t.byId('learning-start').start < parts[0].start && parts.at(-1).end <= brief.start, name + ': situation, eight parts, final brief');
+  ok(t.byId('learning-start').start < parts[0].start && parts.at(-1).end <= brief.start, name + ': situation, twelve parts, final brief');
   for (const [i, part] of parts.entries()) {
     const title = t.byId(part.attrs['aria-labelledby']);
     ok(t.within(title, part), name + ': each part owns its heading');
@@ -94,13 +94,13 @@ for (const [name, html] of [['source', source], ['built', built]]) {
   const required = id => { const n = t.byId(id); ok(n, name + ': progression stage ' + id); return n; };
   const ancestors = n => { const result=[]; for(let p=n.parent;p;p=p.parent)result.push(p); return result; };
   const initiallyOpen = n => /\sopen(?:\s|=|>)/i.test(t.fragment(n).split('>')[0]+'>');
-  const coreIds = ['case-record-check','case-center-worked','case-weighted-prep','case-supplier-worked','case-unit-prep','case-fence-worked','case-pairs-worked','case-write-brief'];
+  const coreIds = ['case-record-check','mean-core','median-core','mode-core','variance-core','sd-cv-core','covariance-core','correlation-core','case-center-worked','case-weighted-prep','case-supplier-worked','case-unit-prep','case-fence-worked','case-pairs-worked','case-write-brief'];
   for (const id of coreIds) {
     const n=required(id), parents=ancestors(n);
     ok(!parents.some(p=>t.has(p,'technical')), name + ': ' + id + ' does not require technical depth');
-    ok(!parents.some(p=>p.tag==='details'&&(!['case-weighted-prep','case-unit-prep'].includes(id)||!t.has(p,'lesson'))), name + ': ' + id + ' uses only its intended explanation depth');
+    ok(!parents.some(p=>p.tag==='details'&&(!['case-center-worked','case-weighted-prep','case-unit-prep'].includes(id)||!t.has(p,'lesson'))), name + ': ' + id + ' uses only its intended explanation depth');
   }
-  for (const [before,after] of [['case-center-worked','lab'],['case-supplier-worked','sample'],['case-fence-worked','shape-values'],['case-pairs-worked','r-value'],['case-write-brief','case-brief']]) {
+  for (const [before,after] of [['case-center-worked','lab'],['variance-core','sample'],['case-fence-worked','shape-values'],['case-pairs-worked','r-value'],['case-write-brief','case-brief']]) {
     ok(required(before).end <= required(after).start, name + ': ' + before + ' precedes ' + after);
   }
   const part6=required('case-part-6');
@@ -191,7 +191,8 @@ for(const [id,claims] of [
   ['case-fence-worked',['24.25','41','16.75','−$0.875','66.125']],
   ['case-unit-prep',['15.18','12.65%']],
   ['case-weighted-prep',['$120','4','$30']],
-  ['case-pairs-worked',['7','1.4','0.5217']]
+  ['case-pairs-worked',['7','1.4']],
+  ['correlation-core',['0.5217']]
 ]) {
   const stage=workedTree.byId(id);ok(stage,'worked numeric stage '+id);
   const prose=text(workedTree.fragment(stage));
