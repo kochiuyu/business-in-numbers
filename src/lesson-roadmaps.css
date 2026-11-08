@@ -1,0 +1,17 @@
+/* Static-first lesson map and purposeful route cards. */
+.lesson-roadmap{margin:24px 0;padding:clamp(18px,3vw,30px);background:#eaf0e5;border:1px solid #aabb9e;border-radius:8px;color:#173f36;min-width:0}
+.lesson-roadmap .roadmap-kicker{font:700 11px/1.5 Arial,sans-serif;letter-spacing:1.4px;margin:0 0 9px;color:#654322}
+.lesson-roadmap h3{font:400 clamp(25px,3vw,34px)/1.2 Georgia,serif;margin:0 0 15px;max-width:32ch}
+.lesson-roadmap p{font-size:15px;line-height:1.7;max-width:85ch}.lesson-roadmap .roadmap-outcome{margin-top:0}
+.roadmap-phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:23px 0;padding:0;list-style:none}
+.roadmap-phases li{position:relative;min-width:0}.roadmap-phases a{height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:10px;background:#fffef9;border:1px solid #adbea7;border-radius:5px;padding:16px;text-decoration:none;color:#173f36}
+.roadmap-phases b{font-size:15px;line-height:1.4}.roadmap-phases a>span:not(.roadmap-phase-number){font-size:13px;line-height:1.6}.roadmap-phase-number{font:23px/1 Georgia,serif;color:#97451f}.roadmap-connector{position:absolute;right:-11px;top:20px;z-index:1;font-size:20px;transform:rotate(-90deg);background:#eaf0e5;line-height:1}
+.lesson-roadmap .roadmap-logic{margin-bottom:12px}.lesson-roadmap .roadmap-data{font-size:13px;border-top:1px solid #b8c8af;padding-top:12px;margin-bottom:0}
+body :is(.case-route,.c2-route,.c3-route,.c4-route,.c5-route,.c6-route,.c7-route,.c8-route) a{height:100%;box-sizing:border-box;min-width:0;overflow-wrap:anywhere}
+body :is(.case-route,.c2-route,.c3-route,.c4-route,.c5-route,.c6-route,.c7-route,.c8-route) a small.route-purpose{display:block;font:400 13px/1.6 Arial,sans-serif;color:#3e574a;letter-spacing:0;margin:0;white-space:normal}
+.step-bridge{margin:24px 0 0;border-left:3px solid #97451f;background:#f6eee0;padding:16px 20px;max-width:85ch}.step-bridge>b{display:block;font-size:12px;letter-spacing:.3px;color:#714021}.step-bridge p{font-size:15px;line-height:1.7;margin:7px 0 0}
+.roadmap-mini-lesson,.roadmap-preview{margin:24px 0;padding:20px;border:1px solid #b5c7af;border-radius:7px;background:#fffef9;min-width:0}.roadmap-mini-lesson h3,.roadmap-preview h4{font:400 26px/1.25 Georgia,serif;margin:0 0 14px}.roadmap-mini-lesson p,.roadmap-mini-lesson li,.roadmap-preview p,.roadmap-preview li{font-size:15px;line-height:1.7}.roadmap-mini-lesson li+li,.roadmap-preview li+li{margin-top:9px}.roadmap-mini-lesson summary{min-height:44px;padding:10px 0;font-weight:700;cursor:pointer}
+.lesson-roadmap a:focus-visible,.roadmap-mini-lesson :focus-visible{outline:3px solid #97451f;outline-offset:4px}
+@media(max-width:1000px){.roadmap-phases{grid-template-columns:repeat(2,minmax(0,1fr))}.roadmap-connector{display:none}}
+@media(max-width:700px){body :is(.case-route,.c2-route,.c3-route,.c4-route,.c5-route,.c6-route,.c7-route,.c8-route){grid-template-columns:1fr}.lesson-roadmap{padding:18px}.roadmap-phases{grid-template-columns:1fr;gap:24px}.roadmap-connector{display:block;top:auto;bottom:-22px;left:20px;right:auto;transform:none}.roadmap-phases a{padding:16px}.step-bridge{padding:15px}.roadmap-mini-lesson,.roadmap-preview{padding:16px}}
+@media print{.lesson-roadmap{background:white;break-inside:avoid}.roadmap-phases{grid-template-columns:repeat(2,minmax(0,1fr))}.roadmap-connector{display:none}.step-bridge{background:white}.roadmap-mini-lesson{break-inside:avoid}}

@@ -1,0 +1,134 @@
+{
+  "index.html": {
+    "classNumber": 1,
+    "partClass": "case-part",
+    "routeClass": "case-route",
+    "question": "What can this retailer’s records support, and what would be misleading to claim?",
+    "outcome": "Write a short manager briefing that separates typical purchases, delivery risk and association from causal evidence.",
+    "phases": [
+      {
+        "anchor": "class1-records",
+        "title": "Frame and display",
+        "description": "Steps 1–3 · Identify each observation, check totals, then show the pattern."
+      },
+      {
+        "anchor": "class1-mean",
+        "title": "Describe one variable",
+        "description": "Steps 4–9 · Compare center and spread before judging what is unusual."
+      },
+      {
+        "anchor": "class1-skewness",
+        "title": "Read shape and relationships",
+        "description": "Steps 10–13 · Look beyond averages, then connect paired measurements."
+      },
+      {
+        "anchor": "class1-briefing",
+        "title": "Make a defensible claim",
+        "description": "Step 14 · Combine the evidence and state what it cannot establish."
+      }
+    ],
+    "logic": "A chart makes the records visible; summaries describe what you see. Standard-deviation units connect spread to shape. Covariance and correlation ask a new question about paired variables, and the briefing brings the separate findings together.",
+    "data": "The twelve purchase values, two supplier records and five advertising–sales pairs are separate synthetic files. The 100-order channel table, 80-order payment table and labeled practice shops are additional examples, not extra rows in those files.",
+    "steps": [
+      {
+        "id": "case-part-1",
+        "anchor": "class1-records",
+        "short": "Know the records",
+        "description": "Identify the row, units and claim each file can support.",
+        "bridge": "Once the observation unit is clear, a table can organize records without mixing dollars, orders and delivery days."
+      },
+      {
+        "id": "case-tables",
+        "anchor": "class1-tables",
+        "short": "Organize a table",
+        "description": "Turn counts into shares using the right whole.",
+        "bridge": "The counts and denominators are now checkable. Plot the same quantities so comparisons are visible, while keeping each separate example labeled."
+      },
+      {
+        "id": "case-charts",
+        "anchor": "class1-charts",
+        "short": "Choose a graph",
+        "description": "Match the chart to the variable and the question.",
+        "bridge": "A graph shows the purchase pattern and the $200 order. The mean now asks how much revenue each order would carry under equal sharing."
+      },
+      {
+        "id": "case-part-2",
+        "anchor": "class1-mean",
+        "short": "Build the mean",
+        "description": "Reconcile total revenue with an equal-share average.",
+        "bridge": "The mean preserves total revenue, but $45 may not describe the middle purchase. Keep the same twelve orders and locate their median."
+      },
+      {
+        "id": "case-median",
+        "anchor": "class1-median",
+        "short": "Find the median",
+        "description": "Locate the middle without letting one large order dominate.",
+        "bridge": "The median describes ordered position. The mode answers a different question: which value or category appears most often?"
+      },
+      {
+        "id": "case-mode",
+        "anchor": "class1-mode",
+        "short": "Find the mode",
+        "description": "Identify common values, including ties or no repeated value.",
+        "bridge": "Mean, median and mode each summarize a center. Quartiles reveal where the middle half lies and help investigate the unusually large order."
+      },
+      {
+        "id": "case-part-4",
+        "anchor": "class1-quartiles",
+        "short": "Read quartiles and boxplots",
+        "description": "Describe the middle half and flag values for investigation.",
+        "bridge": "A boxplot summarizes spread by position. Switch to the separate supplier files to measure spread around their shared five-day mean."
+      },
+      {
+        "id": "case-part-3",
+        "anchor": "class1-variance",
+        "short": "Build variance",
+        "description": "Measure squared deviations, keeping population and sample conventions clear.",
+        "bridge": "Variance distinguishes the suppliers, but its unit is days squared. Taking a square root returns spread to delivery days."
+      },
+      {
+        "id": "case-sd-cv",
+        "anchor": "class1-sd-cv",
+        "short": "Use standard deviation and CV",
+        "description": "Return to original units, compare relative spread and standardize distance.",
+        "bridge": "Standard-deviation units put distances on a common scale. Cubing those signed distances lets skewness describe asymmetry; fourth powers will emphasize large distances.",
+        "addition": "<section class=\"roadmap-mini-lesson\" id=\"standard-deviation-units\" aria-labelledby=\"standard-deviation-units-title\"><p class=\"roadmap-kicker\">BRIDGE TO SHAPE · SAME SUPPLIER B RECORDS</p><h3 id=\"standard-deviation-units-title\">How far away, in standard-deviation units?</h3><p>A distance of four days means more when delivery times are tightly grouped. Standardize a value by subtracting the mean and dividing by the standard deviation: <b>z = (value − mean) / SD</b>. Use the same population or sample convention throughout.</p><ol><li>Supplier B’s five recorded deliveries are <b>1, 2, 5, 8, 9 days</b>. Treat this listed set as the population for this descriptive calculation: mean = 5 days, variance = 10 days² and SD = √10 ≈ 3.1623 days.</li><li>The nine-day delivery is (9 − 5)/√10 ≈ <b>+1.2649 SDs</b> above the mean. The one-day delivery is (1 − 5)/√10 ≈ <b>−1.2649 SDs</b> below it.</li><li>Days cancel. The sign tells you which side; the magnitude tells you how many SDs away. Standardizing does <b>not</b> make a distribution normal and is undefined when SD = 0.</li></ol><p><b>Try:</b> what is the standardized distance for the five-day delivery? Does z = +1.2649 alone prove an observation is an error or an outlier?</p><details><summary>Check the distance and its meaning</summary><p>(5 − 5)/√10 = <b>0</b>: the value is exactly at the mean. No universal error or outlier conclusion follows from +1.2649 alone. You still need the distribution, context and a stated rule. In the next two steps, third and fourth powers of standardized distances explain how shape summaries are built.</p></details></section>"
+      },
+      {
+        "id": "case-skewness",
+        "anchor": "class1-skewness",
+        "short": "Understand skewness",
+        "description": "Explain which tail extends farther and why signs matter.",
+        "bridge": "Skewness keeps the signs of deviations. Fourth powers remove the signs, so kurtosis asks how strongly far-away observations contribute, not which side they occupy."
+      },
+      {
+        "id": "case-kurtosis",
+        "anchor": "class1-kurtosis",
+        "short": "Understand kurtosis",
+        "description": "Relate fourth-power contributions to extreme distances.",
+        "bridge": "Center, spread and shape describe one variable at a time. The next question needs matched advertising and sales records, so keep each pair together."
+      },
+      {
+        "id": "case-covariance",
+        "anchor": "class1-covariance",
+        "short": "Build covariance",
+        "description": "Track whether paired deviations tend to share a sign.",
+        "bridge": "Covariance records joint direction, but changes when measurement units change. Divide by both standard deviations to obtain unit-free correlation."
+      },
+      {
+        "id": "case-part-5",
+        "anchor": "class1-correlation",
+        "short": "Read correlation",
+        "description": "Summarize linear association without claiming causation.",
+        "bridge": "The association is now quantified, with its limitations. Combine it with the separate purchase and supplier findings in a concise manager briefing."
+      },
+      {
+        "id": "case-part-6",
+        "anchor": "class1-briefing",
+        "short": "Brief the manager",
+        "description": "Match each recommendation to its evidence and limits.",
+        "bridge": "These summaries describe recorded cases. Class 2 makes assumptions about uncertain future events explicit and asks which group belongs in each probability denominator."
+      }
+    ]
+  }
+}

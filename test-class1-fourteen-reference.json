@@ -3,14 +3,14 @@
   "reviewed_sha256": "3b011783c20313173fdf05eef7afe19d4feae220e12be097cdd5ee85608a7261",
   "reviewed_changed_leaves": {
     "See the numbers before learning the formulas. Follow one retailer through twelve focused teaching steps, at your own pace.": 1,
-    "Twelve focused steps \u00b7 one business case": 1,
-    "Step 1 of 12 \u00b7 Know the records": 1,
+    "Twelve focused steps · one business case": 1,
+    "Step 1 of 12 · Know the records": 1,
     "Show all twelve steps": 1,
     "STEP 1 OF 12": 1,
     "Synthetic customer orders": 1,
-    "Optional chart reference \u00b7 return when a later step asks for a plot": 1,
+    "Optional chart reference · return when a later step asks for a plot": 1,
     "You do not need to work through all five views now. Use the boxplot for Record A in the quartiles step and the scatter plot for Record C in the correlation step. The category, time-series and minute-based delivery examples are separate practice data. You can return here from the later parts.": 1,
-    "Next: use the order book to challenge the \u201c$45 typical basket\u201d claim.": 1,
+    "Next: use the order book to challenge the “$45 typical basket” claim.": 1,
     "STEP 2 OF 12": 1,
     "STEP 3 OF 12": 1,
     "STEP 4 OF 12": 1,
@@ -37,8 +37,8 @@
     {
       "token_start": 180,
       "token_end": 181,
-      "before": "Twelve focused steps \u00b7 one business case",
-      "after": "Fourteen focused steps \u00b7 one business case"
+      "before": "Twelve focused steps · one business case",
+      "after": "Fourteen focused steps · one business case"
     },
     {
       "token_start": 313,
@@ -121,8 +121,8 @@
     {
       "token_start": 495,
       "token_end": 496,
-      "before": "Step 1 of 12 \u00b7 Know the records",
-      "after": "Step 1 of 14 \u00b7 Know the records"
+      "before": "Step 1 of 12 · Know the records",
+      "after": "Step 1 of 14 · Know the records"
     },
     {
       "token_start": 506,
@@ -140,7 +140,7 @@
       "token_start": 848,
       "token_end": 1048,
       "before": "",
-      "after": "<div class=\"technical\"><h4>Technical depth \u00b7 Measurement scales</h4><p>On an <b>interval scale</b>, equal differences are meaningful but zero is arbitrary (Celsius temperature). On a <b>ratio scale</b>, zero is meaningful and ratios make sense (duration, mass, order value). Taking means of ordinal scores assumes more than order alone: justify the spacing assumption.</p><p>Notation: {{math:count}} is the number of observations; {{math:observations}} are the observations; {{math:summation}} means add them. Floor rounds toward {{math:negative-infinity}}; ceiling rounds toward {{math:positive-infinity}}.</p></div><p class=\"case-transfer\">Before carrying these definitions into the case, check that you can distinguish a numerical label from a measurement in the four-field exercise below.</p></div></details>\n<details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 1 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD \u00b7 01</span><h3>Keep three different questions separate.</h3><p>Purchase records describe purchases, not necessarily unique customers. Supplier records measure delivery days. Branch pairs compare advertising and sales for the same period. Confirm comparable products, routes and measurement rules before interpreting supplier differences; the case does not establish those conditions.</p><p class=\"case-next\">Next: organize counts in a table, then choose a graph before calculating averages.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 1 navigation\"><span class=\"visual-back\">Begin here. There is no timer.</span><a href=\"#class1-tables\" class=\"button\">Next: Organize a table <span aria-hidden=\"true\">\u2192</span></a></nav></section><section class=\"case-part\" id=\"case-tables\" aria-labelledby=\"case-tables-title\"><span class=\"step-anchor\" id=\"class1-tables\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 2 OF 14</div><h2 id=\"case-tables-title\">Organize a table</h2><p>Turn records into counts you can check. Keep totals and denominators in view.</p></div><section class=\"step-core\" id=\"tables-core\" aria-labelledby=\"tables-core-title\"><span class=\"visual-kicker\">TABULAR REPRESENTATION \u00b7 A SEPARATE 100-ORDER EXAMPLE</span><h3 id=\"tables-core-title\">One category per order. One row per category.</h3><p>A <b>frequency table</b> summarizes how often each value or category occurs. A raw-data table has one row per observation; this summary instead has one row per channel. For a separate shop\u2019s 100 orders, count each order once in a mutually exclusive sales channel. These are not Record A\u2019s twelve purchases.</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Sales-channel frequency table. Scroll horizontally if needed.\"><table><caption>100 synthetic orders \u00b7 frequency counts orders, not dollars</caption><thead><tr><th scope=\"col\">Sales channel</th><th scope=\"col\">Frequency (orders)</th><th scope=\"col\">Relative frequency</th><th scope=\"col\">Percentage</th></tr></thead><tbody><tr><th scope=\"row\">Online</th><td>50</td><td>50 \u00f7 100 = 0.50</td><td>50%</td></tr><tr><th scope=\"row\">In store</th><td>30</td><td>30 \u00f7 100 = 0.30</td><td>30%</td></tr><tr><th scope=\"row\">Phone</th><td>20</td><td>20 \u00f7 100 = 0.20</td><td>20%</td></tr><tr class=\"table-total\"><th scope=\"row\">Total</th><td>100</td><td>1.00</td><td>100%</td></tr></tbody></table></div><ol class=\"case-calculation\"><li><b>Count:</b> 50 + 30 + 20 = 100 orders. Check that categories cover the stated whole and do not overlap.</li><li><b>Divide by the stated total:</b> phone\u2019s relative frequency is 20/100 = 0.20, or 20%.</li><li><b>Write the claim with its unit:</b> \u201c20% of these orders came by phone.\u201d This does not tell us phone\u2019s share of revenue.</li></ol><p><b>Try:</b> can you say online generated 50% of revenue? What extra column would you need?</p><details class=\"visual-check\"><summary>Check the unit behind the percentage</summary><p>No. The table counts orders, not their monetary values. You need each order\u2019s value, or a revenue total for each channel, to calculate revenue shares. Counts and revenue may tell different stories.</p></details></section>"
+      "after": "<div class=\"technical\"><h4>Technical depth · Measurement scales</h4><p>On an <b>interval scale</b>, equal differences are meaningful but zero is arbitrary (Celsius temperature). On a <b>ratio scale</b>, zero is meaningful and ratios make sense (duration, mass, order value). Taking means of ordinal scores assumes more than order alone: justify the spacing assumption.</p><p>Notation: {{math:count}} is the number of observations; {{math:observations}} are the observations; {{math:summation}} means add them. Floor rounds toward {{math:negative-infinity}}; ceiling rounds toward {{math:positive-infinity}}.</p></div><p class=\"case-transfer\">Before carrying these definitions into the case, check that you can distinguish a numerical label from a measurement in the four-field exercise below.</p></div></details>\n<details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 1 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD · 01</span><h3>Keep three different questions separate.</h3><p>Purchase records describe purchases, not necessarily unique customers. Supplier records measure delivery days. Branch pairs compare advertising and sales for the same period. Confirm comparable products, routes and measurement rules before interpreting supplier differences; the case does not establish those conditions.</p><p class=\"case-next\">Next: organize counts in a table, then choose a graph before calculating averages.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 1 navigation\"><span class=\"visual-back\">Begin here. There is no timer.</span><a href=\"#class1-tables\" class=\"button\">Next: Organize a table <span aria-hidden=\"true\">→</span></a></nav></section><section class=\"case-part\" id=\"case-tables\" aria-labelledby=\"case-tables-title\"><span class=\"step-anchor\" id=\"class1-tables\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 2 OF 14</div><h2 id=\"case-tables-title\">Organize a table</h2><p>Turn records into counts you can check. Keep totals and denominators in view.</p></div><section class=\"step-core\" id=\"tables-core\" aria-labelledby=\"tables-core-title\"><span class=\"visual-kicker\">TABULAR REPRESENTATION · A SEPARATE 100-ORDER EXAMPLE</span><h3 id=\"tables-core-title\">One category per order. One row per category.</h3><p>A <b>frequency table</b> summarizes how often each value or category occurs. A raw-data table has one row per observation; this summary instead has one row per channel. For a separate shop’s 100 orders, count each order once in a mutually exclusive sales channel. These are not Record A’s twelve purchases.</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Sales-channel frequency table. Scroll horizontally if needed.\"><table><caption>100 synthetic orders · frequency counts orders, not dollars</caption><thead><tr><th scope=\"col\">Sales channel</th><th scope=\"col\">Frequency (orders)</th><th scope=\"col\">Relative frequency</th><th scope=\"col\">Percentage</th></tr></thead><tbody><tr><th scope=\"row\">Online</th><td>50</td><td>50 ÷ 100 = 0.50</td><td>50%</td></tr><tr><th scope=\"row\">In store</th><td>30</td><td>30 ÷ 100 = 0.30</td><td>30%</td></tr><tr><th scope=\"row\">Phone</th><td>20</td><td>20 ÷ 100 = 0.20</td><td>20%</td></tr><tr class=\"table-total\"><th scope=\"row\">Total</th><td>100</td><td>1.00</td><td>100%</td></tr></tbody></table></div><ol class=\"case-calculation\"><li><b>Count:</b> 50 + 30 + 20 = 100 orders. Check that categories cover the stated whole and do not overlap.</li><li><b>Divide by the stated total:</b> phone’s relative frequency is 20/100 = 0.20, or 20%.</li><li><b>Write the claim with its unit:</b> “20% of these orders came by phone.” This does not tell us phone’s share of revenue.</li></ol><p><b>Try:</b> can you say online generated 50% of revenue? What extra column would you need?</p><details class=\"visual-check\"><summary>Check the unit behind the percentage</summary><p>No. The table counts orders, not their monetary values. You need each order’s value, or a revenue total for each channel, to calculate revenue shares. Counts and revenue may tell different stories.</p></details></section>"
     },
     {
       "token_start": 1054,
@@ -164,7 +164,7 @@
       "token_start": 1064,
       "token_end": 1065,
       "before": "Synthetic customer orders",
-      "after": "Separate 80-order payment example \u00b7 counts, not revenue"
+      "after": "Separate 80-order payment example · counts, not revenue"
     },
     {
       "token_start": 1067,
@@ -211,7 +211,7 @@
     {
       "token_start": 1133,
       "token_end": 1138,
-      "before": "</details><div class=\"technical\"><h4>Technical depth \u00b7 Measurement scales</h4>",
+      "before": "</details><div class=\"technical\"><h4>Technical depth · Measurement scales</h4>",
       "after": "</section><section class=\"step-core\" id=\"table-denominator-check\"><h3>Read a two-way table in the direction of the question.</h3>"
     },
     {
@@ -230,7 +230,7 @@
       "token_start": 1143,
       "token_end": 1144,
       "before": ", equal differences are meaningful but zero is arbitrary (Celsius temperature). On a <b>ratio scale</b>, zero is meaningful and ratios make sense (duration, mass, order value). Taking means of ordinal scores assumes more than order alone: justify the spacing assumption.",
-      "after": ", not the same 100 orders as the channel table. \u201cOf online orders\u201d fixes the row total of 40. \u201cOf card orders\u201d fixes the column total of 50. \u201cOf all orders\u201d uses the grand total of 80."
+      "after": ", not the same 100 orders as the channel table. “Of online orders” fixes the row total of 40. “Of card orders” fixes the column total of 50. “Of all orders” uses the grand total of 80."
     },
     {
       "token_start": 1146,
@@ -247,14 +247,14 @@
     {
       "token_start": 1153,
       "token_end": 1154,
-      "before": "Optional chart reference \u00b7 return when a later step asks for a plot",
+      "before": "Optional chart reference · return when a later step asks for a plot",
       "after": "Check the column denominator"
     },
     {
       "token_start": 1155,
       "token_end": 1161,
       "before": "<p class=\"case-gallery-note\">You do not need to work through all five views now. Use the boxplot for Record A in the quartiles step and the scatter plot for Record C in the correlation step. The category, time-series and minute-based delivery examples are separate practice data. You can return here from the later parts.",
-      "after": "<p>30 of the 50 card-paid orders were online, so <b>30/50 = 60%</b>. This differs from 30/40 = 75% of online orders paid by card. Keep both the numerator and the group named after \u201cof.\u201d"
+      "after": "<p>30 of the 50 card-paid orders were online, so <b>30/50 = 60%</b>. This differs from 30/40 = 75% of online orders paid by card. Keep both the numerator and the group named after “of.”"
     },
     {
       "token_start": 1162,
@@ -266,7 +266,7 @@
       "token_start": 1163,
       "token_end": 1190,
       "before": "<p class=\"case-transfer\">Before carrying these definitions into the case, check that you can distinguish a numerical label from a measurement in the four-field exercise below.",
-      "after": "</section><details class=\"lesson\" id=\"tables-reference\"><summary><span class=\"lesson-number\">02</span><span><b>Table design and grouping</b><small>Further explanation \u00b7 labels, totals and information loss</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><p>Give every table a title, units, period when known, and a clear total. A zero count means no observed cases in that category; a blank may mean unrecorded information. Report missing categories separately rather than silently removing them from the denominator.</p><p>For numerical measurements, a grouped frequency table uses intervals, such as 0 \u2264 delivery time &lt; 10 minutes. Make boundaries non-overlapping and exhaustive for the observations. State whether endpoints are included. Grouping makes patterns easier to see but loses individual detail; a grouped table alone usually cannot recover the exact mean or median.</p><p>The next step plots this same 100-order table, then lets you inspect a numerical frequency table alongside its histogram. Keep a copy of the raw observations when building a summary."
+      "after": "</section><details class=\"lesson\" id=\"tables-reference\"><summary><span class=\"lesson-number\">02</span><span><b>Table design and grouping</b><small>Further explanation · labels, totals and information loss</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><p>Give every table a title, units, period when known, and a clear total. A zero count means no observed cases in that category; a blank may mean unrecorded information. Report missing categories separately rather than silently removing them from the denominator.</p><p>For numerical measurements, a grouped frequency table uses intervals, such as 0 ≤ delivery time &lt; 10 minutes. Make boundaries non-overlapping and exhaustive for the observations. State whether endpoints are included. Grouping makes patterns easier to see but loses individual detail; a grouped table alone usually cannot recover the exact mean or median.</p><p>The next step plots this same 100-order table, then lets you inspect a numerical frequency table alongside its histogram. Keep a copy of the raw observations when building a summary."
     },
     {
       "token_start": 1193,
@@ -283,8 +283,8 @@
     {
       "token_start": 1199,
       "token_end": 1200,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 01",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 02"
+      "before": "ANSWER TO CARRY FORWARD · 01",
+      "after": "ANSWER TO CARRY FORWARD · 02"
     },
     {
       "token_start": 1202,
@@ -301,20 +301,20 @@
     {
       "token_start": 1208,
       "token_end": 1209,
-      "before": "Purchase records describe purchases, not necessarily unique customers. Supplier records measure delivery days. Branch pairs compare advertising and sales for the same period. Confirm comparable products, routes and measurement rules before interpreting supplier differences; the case does not establish those conditions.</p><p class=\"case-next\">Next: use the order book to challenge the \u201c$45 typical basket\u201d claim.",
+      "before": "Purchase records describe purchases, not necessarily unique customers. Supplier records measure delivery days. Branch pairs compare advertising and sales for the same period. Confirm comparable products, routes and measurement rules before interpreting supplier differences; the case does not establish those conditions.</p><p class=\"case-next\">Next: use the order book to challenge the “$45 typical basket” claim.",
       "after": "Keep the business question, observation unit, units and denominator visible."
     },
     {
       "token_start": 1212,
       "token_end": 1220,
       "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 1 navigation\"><span class=\"visual-back\">Begin here. There is no timer.",
-      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 2 navigation\"><a href=\"#class1-records\" class=\"visual-back\">\u2190 Previous step</a><a href=\"#class1-charts\" class=\"button\">Next: Choose a graph <span aria-hidden=\"true\">\u2192"
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 2 navigation\"><a href=\"#class1-records\" class=\"visual-back\">← Previous step</a><a href=\"#class1-charts\" class=\"button\">Next: Choose a graph <span aria-hidden=\"true\">→"
     },
     {
       "token_start": 1221,
       "token_end": 1343,
       "before": "",
-      "after": "</a></nav></section><section class=\"case-part\" id=\"case-charts\" aria-labelledby=\"case-charts-title\"><span class=\"step-anchor\" id=\"class1-charts\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 3 OF 14</div><h2 id=\"case-charts-title\">Choose a graph</h2><p>Use a picture to reveal patterns, with the matching table close by. Begin with the same 100 orders.</p></div><section class=\"step-core\" id=\"charts-core\" aria-labelledby=\"charts-core-title\"><span class=\"visual-kicker\">GRAPHICAL REPRESENTATION \u00b7 FROM THE TABLE TO THE PICTURE</span><h3 id=\"charts-core-title\">The same counts become bar lengths.</h3><p>Start with the <b>50 online, 30 in-store and 20 phone orders</b> from Step 2. In the first chart below, category labels identify the groups and bar lengths show their counts. The zero baseline makes the 50-order bar 2.5 times as long as the 20-order bar. A table helps you retrieve an exact value; a graph helps you compare patterns. Use both.</p><p><b>Your first reading:</b> name the largest category, compare in-store with phone orders, then state a limit. Switch chart views only after you can explain what one mark represents.</p><details class=\"visual-check\"><summary>Check your first chart reading</summary><p>Online leads with 50 orders. In store has 10 more orders than phone, or 1.5 times as many (30/20). We cannot infer which channel generated the most revenue without order values. Neither the table nor the graph proves what next month\u2019s customers will do.</p></details></section><p class=\"case-gallery-note\">The chart lesson is visible here, not inside the records explanation. Start with categories; choose another business question when ready. The boxplot uses Record A\u2019s twelve purchases and the scatter plot uses Record C\u2019s five branches. The channel, time-series and minute-based delivery examples are separate synthetic practice data.</p>{{graphs-section}}<details class=\"lesson\" id=\"charts-reference\"><summary><span class=\"lesson-number\">03</span><span><b>Choose before you decorate</b><small>Further explanation \u00b7 a reliable chart-reading routine</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><ol><li><b>Question:</b> compare groups, describe a distribution, follow time, or inspect paired measurements?</li><li><b>Marks:</b> does one bar or dot mean a record, a count, an interval, or a pair?</li><li><b>Scale:</b> check labels, units, axis limits and any breaks before comparing heights, lengths or distances.</li><li><b>Evidence:</b> write one supported pattern and one thing the graph cannot show. Keep the corresponding table or observations available.</li></ol><p>A bar chart is not a histogram. A bar chart compares categories, while a histogram retains numerical order and intervals; its area represents frequency when widths differ. A frequency polygon connects bin midpoints, not successive months. These distinctions are demonstrated in the visible chart views above.</p></div></details><details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 3 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD \u00b7 03</span><h3>Match the chart to the question, then read its scale.</h3><p class=\"case-next\">Next: calculate the mean of the original twelve purchases.</p><p>Keep the business question, observation unit, units and denominator visible.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 3 navigation\"><a href=\"#class1-tables\" class=\"visual-back\">\u2190 Previous step</a>"
+      "after": "</a></nav></section><section class=\"case-part\" id=\"case-charts\" aria-labelledby=\"case-charts-title\"><span class=\"step-anchor\" id=\"class1-charts\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 3 OF 14</div><h2 id=\"case-charts-title\">Choose a graph</h2><p>Use a picture to reveal patterns, with the matching table close by. Begin with the same 100 orders.</p></div><section class=\"step-core\" id=\"charts-core\" aria-labelledby=\"charts-core-title\"><span class=\"visual-kicker\">GRAPHICAL REPRESENTATION · FROM THE TABLE TO THE PICTURE</span><h3 id=\"charts-core-title\">The same counts become bar lengths.</h3><p>Start with the <b>50 online, 30 in-store and 20 phone orders</b> from Step 2. In the first chart below, category labels identify the groups and bar lengths show their counts. The zero baseline makes the 50-order bar 2.5 times as long as the 20-order bar. A table helps you retrieve an exact value; a graph helps you compare patterns. Use both.</p><p><b>Your first reading:</b> name the largest category, compare in-store with phone orders, then state a limit. Switch chart views only after you can explain what one mark represents.</p><details class=\"visual-check\"><summary>Check your first chart reading</summary><p>Online leads with 50 orders. In store has 10 more orders than phone, or 1.5 times as many (30/20). We cannot infer which channel generated the most revenue without order values. Neither the table nor the graph proves what next month’s customers will do.</p></details></section><p class=\"case-gallery-note\">The chart lesson is visible here, not inside the records explanation. Start with categories; choose another business question when ready. The boxplot uses Record A’s twelve purchases and the scatter plot uses Record C’s five branches. The channel, time-series and minute-based delivery examples are separate synthetic practice data.</p>{{graphs-section}}<details class=\"lesson\" id=\"charts-reference\"><summary><span class=\"lesson-number\">03</span><span><b>Choose before you decorate</b><small>Further explanation · a reliable chart-reading routine</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><ol><li><b>Question:</b> compare groups, describe a distribution, follow time, or inspect paired measurements?</li><li><b>Marks:</b> does one bar or dot mean a record, a count, an interval, or a pair?</li><li><b>Scale:</b> check labels, units, axis limits and any breaks before comparing heights, lengths or distances.</li><li><b>Evidence:</b> write one supported pattern and one thing the graph cannot show. Keep the corresponding table or observations available.</li></ol><p>A bar chart is not a histogram. A bar chart compares categories, while a histogram retains numerical order and intervals; its area represents frequency when widths differ. A frequency polygon connects bin midpoints, not successive months. These distinctions are demonstrated in the visible chart views above.</p></div></details><details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 3 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD · 03</span><h3>Match the chart to the question, then read its scale.</h3><p class=\"case-next\">Next: calculate the mean of the original twelve purchases.</p><p>Keep the business question, observation unit, units and denominator visible.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 3 navigation\"><a href=\"#class1-tables\" class=\"visual-back\">← Previous step</a>"
     },
     {
       "token_start": 1358,
@@ -337,8 +337,8 @@
     {
       "token_start": 2190,
       "token_end": 2191,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 02",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 04"
+      "before": "ANSWER TO CARRY FORWARD · 02",
+      "after": "ANSWER TO CARRY FORWARD · 04"
     },
     {
       "token_start": 2203,
@@ -367,8 +367,8 @@
     {
       "token_start": 2339,
       "token_end": 2340,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 03",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 05"
+      "before": "ANSWER TO CARRY FORWARD · 03",
+      "after": "ANSWER TO CARRY FORWARD · 05"
     },
     {
       "token_start": 2352,
@@ -397,8 +397,8 @@
     {
       "token_start": 2515,
       "token_end": 2516,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 04",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 06"
+      "before": "ANSWER TO CARRY FORWARD · 04",
+      "after": "ANSWER TO CARRY FORWARD · 06"
     },
     {
       "token_start": 2528,
@@ -427,8 +427,8 @@
     {
       "token_start": 2725,
       "token_end": 2726,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 05",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 07"
+      "before": "ANSWER TO CARRY FORWARD · 05",
+      "after": "ANSWER TO CARRY FORWARD · 07"
     },
     {
       "token_start": 2738,
@@ -469,8 +469,8 @@
     {
       "token_start": 3455,
       "token_end": 3456,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 06",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 08"
+      "before": "ANSWER TO CARRY FORWARD · 06",
+      "after": "ANSWER TO CARRY FORWARD · 08"
     },
     {
       "token_start": 3468,
@@ -499,8 +499,8 @@
     {
       "token_start": 3707,
       "token_end": 3708,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 07",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 09"
+      "before": "ANSWER TO CARRY FORWARD · 07",
+      "after": "ANSWER TO CARRY FORWARD · 09"
     },
     {
       "token_start": 3720,
@@ -529,8 +529,8 @@
     {
       "token_start": 3913,
       "token_end": 3914,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 08",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 10"
+      "before": "ANSWER TO CARRY FORWARD · 08",
+      "after": "ANSWER TO CARRY FORWARD · 10"
     },
     {
       "token_start": 3926,
@@ -571,8 +571,8 @@
     {
       "token_start": 5086,
       "token_end": 5087,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 09",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 11"
+      "before": "ANSWER TO CARRY FORWARD · 09",
+      "after": "ANSWER TO CARRY FORWARD · 11"
     },
     {
       "token_start": 5099,
@@ -601,8 +601,8 @@
     {
       "token_start": 5331,
       "token_end": 5332,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 10",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 12"
+      "before": "ANSWER TO CARRY FORWARD · 10",
+      "after": "ANSWER TO CARRY FORWARD · 12"
     },
     {
       "token_start": 5344,
@@ -631,8 +631,8 @@
     {
       "token_start": 5559,
       "token_end": 5560,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 11",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 13"
+      "before": "ANSWER TO CARRY FORWARD · 11",
+      "after": "ANSWER TO CARRY FORWARD · 13"
     },
     {
       "token_start": 5572,
@@ -661,8 +661,8 @@
     {
       "token_start": 6336,
       "token_end": 6337,
-      "before": "ANSWER TO CARRY FORWARD \u00b7 12",
-      "after": "ANSWER TO CARRY FORWARD \u00b7 14"
+      "before": "ANSWER TO CARRY FORWARD · 12",
+      "after": "ANSWER TO CARRY FORWARD · 14"
     },
     {
       "token_start": 6349,
@@ -671,5 +671,5 @@
       "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 14 navigation\">"
     }
   ],
-  "reviewed_dist_sha256": "65a81e6940bb8c2bceaf78ad162f42181f1cc57b1fd103941f8563d8420eb1db"
+  "reviewed_dist_sha256": "32a34313a25b561bd8f6ec233f1dbd042199c895b158a037bdf9a6b8ba0876c8"
 }

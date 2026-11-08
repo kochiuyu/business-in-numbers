@@ -27,6 +27,6 @@ function enhance(html, file) {
   if(file==='index.html')html=html.replace('First pass: follow the pictures, make a prediction, then check your reasoning.','First pass: work through each visible example, make a prediction, then check your reasoning.');
   html=html.replace('</head>','<link rel="stylesheet" href="learning.css"></head>');
   html=html.replace('</body>','<script src="learning.js"></script></body>');
-  return require('./navigation.cjs').enhance(activities.enhance(html,file),file);
+  return require('./navigation.cjs').enhance(require('./lesson-roadmaps.cjs').enhance(activities.enhance(html,file),file),file);
 }
 module.exports={lessons,enhance};

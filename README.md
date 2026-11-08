@@ -55,3 +55,9 @@ The workflow builds and tests pushes to `main`, then deploys `dist/` using GitHu
 This is an interactive adaptation of Chiu Yu Ko's business statistics teaching materials. Lesson source and coverage notes identify the relevant materials and limitations. Original slides and internal review documents are not included. No general content license is granted by this repository.
 
 Mathematics is rendered with KaTeX. Its MIT license is retained at `dist/vendor/katex/LICENSE`; see also `dist/MATH-NOTICE.txt`.
+
+## Visible lesson roadmaps
+
+`src/lesson-roadmaps.json` records each implemented class's business question, outcome, phases, route-card descriptions and connections between steps. `scripts/lesson-roadmaps.cjs` adds this static-first navigation during the build, after practice is attached to its original topic. The source teaching blocks, equations and original anchors remain intact. New overview links use a separate selector from the indexed one-step route.
+
+Class 1's roadmap connects fourteen steps in four phases. A visible standard-deviation-units mini-lesson in the SD/CV step prepares learners for skewness and kurtosis without adding an artificial top-level step. Run `npm run test:roadmaps` after building for static visibility, old-anchor ownership, complete explanation preservation, route order and independent arithmetic checks.
