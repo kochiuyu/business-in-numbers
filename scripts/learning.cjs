@@ -17,6 +17,7 @@ function enhance(html, file) {
   // Keep explanations local to their topic rather than adding another setup panel.
   html=html.replace('</head>','<link rel="stylesheet" href="learning.css"></head>');
   html=html.replace('</body>','<script src="learning.js"></script></body>');
-  return require('./navigation.cjs').enhance(require('./lesson-roadmaps.cjs').enhance(activities.enhance(html,file),file),file);
+  html=require('./navigation.cjs').enhance(require('./lesson-roadmaps.cjs').enhance(activities.enhance(html,file),file),file);
+  return require('./lesson-references.cjs').enhance(html);
 }
 module.exports={lessons,enhance};

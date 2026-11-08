@@ -69,3 +69,7 @@ Classes 4–8 now expose their business questions, phase connections and data bo
 ## Simple class openings
 
 The shared header is the only eight-class menu. Each class opens directly into its current business brief and roadmap, without a second learning-path list, practice counter, or global open/close-explanations toolbar. The four contextual practice activities per class remain beside their topics, including hints, feedback, retries and worked answers. Individual native disclosures, technical depth, one-step/full-route viewing, deep links, printing and no-JavaScript reading remain available. Run `node test-class-openings.cjs` after building to check that the opening stays concise and all lesson content is preserved.
+
+## Title-only explanation cards
+
+Numbering belongs to the current class roadmap and teaching steps. The 104 expandable explanation cards use their titles and subtitles rather than a second, outdated sequence. The build removes only legacy number badges directly inside those card summaries; original source snapshots remain available for preservation checks. Native plus/minus disclosures, topic anchors, numbered calculation steps, mathematical labels and complete explanations are unchanged. Card bodies align with their titles. Run `npm run test:references` after building for exact-content, anchor, nested-numbering and title-only regressions.

@@ -12,7 +12,7 @@ for(const [file,p] of Object.entries(plans)){
  eq(html.slice(hero.end,strip.start).trim(),'',file+' no setup panel between hero and lesson');
  eq(ns.filter(n=>has(n,'lesson-roadmap')).length,1,file+' one current class roadmap');
  eq(ns.filter(n=>has(n,p.partClass)).length,p.steps.length,file+' full step sequence');
- eq(ns.filter(n=>has(n,p.partClass)).map(n=>crypto.createHash('sha256').update(html.slice(n.start,n.end)).digest('hex')),reference[file].step_sha256,file+' every full teaching step remains byte-identical');
+ eq(ns.filter(n=>has(n,p.partClass)).map(n=>crypto.createHash('sha256').update(html.slice(n.start,n.end)).digest('hex')),reference[file].step_sha256,file+' every full teaching step remains byte-identical except retired reference badges');
  eq(ns.filter(n=>has(n,'active-practice')).length,4,file+' four contextual activities retained');
  eq(ns.filter(n=>n.attrs['data-math']).length,reference[file].math_count,file+' all equations');
  eq(ns.filter(n=>n.tag==='details'&&has(n,'lesson')).length,reference[file].lesson_count,file+' all explanations');

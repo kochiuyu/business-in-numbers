@@ -1,0 +1,649 @@
+{
+  "descriptive-statistics.html": {
+    "cards": [
+      {
+        "id": "data-types",
+        "sha256": "445e55efa588a7fe5c70b8683920013156475cf342a326a865a82b6a68d92c44"
+      },
+      {
+        "id": "tables-reference",
+        "sha256": "e97a8f26b5b82edfcd0db1ef2e3e89209649dca7cfc2056d3673dccbc2f45737"
+      },
+      {
+        "id": "charts-reference",
+        "sha256": "e106d6a7df79ad8a8afe26277ba36daf3d324f9bb7dcd6518e9b7eb7c5ad19a5"
+      },
+      {
+        "id": null,
+        "sha256": "77a77876f29cd21c32f99ddabdfddb7ba22533d06291d3488f6bb9a32b15ad80"
+      },
+      {
+        "id": "median-reference",
+        "sha256": "430c66cd7768292bc722fdae5e8b8030217eb557f113869c499f409a2416e4e7"
+      },
+      {
+        "id": "mode-reference",
+        "sha256": "602da5b9c6cd1cdc21c2001619916befbbd3bbf15b0f91729c63e99502f0c894"
+      },
+      {
+        "id": "quartile-reference",
+        "sha256": "01c115c641d79ad94847492de8940ef139f008e9120d88f90b567997d5b1e843"
+      },
+      {
+        "id": "spread",
+        "sha256": "7684784a4cd146af9fd6c37325da1d60ba61e84a0419537f121787d6cc45b706"
+      },
+      {
+        "id": "sd-cv-reference",
+        "sha256": "30f3779d75c18eac9ef124bff36d214147faa806eb118eee567cf6f075a1fa46"
+      },
+      {
+        "id": "skewness-reference",
+        "sha256": "0f0ce17b8317184e7375b7c8fa875845d843ee1df4a83e7d1898ca911fc5af6b"
+      },
+      {
+        "id": null,
+        "sha256": "7cb4434690059535bfa8934d9d032649609190bd427b5fbdcda546081008e1de"
+      },
+      {
+        "id": "covariance-reference",
+        "sha256": "d7b2742626ed81b8be0d08429d65c26217981eca98b097a995d2eefb7f4f12b3"
+      },
+      {
+        "id": "relationship",
+        "sha256": "ddf54959f64d89de1ad51d3c9737583cc8c93d6304904f66a625f13d1b0a1419"
+      },
+      {
+        "id": "excel",
+        "sha256": "8939612793f316a66af4391358a3392027af3a1bc0cf44d7ecf36e747148ec80"
+      }
+    ],
+    "ordered_lists": [
+      "05204ec054712f634172dc0bc945222bd135c71663326e5a27049aadc2d6dcc4",
+      "f0d440f25785c73c133b7251937ed891c79b37c712bbad4aefd06de13afee87a",
+      "d2317e30d55e8e1092133455a5885a1bbe770994263ca30c2fc5e1263d6a1a32",
+      "0908e7011b9e2c9a0b1011e68e6c73359f8085806b0e29ba09cac6cd929b8cd9",
+      "b67c2776cd46dd1b2fdce41c113da88620e612350e6eff0fa20da4fdd51be90a",
+      "c387424cff1bf93dfbc51e8145d244162d315d5be9f616a94c535b07f8e99de2",
+      "ef40846a5cd7c8d29b5a7ec1e69d687479b1de4b841e3a3c9225a9a620aee19d",
+      "bbcbcebccff66d7869f0eb1c54f13f5415a197a121d0c1f7554f4685254c4527",
+      "0b36fc3a676e8391464a47750e61b5e62424652cb5e7a606ef745244ee897fcc",
+      "ef33da54983ef7da0e46ce3e5fd9cae070585429ea31b01be0c388e07ca9883d",
+      "d7515a4035ac1da69ca90dc039b3bceaf145efcfac483b941b6be3da73dbd525",
+      "9da8c5a02f142bc32fd8a7417777e4a200acd72122cc1ed90464b3ab6cdee1f8",
+      "edb8b92a57c2c6ce3d71bfcc5a582b7b72b8de3d48a66e0f32caf75ce4daf9c4",
+      "37910c2cd97e12038143da94dbe18203cdd087957cbfafbea23f91777be6cbae",
+      "3636e8ee786cfb3eea9f2504942eac79742d2ced96c2e196c234f5e4e7cbc6ab",
+      "30f980edb96b0e0307c95b1ab55f4306f7be36ef859cee15d7b2eec240b62da5",
+      "80b18c413b158d0dc69d6bd02cad74df91cb9454ce72bfee02016dd377e234f4",
+      "82fcf79f67b312697b9dabf9498d93a27184f5c75c2d53a61fbea6e965c4ced0",
+      "5fa8ce254d5881cb5ce491db5d8735af4ebb1ff1adbdb0e61e10909bc85a1c32",
+      "719ca7e15c54de197b82e16e73ec1084eecafe8e77b22509b27f01a48ce26b96",
+      "fd5469f976ae74fa2acfb9ec5819df1f8c27c50a47246d4f7f9d14031d58a24e",
+      "bd548a4733a72e97d62d587d8541c98862e6fc280aae7a8e5c3242dcd9a95aec",
+      "02f5cae714e2e392666a55492160667177f3b2c279c675dad43605b2517bc64f",
+      "c9e6f254cc6137370cbf4a6785e0d8f09731ac283a2af3ae753d2274bd6f3ec0",
+      "f443c24f5b784533086aa1720cb06de006306e7088fc99922f10fafad5b95725",
+      "37e1969259c71d6421851eeabe5c526abdfc3b0b38eec1743c0398f5cfde7931",
+      "d9a505563b79d4f1ef44543086c0ce7f754d1fbc3d993d3e168e46e3ef8f6ced",
+      "c891fac1f6a1099e383673c89e0a958d986c7fbba04937810c80f33ec5716d04",
+      "ea3f9c0e16ed3d4010b2ef7afe1661b9cf486345e763db7729049965e18a6a82",
+      "100070417de4a3d8b8f9949442be3c724fc92365bf3c115bdc147bff4bfd15d9"
+    ]
+  },
+  "probability.html": {
+    "cards": [
+      {
+        "id": "events",
+        "sha256": "e3573036df631055334a3afa18524655fc0348a995a86c48df3eb3ef3387bee7"
+      },
+      {
+        "id": "event-operations",
+        "sha256": "d9fb95202a95e3ad78bd9fcef44cf01e790cc9037c69651a23c0dafeb17cbc43"
+      },
+      {
+        "id": "rules",
+        "sha256": "f1be4fc463030df4900c70afc03312bc70d3b482fe591fd158a2ced78f95f349"
+      },
+      {
+        "id": "counting",
+        "sha256": "d4418b1bfa5dd772bf00bc45356c37c46977316d2ef029d6bb26c85063ae1624"
+      },
+      {
+        "id": "conditional",
+        "sha256": "cab561c2c5dd3fc0c1cc23cd2ad99080e173f741bc14146ef7994d3e6013d581"
+      },
+      {
+        "id": "independence",
+        "sha256": "d0aff8608c49b7c52351944566aec647faabf1886cc4be82bf1c2b40df93c2c0"
+      },
+      {
+        "id": "total-probability",
+        "sha256": "de61f74fc5be808765f44bccddebdf14b0ac068b9d2160a8a3476a392d821cd5"
+      },
+      {
+        "id": "bayes",
+        "sha256": "0742adec421a8c8c06f21a0d75b4f5023d054e1af3e58592059241ad856b77c5"
+      },
+      {
+        "id": "odds",
+        "sha256": "0465be4df6e4d602b05fe400baed0591919fdc3e4d60d8c68d2696c9e435d986"
+      },
+      {
+        "id": "tools",
+        "sha256": "2df088d73c6ac76a5221e0f71c541d251b3aa64aafbe6505238e08d2086c0dc7"
+      }
+    ],
+    "ordered_lists": [
+      "265f1cf239c98727fead29d66fb56e5e0a6cb8c034a125fc83dc273deac82c58",
+      "208ad1fc2de5163e8796edda6020f082658f2a8723dc24be0822a33ab2b62310",
+      "4d50cde8494b44adde574af0c008d8a2d623ab7468ca2ce64617347b1d003baa",
+      "99e20ab503aa58d966b397092f022d92ac8280635f302f29cbcc80a2fac74f6c",
+      "103da222c8857108dbacfc5b32e7875d0f820e2639e01958b87f0ce3b9592c31",
+      "3cfbaf172d193b04f261d74c0ace7430e0d0aac0a8eb2bcdd7568dd1f2ac8f28",
+      "c5c139ded1a334d185d56874125010120327dadba39d28546fcfa77bee2be04e",
+      "87adbd03aa7d3ab5e8ce6695903e4fd8730c432de5b9da6dc5041aba12252403",
+      "aa1b52f907ce7f5343e81bb2b76794a445f2e84d3273a2e79cd4ffc91abba803",
+      "bd4d119f363b65213cca5dabcb423d49c49104967ef40a9d33e84cc095ce7b3e",
+      "83a494f7b249897d42eb349ad0c1dd95f0411f6dc75b20ac49bf2a86dbaf2a67",
+      "4018dda68b703c2a18b5b8f7c01e24f03eb453ab284e3e9c505e78f068326f4b"
+    ]
+  },
+  "random-variables.html": {
+    "cards": [
+      {
+        "id": "variables",
+        "sha256": "eda23ce47ce74ed9a541161221f673cba150a26666c2e16a3d43f8047aa0a87e"
+      },
+      {
+        "id": "mass-cdf",
+        "sha256": "65ea0b0b5849d27e524a88e55f10031bb00d72e6b4048c3cf25dc9efbcc87010"
+      },
+      {
+        "id": "moments",
+        "sha256": "f09a4c5d520ee2b8486579dfeb475f3b79134a4588d423383f70dc1700dda376"
+      },
+      {
+        "id": "joint",
+        "sha256": "175091103e7aae36dc9a40a34396da0823bd27e56c8c960de580f2bfa56a6ca8"
+      },
+      {
+        "id": "discrete-models",
+        "sha256": "ad97a578199c459e57b537aedda85311f42ea3a99a3f4ea06c21efbb21add6ad"
+      },
+      {
+        "id": "count-proofs",
+        "sha256": "54c624adc6036c543cdca3c751d46d99c441913e3d53f9d11744272f09ba4037"
+      },
+      {
+        "id": "density",
+        "sha256": "528dfb5591d37bb023b97b8d10e260784d45e570eeb471bf7394664d96ee20dc"
+      },
+      {
+        "id": "wait-models",
+        "sha256": "ef5a996c68bf850cc6a799e2e9245bf03a29d5f5da2ac4d72cd58dc477faa1b1"
+      },
+      {
+        "id": "normal",
+        "sha256": "765fb1b90d017b6e25d92da3384e8a566b841840d35027d7156b4274f4115fa1"
+      },
+      {
+        "id": "normal-foundations",
+        "sha256": "e97b0d1d8aa397fb7431b2160e6b86b73acdf18335eaf2a02ddc27889c59d4f6"
+      },
+      {
+        "id": "tools",
+        "sha256": "938791c52162a8390cdb79430f844f1a73f2be6d56ab6376eeafa2c0474d3943"
+      },
+      {
+        "id": "inference-families",
+        "sha256": "eebb1e10e3c2f04ef93c6cbf78e63fbeee66b7564865035b873dc2a51137e778"
+      }
+    ],
+    "ordered_lists": [
+      "fe28d51d136d4a28d85beb016eed5c7f5c4f6231d1cd95a5a55de33409bf8dd9",
+      "c5fcfe6ae3385bb2394c544db3feead11a5ddba514e4ed55aaeb8c8d518450f4",
+      "cbc238b34dcc2028b9009517586b5c53453c0654d624e0ccc3bb01497127a489",
+      "547959bcf5bd8c495d2b44931935a8931b2d5237fce4f226601b947a719aa029",
+      "b459d64d440fa0f24729f12c496c8086fc52e77eecadfe6c7e007460a2e999cd",
+      "41d958c596fd4c320e3b8589ec0e677e283996afe3f3b913623c3aa6f16e45fd",
+      "03d7f61444a71daa70c4abe54ff6050e9639117d82b761e847ea72aa3ef97cb2",
+      "672f81d016b3cb97eb205becc6a6ac96cb5509ed94bf4ade2300a4794e3327b7",
+      "1404d30641537fb6de68749ff72a0dbc2da1502066bba14bb0dc765e5361f20f",
+      "f9f3868127d08f6b57a0834cb2ee0770b8f5218e46966707a2397ce442413cbc",
+      "eee81237e5b74f0b68443ce629a5bee3a21c3da72c986dda5fc515780e41bd09",
+      "0d917dc534dccece2643c61081a1c8eb0bdad86d27c0fe7f1eed23a8982299bb",
+      "21f85342fe85efc7a10dc42ce41b098b9866c5be5ddf6f67cafaf107f5e8dca0",
+      "889c21307a3dde4e4a61c57a6aa4eb5b4beb0de985f1a7c43cf4b9d803b40e0e"
+    ]
+  },
+  "sampling-distributions.html": {
+    "cards": [
+      {
+        "id": "sampling",
+        "sha256": "f0f00c457447a173c6c5c3b5fcaa1dacd1e4b94acf5f9adcc16e92efb578ffd3"
+      },
+      {
+        "id": "statistics",
+        "sha256": "dbdc2ae5b8aa8c55696308f8cb8a2bc8453efa4726911bcaffca23e5a98e0786"
+      },
+      {
+        "id": "mean-and-se",
+        "sha256": "64f7de96c9f8c0658c9d4772306543f8c0dc25fd336ce6ca8ed0c428edf0a1c2"
+      },
+      {
+        "id": "lln",
+        "sha256": "8e0c2004f18e084ae2d1860fdf10c8d06c4a22e2b4975c44883bbcccfcf8697f"
+      },
+      {
+        "id": "clt",
+        "sha256": "a1ffc8c4dfe8dfade4d958d4e953b7a4f423ba8c69707ac2d91b0b559916bfbf"
+      },
+      {
+        "id": "known-sigma",
+        "sha256": "1d7acea2d74d46e00925c4b0077e41bf72de813a43458ccacc804280c3a15c55"
+      },
+      {
+        "id": "proportions",
+        "sha256": "0a7ddb64f2a1459f8893d6ff8a7dd460e2f120dc375720d7f5c56ba1ba7f2dcf"
+      },
+      {
+        "id": "binomial-approximation",
+        "sha256": "b1810bc5031a15f22c6769b537e0a9132dab015887eb99e6979a62716387a38b"
+      },
+      {
+        "id": "unknown-sigma",
+        "sha256": "9101faab5c01ffb14273ef07e5a2ec4736e36548f09c462fb569ea6c91ab0333"
+      },
+      {
+        "id": "student-t",
+        "sha256": "35c5dd515f433da1efad927177860346fb4ddbd901d77d3e5d950a2b492d2db5"
+      },
+      {
+        "id": "diagnostics",
+        "sha256": "8390a3e25b7603dc4781dbc85d573aec3995c51582a4d0216b4b44a351bdce76"
+      },
+      {
+        "id": "tools",
+        "sha256": "5e6726bc82aa4b4727e23b7cd2b1d4efe8441bd25482e8ea8ed2286af00ca535"
+      }
+    ],
+    "ordered_lists": [
+      "e0c6dee2ff28780f51bba8e252ad710ca7ec79cba3794b120354fa5f37358130",
+      "ff3cafd8addaee97295df282696d1f72490be3f9dd4f770c5fcea63d2d850298",
+      "da854e08c04073038d01241dbd1839725db94dad6356652132ab87b3cfa4757a",
+      "5147ae2192a54bd62bdeda1938833d0ce394599e407cea0718b1c40e1435077b",
+      "4eb7999d76613c53759bbfac847e260b9c9b462998ed82219c005d957c3bf1e7",
+      "73b19362fc8d19d5c60eb0094f044d4913b94f0bfb7fc2b7aa5da83a0c1457f3",
+      "72fc31c86f5e490f9db52c1ad7e9015af37e5e4aa2670039e38e9a6aa9f55300",
+      "f17fa73394a405f6ba6794c8f57c7dc1fe163c3b6ce4c252b0494fa21da43a3f",
+      "0a3c35d1aaabd10e53d2f67bf5e42a5b0e1d6f468b58883da8859ec88cf18b60",
+      "6bec22428dd6cd909fb9a8f4500df477bf3f45ecf0b517469a64b53503c834fe",
+      "30ecfdb1f3c2ae4a51b34908d69eae964b8fc886e06efd1c77a311a65b6b09f6",
+      "40bd1cc8d6895c4ab0a0052d142bacc57ce5a8ee3a59b71a1b6c6977fbfec6a9"
+    ]
+  },
+  "estimation.html": {
+    "cards": [
+      {
+        "id": "estimator",
+        "sha256": "383a47e4516e5fa1ed02c383781490f014082a3a2b148d9f13dd5b8ff4c4e8af"
+      },
+      {
+        "id": "properties",
+        "sha256": "f8e3cfe616223f9dc83f91a07f0936db576a4ba5ad498a950a3ed4488b01d3a3"
+      },
+      {
+        "id": "mean-estimator",
+        "sha256": "d8fdac34e465a0d9951626e1b91c98d4fff2c64a07321d94c8ca9f4adbfffc65"
+      },
+      {
+        "id": "variance-estimator",
+        "sha256": "77921db20ced1b20ebdc5f3de48ad1d53049342cf82e72626ab47c4a2f040d58"
+      },
+      {
+        "id": "binary",
+        "sha256": "40a85af118758b63fbe86997bce54d8bbe2a0b9c68f8be8bd97579728adfdf58"
+      },
+      {
+        "id": "known-variance",
+        "sha256": "d23311463e52482bfa3930372c0aac97a1dc82082cbc6b7ea4881c2413ee5787"
+      },
+      {
+        "id": "confidence",
+        "sha256": "b1750d03dd434eab90a03483ab0478cad31bf5581fabdaf8647cfc2a7c7d0c8a"
+      },
+      {
+        "id": "unknown-variance",
+        "sha256": "bd91021a6d935c629bf9a725edf0486535fd5ee00c941060a8afc3fe464c5a12"
+      },
+      {
+        "id": "proportion-interval",
+        "sha256": "5988f7d620b53a32ee596c302cf7882dbddade199c5f7e783d33cb91591d8946"
+      },
+      {
+        "id": "plan-mean",
+        "sha256": "cf456c8a74d54edb3204e54099278c71179cdbe256edf5a29675b665c87cb4ab"
+      },
+      {
+        "id": "plan-proportion",
+        "sha256": "cad0353f0f729fc5503a37dbd529f08994049de768f97522c335255d67da1834"
+      },
+      {
+        "id": "tools",
+        "sha256": "93a2eaf9143e7d0a8a22a71b5d1edc29b16a83c99dff6edabb6e4d3ef6534fe6"
+      }
+    ],
+    "ordered_lists": [
+      "c95c54e1be28c52c3d3508f70f5aae863f30da54f405a30d770321787e484fc3",
+      "94d88f911080582519361ae519e6443127c939b21633dd43aaa55c999fa16dd0",
+      "3d51097f174a8d7af52c8d8f26cf736ac8eb5a398b01d778d8df73b86eb80804",
+      "90f4444fe97418174abc453bc6afe8e3b7ea678551d47d1a7fc80d4a8ce706d5",
+      "9e4976a632b6aa5b08dd2b0b168abed872733c483913a495ecbdd13b6b53dd38",
+      "ebc14420c054f1329ea7632bb4c832152fb79f731f06d5fec7942165c8d3416e",
+      "17795ab0b20c625e02c906492c83a0e53ebb195c889aad32846af9b55533d543",
+      "f58e210d4e5582b0186992ba54f7da03a393986167920860322eaa7d841d7f27",
+      "393d7681391581b7d956ee2e72c0fd1c93ac92872362dfdd263f974d13b6af88",
+      "c44485fafa5d8b3fc44aeb827b120f1fd7593f038c6c2b3f312eba188fc3a380",
+      "25f302f24b20eefaf42460f634499d0138ea402a2397db5fc0a2e269791635cb",
+      "9a6fdcc08b52c899187dccc2a24e1ef2b8042b4cf9b6c3e42a58b940615af0ee",
+      "21894a51b13911d8f0b107092c9a4c7f68c215c8b04d55ba6941570a41199379",
+      "d690f477a36f62c9db1dacd323805f355fac8e26c00d0eaba417d91241ccedb1",
+      "5fb9b4068a856be13abb14bfb4e5e82064af2864e56d670eb440190caff03a30",
+      "cfb37e905226f3d3249687feb8956e2e76cfe781591ac12045927623bf3830f9",
+      "03733d71cb02431cc5d28d74c8fe2f2e133c4d108fa36e48426481aef4b6319f",
+      "efa04f210856dfbe933dbe5110e1483b8e447c5f31c58a2736f87cf7bdf44e11",
+      "45b0a07358dfece1c8da87abe343ba9479a135063356aa1ec6df905d625ec1fa",
+      "e7aedc1c6ac6c5b99e4ea3a5a4b360213bfc748527829b35d548ecb03ee1f37b",
+      "f11e438c3c3ff9dc398ea0f954531cfdfa4a0e098942475d31089feef9cc9492",
+      "d057cc49273c58b176a7892cdda4d8b688bf4919f570404648b2ed1002e92a5b",
+      "6382abbc654f4817ea7dfaa5b12fa1b58ad6dee0482f77d3b1095f73160047b6",
+      "5d962a4838431e05377cb480c84393923e4a0492eec2505acf73924d1c0424d9",
+      "64d93a82ba016dc7aca907d967b5031186405cedf87f016b1a46c71acfc9b179",
+      "f13b794358fcaa3d93e84e5b9f89f5792567d78b58bc99304dce4d2f80b25f95",
+      "442ccf53c92f2baadb2c5beaa66ef909ffc0d2bfa9ce1daee8a7359d45b05bb6"
+    ]
+  },
+  "hypothesis-testing.html": {
+    "cards": [
+      {
+        "id": "hypotheses",
+        "sha256": "9b7e2630aa6d8bab65439e9785a3f75d73f7a4e835d9042ab88ff345561d9398"
+      },
+      {
+        "id": "errors-power",
+        "sha256": "c73cd446c574553adff649fa67c903f75edfe04febb4bd52315fe9b4d55b9135"
+      },
+      {
+        "id": "testing-procedure",
+        "sha256": "408d68e5a5b2feb897e65f07a2247ffcf0a596ff24a6355f920fd93475265f21"
+      },
+      {
+        "id": "known-variance",
+        "sha256": "583ff4f868b39f344380905f97961a61878e7ed3dee5ce1f0686532c36d742ea"
+      },
+      {
+        "id": "unknown-variance",
+        "sha256": "e6192f38294aa6b404ba2a8261adc18317ae4a89b8197f31752a25de933bcc6f"
+      },
+      {
+        "id": "test-and-interval",
+        "sha256": "1bc19c5c246af7c32eec85b2b0066304ac4bb0e7afc1850d20882888d2c85066"
+      },
+      {
+        "id": "one-proportion",
+        "sha256": "fed1d3042131b804383ea6c79bf99ff8932e4e9acf427745580a41e4540a344e"
+      },
+      {
+        "id": "two-sample-design",
+        "sha256": "e7c71d8288a963db5c041c27d5d7b0c8d301dc837b898ed3aadfefe9fa7aceff"
+      },
+      {
+        "id": "pooled-means",
+        "sha256": "c2441cb3276cc0a622d14ca79a9dd0614b187c8da4d15623bf8f6845fff31186"
+      },
+      {
+        "id": "welch-means",
+        "sha256": "e29f73f8ecb99b88ea2e6038c37e0e4361a147755076d189da2df09d6bb2a120"
+      },
+      {
+        "id": "paired-means",
+        "sha256": "1b729fd3631d02687946f7d49be76ab819adb5a63b937c3141f140375c8b358a"
+      },
+      {
+        "id": "two-proportions",
+        "sha256": "d6b8077e25c4a780266b63212e5fc9ccf185bbacdaddbca4dd06465b402fa62e"
+      },
+      {
+        "id": "variance-ratio",
+        "sha256": "663afb213aa30a9e4159aba2908dfd18c0f5d960f28441463535c2f018f95768"
+      },
+      {
+        "id": "reporting",
+        "sha256": "04190f4213ba22ace508e636912cef9ed120061b86709c1e3aaf128453d459ff"
+      },
+      {
+        "id": "tools",
+        "sha256": "2bb65005cb76db709dc4e0254cad04c22fc7f7e8d4949e31584892a441f2c357"
+      }
+    ],
+    "ordered_lists": [
+      "6ff4cbbdb0a3051ecc234fb4fd7900fc9637a2ce9992ba8143fbddd614b8233b",
+      "ce476e262452ba71395457727cec2e68f553a8b7a53897d23665a5b3af182f89",
+      "a6668a4b5cc818598cd2af52e5f2970cabf4fd5c700d90e9632e48144d6313c1",
+      "5cf7f9982ef59f84728ad1acf89a01e91e6a6ced532360229f5cd97ce975bf1f",
+      "bb1b78d1ed81ac3a04ca7fd13947966c5b112d35a0c62ee0e2ab39593165f6e5",
+      "7e7039d744c909b0ecaf9fd1cd3ba88a71bbb9dd489b50ce8aaf16228294bcec",
+      "290bbedff422835d522a516b0d36300196d704b600afd3d5fc4c3fb63013a963",
+      "078403d8371b8d8084b31c4660cdfc82e04501fe5facb8ec5e2efd6d3e9a5277",
+      "2f3598210d9c89c444d747c7286130535130fa6d85e1fc3e33f8d261a5995131",
+      "0349213bb1ce70d9c3858ee2ef289767e8e10ddd86505b24fa3f609bdaf52222",
+      "840f99efa465b74b13f6f5bdf99b064397a8a6278435eea783c71a8973616bd3",
+      "e96e17befb5c1501b1ed21588852a395012a976879da6a160ed135127091e1ee",
+      "bebe140393c0e7f77249c341e517224a4ee1920d3c88f8f162847d4b1c9e7803",
+      "eaf1277448b96fd68b27a90bece2f5e7b683fe9af31a855f534ff6bfb1f3bf15",
+      "078d60145f616e2567cd2af1e6a63906bbeb4de1a10582f80840f88829d2b4d0",
+      "46e46e2ed6edb7def72e0a18fecf2c953779247711dd29bcebf451e114fd3bee",
+      "a520d46a28b8f63f62408151a6e659af14abdc3f8033987b397c6b2a01821207",
+      "c7b7c549040c79b1202da647f41f52aeef232c91d1d15438d49025fb669ab18d",
+      "7b3bed3c4a48c26b2f7ac1cb6da25bfd297d40ff8543dbdc911028be3a173688",
+      "84c98b966fc902f388150c70da7ba0e2b8b32f5a716215aa786fe623afe9390e",
+      "aeaad13042fd049d750905b218f6b6becb949c485d3289468f77566421aaf315",
+      "946c84f5fbfc652fe2e8d493d49f033350baf13a2d764b608cbd37a3b03d4633",
+      "613eba85fb4871b2de925135f84402e5b2b215cf3f31ef160269eeb378959b9f",
+      "f6bf068e49ad6d9bc0d15f4eb60f60fb17580e3338c49b8e9a6c5e8e929665ff",
+      "aa65bd23875badbeddd9f8d8917252d4b99aa0100c252c93c4d358545b943579",
+      "870bc2ac6d2b3b6232d2386a16e6834dd5e63ed1f4ae75d1a233cd9c86dc91a3",
+      "5ce8a38ba0d50444cde9429249c8d0654c8a14e9544fa0512c98f6a54277645d",
+      "d28b08c7f5fcc3344494e5f7f5207ee9f75c5de9a6135b8c750d59e1141f2a79"
+    ]
+  },
+  "anova.html": {
+    "cards": [
+      {
+        "id": "grouped-data",
+        "sha256": "28a1fa4e07d120b47c0fc238702312c83549666307c2e738881763bf88df0d84"
+      },
+      {
+        "id": "one-model",
+        "sha256": "7922311eeb0f128a368a9a74a7bb8a20fed6797e2dcf1917fdfd18256402333d"
+      },
+      {
+        "id": "one-decomposition",
+        "sha256": "3002b9281abad578736acbc93a45b425f25dfe0888a27ff04b3d1a73d5b88c78"
+      },
+      {
+        "id": "one-test",
+        "sha256": "8620fd1fc3a29212c9a2bd41cefa114f78e2dba9a639874225a5081400794f70"
+      },
+      {
+        "id": "one-proof",
+        "sha256": "956d8eae8201afe9d9e582b5f90231cc0d8bf2c5e795553792f3c714fdabb420"
+      },
+      {
+        "id": "one-interpretation",
+        "sha256": "bd7c24bea11dd5fb0fd04958229fa2a0ca46121dfbef87ba6e67caf7137fa53c"
+      },
+      {
+        "id": "two-design",
+        "sha256": "6942f2d612ee04d5ff14a0098678bb8df62829bd7d99fec20e6cbc5ff88df1f5"
+      },
+      {
+        "id": "two-estimation",
+        "sha256": "b33a06097868ec1ae31e264cf7f1f5c7ffc3ccd5b6e49bac65c32cb53b8a2cc7"
+      },
+      {
+        "id": "two-model",
+        "sha256": "bff14b3d83dfa27077f89e161bd726576c57858e6b6d69f97e1a536e700c6fb2"
+      },
+      {
+        "id": "interaction-lab",
+        "sha256": "6c4d5db4c8410863c06998cfba8192dbacaf82b49be0c86bd78581d92497d8e2"
+      },
+      {
+        "id": "two-decomposition",
+        "sha256": "60874b96e5a9ed26eb5c491d1b5ffb93698ed9262e706f765a5b0aa3cc0ab45e"
+      },
+      {
+        "id": "two-tests",
+        "sha256": "9269f75e35c1d6a168c91252eca71b30c526fd305c1ee84542bc816e8e4bd33a"
+      },
+      {
+        "id": "model-checks",
+        "sha256": "06662f7d8f7556e98738f0f5dc56e5eb983d59f7e4031b3140e3303dbcb55d8c"
+      },
+      {
+        "id": "tools",
+        "sha256": "5b0b685c80d0216dbf70acd505da7ee70fb1ad945628f699df8e4410f4c5873d"
+      }
+    ],
+    "ordered_lists": [
+      "f15035defead650fb823a34f460e5b01eb244f10596d2989b453d19d005d4038",
+      "ede024d3ddffa5e964f9fc4a72adba98dd42f0f4484615b286f6949d9a968034",
+      "732198af03c066f81b43d5203be2e48cbbbbb340ba1396c603bd229670e6b993",
+      "1cdbdc5b121b5c04d5f6f9a27199757eff96f935914bb90b14de8493a13b927a",
+      "a844e03530e27fab380713aa0209ebc8d2253e4fa24fd4028746bbe45bd9eab2",
+      "dd046fe77259ddd7ba1b265ed543071662730ce7dd43fd9e3a7b7ae58e1a4507",
+      "f53fefe3782dd7cdc8e269f1f56feb3f7e9d9c1dafd5d397a703d25b88c20f35",
+      "70256f0ce511b7fec905e586c9904faf96bf7889f594d438813c0e2731b44926",
+      "d40931dc8c011c9a4e27a43fdcd7a139df32108b5d920f60bf3edd4f125ada0f",
+      "ccb90c8936665191bb252b94968513a793dc22920be6c591f1395e62e67ecf95",
+      "c55b829ff043db962432f314c96b8963baa88ec04f79af9a45d16dd2dc542cdd",
+      "9ef2abaf010020d0a8849deb65832599c87a6594f1efc0fcf8ec564a0d443eb9",
+      "1c6203f5b9bd0a77f34256c691e165e83f3a7b65c3d4bb1f3bc5c971940ffeac",
+      "cdf2d187779928bedc97dd1f2843630a69f54f91c70a6c89096f5bb2ed15ccdd",
+      "7719e3904c39cf75e925cf54ff53904c066f76582b11d0b74719d43c0be8fb4e",
+      "987c279a2e0ee168363b88c55be0197adadc093a03ed0ddb23820f9146e3c60a",
+      "6faeeb6e16060b037b033e9128048fb8e517c817456ba8aebdb0a87f2178049e",
+      "466881517ea6c347da3319a509113d0e23cb9d853d5bc1473cacf8b961572070",
+      "7c9ab44d669e7075c1a628c1bce1a17bbe5a9c116bdc55ce14e5b253b6598b4e",
+      "8606b45fc4f9e713a87de03dbab0b0db365d496b51760243e60e9a7f218e3273",
+      "8e12503a75c69f08bebc3cf7c9fcb39937ab2bd788e4cf326c96556c9ce41b11",
+      "cdbf04bb96e14fcb97caa3d4ac6f6eacd05f145b44952ee4ef6a138fb121162c",
+      "62c881386d2e1a584be0b73636b17811f7deb9f1468aa0e8229cf7d0fcd3bdc6",
+      "bd3027b719fd4d0186f2d285d668ce3bd5b11068d3a7265c773da9f699d3dfc7",
+      "fa7ac43ea090e6f7c6a36cc99d37df05268244e68a4c740791d22b988e8819d9",
+      "7069e442345374dc3e677a63d13fefe03ea91acd1174329e6fe1b7b2234c5329",
+      "9a584a842e0b739ca79508604f0ba5b4c2f75329b062b0e4fcbe6c6a4b402850",
+      "c9275d77acf5a2aa94628f72b0f6cea4bc2652a071a3398eeb2521ebccfd43a5",
+      "a5c0cd7008461718cacb6a9b0f01c4a709dafab2b947dc7fd71aa15765d234ba",
+      "fd467dbdda4e161db51ea1f6687eaa92d6a3ffb12a29ec33f111ab90ec205031"
+    ]
+  },
+  "regression.html": {
+    "cards": [
+      {
+        "id": "relationship",
+        "sha256": "c2b8ba32bb5f551db8601797d735303fc82d96153bfb4346d1672085d04cb1db"
+      },
+      {
+        "id": "line",
+        "sha256": "4437075b380361df89554ca81ce99764b17fc166420a82f937fbe0586421364b"
+      },
+      {
+        "id": "least-squares",
+        "sha256": "86664848905446be8456fc0f06750991693dd7a2ebfecaafffcaf53dbc9c8c1a"
+      },
+      {
+        "id": "coefficients",
+        "sha256": "9142b817186278df9477739e84c398bc855d0954caed56d9409928c92dea835c"
+      },
+      {
+        "id": "units",
+        "sha256": "9ee1372a6816e352840ded7901daba1367b4bce760ec711275e39ae94befb40c"
+      },
+      {
+        "id": "assumptions",
+        "sha256": "384122ff07fe73dd0048bb406b895d96007e5e1ad1da5413337109ee6fe7a541"
+      },
+      {
+        "id": "residuals",
+        "sha256": "97268479f6b24b123587c1d815789278554257b0dc66fe4219a1b1229042004b"
+      },
+      {
+        "id": "inference",
+        "sha256": "1143de3650b21dbfc0a06a866e85240801c3d2f7a7ea5d6cfca366aadff4a3c3"
+      },
+      {
+        "id": "regression-anova",
+        "sha256": "0726402dc3582ce6b19e9d921534147e81627400f59e75f0e63cc2d9eb332342"
+      },
+      {
+        "id": "r-square",
+        "sha256": "06c97f2a268fe092145af4c51aa3b3d98740851c45fc3b85b83e9813337b657c"
+      },
+      {
+        "id": "f-test",
+        "sha256": "94ed74883aa3d6c06731b08013a41ada2d2871be0e4acc4e483b34f24f908bd4"
+      },
+      {
+        "id": "mean-response",
+        "sha256": "acd1ffc31ce62f437c599029611c8df84a8e6dc39afc87b9045c5314c8176bd8"
+      },
+      {
+        "id": "individual-response",
+        "sha256": "03feb143b1f602f8a8773668bd48ede9151d69420d56808cb686edd5a16ea113"
+      },
+      {
+        "id": "model-lab",
+        "sha256": "71f6379e069ed8686faefc035418f48c90e19579c7cd57314221610baeec18cc"
+      },
+      {
+        "id": "tools",
+        "sha256": "3783f360e65165238426eede28aa414f1886e53de95fc517901a031d352a6563"
+      }
+    ],
+    "ordered_lists": [
+      "b1ba0680353db02b56b27981c756806d4219488294465a5c628b31481feab4a0",
+      "55b70013ca9182d7ec30777de5c38b34a2d368d86aab6a523d715e945ebc8001",
+      "4a130e2963b8816561800165316384d8deccea9bcb9b9a272df5e5d212095ad2",
+      "d8fb3d02b4c0d85f7ddd2fea4b99d3775a98dc6337da0dae205614466a293c47",
+      "a25e27dc33b9fcf60f82b1d58f3e678f34932d1aee40185580d9740d8e5669c1",
+      "4c7bae0aacba08ce42fd072ab38104bda365ba13b3e1df38a417179da9d01612",
+      "0df69dfb9946072dd9166933fdac25ef3a188058af6751400e89e389fa8986de",
+      "ec1744f36078390da262fc6294e67b99d96ce1d9f525836894592cfd1e65a28b",
+      "079daa8eda6b918edb964f373ba5b07c19e9bb0cc9315526360fd258623576ca",
+      "9dc66754c813060a8c489591df7bb5e635128ec4822869d3f3ead1993debe878",
+      "cd26db8a424b76cc7595ef2b76345a93221edcd8e1c3a2ee3b5c5636c28852be",
+      "e8cdbfcb8d6917d9a1084db17bab0edffdf9d1a46165aa0cb953c4b1933b8941",
+      "6cfafe656db2dd52569894a66ea8d6f93ddf4f3fd5398078fe60bcecc82b6aba",
+      "071849e2b9523b3f822d3acce8b34504d4a22a774a1642ca9c6a115ed39d9fc6",
+      "ec41a9a7e6e913347c15868253d2152e47ad6ade0ef2901a0667fad42139f433",
+      "c434bb0a5a898c921878a68ef83d9dad9b9bde29357715b82373c97bb9ef93c3",
+      "2e82b4085e8511c1f42e025337ddc598f9503258df42654746ba8d9051c42ce1",
+      "ab6361620c52ea96fa5f333d7b54a991c838244a5181a1f4b26fd70dd760ceef",
+      "cf9de7c031b1179eac0315826a466650a796db4c4b67c87dcf22c6fadf51cdd5",
+      "9786e623b3a13b5d0d479a7b84753cfa7a3eca9ca03d2f56513f5c8896d68777",
+      "0b67fd8a27f5f4649badc9e5e81dd181e61dc3344ff164c61ae3e2100f3af13b",
+      "09cfb9105dc0aafd6a305c9c3841ce9376caf28b0bcb33401b2ab809a4338a07",
+      "72859c054bcf26b6f85c1a0758010a3d45b700a37e0f162b465a756bd49edbba",
+      "208e7cc90baa8cdbf1d3b2cd0f1b5bc662beeaa8f8aaf7c270d4bca93b0db1cc",
+      "a699888d4c3ab6f92ca0bfe1bef2e2507c652660dcba2470e3dbcc0298a72cff",
+      "80917517b00e885ed8bd952bc5c2989c6d6ce42d96fdf8f64739532ebe02bfa8",
+      "64169b33807ec8d9396e9f552d8d22237e7c1ebc2b616a67da3466144180607b",
+      "96d11f06d91e120e35b1abdf132063dcf933b6db89ffee090b3b338efa82bbc1",
+      "a300948eb592007cb9814e1fdbc6e031d8b7c6a90b259e809e547377929fa629",
+      "20b084c89b31f16625ad6b9f3e7664cbecc714745c393725606598dfbe97fa35"
+    ]
+  }
+}
