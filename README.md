@@ -73,3 +73,9 @@ The shared header is the only eight-class menu. Each class opens directly into i
 ## Title-only explanation cards
 
 Numbering belongs to the current class roadmap and teaching steps. The 104 expandable explanation cards use their titles and subtitles rather than a second, outdated sequence. The build removes only legacy number badges directly inside those card summaries; original source snapshots remain available for preservation checks. Native plus/minus disclosures, topic anchors, numbered calculation steps, mathematical labels and complete explanations are unchanged. Card bodies align with their titles. Run `npm run test:references` after building for exact-content, anchor, nested-numbering and title-only regressions.
+
+## Compact course landing page
+
+The home page and its `course-introduction.html` alias open with one business question, a small mean/median illustration, and a direct Class 1 start. Eight class cards offer immediate lesson links; each keeps its full outcome and bridge in a native disclosure. Orientation, study instructions, all four warm-ups and the final decision activity remain in labeled optional sections. All eight lessons are unchanged by this presentation update.
+
+Home-only `introduction.css` and `introduction.js` keep this layout separate from lesson styles. Direct guidance/activity bookmarks and repeated same-page shortcuts open the relevant disclosure. Without JavaScript, the summaries, class links and worked answers still work. Print styles reveal the reference content. Run `npm run test:homepage` after building for the compact layout, disclosure behavior, class links and legacy-bookmark regressions.

@@ -62,6 +62,7 @@ function build() {
   for(const name of ['lesson-roadmaps.css','styles.css','stats.js','app.js','math-ui.js','graphs.css','graphs-core.js','graphs.js','learning.css','learning.js','activities.css','activities.js','navigation.css','navigation.js','class-one.css','class-one.js']) fs.copyFileSync(path.join(src,name),path.join(dist,name));
   fs.writeFileSync(path.join(root,'class1-standalone.html'),standalone);
   fs.writeFileSync(path.join(dist,'MATH-NOTICE.txt'),`Mathematics pre-rendered using KaTeX ${katex.version}.\nKaTeX is Copyright (c) 2013-2020 Khan Academy and other contributors, under the MIT License.\nSee vendor/katex/LICENSE for the complete bundled license.\nNo external fonts, CDN, runtime renderer, analytics or network request is needed for the mathematics.\n`);
+  for (const name of ['introduction.css', 'introduction.js']) fs.copyFileSync(path.join(src, name), path.join(dist, name));
   fs.writeFileSync(path.join(dist,'course-introduction.html'),require('./navigation.cjs').enhance(require('./introduction.cjs').build(),'course-introduction.html'));
   buildProbability();
   buildRandom();

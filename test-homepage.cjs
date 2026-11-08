@@ -14,7 +14,7 @@ const oldIds = ids(lesson), homeIds = ids(home);
 eq(classes[0][0], 'descriptive-statistics.html', 'Class 1 has its own URL');
 for (const [file, html] of [['index.html', home], ['course-introduction.html', alias]]) {
   ok(html.includes('<body class="course-intro">'), file + ' serves the real introduction');
-  ok(html.includes('START HERE / A CONNECTED EIGHT-CLASS COURSE'), file + ' Start Here');
+  ok(html.includes('BUSINESS STATISTICS, ONE QUESTION AT A TIME'), file + ' Start Here');
   ok(!html.includes('class="case-part"'), file + ' is not Class 1');
   ok(!/http-equiv="refresh"/i.test(html), file + ' is not a redirect shell');
   ok(html.includes('href="descriptive-statistics.html#learning-start">Begin Class 1'), file + ' direct start');
@@ -52,3 +52,35 @@ for (const [file] of classes) {
   ok(!html.includes('href="index.html#learning-start"'), file + ' no ambiguous Class 1 link');
 }
 console.log(`Passed ${checks} homepage, course navigation and legacy bookmark assertions.`);
+
+// The landing page is a short entry point; optional depth is retained in native HTML.
+const intro = require('./scripts/introduction.cjs');
+for (const [file, html] of [['index.html', home], ['course-introduction.html', alias]]) {
+  eq((html.match(/class="course-card-link"/g)||[]).length,8,file+' eight direct class cards');
+  eq((html.match(/class="intro-resource"/g)||[]).length,4,file+' four optional guidance sections');
+  ok(!/<details class="(?:intro-resource|course-stop)"[^>]*\bopen/.test(html),file+' starts compact');
+  for (const [lessonFile] of classes) ok(html.includes(`class="course-card-link" href="${lessonFile}#learning-start"`),file+' immediate lesson link '+lessonFile);
+  for (const id of ['course-guide','study-loop','readiness','course-destination']) ok(html.includes(`class="intro-resource" id="${id}"`),file+' named native resource '+id);
+  for (const a of [...intro.readiness,intro.capstone]) ok(html.includes(require('./scripts/activities.cjs').render(a)),file+' full unchanged activity '+a.id);
+  ok(/href="introduction\.[a-f0-9]{16}\.css"/.test(html),file+' isolated fingerprinted layout');
+  ok(/src="introduction\.[a-f0-9]{16}\.js"/.test(html),file+' bookmark enhancement');
+  ok(html.includes('Five illustrative orders, separate from the lesson datasets.'),file+' honest example boundary');
+}
+const values=[20,25,30,35,90]; eq(values.reduce((a,b)=>a+b,0)/values.length,40,'hero mean');eq(values[2],30,'hero median');
+const disclosureScript=fs.readFileSync('src/introduction.js','utf8');
+function disclosureHarness(hash) {
+  const parent={open:false,parentElement:null,matches:tag=>tag==='details'};
+  const child={open:false,parentElement:parent,matches:tag=>tag==='details'};
+  const target={parentElement:child,matches:()=>false};
+  const events={},clicks=[],location={hash};
+  const document={getElementById:id=>id==='activity'?target:id==='resource'?parent:null,querySelectorAll:()=>[{hash:'#resource',addEventListener:(_,fn)=>clicks.push(fn)}]};
+  vm.runInNewContext(disclosureScript,{document,location,window:{addEventListener:(event,fn)=>events[event]=fn}});
+  return {parent,child,target,events,click:clicks[0],location};
+}
+for (const hash of ['#activity','#%61ctivity']) {const h=disclosureHarness(hash);ok(h.parent.open&&h.child.open,'nested bookmark opens ancestors '+hash);}
+for (const hash of ['','#unknown','#%bad']) {const h=disclosureHarness(hash);ok(!h.parent.open&&!h.child.open,'unrelated fragment is safe '+hash);}
+const h=disclosureHarness('#resource');ok(h.parent.open,'resource bookmark opens');h.parent.open=false;h.click({button:0});ok(h.parent.open,'same-hash shortcut reopens');
+for (const flag of ['defaultPrevented','ctrlKey','metaKey','shiftKey','altKey']) {h.parent.open=false;h.click({[flag]:true});ok(!h.parent.open,'modified link untouched '+flag);}
+h.parent.open=false;h.click({button:1});ok(!h.parent.open,'middle-click untouched');h.location.hash='#activity';h.events.hashchange();ok(h.parent.open&&h.child.open,'later fragment reveals content');h.parent.open=false;h.events.pageshow();ok(h.parent.open,'history restoration reveals target');
+for(const [file]of classes)ok(!read(file).includes('introduction.'),'homepage-only assets do not affect '+file);
+console.log(`Passed ${checks} total homepage, compact layout, illustration and disclosure assertions.`);
