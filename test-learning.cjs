@@ -15,7 +15,8 @@ for(const [file] of lessons){
   const target=asset||file;ok(fs.existsSync('dist/'+target),file+' asset '+target);
   if(anchor && target.endsWith('.html'))ok(fs.readFileSync('dist/'+target,'utf8').includes('id="'+decodeURIComponent(anchor)+'"'),file+' fragment '+ref);
  }
- eq((html.match(/class="course-guide"/g)||[]).length,1);eq((html.match(/<aside class="course-guide"[\s\S]*?<\/aside>/)[0].match(/aria-current="page"/g)||[]).length,1);
+ eq((html.match(/class="course-guide"/g)||[]).length,0,file+' no duplicate course guide');
+ eq((html.match(/class="course-menu"/g)||[]).length,1,file+' single shared class menu');
  ok(html.includes('id="learning-start"'),file+' starting path');
  ok(html.includes('guided-try'),file+' guided experiment');
  ok(html.includes('lesson-bridge'),file+' conceptual transitions');
@@ -27,10 +28,8 @@ for(const [file] of lessons){
 // The introduction must describe the controls that learners actually encounter.
 const introduction=fs.readFileSync('dist/course-introduction.html','utf8');
 ok(!/Read-in-order mode|compact review/i.test(introduction),'introduction does not name retired reading modes');
-for(const label of ['Open all explanations','Close explanations']){
- ok(introduction.includes('“'+label+'”'),'introduction names '+label);
- for(const [file]of lessons)ok(fs.readFileSync('dist/'+file,'utf8').includes('>'+label+'<'),file+' has the documented control '+label);
-}
+ok(!/Open all explanations|Close explanations|How would you like to study/i.test(introduction),'introduction does not name retired bulk controls');
+ok(introduction.includes('Open individual explanations and optional extensions'),'introduction explains local disclosures');
 ok(introduction.includes('The technical-depth switch reveals extra mathematics inside explanations.'),'introduction locates technical depth');
 ok(introduction.includes('Check answers stay closed until you choose to reveal them.'),'introduction preserves learner-controlled answers');
 ok(introduction.includes('full reading route without opening explanations'),'introduction separates route length from depth');
@@ -43,28 +42,18 @@ const samplingSource=fs.readFileSync('src/sampling-distributions.html','utf8');
 ok(samplingSource.includes('Open <a href="#statistics">One population. Many possible sample means.</a> and select n=3'),'enumeration task names its separately closed explorer');
 ok(!samplingSource.includes('The explorer below lets you check these bars'),'enumeration task does not imply its explorer is already open');
 
-// Shared reading controls: repeated mode changes, custom state, malformed anchor,
-// deep linking into a closed panel, and absent toolbar all remain safe.
-class Node{constructor(tag='DIV'){this.tagName=tag;this.open=true;this.hidden=true;this.attrs={};this.handlers={};this.dataset={};this.parentElement=null;this.textContent='';}addEventListener(k,f){this.handlers[k]=f;}setAttribute(k,v){this.attrs[k]=v;}}
-const topics=[new Node('DETAILS'),new Node('DETAILS'),new Node('DETAILS')],toolbar=new Node(),status=new Node(),read=new Node('BUTTON'),review=new Node('BUTTON');read.dataset.readingMode='read';review.dataset.readingMode='review';
-const child=new Node('H3');child.parentElement=topics[1];const listeners={},location={hash:''};
-const document={querySelectorAll:s=>s==='details.lesson'?topics:s==='[data-reading-mode]'?[read,review]:[],querySelector:()=>toolbar,getElementById:id=>id==='reading-status'?status:id==='inside'?child:null};
+// Shared anchor revealing remains independent of the retired toolbar.
+class Node{constructor(tag='DIV'){this.tagName=tag;this.open=false;this.parentElement=null;}}
+const outer=new Node('DETAILS'),topic=new Node('DETAILS'),child=new Node('H3'),other=new Node('DETAILS');
+topic.parentElement=outer;child.parentElement=topic;
+const listeners={},location={hash:''};
+const document={getElementById:id=>id==='inside'?child:null};
 vm.runInNewContext(fs.readFileSync('src/learning.js','utf8'),{document,location,window:{addEventListener:(k,f)=>listeners[k]=f}});
-eq(toolbar.hidden,false);eq(read.attrs['aria-pressed'],'true');ok(status.textContent.startsWith('3 of 3'));
-review.handlers.click();eq(topics.map(t=>t.open),[false,false,false]);eq(review.attrs['aria-pressed'],'true');
-review.handlers.click();eq(topics.map(t=>t.open),[false,false,false]);read.handlers.click();eq(topics.map(t=>t.open),[true,true,true]);
-topics[0].open=false;topics[0].handlers.toggle();eq(read.attrs['aria-pressed'],'false');eq(review.attrs['aria-pressed'],'false');
-review.handlers.click();location.hash='#inside';listeners.hashchange();eq(topics.map(t=>t.open),[false,true,false]);
+eq(topic.open,false,'initial explanations remain closed');
+location.hash='#inside';listeners.hashchange();eq(topic.open,true);eq(outer.open,true);eq(other.open,false,'unrelated answers stay closed');
+topic.open=false;outer.open=false;listeners.hashchange();eq(topic.open,true,'repeated anchor restores topic');eq(outer.open,true,'repeated anchor restores ancestor');
 location.hash='#%bad';listeners.hashchange();ok(true,'malformed hash ignored');location.hash='#missing';listeners.hashchange();ok(true,'missing anchor ignored');
-vm.runInNewContext(fs.readFileSync('src/learning.js','utf8'),{document:{querySelectorAll:()=>[],querySelector:()=>null,getElementById:()=>null},location:{hash:''},window:{addEventListener(){}}});ok(true,'no lesson controls is safe');
+outer.open=false;topic.open=false;location.hash='#%69nside';listeners.hashchange();eq(topic.open,true,'encoded anchor works');
+vm.runInNewContext(fs.readFileSync('src/learning.js','utf8'),{document:{getElementById:()=>null},location:{hash:''},window:{addEventListener(){}}});ok(true,'empty page is safe');
 const css=fs.readFileSync('src/learning.css','utf8');ok(css.includes('prefers-reduced-motion'));ok(css.includes('@media print'));ok(css.includes('min-height:44px'));ok(css.includes('@media(max-width:700px)'));
-// Pilot extensions participate in the explanation controls without opening answers.
-const extension=new Node('DETAILS'),answer=new Node('DETAILS');extension.open=false;answer.open=false;
-const pilotTopics=[new Node('DETAILS'),extension],pilotRead=new Node('BUTTON'),pilotClose=new Node('BUTTON'),pilotStatus=new Node(),pilotToolbar=new Node();
-pilotRead.dataset.readingMode='read';pilotClose.dataset.readingMode='review';
-const pilotDocument={querySelectorAll:s=>s==='details.lesson'?[pilotTopics[0]]:s==='[data-reading-extension]'?[extension]:s==='[data-reading-mode]'?[pilotRead,pilotClose]:[],querySelector:()=>pilotToolbar,getElementById:()=>pilotStatus};
-vm.runInNewContext(fs.readFileSync('src/learning.js','utf8'),{document:pilotDocument,location:{hash:''},window:{addEventListener(){}}});
-pilotRead.handlers.click();eq(pilotTopics.map(x=>x.open),[true,true]);eq(answer.open,false,'check answers stay closed');ok(pilotStatus.textContent.includes('2 of 2 explanations and extensions'));
-pilotClose.handlers.click();eq(pilotTopics.map(x=>x.open),[false,false]);pilotRead.handlers.click();eq(pilotTopics.map(x=>x.open),[true,true]);
-
-console.log(`Passed ${checks} learning-path, preserved-content, all-page links/anchors, static accessibility and reading-mode assertions.`);
+console.log(`Passed ${checks} learning content, all-page links/anchors, static accessibility and individual-disclosure assertions.`);

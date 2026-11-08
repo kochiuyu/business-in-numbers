@@ -28,7 +28,7 @@ const leaves=html=>{const m=new Map();for(const s of html.split(/<[^>]*>/).map(x
 const previous=require('./scripts/class-one-fourteen-preservation.cjs').restore(source);
 const before=leaves(previous),after=leaves(source),missing={};for(const [s,n]of before)if(n>(after.get(s)||0))missing[s]=n-(after.get(s)||0);
 const reference=JSON.parse(read('test-class1-fourteen-reference.json'));
-eq(require('node:crypto').createHash('sha256').update(read('dist/descriptive-statistics.html')).digest('hex'),reference.reviewed_dist_sha256,'reviewed fourteen-step built page');
+eq(require('node:crypto').createHash('sha256').update(read('dist/descriptive-statistics.html')).digest('hex'),require('./test-roadmap-build-reference.json')['descriptive-statistics.html'] || reference.reviewed_dist_sha256,'reviewed fourteen-step built page');
 eq(missing,reference.reviewed_changed_leaves,'only reviewed heading, navigation and local-reference text changes');
 for(const [name,html]of [['source',source],['built',read('dist/descriptive-statistics.html')]]){
  const t=parse(html),parts=t.nodes.filter(n=>has(n,'case-part'));

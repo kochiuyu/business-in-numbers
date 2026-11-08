@@ -34,8 +34,9 @@ function enhance(html,file){
  }
  if(insertions.length!==activities.length)throw Error(`Activity insertion mismatch ${file}: ${insertions.length}/${activities.length} topics=${topic}`);
  for(const [position,markup]of insertions.reverse())html=html.slice(0,position)+markup+html.slice(position);
- const progress=`<noscript><p class="activity-help">For the new active-practice questions, answer on paper and open “Reveal worked answer” to compare. Automatic checks need JavaScript, so answer controls stay disabled without it.</p></noscript><div class="practice-progress" hidden><b>Active practice</b><p>Four short challenges are woven into this lesson. Try first, check, then explain. All answers remain available without JavaScript.</p><p data-practice-progress role="status" aria-live="polite">0 of 4 challenges checked correctly on this page.</p><p class="activity-help">This is practice, not a grade. This course does not save your answers or progress between study sessions.</p></div>`;
- html=html.replace('<div class="reading-controls"',(['descriptive-statistics.html','probability.html','random-variables.html','sampling-distributions.html','estimation.html','hypothesis-testing.html','anova.html','regression.html'].includes(file)?`<details class="c1-practice-status"><summary>Your four practice challenges</summary>${progress}</details>`:progress)+'<div class="reading-controls"');
+ // Keep practice beside the concept it checks. A class-wide counter adds a
+ // second task list before the lesson and is not needed for individual feedback.
+ html=html.replace('</main>','<noscript><p class="activity-help">For the practice questions, answer on paper and open “Reveal worked answer” to compare. Automatic checks need JavaScript, so answer controls stay disabled without it.</p></noscript></main>');
  return html.replace('</head>','<link rel="stylesheet" href="activities.css"></head>').replace('</body>','<script src="activities.js"></script></body>');
 }
 module.exports={render,enhance,data,validate};

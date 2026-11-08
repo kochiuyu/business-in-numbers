@@ -8,8 +8,8 @@ module.exports=function check({run,dom,html,partSelector,progressId,showAllId,ex
  eq(extensions.length,expectedExtensions,'reviewed number of optional extensions');
  ok(extensions.every(x=>x.tagName==='DETAILS'&&!x.open),'native closed disclosures without JavaScript');
  ok(raw.querySelectorAll(partSelector).every(x=>!x.hidden),'all steps remain visible without JavaScript');
- ok(html.includes('Show all steps changes only the reading route'),'route and explanation depth distinguished');
- ok(html.includes('check answers stay closed'),'answers remain learner-controlled');
+ ok(!html.includes('data-reading-mode'),'global explanation toggles removed');
+ ok(raw.querySelectorAll('details.lesson').every(x=>!x.open),'explanations remain learner-controlled');
  const targets=extensions.map(ext=>{const target=ext.attrs.id?ext:ext.querySelector('[id]');ok(target,'each extension has a linkable section');return target.attrs.id;});
  for(const reduced of [false,true]){
   const {d,loc,events}=run(reduced,'#'+targets[0]);
@@ -36,10 +36,11 @@ module.exports=function check({run,dom,html,partSelector,progressId,showAllId,ex
  vm.runInNewContext(fs.readFileSync('src/learning.js','utf8'),{document:d,location:{hash:''},window:{addEventListener:(k,f)=>(events[k]||=[]).push(f)}});
  const topics=d.querySelectorAll('details.lesson'),answers=d.querySelectorAll('details').filter(x=>!panels.includes(x)&&!topics.includes(x));
  const answerState=answers.map(x=>x.open);
- d.querySelector('[data-reading-mode="read"]').fire('click');ok(panels.every(x=>x.open),'open-all includes optional extensions');
- ok(topics.every(x=>x.open),'open-all retains original topic explanations');
- eq(answers.map(x=>x.open),answerState,'open-all does not change check answers or unrelated disclosures');
- d.querySelector('[data-reading-mode="review"]').fire('click');ok(panels.every(x=>!x.open)&&topics.every(x=>!x.open),'close explanations includes extensions');
+ ok(panels.every(x=>!x.open)&&topics.every(x=>!x.open),'show-all and anchor initialization do not open explanations');
+ topics[0].open=true;
+ ok(topics.slice(1).every(x=>!x.open)&&panels.every(x=>!x.open),'individual topic opens independently');
+ eq(answers.map(x=>x.open),answerState,'individual explanation leaves answers unchanged');
+ topics[0].open=false;
  vm.runInNewContext(fs.readFileSync('src/math-ui.js','utf8'),{document:d,window:{addEventListener:(k,f)=>(events[k]||=[]).push(f)}});
  const fire=k=>(events[k]||[]).forEach(fn=>fn());panels[0].open=true;
  fire('beforeprint');ok(d.querySelectorAll('details').every(x=>x.open),'printing exposes all detail content');

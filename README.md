@@ -65,3 +65,7 @@ Class 1's roadmap connects fourteen steps in four phases. A visible standard-dev
 Classes 2 and 3 now have visible roadmaps, card descriptions and purposeful bridges. Counting follows event operations in Class 2; Class 3 completes its capacity decision before the inference preview. New next/back links follow the displayed order without changing existing deep-link meanings.
 
 Classes 4–8 now expose their business questions, phase connections and data boundaries before the step cards. The sampling and ANOVA lessons preview design checks early; estimation shows parallel mean/rate paths; hypothesis tests are conditional method choices rather than a list to run. Regression explicitly links its visible future-data evaluation in step13 and retains nineteen steps. Class8 ends with course synthesis rather than a nonexistent next class. Repeated-step links retain heading focus across all eight viewers.
+
+## Simple class openings
+
+The shared header is the only eight-class menu. Each class opens directly into its current business brief and roadmap, without a second learning-path list, practice counter, or global open/close-explanations toolbar. The four contextual practice activities per class remain beside their topics, including hints, feedback, retries and worked answers. Individual native disclosures, technical depth, one-step/full-route viewing, deep links, printing and no-JavaScript reading remain available. Run `node test-class-openings.cjs` after building to check that the opening stays concise and all lesson content is preserved.
