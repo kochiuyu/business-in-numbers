@@ -35,15 +35,15 @@ eq(missing,reference.reviewed_changed_leaves,'all historical teaching text retai
 for(const [name,html]of [['source',source],['built',read('dist/probability.html')]]){
  if(name==='built')ok(!/\{\{(?:probvisual|probpython|proboutput|math|activity):|katex-error/.test(html),'all rendering tokens expand without errors');
  const t=parse(html),parts=t.nodes.filter(n=>has(n,'c2-part'));
- eq(parts.map(n=>n.attrs.id),expected,name+': eleven semantic steps');
+ eq(parts.map(n=>n.attrs.id),name==='built'?['prob-step-1','prob-step-2','prob-sequential','prob-step-7','prob-step-3','prob-independence','prob-step-4','prob-step-5','prob-odds','prob-step-6','prob-step-8']:expected,name+': eleven semantic steps');
  const ids=t.nodes.map(n=>n.attrs.id).filter(Boolean);eq(ids.length,new Set(ids).size,name+': unique anchors');
  for(const [i,part]of parts.entries()){
-  const alias=t.byId('class2-step-'+(i+1));ok(alias&&ancestors(alias).includes(part),name+': canonical alias belongs to intended section');
+  const alias=t.byId('class2-step-'+(expected.indexOf(part.attrs.id)+1));ok(alias&&ancestors(alias).includes(part),name+': canonical alias belongs to intended section');
   ok(t.nodes.some(n=>n.tag==='a'&&n.attrs.href==='#class2-step-'+(i+1)),name+': canonical step reachable');
  }
- for(const [id,index]of [['foundation-event-relationship',3],['c2-odds-parts',6],['c2-count-allowed',8]])ok(ancestors(t.byId(id)).includes(parts[index]),name+': moved optional content '+id);
+ for(const [id,index]of [['foundation-event-relationship',3],['c2-odds-parts',6],['c2-count-allowed',8]])ok(ancestors(t.byId(id)).includes(parts.find(p=>p.attrs.id===expected[index])),name+': moved optional content '+id);
  if(name==='built')for(const [id,index]of [['outcomes',0],['overlap',1],['condition',2],['independence',3],['paths',4],['odds-first',6],['repeated',7],['sequential',8],['counting',9],['brief',10]]){
-  const core=t.byId('c2-core-'+id);ok(core,name+': worked arithmetic '+id);ok(ancestors(core).includes(parts[index]),name+': arithmetic in proper step');ok(!ancestors(core).some(n=>n.tag==='details'||has(n,'technical')),name+': essential arithmetic visible without optional disclosure');
+  const core=t.byId('c2-core-'+id);ok(core,name+': worked arithmetic '+id);ok(ancestors(core).includes(parts.find(p=>p.attrs.id===expected[index])),name+': arithmetic in proper step');ok(!ancestors(core).some(n=>n.tag==='details'||has(n,'technical')),name+': essential arithmetic visible without optional disclosure');
  }
 }
 

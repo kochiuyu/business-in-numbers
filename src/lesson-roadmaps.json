@@ -130,5 +130,257 @@
         "bridge": "These summaries describe recorded cases. Class 2 makes assumptions about uncertain future events explicit and asks which group belongs in each probability denominator."
       }
     ]
+  },
+  "probability.html": {
+    "classNumber": 2,
+    "partClass": "c2-part",
+    "routeClass": "c2-route",
+    "reorder": true,
+    "nextFile": "random-variables.html",
+    "question": "When an order triggers an alert, how likely is a real issue?",
+    "outcome": "Build a valid probability model, update it with evidence and explain why the probability alone does not choose the business action.",
+    "phases": [
+      {
+        "anchor": "class2-step-1",
+        "title": "Define and count",
+        "description": "Steps 1–4 · Name events, check their relationships and count the right outcomes."
+      },
+      {
+        "anchor": "class2-step-3",
+        "title": "Condition and combine",
+        "description": "Steps 5–7 · Change the denominator, check independence and build weighted paths."
+      },
+      {
+        "anchor": "class2-step-6",
+        "title": "Update with evidence",
+        "description": "Steps 8–10 · Reverse the question with Bayes, then inspect repeated signals."
+      },
+      {
+        "anchor": "class2-step-11",
+        "title": "Explain the action",
+        "description": "Step 11 · Separate the updated probability from costs and consequences."
+      }
+    ],
+    "logic": "Counting is useful when outcomes can be enumerated, but counts become probabilities only under an appropriate likelihood model. Conditioning changes the group. Weighted paths supply the denominator for Bayes, and repeated evidence needs an extra dependence assumption.",
+    "data": "Fair-dice and menu examples teach counting. The 80-order express/on-time table, 1% / 90% / 5% alert model and 40% / 80% / 40% repeated-signal model are separate teaching examples. Do not carry a rate from one into another.",
+    "steps": [
+      {
+        "id": "prob-step-1",
+        "anchor": "class2-step-1",
+        "short": "Name the outcome",
+        "description": "State the experiment, possible outcomes and event of interest.",
+        "bridge": "Events need a precise meaning before their probabilities can be combined. Next, use AND, OR and NOT and reject impossible overlaps."
+      },
+      {
+        "id": "prob-step-2",
+        "anchor": "class2-step-2",
+        "short": "Combine and validate",
+        "description": "Combine events while keeping overlap and valid bounds clear.",
+        "bridge": "An event is now a set of outcomes. When those outcomes come from a sequence of choices, count the possibilities carefully before assigning chance."
+      },
+      {
+        "id": "prob-sequential",
+        "anchor": "class2-step-9",
+        "short": "Count sequential choices",
+        "description": "Use the product rule and account for forbidden combinations.",
+        "bridge": "The product rule counts a sequence of choices. Next decide whether swapping selected people creates a new outcome or the same team."
+      },
+      {
+        "id": "prob-step-7",
+        "anchor": "class2-step-10",
+        "short": "Count arrangements and selections",
+        "description": "Distinguish ordered assignments from unordered selections.",
+        "bridge": "Counting settles how many possibilities there are, not how likely each is. Return to the separate order table to see how learning a fact changes the relevant group."
+      },
+      {
+        "id": "prob-step-3",
+        "anchor": "class2-step-3",
+        "short": "Change the group",
+        "description": "Condition on known information and choose the matching denominator.",
+        "bridge": "Conditioning can change a probability. Independence is the special claim that knowing the other event does not change it, and must be checked rather than assumed."
+      },
+      {
+        "id": "prob-independence",
+        "anchor": "class2-step-4",
+        "short": "Test independence",
+        "description": "Compare the joint probability with the product of marginals.",
+        "bridge": "The multiplication rule works with conditional probabilities even without independence. Use that rule along each alert-model path, then add disjoint paths."
+      },
+      {
+        "id": "prob-step-4",
+        "anchor": "class2-step-5",
+        "short": "Multiply and add paths",
+        "description": "Calculate joint paths and the total chance of an alert.",
+        "bridge": "The two paths supply all alerts, both true and false. Bayes now asks which share of that selected alert group has the real issue."
+      },
+      {
+        "id": "prob-step-5",
+        "anchor": "class2-step-6",
+        "short": "Read Bayes backward",
+        "description": "Reverse a conditional question using the base rate and all evidence paths.",
+        "bridge": "Bayes can also be written as an odds update. Switch to the separately labeled 40% / 80% / 40% example to see what the likelihood ratio multiplies."
+      },
+      {
+        "id": "prob-odds",
+        "anchor": "class2-step-7",
+        "short": "Update the odds",
+        "description": "Convert probability to odds, update, then convert back.",
+        "bridge": "One signal changes the odds once. A second result is new evidence only to the extent that it adds information beyond the first."
+      },
+      {
+        "id": "prob-step-6",
+        "anchor": "class2-step-8",
+        "short": "Update again",
+        "description": "State the dependence assumption before multiplying another likelihood ratio.",
+        "bridge": "The model now distinguishes an independent new signal from a repeated report. Return to the 1% alert case and communicate the probability without confusing it with an action threshold."
+      },
+      {
+        "id": "prob-step-8",
+        "anchor": "class2-step-11",
+        "short": "Explain the decision",
+        "description": "Explain the posterior, the assumptions and the costs still needed.",
+        "bridge": "This class finds probabilities of events for an order. Class 3 models a whole range of possible counts, waiting times and measurements for capacity decisions."
+      }
+    ]
+  },
+  "random-variables.html": {
+    "classNumber": 3,
+    "partClass": "c3-part",
+    "routeClass": "c3-route",
+    "reorder": true,
+    "nextFile": "sampling-distributions.html",
+    "question": "How much capacity should we reserve when demand is uncertain?",
+    "outcome": "Match a random-variable model to a business quantity and use its full range of outcomes, not only its average, to compare capacity costs.",
+    "phases": [
+      {
+        "anchor": "class3-step-1",
+        "title": "Build a distribution",
+        "description": "Steps 1–5 · Assign probabilities, accumulate them and summarize center and spread."
+      },
+      {
+        "anchor": "class3-step-6",
+        "title": "Match the mechanism",
+        "description": "Steps 6–11 · Model dependence, counts and continuous waiting times."
+      },
+      {
+        "anchor": "class3-step-12",
+        "title": "Turn the model into a decision",
+        "description": "Steps 12–14 · Find probabilities and cutoffs, then compare capacity costs."
+      },
+      {
+        "anchor": "class3-step-14",
+        "title": "Preview inference",
+        "description": "Step 15 · See the reference families used in later sampling and inference classes."
+      }
+    ],
+    "logic": "A PMF and CDF describe all outcomes. Their moments summarize the model, but capacity costs can depend on a tail. Count, waiting-time and normal models are alternatives chosen from the mechanism. The final family preview looks ahead; it is not needed to solve the capacity case.",
+    "data": "The 0–3-order demand distribution, joint-risk table, trial/draw examples, arrival processes and 500 mL filling model are separate synthetic models. The capacity decision returns to the initial 0–3-order distribution.",
+    "steps": [
+      {
+        "id": "rv-step-1",
+        "anchor": "class3-step-1",
+        "short": "Name the number",
+        "description": "Map each uncertain outcome to the quantity the business needs.",
+        "bridge": "A random variable names the quantity but not its chances. Assign a probability to every possible demand count."
+      },
+      {
+        "id": "rv-step-2",
+        "anchor": "class3-step-2",
+        "short": "Assign each probability",
+        "description": "Build a PMF whose nonnegative probabilities sum to one.",
+        "bridge": "A PMF answers an exact-count question. Capacity thresholds need cumulative probability across several counts."
+      },
+      {
+        "id": "rv-cdf",
+        "anchor": "class3-step-3",
+        "short": "Accumulate probability",
+        "description": "Read the probability at or below a threshold.",
+        "bridge": "The full distribution is now available. Its probability-weighted average gives a useful long-run summary, not a guaranteed outcome."
+      },
+      {
+        "id": "rv-step-3",
+        "anchor": "class3-step-4",
+        "short": "Find the expectation",
+        "description": "Weight each outcome by its probability and preserve the units.",
+        "bridge": "Two models can have the same expectation and different risks. Measure how far their possible values lie from the mean."
+      },
+      {
+        "id": "rv-variance",
+        "anchor": "class3-step-5",
+        "short": "Measure model spread",
+        "description": "Build variance and standard deviation from the distribution.",
+        "bridge": "One variable’s spread is not enough when risks occur together. A joint table records which pairs of outcomes are possible."
+      },
+      {
+        "id": "rv-step-4",
+        "anchor": "class3-step-6",
+        "short": "Build a joint table",
+        "description": "Keep joint, marginal and conditional probabilities distinct.",
+        "bridge": "The joint table captures dependence. Use covariance to see how that dependence changes the uncertainty of a combined total."
+      },
+      {
+        "id": "rv-covariance",
+        "anchor": "class3-step-7",
+        "short": "Combine dependent risks",
+        "description": "Account for covariance before adding uncertain quantities.",
+        "bridge": "Now choose a distribution from the process generating the quantity. Fixed trials and finite draws require different assumptions."
+      },
+      {
+        "id": "rv-step-5",
+        "anchor": "class3-step-8",
+        "short": "Count trials and draws",
+        "description": "Choose binomial or hypergeometric from the sampling mechanism.",
+        "bridge": "Fixed trials and sampling without replacement differ from arrivals over time. An arrival model needs a rate and assumptions about independent increments."
+      },
+      {
+        "id": "rv-arrivals",
+        "anchor": "class3-step-9",
+        "short": "Count arrivals in time",
+        "description": "Use a Poisson model only when its process assumptions fit.",
+        "bridge": "Counts are discrete. A continuous measurement or waiting time instead assigns probabilities to intervals, through area under a density."
+      },
+      {
+        "id": "rv-step-6",
+        "anchor": "class3-step-10",
+        "short": "Turn density into area",
+        "description": "Separate density height from the probability of an interval.",
+        "bridge": "The area idea applies to waiting times. Choose uniform or exponential from the mechanism rather than from the picture alone."
+      },
+      {
+        "id": "rv-waits",
+        "anchor": "class3-step-11",
+        "short": "Choose a waiting model",
+        "description": "Connect time units, rate assumptions and waiting-time probabilities.",
+        "bridge": "Waiting-time models are not universal measurement models. Switch to the separate filling example to study normal probabilities around a center."
+      },
+      {
+        "id": "rv-step-7",
+        "anchor": "class3-step-12",
+        "short": "Find normal probabilities",
+        "description": "Standardize a measurement and identify the required tail or interval.",
+        "bridge": "A probability calculation starts with a cutoff. Reverse that direction to find the cutoff meeting a target coverage level."
+      },
+      {
+        "id": "rv-quantiles",
+        "anchor": "class3-step-13",
+        "short": "Find a normal cutoff",
+        "description": "Translate a probability target back into business units.",
+        "bridge": "Probability and cutoff tools describe risk. Return to the initial demand distribution and attach costs to the capacity shortfall rather than acting on mean demand alone."
+      },
+      {
+        "id": "rv-step-9",
+        "anchor": "class3-step-15",
+        "short": "Make the capacity decision",
+        "description": "Compare expected shortfall costs using the full demand distribution.",
+        "bridge": "The capacity case is complete. The final preview introduces t, chi-square and F for later inference; these are not extra models needed for this decision."
+      },
+      {
+        "id": "rv-step-8",
+        "anchor": "class3-step-14",
+        "short": "Meet inference families",
+        "description": "Preview the reference distributions needed in later classes.",
+        "bridge": "Those reference families become useful when a statistic varies across samples. Class 4 now asks how a sample average or rate would change if the sample were drawn again."
+      }
+    ]
   }
 }

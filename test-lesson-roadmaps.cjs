@@ -17,6 +17,8 @@ for(const [file,plan]of Object.entries(R.plans)){
   const map=ns.find(n=>has(n,'lesson-roadmap'));ok(map&&!ns.some(n=>n.tag==='details'&&inside(map,n)),file+' visible overview');
   for(const a of ns.filter(n=>n.tag==='a'&&inside(n,map)))ok(ns.some(n=>n.attrs.id===a.attrs.href.slice(1)),file+' roadmap destination '+a.attrs.href);
   if(plan.reorder)for(const [i,part]of parts.entries()){
+   ok(html.slice(part.start,part.end).includes(`STEP ${i+1} / ${parts.length}`),'displayed heading number matches route');
+   if(label==='built'){const kicker=ns.find(n=>has(n,`c${plan.classNumber}-kicker`)&&inside(n,part));ok(kicker&&html.slice(kicker.openEnd,kicker.end).startsWith(String(i+1).padStart(2,'0')+' /'),'picture and displayed step numbers agree');}
    const nav=ns.find(n=>has(n,`c${plan.classNumber}-step-nav`)&&inside(n,part)),a=ns.filter(n=>n.tag==='a'&&inside(n,nav));
    if(i)eq(a[0].attrs.href,'#'+plan.steps[i-1].anchor,file+' previous follows displayed order '+i);
    eq(a.at(-1).attrs.href,i+1<parts.length?'#'+plan.steps[i+1].anchor:plan.nextFile,file+' next follows displayed order '+i);

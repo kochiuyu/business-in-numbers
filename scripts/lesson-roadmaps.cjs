@@ -32,7 +32,8 @@ function enhance(html,file){
   const n=byId.get(s.id);if(!n)throw Error('Unknown semantic step: '+s.id);
   let frag=html.slice(n.start,n.end);
   if(p.reorder){
-   frag=frag.replace(/STEP \d+ \/ \d+/,`STEP ${i+1} / ${parts.length}`);
+   frag=frag.replace(/STEP \d+ (?:\/|OF) \d+/,`STEP ${i+1} / ${parts.length}`);
+   frag=frag.replace(new RegExp(`(<span class="c${p.classNumber}-kicker">)\\d+ /`),`$1${String(i+1).padStart(2,'0')} /`);
    const navClass=p.classNumber===1?'visual-step-nav':`c${p.classNumber}-step-nav`;
    const local=nodes(frag),nav=local.find(n=>has(n,navClass));
    if(!nav)throw Error('Missing next navigation '+s.id);

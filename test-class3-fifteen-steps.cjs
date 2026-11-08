@@ -25,13 +25,13 @@ const attrs=(s,a)=>[...s.matchAll(new RegExp('\\b'+a+'="([^"]+)"','g'))].map(m=>
 for(const id of attrs(baseline,'id'))eq(attrs(source,'id').filter(x=>x===id).length,1,'legacy anchor '+id);
 for(const [name,html]of [['source',source],['built',built]]){
  const t=parse(html),parts=t.nodes.filter(n=>has(n,'c3-part'));
- eq(parts.map(n=>n.attrs.id),expected,name+' semantic route');
+ eq(parts.map(n=>n.attrs.id),name==='built'?[...expected.slice(0,13),'rv-step-9','rv-step-8']:expected,name+' semantic route');
  const ids=t.nodes.map(n=>n.attrs.id).filter(Boolean);eq(ids.length,new Set(ids).size,name+' unique IDs');
  for(const[i,part]of parts.entries()){
-  const alias=t.byId('class3-step-'+(i+1));ok(alias&&ancestors(alias).includes(part),name+' canonical alias '+(i+1));
+  const originalIndex=expected.indexOf(part.attrs.id);const alias=t.byId('class3-step-'+(originalIndex+1));ok(alias&&ancestors(alias).includes(part),name+' canonical alias '+(i+1));
   ok(t.nodes.some(n=>n.tag==='a'&&n.attrs.href==='#class3-step-'+(i+1)),name+' reachable step '+(i+1));
   if(name==='built'){
-   const core=t.byId('c3-core-'+cores[i]);ok(core&&ancestors(core).includes(part),name+' core in correct step '+cores[i]);
+   const core=t.byId('c3-core-'+cores[originalIndex]);ok(core&&ancestors(core).includes(part),name+' core in correct step '+cores[i]);
    ok(!ancestors(core).some(n=>n.tag==='details'||has(n,'technical')),name+' core visible without disclosure '+cores[i]);
   }
  }
