@@ -8,6 +8,11 @@ function ok(value, label) { checks++; assert.ok(value, label); }
 function eq(value, expected, label) { checks++; assert.deepEqual(value, expected, label); }
 for (const [file, shortcuts] of Object.entries(sections)) {
   const html = fs.readFileSync('dist/' + file, 'utf8');
+  const canonical='https://kochiuyu.github.io/business-in-numbers/'+(['index.html','course-introduction.html'].includes(file)?'':file);
+  ok(html.includes(`<link rel="canonical" href="${canonical}">`), file + ': canonical URL');
+  ok(html.includes(`<meta property="og:url" content="${canonical}">`), file + ': sharing URL');
+  ok(html.includes('<meta property="og:title" content="') && html.includes('<meta property="og:description" content="'), file + ': sharing text');
+  ok(html.includes('<meta name="twitter:card" content="summary">'), file + ': summary card');
   const header = html.match(/<header class="course-header">[\s\S]*?<\/header>/)?.[0];
   ok(header, file + ': built header');
   const brand = header.match(/<a class="brand"[^>]*>/)?.[0];
