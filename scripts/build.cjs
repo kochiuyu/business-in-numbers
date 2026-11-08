@@ -38,7 +38,7 @@ function build() {
     const text=read(`examples/${name}.${kind==='python'?'py':'txt'}`);
     return `<pre class="code-block" tabindex="0" role="region" aria-label="${kind==='python'?'Python code':'Checked Python output'}: ${esc(name)}. Scroll horizontally if needed."><code>${esc(text)}</code></pre>`;
   });
-  const html=learning.enhance(compile(template,equations),'index.html');
+  const html=learning.enhance(require('./class-one-concept-pictures.cjs').enhance(compile(template,equations)),'index.html');
   const css=read('styles.css');
   const graphsCss=read('graphs.css');
   const fixtureHtml=compile(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mathematics typesetting check</title><link rel="stylesheet" href="vendor/katex/katex.min.css"><link rel="stylesheet" href="styles.css"></head><body class="math-test-page"><main class="block"><h1>Mathematics typesetting check</h1><p>Typesetting examples, not a new lesson or a claim of source coverage. These examples exercise conditional probability, fractions, limits, sums, binomial coefficients, matrices and aligned derivations.</p>${Object.keys(fixtures).map(id=>`<section><h2>${esc(fixtures[id].title)}</h2>{{math:${id}}}</section>`).join('')}</main><script src="math-ui.js"></script></body></html>`,fixtures);
