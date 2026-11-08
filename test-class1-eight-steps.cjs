@@ -41,7 +41,7 @@ const baseline=JSON.parse(read('course-structure.json'))['index.html'];
 for(const id of baseline.ids)eq([...source.matchAll(/\bid="([^"]+)"/g)].filter(m=>m[1]===id).length,1,'original ID retained exactly once: '+id);
 eq([...source.matchAll(/\{\{math:([^}]+)\}\}/g)].map(m=>m[1]).sort(),baseline.math,'all original formula placeholders retained');
 const activities=require('./scripts/activities.cjs').data().filter(a=>a.file==='index.html');
-eq(activities.map(a=>[a.id,a.afterTopic]),[['c1-measurements',1],['c1-weighted-orders',2],['c1-change-units',7],['c1-preserve-pairs',11]],'practice follows semantic topics, not stale numeric positions');
+eq(activities.map(a=>[a.id,a.afterTopic]),[['c1-measurements',1],['c1-weighted-orders',4],['c1-change-units',9],['c1-preserve-pairs',13]],'practice follows semantic topics, not stale numeric positions');
 // Deliberate navigation, headings and local-reference wording only. Everything
 // else is compared as a multiset of exact text leaves, independent of location.
 const allowedChangedLeaves={

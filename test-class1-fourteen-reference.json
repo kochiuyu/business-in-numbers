@@ -1,0 +1,675 @@
+{
+  "baseline_sha256": "bdd7ca9f23a61dfb29e032aaaf73076fe440906d92c1d1988923bfc6e26338a0",
+  "reviewed_sha256": "3b011783c20313173fdf05eef7afe19d4feae220e12be097cdd5ee85608a7261",
+  "reviewed_changed_leaves": {
+    "See the numbers before learning the formulas. Follow one retailer through twelve focused teaching steps, at your own pace.": 1,
+    "Twelve focused steps · one business case": 1,
+    "Step 1 of 12 · Know the records": 1,
+    "Show all twelve steps": 1,
+    "STEP 1 OF 12": 1,
+    "Synthetic customer orders": 1,
+    "Optional chart reference · return when a later step asks for a plot": 1,
+    "You do not need to work through all five views now. Use the boxplot for Record A in the quartiles step and the scatter plot for Record C in the correlation step. The category, time-series and minute-based delivery examples are separate practice data. You can return here from the later parts.": 1,
+    "Next: use the order book to challenge the “$45 typical basket” claim.": 1,
+    "STEP 2 OF 12": 1,
+    "STEP 3 OF 12": 1,
+    "STEP 4 OF 12": 1,
+    "STEP 5 OF 12": 1,
+    "STEP 6 OF 12": 1,
+    "Step 2 showed how a center can hide a large value. Operations has the same problem: both suppliers average five days, but delivery times may cluster tightly or vary widely. First measure that variation; then count actual misses of the six-day target.": 1,
+    "current order values from Step 2": 1,
+    "STEP 7 OF 12": 1,
+    "STEP 8 OF 12": 1,
+    "STEP 9 OF 12": 1,
+    "current Step 2 lab values": 1,
+    "already introduced in Step 2: exponentiating an average of logs gives the twelfth root of the product of the twelve amounts. It is not the $45 arithmetic mean, so multiplying $34.92 by twelve would not recover the $540 revenue. Choose the scale for the question, and keep the original amounts for revenue reporting.": 1,
+    "STEP 10 OF 12": 1,
+    "STEP 11 OF 12": 1,
+    "STEP 12 OF 12": 1
+  },
+  "patches": [
+    {
+      "token_start": 96,
+      "token_end": 97,
+      "before": "See the numbers before learning the formulas. Follow one retailer through twelve focused teaching steps, at your own pace.",
+      "after": "See the numbers before learning the formulas. Follow one retailer through fourteen focused teaching steps, at your own pace."
+    },
+    {
+      "token_start": 180,
+      "token_end": 181,
+      "before": "Twelve focused steps · one business case",
+      "after": "Fourteen focused steps · one business case"
+    },
+    {
+      "token_start": 313,
+      "token_end": 314,
+      "before": "<nav aria-label=\"Twelve-step business case\">",
+      "after": "<nav aria-label=\"Fourteen-step business case\">"
+    },
+    {
+      "token_start": 326,
+      "token_end": 346,
+      "before": "",
+      "after": "<a href=\"#class1-tables\"><span>02</span><b>Organize a table</b></a></li><li><a href=\"#class1-charts\"><span>03</span><b>Choose a graph</b></a></li><li>"
+    },
+    {
+      "token_start": 348,
+      "token_end": 349,
+      "before": "02",
+      "after": "04"
+    },
+    {
+      "token_start": 358,
+      "token_end": 359,
+      "before": "03",
+      "after": "05"
+    },
+    {
+      "token_start": 368,
+      "token_end": 369,
+      "before": "04",
+      "after": "06"
+    },
+    {
+      "token_start": 378,
+      "token_end": 379,
+      "before": "05",
+      "after": "07"
+    },
+    {
+      "token_start": 388,
+      "token_end": 389,
+      "before": "06",
+      "after": "08"
+    },
+    {
+      "token_start": 398,
+      "token_end": 399,
+      "before": "07",
+      "after": "09"
+    },
+    {
+      "token_start": 408,
+      "token_end": 409,
+      "before": "08",
+      "after": "10"
+    },
+    {
+      "token_start": 418,
+      "token_end": 419,
+      "before": "09",
+      "after": "11"
+    },
+    {
+      "token_start": 428,
+      "token_end": 429,
+      "before": "10",
+      "after": "12"
+    },
+    {
+      "token_start": 438,
+      "token_end": 439,
+      "before": "11",
+      "after": "13"
+    },
+    {
+      "token_start": 448,
+      "token_end": 449,
+      "before": "12",
+      "after": "14"
+    },
+    {
+      "token_start": 495,
+      "token_end": 496,
+      "before": "Step 1 of 12 · Know the records",
+      "after": "Step 1 of 14 · Know the records"
+    },
+    {
+      "token_start": 506,
+      "token_end": 507,
+      "before": "Show all twelve steps",
+      "after": "Show all fourteen steps"
+    },
+    {
+      "token_start": 517,
+      "token_end": 518,
+      "before": "STEP 1 OF 12",
+      "after": "STEP 1 OF 14"
+    },
+    {
+      "token_start": 848,
+      "token_end": 1048,
+      "before": "",
+      "after": "<div class=\"technical\"><h4>Technical depth · Measurement scales</h4><p>On an <b>interval scale</b>, equal differences are meaningful but zero is arbitrary (Celsius temperature). On a <b>ratio scale</b>, zero is meaningful and ratios make sense (duration, mass, order value). Taking means of ordinal scores assumes more than order alone: justify the spacing assumption.</p><p>Notation: {{math:count}} is the number of observations; {{math:observations}} are the observations; {{math:summation}} means add them. Floor rounds toward {{math:negative-infinity}}; ceiling rounds toward {{math:positive-infinity}}.</p></div><p class=\"case-transfer\">Before carrying these definitions into the case, check that you can distinguish a numerical label from a measurement in the four-field exercise below.</p></div></details>\n<details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 1 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD · 01</span><h3>Keep three different questions separate.</h3><p>Purchase records describe purchases, not necessarily unique customers. Supplier records measure delivery days. Branch pairs compare advertising and sales for the same period. Confirm comparable products, routes and measurement rules before interpreting supplier differences; the case does not establish those conditions.</p><p class=\"case-next\">Next: organize counts in a table, then choose a graph before calculating averages.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 1 navigation\"><span class=\"visual-back\">Begin here. There is no timer.</span><a href=\"#class1-tables\" class=\"button\">Next: Organize a table <span aria-hidden=\"true\">→</span></a></nav></section><section class=\"case-part\" id=\"case-tables\" aria-labelledby=\"case-tables-title\"><span class=\"step-anchor\" id=\"class1-tables\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 2 OF 14</div><h2 id=\"case-tables-title\">Organize a table</h2><p>Turn records into counts you can check. Keep totals and denominators in view.</p></div><section class=\"step-core\" id=\"tables-core\" aria-labelledby=\"tables-core-title\"><span class=\"visual-kicker\">TABULAR REPRESENTATION · A SEPARATE 100-ORDER EXAMPLE</span><h3 id=\"tables-core-title\">One category per order. One row per category.</h3><p>A <b>frequency table</b> summarizes how often each value or category occurs. A raw-data table has one row per observation; this summary instead has one row per channel. For a separate shop’s 100 orders, count each order once in a mutually exclusive sales channel. These are not Record A’s twelve purchases.</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Sales-channel frequency table. Scroll horizontally if needed.\"><table><caption>100 synthetic orders · frequency counts orders, not dollars</caption><thead><tr><th scope=\"col\">Sales channel</th><th scope=\"col\">Frequency (orders)</th><th scope=\"col\">Relative frequency</th><th scope=\"col\">Percentage</th></tr></thead><tbody><tr><th scope=\"row\">Online</th><td>50</td><td>50 ÷ 100 = 0.50</td><td>50%</td></tr><tr><th scope=\"row\">In store</th><td>30</td><td>30 ÷ 100 = 0.30</td><td>30%</td></tr><tr><th scope=\"row\">Phone</th><td>20</td><td>20 ÷ 100 = 0.20</td><td>20%</td></tr><tr class=\"table-total\"><th scope=\"row\">Total</th><td>100</td><td>1.00</td><td>100%</td></tr></tbody></table></div><ol class=\"case-calculation\"><li><b>Count:</b> 50 + 30 + 20 = 100 orders. Check that categories cover the stated whole and do not overlap.</li><li><b>Divide by the stated total:</b> phone’s relative frequency is 20/100 = 0.20, or 20%.</li><li><b>Write the claim with its unit:</b> “20% of these orders came by phone.” This does not tell us phone’s share of revenue.</li></ol><p><b>Try:</b> can you say online generated 50% of revenue? What extra column would you need?</p><details class=\"visual-check\"><summary>Check the unit behind the percentage</summary><p>No. The table counts orders, not their monetary values. You need each order’s value, or a revenue total for each channel, to calculate revenue shares. Counts and revenue may tell different stories.</p></details></section>"
+    },
+    {
+      "token_start": 1054,
+      "token_end": 1056,
+      "before": "<details open><summary>",
+      "after": "<section class=\"table-worked-example\" aria-labelledby=\"two-way-table-title\"><h3 id=\"two-way-table-title\">"
+    },
+    {
+      "token_start": 1057,
+      "token_end": 1058,
+      "before": "</summary>",
+      "after": "</h3>"
+    },
+    {
+      "token_start": 1061,
+      "token_end": 1062,
+      "before": "<div class=\"table-scroll\">",
+      "after": "<div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Payment and channel counts. Scroll horizontally if needed.\">"
+    },
+    {
+      "token_start": 1064,
+      "token_end": 1065,
+      "before": "Synthetic customer orders",
+      "after": "Separate 80-order payment example · counts, not revenue"
+    },
+    {
+      "token_start": 1067,
+      "token_end": 1068,
+      "before": "<th>",
+      "after": "<th scope=\"col\">"
+    },
+    {
+      "token_start": 1070,
+      "token_end": 1071,
+      "before": "<th>",
+      "after": "<th scope=\"col\">"
+    },
+    {
+      "token_start": 1073,
+      "token_end": 1074,
+      "before": "<th>",
+      "after": "<th scope=\"col\">"
+    },
+    {
+      "token_start": 1076,
+      "token_end": 1077,
+      "before": "<th>",
+      "after": "<th scope=\"col\">"
+    },
+    {
+      "token_start": 1081,
+      "token_end": 1082,
+      "before": "<th>",
+      "after": "<th scope=\"row\">"
+    },
+    {
+      "token_start": 1095,
+      "token_end": 1096,
+      "before": "<th>",
+      "after": "<th scope=\"row\">"
+    },
+    {
+      "token_start": 1109,
+      "token_end": 1110,
+      "before": "<th>",
+      "after": "<th scope=\"row\">"
+    },
+    {
+      "token_start": 1133,
+      "token_end": 1138,
+      "before": "</details><div class=\"technical\"><h4>Technical depth · Measurement scales</h4>",
+      "after": "</section><section class=\"step-core\" id=\"table-denominator-check\"><h3>Read a two-way table in the direction of the question.</h3>"
+    },
+    {
+      "token_start": 1139,
+      "token_end": 1140,
+      "before": "On an ",
+      "after": "The "
+    },
+    {
+      "token_start": 1141,
+      "token_end": 1142,
+      "before": "interval scale",
+      "after": "80-order payment table above is a separate example"
+    },
+    {
+      "token_start": 1143,
+      "token_end": 1144,
+      "before": ", equal differences are meaningful but zero is arbitrary (Celsius temperature). On a <b>ratio scale</b>, zero is meaningful and ratios make sense (duration, mass, order value). Taking means of ordinal scores assumes more than order alone: justify the spacing assumption.",
+      "after": ", not the same 100 orders as the channel table. “Of online orders” fixes the row total of 40. “Of card orders” fixes the column total of 50. “Of all orders” uses the grand total of 80."
+    },
+    {
+      "token_start": 1146,
+      "token_end": 1150,
+      "before": "Notation: {{math:count}} is the number of observations; {{math:observations}} are the observations; {{math:summation}} means add them. Floor rounds toward {{math:negative-infinity}}; ceiling rounds toward {{math:positive-infinity}}.",
+      "after": "<b>Try:</b> what percentage of card-paid orders were online?"
+    },
+    {
+      "token_start": 1151,
+      "token_end": 1152,
+      "before": "</div><details class=\"case-gallery\">",
+      "after": "<details class=\"visual-check\">"
+    },
+    {
+      "token_start": 1153,
+      "token_end": 1154,
+      "before": "Optional chart reference · return when a later step asks for a plot",
+      "after": "Check the column denominator"
+    },
+    {
+      "token_start": 1155,
+      "token_end": 1161,
+      "before": "<p class=\"case-gallery-note\">You do not need to work through all five views now. Use the boxplot for Record A in the quartiles step and the scatter plot for Record C in the correlation step. The category, time-series and minute-based delivery examples are separate practice data. You can return here from the later parts.",
+      "after": "<p>30 of the 50 card-paid orders were online, so <b>30/50 = 60%</b>. This differs from 30/40 = 75% of online orders paid by card. Keep both the numerator and the group named after “of.”"
+    },
+    {
+      "token_start": 1162,
+      "token_end": 1162,
+      "before": "{{graphs-section}}",
+      "after": ""
+    },
+    {
+      "token_start": 1163,
+      "token_end": 1190,
+      "before": "<p class=\"case-transfer\">Before carrying these definitions into the case, check that you can distinguish a numerical label from a measurement in the four-field exercise below.",
+      "after": "</section><details class=\"lesson\" id=\"tables-reference\"><summary><span class=\"lesson-number\">02</span><span><b>Table design and grouping</b><small>Further explanation · labels, totals and information loss</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><p>Give every table a title, units, period when known, and a clear total. A zero count means no observed cases in that category; a blank may mean unrecorded information. Report missing categories separately rather than silently removing them from the denominator.</p><p>For numerical measurements, a grouped frequency table uses intervals, such as 0 ≤ delivery time &lt; 10 minutes. Make boundaries non-overlapping and exhaustive for the observations. State whether endpoints are included. Grouping makes patterns easier to see but loses individual detail; a grouped table alone usually cannot recover the exact mean or median.</p><p>The next step plots this same 100-order table, then lets you inspect a numerical frequency table alongside its histogram. Keep a copy of the raw observations when building a summary."
+    },
+    {
+      "token_start": 1193,
+      "token_end": 1193,
+      "before": "\n",
+      "after": ""
+    },
+    {
+      "token_start": 1197,
+      "token_end": 1198,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 1 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 2 answer\">"
+    },
+    {
+      "token_start": 1199,
+      "token_end": 1200,
+      "before": "ANSWER TO CARRY FORWARD · 01",
+      "after": "ANSWER TO CARRY FORWARD · 02"
+    },
+    {
+      "token_start": 1202,
+      "token_end": 1203,
+      "before": "Keep three different questions separate.",
+      "after": "A useful table makes the denominator checkable."
+    },
+    {
+      "token_start": 1204,
+      "token_end": 1207,
+      "before": "",
+      "after": "<p class=\"case-next\">Next: draw the same counts as a chart.</p>"
+    },
+    {
+      "token_start": 1208,
+      "token_end": 1209,
+      "before": "Purchase records describe purchases, not necessarily unique customers. Supplier records measure delivery days. Branch pairs compare advertising and sales for the same period. Confirm comparable products, routes and measurement rules before interpreting supplier differences; the case does not establish those conditions.</p><p class=\"case-next\">Next: use the order book to challenge the “$45 typical basket” claim.",
+      "after": "Keep the business question, observation unit, units and denominator visible."
+    },
+    {
+      "token_start": 1212,
+      "token_end": 1220,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 1 navigation\"><span class=\"visual-back\">Begin here. There is no timer.",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 2 navigation\"><a href=\"#class1-records\" class=\"visual-back\">← Previous step</a><a href=\"#class1-charts\" class=\"button\">Next: Choose a graph <span aria-hidden=\"true\">→"
+    },
+    {
+      "token_start": 1221,
+      "token_end": 1343,
+      "before": "",
+      "after": "</a></nav></section><section class=\"case-part\" id=\"case-charts\" aria-labelledby=\"case-charts-title\"><span class=\"step-anchor\" id=\"class1-charts\" aria-hidden=\"true\"></span><div class=\"case-part-heading\"><div class=\"eyebrow\">STEP 3 OF 14</div><h2 id=\"case-charts-title\">Choose a graph</h2><p>Use a picture to reveal patterns, with the matching table close by. Begin with the same 100 orders.</p></div><section class=\"step-core\" id=\"charts-core\" aria-labelledby=\"charts-core-title\"><span class=\"visual-kicker\">GRAPHICAL REPRESENTATION · FROM THE TABLE TO THE PICTURE</span><h3 id=\"charts-core-title\">The same counts become bar lengths.</h3><p>Start with the <b>50 online, 30 in-store and 20 phone orders</b> from Step 2. In the first chart below, category labels identify the groups and bar lengths show their counts. The zero baseline makes the 50-order bar 2.5 times as long as the 20-order bar. A table helps you retrieve an exact value; a graph helps you compare patterns. Use both.</p><p><b>Your first reading:</b> name the largest category, compare in-store with phone orders, then state a limit. Switch chart views only after you can explain what one mark represents.</p><details class=\"visual-check\"><summary>Check your first chart reading</summary><p>Online leads with 50 orders. In store has 10 more orders than phone, or 1.5 times as many (30/20). We cannot infer which channel generated the most revenue without order values. Neither the table nor the graph proves what next month’s customers will do.</p></details></section><p class=\"case-gallery-note\">The chart lesson is visible here, not inside the records explanation. Start with categories; choose another business question when ready. The boxplot uses Record A’s twelve purchases and the scatter plot uses Record C’s five branches. The channel, time-series and minute-based delivery examples are separate synthetic practice data.</p>{{graphs-section}}<details class=\"lesson\" id=\"charts-reference\"><summary><span class=\"lesson-number\">03</span><span><b>Choose before you decorate</b><small>Further explanation · a reliable chart-reading routine</small></span><span class=\"plus\" aria-hidden=\"true\">+</span></summary><div class=\"lesson-body\"><ol><li><b>Question:</b> compare groups, describe a distribution, follow time, or inspect paired measurements?</li><li><b>Marks:</b> does one bar or dot mean a record, a count, an interval, or a pair?</li><li><b>Scale:</b> check labels, units, axis limits and any breaks before comparing heights, lengths or distances.</li><li><b>Evidence:</b> write one supported pattern and one thing the graph cannot show. Keep the corresponding table or observations available.</li></ol><p>A bar chart is not a histogram. A bar chart compares categories, while a histogram retains numerical order and intervals; its area represents frequency when widths differ. A frequency polygon connects bin midpoints, not successive months. These distinctions are demonstrated in the visible chart views above.</p></div></details><details class=\"carry-forward\"><summary>Review the answer to carry forward</summary><aside class=\"case-answer\" aria-label=\"Step 3 answer\"><span class=\"eyebrow\">ANSWER TO CARRY FORWARD · 03</span><h3>Match the chart to the question, then read its scale.</h3><p class=\"case-next\">Next: calculate the mean of the original twelve purchases.</p><p>Keep the business question, observation unit, units and denominator visible.</p></aside></details><nav class=\"visual-step-nav\" aria-label=\"Step 3 navigation\"><a href=\"#class1-tables\" class=\"visual-back\">← Previous step</a>"
+    },
+    {
+      "token_start": 1358,
+      "token_end": 1359,
+      "before": "STEP 2 OF 12",
+      "after": "STEP 4 OF 14"
+    },
+    {
+      "token_start": 1458,
+      "token_end": 1459,
+      "before": "02",
+      "after": "04"
+    },
+    {
+      "token_start": 2188,
+      "token_end": 2189,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 2 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 4 answer\">"
+    },
+    {
+      "token_start": 2190,
+      "token_end": 2191,
+      "before": "ANSWER TO CARRY FORWARD · 02",
+      "after": "ANSWER TO CARRY FORWARD · 04"
+    },
+    {
+      "token_start": 2203,
+      "token_end": 2205,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 2 navigation\"><a href=\"#class1-records\" class=\"visual-back\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 4 navigation\"><a href=\"#class1-charts\" class=\"visual-back\">"
+    },
+    {
+      "token_start": 2220,
+      "token_end": 2221,
+      "before": "STEP 3 OF 12",
+      "after": "STEP 5 OF 14"
+    },
+    {
+      "token_start": 2310,
+      "token_end": 2311,
+      "before": "03",
+      "after": "05"
+    },
+    {
+      "token_start": 2337,
+      "token_end": 2338,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 3 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 5 answer\">"
+    },
+    {
+      "token_start": 2339,
+      "token_end": 2340,
+      "before": "ANSWER TO CARRY FORWARD · 03",
+      "after": "ANSWER TO CARRY FORWARD · 05"
+    },
+    {
+      "token_start": 2352,
+      "token_end": 2353,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 3 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 5 navigation\">"
+    },
+    {
+      "token_start": 2369,
+      "token_end": 2370,
+      "before": "STEP 4 OF 12",
+      "after": "STEP 6 OF 14"
+    },
+    {
+      "token_start": 2476,
+      "token_end": 2477,
+      "before": "04",
+      "after": "06"
+    },
+    {
+      "token_start": 2513,
+      "token_end": 2514,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 4 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 6 answer\">"
+    },
+    {
+      "token_start": 2515,
+      "token_end": 2516,
+      "before": "ANSWER TO CARRY FORWARD · 04",
+      "after": "ANSWER TO CARRY FORWARD · 06"
+    },
+    {
+      "token_start": 2528,
+      "token_end": 2529,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 4 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 6 navigation\">"
+    },
+    {
+      "token_start": 2547,
+      "token_end": 2548,
+      "before": "STEP 5 OF 12",
+      "after": "STEP 7 OF 14"
+    },
+    {
+      "token_start": 2669,
+      "token_end": 2670,
+      "before": "05",
+      "after": "07"
+    },
+    {
+      "token_start": 2723,
+      "token_end": 2724,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 5 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 7 answer\">"
+    },
+    {
+      "token_start": 2725,
+      "token_end": 2726,
+      "before": "ANSWER TO CARRY FORWARD · 05",
+      "after": "ANSWER TO CARRY FORWARD · 07"
+    },
+    {
+      "token_start": 2738,
+      "token_end": 2739,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 5 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 7 navigation\">"
+    },
+    {
+      "token_start": 2757,
+      "token_end": 2758,
+      "before": "STEP 6 OF 12",
+      "after": "STEP 8 OF 14"
+    },
+    {
+      "token_start": 3218,
+      "token_end": 3219,
+      "before": "06",
+      "after": "08"
+    },
+    {
+      "token_start": 3238,
+      "token_end": 3239,
+      "before": "Step 2 showed how a center can hide a large value. Operations has the same problem: both suppliers average five days, but delivery times may cluster tightly or vary widely. First measure that variation; then count actual misses of the six-day target.",
+      "after": "The mean step showed how a center can hide a large value. Operations has the same problem: both suppliers average five days, but delivery times may cluster tightly or vary widely. First measure that variation; then count actual misses of the six-day target."
+    },
+    {
+      "token_start": 3383,
+      "token_end": 3384,
+      "before": "current order values from Step 2",
+      "after": "current order values from the mean step"
+    },
+    {
+      "token_start": 3453,
+      "token_end": 3454,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 6 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 8 answer\">"
+    },
+    {
+      "token_start": 3455,
+      "token_end": 3456,
+      "before": "ANSWER TO CARRY FORWARD · 06",
+      "after": "ANSWER TO CARRY FORWARD · 08"
+    },
+    {
+      "token_start": 3468,
+      "token_end": 3469,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 6 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 8 navigation\">"
+    },
+    {
+      "token_start": 3485,
+      "token_end": 3486,
+      "before": "STEP 7 OF 12",
+      "after": "STEP 9 OF 14"
+    },
+    {
+      "token_start": 3672,
+      "token_end": 3673,
+      "before": "07",
+      "after": "09"
+    },
+    {
+      "token_start": 3705,
+      "token_end": 3706,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 7 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 9 answer\">"
+    },
+    {
+      "token_start": 3707,
+      "token_end": 3708,
+      "before": "ANSWER TO CARRY FORWARD · 07",
+      "after": "ANSWER TO CARRY FORWARD · 09"
+    },
+    {
+      "token_start": 3720,
+      "token_end": 3721,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 7 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 9 navigation\">"
+    },
+    {
+      "token_start": 3739,
+      "token_end": 3740,
+      "before": "STEP 8 OF 12",
+      "after": "STEP 10 OF 14"
+    },
+    {
+      "token_start": 3864,
+      "token_end": 3865,
+      "before": "08",
+      "after": "10"
+    },
+    {
+      "token_start": 3911,
+      "token_end": 3912,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 8 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 10 answer\">"
+    },
+    {
+      "token_start": 3913,
+      "token_end": 3914,
+      "before": "ANSWER TO CARRY FORWARD · 08",
+      "after": "ANSWER TO CARRY FORWARD · 10"
+    },
+    {
+      "token_start": 3926,
+      "token_end": 3927,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 8 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 10 navigation\">"
+    },
+    {
+      "token_start": 3945,
+      "token_end": 3946,
+      "before": "STEP 9 OF 12",
+      "after": "STEP 11 OF 14"
+    },
+    {
+      "token_start": 4098,
+      "token_end": 4099,
+      "before": "09",
+      "after": "11"
+    },
+    {
+      "token_start": 4810,
+      "token_end": 4811,
+      "before": "current Step 2 lab values",
+      "after": "current purchase-lab values"
+    },
+    {
+      "token_start": 4976,
+      "token_end": 4977,
+      "before": " already introduced in Step 2: exponentiating an average of logs gives the twelfth root of the product of the twelve amounts. It is not the $45 arithmetic mean, so multiplying $34.92 by twelve would not recover the $540 revenue. Choose the scale for the question, and keep the original amounts for revenue reporting.",
+      "after": " already introduced in the mean step: exponentiating an average of logs gives the twelfth root of the product of the twelve amounts. It is not the $45 arithmetic mean, so multiplying $34.92 by twelve would not recover the $540 revenue. Choose the scale for the question, and keep the original amounts for revenue reporting."
+    },
+    {
+      "token_start": 5084,
+      "token_end": 5085,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 9 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 11 answer\">"
+    },
+    {
+      "token_start": 5086,
+      "token_end": 5087,
+      "before": "ANSWER TO CARRY FORWARD · 09",
+      "after": "ANSWER TO CARRY FORWARD · 11"
+    },
+    {
+      "token_start": 5099,
+      "token_end": 5100,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 9 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 11 navigation\">"
+    },
+    {
+      "token_start": 5116,
+      "token_end": 5117,
+      "before": "STEP 10 OF 12",
+      "after": "STEP 12 OF 14"
+    },
+    {
+      "token_start": 5299,
+      "token_end": 5300,
+      "before": "10",
+      "after": "12"
+    },
+    {
+      "token_start": 5329,
+      "token_end": 5330,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 10 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 12 answer\">"
+    },
+    {
+      "token_start": 5331,
+      "token_end": 5332,
+      "before": "ANSWER TO CARRY FORWARD · 10",
+      "after": "ANSWER TO CARRY FORWARD · 12"
+    },
+    {
+      "token_start": 5344,
+      "token_end": 5345,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 10 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 12 navigation\">"
+    },
+    {
+      "token_start": 5363,
+      "token_end": 5364,
+      "before": "STEP 11 OF 12",
+      "after": "STEP 13 OF 14"
+    },
+    {
+      "token_start": 5447,
+      "token_end": 5448,
+      "before": "11",
+      "after": "13"
+    },
+    {
+      "token_start": 5557,
+      "token_end": 5558,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 11 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 13 answer\">"
+    },
+    {
+      "token_start": 5559,
+      "token_end": 5560,
+      "before": "ANSWER TO CARRY FORWARD · 11",
+      "after": "ANSWER TO CARRY FORWARD · 13"
+    },
+    {
+      "token_start": 5572,
+      "token_end": 5573,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 11 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 13 navigation\">"
+    },
+    {
+      "token_start": 5591,
+      "token_end": 5592,
+      "before": "STEP 12 OF 12",
+      "after": "STEP 14 OF 14"
+    },
+    {
+      "token_start": 5636,
+      "token_end": 5637,
+      "before": "12",
+      "after": "14"
+    },
+    {
+      "token_start": 6334,
+      "token_end": 6335,
+      "before": "<aside class=\"case-answer\" aria-label=\"Step 12 answer\">",
+      "after": "<aside class=\"case-answer\" aria-label=\"Step 14 answer\">"
+    },
+    {
+      "token_start": 6336,
+      "token_end": 6337,
+      "before": "ANSWER TO CARRY FORWARD · 12",
+      "after": "ANSWER TO CARRY FORWARD · 14"
+    },
+    {
+      "token_start": 6349,
+      "token_end": 6350,
+      "before": "<nav class=\"visual-step-nav\" aria-label=\"Step 12 navigation\">",
+      "after": "<nav class=\"visual-step-nav\" aria-label=\"Step 14 navigation\">"
+    }
+  ],
+  "reviewed_dist_sha256": "7805bc5e8b35b4e7f2fe9662ce64719edbf6fbb037f311e66c94c80f87fa6cf1"
+}

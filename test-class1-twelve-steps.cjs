@@ -1,11 +1,11 @@
 'use strict';
-// Test the delivered twelve-step lesson as well as exact historical preservation.
+// Test the delivered fourteen-step lesson as well as exact historical preservation.
 const fs=require('node:fs'),assert=require('node:assert/strict');
 let checks=0;const ok=(v,m)=>{checks++;assert.ok(v,m);},eq=(a,b,m)=>{checks++;assert.deepEqual(a,b,m);};
 const read=p=>fs.readFileSync(p,'utf8'),source=read('src/index.html');
 const original=require('./scripts/class-one-twelve-preservation.cjs').restore(source);
-const expected=['case-part-1','case-part-2','case-median','case-mode','case-part-4','case-part-3','case-sd-cv','case-skewness','case-kurtosis','case-covariance','case-part-5','case-part-6'];
-const topics=['records','mean','median','mode','quartiles','variance','sd-cv','skewness','kurtosis','covariance','correlation','briefing'];
+const expected=['case-part-1','case-tables','case-charts','case-part-2','case-median','case-mode','case-part-4','case-part-3','case-sd-cv','case-skewness','case-kurtosis','case-covariance','case-part-5','case-part-6'];
+const topics=['records','tables','charts','mean','median','mode','quartiles','variance','sd-cv','skewness','kurtosis','covariance','correlation','briefing'];
 function parse(html){
  const nodes=[],stack=[],voids=new Set('area base br col embed hr img input link meta param source track wbr'.split(' '));
  html=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
@@ -25,12 +25,14 @@ const attrs=(html,name)=>[...html.matchAll(new RegExp('\\b'+name+'="([^"]+)"','g
 for(const id of attrs(original,'id'))eq(attrs(source,'id').filter(x=>x===id).length,1,'original ID retained once '+id);
 eq([...source.matchAll(/\{\{math:([^}]+)\}\}/g)].map(m=>m[1]).sort(),[...original.matchAll(/\{\{math:([^}]+)\}\}/g)].map(m=>m[1]).sort(),'original mathematical placeholders unchanged');
 const leaves=html=>{const m=new Map();for(const s of html.split(/<[^>]*>/).map(x=>x.trim()).filter(Boolean))m.set(s,(m.get(s)||0)+1);return m;};
-const before=leaves(original),after=leaves(source),missing={};for(const [s,n]of before)if(n>(after.get(s)||0))missing[s]=n-(after.get(s)||0);
-const reference=JSON.parse(read('test-class1-twelve-reference.json'));
+const previous=require('./scripts/class-one-fourteen-preservation.cjs').restore(source);
+const before=leaves(previous),after=leaves(source),missing={};for(const [s,n]of before)if(n>(after.get(s)||0))missing[s]=n-(after.get(s)||0);
+const reference=JSON.parse(read('test-class1-fourteen-reference.json'));
+eq(require('node:crypto').createHash('sha256').update(read('dist/index.html')).digest('hex'),reference.reviewed_dist_sha256,'reviewed fourteen-step built page');
 eq(missing,reference.reviewed_changed_leaves,'only reviewed heading, navigation and local-reference text changes');
 for(const [name,html]of [['source',source],['built',read('dist/index.html')]]){
  const t=parse(html),parts=t.nodes.filter(n=>has(n,'case-part'));
- eq(parts.map(n=>n.attrs.id),expected,name+' twelve semantic steps');
+ eq(parts.map(n=>n.attrs.id),expected,name+' fourteen semantic steps');
  const ids=t.nodes.map(n=>n.attrs.id).filter(Boolean);eq(ids.length,new Set(ids).size,name+' unique IDs');
  for(const [i,part]of parts.entries()){
   const alias=t.byId('class1-'+topics[i]);ok(alias&&ancestors(alias).includes(part),name+' semantic alias '+topics[i]);
@@ -38,10 +40,11 @@ for(const [name,html]of [['source',source],['built',read('dist/index.html')]]){
   eq(t.nodes.filter(n=>has(n,'lesson')&&ancestors(n).includes(part)).length,1,name+' one optional topic '+topics[i]);
   ok(t.nodes.some(n=>n.tag==='details'&&!has(n,'lesson')&&ancestors(n).includes(part)&&!ancestors(n).some(p=>has(p,'lesson'))),name+' learner-controlled check '+topics[i]);
  }
- for(const [i,position]of [0,1,4,5,7,8,10,11].entries())ok(ancestors(t.byId('class1-step-'+(i+1))).includes(parts[position]),name+' stable old numbered alias '+(i+1));
+ for(const [i,position]of [0,3,6,7,9,10,12,13].entries())ok(ancestors(t.byId('class1-step-'+(i+1))).includes(parts[position]),name+' stable old numbered alias '+(i+1));
+ if(name==='built'){const gallery=t.byId('charts');ok(ancestors(gallery).includes(parts[2]),'gallery belongs to chart step');ok(!ancestors(gallery).some(p=>p.tag==='details'),'gallery visible without disclosures');for(const panel of t.nodes.filter(n=>has(n,'graph-panel')))ok(!ancestors(panel).some(p=>p.tag==='details'),'each chart outside disclosures '+panel.attrs.id);}
  if(name==='built')ok(!/\{\{(?:math|classonevisual|activity):|katex-error/.test(html),'built teaching renders without unresolved formulas');
 }
-eq(require('./scripts/activities.cjs').data().filter(a=>a.file==='index.html').map(a=>[a.id,a.afterTopic]),[['c1-measurements',1],['c1-weighted-orders',2],['c1-change-units',7],['c1-preserve-pairs',11]],'practice remains with matching subject');
+eq(require('./scripts/activities.cjs').data().filter(a=>a.file==='index.html').map(a=>[a.id,a.afterTopic]),[['c1-measurements',1],['c1-weighted-orders',4],['c1-change-units',9],['c1-preserve-pairs',13]],'practice remains with matching subject');
 // Independent original-record arithmetic protects the lesson's numerical claims.
 const near=(a,b,m)=>ok(Math.abs(a-b)<1e-12,m),sum=xs=>xs.reduce((a,b)=>a+b,0),mean=xs=>sum(xs)/xs.length;
 const orders=[18,22,24,25,28,30,32,35,38,42,46,200];
@@ -55,19 +58,21 @@ const x=[1,2,3,4,5],y=[4,7,6,4,9],products=x.map((v,i)=>(v-mean(x))*(y[i]-mean(y
 eq(mean(x),3,'advertising mean');eq(mean(y),6,'sales mean');eq(products,[4,-1,0,-2,6],'paired deviation products');eq(sum(products),7,'cross-product total');eq(sum(products)/5,1.4,'population covariance');eq(sum(products)/4,1.75,'sample covariance');eq(ss(x),10,'advertising squared deviations');eq(ss(y),18,'sales squared deviations');eq((sum(products)/Math.sqrt(ss(x)*ss(y))).toFixed(4),'0.5217','Pearson correlation');
 near((sum(products)/5)/Math.sqrt((ss(x)/5)*(ss(y)/5)),(sum(products)/4)/Math.sqrt((ss(x)/4)*(ss(y)/4)),'consistent population/sample conventions give identical correlation');
 const historicalTree=parse(original);
-for(const node of historicalTree.nodes.filter(n=>has(n,'technical')))ok(source.includes(historicalTree.fragment(node)),'original technical section retained byte for byte '+(node.attrs.id||node.attrs.class));
+for(const node of historicalTree.nodes.filter(n=>has(n,'technical')))ok(previous.includes(historicalTree.fragment(node)),'original technical section retained after reversing reviewed local-reference wording '+(node.attrs.id||node.attrs.class));
 for(const [name,html]of [['source',source],['built',read('dist/index.html')]]){
  const t=parse(html);
  const claims={
-  'mean-core':[1,['$540 ÷ 12 = $45','12 × $45 = $540','not twelve new observed purchases','$390 ÷ 12 = $32.50']],
-  'median-core':[2,['positions 6 and 7','($30 + $32) ÷ 2 = $31','does not reconstruct','not a rule that the median never changes']],
-  'mode-core':[3,['no repeated mode','$10, $10, $20, $20, $30','Do not average them into $15','most common payment method']],
-  'variance-core':[5,['2 days²','50 days²','0.4 days²','10 days²','2/4=0.5 days²','50/4=12.5 days²','cannot fix unrepresentative data']],
-  'sd-cv-core':[6,['0.6325 days','3.1623 days','5 times','12.65%','63.25%','120 hours','15.18 hours','unstable near zero','Celsius']],
-  'covariance-core':[9,['paired deviations','units of x multiplied by the units of y']],
-  'case-pairs-worked':[9,['products total 7','1.4','multiplied units']],
-  'covariance-check':[9,['1.4','1.75','1400','magnitude depends on measurement scales']],
-  'correlation-core':[10,['0.5217','unit-free','undefined','not zero','Do not mix a sample covariance with population SDs']]
+  'tables-core':[1,['frequency table','50 ÷ 100 = 0.50','20/100 = 0.20','not Record A','not their monetary values']],
+  'charts-core':[2,['50 online, 30 in-store and 20 phone','zero baseline','2.5 times','1.5 times','cannot infer']],
+  'mean-core':[3,['$540 ÷ 12 = $45','12 × $45 = $540','not twelve new observed purchases','$390 ÷ 12 = $32.50']],
+  'median-core':[4,['positions 6 and 7','($30 + $32) ÷ 2 = $31','does not reconstruct','not a rule that the median never changes']],
+  'mode-core':[5,['no repeated mode','$10, $10, $20, $20, $30','Do not average them into $15','most common payment method']],
+  'variance-core':[7,['2 days²','50 days²','0.4 days²','10 days²','2/4=0.5 days²','50/4=12.5 days²','cannot fix unrepresentative data']],
+  'sd-cv-core':[8,['0.6325 days','3.1623 days','5 times','12.65%','63.25%','120 hours','15.18 hours','unstable near zero','Celsius']],
+  'covariance-core':[11,['paired deviations','units of x multiplied by the units of y']],
+  'case-pairs-worked':[11,['products total 7','1.4','multiplied units']],
+  'covariance-check':[11,['1.4','1.75','1400','magnitude depends on measurement scales']],
+  'correlation-core':[12,['0.5217','unit-free','undefined','not zero','Do not mix a sample covariance with population SDs']]
  };
  const parts=t.nodes.filter(n=>has(n,'case-part'));
  for(const [id,[position,needles]]of Object.entries(claims)){
@@ -79,4 +84,4 @@ for(const [name,html]of [['source',source],['built',read('dist/index.html')]]){
   const check=t.nodes.find(n=>n.tag==='details'&&ancestors(n).includes(core));ok(check,name+' deliberate self-check '+id);ok(!/\sopen(?:[\s=>])/.test(t.fragment(check).split('>')[0]+'>'),name+' answer starts collapsed '+id);
  }
 }
-console.log(`Passed ${checks} delivered twelve-step topology, independent arithmetic, visible teaching and content-preservation assertions.`);
+console.log(`Passed ${checks} delivered fourteen-step topology, independent arithmetic, visible teaching and content-preservation assertions.`);

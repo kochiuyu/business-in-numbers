@@ -110,3 +110,19 @@
 .concept-scroll-hint{display:none;font-size:12px;line-height:1.6;color:#3a5145}
 @media(max-width:600px){.concept-scroll-hint{display:block}}
 @media print{.concept-scroll-hint{display:none}}
+
+/* Static, one-observation-at-a-time explanation; append after class-one.css. */
+.kurtosis-recipe{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0;font-size:14px;line-height:1.6}
+.kurtosis-recipe>span{padding:12px 14px;border:1px solid #bdcbb4;border-radius:6px;background:#fffef9}
+.kurtosis-recipe b{display:block;color:#244e3e;font-size:16px;margin-bottom:3px}
+#picture-kurtosis .cp-tail-dot{fill:#ad4b24;stroke:#fffef9;stroke-width:1.2}
+#picture-kurtosis .concept-plot svg{min-width:360px}
+.kurtosis-average{margin-top:20px;padding:18px;background:#eef3e7;border:1px solid #b8cbb0;border-radius:6px}
+.kurtosis-average p{font-size:14px;line-height:1.75;margin:8px 0}
+.kurtosis-average h4{margin-bottom:12px}
+@media(max-width:600px){.kurtosis-recipe{grid-template-columns:1fr;gap:8px}.kurtosis-recipe b{display:inline;margin-right:5px}.kurtosis-average{padding:14px}}
+@media print{.kurtosis-recipe{grid-template-columns:repeat(3,minmax(0,1fr))}#picture-kurtosis .concept-plot svg{min-width:0}.kurtosis-average{break-inside:avoid}.cp-tail-dot{print-color-adjust:exact}}
+
+/* Dedicated representation steps share the case's static-first layout. */
+.table-worked-example{margin:24px 0;padding:20px;border:1px solid #c8d2c0;border-radius:8px;background:#fffef8}.table-total{font-weight:700;background:#edf2e7}.chart-data{margin-top:20px;padding:14px;border:1px solid #d4d9cb;border-radius:6px}.class-one-case #case-charts .graphs-section{padding:24px 0}.class-one-case #case-charts .section-head h2{font-size:clamp(25px,3vw,36px)}
+@media(max-width:600px){.table-worked-example{padding:14px}.chart-data{padding:10px}}

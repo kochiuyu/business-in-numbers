@@ -50,12 +50,12 @@ function tree(html) {
 
 for (const [name, html] of [['source', source], ['built', built]]) {
   const t = tree(html), parts = t.nodes.filter(n => t.has(n, 'case-part'));
-  eq(parts.length, 12, name + ': twelve case parts');
-  eq(parts.map(n => n.attrs.id), ['case-part-1','case-part-2','case-median','case-mode','case-part-4','case-part-3','case-sd-cv','case-skewness','case-kurtosis','case-covariance','case-part-5','case-part-6'], name + ': consecutive part order');
+  eq(parts.length, 14, name + ': fourteen case parts');
+  eq(parts.map(n => n.attrs.id), ['case-part-1','case-tables','case-charts','case-part-2','case-median','case-mode','case-part-4','case-part-3','case-sd-cv','case-skewness','case-kurtosis','case-covariance','case-part-5','case-part-6'], name + ': consecutive part order');
   const lessons = t.nodes.filter(n => t.has(n, 'lesson'));
-  eq(lessons.length, 12, name + ': twelve statistical topics');
+  eq(lessons.length, 14, name + ': fourteen statistical topics');
   const brief = t.byId('case-brief');
-  ok(t.byId('learning-start').start < parts[0].start && parts.at(-1).end <= brief.start, name + ': situation, twelve parts, final brief');
+  ok(t.byId('learning-start').start < parts[0].start && parts.at(-1).end <= brief.start, name + ': situation, fourteen parts, final brief');
   for (const [i, part] of parts.entries()) {
     const title = t.byId(part.attrs['aria-labelledby']);
     ok(t.within(title, part), name + ': each part owns its heading');
@@ -67,7 +67,7 @@ for (const [name, html] of [['source', source], ['built', built]]) {
     ok(answers[0].start >= ownedLessons[0].end, name + ': answer follows evidence');
     ok(t.nodes.some(n => t.has(n, 'case-next') && t.within(n, answers[0])), name + ': explicit next step');
   }
-  ok(t.within(t.byId('lab'), parts[1]), name + ': original order lab belongs to Part 2');
+  ok(t.within(t.byId('lab'), parts[3]), name + ': original order lab belongs to Part 2');
   eq(t.nodes.filter(n => n.tag === 'article' && t.within(n, brief)).length, 3, name + ': final brief resolves three decisions');
   const ids = t.nodes.filter(n => n.attrs.id).map(n => n.attrs.id);
   eq(ids.length, new Set(ids).size, name + ': no duplicate IDs');
@@ -75,7 +75,7 @@ for (const [name, html] of [['source', source], ['built', built]]) {
     ok(t.byId(link.attrs.href.slice(1)), name + ': working case link ' + link.attrs.href);
   }
   if (name === 'built') {
-    ok(t.within(t.byId('charts'), parts[0]), 'supporting charts remain within Part 1');
+    ok(t.within(t.byId('charts'), parts[2]), 'charts own a dedicated visible step');
     for (const a of activities().filter(a => a.file === 'index.html')) {
       const activity = t.byId(a.id), part = parts[a.afterTopic-1];
       ok(t.within(activity, part), a.id + ': practice remains in its matching part');
@@ -94,7 +94,7 @@ for (const [name, html] of [['source', source], ['built', built]]) {
   const required = id => { const n = t.byId(id); ok(n, name + ': progression stage ' + id); return n; };
   const ancestors = n => { const result=[]; for(let p=n.parent;p;p=p.parent)result.push(p); return result; };
   const initiallyOpen = n => /\sopen(?:\s|=|>)/i.test(t.fragment(n).split('>')[0]+'>');
-  const coreIds = ['case-record-check','mean-core','median-core','mode-core','variance-core','sd-cv-core','covariance-core','correlation-core','case-center-worked','case-weighted-prep','case-supplier-worked','case-unit-prep','case-fence-worked','case-pairs-worked','case-write-brief'];
+  const coreIds = ['case-record-check','tables-core','charts-core','mean-core','median-core','mode-core','variance-core','sd-cv-core','covariance-core','correlation-core','case-center-worked','case-weighted-prep','case-supplier-worked','case-unit-prep','case-fence-worked','case-pairs-worked','case-write-brief'];
   for (const id of coreIds) {
     const n=required(id), parents=ancestors(n);
     ok(!parents.some(p=>t.has(p,'technical')), name + ': ' + id + ' does not require technical depth');

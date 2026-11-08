@@ -12,7 +12,7 @@ const classes = [
 ];
 const sections = {
   'course-introduction.html': [['learning-start', 'Overview'], ['course-route', 'Eight classes'], ['study-loop', 'How to study'], ['readiness', 'Warm-up']],
-  'index.html': [['learning-start', 'Business case'], ['lessons', 'Twelve steps'], ['lab', 'Order lab'], ['charts', 'Charts'], ['case-brief', 'Decision brief'], ['practice', 'Practice']],
+  'index.html': [['learning-start', 'Business case'], ['lessons', 'Fourteen steps'], ['lab', 'Order lab'], ['charts', 'Charts'], ['case-brief', 'Decision brief'], ['practice', 'Practice']],
   'probability.html': [['learning-start', 'Overview'], ['bayes-lab', 'Explore'], ['lessons', 'Learn'], ['tools', 'Tools'], ['practice', 'Practice']],
   'random-variables.html': [['learning-start', 'Overview'], ['count-lab', 'Explore'], ['lessons', 'Learn'], ['tools', 'Tools'], ['practice', 'Practice']],
   'sampling-distributions.html': [['learning-start', 'Overview'], ['lessons', 'Learn'], ['sampling-lab', 'Explore'], ['tools', 'Tools'], ['practice', 'Practice']],

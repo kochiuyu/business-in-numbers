@@ -23,13 +23,13 @@ function run(reduced,hash=''){const d=dom(),events={},loc={hash},media={matches:
 for(const reduced of [false,true]){
  const{d,events,loc,media}=run(reduced);const parts=d.querySelectorAll('.case-part'),visible=()=>parts.map((p,i)=>!p.hidden?i+1:null).filter(Boolean),fire=k=>(events[k]||[]).forEach(fn=>fn());
  eq(visible(),[1]);eq(d.getElementById('visual-motion').checked,!reduced);eq(d.body.classList.contains('c1-no-motion'),reduced);
- for(const [i,topic] of ['records','mean','median','mode','quartiles','variance','sd-cv','skewness','kurtosis','covariance','correlation','briefing'].entries()){loc.hash='#class1-'+topic;fire('hashchange');eq(visible(),[i+1]);ok(parts[i].querySelector('h2').focused);ok(d.getElementById('visual-progress').textContent.includes('of 12'),'progress uses actual twelve-step total');}
- for(const [i,n] of [1,2,5,6,8,9,11,12].entries()){loc.hash='#class1-step-'+(i+1);fire('hashchange');eq(visible(),[n],'old numbered aliases retain semantic meaning');}
- for(const [id,n] of [['case-part-1',1],['case-part-2',2],['case-part-3',6],['case-part-4',5],['case-part-5',11],['case-part-6',12]]){loc.hash='#'+id;fire('hashchange');eq(visible(),[n],'legacy link retains semantic destination');}
- loc.hash='#lab';fire('hashchange');eq(visible(),[2]);ok(d.getElementById('lab').closest('details').open);
- loc.hash='#graph-panel-box';fire('hashchange');eq(visible(),[1]);ok(d.getElementById('graph-panel-box').closest('details').open);
- d.getElementById('visual-show-all').fire('click');eq(visible(),[1,2,3,4,5,6,7,8,9,10,11,12]);d.getElementById('visual-show-all').fire('click');eq(visible(),[1]);
- loc.hash='#practice';fire('hashchange');eq(visible(),[12]);ok(!d.getElementById('practice').hidden);
+ for(const [i,topic] of ['records','tables','charts','mean','median','mode','quartiles','variance','sd-cv','skewness','kurtosis','covariance','correlation','briefing'].entries()){loc.hash='#class1-'+topic;fire('hashchange');eq(visible(),[i+1]);ok(parts[i].querySelector('h2').focused);ok(d.getElementById('visual-progress').textContent.includes('of 14'),'progress uses actual fourteen-step total');}
+ for(const [i,n] of [1,4,7,8,10,11,13,14].entries()){loc.hash='#class1-step-'+(i+1);fire('hashchange');eq(visible(),[n],'old numbered aliases retain semantic meaning');}
+ for(const [id,n] of [['case-part-1',1],['case-part-2',4],['case-part-3',8],['case-part-4',7],['case-part-5',13],['case-part-6',14]]){loc.hash='#'+id;fire('hashchange');eq(visible(),[n],'legacy link retains semantic destination');}
+ loc.hash='#lab';fire('hashchange');eq(visible(),[4]);ok(d.getElementById('lab').closest('details').open);
+ loc.hash='#graph-panel-box';fire('hashchange');eq(visible(),[3]);ok(!d.getElementById('graph-panel-box').closest('details'),'chart is not hidden in a disclosure');
+ d.getElementById('visual-show-all').fire('click');eq(visible(),[1,2,3,4,5,6,7,8,9,10,11,12,13,14]);d.getElementById('visual-show-all').fire('click');eq(visible(),[3]);
+ loc.hash='#practice';fire('hashchange');eq(visible(),[14]);ok(!d.getElementById('practice').hidden);
  const pick=(key,view)=>d.querySelector(`[data-visual="${key}"][data-view="${view}"]`).fire('click');
  pick('center','equal');for(const b of d.querySelectorAll('.visual-bar'))eq(b.style.height,'31.499999999999996px');ok(d.getElementById('center-caption').textContent.includes('not new observed orders'));
  pick('center','middle');eq(d.querySelectorAll('.middle-order').length,2);d.querySelectorAll('.visual-bar').forEach((b,i)=>eq(b.style.height,(values[i]*.7)+'px'));
@@ -40,7 +40,7 @@ for(const reduced of [false,true]){
  loc.hash='#%bad';fire('hashchange');loc.hash='#missing';fire('hashchange');ok(true,'malformed and absent anchors safe');
 }
 for(const hash of ['#lab','#graph-panel-box','#case-brief']){const{d}=run(false,hash);const target=d.getElementById(hash.slice(1));ok(!target.closest('.case-part')?.hidden,'deep link visible');}
-const staticDOM=dom();eq(staticDOM.querySelectorAll('.case-part').filter(p=>!p.hidden).length,12,'all scenes available with no JS');eq(staticDOM.querySelectorAll('.visual-controls').filter(p=>p.hidden).length,3,'inactive controls hidden without JS');eq(staticDOM.querySelectorAll('.visual-practice').length,4,'original practice retained');
+const staticDOM=dom();eq(staticDOM.querySelectorAll('.case-part').filter(p=>!p.hidden).length,14,'all scenes available with no JS');eq(staticDOM.querySelectorAll('.visual-controls').filter(p=>p.hidden).length,3,'inactive controls hidden without JS');eq(staticDOM.querySelectorAll('.visual-practice').length,4,'original practice retained');
 // Browser history can return to the original URL without a fragment.
 for(const reduced of [false,true]){
  const {d,events,loc}=run(reduced),parts=d.querySelectorAll('.case-part');

@@ -3,7 +3,7 @@
  const body=document.body;
  if(!body.classList.contains('class-one-case'))return;
  const parts=[...document.querySelectorAll('.case-part')];
- if(parts.length!==12)return;
+ if(!parts.length)return;
  const controls=document.querySelector('.visual-path-controls');
  const all=document.getElementById('visual-show-all'),motion=document.getElementById('visual-motion');
  const progress=document.getElementById('visual-progress');
@@ -19,8 +19,8 @@
   tail.forEach(p=>p.hidden=!showAll&&current!==parts.length-1);
   document.querySelectorAll('.case-route a').forEach((a,i)=>{if(i===current)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
   const title=parts[current].querySelector('h2').textContent.trim();
-  progress.textContent=showAll?`All twelve steps · selected: ${title}`:`Step ${current+1} of ${parts.length} · ${title}`;
-  all.setAttribute('aria-pressed',String(showAll));all.textContent=showAll?'Return to one step':'Show all twelve steps';
+  progress.textContent=showAll?`All ${parts.length} steps · selected: ${title}`:`Step ${current+1} of ${parts.length} · ${title}`;
+  all.setAttribute('aria-pressed',String(showAll));all.textContent=showAll?'Return to one step':`Show all ${parts.length} steps`;
  }
  function reveal(focus=false){
   let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
