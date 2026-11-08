@@ -17,6 +17,21 @@ for(const [name,s]of [['source',source],['build',html]]){
  ok(step.indexOf('id="table-question-result"')>step.indexOf('id="payment-count-table"'),'result follows table');
  eq((step.match(/data-table-question=/g)||[]).length,3,'three denominator questions');
 }
+// The table route must stay five native links, styled as the graph lesson's boxed choices.
+for(const [name,s] of [['source',source],['build',html]]){
+ const route=s.match(/<nav class="table-mini-route"[^>]*>([\s\S]*?)<\/nav>/)[1];
+ const links=[...route.matchAll(/<a href="([^"]+)">([^<]+)<\/a>/g)];
+ eq(links.map(x=>x[1]),['#table-from-records','#tables-core','#two-way-table-title','#table-denominator-check','#table-grouped-values'],name+' five unchanged route destinations');
+ eq(links.map(x=>x[2]),['1. Count records','2. Turn counts into shares','3. Cross two categories','4. Choose the whole','5. Group numeric values'],name+' five unchanged route labels');
+ for(const [,href]of links)ok(s.includes('id="'+href.slice(1)+'"'),name+' route target exists '+href);
+}
+const routeGrid=css.match(/\.table-mini-route\{([^}]+)\}/)[1],routeCard=css.match(/\.table-mini-route a\{([^}]+)\}/)[1];
+for(const token of ['display:grid','grid-template-columns:repeat(5,minmax(0,1fr))','gap:9px'])ok(routeGrid.includes(token),'boxed route grid '+token);
+for(const token of ['min-width:0','min-height:94px','padding:16px 12px','background:var(--white)','border:1px solid var(--line)','border-radius:4px','text-decoration:none','overflow-wrap:anywhere'])ok(routeCard.includes(token),'boxed route card '+token);
+ok(css.includes('@media(max-width:900px){.table-mini-route{grid-template-columns:repeat(3,minmax(0,1fr))}}'),'three-column tablet route');
+ok(css.includes('.table-mini-route{grid-template-columns:repeat(2,minmax(0,1fr))}'),'two-column phone route');
+ok(css.includes('.table-mini-route>span{grid-column:1/-1'),'route label spans the grid');
+ok(css.includes('.table-mini-route a:hover{border-color:var(--green)'),'boxed hover affordance');
 // Independent arithmetic from individual records, not the rendered answers.
 const extract=['Online','In store','Online','Phone','Online','In store','Online','Online','In store','Online'];
 eq(['Online','In store','Phone'].map(k=>extract.filter(v=>v===k).length),[6,3,1],'extract tallies');
