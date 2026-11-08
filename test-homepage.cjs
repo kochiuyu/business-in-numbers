@@ -3,6 +3,8 @@ const fs = require('node:fs');
 const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const { classes } = require('./scripts/navigation.cjs');
+const plans = require('./src/lesson-roadmaps.json');
+const firstStep = file => `${file}#${plans[file].steps[0].anchor}`;
 let checks = 0;
 const ok = (value, label) => { checks++; assert.ok(value, label); };
 const eq = (value, expected, label) => { checks++; assert.deepEqual(value, expected, label); };
@@ -17,7 +19,7 @@ for (const [file, html] of [['index.html', home], ['course-introduction.html', a
   ok(html.includes('BUSINESS STATISTICS, ONE QUESTION AT A TIME'), file + ' Start Here');
   ok(!html.includes('class="case-part"'), file + ' is not Class 1');
   ok(!/http-equiv="refresh"/i.test(html), file + ' is not a redirect shell');
-  ok(html.includes('href="descriptive-statistics.html#learning-start">Begin Class 1'), file + ' direct start');
+  ok(html.includes(`href="${firstStep('descriptive-statistics.html')}">Begin Class 1`), file + ' direct start');
   for (let i = 1; i <= 8; i++) ok(html.includes('id="course-stop-' + i + '"'), file + ' course stop ' + i);
 }
 ok(home.indexOf('legacy-class-one.') < home.indexOf('</head>'), 'legacy redirect loads before content');
@@ -59,7 +61,7 @@ for (const [file, html] of [['index.html', home], ['course-introduction.html', a
   eq((html.match(/class="course-card-link"/g)||[]).length,8,file+' eight direct class cards');
   eq((html.match(/class="intro-resource"/g)||[]).length,4,file+' four optional guidance sections');
   ok(!/<details class="(?:intro-resource|course-stop)"[^>]*\bopen/.test(html),file+' starts compact');
-  for (const [lessonFile] of classes) ok(html.includes(`class="course-card-link" href="${lessonFile}#learning-start"`),file+' immediate lesson link '+lessonFile);
+  for (const [lessonFile] of classes) ok(html.includes(`class="course-card-link" href="${firstStep(lessonFile)}"`),file+' immediate lesson link '+lessonFile);
   for (const id of ['course-guide','study-loop','readiness','course-destination']) ok(html.includes(`class="intro-resource" id="${id}"`),file+' named native resource '+id);
   for (const a of [...intro.readiness,intro.capstone]) ok(html.includes(require('./scripts/activities.cjs').render(a)),file+' full unchanged activity '+a.id);
   ok(/href="introduction\.[a-f0-9]{16}\.css"/.test(html),file+' isolated fingerprinted layout');

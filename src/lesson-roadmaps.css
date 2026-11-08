@@ -15,3 +15,8 @@ body :is(.case-route,.c2-route,.c3-route,.c4-route,.c5-route,.c6-route,.c7-route
 @media(max-width:1000px){.roadmap-phases{grid-template-columns:repeat(2,minmax(0,1fr))}.roadmap-connector{display:none}}
 @media(max-width:700px){body :is(.case-route,.c2-route,.c3-route,.c4-route,.c5-route,.c6-route,.c7-route,.c8-route){grid-template-columns:1fr}.lesson-roadmap{padding:18px}.roadmap-phases{grid-template-columns:1fr;gap:24px}.roadmap-connector{display:block;top:auto;bottom:-22px;left:20px;right:auto;transform:none}.roadmap-phases a{padding:16px}.step-bridge{padding:15px}.roadmap-mini-lesson,.roadmap-preview{padding:16px}}
 @media print{.lesson-roadmap{background:white;break-inside:avoid}.roadmap-phases{grid-template-columns:repeat(2,minmax(0,1fr))}.roadmap-connector{display:none}.step-bridge{background:white}.roadmap-mini-lesson{break-inside:avoid}}
+/* Let the browser skip layout and painting for distant lesson steps on long pages. */
+@supports (content-visibility:auto){
+  .c6-part,.c7-part,.c8-part{content-visibility:auto;contain-intrinsic-size:auto 900px}
+  @media print{.c6-part,.c7-part,.c8-part{content-visibility:visible;contain-intrinsic-size:none}}
+}

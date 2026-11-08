@@ -10,6 +10,15 @@ const classes = [
   ['anova.html', 'ANOVA', 'Compare several groups'],
   ['regression.html', 'Regression', 'Explain and predict']
 ];
+const plans = require('../src/lesson-roadmaps.json');
+const firstStep = file => `${file}#${plans[file].steps[0].anchor}`;
+function sharingMetadata(html,file) {
+  const title=html.match(/<title>([^<]+)<\/title>/)?.[1];
+  const description=html.match(/<meta name="description" content="([^"]+)">/)?.[1];
+  if(!title||!description)throw Error('Missing page title or description: '+file);
+  const url='https://kochiuyu.github.io/business-in-numbers/'+(file==='index.html'||file==='course-introduction.html'?'':file);
+  return `<link rel="canonical" href="${url}"><meta property="og:type" content="website"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:url" content="${url}"><meta name="twitter:card" content="summary">`;
+}
 const sections = {
   'index.html': [['start-here-overview', 'Overview'], ['course-route', 'Eight classes'], ['study-loop', 'How to study'], ['readiness', 'Warm-up']],
   'course-introduction.html': [['learning-start', 'Overview'], ['course-route', 'Eight classes'], ['study-loop', 'How to study'], ['readiness', 'Warm-up']],
@@ -24,6 +33,7 @@ const sections = {
 };
 function enhance(html, file) {
   if (!sections[file]) throw Error('Unknown navigation page: '+file);
+  if(file==='descriptive-statistics.html')html=html.replace('<title>Descriptive Statistics · Business in Numbers</title>','<title>Class 1 · Descriptive Statistics · Business in Numbers</title>');
   const index = classes.findIndex(c => c[0] === file);
   const intro = index < 0;
   const current = intro ? 'Course introduction' : classes[index][1];
@@ -38,7 +48,7 @@ function enhance(html, file) {
         <div class="course-menu" id="course-menu">
           <div class="course-menu-heading"><div><span class="course-menu-eyebrow">THE LEARNING PATH</span><p>From data to decisions.</p></div><a href="index.html"${intro ? ' aria-current="page"' : ''}>Course introduction <span aria-hidden="true">↗</span></a></div>
           <nav aria-label="All classes"><ol>${classes.map(([href,title,description],i)=>`<li><a href="${href}"${index===i?' aria-current="page"':''}><span class="course-menu-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><span class="course-menu-copy"><span class="course-menu-title"><span class="sr-only">Class ${i+1}: </span>${title}</span><small>${description}</small></span>${index===i?'<span class="course-menu-current">Current</span>':''}</a></li>`).join('')}</ol></nav>
-          <div class="course-menu-footer"><span>Follow in order, or revisit any class.</span>${next?`<a href="${next[0]}">${intro?'Begin Class 1':'Next: Class '+(index+2)} <span aria-hidden="true">→</span></a>`:'<a href="index.html">Back to course overview <span aria-hidden="true">→</span></a>'}</div>
+          <div class="course-menu-footer"><span>Follow in order, or revisit any class.</span>${next?`<a href="${firstStep(next[0])}">${intro?'Begin Class 1':'Next: Class '+(index+2)} <span aria-hidden="true">→</span></a>`:'<a href="index.html">Back to course overview <span aria-hidden="true">→</span></a>'}</div>
         </div>
       </details>
     </div>
@@ -50,7 +60,7 @@ function enhance(html, file) {
 </header>`;
   if (!/<header class="top">[\s\S]*?<\/header>/.test(html)) throw Error('Missing course header: '+file);
   return html.replace(/<header class="top">[\s\S]*?<\/header>/, header)
-    .replace('</head>','<link rel="stylesheet" href="navigation.css"></head>')
+    .replace('</head>',sharingMetadata(html,file)+'<link rel="stylesheet" href="navigation.css"></head>')
     .replace('</body>','<script src="navigation.js"></script></body>');
 }
 module.exports = {classes, sections, enhance};

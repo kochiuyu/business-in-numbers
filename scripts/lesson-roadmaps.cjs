@@ -40,8 +40,9 @@ function enhance(html,file){
    if(!nav)throw Error('Missing next navigation '+s.id);
    const previous=i?`<a class="c${p.classNumber}-back" href="#${esc(p.steps[i-1].anchor)}">← ${esc(p.steps[i-1].short)}</a>`:'<a class="c'+p.classNumber+'-back" href="#class-'+p.classNumber+'-roadmap">← Class roadmap</a>';
    const next=i<parts.length-1?`<a class="button" href="#${esc(p.steps[i+1].anchor)}">Next · ${esc(p.steps[i+1].short)} →</a>`:`<a class="button" href="${esc(p.nextFile)}">Next · Class ${p.classNumber+1} →</a>`;
-   frag=frag.slice(0,nav.start)+`<nav class="${navClass}" aria-label="Continue class lesson">${previous}${next}</nav>`+frag.slice(nav.end);
+   frag=frag.slice(0,nav.start)+`<nav class="${navClass}" aria-label="Class ${p.classNumber} step ${i+1} navigation">${previous}${next}</nav>`+frag.slice(nav.end);
   }
+  frag=frag.replace(new RegExp(`(<nav class="(?:visual-step-nav|c${p.classNumber}-step-nav)" aria-label=")[^"]*(")`),`$1Class ${p.classNumber} step ${i+1} navigation$2`);
   const local=nodes(frag),nav=local.find(n=>has(n,p.classNumber===1?'visual-step-nav':`c${p.classNumber}-step-nav`));
   if(!nav)throw Error('Missing step navigation '+s.id);
   const addition=(s.addition||'')+`<aside class="step-bridge" aria-label="Connection to the next idea"><b>${i===parts.length-1?(p.classNumber===8?'Carry this into your next analysis':'Carry this into the next class'):'Why this leads to the next step'}</b><p>${esc(s.bridge)}</p></aside>`;

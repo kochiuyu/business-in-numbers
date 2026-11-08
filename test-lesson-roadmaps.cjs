@@ -13,7 +13,7 @@ for(const [file,plan]of Object.entries(R.plans)){
   const parts=ns.filter(n=>has(n,plan.partClass)),route=ns.find(n=>has(n,plan.routeClass));eq(parts.map(n=>n.attrs.id),plan.steps.map(s=>s.id),file+' '+label+' planned order');
   const links=ns.filter(n=>n.tag==='a'&&inside(n,route));eq(links.map(n=>n.attrs.href),plan.steps.map(s=>'#'+s.anchor),file+' '+label+' indexed route matches viewer');
   for(const [i,n]of links.entries()){const description=ns.find(d=>has(d,'route-purpose')&&inside(d,n));ok(description,file+' '+label+' description '+i);ok(!ns.some(d=>d.tag==='details'&&inside(n,d)),file+' '+label+' card always visible');}
-  for(const [i,n]of parts.entries()){const bridges=ns.filter(d=>has(d,'step-bridge')&&inside(d,n));eq(bridges.length,1,file+' bridge '+i);ok(!ns.some(d=>d.tag==='details'&&inside(bridges[0],d)),file+' visible bridge '+i);}
+  for(const [i,n]of parts.entries()){const bridges=ns.filter(d=>has(d,'step-bridge')&&inside(d,n));eq(bridges.length,1,file+' bridge '+i);ok(!ns.some(d=>d.tag==='details'&&inside(bridges[0],d)),file+' visible bridge '+i);const nav=ns.find(d=>has(d,plan.classNumber===1?'visual-step-nav':`c${plan.classNumber}-step-nav`)&&inside(d,n));eq(nav?.attrs['aria-label'],`Class ${plan.classNumber} step ${i+1} navigation`,file+' distinct step navigation '+i);}
   const map=ns.find(n=>has(n,'lesson-roadmap'));ok(map&&!ns.some(n=>n.tag==='details'&&inside(map,n)),file+' visible overview');
   for(const a of ns.filter(n=>n.tag==='a'&&inside(n,map)))ok(ns.some(n=>n.attrs.id===a.attrs.href.slice(1)),file+' roadmap destination '+a.attrs.href);
   if(plan.reorder)for(const [i,part]of parts.entries()){
