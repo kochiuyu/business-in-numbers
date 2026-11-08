@@ -22,7 +22,7 @@ The full suite uses NumPy, SciPy, and Matplotlib to reproduce examples and indep
 
 ## Navigation
 
-The shared header in `scripts/navigation.cjs` separates the eight-class course menu from in-page lesson shortcuts. It marks the current class and follows the section being read. All menu links and the native disclosure work without JavaScript; JavaScript adds Escape/outside-click dismissal, keyboard focus handling, and section highlighting.
+The shared header in `scripts/navigation.cjs` separates the eight-class course menu from in-page lesson shortcuts. The Business in Numbers brand returns to the course home; Browse classes also keeps an explicit Course introduction link, without a duplicate Start here link in the top row. It marks the current class and follows the section being read. All menu links and the native disclosure work without JavaScript; JavaScript adds Escape/outside-click dismissal, keyboard focus handling, and section highlighting.
 
 Class 1 follows fourteen focused steps: records, tabular representation, graphical representation, mean, median, mode, quartiles and boxplots, variance, standard deviation with coefficient of variation, skewness, kurtosis, covariance, correlation, and a manager briefing. Every step has visible teaching, a worked calculation or action, and a check. New route links use stable subject names such as `#class1-mean` and `#class1-covariance`. Earlier `#case-part-*` and eight-step `#class1-step-*` links retain their subject destinations; their numeric suffixes no longer describe the reading order.
 

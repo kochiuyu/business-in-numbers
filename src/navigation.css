@@ -6,8 +6,6 @@ html{scroll-padding-top:calc(var(--course-header-height) + 20px)}
 .course-header-main{height:83px;position:relative}
 .course-header .brand{flex-shrink:0}
 .course-header-actions{display:flex;gap:26px;align-items:center}
-.course-start{font-size:13px;text-underline-offset:5px;text-decoration-thickness:1px;font-weight:bold;min-height:44px;display:flex;align-items:center}
-.course-start[aria-current]{color:var(--orange)}
 .course-picker{border:0;background:none;margin:0;padding:0}
 .course-picker>summary{list-style:none;display:flex;align-items:center;gap:16px;padding:11px 17px;min-height:46px;border:1px solid var(--green);border-radius:5px;font-size:13px;font-weight:bold;background:var(--green);color:var(--white)}
 .course-picker>summary::-webkit-details-marker{display:none}
@@ -51,7 +49,7 @@ main>section,details[id]{scroll-margin-top:8px}
   .course-header-main,.course-header-context{margin-left:20px;margin-right:20px}
   .course-header-main{height:72px;gap:10px}
   .course-header .brand{gap:8px;font-size:9px;letter-spacing:1px}.course-header .brand b{font-size:11px}.course-header .brandmark{font-size:25px;width:34px;height:37px}
-  .course-start,.course-picker-count{display:none}
+  .course-picker-count{display:none}
   .course-picker>summary{font-size:12px;gap:10px;padding:10px 12px;min-height:44px}
   .course-header-context{display:block;padding-top:9px}
   .course-location{gap:10px;min-height:22px;font-size:11px}.course-location>b{max-width:none}

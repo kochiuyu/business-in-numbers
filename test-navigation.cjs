@@ -10,6 +10,12 @@ for (const [file, shortcuts] of Object.entries(sections)) {
   const html = fs.readFileSync('dist/' + file, 'utf8');
   const header = html.match(/<header class="course-header">[\s\S]*?<\/header>/)?.[0];
   ok(header, file + ': built header');
+  const brand = header.match(/<a class="brand"[^>]*>/)?.[0];
+  ok(brand?.includes('href="index.html"'), file + ': brand provides home access');
+  ok(brand?.includes('aria-label="Business in Numbers · course home"'), file + ': home link has a clear accessible name');
+  eq(brand?.includes('aria-current="page"'), ['index.html', 'course-introduction.html'].includes(file), file + ': home current state');
+  ok(!header.includes('class="course-start"'), file + ': no redundant top Start Here link');
+  ok(/<div class="course-menu-heading">[\s\S]*?<a href="index.html"[^>]*>Course introduction /.test(header), file + ': explicit introduction link remains in class menu');
   eq((html.match(/<header class="course-header">/g) || []).length, 1, file + ': one header');
   ok(!html.includes('<header class="top">'), file + ': old header removed');
   ok(header.includes('<details class="course-picker">'), file + ': native no-JS disclosure');

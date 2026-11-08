@@ -46,7 +46,7 @@ const later = run(''); later.location.hash = '#case-part-4'; later.events.hashch
 eq(later.calls, ['descriptive-statistics.html#case-part-4'], 'later legacy fragment follows same rule');
 for (const [file] of classes) {
   const html = read(file);
-  ok(html.includes('class="course-start" href="index.html"'), file + ' Start Here goes home');
+  ok(!html.includes('class="course-start"'), file + ' no duplicate Start Here link');
   ok(html.includes('class="brand" href="index.html"'), file + ' brand goes home');
   ok(html.includes('href="descriptive-statistics.html"'), file + ' Class 1 reachable');
   ok(!html.includes('href="index.html#learning-start"'), file + ' no ambiguous Class 1 link');

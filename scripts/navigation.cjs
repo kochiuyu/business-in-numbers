@@ -31,9 +31,8 @@ function enhance(html, file) {
   const next = classes[intro ? 0 : index + 1];
   const header = `<header class="course-header">
   <div class="course-header-main">
-    <a class="brand" href="index.html" aria-label="Business in Numbers · course home"><span class="brandmark" aria-hidden="true">▥</span><span>BUSINESS<br><b>IN NUMBERS</b></span></a>
+    <a class="brand" href="index.html" aria-label="Business in Numbers · course home"${intro ? ' aria-current="page"' : ''}><span class="brandmark" aria-hidden="true">▥</span><span>BUSINESS<br><b>IN NUMBERS</b></span></a>
     <div class="course-header-actions">
-      <a class="course-start" href="index.html"${intro ? ' aria-current="page"' : ''}>Start here</a>
       <details class="course-picker">
         <summary aria-controls="course-menu"><span>Browse classes</span><span class="course-picker-count" aria-hidden="true">${intro ? '01–08' : String(index+1).padStart(2,'0')+' / 08'}</span><svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></summary>
         <div class="course-menu" id="course-menu">
