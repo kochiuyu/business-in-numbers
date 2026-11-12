@@ -72,6 +72,7 @@ function build() {
   buildAnova();
   buildRegression();
   require('./homepage.cjs').build(dist);
+  require('./presentation.cjs').addPresentations(dist,src);
   require('./fingerprint-assets.cjs').fingerprintAssets(dist);
   console.log(`Rendered ${Object.keys(equations).length} lesson expressions and ${Object.keys(fixtures).length} QA expressions with KaTeX ${katex.version}.`);
 }

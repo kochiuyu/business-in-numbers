@@ -1,0 +1,72 @@
+[hidden] { display: none !important; }
+.present-launch { margin-left: auto; padding: 10px 17px; border: 1px solid #176148; border-radius: 6px; background: #176148; color: #fff; font: 700 14px/1.4 Arial, sans-serif; cursor: pointer; }
+.present-launch:focus-visible, #lesson-presentation :focus-visible { outline: 3px solid #b65c2c; outline-offset: 3px; }
+.presenting { overflow: hidden; }
+#lesson-presentation { box-sizing: border-box; position: fixed; inset: 0; width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: #f7f8ef; color: #173f36; font-family: Arial, sans-serif; overflow: hidden; }
+#lesson-presentation[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+#lesson-presentation::backdrop { background: #173f36; }
+.presentation-toolbar, .presentation-controls { display: flex; align-items: center; gap: 12px; padding: 11px 22px; background: #eaf0e5; border-color: #b9c9b4; font: 14px/1.4 Arial, sans-serif; }
+.presentation-toolbar, .presentation-controls, .presentation-layout { box-sizing: border-box; min-width: 0; width: 100%; }
+.presentation-toolbar { border-bottom: 1px solid #b9c9b4; }
+.presentation-controls { justify-content: space-between; flex-wrap: wrap; border-top: 1px solid #b9c9b4; }
+.presentation-controls > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.presentation-toolbar button, .presentation-controls button { border: 1px solid #829f8c; border-radius: 5px; background: #fffef9; color: #173f36; padding: 8px 12px; font: 700 14px/1.4 Arial, sans-serif; cursor: pointer; }
+.presentation-controls button:disabled { opacity: .45; cursor: default; }
+.presentation-controls button[aria-pressed="true"] { background: #176148; border-color: #176148; color: #fff; }
+.presentation-toolbar label { font-weight: 700; }
+#presentation-chooser { flex: 1; min-width: 160px; max-width: 700px; padding: 8px; font: inherit; border: 1px solid #829f8c; border-radius: 5px; color: inherit; background: white; }
+.presentation-counter { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.presentation-layout { min-height: 0; display: flex; gap: 22px; padding: 25px 4vw; }
+.presentation-main { flex: 1; min-width: 0; overflow: auto; max-width: 1320px; margin: 0 auto; }
+.presentation-phase { margin: 0 0 8px; text-transform: uppercase; letter-spacing: .08em; font: 700 12px/1.4 Arial, sans-serif; color: #4c6659; }
+.presentation-title { margin: 0 0 24px; color: #173f36; font: 400 clamp(29px, 3.6vw, 53px)/1.12 Georgia, serif; max-width: 30ch; }
+.presentation-title:focus { outline: none !important; }
+.presentation-stage { min-width: 0; }
+.presentation-part { max-width: none !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: transparent !important; }
+.presentation-part > * { display: none !important; }
+.presentation-part[data-presentation-kind="scene"] > :is(.c2-scene, .c7-scene), .presentation-part[data-presentation-kind="reason"] > .c2-scene, .presentation-part[data-presentation-kind="core"] > .c7-core { display: block !important; margin: 0 !important; max-width: none !important; }
+.presentation-part[data-presentation-kind="scene"] > .c2-scene > :is(.reading-prediction, .reading-core, .c2-worked-core, .c2-check, .c2-takeaway) { display: none !important; }
+.presentation-part[data-presentation-kind="reason"] > .c2-scene > * { display: none !important; }
+.presentation-part[data-presentation-kind="reason"] > .c2-scene > :is(h3, .reading-prediction, .reading-core, .c2-worked-core, .c2-check, .c2-takeaway) { display: block !important; }
+.presentation-part#prob-step-5[data-presentation-kind="scene"] > .c2-scene > :is(.c2-lab-details, .decision-callout) { display: none !important; }
+.presentation-part#prob-step-5[data-presentation-kind="reason"] > .c2-scene > :is(.c2-lab-details, .decision-callout) { display: block !important; }
+.presentation-part :is(.c2-scene, .c7-scene, .c7-core) { font-size: clamp(20px, 2.1vw, 29px); line-height: 1.5; }
+.presentation-part :is(.c2-scene, .c7-scene, .c7-core) :is(h3,h4) { font-size: clamp(24px, 2.5vw, 36px); line-height: 1.25; }
+.presentation-part :is(.c2-scene, .c7-scene, .c7-core) :is(p,li) { max-width: 80ch; }
+.presentation-part :is(.c2-scene, .c7-scene, .c7-core) :is(svg,img) { max-width: 100%; height: auto; }
+.presentation-part .table-scroll { max-width: 100%; overflow: auto; }
+.presentation-notes { box-sizing: border-box; flex: 0 0 min(31vw, 420px); overflow: auto; padding: 0 0 0 22px; border-left: 2px solid #b9c9b4; font: 16px/1.6 Arial, sans-serif; }
+.presentation-notes { min-width: 0; }
+.presentation-notes h3 { margin: 0 0 14px; font: 400 27px/1.25 Georgia, serif; }
+.presentation-notes h4 { margin: 22px 0 10px; font-size: 18px; }
+.presentation-notes :is(p,li) { font-size: 16px; line-height: 1.6; }
+.presentation-notes .lesson-body { display: block !important; }
+.presentation-notes .equation, .presentation-notes .math-scroll { max-width: 100%; overflow-x: auto; }
+#printed-slides { display: none; }
+@media (max-width: 800px) {
+  .presentation-toolbar { flex-wrap: wrap; padding: 8px 12px; }
+  .presentation-toolbar label { display: none; }
+  .presentation-controls { padding: 8px 12px; }
+  .presentation-controls button, .presentation-toolbar button { padding: 7px 9px; font-size: 12px; }
+  .presentation-layout { flex-direction: column; padding: 18px 20px; gap: 12px; }
+  .presentation-title { font-size: clamp(27px, 7vw, 36px); }
+  .presentation-part :is(.c2-scene, .c7-scene, .c7-core) { font-size: 20px; }
+  .presentation-notes { flex: 0 0 auto; max-height: 30vh; padding: 12px 0 0; border-left: 0; border-top: 1px solid #b9c9b4; }
+  .presentation-notes { width: 100%; }
+}
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  html.printing-presentation body > * { display: none !important; }
+  html.printing-presentation body > #printed-slides { display: block !important; }
+  #printed-slides > section { box-sizing: border-box; min-height: 160mm; break-after: page; page-break-after: always; color: #173f36; font: 20pt/1.4 Arial, sans-serif; }
+  #printed-slides > section:last-child { break-after: auto; }
+  #printed-slides h2 { font: 28pt/1.2 Georgia, serif; margin: 0 0 12mm; }
+  #printed-slides .table-scroll { overflow: visible; }
+  #printed-slides table { font-size: 14pt; }
+  #printed-slides svg { max-height: 120mm; max-width: 100%; }
+  #printed-slides .presentation-print-scene > :is(.reading-prediction, .reading-core, .c2-worked-core, .c2-check, .c2-takeaway) { display: none !important; }
+  #printed-slides .presentation-print-reason > * { display: none !important; }
+  #printed-slides .presentation-print-reason > :is(h3, .reading-prediction, .reading-core, .c2-worked-core, .c2-check, .c2-takeaway) { display: block !important; }
+  #printed-slides .presentation-print-bayes.presentation-print-scene > :is(.c2-lab-details, .decision-callout) { display: none !important; }
+  #printed-slides .presentation-print-bayes.presentation-print-reason > :is(.c2-lab-details, .decision-callout) { display: block !important; }
+}

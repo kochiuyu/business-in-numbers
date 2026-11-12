@@ -22,6 +22,12 @@ The full suite uses NumPy, SciPy, and Matplotlib to reproduce examples and indep
 
 ## Navigation
 
+### Presentation pilot
+
+Classes 2 and 7 have a **Present lesson** button beside their step controls. Presentation uses the same live scene and calculation elements as reading mode, so chart controls retain their state. Class 2 has a visual and a reasoning slide for most steps; Class 7 pairs scenes with worked cores where both exist. The authored takeaway titles and stable slide IDs are in `src/presentation-content.json`. `scripts/presentation.cjs` validates the source anchors and adds the shared `presentation.js` and `presentation.css` assets during the build.
+
+Use Previous/Next, the slide menu, Left/Right or Page Up/Down, and Home/End. Notes displays the corresponding reading explanation on the same screen. **Read this section** returns to the current lesson step. A direct link such as `probability.html?present=1&slide=prob-step-3--scene` opens a specific slide; the lesson remains fully readable without JavaScript. Print slides produces a landscape slide handout. This is a pilot for two classes; the other six classes retain their current reading paths.
+
 The shared header in `scripts/navigation.cjs` separates the eight-class course menu from in-page lesson shortcuts. The Business in Numbers brand returns to the course home; Browse classes also keeps an explicit Course introduction link, without a duplicate Start here link in the top row. It marks the current class and follows the section being read. All menu links and the native disclosure work without JavaScript; JavaScript adds Escape/outside-click dismissal, keyboard focus handling, and section highlighting.
 
 Class 1 follows fourteen focused steps: records, tabular representation, graphical representation, mean, median, mode, quartiles and boxplots, variance, standard deviation with coefficient of variation, skewness, kurtosis, covariance, correlation, and a manager briefing. Every step has visible teaching, a worked calculation or action, and a check. New route links use stable subject names such as `#class1-mean` and `#class1-covariance`. Earlier `#case-part-*` and eight-step `#class1-step-*` links retain their subject destinations; their numeric suffixes no longer describe the reading order.
