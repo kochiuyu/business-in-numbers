@@ -11,6 +11,7 @@ function addPresentations(dist, src) {
     for (const slide of config.slides) {
       const id = `${slide.part}--${slide.kind}`;
       if (seen.has(id) || !slide.title || slide.title.length > 95) throw Error(`Invalid slide: ${id}`);
+      if (slide.kind !== 'scene' && (!slide.line || !Array.isArray(slide.points) || slide.points.length !== 2)) throw Error(`Missing teaching content: ${id}`);
       seen.add(id);
       const marker = `id="${slide.part}"`;
       if (html.indexOf(marker) < 0 || html.indexOf(marker) !== html.lastIndexOf(marker)) throw Error(`Missing or duplicate slide source: ${slide.part}`);
@@ -31,3 +32,4 @@ function addPresentations(dist, src) {
 }
 
 module.exports = {addPresentations};
+

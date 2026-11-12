@@ -22,7 +22,7 @@
 .presentation-title { margin: 0 0 24px; color: #173f36; font: 400 clamp(29px, 3.6vw, 53px)/1.12 Georgia, serif; max-width: 30ch; }
 .presentation-title:focus { outline: none !important; }
 .presentation-stage { min-width: 0; }
-.presentation-part { max-width: none !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: transparent !important; }
+.presentation-part { max-width: none !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: transparent !important; content-visibility: visible !important; contain-intrinsic-size: none !important; }
 .presentation-part > * { display: none !important; }
 .presentation-part[data-presentation-kind="scene"] > :is(.c2-scene, .c7-scene), .presentation-part[data-presentation-kind="reason"] > .c2-scene, .presentation-part[data-presentation-kind="core"] > .c7-core { display: block !important; margin: 0 !important; max-width: none !important; }
 .presentation-part[data-presentation-kind="scene"] > .c2-scene > :is(.reading-prediction, .reading-core, .c2-worked-core, .c2-check, .c2-takeaway) { display: none !important; }
@@ -42,6 +42,49 @@
 .presentation-notes :is(p,li) { font-size: 16px; line-height: 1.6; }
 .presentation-notes .lesson-body { display: block !important; }
 .presentation-notes .equation, .presentation-notes .math-scroll { max-width: 100%; overflow-x: auto; }
+#lesson-presentation .presentation-layout { padding: 16px 3vw; }
+#lesson-presentation .presentation-phase { margin-bottom: 5px; }
+#lesson-presentation .presentation-title { max-width: none; margin: 0 0 10px; font: 400 clamp(30px, 3vw, 43px)/1.12 Georgia, serif; }
+.presentation-prompt { margin: 0 0 12px; font: 500 clamp(18px, 1.65vw, 24px)/1.3 Arial, sans-serif; color: #385b4c; }
+.presentation-explanation { display: grid; align-content: center; min-height: 55%; max-width: 1120px; margin: auto; }
+.presentation-line { margin: 0 0 30px; padding: 20px 28px; border-left: 7px solid #b65c2c; background: #fffef9; color: #173f36; font: 500 clamp(29px, 3.2vw, 46px)/1.25 Georgia, serif; }
+.presentation-points { display: grid; gap: 17px; margin: 0; padding-left: 1.35em; font: 400 clamp(22px, 2.05vw, 30px)/1.35 Arial, sans-serif; }
+.presentation-points li { max-width: 46ch; padding-left: .2em; }
+.presentation-points li::marker { color: #b65c2c; }
+.presentation-stage { min-height: 0; }
+#lesson-presentation .presentation-part > :is(.c2-scene, .c7-scene) { border: 0 !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; }
+.presentation-part[data-presentation-kind="scene"] > .c2-scene > :not(:is(.c2-outcome-grid, .c2-visual-controls, .c2-choice-stages, .c2-role-labels, .c2-assignments, .c2-team-arrow, .c2-one-team, .c2-compare-cards, .c2-paths, .c2-contributions, .c2-figure, .lab-controls, .bayes-tree-card, .c2-brief)) { display: none !important; }
+.presentation-part[data-presentation-kind="scene"] > .c7-scene > :not(:is(.c7-visual-controls, .c7-result)) { display: none !important; }
+#lesson-presentation .presentation-part[data-presentation-kind="scene"] > .c7-scene .c7-result > :not(:first-child) { display: none !important; }
+#lesson-presentation .presentation-part#anova-step-11[data-presentation-kind="scene"] > .c7-scene .c7-result > :nth-child(2) { display: block !important; }
+#lesson-presentation .presentation-part[data-presentation-kind="scene"] .c7-figure figcaption { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+#lesson-presentation .presentation-part[data-presentation-kind="scene"] .c7-visual-controls button { font-size: 16px !important; padding: 8px 12px !important; }
+#lesson-presentation .presentation-part[data-presentation-kind="scene"] .c7-brief > :is(span,h4) { display: none !important; }
+#lesson-presentation #anova-step-7[data-presentation-kind="scene"] .c7-cell-grid { zoom: .9; }
+#lesson-presentation #anova-step-9[data-presentation-kind="scene"] .c7-brief > .c7-gains { display: none !important; }
+#lesson-presentation #anova-step-9[data-presentation-kind="scene"] .c7-cell-grid { zoom: .88; }
+#lesson-presentation #anova-step-14[data-presentation-kind="scene"] .c7-brief > ol { margin-top: 0 !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .lab-controls > :not(.interactive-only) { display: none !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .bayes-tree-card > :not(.tree-figure) { display: none !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-figure > :not(.bayes-tree-diagram),
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .bayes-tree-diagram > .tree-root,
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-leaves > :not(:first-child) { display: none !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-branch { padding: 8px !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-state,
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-leaf { padding: 8px !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .bayes-tree-card { padding: 0 !important; margin: 6px 0 0 !important; border: 0 !important; background: transparent !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .bayes-tree-diagram { display: block !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-branches { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 14px !important; padding: 0 !important; margin: 0 !important; border: 0 !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-branch { display: grid !important; grid-template-columns: minmax(0, .65fr) minmax(0, 1fr) !important; gap: 8px !important; align-items: stretch; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-leaves { padding: 0 !important; margin: 0 !important; border: 0 !important; }
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-branches::before,
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-branch::before,
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-state::after,
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-leaves::before,
+#lesson-presentation #prob-step-5[data-presentation-kind="scene"] .tree-leaf::before { display: none !important; }
+#lesson-presentation .presentation-part :is(.c2-scene, .c7-scene) :is(svg,img) { max-height: 40vh; object-fit: contain; }
+#lesson-presentation #prob-step-7[data-presentation-kind="scene"] :is(.c2-role-labels, .c2-assignments, .c2-team-arrow, .c2-one-team) { zoom: .78; }
+#lesson-presentation .presentation-part :is(.c2-scene, .c7-scene) :is(p,li) { font-size: clamp(16px, 1.5vw, 22px); line-height: 1.3; }
 #printed-slides { display: none; }
 @media (max-width: 800px) {
   .presentation-toolbar { flex-wrap: wrap; padding: 8px 12px; }
@@ -53,6 +96,12 @@
   .presentation-part :is(.c2-scene, .c7-scene, .c7-core) { font-size: 20px; }
   .presentation-notes { flex: 0 0 auto; max-height: 30vh; padding: 12px 0 0; border-left: 0; border-top: 1px solid #b9c9b4; }
   .presentation-notes { width: 100%; }
+  #lesson-presentation .presentation-layout { padding: 13px 16px; }
+  #lesson-presentation .presentation-title { font-size: clamp(27px, 7vw, 36px); }
+  .presentation-prompt { font-size: 18px; }
+  .presentation-explanation { min-height: 0; margin: 12px 0; }
+  .presentation-line { font-size: 24px; padding: 12px 15px; margin-bottom: 16px; overflow-wrap: anywhere; }
+  .presentation-points { font-size: 18px; gap: 10px; }
 }
 @media print {
   @page { size: A4 landscape; margin: 12mm; }
@@ -61,6 +110,12 @@
   #printed-slides > section { box-sizing: border-box; min-height: 160mm; break-after: page; page-break-after: always; color: #173f36; font: 20pt/1.4 Arial, sans-serif; }
   #printed-slides > section:last-child { break-after: auto; }
   #printed-slides h2 { font: 28pt/1.2 Georgia, serif; margin: 0 0 12mm; }
+  #printed-slides .presentation-print-prompt { font: 20pt/1.3 Arial, sans-serif; color: #385b4c; margin: 0 0 8mm; }
+  #printed-slides .presentation-print-line { font: 30pt/1.25 Georgia, serif; border-left: 5pt solid #b65c2c; padding: 8mm; background: #f7f8ef; margin: 8mm 0; }
+  #printed-slides .presentation-print-points { font: 21pt/1.35 Arial, sans-serif; margin-top: 10mm; }
+  #printed-slides .presentation-print-points li { margin-bottom: 6mm; }
+  #printed-slides .presentation-print-page > :is(.c2-scene, .c7-scene) { border: 0; padding: 0; background: none; }
+  #printed-slides .c7-figure figcaption { font-size: 12pt; }
   #printed-slides .table-scroll { overflow: visible; }
   #printed-slides table { font-size: 14pt; }
   #printed-slides svg { max-height: 120mm; max-width: 100%; }
@@ -70,3 +125,4 @@
   #printed-slides .presentation-print-bayes.presentation-print-scene > :is(.c2-lab-details, .decision-callout) { display: none !important; }
   #printed-slides .presentation-print-bayes.presentation-print-reason > :is(.c2-lab-details, .decision-callout) { display: block !important; }
 }
+
