@@ -125,4 +125,3 @@
   #printed-slides .presentation-print-bayes.presentation-print-scene > :is(.c2-lab-details, .decision-callout) { display: none !important; }
   #printed-slides .presentation-print-bayes.presentation-print-reason > :is(.c2-lab-details, .decision-callout) { display: block !important; }
 }
-

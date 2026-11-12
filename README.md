@@ -85,4 +85,3 @@ Numbering belongs to the current class roadmap and teaching steps. The 104 expan
 The home page and its `course-introduction.html` alias open with one business question, a small mean/median illustration, and a direct Class 1 start. Eight class cards offer immediate lesson links; each keeps its full outcome and bridge in a native disclosure. Orientation, study instructions, all four warm-ups and the final decision activity remain in labeled optional sections. All eight lessons are unchanged by this presentation update.
 
 Home-only `introduction.css` and `introduction.js` keep this layout separate from lesson styles. Direct guidance/activity bookmarks and repeated same-page shortcuts open the relevant disclosure. Without JavaScript, the summaries, class links and worked answers still work. Print styles reveal the reference content. Run `npm run test:homepage` after building for the compact layout, disclosure behavior, class links and legacy-bookmark regressions.
-

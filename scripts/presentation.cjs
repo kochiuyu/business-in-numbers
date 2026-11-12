@@ -32,4 +32,3 @@ function addPresentations(dist, src) {
 }
 
 module.exports = {addPresentations};
-
