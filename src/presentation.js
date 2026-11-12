@@ -137,8 +137,7 @@
     $('.presentation-title').textContent = frame.title;
     $('.presentation-phase').textContent = `Class ${config.partClass === 'c2-part' ? '2' : '7'} · ${part.querySelector('h2')?.textContent.trim() || 'Lesson'}`;
     const isScene = frame.kind === 'scene';
-    $('.presentation-prompt').textContent = isScene ? (frame.prompt || sectionFor(frame).querySelector('h3')?.textContent.trim() || '') : '';
-    $('.presentation-prompt').hidden = !isScene;
+    $('.presentation-prompt').textContent = frame.context;
     $('.presentation-line').textContent = frame.line || '';
     $('.presentation-line').hidden = !frame.line;
     $('.presentation-explanation').dataset.mode = frame.format || 'explain';
@@ -233,11 +232,11 @@
       const heading = document.createElement('h2');
       heading.textContent = `${index + 1}. ${frame.title}`;
       page.append(heading);
+      const context = document.createElement('p');
+      context.className = 'presentation-print-prompt';
+      context.textContent = frame.context;
+      page.append(context);
       if (frame.kind === 'scene') {
-        const prompt = document.createElement('p');
-        prompt.className = 'presentation-print-prompt';
-        prompt.textContent = frame.prompt || sectionFor(frame).querySelector('h3')?.textContent.trim() || '';
-        page.append(prompt);
         const content = cleanCopy(sectionFor(frame));
         const visual = config.partClass === 'c2-part'
           ? '.c2-outcome-grid, .c2-choice-stages, .c2-role-labels, .c2-assignments, .c2-team-arrow, .c2-one-team, .c2-compare-cards, .c2-paths, .c2-contributions, .c2-figure, .bayes-tree-card, .c2-brief'
