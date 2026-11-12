@@ -3,7 +3,7 @@
   const source = document.querySelector('[data-presentation-config]');
   if (!source || !HTMLDialogElement.prototype.showModal) return;
   const config = JSON.parse(source.textContent);
-  const frames = config.slides.map((slide, index) => ({...slide, index, id: `${slide.part}--${slide.kind}`}));
+  const frames = config.slides.map((slide, index) => ({...slide, index, id: slide.id || `${slide.part}--${slide.kind}`}));
   const parts = new Map([...document.querySelectorAll(`.${config.partClass}`)].map(part => [part.id, part]));
   if (frames.some(frame => !parts.has(frame.part))) return;
   const launchAt = document.querySelector(`.${config.controlsClass}`);
@@ -77,12 +77,18 @@
     copy.querySelectorAll('button,input,select,textarea,script,template,.interactive-only').forEach(element => element.remove());
     return copy;
   }
-  function fillNotes(part) {
+  function fillNotes(part, frame) {
     const notes = $('.presentation-notes');
     notes.replaceChildren();
     const heading = document.createElement('h3');
     heading.textContent = 'Teaching notes';
     notes.append(heading);
+    if (frame.format === 'question') {
+      const guidance = document.createElement('p');
+      guidance.textContent = frame.notes || 'Invite a prediction, then advance to discuss the visual and calculation.';
+      notes.append(guidance);
+      return;
+    }
     const intro = part.querySelector(`:scope > .${config.partClass === 'c2-part' ? 'c2' : 'c7'}-part-heading > p`);
     if (intro) notes.append(cleanCopy(intro));
     for (const lesson of part.querySelectorAll(':scope > details.lesson')) {
@@ -124,8 +130,8 @@
       part.removeAttribute('aria-labelledby');
       part.classList.add('presentation-part');
       $('.presentation-stage').append(part);
-      fillNotes(part);
     }
+    fillNotes(part, frame);
     part.dataset.presentationKind = frame.kind;
     if (!sectionFor(frame)) throw Error(`Presentation source missing: ${frame.id}`);
     $('.presentation-title').textContent = frame.title;
@@ -135,6 +141,7 @@
     $('.presentation-prompt').hidden = !isScene;
     $('.presentation-line').textContent = frame.line || '';
     $('.presentation-line').hidden = !frame.line;
+    $('.presentation-explanation').dataset.mode = frame.format || 'explain';
     $('.presentation-points').replaceChildren(...(frame.points || []).map(point => {
       const item = document.createElement('li');
       item.textContent = point;

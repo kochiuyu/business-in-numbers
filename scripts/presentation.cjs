@@ -9,8 +9,8 @@ function addPresentations(dist, src) {
     let html = fs.readFileSync(file, 'utf8');
     const seen = new Set();
     for (const slide of config.slides) {
-      const id = `${slide.part}--${slide.kind}`;
-      if (seen.has(id) || !slide.title || slide.title.length > 95) throw Error(`Invalid slide: ${id}`);
+      const id = slide.id || `${slide.part}--${slide.kind}`;
+      if (!/^[a-z0-9-]+$/.test(id) || seen.has(id) || !slide.title || slide.title.length > 95) throw Error(`Invalid slide: ${id}`);
       if (slide.kind !== 'scene' && (!slide.line || !Array.isArray(slide.points) || slide.points.length !== 2)) throw Error(`Missing teaching content: ${id}`);
       seen.add(id);
       const marker = `id="${slide.part}"`;
