@@ -17,7 +17,7 @@
   const dialog = document.createElement('dialog');
   dialog.id = 'lesson-presentation';
   dialog.setAttribute('aria-label', 'Lesson presentation');
-  dialog.innerHTML = `<div class="presentation-toolbar"><label for="presentation-chooser">Slide</label><select id="presentation-chooser" aria-label="Choose slide"></select><span class="presentation-counter" aria-live="polite"></span><button type="button" data-presentation-close>Close</button></div><div class="presentation-layout"><div class="presentation-main"><p class="presentation-phase"></p><h2 class="presentation-title" tabindex="-1"></h2><div class="presentation-stage"></div></div><aside class="presentation-notes" aria-label="Teaching notes" hidden></aside></div><div class="presentation-controls"><div><button type="button" data-presentation-prev>Previous</button><button type="button" data-presentation-next>Next</button></div><div><button type="button" data-presentation-notes aria-pressed="false">Notes</button><button type="button" data-presentation-read>Read this section</button><button type="button" data-presentation-print>Print slides</button><button type="button" data-presentation-fullscreen>Full screen</button></div></div>`;
+  dialog.innerHTML = `<div class="presentation-toolbar"><label for="presentation-chooser">Slide</label><select id="presentation-chooser" aria-label="Choose slide"></select><span class="presentation-counter" aria-live="polite"></span><button type="button" data-presentation-close>Close</button></div><div class="presentation-layout"><div class="presentation-main"><p class="presentation-phase"></p><h2 class="presentation-title" tabindex="-1"></h2><p class="presentation-prompt"></p><div class="presentation-explanation"><p class="presentation-line"></p><ul class="presentation-points"></ul></div><div class="presentation-stage"></div></div><aside class="presentation-notes" aria-label="Teaching notes" hidden></aside></div><div class="presentation-controls"><div><button type="button" data-presentation-prev>Previous</button><button type="button" data-presentation-next>Next</button></div><div><button type="button" data-presentation-notes aria-pressed="false">Notes</button><button type="button" data-presentation-read>Read this section</button><button type="button" data-presentation-print>Print slides</button><button type="button" data-presentation-fullscreen>Full screen</button></div></div>`;
   document.body.append(dialog);
   const $ = selector => dialog.querySelector(selector);
   const chooser = $('#presentation-chooser');
@@ -102,6 +102,18 @@
     if (!sectionFor(frame)) throw Error(`Presentation source missing: ${frame.id}`);
     $('.presentation-title').textContent = frame.title;
     $('.presentation-phase').textContent = `Class ${config.partClass === 'c2-part' ? '2' : '7'} · ${part.querySelector('h2')?.textContent.trim() || 'Lesson'}`;
+    const isScene = frame.kind === 'scene';
+    $('.presentation-prompt').textContent = isScene ? (frame.prompt || sectionFor(frame).querySelector('h3')?.textContent.trim() || '') : '';
+    $('.presentation-prompt').hidden = !isScene;
+    $('.presentation-line').textContent = frame.line || '';
+    $('.presentation-line').hidden = !frame.line;
+    $('.presentation-points').replaceChildren(...(frame.points || []).map(point => {
+      const item = document.createElement('li');
+      item.textContent = point;
+      return item;
+    }));
+    $('.presentation-explanation').hidden = isScene;
+    $('.presentation-stage').hidden = !isScene;
     $('.presentation-counter').textContent = `${current + 1} / ${frames.length}`;
     chooser.value = frame.id;
     $('[data-presentation-prev]').disabled = current === 0;
@@ -177,12 +189,38 @@
     deck.id = 'printed-slides';
     frames.forEach((frame, index) => {
       const page = document.createElement('section');
+      page.className = 'presentation-print-page';
       const heading = document.createElement('h2');
       heading.textContent = `${index + 1}. ${frame.title}`;
-      const content = cleanCopy(sectionFor(frame));
-      if (config.partClass === 'c2-part') content.classList.add(frame.kind === 'reason' ? 'presentation-print-reason' : 'presentation-print-scene');
-      if (frame.part === 'prob-step-5') content.classList.add('presentation-print-bayes');
-      page.append(heading, content);
+      page.append(heading);
+      if (frame.kind === 'scene') {
+        const prompt = document.createElement('p');
+        prompt.className = 'presentation-print-prompt';
+        prompt.textContent = frame.prompt || sectionFor(frame).querySelector('h3')?.textContent.trim() || '';
+        page.append(prompt);
+        const content = cleanCopy(sectionFor(frame));
+        const visual = config.partClass === 'c2-part'
+          ? '.c2-outcome-grid, .c2-choice-stages, .c2-role-labels, .c2-assignments, .c2-team-arrow, .c2-one-team, .c2-compare-cards, .c2-paths, .c2-contributions, .c2-figure, .bayes-tree-card, .c2-brief'
+          : '.c7-result';
+        for (const child of [...content.children]) if (!child.matches(visual)) child.remove();
+        if (config.partClass === 'c7-part') {
+          const result = content.querySelector('.c7-result');
+          for (const child of [...(result?.children || [])].slice(frame.part === 'anova-step-11' ? 2 : 1)) child.remove();
+        }
+        page.append(content);
+      } else {
+        const line = document.createElement('p');
+        line.className = 'presentation-print-line';
+        line.textContent = frame.line;
+        const points = document.createElement('ul');
+        points.className = 'presentation-print-points';
+        for (const text of frame.points) {
+          const point = document.createElement('li');
+          point.textContent = text;
+          points.append(point);
+        }
+        page.append(line, points);
+      }
       deck.append(page);
     });
     document.body.append(deck);
