@@ -17,7 +17,7 @@
   const dialog = document.createElement('dialog');
   dialog.id = 'lesson-presentation';
   dialog.setAttribute('aria-label', 'Lesson presentation');
-  dialog.innerHTML = `<div class="presentation-toolbar"><label for="presentation-chooser">Slide</label><select id="presentation-chooser" aria-label="Choose slide"></select><span class="presentation-counter" aria-live="polite"></span><button type="button" data-presentation-close>Close</button></div><div class="presentation-layout"><div class="presentation-main"><p class="presentation-phase"></p><h2 class="presentation-title" tabindex="-1"></h2><p class="presentation-prompt"></p><div class="presentation-explanation"><p class="presentation-line"></p><ul class="presentation-points"></ul></div><div class="presentation-stage"></div></div><aside class="presentation-notes" aria-label="Teaching notes" hidden></aside></div><div class="presentation-controls"><div><button type="button" data-presentation-prev>Previous</button><button type="button" data-presentation-next>Next</button></div><div><button type="button" data-presentation-notes aria-pressed="false">Notes</button><button type="button" data-presentation-read>Read this section</button><button type="button" data-presentation-print>Print slides</button><button type="button" data-presentation-fullscreen>Full screen</button></div></div>`;
+  dialog.innerHTML = `<div class="presentation-toolbar"><label for="presentation-chooser">Slide</label><select id="presentation-chooser" aria-label="Choose slide"></select><span class="presentation-counter" aria-live="polite"></span><button type="button" data-presentation-close>Close</button></div><div class="presentation-layout"><div class="presentation-main"><p class="presentation-phase"></p><h2 class="presentation-title" tabindex="-1"></h2><p class="presentation-prompt"></p><div class="presentation-explanation"><p class="presentation-line"></p><ul class="presentation-points"></ul></div><div class="presentation-stage"></div></div><aside class="presentation-notes" aria-label="Teaching notes" hidden></aside></div><div class="presentation-controls"><div><button type="button" data-presentation-prev>Previous</button><button type="button" data-presentation-next>Next</button></div><details class="presentation-more"><summary>More options</summary><div><button type="button" data-presentation-notes aria-pressed="false">Notes</button><button type="button" data-presentation-read>Read this section</button><button type="button" data-presentation-print>Print slides</button><button type="button" data-presentation-fullscreen>Full screen</button></div></details></div>`;
   document.body.append(dialog);
   const $ = selector => dialog.querySelector(selector);
   const chooser = $('#presentation-chooser');
@@ -32,6 +32,34 @@
   let activePart = null;
   let notesOpen = false;
   let ownsFullscreen = false;
+  const main = $('.presentation-main');
+  const stage = $('.presentation-stage');
+  const more = $('.presentation-more');
+  let compactControls = innerWidth <= 600;
+  more.open = !compactControls;
+  more.addEventListener('click', event => {
+    if (compactControls && event.target.closest('button')) more.open = false;
+  });
+  function fitScene() {
+    stage.style.zoom = '';
+    if (stage.hidden || innerWidth > 600 || notesOpen) return;
+    // Preserve readable controls and text on short screens; scrolling remains
+    // available when a visual cannot fit at the minimum readable scale.
+    for (let scale = 1; scale >= .7; scale -= .05) {
+      stage.style.zoom = scale.toFixed(2);
+      if (main.scrollHeight <= main.clientHeight &&
+          stage.getBoundingClientRect().bottom <= main.getBoundingClientRect().bottom - 5) return;
+    }
+    stage.style.zoom = '.7';
+  }
+  window.addEventListener('resize', () => {
+    const compact = innerWidth <= 600;
+    if (compact !== compactControls) {
+      compactControls = compact;
+      more.open = !compact;
+    }
+    fitScene();
+  });
 
   function sectionFor(frame) {
     const part = parts.get(frame.part);
@@ -118,7 +146,8 @@
     chooser.value = frame.id;
     $('[data-presentation-prev]').disabled = current === 0;
     $('[data-presentation-next]').disabled = current === frames.length - 1;
-    $('.presentation-main').scrollTop = 0;
+    main.scrollTop = 0;
+    fitScene();
     address(frame);
     $('.presentation-title').focus({preventScroll: true});
   }
@@ -158,6 +187,7 @@
     notesOpen = !notesOpen;
     $('.presentation-notes').hidden = !notesOpen;
     event.currentTarget.setAttribute('aria-pressed', String(notesOpen));
+    fitScene();
   });
   $('[data-presentation-fullscreen]').addEventListener('click', async () => {
     try {
@@ -176,6 +206,9 @@
     if (part) render(firstSlideFor(part.id));
     else close(link.hash.slice(1));
   });
+  for (const type of ['click', 'change', 'input']) {
+    stage.addEventListener(type, () => requestAnimationFrame(fitScene));
+  }
   dialog.addEventListener('keydown', event => {
     if (event.ctrlKey || event.altKey || event.metaKey || event.target.closest('button,select,input,textarea,summary,a')) return;
     if (['ArrowRight', 'PageDown'].includes(event.key)) { event.preventDefault(); render(current + 1); }

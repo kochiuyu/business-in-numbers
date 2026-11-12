@@ -10,6 +10,9 @@
 .presentation-toolbar { border-bottom: 1px solid #b9c9b4; }
 .presentation-controls { justify-content: space-between; flex-wrap: wrap; border-top: 1px solid #b9c9b4; }
 .presentation-controls > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.presentation-more { display: contents; }
+.presentation-more > summary { display: none; }
+.presentation-more > div { display: flex; flex-wrap: wrap; gap: 8px; }
 .presentation-toolbar button, .presentation-controls button { border: 1px solid #829f8c; border-radius: 5px; background: #fffef9; color: #173f36; padding: 8px 12px; font: 700 14px/1.4 Arial, sans-serif; cursor: pointer; }
 .presentation-controls button:disabled { opacity: .45; cursor: default; }
 .presentation-controls button[aria-pressed="true"] { background: #176148; border-color: #176148; color: #fff; }
@@ -102,6 +105,26 @@
   .presentation-explanation { min-height: 0; margin: 12px 0; }
   .presentation-line { font-size: 24px; padding: 12px 15px; margin-bottom: 16px; overflow-wrap: anywhere; }
   .presentation-points { font-size: 18px; gap: 10px; }
+}
+@media (max-width: 600px) {
+  #lesson-presentation .presentation-toolbar { flex-wrap: nowrap; gap: 6px; padding: 4px 8px; }
+  #presentation-chooser { min-width: 0; width: 0; }
+  .presentation-counter { font-size: 12px; }
+  #lesson-presentation .presentation-controls { position: relative; flex-wrap: nowrap; gap: 8px; padding: 4px 8px; }
+  #lesson-presentation .presentation-controls > div { flex-wrap: nowrap; }
+  #lesson-presentation :is(.presentation-toolbar, .presentation-controls) button,
+  .presentation-more > summary { min-height: 40px; padding: 7px 9px; }
+  .presentation-more { display: block; margin-left: auto; }
+  .presentation-more > summary { display: flex; align-items: center; border: 1px solid #829f8c; border-radius: 5px; background: #fffef9; color: #173f36; font: 700 12px/1.4 Arial, sans-serif; cursor: pointer; list-style: none; }
+  .presentation-more > summary::-webkit-details-marker { display: none; }
+  .presentation-more > div { display: none; }
+  .presentation-more[open] > div { position: absolute; bottom: calc(100% + 4px); right: 8px; z-index: 2; display: grid; gap: 6px; min-width: 170px; padding: 8px; border: 1px solid #829f8c; border-radius: 5px; background: #eaf0e5; box-shadow: 0 4px 16px #173f3633; }
+  #lesson-presentation .presentation-layout { padding: 8px 12px; }
+  #lesson-presentation .presentation-title { font-size: clamp(24px, 6vw, 30px); margin-bottom: 7px; }
+  .presentation-prompt { font-size: 16px; margin-bottom: 8px; }
+  .presentation-phase { font-size: 11px; }
+  .presentation-line { font-size: 21px; }
+  .presentation-points { font-size: 17px; }
 }
 @media print {
   @page { size: A4 landscape; margin: 12mm; }
