@@ -129,7 +129,7 @@
     part.dataset.presentationKind = frame.kind;
     if (!sectionFor(frame)) throw Error(`Presentation source missing: ${frame.id}`);
     $('.presentation-title').textContent = frame.title;
-    $('.presentation-phase').textContent = `Class ${config.partClass === 'c2-part' ? '2' : '7'} Â· ${part.querySelector('h2')?.textContent.trim() || 'Lesson'}`;
+    $('.presentation-phase').textContent = `Class ${config.partClass === 'c2-part' ? '2' : '7'} · ${part.querySelector('h2')?.textContent.trim() || 'Lesson'}`;
     const isScene = frame.kind === 'scene';
     $('.presentation-prompt').textContent = isScene ? (frame.prompt || sectionFor(frame).querySelector('h3')?.textContent.trim() || '') : '';
     $('.presentation-prompt').hidden = !isScene;
