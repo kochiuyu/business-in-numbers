@@ -6,10 +6,11 @@ const {renderLine} = require('./presentation-math.cjs');
 function addPresentations(dist, src) {
   const manifest = {
     ...JSON.parse(fs.readFileSync(path.join(src, 'presentation-content.json'), 'utf8')),
-    ...JSON.parse(fs.readFileSync(path.join(src, 'presentation-foundations.json'), 'utf8'))
+    ...JSON.parse(fs.readFileSync(path.join(src, 'presentation-foundations.json'), 'utf8')),
+    ...require('./presentation-later.cjs').presentations()
   };
-  const framing = JSON.parse(fs.readFileSync(path.join(src, 'presentation-framing.json'), 'utf8'));
-  const math = JSON.parse(fs.readFileSync(path.join(src, 'presentation-math.json'), 'utf8'));
+  const framing = {...JSON.parse(fs.readFileSync(path.join(src, 'presentation-framing.json'), 'utf8')),...require('./presentation-later.cjs').framing};
+  const math = {...JSON.parse(fs.readFileSync(path.join(src, 'presentation-math.json'), 'utf8')),...require('./presentation-later.cjs').math};
   const usedMath = new Set();
   for (const page of Object.keys(framing)) if (!manifest[page]) throw Error(`Framing has no presentation: ${page}`);
   for (const [page, config] of Object.entries(manifest)) {

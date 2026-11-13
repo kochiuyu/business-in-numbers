@@ -27,6 +27,10 @@
 .presentation-stage { min-width: 0; }
 .presentation-part { max-width: none !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: transparent !important; content-visibility: visible !important; contain-intrinsic-size: none !important; }
 .presentation-part > * { display: none !important; }
+.presentation-part[data-presentation-kind="scene"] > [id^="c4-core"], .presentation-part[data-presentation-kind="scene"] > .c5-scene { display: block !important; margin: 0 !important; max-width: none !important; }
+.presentation-part[data-presentation-kind="scene"] [id^="c4-core"] > :not(.c4-scene) { display: none !important; }
+.presentation-part[data-presentation-kind="scene"] :is(.c4-scene,.c5-scene) > :not(:is(.c4-visual-controls,.c4-result,.c4-core-scroll,.c5-visual-controls,.c5-result)) { display: none !important; }
+.presentation-part[data-presentation-kind="scene"] :is(.c4-scene,.c5-scene) { border: 0 !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; }
 .presentation-part[data-presentation-kind="scene"] > :is(.c2-scene, .c7-scene), .presentation-part[data-presentation-kind="reason"] > .c2-scene, .presentation-part[data-presentation-kind="core"] > .c7-core { display: block !important; margin: 0 !important; max-width: none !important; }
 .presentation-part[data-presentation-kind="scene"] > .c2-scene > :is(.reading-prediction, .reading-core, .c2-worked-core, .c2-check, .c2-takeaway) { display: none !important; }
 .presentation-part[data-presentation-kind="reason"] > .c2-scene > * { display: none !important; }
@@ -101,6 +105,24 @@
 #lesson-presentation .presentation-part :is(.c2-scene, .c7-scene) :is(svg,img) { max-height: 40vh; object-fit: contain; }
 #lesson-presentation #prob-step-7[data-presentation-kind="scene"] :is(.c2-role-labels, .c2-assignments, .c2-team-arrow, .c2-one-team) { zoom: .78; }
 #lesson-presentation .presentation-part :is(.c2-scene, .c7-scene) :is(p,li) { font-size: clamp(16px, 1.5vw, 22px); line-height: 1.3; }
+@media (max-width: 600px) {
+  #lesson-presentation #sampling-student[data-presentation-kind="scene"] .c4-result > :is(.c4-calculation,.c4-small),
+  #lesson-presentation #sampling-count-event[data-presentation-kind="scene"] .c4-result > :is(.c4-visit-flow,.c4-small),
+  #lesson-presentation #sampling-step-2[data-presentation-kind="scene"] .c4-result > :is(.c4-pair-key,.c4-caption) { display: none !important; }
+  #lesson-presentation #sampling-step-5[data-presentation-kind="scene"] .c4-figure figcaption,
+  #lesson-presentation #sampling-step-4[data-presentation-kind="scene"] .c4-figure figcaption,
+  #lesson-presentation #sampling-step-3[data-presentation-kind="scene"] .c4-figure figcaption,
+  #lesson-presentation #estimation-consistency[data-presentation-kind="scene"] .c5-figure figcaption,
+  #lesson-presentation #estimation-step-9[data-presentation-kind="scene"] .c5-caption,
+  #lesson-presentation #estimation-rate-plan[data-presentation-kind="scene"] .c5-caption,
+  #lesson-presentation #estimation-step-1[data-presentation-kind="scene"] :is(.c5-order-cards,.c5-caption),
+  #lesson-presentation #estimation-step-5[data-presentation-kind="scene"] .c5-recipe,
+  #lesson-presentation #estimation-rate-error[data-presentation-kind="scene"] :is(.c5-visit-flow,.c5-small,.c5-caption),
+  #lesson-presentation #estimation-step-10[data-presentation-kind="scene"] .c5-budget-card,
+  #lesson-presentation #estimation-step-7[data-presentation-kind="scene"] .c5-sd-choice,
+  #lesson-presentation #estimation-step-3[data-presentation-kind="scene"] :is(.c5-order-cards,.c5-caption),
+  #lesson-presentation #estimation-step-8[data-presentation-kind="scene"] .c5-rule-card { display: none !important; }
+}
 #printed-slides { display: none; }
 @media (max-width: 800px) {
   .presentation-toolbar { flex-wrap: wrap; padding: 8px 12px; }

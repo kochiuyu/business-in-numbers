@@ -26,7 +26,7 @@ function texFromPlain(line) {
   tex = tex.replace(/⅔/g,'\\frac{2}{3}').replace(/⅓/g,'\\frac{1}{3}');
   tex = tex.replace(/(?<!\\)\$/g,'\\$').replace(/%/g,'\\%');
   tex = tex.replace(/\|/g,'\\mid ').replace(/;/g,'\\;;\\quad ');
-  tex = tex.replace(/\\sqrt\[([^\]]*)\]/g,'\\sqrt{$1}').replace(/\\sqrt\(([^()]*)\)/g,'\\sqrt{$1}').replace(/\\sqrt(\d+(?:\.\d+)?)/g,'\\sqrt{$1}');
+  tex = tex.replace(/\\sqrt\[([^\]]*)\]/g,'\\sqrt{$1}').replace(/\\sqrt\(([^()]*)\)/g,'\\sqrt{$1}').replace(/\\sqrt(\d+(?:\.\d+)?|[a-z])/g,'\\sqrt{$1}');
   return tex;
 }
 
@@ -57,7 +57,8 @@ function splitLine(line) {
 
 function renderLine(slide, id) {
   if (!slide.line || slide.format === 'question') return;
-  if (!/[=≤≥≈≠∼∩∪×÷Σ√Φχμ±]/.test(slide.line)) return;
+  if (id.endsWith('-decide') && !slide.lineTex) return;
+  if (!slide.lineTex && !/[=≤≥≈≠∼∩∪×÷Σ√Φχμ±]/.test(slide.line)) return;
   if (!slide.lineTex && /≠/.test(slide.line) && !/[=≤≥≈]/.test(slide.line)) return;
   const rows = slide.lineTex ? (Array.isArray(slide.lineTex) ? slide.lineTex : [slide.lineTex]).map(tex=>({tex}))
     : splitLine(slide.line).map(text=>({tex:/[=≤≥≈≠∼∩∪×÷Σ√Φχμ±]|\d\s*\/\s*\d/.test(text)?texFromPlain(text):null,text}));
