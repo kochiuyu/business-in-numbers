@@ -22,10 +22,10 @@
         "phase": "Preview",
         "title": "Four moves take us from rows to a briefing",
         "context": "The fourteen teaching steps build one decision brief; the calculations serve that final task.",
-        "line": "1. Check the row and units. 2. Display the pattern.",
+        "line": "The route is from raw records to a qualified business claim.",
         "points": [
-          "3. Compare center, spread, shape and paired association.",
-          "4. State what the records support, what to check and what to test next."
+          "First check the rows and units, display the pattern, then compare center, spread and shape.",
+          "Next read paired association and brief the manager on evidence, a next check and a limit."
         ],
         "notes": "The first three steps establish what was measured and how to show it. Later steps explain center, variability and relationships. The final step brings the separate findings into a manager briefing."
       },
@@ -36,7 +36,7 @@
         "phase": "Learning objectives",
         "title": "By the end, make three defensible claims",
         "context": "Use the purchase, supplier and branch records to answer the manager's three questions.",
-        "line": "Choose and interpret a summary that fits each question.",
+        "line": "Your final product is an evidence-limited brief for three decisions.",
         "points": [
           "Calculate and explain center, spread, shape and correlation in their original units.",
           "Separate description from prediction or causation, then propose a next check."
@@ -52,10 +52,10 @@
         "phase": "Takeaways",
         "title": "Each of the three results needs a different caution",
         "context": "In the fixed synthetic files, the ordinary basket, supplier reliability and advertising question do not have the same answer type.",
-        "line": "Purchases: median $31; mean $45 after one $200 order.",
+        "line": "Describe the typical value, the risk and the relationship separately.",
         "points": [
-          "Both suppliers average five days, but A has no observed delivery beyond six days; B has two of five.",
-          "Across five branches, r is about 0.52: positive association is not an ad return."
+          "For purchases, median $31 describes the middle of the values while mean $45 includes the $200 order; suppliers tie at five days on average but differ in late counts (A 0/5, B 2/5).",
+          "Across five branches, r is about 0.52: positive association is not a measured ad return."
         ],
         "notes": "The median describes the middle recorded purchase while the mean preserves the effect of the $200 order on total revenue. The supplier result is based on five deliveries each, and comparability still needs checking. The branch correlation is descriptive, not causal."
       },
@@ -98,7 +98,7 @@
         "phase": "Preview",
         "title": "Follow one alert from cases to action",
         "context": "The course moves from a complete outcome list to a conditional chance and then a decision.",
-        "line": "Outcomes and rules → conditioning and base rates.",
+        "line": "We move from possible cases to a justified review choice.",
         "points": [
           "Use tables, counting and trees to keep events and denominators visible.",
           "Use Bayes' rule and explicit costs to decide when review is worthwhile."
@@ -112,7 +112,7 @@
         "phase": "Learning objectives",
         "title": "By the end, answer the right conditional question",
         "context": "The review decision requires P(issue given alert), not P(alert given issue).",
-        "line": "Name the event and denominator before using a formula.",
+        "line": "An answer is useful when it names the chance and supports an action.",
         "points": [
           "Calculate and check conditional probabilities with counts, rules or a tree.",
           "Compare the updated risk with a stated cost threshold, then test its assumptions."
@@ -174,7 +174,7 @@
         "phase": "Preview",
         "title": "Build the model, then make a capacity decision",
         "context": "The fifteen steps move from a rule for naming an outcome to a cost comparison.",
-        "line": "Variable → distribution → event, mean and spread.",
+        "line": "We map outcomes to chances, then use risk and cost to choose capacity.",
         "points": [
           "Choose count or continuous models from the mechanism and assumptions.",
           "Use a tail probability and expected excess to compare delay with extra capacity."
@@ -188,7 +188,7 @@
         "phase": "Learning objectives",
         "title": "By the end, choose and use a probability model",
         "context": "A model is useful only when its possible values, probabilities and assumptions match the business question.",
-        "line": "State the quantity, its support and its assumptions.",
+        "line": "A useful model connects possible outcomes to a decision in the right units.",
         "points": [
           "Compute event chances, expectation and spread from a PMF, CDF or density.",
           "Translate tails and expected costs back into orders, time or money."
@@ -236,10 +236,10 @@
         "phase": "Introduction",
         "title": "Class 7: compare groups without losing the design",
         "context": "Separate synthetic examples compare packing processes and examine whether a retailer's offer effect changes between weekdays and weekends.",
-        "line": "One-way: which process means differ? Two-way: does the offer effect depend on day type?",
+        "line": "Group differences need a noise baseline and a sound study design.",
         "points": [
-          "ANOVA compares variation among group means with variation within groups.",
-          "An interaction can make one overall recommendation misleading."
+          "One-way ANOVA asks whether process means differ beyond within-process variation.",
+          "Two-way ANOVA asks whether the offer effect changes with day type."
         ],
         "notes": "The packing and retailer examples are different datasets. In each, first name the independent observation, response and factor assignments. A small p-value alone cannot tell the business what to do."
       },
@@ -250,7 +250,7 @@
         "phase": "Preview",
         "title": "Move from study design to recommendation",
         "context": "The lesson starts with independent units, builds the F ratio and then adds a second factor.",
-        "line": "Design → between/within variation → F test.",
+        "line": "Design → variation → interaction → decision.",
         "points": [
           "Compare group means, check assumptions and identify contrasts worth investigating.",
           "Read an interaction before translating spending differences into a policy."
@@ -264,7 +264,7 @@
         "phase": "Learning objectives",
         "title": "By the end, audit and interpret an ANOVA",
         "context": "A correct calculation must correspond to the study design and the business response being measured.",
-        "line": "Name the unit, factors, response and error term.",
+        "line": "A correct ANOVA answer links its F result to the study and the business.",
         "points": [
           "Build and interpret an F ratio; explain what a global test and an interaction do and do not say.",
           "Separate statistical evidence from effect size, uncertainty and practical value."
@@ -280,10 +280,10 @@
         "phase": "Takeaways",
         "title": "An F result does not choose a profitable policy",
         "context": "The separate packing and retailer examples lead to different questions, despite both using ANOVA.",
-        "line": "Packing: one-way F = 18.5. Retailer: interaction F = 12.",
+        "line": "Statistical differences are evidence, not a finished policy.",
         "points": [
-          "A global F signals a group-mean difference; it does not identify the best practical option.",
-          "The sample Bundle spending lift is $4 on weekdays and $12 on weekends; profit needs more data."
+          "Packing: F = 18.5 challenges equal process means, but does not identify useful savings.",
+          "Retailer: interaction F = 12; Bundle lifts sample spending by $4 on weekdays and $12 on weekends, but profit needs more data."
         ],
         "notes": "The F statistics belong to two distinct synthetic datasets. The weekday and weekend figures are sample spending differences, not profit gains or guaranteed future effects."
       },
