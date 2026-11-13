@@ -46,6 +46,7 @@
 #lesson-presentation #hypothesis-step-9[data-presentation-kind="scene"] :is(.c6-rule-card,.c6-pair-list > :nth-child(n+3)) { display: none !important; }
 #lesson-presentation :is(#hypothesis-step-10,#hypothesis-step-6,#hypothesis-step-3)[data-presentation-kind="scene"] .c6-rule-card { display: none !important; }
 #lesson-presentation #regression-step-13[data-presentation-kind="scene"] .c8-figure svg { max-height: 30vh; }
+#lesson-presentation #regression-step-6[data-presentation-kind="scene"] .c8-visual-controls { margin-top: 10px !important; }
 .presentation-part[data-presentation-kind="scene"] > :is(.c2-scene, .c7-scene), .presentation-part[data-presentation-kind="reason"] > .c2-scene, .presentation-part[data-presentation-kind="core"] > .c7-core { display: block !important; margin: 0 !important; max-width: none !important; }
 .presentation-part[data-presentation-kind="scene"] > .c2-scene > :is(.reading-prediction, .reading-core, .c2-worked-core, .c2-check, .c2-takeaway) { display: none !important; }
 .presentation-part[data-presentation-kind="reason"] > .c2-scene > * { display: none !important; }
