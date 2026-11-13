@@ -24,8 +24,10 @@
         "context": "The fourteen teaching steps build one decision brief; the calculations serve that final task.",
         "line": "The route is from raw records to a qualified business claim.",
         "points": [
-          "First check the rows and units, display the pattern, then compare center, spread and shape.",
-          "Next read paired association and brief the manager on evidence, a next check and a limit."
+          "Check what each row and unit represents.",
+          "Display the pattern in a suitable table or chart.",
+          "Compare center, spread, shape and paired association.",
+          "Brief the manager: evidence, next check and limit."
         ],
         "notes": "The first three steps establish what was measured and how to show it. Later steps explain center, variability and relationships. The final step brings the separate findings into a manager briefing."
       },
@@ -100,8 +102,10 @@
         "context": "The course moves from a complete outcome list to a conditional chance and then a decision.",
         "line": "We move from possible cases to a justified review choice.",
         "points": [
-          "Use tables, counting and trees to keep events and denominators visible.",
-          "Use Bayes' rule and explicit costs to decide when review is worthwhile."
+          "Define the possible outcomes and events.",
+          "Choose the denominator named by the condition.",
+          "Update the issue chance using the base rate.",
+          "Compare review costs with expected loss."
         ],
         "notes": "The examples are synthetic. At every stage, name the event, the population or conditioning group, and the assumptions behind the probability model."
       },
@@ -176,8 +180,10 @@
         "context": "The fifteen steps move from a rule for naming an outcome to a cost comparison.",
         "line": "We map outcomes to chances, then use risk and cost to choose capacity.",
         "points": [
-          "Choose count or continuous models from the mechanism and assumptions.",
-          "Use a tail probability and expected excess to compare delay with extra capacity."
+          "Define a number for each possible outcome.",
+          "Assign chances using a defensible model.",
+          "Calculate expected demand and overload risk.",
+          "Compare delay cost with extra capacity cost."
         ],
         "notes": "The 0–3-order pickup model is the running capacity case. The trial, arrival, waiting-time and filling models are separate synthetic examples that show how model choice depends on the process."
       },
@@ -252,8 +258,10 @@
         "context": "The lesson starts with independent units, builds the F ratio and then adds a second factor.",
         "line": "Design → variation → interaction → decision.",
         "points": [
-          "Compare group means, check assumptions and identify contrasts worth investigating.",
-          "Read an interaction before translating spending differences into a policy."
+          "Identify independent units and comparison groups.",
+          "Separate group differences from within-group noise.",
+          "Check assumptions and interpret interactions.",
+          "Translate spending differences into a policy question."
         ],
         "notes": "One-way ANOVA addresses a global group-mean question. Two-way ANOVA separates two main effects and their interaction. The closing decision also needs margins, offer costs and the future mix of days."
       },
