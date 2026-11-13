@@ -28,6 +28,8 @@ Classes 1, 2, 3 and 7 have a **Present lesson** button beside their step control
 
 Use Previous/Next, the slide menu, Left/Right or Page Up/Down, and Home/End. Notes displays framing guidance or the corresponding reading explanation on the same screen. **Read this section** returns to the current lesson step. A direct link such as `probability.html?present=1&slide=c2-introduction` opens a specific slide; the lesson remains fully readable without JavaScript. Print slides produces a landscape slide handout. Classes 4–6 and 8 retain their current reading paths.
 
+Slide equations are typeset at build time with the same bundled KaTeX and MathML as the reading lessons. Long calculations are divided into readable rows on narrow screens; `src/presentation-math.json` records the formulas that need exact notation or deliberate line breaks. The original plain-language line remains in the slide source.
+
 One possible 6½-hour schedule is four 85-minute teaching blocks, three 10-minute breaks and a 20-minute final review. Pause at natural topic changes, use the prediction and transfer slides for discussion, and allow more time for the interactive visuals and worked calculations. The deck has no autoplay timer.
 
 The shared header in `scripts/navigation.cjs` separates the eight-class course menu from in-page lesson shortcuts. The Business in Numbers brand returns to the course home; Browse classes also keeps an explicit Course introduction link, without a duplicate Start here link in the top row. It marks the current class and follows the section being read. All menu links and the native disclosure work without JavaScript; JavaScript adds Escape/outside-click dismissal, keyboard focus handling, and section highlighting.

@@ -167,7 +167,8 @@
     $('.presentation-phase').textContent = `Class ${classNumber} · ${frame.phase || part.querySelector('h2')?.textContent.trim() || 'Lesson'}`;
     const isScene = frame.kind === 'scene';
     $('.presentation-prompt').textContent = frame.context;
-    $('.presentation-line').textContent = frame.line || '';
+    if (frame.lineHtml) $('.presentation-line').innerHTML = frame.lineHtml;
+    else $('.presentation-line').textContent = frame.line || '';
     $('.presentation-line').hidden = !frame.line;
     $('.presentation-explanation').dataset.mode = frame.format || 'explain';
     $('.presentation-points').replaceChildren(...(frame.points || []).map(point => {
@@ -284,7 +285,8 @@
       } else {
         const line = document.createElement('p');
         line.className = 'presentation-print-line';
-        line.textContent = frame.line;
+        if (frame.lineHtml) line.innerHTML = frame.lineHtml;
+        else line.textContent = frame.line;
         const points = document.createElement('ul');
         points.className = 'presentation-print-points';
         for (const text of frame.points) {
