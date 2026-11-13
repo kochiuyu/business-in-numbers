@@ -28,7 +28,7 @@ check(!unsafe.includes('<a '),'Untrusted TeX must not create links');
 throws(()=>renderMath('unsafe-html',{title:'Unsafe',text:'No raw HTML',tex:'\\htmlStyle{color:red}{x}'}));
 const html=fs.readFileSync('dist/descriptive-statistics.html','utf8');
 const standalone=fs.readFileSync('class1-standalone.html','utf8');
-equal((html.match(/<math xmlns=/g)||[]).length,Object.keys(lesson).length);
+equal((html.match(/data-math="/g)||[]).length,Object.keys(lesson).length);
 check(!html.includes('{{math:'),'Uncompiled source placeholder');
 check(!/<script[^>]+src="https?:/i.test(html),'Remote script dependency');
 check(!/<link\b(?=[^>]*rel="stylesheet")[^>]+href="https?:/i.test(html),'Remote stylesheet dependency');
