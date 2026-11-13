@@ -14,7 +14,7 @@ for(let n=0;n<=12;n++)for(let r=0;r<=n;r++){const c=P.counts(n,r);equal(c.permut
 equal(P.events.intersection.selected,[4,6]);equal(P.events.union.selected,[2,4,5,6]);equal(P.events.complement.selected,[1,3,5]);equal(P.events.conditional.possible,[4,5,6]);
 const eqs=JSON.parse(fs.readFileSync('src/probability-math.json','utf8')),html=fs.readFileSync('dist/probability.html','utf8');
 for(const [id,e]of Object.entries(eqs)){const out=renderMath(id,e);ok(out.includes('application/x-tex'));ok(out.includes('Read formula / LaTeX'));ok(out.includes('<math xmlns='));ok(!out.includes('katex-error'));}
-equal((html.match(/<math xmlns=/g)||[]).length,23);ok(!/\{\{(?:math|probpython|proboutput):/.test(html));ok(!/<script[^>]+src="https?:|<link\b(?=[^>]*rel="stylesheet")[^>]+href="https?:/i.test(html));
+equal((html.match(/data-math="/g)||[]).length,23);ok(!/\{\{(?:math|probpython|proboutput):/.test(html));ok(!/<script[^>]+src="https?:|<link\b(?=[^>]*rel="stylesheet")[^>]+href="https?:/i.test(html));
 const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);equal(ids.length,new Set(ids).size);
 for(const [,ref]of html.matchAll(/(?:href|src)="([^"]+)"/g)){if(ref.startsWith('#')){if(ref.length>1)ok(ids.includes(ref.slice(1)),'Missing anchor '+ref);}else if(!ref.includes('://'))ok(fs.existsSync('dist/'+ref.split('#')[0]),'Missing asset '+ref);}
 for(const token of ['source','rare','common'])ok(html.includes(`data-bayes="${token}"`));
