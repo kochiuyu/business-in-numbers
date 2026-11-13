@@ -7,10 +7,11 @@ function addPresentations(dist, src) {
   const manifest = {
     ...JSON.parse(fs.readFileSync(path.join(src, 'presentation-content.json'), 'utf8')),
     ...JSON.parse(fs.readFileSync(path.join(src, 'presentation-foundations.json'), 'utf8')),
-    ...require('./presentation-later.cjs').presentations()
+    ...require('./presentation-later.cjs').presentations(),
+    ...require('./presentation-final.cjs').presentations().manifest
   };
-  const framing = {...JSON.parse(fs.readFileSync(path.join(src, 'presentation-framing.json'), 'utf8')),...require('./presentation-later.cjs').framing};
-  const math = {...JSON.parse(fs.readFileSync(path.join(src, 'presentation-math.json'), 'utf8')),...require('./presentation-later.cjs').math};
+  const framing = {...JSON.parse(fs.readFileSync(path.join(src, 'presentation-framing.json'), 'utf8')),...require('./presentation-later.cjs').framing,...require('./presentation-final.cjs').framing};
+  const math = {...JSON.parse(fs.readFileSync(path.join(src, 'presentation-math.json'), 'utf8')),...require('./presentation-later.cjs').math,...require('./presentation-final.cjs').presentations().math};
   const usedMath = new Set();
   for (const page of Object.keys(framing)) if (!manifest[page]) throw Error(`Framing has no presentation: ${page}`);
   for (const [page, config] of Object.entries(manifest)) {
@@ -27,7 +28,7 @@ function addPresentations(dist, src) {
       if (!/^[a-z0-9-]+$/.test(id) || seen.has(id) || !slide.title || slide.title.length > 95 || !slide.context || slide.context.length > 180 || (slide.phase && slide.phase.length > 40)) throw Error(`Invalid slide: ${id}`);
       if (slide.kind === 'graphic' ? !slide.visual || !Array.isArray(slide.visual.items) || slide.visual.items.length < 2 || slide.visual.items.length > 8 : slide.kind !== 'scene' && (!slide.line || !Array.isArray(slide.points) || slide.points.length < 2 || slide.points.length > 4)) throw Error(`Missing teaching content: ${id}`);
       if (math[id]) { slide.lineTex = math[id]; usedMath.add(id); }
-      renderLine(slide, id);
+      if (![6,8].includes(config.classNumber) || slide.lineTex) renderLine(slide, id);
       seen.add(id);
       const marker = `id="${slide.part}"`;
       if (html.indexOf(marker) < 0 || html.indexOf(marker) !== html.lastIndexOf(marker)) throw Error(`Missing or duplicate slide source: ${slide.part}`);

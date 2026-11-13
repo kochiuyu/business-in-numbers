@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 
 let total = 0;
-for (const page of ['descriptive-statistics.html','probability.html','random-variables.html','sampling-distributions.html','estimation.html','anova.html']) {
+for (const page of ['descriptive-statistics.html','probability.html','random-variables.html','sampling-distributions.html','estimation.html','hypothesis-testing.html','anova.html','regression.html']) {
   const html = fs.readFileSync(`dist/${page}`,'utf8');
   const match = html.match(/<script type="application\/json" data-presentation-config>(.*?)<\/script>/s);
   assert(match, `${page}: presentation manifest`);
@@ -14,6 +14,12 @@ for (const page of ['descriptive-statistics.html','probability.html','random-var
     assert.equal(config.slides.filter(slide => slide.kind === 'scene').length,page === 'sampling-distributions.html' ? 13 : 11);
     for (const slide of config.slides.filter(slide => slide.id.endsWith('-calculate') && slide.id !== 'sampling-step-1-calculate')) assert(slide.lineHtml,`${slide.id}: rendered equation`);
   }
+  if (page === 'hypothesis-testing.html' || page === 'regression.html') {
+    assert.equal(config.slides.length,page === 'hypothesis-testing.html' ? 51 : 58);
+    assert.equal(new Set(config.slides.map(slide => slide.id)).size,config.slides.length);
+    assert.equal(config.slides.filter(slide => slide.kind === 'scene').length,page === 'hypothesis-testing.html' ? 12 : 15);
+    for (const slide of config.slides.filter(slide => slide.id.endsWith('-work') && slide.format === 'formula')) assert(slide.lineHtml,`${slide.id}: rendered equation`);
+  }
   for (const slide of config.slides) {
     if (!slide.lineHtml) continue;
     total++;
@@ -23,5 +29,5 @@ for (const page of ['descriptive-statistics.html','probability.html','random-var
   }
   assert.match(html, /vendor\/katex\/katex/, `${page}: bundled fonts`);
 }
-assert(total >= 145, `Expected slide math coverage, got ${total}`);
+assert(total >= 180, `Expected slide math coverage, got ${total}`);
 console.log(`Passed ${total} pre-rendered slide equations with MathML and local fonts.`);
