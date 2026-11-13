@@ -57,6 +57,13 @@
 .presentation-points li { max-width: 46ch; padding-left: .2em; }
 .presentation-points li::marker { color: #b65c2c; }
 .presentation-stage { min-height: 0; }
+.presentation-graphic { max-width: 1000px; margin: clamp(18px, 5vh, 50px) auto; }
+.presentation-bars { margin: 0; padding: clamp(15px, 3vw, 28px); background: #fffef9; border: 1px solid #b9c9b4; border-radius: 10px; }
+.presentation-bars figcaption { margin-bottom: 20px; font: 600 clamp(19px, 2vw, 27px)/1.3 Arial, sans-serif; }
+.presentation-bar-row { display: grid; grid-template-columns: minmax(70px, 1fr) minmax(90px, 4fr) minmax(55px, auto); align-items: center; gap: 14px; margin: 12px 0; font: 500 clamp(17px, 1.6vw, 22px)/1.3 Arial, sans-serif; }
+.presentation-bar-track { height: 27px; background: #eaf0e5; border-radius: 4px; overflow: hidden; }
+.presentation-bar-track span { display: block; height: 100%; background: #176148; }
+.presentation-bar-row strong { text-align: right; font-variant-numeric: tabular-nums; }
 #lesson-presentation .presentation-part > :is(.c2-scene, .c7-scene) { border: 0 !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; }
 .presentation-part[data-presentation-kind="scene"] > .c2-scene > :not(:is(.c2-outcome-grid, .c2-visual-controls, .c2-choice-stages, .c2-role-labels, .c2-assignments, .c2-team-arrow, .c2-one-team, .c2-compare-cards, .c2-paths, .c2-contributions, .c2-figure, .lab-controls, .bayes-tree-card, .c2-brief)) { display: none !important; }
 .presentation-part[data-presentation-kind="scene"] > .c7-scene > :not(:is(.c7-visual-controls, .c7-result)) { display: none !important; }
@@ -109,6 +116,11 @@
   .presentation-points { font-size: 18px; gap: 10px; }
 }
 @media (max-width: 600px) {
+  .presentation-graphic { margin: 10px auto; }
+  .presentation-bars { padding: 12px; }
+  .presentation-bars figcaption { margin-bottom: 12px; }
+  .presentation-bar-row { grid-template-columns: minmax(64px, 1fr) minmax(80px, 3fr) minmax(42px, auto); gap: 7px; margin: 9px 0; font-size: 15px; }
+  .presentation-bar-track { height: 20px; }
   #lesson-presentation .presentation-toolbar { flex-wrap: nowrap; gap: 6px; padding: 4px 8px; }
   #presentation-chooser { min-width: 0; width: 0; }
   .presentation-counter { font-size: 12px; }
@@ -150,3 +162,4 @@
   #printed-slides .presentation-print-bayes.presentation-print-scene > :is(.c2-lab-details, .decision-callout) { display: none !important; }
   #printed-slides .presentation-print-bayes.presentation-print-reason > :is(.c2-lab-details, .decision-callout) { display: block !important; }
 }
+

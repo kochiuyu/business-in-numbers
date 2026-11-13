@@ -17,7 +17,7 @@
   const dialog = document.createElement('dialog');
   dialog.id = 'lesson-presentation';
   dialog.setAttribute('aria-label', 'Lesson presentation');
-  dialog.innerHTML = `<div class="presentation-toolbar"><label for="presentation-chooser">Slide</label><select id="presentation-chooser" aria-label="Choose slide"></select><span class="presentation-counter" aria-live="polite"></span><button type="button" data-presentation-close>Close</button></div><div class="presentation-layout"><div class="presentation-main"><p class="presentation-phase"></p><h2 class="presentation-title" tabindex="-1"></h2><p class="presentation-prompt"></p><div class="presentation-explanation"><p class="presentation-line"></p><ul class="presentation-points"></ul></div><div class="presentation-stage"></div></div><aside class="presentation-notes" aria-label="Teaching notes" hidden></aside></div><div class="presentation-controls"><div><button type="button" data-presentation-prev>Previous</button><button type="button" data-presentation-next>Next</button></div><details class="presentation-more"><summary>More options</summary><div><button type="button" data-presentation-notes aria-pressed="false">Notes</button><button type="button" data-presentation-read>Read this section</button><button type="button" data-presentation-print>Print slides</button><button type="button" data-presentation-fullscreen>Full screen</button></div></details></div>`;
+  dialog.innerHTML = `<div class="presentation-toolbar"><label for="presentation-chooser">Slide</label><select id="presentation-chooser" aria-label="Choose slide"></select><span class="presentation-counter" aria-live="polite"></span><button type="button" data-presentation-close>Close</button></div><div class="presentation-layout"><div class="presentation-main"><p class="presentation-phase"></p><h2 class="presentation-title" tabindex="-1"></h2><p class="presentation-prompt"></p><div class="presentation-explanation"><p class="presentation-line"></p><ul class="presentation-points"></ul></div><div class="presentation-graphic"></div><div class="presentation-stage"></div></div><aside class="presentation-notes" aria-label="Teaching notes" hidden></aside></div><div class="presentation-controls"><div><button type="button" data-presentation-prev>Previous</button><button type="button" data-presentation-next>Next</button></div><details class="presentation-more"><summary>More options</summary><div><button type="button" data-presentation-notes aria-pressed="false">Notes</button><button type="button" data-presentation-read>Read this section</button><button type="button" data-presentation-print>Print slides</button><button type="button" data-presentation-fullscreen>Full screen</button></div></details></div>`;
   document.body.append(dialog);
   const $ = selector => dialog.querySelector(selector);
   const chooser = $('#presentation-chooser');
@@ -63,6 +63,7 @@
 
   function sectionFor(frame) {
     const part = parts.get(frame.part);
+    if (config.classNumber === 1 || config.classNumber === 3) return part;
     return part.querySelector(`:scope > .${config.partClass === 'c2-part' ? 'c2' : 'c7'}-${frame.kind === 'reason' ? 'scene' : frame.kind}`);
   }
   function cleanCopy(node) {
@@ -89,7 +90,8 @@
       notes.append(guidance);
       return;
     }
-    const intro = part.querySelector(`:scope > .${config.partClass === 'c2-part' ? 'c2' : 'c7'}-part-heading > p`);
+    const headingClass = {'case-part': 'case-part-heading', 'c2-part': 'c2-part-heading', 'c3-part': 'c3-part-heading', 'c7-part': 'c7-part-heading'}[config.partClass];
+    const intro = part.querySelector(`:scope > .${headingClass} > p`);
     if (intro) notes.append(cleanCopy(intro));
     for (const lesson of part.querySelectorAll(':scope > details.lesson')) {
       const title = document.createElement('h4');
@@ -111,6 +113,26 @@
     if (state.labelledby === null) activePart.removeAttribute('aria-labelledby');
     else activePart.setAttribute('aria-labelledby', state.labelledby);
     activePart = null;
+  }
+  function makeGraphic(visual) {
+    const figure = document.createElement('figure');
+    figure.className = 'presentation-bars';
+    figure.setAttribute('role', 'img');
+    figure.setAttribute('aria-label', visual.title + ': ' + visual.items.map(item => `${item[0]} ${item[2]}`).join(', '));
+    const caption = document.createElement('figcaption');
+    caption.textContent = visual.title;
+    figure.append(caption);
+    const maximum = Math.max(...visual.items.map(item => item[1]));
+    for (const [label, value, display] of visual.items) {
+      const row = document.createElement('div');
+      row.className = 'presentation-bar-row';
+      const name = document.createElement('span'); name.textContent = label;
+      const track = document.createElement('div'); track.className = 'presentation-bar-track';
+      const fill = document.createElement('span'); fill.style.width = `${100 * value / maximum}%`; track.append(fill);
+      const amount = document.createElement('strong'); amount.textContent = display;
+      row.append(name, track, amount); figure.append(row);
+    }
+    return figure;
   }
   function address(frame) {
     const url = new URL(location.href);
@@ -135,7 +157,8 @@
     part.dataset.presentationKind = frame.kind;
     if (!sectionFor(frame)) throw Error(`Presentation source missing: ${frame.id}`);
     $('.presentation-title').textContent = frame.title;
-    $('.presentation-phase').textContent = `Class ${config.partClass === 'c2-part' ? '2' : '7'} · ${part.querySelector('h2')?.textContent.trim() || 'Lesson'}`;
+    const classNumber = config.classNumber || (config.partClass === 'c2-part' ? 2 : 7);
+    $('.presentation-phase').textContent = `Class ${classNumber} · ${part.querySelector('h2')?.textContent.trim() || 'Lesson'}`;
     const isScene = frame.kind === 'scene';
     $('.presentation-prompt').textContent = frame.context;
     $('.presentation-line').textContent = frame.line || '';
@@ -146,7 +169,10 @@
       item.textContent = point;
       return item;
     }));
-    $('.presentation-explanation').hidden = isScene;
+    $('.presentation-explanation').hidden = isScene || frame.kind === 'graphic';
+    const graphic = $('.presentation-graphic');
+    graphic.hidden = frame.kind !== 'graphic';
+    graphic.replaceChildren(...(frame.visual ? [makeGraphic(frame.visual)] : []));
     $('.presentation-stage').hidden = !isScene;
     $('.presentation-counter').textContent = `${current + 1} / ${frames.length}`;
     chooser.value = frame.id;
@@ -236,7 +262,9 @@
       context.className = 'presentation-print-prompt';
       context.textContent = frame.context;
       page.append(context);
-      if (frame.kind === 'scene') {
+      if (frame.kind === 'graphic') {
+        page.append(makeGraphic(frame.visual));
+      } else if (frame.kind === 'scene') {
         const content = cleanCopy(sectionFor(frame));
         const visual = config.partClass === 'c2-part'
           ? '.c2-outcome-grid, .c2-choice-stages, .c2-role-labels, .c2-assignments, .c2-team-arrow, .c2-one-team, .c2-compare-cards, .c2-paths, .c2-contributions, .c2-figure, .bayes-tree-card, .c2-brief'
@@ -276,3 +304,4 @@
     open(requested < 0 ? 0 : requested);
   }
 })();
+
