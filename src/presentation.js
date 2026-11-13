@@ -90,6 +90,12 @@
       notes.append(guidance);
       return;
     }
+    if (frame.phase) {
+      const explanation = document.createElement('p');
+      explanation.textContent = frame.notes;
+      notes.append(explanation);
+      return;
+    }
     const headingClass = {'case-part': 'case-part-heading', 'c2-part': 'c2-part-heading', 'c3-part': 'c3-part-heading', 'c7-part': 'c7-part-heading'}[config.partClass];
     const intro = part.querySelector(`:scope > .${headingClass} > p`);
     if (intro) notes.append(cleanCopy(intro));
@@ -158,7 +164,7 @@
     if (!sectionFor(frame)) throw Error(`Presentation source missing: ${frame.id}`);
     $('.presentation-title').textContent = frame.title;
     const classNumber = config.classNumber || (config.partClass === 'c2-part' ? 2 : 7);
-    $('.presentation-phase').textContent = `Class ${classNumber} · ${part.querySelector('h2')?.textContent.trim() || 'Lesson'}`;
+    $('.presentation-phase').textContent = `Class ${classNumber} · ${frame.phase || part.querySelector('h2')?.textContent.trim() || 'Lesson'}`;
     const isScene = frame.kind === 'scene';
     $('.presentation-prompt').textContent = frame.context;
     $('.presentation-line').textContent = frame.line || '';
