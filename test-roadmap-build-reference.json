@@ -1,12 +1,12 @@
 {
-  "descriptive-statistics.html": "2ab9b100f12d57946c618f4672366765356d2aa0891da7fe30e473e341f0b830",
-  "probability.html": "4cf28b344caac20dc7d653bda5a3a35c6480b44111fcd67e538e4c63dc2b2cdd",
-  "random-variables.html": "f0bba581d0441f0552c05ef8340c6aef766ecb466ce3b140121087bda327b70f",
-  "sampling-distributions.html": "2442b496fa770ac120edbf9802c264f4c1e58cdaa85a69bdefc19eaa4a275328",
-  "estimation.html": "1e34fcdea28d0f06856239ffdf12cebf9ddf625a61fbd963b9542bfff0781290",
-  "hypothesis-testing.html": "51654410fa42a665ca41ae06e7947569332e50ee63cb170d90413d419b383ec5",
-  "anova.html": "40baae16025ff1aa9d75cd6897387feaac9f087d333dfa56ca7f62ef5c24a7e8",
-  "regression.html": "38d0ba8b6d480f04fcba82ac5aa03e95dfaf6093f18b4cdbe2a56507a183ed36",
-  "course-introduction.html": "7cdbab5d46936cf23c9080b2146288dd79595ce1d9535ab9b56bcc50e509cd45",
-  "math-check.html": "89d9c1a2890ee1efd4bb0a777742689c1b4e5113bf2d8d0beaafe4ef1bb1de77"
+    "descriptive-statistics.html":  "53e9d2c0956ea190e5266fb332c5552e7d813b14602a23ab0f9c78d297d8e342",
+    "probability.html":  "aaac9f942f9e4d4c45d3abe677165f99a002351a3e32c69419117e31a8810bb8",
+    "random-variables.html":  "d0791e2c349cc310881f89071a297898b47cda7a707d52cdc31dd55ef9f11ebf",
+    "sampling-distributions.html":  "2442b496fa770ac120edbf9802c264f4c1e58cdaa85a69bdefc19eaa4a275328",
+    "estimation.html":  "1e34fcdea28d0f06856239ffdf12cebf9ddf625a61fbd963b9542bfff0781290",
+    "hypothesis-testing.html":  "51654410fa42a665ca41ae06e7947569332e50ee63cb170d90413d419b383ec5",
+    "anova.html":  "7639b67c4a79e21d1990bf8f84de471a7d629d4ee0f113a9ef533d9f2eda8f87",
+    "regression.html":  "38d0ba8b6d480f04fcba82ac5aa03e95dfaf6093f18b4cdbe2a56507a183ed36",
+    "course-introduction.html":  "7cdbab5d46936cf23c9080b2146288dd79595ce1d9535ab9b56bcc50e509cd45",
+    "math-check.html":  "89d9c1a2890ee1efd4bb0a777742689c1b4e5113bf2d8d0beaafe4ef1bb1de77"
 }

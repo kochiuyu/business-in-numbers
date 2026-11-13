@@ -1,0 +1,306 @@
+{
+  "descriptive-statistics.html": {
+    "opening": [
+      {
+        "id": "c1-introduction",
+        "part": "case-part-1",
+        "kind": "reason",
+        "phase": "Introduction",
+        "title": "Class 1: describe before deciding",
+        "context": "A synthetic retailer asks about ordinary purchases, dependable deliveries and advertising. These are three separate files, with different rows and units.",
+        "line": "Three records. Three questions. One careful briefing.",
+        "points": [
+          "A useful summary describes the right observation, not just a convenient number.",
+          "The manager needs evidence, a next step and a limit for each decision."
+        ],
+        "notes": "The purchase file records orders, the delivery file records shipments, and the marketing file records branches. They cannot be joined by row number. All figures in this case are synthetic teaching data."
+      },
+      {
+        "id": "c1-preview",
+        "part": "case-part-1",
+        "kind": "reason",
+        "phase": "Preview",
+        "title": "Four moves take us from rows to a briefing",
+        "context": "The fourteen teaching steps build one decision brief; the calculations serve that final task.",
+        "line": "1. Check the row and units. 2. Display the pattern.",
+        "points": [
+          "3. Compare center, spread, shape and paired association.",
+          "4. State what the records support, what to check and what to test next."
+        ],
+        "notes": "The first three steps establish what was measured and how to show it. Later steps explain center, variability and relationships. The final step brings the separate findings into a manager briefing."
+      },
+      {
+        "id": "c1-objectives",
+        "part": "case-part-1",
+        "kind": "reason",
+        "phase": "Learning objectives",
+        "title": "By the end, make three defensible claims",
+        "context": "Use the purchase, supplier and branch records to answer the manager's three questions.",
+        "line": "Choose and interpret a summary that fits each question.",
+        "points": [
+          "Calculate and explain center, spread, shape and correlation in their original units.",
+          "Separate description from prediction or causation, then propose a next check."
+        ],
+        "notes": "A successful briefing uses the median and mean for different purchase questions, examines delivery variation and target misses, and describes the branch association without calling it advertising lift."
+      }
+    ],
+    "closing": [
+      {
+        "id": "c1-takeaways",
+        "part": "case-part-6",
+        "kind": "reason",
+        "phase": "Takeaways",
+        "title": "Each of the three results needs a different caution",
+        "context": "In the fixed synthetic files, the ordinary basket, supplier reliability and advertising question do not have the same answer type.",
+        "line": "Purchases: median $31; mean $45 after one $200 order.",
+        "points": [
+          "Both suppliers average five days, but A has no observed delivery beyond six days; B has two of five.",
+          "Across five branches, r is about 0.52: positive association is not an ad return."
+        ],
+        "notes": "The median describes the middle recorded purchase while the mean preserves the effect of the $200 order on total revenue. The supplier result is based on five deliveries each, and comparability still needs checking. The branch correlation is descriptive, not causal."
+      },
+      {
+        "id": "c1-conclusion",
+        "part": "case-part-6",
+        "kind": "reason",
+        "phase": "Conclusion",
+        "title": "End with a claim and a testable next step",
+        "context": "A short briefing can guide action without promising that these small synthetic files represent future customers or routes.",
+        "line": "Describe now. Check comparability. Test a proposed change.",
+        "points": [
+          "Use the median for an ordinary basket, inspect the $200 order and compare suppliers on matched routes.",
+          "Test advertising lift before raising spend. Class 2 adds probability language for uncertain events."
+        ],
+        "notes": "For each recommendation, state the record, its unit, the calculation and a limitation. Avoid treating this descriptive case as a forecast or an experiment."
+      }
+    ]
+  },
+  "probability.html": {
+    "opening": [
+      {
+        "id": "c2-introduction",
+        "part": "prob-step-1",
+        "kind": "reason",
+        "phase": "Introduction",
+        "title": "Class 2: an alert is not a diagnosis",
+        "context": "In a synthetic order system, 1% of orders have an issue. It flags 90% of those orders and 5% of ordinary orders.",
+        "line": "A 90% catch rate is not a 90% issue chance after an alert.",
+        "points": [
+          "The two percentages condition on different groups of orders.",
+          "We will count the alerted cases before deciding whether to review an order."
+        ],
+        "notes": "The catch rate describes alerts among issue orders. The decision asks about issues among alerted orders. The 1% base rate is necessary to connect the two questions."
+      },
+      {
+        "id": "c2-preview",
+        "part": "prob-step-1",
+        "kind": "reason",
+        "phase": "Preview",
+        "title": "Follow one alert from cases to action",
+        "context": "The course moves from a complete outcome list to a conditional chance and then a decision.",
+        "line": "Outcomes and rules → conditioning and base rates.",
+        "points": [
+          "Use tables, counting and trees to keep events and denominators visible.",
+          "Use Bayes' rule and explicit costs to decide when review is worthwhile."
+        ],
+        "notes": "The examples are synthetic. At every stage, name the event, the population or conditioning group, and the assumptions behind the probability model."
+      },
+      {
+        "id": "c2-objectives",
+        "part": "prob-step-1",
+        "kind": "reason",
+        "phase": "Learning objectives",
+        "title": "By the end, answer the right conditional question",
+        "context": "The review decision requires P(issue given alert), not P(alert given issue).",
+        "line": "Name the event and denominator before using a formula.",
+        "points": [
+          "Calculate and check conditional probabilities with counts, rules or a tree.",
+          "Compare the updated risk with a stated cost threshold, then test its assumptions."
+        ],
+        "notes": "A correct numerical answer includes the direction of conditioning. A recommendation also states the base rate, alert performance, review cost and missed-issue consequence."
+      }
+    ],
+    "closing": [
+      {
+        "id": "c2-takeaways",
+        "part": "prob-step-8",
+        "kind": "reason",
+        "phase": "Takeaways",
+        "title": "A strong catch rate can still yield many false alerts",
+        "context": "For the original synthetic model, 1% of orders have an issue, sensitivity is 90% and the false-alert rate is 5%.",
+        "line": "P(issue given alert) = 0.009 / (0.009 + 0.0495) ≈ 15.4%.",
+        "points": [
+          "The 90% catch rate answers the reverse conditional question.",
+          "With hypothetical $5 review and $50 missed-issue costs, review is favored above 10% risk."
+        ],
+        "notes": "The numerator is the share of all orders that both have an issue and alert. The denominator includes both true and false alerts. The cost threshold uses a simplified decision with perfect review and no other costs."
+      },
+      {
+        "id": "c2-conclusion",
+        "part": "prob-step-8",
+        "kind": "reason",
+        "phase": "Conclusion",
+        "title": "Recalculate when the population or costs change",
+        "context": "The 15.4% posterior and the illustrative review choice belong to this model and its assumed costs.",
+        "line": "Event → denominator → updated chance → consequence.",
+        "points": [
+          "Check the current issue rate and alert performance before reusing the percentage.",
+          "State review effectiveness, capacity and losses. Class 3 models whole ranges of uncertain outcomes."
+        ],
+        "notes": "A different base rate changes the posterior even if sensitivity and false-alert rate stay fixed. A different cost or review process can change the preferred action."
+      }
+    ]
+  },
+  "random-variables.html": {
+    "opening": [
+      {
+        "id": "c3-introduction",
+        "part": "rv-step-1",
+        "kind": "reason",
+        "phase": "Introduction",
+        "title": "Class 3: the mean can fit while overload remains",
+        "context": "A synthetic shop can handle two orders per pickup slot. Its possible demand counts are 0, 1, 2 and 3.",
+        "line": "Mean demand is 1.7 orders; overload is still possible.",
+        "points": [
+          "One average cannot show the chance of demand above capacity.",
+          "A probability distribution keeps every possible count and its chance visible."
+        ],
+        "notes": "The shop's demand model is a teaching example, not observed demand from a real store. The distribution later assigns probabilities 0.10, 0.30, 0.40 and 0.20 to counts 0 through 3."
+      },
+      {
+        "id": "c3-preview",
+        "part": "rv-step-1",
+        "kind": "reason",
+        "phase": "Preview",
+        "title": "Build the model, then make a capacity decision",
+        "context": "The fifteen steps move from a rule for naming an outcome to a cost comparison.",
+        "line": "Variable → distribution → event, mean and spread.",
+        "points": [
+          "Choose count or continuous models from the mechanism and assumptions.",
+          "Use a tail probability and expected excess to compare delay with extra capacity."
+        ],
+        "notes": "The 0–3-order pickup model is the running capacity case. The trial, arrival, waiting-time and filling models are separate synthetic examples that show how model choice depends on the process."
+      },
+      {
+        "id": "c3-objectives",
+        "part": "rv-step-1",
+        "kind": "reason",
+        "phase": "Learning objectives",
+        "title": "By the end, choose and use a probability model",
+        "context": "A model is useful only when its possible values, probabilities and assumptions match the business question.",
+        "line": "State the quantity, its support and its assumptions.",
+        "points": [
+          "Compute event chances, expectation and spread from a PMF, CDF or density.",
+          "Translate tails and expected costs back into orders, time or money."
+        ],
+        "notes": "PMF applies to discrete outcomes, while a density gives continuous interval probabilities through area. A CDF accumulates either type of model. Interpret each answer with its original units."
+      }
+    ],
+    "closing": [
+      {
+        "id": "c3-takeaways",
+        "part": "rv-step-9",
+        "kind": "reason",
+        "phase": "Takeaways",
+        "title": "A distribution carries more than its mean",
+        "context": "For shop demand 0–3, the probability masses are 0.10, 0.30, 0.40 and 0.20; capacity is two orders.",
+        "line": "P(X > 2) = 0.20; expected excess = 0.20 order.",
+        "points": [
+          "The mean of 1.7 is below capacity but does not remove overload risk.",
+          "At $30 per excess order, expected delay cost is $6, below the hypothetical $8 staffing cost."
+        ],
+        "notes": "Only demand of three exceeds capacity, by one order. Multiply that excess by its 0.20 probability before averaging cost. The decision changes if the cost per excess order changes."
+      },
+      {
+        "id": "c3-conclusion",
+        "part": "rv-step-9",
+        "kind": "reason",
+        "phase": "Conclusion",
+        "title": "Choose capacity using risk and cost together",
+        "context": "A staffing choice depends on the full demand distribution, the capacity limit and the consequence of excess demand.",
+        "line": "Model the outcomes. Price the shortfall. Check sensitivity.",
+        "points": [
+          "At $50 per excess order, expected delay cost becomes $10 and exceeds the $8 staff cost.",
+          "Keep separate teaching models separate. Class 4 asks how estimates vary across repeated samples."
+        ],
+        "notes": "The $30 and $50 penalties and $8 staffing cost are hypothetical. Re-estimate probabilities and actual costs before applying the comparison to a store."
+      }
+    ]
+  },
+  "anova.html": {
+    "opening": [
+      {
+        "id": "c7-introduction",
+        "part": "anova-step-1",
+        "kind": "core",
+        "phase": "Introduction",
+        "title": "Class 7: compare groups without losing the design",
+        "context": "Separate synthetic examples compare packing processes and examine whether a retailer's offer effect changes between weekdays and weekends.",
+        "line": "One-way: which process means differ? Two-way: does the offer effect depend on day type?",
+        "points": [
+          "ANOVA compares variation among group means with variation within groups.",
+          "An interaction can make one overall recommendation misleading."
+        ],
+        "notes": "The packing and retailer examples are different datasets. In each, first name the independent observation, response and factor assignments. A small p-value alone cannot tell the business what to do."
+      },
+      {
+        "id": "c7-preview",
+        "part": "anova-step-1",
+        "kind": "core",
+        "phase": "Preview",
+        "title": "Move from study design to recommendation",
+        "context": "The lesson starts with independent units, builds the F ratio and then adds a second factor.",
+        "line": "Design → between/within variation → F test.",
+        "points": [
+          "Compare group means, check assumptions and identify contrasts worth investigating.",
+          "Read an interaction before translating spending differences into a policy."
+        ],
+        "notes": "One-way ANOVA addresses a global group-mean question. Two-way ANOVA separates two main effects and their interaction. The closing decision also needs margins, offer costs and the future mix of days."
+      },
+      {
+        "id": "c7-objectives",
+        "part": "anova-step-1",
+        "kind": "core",
+        "phase": "Learning objectives",
+        "title": "By the end, audit and interpret an ANOVA",
+        "context": "A correct calculation must correspond to the study design and the business response being measured.",
+        "line": "Name the unit, factors, response and error term.",
+        "points": [
+          "Build and interpret an F ratio; explain what a global test and an interaction do and do not say.",
+          "Separate statistical evidence from effect size, uncertainty and practical value."
+        ],
+        "notes": "Independent orders, not repeated stopwatch readings, set the sample size in the packing example. In the retailer example, spending per transaction is not profit."
+      }
+    ],
+    "closing": [
+      {
+        "id": "c7-takeaways",
+        "part": "anova-step-14",
+        "kind": "core",
+        "phase": "Takeaways",
+        "title": "An F result does not choose a profitable policy",
+        "context": "The separate packing and retailer examples lead to different questions, despite both using ANOVA.",
+        "line": "Packing: one-way F = 18.5. Retailer: interaction F = 12.",
+        "points": [
+          "A global F signals a group-mean difference; it does not identify the best practical option.",
+          "The sample Bundle spending lift is $4 on weekdays and $12 on weekends; profit needs more data."
+        ],
+        "notes": "The F statistics belong to two distinct synthetic datasets. The weekday and weekend figures are sample spending differences, not profit gains or guaranteed future effects."
+      },
+      {
+        "id": "c7-conclusion",
+        "part": "anova-step-14",
+        "kind": "core",
+        "phase": "Conclusion",
+        "title": "Match the model result to the decision",
+        "context": "A retailer offer recommendation must combine the observed interaction with uncertainty, margins, costs and the future day mix.",
+        "line": "Design → model check → group pattern → net value.",
+        "points": [
+          "Check independence and residual patterns before generalizing beyond the sample.",
+          "Estimate net value for the future mix; Class 8 turns to continuous predictors and regression."
+        ],
+        "notes": "A statistically detectable interaction can change which offer is attractive on different days, but spending alone cannot establish a profitable policy."
+      }
+    ]
+  }
+}

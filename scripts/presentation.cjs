@@ -7,13 +7,20 @@ function addPresentations(dist, src) {
     ...JSON.parse(fs.readFileSync(path.join(src, 'presentation-content.json'), 'utf8')),
     ...JSON.parse(fs.readFileSync(path.join(src, 'presentation-foundations.json'), 'utf8'))
   };
+  const framing = JSON.parse(fs.readFileSync(path.join(src, 'presentation-framing.json'), 'utf8'));
+  for (const page of Object.keys(framing)) if (!manifest[page]) throw Error(`Framing has no presentation: ${page}`);
   for (const [page, config] of Object.entries(manifest)) {
+    const bookends = framing[page];
+    if (bookends) {
+      if (!Array.isArray(bookends.opening) || !Array.isArray(bookends.closing) || bookends.opening.length !== 3 || bookends.closing.length !== 2) throw Error(`Incomplete presentation framing: ${page}`);
+      config.slides = [...bookends.opening, ...config.slides, ...bookends.closing];
+    }
     const file = path.join(dist, page);
     let html = fs.readFileSync(file, 'utf8');
     const seen = new Set();
     for (const slide of config.slides) {
       const id = slide.id || `${slide.part}--${slide.kind}`;
-      if (!/^[a-z0-9-]+$/.test(id) || seen.has(id) || !slide.title || slide.title.length > 95 || !slide.context || slide.context.length > 180) throw Error(`Invalid slide: ${id}`);
+      if (!/^[a-z0-9-]+$/.test(id) || seen.has(id) || !slide.title || slide.title.length > 95 || !slide.context || slide.context.length > 180 || (slide.phase && slide.phase.length > 40)) throw Error(`Invalid slide: ${id}`);
       if (slide.kind === 'graphic' ? !slide.visual || !Array.isArray(slide.visual.items) || slide.visual.items.length < 2 || slide.visual.items.length > 8 : slide.kind !== 'scene' && (!slide.line || !Array.isArray(slide.points) || slide.points.length !== 2)) throw Error(`Missing teaching content: ${id}`);
       seen.add(id);
       const marker = `id="${slide.part}"`;
@@ -36,4 +43,3 @@ function addPresentations(dist, src) {
 }
 
 module.exports = {addPresentations};
-
