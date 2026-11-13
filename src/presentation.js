@@ -63,7 +63,7 @@
 
   function sectionFor(frame) {
     const part = parts.get(frame.part);
-    if ([1,3,4,5].includes(config.classNumber)) return part;
+    if ([1,3,4,5,6,8].includes(config.classNumber)) return part;
     return part.querySelector(`:scope > .${config.partClass === 'c2-part' ? 'c2' : 'c7'}-${frame.kind === 'reason' ? 'scene' : frame.kind}`);
   }
   function cleanCopy(node) {
@@ -96,7 +96,7 @@
       notes.append(explanation);
       return;
     }
-    const headingClass = {'case-part': 'case-part-heading', 'c2-part': 'c2-part-heading', 'c3-part': 'c3-part-heading', 'c4-part': 'c4-part-heading', 'c5-part': 'c5-part-heading', 'c7-part': 'c7-part-heading'}[config.partClass];
+    const headingClass = {'case-part': 'case-part-heading', 'c2-part': 'c2-part-heading', 'c3-part': 'c3-part-heading', 'c4-part': 'c4-part-heading', 'c5-part': 'c5-part-heading', 'c6-part': 'c6-part-heading', 'c7-part': 'c7-part-heading', 'c8-part': 'c8-part-heading'}[config.partClass];
     const intro = part.querySelector(`:scope > .${headingClass} > p`);
     if (intro) notes.append(cleanCopy(intro));
     for (const lesson of part.querySelectorAll(':scope > details.lesson')) {
@@ -275,6 +275,8 @@
         const content = cleanCopy(sectionFor(frame));
         const visual = config.partClass === 'c4-part' ? '[id^="c4-core"]'
           : config.partClass === 'c5-part' ? '.c5-scene'
+          : config.partClass === 'c6-part' ? '.c6-scene'
+          : config.partClass === 'c8-part' ? '.c8-scene'
           : config.partClass === 'c2-part'
           ? '.c2-outcome-grid, .c2-choice-stages, .c2-role-labels, .c2-assignments, .c2-team-arrow, .c2-one-team, .c2-compare-cards, .c2-paths, .c2-contributions, .c2-figure, .bayes-tree-card, .c2-brief'
           : '.c7-result';
@@ -282,6 +284,10 @@
         if (['c4-part','c5-part'].includes(config.partClass)) {
           const scene = content.querySelector('.c4-scene, .c5-scene');
           for (const child of [...(scene?.children || [])]) if (!child.matches('.c4-visual-controls, .c4-result, .c4-core-scroll, .c5-visual-controls, .c5-result')) child.remove();
+        }
+        if (['c6-part','c8-part'].includes(config.partClass)) {
+          const scene = content.querySelector('.c6-scene, .c8-scene');
+          for (const child of [...(scene?.children || [])]) if (!child.matches('.c6-result, .c8-result')) child.remove();
         }
         if (config.partClass === 'c7-part') {
           const result = content.querySelector('.c7-result');

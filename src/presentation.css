@@ -27,10 +27,25 @@
 .presentation-stage { min-width: 0; }
 .presentation-part { max-width: none !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: transparent !important; content-visibility: visible !important; contain-intrinsic-size: none !important; }
 .presentation-part > * { display: none !important; }
-.presentation-part[data-presentation-kind="scene"] > [id^="c4-core"], .presentation-part[data-presentation-kind="scene"] > .c5-scene { display: block !important; margin: 0 !important; max-width: none !important; }
+.presentation-part[data-presentation-kind="scene"] > [id^="c4-core"], .presentation-part[data-presentation-kind="scene"] > :is(.c5-scene,.c6-scene,.c8-scene) { display: block !important; margin: 0 !important; max-width: none !important; }
 .presentation-part[data-presentation-kind="scene"] [id^="c4-core"] > :not(.c4-scene) { display: none !important; }
 .presentation-part[data-presentation-kind="scene"] :is(.c4-scene,.c5-scene) > :not(:is(.c4-visual-controls,.c4-result,.c4-core-scroll,.c5-visual-controls,.c5-result)) { display: none !important; }
 .presentation-part[data-presentation-kind="scene"] :is(.c4-scene,.c5-scene) { border: 0 !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; }
+.presentation-part[data-presentation-kind="scene"] :is(.c6-scene,.c8-scene) > :not(:is(.c6-visual-controls,.c6-result,.c8-visual-controls,.c8-result)) { display: none !important; }
+.presentation-part[data-presentation-kind="scene"] :is(.c6-scene,.c8-scene) { border: 0 !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; }
+#lesson-presentation .presentation-part[data-presentation-kind="scene"] :is(.c6-caption,.c6-small,.c8-caption,.c8-rule-card,.c8-equation-path,.c8-residuals),
+#lesson-presentation .presentation-part[data-presentation-kind="scene"] :is(.c6-figure,.c8-figure) figcaption,
+#lesson-presentation #regression-step-9[data-presentation-kind="scene"] .c8-figure:nth-child(2) { display: none !important; }
+#lesson-presentation .presentation-part[data-presentation-kind="scene"] :is(.c6-figure,.c8-figure) svg { display: block; max-width: 100%; max-height: 38vh; width: auto; margin: auto; }
+#lesson-presentation .presentation-part[data-presentation-kind="scene"] :is(.c6-brief,.c8-brief) { zoom: .8; }
+#lesson-presentation #hypothesis-power[data-presentation-kind="scene"] .c6-errors,
+#lesson-presentation #hypothesis-student[data-presentation-kind="scene"] .c6-brief,
+#lesson-presentation #hypothesis-step-8[data-presentation-kind="scene"] :is(.c6-team-cards,.c6-rule-card),
+#lesson-presentation #hypothesis-step-7[data-presentation-kind="scene"] :is(.c6-rule-card,.c6-board-legend),
+#lesson-presentation #hypothesis-step-7[data-presentation-kind="scene"] .c6-design-board > :nth-child(n+3),
+#lesson-presentation #hypothesis-step-9[data-presentation-kind="scene"] :is(.c6-rule-card,.c6-pair-list > :nth-child(n+3)) { display: none !important; }
+#lesson-presentation :is(#hypothesis-step-10,#hypothesis-step-6,#hypothesis-step-3)[data-presentation-kind="scene"] .c6-rule-card { display: none !important; }
+#lesson-presentation #regression-step-13[data-presentation-kind="scene"] .c8-figure svg { max-height: 30vh; }
 .presentation-part[data-presentation-kind="scene"] > :is(.c2-scene, .c7-scene), .presentation-part[data-presentation-kind="reason"] > .c2-scene, .presentation-part[data-presentation-kind="core"] > .c7-core { display: block !important; margin: 0 !important; max-width: none !important; }
 .presentation-part[data-presentation-kind="scene"] > .c2-scene > :is(.reading-prediction, .reading-core, .c2-worked-core, .c2-check, .c2-takeaway) { display: none !important; }
 .presentation-part[data-presentation-kind="reason"] > .c2-scene > * { display: none !important; }
@@ -106,6 +121,21 @@
 #lesson-presentation #prob-step-7[data-presentation-kind="scene"] :is(.c2-role-labels, .c2-assignments, .c2-team-arrow, .c2-one-team) { zoom: .78; }
 #lesson-presentation .presentation-part :is(.c2-scene, .c7-scene) :is(p,li) { font-size: clamp(16px, 1.5vw, 22px); line-height: 1.3; }
 @media (max-width: 600px) {
+  #lesson-presentation .presentation-part[data-presentation-kind="scene"] :is(.c6-caption,.c6-small,.c8-caption,.c8-rule-card,.c8-equation-path,.c8-residuals),
+  #lesson-presentation .presentation-part[data-presentation-kind="scene"] :is(.c6-figure,.c8-figure) figcaption { display: none !important; }
+  #lesson-presentation #hypothesis-step-1[data-presentation-kind="scene"] .c6-claim-row,
+  #lesson-presentation #hypothesis-power[data-presentation-kind="scene"] .c6-errors,
+  #lesson-presentation #hypothesis-student[data-presentation-kind="scene"] .c6-brief,
+  #lesson-presentation #hypothesis-step-8[data-presentation-kind="scene"] :is(.c6-team-cards,.c6-rule-card),
+  #lesson-presentation #hypothesis-step-9[data-presentation-kind="scene"] .c6-pair-list > :nth-child(n+3),
+  #lesson-presentation #hypothesis-step-9[data-presentation-kind="scene"] .c6-rule-card,
+  #lesson-presentation :is(#hypothesis-step-7,#hypothesis-step-10,#hypothesis-step-6,#hypothesis-step-3,#hypothesis-step-11)[data-presentation-kind="scene"] .c6-rule-card,
+  #lesson-presentation #hypothesis-step-7[data-presentation-kind="scene"] .c6-board-legend,
+  #lesson-presentation #hypothesis-step-7[data-presentation-kind="scene"] .c6-design-board > :nth-child(n+3),
+  #lesson-presentation #regression-step-9[data-presentation-kind="scene"] .c8-figure:nth-child(2),
+  #lesson-presentation #regression-step-5[data-presentation-kind="scene"] .c8-unit-path > :last-child,
+  #lesson-presentation #regression-step-6[data-presentation-kind="scene"] .c8-ladder > :last-child,
+  #lesson-presentation #regression-step-15[data-presentation-kind="scene"] .c8-brief li:last-child { display: none !important; }
   #lesson-presentation #sampling-student[data-presentation-kind="scene"] .c4-result > :is(.c4-calculation,.c4-small),
   #lesson-presentation #sampling-count-event[data-presentation-kind="scene"] .c4-result > :is(.c4-visit-flow,.c4-small),
   #lesson-presentation #sampling-step-2[data-presentation-kind="scene"] .c4-result > :is(.c4-pair-key,.c4-caption) { display: none !important; }
