@@ -1,6 +1,6 @@
 [hidden] { display: none !important; }
 .present-launch { margin-left: auto; padding: 10px 17px; border: 1px solid #176148; border-radius: 6px; background: #176148; color: #fff; font: 700 14px/1.4 Arial, sans-serif; cursor: pointer; }
-.visual-controls button.present-launch { background: #176148; border-color: #176148; color: #fff; }
+.visual-path-controls button.present-launch { background: #176148; border-color: #176148; color: #fff; }
 .present-launch:focus-visible, #lesson-presentation :focus-visible { outline: 3px solid #b65c2c; outline-offset: 3px; }
 .presenting { overflow: hidden; }
 #lesson-presentation { box-sizing: border-box; position: fixed; inset: 0; width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: #f7f8ef; color: #173f36; font-family: Arial, sans-serif; overflow: hidden; }
