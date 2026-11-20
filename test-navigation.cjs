@@ -28,7 +28,7 @@ for (const [file, shortcuts] of Object.entries(sections)) {
   ok(header.includes('<nav aria-label="All classes">'), file + ': named course navigation');
   const courseNav = header.match(/<nav aria-label="All classes">([\s\S]*?)<\/nav>/)[1];
   eq((courseNav.match(/<li>/g) || []).length, 8, file + ': all eight classes');
-  eq((courseNav.match(/aria-current="page"/g) || []).length, ['index.html','course-introduction.html'].includes(file) ? 0 : 1, file + ': current class');
+  eq((courseNav.match(/aria-current="page"/g) || []).length, ['index.html','course-introduction.html','course-review.html','equation-guide.html'].includes(file) ? 0 : 1, file + ': current class');
   for (const [href, title] of classes) {
     ok(courseNav.includes('href="' + href + '"'), file + ': class URL ' + href);
     ok(courseNav.includes(title), file + ': title ' + title);

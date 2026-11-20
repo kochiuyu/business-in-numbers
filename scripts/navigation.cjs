@@ -22,6 +22,8 @@ function sharingMetadata(html,file) {
 const sections = {
   'index.html': [['start-here-overview', 'Overview'], ['course-route', 'Eight classes'], ['study-loop', 'How to study'], ['readiness', 'Warm-up']],
   'course-introduction.html': [['learning-start', 'Overview'], ['course-route', 'Eight classes'], ['study-loop', 'How to study'], ['readiness', 'Warm-up']],
+  'course-review.html': [['route', 'Course route'], ['choose', 'Choose'], ['inference', 'Inference'], ['brief', 'Final brief']],
+  'equation-guide.html': [['eq-1', 'Describe'], ['eq-4', 'Sample'], ['eq-6', 'Test'], ['test-direction', 'Test direction']],
   'descriptive-statistics.html': [['learning-start', 'Business case'], ['lessons', 'Fourteen steps'], ['lab', 'Order lab'], ['charts', 'Charts'], ['case-brief', 'Decision brief'], ['practice', 'Practice']],
   'probability.html': [['learning-start', 'Overview'], ['bayes-lab', 'Explore'], ['lessons', 'Learn'], ['tools', 'Tools'], ['practice', 'Practice']],
   'random-variables.html': [['learning-start', 'Overview'], ['count-lab', 'Explore'], ['lessons', 'Learn'], ['tools', 'Tools'], ['practice', 'Practice']],
@@ -35,10 +37,11 @@ function enhance(html, file) {
   if (!sections[file]) throw Error('Unknown navigation page: '+file);
   if(file==='descriptive-statistics.html')html=html.replace('<title>Descriptive Statistics · Business in Numbers</title>','<title>Class 1 · Descriptive Statistics · Business in Numbers</title>');
   const index = classes.findIndex(c => c[0] === file);
-  const intro = index < 0;
-  const current = intro ? 'Course introduction' : classes[index][1];
-  const number = intro ? 'Start here' : `Class ${index + 1} of 8`;
-  const next = classes[intro ? 0 : index + 1];
+  const review = file === 'course-review.html' || file === 'equation-guide.html';
+  const intro = index < 0 && !review;
+  const current = review ? (file === 'course-review.html' ? 'Course synthesis' : 'Equation guide') : intro ? 'Course introduction' : classes[index][1];
+  const number = review ? 'Course review' : intro ? 'Start here' : `Class ${index + 1} of 8`;
+  const next = review ? null : classes[intro ? 0 : index + 1];
   const header = `<header class="course-header">
   <div class="course-header-main">
     <a class="brand" href="index.html" aria-label="Business in Numbers · course home"${intro ? ' aria-current="page"' : ''}><span class="brandmark" aria-hidden="true">▥</span><span>BUSINESS<br><b>IN NUMBERS</b></span></a>
@@ -59,7 +62,8 @@ function enhance(html, file) {
   </div>
 </header>`;
   if (!/<header class="top">[\s\S]*?<\/header>/.test(html)) throw Error('Missing course header: '+file);
-  return html.replace(/<header class="top">[\s\S]*?<\/header>/, header)
+  const reviewHeader = header.replace('Follow in order, or revisit any class.</span>', 'Follow in order, or revisit any class. <a href="course-review.html">Course synthesis</a> · <a href="equation-guide.html">Equation guide</a></span>').replace('00 / 08', 'REVIEW');
+  return html.replace(/<header class="top">[\s\S]*?<\/header>/, reviewHeader)
     .replace('</head>',sharingMetadata(html,file)+'<link rel="stylesheet" href="navigation.css"></head>')
     .replace('</body>','<script src="navigation.js"></script></body>');
 }

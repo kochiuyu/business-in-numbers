@@ -72,6 +72,7 @@ function build() {
   buildAnova();
   buildRegression();
   require('./homepage.cjs').build(dist);
+  require('./course-review.cjs').build(dist);
   require('./presentation.cjs').addPresentations(dist,src);
   require('./fingerprint-assets.cjs').fingerprintAssets(dist);
   console.log(`Rendered ${Object.keys(equations).length} lesson expressions and ${Object.keys(fixtures).length} QA expressions with KaTeX ${katex.version}.`);
@@ -169,6 +170,7 @@ function buildRegression(){
  const R=require('../src/regression-core.js'),V=require('../src/regression-view.js'),read=name=>fs.readFileSync(path.join(src,name),'utf8');
  let template=read('regression.html').replace(/\{\{regcore:([a-z]+)\}\}/g,(_,name)=>require('../src/class-eight-cores.cjs').render(name)).replace(/\{\{regvisual:([a-z]+)\}\}/g,(_,name)=>require('../src/class-eight-visuals.js').render(name)).replace(/(<details class="lesson"[^>]*?) open(?=>)/g,'$1').replace('{{regression-tools}}',read('regression-tools.html')).replace('{{line-lab}}',V.lab('line')).replace('{{model-lab}}',V.lab('model')).replace('{{hero-chart}}',V.plot(R.fit(R.DEFAULT_PAIRS,.05,4.5),{id:'reg-hero',bands:false,showPrediction:false}));
  for(const [key,name] of [['regression-python','regression.py'],['regression-output','regression-output.txt']])template=template.replace('{{'+key+'}}',`<pre class="code-block" tabindex="0" role="region" aria-label="${key==='regression-python'?'Complete Python regression example':'Checked regression output'}. Scroll horizontally if needed."><code>${esc(read('downloads/'+name))}</code></pre>`);
+ template=template.replace('</main>','<section class="block" aria-labelledby="course-review-next"><div class="eyebrow">AFTER CLASS 8</div><h2 id="course-review-next">Bring the course together</h2><p>Review the eight-class route, choose a method for a new question, and make a recommendation with its assumptions and limits.</p><p><a class="button" href="course-review.html">Course synthesis →</a> <a class="button" href="equation-guide.html">Equation guide →</a></p></section></main>');
  const equations=JSON.parse(read('regression-math.json')),html=learning.enhance(compile(template,equations),'regression.html');if(/\{\{/.test(html))throw Error('Uncompiled Week 8 placeholder');
  fs.writeFileSync(path.join(dist,'regression.html'),html);
  for(const name of ['regression.css','regression-core.js','regression-view.js','regression.js','class-eight.css','class-eight.js','class-eight-visuals.js','exposition-modeling.css','exposition-modeling.js'])fs.copyFileSync(path.join(src,name),path.join(dist,name));

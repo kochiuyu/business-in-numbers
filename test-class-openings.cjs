@@ -16,7 +16,7 @@ for(const [file,p] of Object.entries(plans)){
  eq(ns.filter(n=>has(n,'active-practice')).length,4,file+' four contextual activities retained');
  eq(ns.filter(n=>n.attrs['data-math']).length,reference[file].math_count,file+' all equations');
  eq(ns.filter(n=>n.tag==='details'&&has(n,'lesson')).length,reference[file].lesson_count,file+' all explanations');
- const ids=ns.filter(n=>n.attrs.id).map(n=>n.attrs.id).sort();eq(crypto.createHash('sha256').update(JSON.stringify(ids)).digest('hex'),reference[file].ids_sha256,file+' preserves every anchor outside the retired panel');
+ const ids=ns.filter(n=>n.attrs.id && n.attrs.id!=='course-review-next').map(n=>n.attrs.id).sort();eq(crypto.createHash('sha256').update(JSON.stringify(ids)).digest('hex'),reference[file].ids_sha256,file+' preserves every anchor outside the retired panel');
  for(const a of data().filter(a=>a.file===file)){
   ok(html.includes(render(a)),file+' complete question, feedback and answer '+a.id);
   const activity=ns.find(n=>n.attrs.id===a.id);let part=activity.parent,practice=false;while(part&&!has(part,p.partClass)){if(has(part,'visual-practice'))practice=true;part=part.parent;}
